@@ -1,0 +1,11 @@
+/*
+Theme Name:         Electro Child
+Theme URI:          https://themeforest.net/item/electro-electronics-store-woocommerce-theme/15720624
+Author:             Hadi Heydarzade
+Template:           electro
+Text Domain:        electrochild
+*/
+
+.primary-nav-menu .nav-inline > .menu-item + .menu-item {
+    margin-right: 1.5em;
+}

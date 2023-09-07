@@ -1,0 +1,71 @@
+@font-face {
+  font-family: Vazir;
+  src: url('fonts/Vazir.eot');
+  src: url('fonts/Vazir.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Vazir.woff2') format('woff2'),
+       url('fonts/Vazir.woff') format('woff'),
+       url('fonts/Vazir.ttf') format('truetype');
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Vazir;
+  src: url('fonts/Vazir-Bold.eot');
+  src: url('fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'),
+       url('fonts/Vazir-Bold.woff2') format('woff2'),
+       url('fonts/Vazir-Bold.woff') format('woff'),
+       url('fonts/Vazir-Bold.ttf') format('truetype');
+  font-weight: bold;
+}
+.digits_admim_conf * {
+    font-family: Vazir !important;
+}
+.rtl .dig_side_bar {
+	left: -516px;
+	right: auto;
+	box-shadow: 2px 0px 8px 0 rgba(126,57,255,.08);
+}
+#dig_cus_field_footer {
+    padding-right: 0!important;
+    padding-left: 18px;
+    right: auto!important;
+    left: 20px;
+    z-index: 100!important;
+}
+#dig_cus_field_footer div {
+    float: left!important;
+}
+.dig_sb_field_list::after {
+    right: auto!important;
+    left: 24px!important;
+}
+.digits_admim_conf #dig_field_val_list li, .digits_admim_conf .dig_sb_field_list, .digits_admim_conf .dig_side_bar .dig_fields_options input {
+    padding: 0 24px 0 0!important;
+}
+.dig_log_setge {
+    display: block!important;
+    margin-left: 25px;
+}
+.digits_admim_conf .form-table .button.ippanel-pattern-check{
+    float: left;
+    display: block;
+    background: #92f3cb;
+    border: 1px solid #35584a;
+    margin-top: -42px;
+    width: 150px!important;
+    font-weight: bold;
+}
+.digits_admim_conf .form-table .button.ippanel-pattern-check.proccessing{
+    background: #61c79d;
+	color: gray;
+}
+#ippanel_patternvars{
+	direction: ltr;
+	text-align: left;
+}
+#dig_presets_modal_box #dig_presets_modal_head #dig_presets_modal_head_close {
+    float: left!important;
+}
+.dig_presets_list {
+	direction: ltr;
+}

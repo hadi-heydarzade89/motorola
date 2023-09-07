@@ -1,0 +1,42 @@
+<tr>
+    <td class="centerp">{{ index | fa }}</td>
+    <td>
+        {% if order.get_formatted_shipping_address() %}
+            {{ order.get_shipping_name() }}
+            <br>{{ order.get_billing_phone() }}
+        {% else %}
+            {{ order.get_billing_name() }}
+            <br>{{ order.get_billing_phone() }}
+        {% endif %}
+    </td>
+
+    <td>{{ order.get_order_number() }}</td>
+
+    <td>{{ date | fa }}</td>
+    <td style="padding: 0;margin: 0;">
+        <table style="width: 100%;padding: 0;margin: 0;border: none;">
+            {% for item in order.get_items() %}
+
+                {% set data = item.get_data() %}
+
+                {% set quantity = data.quantity + item.quantity_refunded %}
+
+                {% if ( quantity ) %}
+                    <tr>
+                        <td style="border: 1px solid;">{{ quantity | fa }} عدد</td>
+                        <td style="border: 1px solid;">
+                            {{ data.name }}
+                            {% for meta_data in item.get_formatted_meta_data() %}
+                                | <strong>{{ meta_data.display_key }}
+                                :</strong> {{ strip_tags( meta_data.display_value ) }}
+                            {% endfor %}
+                        </td>
+                        <td style="border: 1px solid;">{{ item.sku | fa }}</td>
+                    </tr>
+                {% endif %}
+
+            {% endfor %}
+        </table>
+    </td>
+    <td>{{ order_status_name( order.get_status() ) }}</td>
+</tr>

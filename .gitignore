@@ -1,0 +1,15 @@
+# Uploads
+/public_html/wp-content/uploads/
+/public_html/wp-content/cache/
+/public_html/wp-content/ssbhesabfa*
+/public_html/error_log
+/public_html/wp-admin/error_log
+
+# Log files
+*.log
+*_log
+/logs
+/private_html
+/public_ftp
+/stats
+.htpasswd

@@ -1,0 +1,83 @@
+<div class="content factor">
+    <div class="header">
+        <div class="logo"><img src="{{ options.design.store_logo }}"></div>
+        <div class="text">برچسب پستی</div>
+        <div class="info">
+            <p>شماره سفارش: {{ order.get_order_number() | fa }}</p>
+            {{ order.get_id() | barcode }}
+        </div>
+    </div>
+    <div class="ticket-image"></div>
+    <table>
+        <tr>
+            <th width="50%">گیرنده</th>
+            <th width="50%">فرستنده</th>
+        </tr>
+        <tr>
+            <td>
+                <div class="emza centerp" {{ order.get_customer_note() | show_hide }}>
+                    {{ wpautop( order.get_customer_note() ) }}
+                </div>
+            </td>
+            <td>
+                <p><b>فرستنده: </b>{{ options.info.store_name }}</p>
+                <p><b>نشانی: </b>{{ options.info.store_state }}
+                    -{{ options.info.store_city }}
+                    -{{ options.info.store_address }}
+                <p><b>کد پستی: </b>{{ options.info.store_postcode }}</p>
+                <p><b>تلفن: </b>{{ options.info.store_phone }}</p>
+
+            </td>
+
+
+        </tr>
+        <tr>
+
+            <td>
+                {% if order.get_formatted_shipping_address() %}
+
+                    <p>
+                        <b>گیرنده: </b>{{ order.get_shipping_name() }}
+                    </p>
+                    <p><b>نشانی: </b>{{ order.get_shipping_state() | state_city_name }}
+                        | {{ order.get_shipping_city() | state_city_name }}
+                        | {{ order.get_billing_address_1() | fa }}
+                        {{ order.get_billing_address_2() | fa }}
+                    </p>
+                    <p>
+                        <b>کد پستی: </b>{{ order.get_shipping_postcode() | fa }}
+                        <b>شیوه ارسال: </b>{{ order.get_shipping_method() }}
+                    </p>
+                    <p>
+                        <b>شماره تماس: </b>{{ order.get_billing_phone() }}
+                    </p>
+
+                {% else %}
+
+                    <p>
+                        <b>گیرنده: </b>{{ order.get_billing_name() }}
+                    </p>
+                    <p><b>نشانی: </b>{{ order.get_shipping_state() | state_city_name }}
+                        | {{ order.get_shipping_city() | state_city_name }}
+                        | {{ order.get_shipping_address_1() | fa }}
+                        {{ order.get_shipping_address_2() | fa }}
+                    </p>
+                    <p>
+                        <b>کد پستی: </b>{{ order.get_billing_postcode() }}
+                        <span {{ order.get_shipping_method() | show_hide }}>
+							<b>شیوه ارسال: </b>{{ order.get_shipping_method() }}
+						</span>
+                    </p>
+                    <p>
+                        <b>شماره تماس: </b>{{ order.get_billing_phone() | fa }}
+                    </p>
+                {% endif %}
+
+            </td>
+            <td></td>
+        </tr>
+
+
+    </table>
+    <div class="ticket-image"></div>
+</div>

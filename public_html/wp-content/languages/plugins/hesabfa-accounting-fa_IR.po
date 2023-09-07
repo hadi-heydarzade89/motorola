@@ -1,0 +1,255 @@
+# Translation of Plugins - Hesabfa Accounting - Stable (latest release) in Persian
+# This file is distributed under the same license as the Plugins - Hesabfa Accounting - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2021-03-06 13:56:24+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.0-alpha.3\n"
+"Language: fa\n"
+"Project-Id-Version: Plugins - Hesabfa Accounting - Stable (latest release)\n"
+
+#: admin/class-ssbhesabfa-admin.php:155
+msgid "Hesabfa Plugin requires the %s to work!"
+msgstr "افزونه حسابفا نیازمند %s است!"
+
+#: admin/class-ssbhesabfa-admin.php:155
+msgid "WooCommerce"
+msgstr "ووکامرس"
+
+#: admin/class-ssbhesabfa-admin.php:165
+msgid "Hesabfa Plugin need to connect to Hesabfa Accounting, Please check the API credential!"
+msgstr "افزونه حسابفا نیازمن اتصال به نرم‌افزار حسابداری حسابفا است، لطفا اطلاعات دسترسی به API حسابفا را بررسی کنید!"
+
+#: admin/class-ssbhesabfa-admin.php:180
+msgid "Hesabfa Plugin cannot works! because WooCommerce currency in not match with Hesabfa."
+msgstr "افزونه حسابفا نمی‌تواند به درستی عمل کند! واحد پول پیش‌فرض ووکامرس با واحد پول پیش‌فرض حسابفا همخوانی ندارد."
+
+#: admin/class-ssbhesabfa-admin.php:952
+msgid "Hesabfa"
+msgstr "حسابفا"
+
+#: admin/partials/ssbhesabfa-admin-display.php:293
+msgid "Home"
+msgstr "خانه"
+
+#: admin/partials/ssbhesabfa-admin-display.php:296
+msgid "Customers"
+msgstr "مشتریان"
+
+#: admin/partials/ssbhesabfa-admin-display.php:298
+msgid "Payment Methods"
+msgstr "روش‌های پرداخت"
+
+#: admin/partials/ssbhesabfa-admin-display.php:294
+msgid "API"
+msgstr "‏API"
+
+#: admin/partials/ssbhesabfa-admin-display.php:300
+msgid "Sync"
+msgstr "همسان‌سازی"
+
+#: admin/partials/ssbhesabfa-admin-display.php:326
+msgid "Hesabfa Plugin requires the WooCommerce to work!, Please install/activate woocommerce and try again"
+msgstr "افزونه حسابفا جهت راه‌اندازی نیاز به ووکامرس دارد! لطفا ووکامرس را نصب/فعال کنید و مجدد سعی کنید."
+
+#. Plugin Name of the plugin
+#: admin/partials/ssbhesabfa-admin-setting.php:60
+msgid "Hesabfa Accounting"
+msgstr "نرم‌افزار حسابداری ابری حسابفا"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:62
+msgid "This module helps connect your (online) store to Hesabfa online accounting software. By using this module, saving products, contacts, and orders in your store will also save them automatically in your Hesabfa account. Besides that, just after a client pays a bill, the receipt document will be stored in Hesabfa as well. Of course, you have to register your account in Hesabfa first. To do so, visit Hesabfa at the link here www.hesabfa.com and sign up for free. After you signed up and entered your account, choose your business, then in the settings menu/API, you can find the API keys for the business and import them to the plugin’s settings. Now your module is ready to use."
+msgstr "این ماژول فروشگاه شما را به نرم افزار حسابداری آنلاین حسابفا متصل می کند. به وسیله ی این ماژول کالاها، مشتریان و سفارشات شما به محض ثبت در سیستم فروشگاه، در حسابفا نیز بصورت خودکار ثبت و ذخیره می شوند. همچنین با پرداخت مشتری، سند دریافت وجه از مشتری نیز در حسابفا ثبت می شود. بدیهی است برای استفاده از این افزونه باید ابتدا یک حساب کاربری در حسابفا داشته باشید. برای این کار می توانید به وب سایت حسابفا به آدرس www.hesabfa.com سر بزنید و به رایگان ثبت نام کنید. پس از ثبت نام در حسابفا و ورود به حساب خود، و سپس ورود به یک کسب و کار، در قسمت تنظیمات / API می توانید کلید API مربوط به کسب و کار خود را دریافت و در قسمت تنظیمات این ماژول وارد نمایید. پس از آن ماژول شما آماده استفاده است."
+
+#: admin/partials/ssbhesabfa-admin-setting.php:63
+msgid "For more information and a full guide to how to use Hesabfa and WooCommerce Plugin, visit Hesabfa’s website and go to the “Accounting School” menu."
+msgstr "برای کسب اطلاعات بیشتر و راهنمای استفاده از حسابفا و افزونه ووکامرس به وب سایت حسابفا، قسمت مدرسه حسابداری مراجعه کنید."
+
+#: admin/partials/ssbhesabfa-admin-setting.php:169
+msgid "Catalog Settings"
+msgstr "تنظیمات محصولات"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:176
+msgid "Update Price"
+msgstr "به‌روزرسانی قیمت"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:177
+msgid "Update Price after change in Hesabfa"
+msgstr "به‌روزرسانی قیمت بعد از تغییر در حسابفا"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:184
+msgid "Update Quantity"
+msgstr "به‌روزرسانی موجودی"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:185
+msgid "Update Quantity after change in Hesabfa"
+msgstr "به‌روزرسانی موجودی بعد از تغییر در حسابفا"
+
+#: admin/partials/ssbhesabfa-admin-display.php:181
+#: admin/partials/ssbhesabfa-admin-setting.php:263
+#: admin/partials/ssbhesabfa-admin-setting.php:432
+#: admin/partials/ssbhesabfa-admin-setting.php:582
+#: admin/partials/ssbhesabfa-admin-setting.php:650
+#: admin/partials/ssbhesabfa-admin-setting.php:769
+msgid "Save changes"
+msgstr "ذخیره  تغییرات"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:279
+msgid "Customers Settings"
+msgstr "تنظیمات مشتری"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:286
+msgid "Update Customer Address"
+msgstr "به روزرسانی آدرس مشتریان"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:287
+msgid "Choose when update Customer address in Hesabfa."
+msgstr "انتخاب کندی که در چه حالتی آدرس مشتری در حسابفا به‌روزرسانی شود"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:291
+msgid "Use first customer address"
+msgstr "اولین آدرس مشتری"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:292
+msgid "update address with Invoice address"
+msgstr "به روزرسانی با آدرس فاکتور سفارش"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:293
+msgid "update address with Delivery address"
+msgstr "به‌روزرسانی با آدرس ارسال سفارش"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:298
+msgid "Customer's Group"
+msgstr "دسته‌بندی مشتریان"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:299
+msgid "Enter a Customer's Group in Hesabfa"
+msgstr "نام دسته‌بندی مشتریان در حسابفا را وارد کنید"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:601
+msgid "Payment methods Settings"
+msgstr "تنظیمات روش پرداخت"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:665
+msgid "API Settings"
+msgstr "تنظیمات API"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:679
+msgid "Email"
+msgstr "آدرس ایمیل"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:680
+msgid "Enter a Hesabfa email account"
+msgstr "آدرس ایمیل اکانت حسابفا را وارد کنید"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:686
+msgid "Password"
+msgstr "رمزعبور"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:687
+msgid "Enter a Hesabfa password"
+msgstr "رمزعبور حسابفا را وارد کنید"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:672
+msgid "API Key"
+msgstr "کلید API"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:673
+msgid "Find API key in Setting->Financial Settings->API Menu"
+msgstr "کلید API را در حسابفا از منوی تنظیمات->تنظیمات مالی->API پیدا کنید"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:881
+msgid "Export can take several minutes."
+msgstr "استخراج ممکن است چند دقیقه زمان ببرد."
+
+#: admin/partials/ssbhesabfa-admin-setting.php:892
+msgid "Export Products"
+msgstr "خروجی محصولات"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:895
+msgid "Export and add all online store products to Hesabfa"
+msgstr "افزودن تمامی محصولات فروشگاه آنلاین در حسابفا"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:963
+msgid "Export Customers"
+msgstr "خروجی مشتریان"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:966
+msgid "Export and add all online store customers to Hesabfa."
+msgstr "افزودن تمامی مشتریان فروشگاه آنلاین در حسابفا"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1093
+msgid "Sync can take several minutes."
+msgstr "همسان‌سازی ممکن است چند دقیقه زمان ببرد."
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1105
+msgid "Sync Changes"
+msgstr "همسان‌سازی تغییرات"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1108
+msgid "Sync all Hesabfa changes with Online Store."
+msgstr "همسان‌سازی تمامی تعییرات حسابفا با فروشگاه آن‌لاین"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1132
+msgid "Sync Products Quantity and Price"
+msgstr "همسان‌سازی قیمت و موجودی محصولات"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1135
+msgid "Sync quantity and price of products in hesabfa with online store."
+msgstr "همسان‌سازی قیمت و موجودی محصولات حسابفا با فروشگاه آن‌لاین"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1164
+msgid "Sync Orders"
+msgstr "همسان‌سازی سفارشات"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1167
+msgid "Sync/Add orders in online store with hesabfa from above date."
+msgstr "همسان‌سازی سفارشات فروشگاه آن‌لاین با حسابفا از تاریخ فوق"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1308
+msgid "Cannot check the last change ID. Error Message: "
+msgstr "امکان بررسی آخرین تغییرات وجود ندارد. شرح خطا:"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1336
+msgid "Hesabfa and WooCommerce default currency must be same."
+msgstr "واحد پول پیش‌فرض حسابفا و ووکامرس باید یکی باشد."
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1341
+msgid "Cannot check the Hesabfa default currency. Error Message: "
+msgstr "امکان دریافت واحد پول پیش‌فرض حسابفا وجود ندارد. شرح خطا:"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1349
+msgid "API Setting updated. Test Successfully"
+msgstr "تنظیمات API به روزرسانی شد، اتصال موفقیت آمیز بود."
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1362
+msgid "Cannot set Hesabfa webHook. Error Message:"
+msgstr "امکان تنظیم وب‌هوک در حسابفا وجود ندارد. شرح خطا:"
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1373
+msgid "Cannot connect to Hesabfa servers. Please check your Internet connection"
+msgstr "اتصال به حسابفا برقرار نیست، لطفا اتصال اینترنت را بررسی نمایید."
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1396
+msgid "Define at least one bank in Hesabfa"
+msgstr "حداقل یک حساب بانکی در حسابفا تعریف کنید."
+
+#: admin/partials/ssbhesabfa-admin-setting.php:1404
+#: admin/partials/ssbhesabfa-admin-setting.php:1409
+msgid "Cannot get Banks detail."
+msgstr "امکان دریافت اطلاعات بانک‌ها نیست."
+
+#: admin/partials/ssbhesabfa-html-output.php:379
+msgid "Settings were saved successfully."
+msgstr "تنظیمات به‌روزرسانی شد."
+
+#. Plugin URI of the plugin
+msgid "https://www.hesabfa.com/"
+msgstr "‏https://www.hesabfa.com/"
+
+#. Description of the plugin
+msgid "Connect Hesabfa Online Accounting to WooCommerce."
+msgstr "\tاتصال نرم‌افزار حسابداری ابری حسابفا به ووکامرس"

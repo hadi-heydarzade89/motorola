@@ -1,0 +1,135 @@
+<div class="thermal content factor">
+    <div class="header">
+        <img src="{{ options.design.store_logo }}" style="max-width: 100%;display:flex;margin:0 auto" alt="">
+        <h2 class="centerp">{{ options.info.store_name }}</h2>
+
+        <p>شماره فاکتور: {{ order.get_order_number() | fa }} - تاریخ: {{ date | fa }}
+        <p>
+            {{ options.info.store_name }}
+            | {{ options.info.store_address }}
+            | {{ options.info.store_phone }}</p>
+    </div>
+    <table width="300">
+
+        <tr>
+            <td>
+                <p>
+                    <b>خریدار: </b>
+                    {{ order.get_shipping_name() }}
+                </p>
+                <p>
+                    <b>نشانی: </b> {{ order.get_billing_address_1() | fa }} {{ order.get_billing_address_2() | fa }}
+                    <b>کد پستی: </b>{{ order.get_billing_postcode() | fa }}
+                    <b>تلفن: </b>{{ order.get_billing_phone() | fa }}</p>
+            </td>
+        </tr>
+        <tr {{ has_different_address | show_hide }}>
+            <th>حمل و نقل</th>
+        </tr>
+        <tr {{ has_different_address | show_hide }}>
+            <td>
+                <p>
+                    <b>خریدار: </b>
+                    {{ order.get_shipping_name() }}
+
+                </p>
+                <p>
+                    <b>نشانی: </b> {{ order.get_shipping_address_1() | fa }} {{ order.get_shipping_address_2() | fa }}
+                    <b>کد پستی: </b>{{ order.get_shipping_postcode() | fa }}</p>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <th>عنوان</th>
+            <th>تعداد</th>
+            <th>مبلغ واحد<br/>({{ currency_symbol() }})</th>
+            <th>مبلغ کل<br/>({{ currency_symbol() }})</th>
+        </tr>
+        {% for item in order.get_items() %}
+
+            {% set data = item.get_data() %}
+
+            <tr>
+                <td>
+                    {{ data.name }}
+                    {% for meta_data in item.get_formatted_meta_data() %}
+                        | <strong>{{ meta_data.display_key }}:</strong> {{ strip_tags( meta_data.display_value ) }}
+                    {% endfor %}
+                </td>
+                <td class="centerp">
+                    {% set total_qty = total_qty + data.quantity %}
+                    {% set qty_refunded = order.get_qty_refunded_for_item( item.get_id() ) %}
+
+                    {% if item.quantity_refunded %}
+                        <del>{{ data.quantity | fa }}</del>
+                        <ins>{{ ( data.quantity + item.quantity_refunded ) | fa }}</ins>
+                    {% else %}
+                        {{ data.quantity | fa }}
+                    {% endif %}
+                </td>
+                <td class="centerp">
+                    {% if item.regular_price > 0 %}
+                        <del {{ options.design.show_regular_price | show_hide }}>
+                            {{ item.regular_price | price }}
+                        </del>
+                    {% endif %}
+                    {{ item.price | price }}
+                </td>
+                <td class="centerp">{{ data.total | price }}</td>
+            </tr>
+        {% endfor %}
+        <!----->
+        <tr>
+            <td colspan="1" class="leftp">مجموع:</td>
+            <td colspan="1" class="centerp">
+                {% if order.get_total_quantity_refunded() %}
+                    <del>{{ order.get_total_quantity() | fa }}</del>
+                    <ins>{{ order.get_total_quantity_without_refunded() | fa }}</ins>
+                {% else %}
+                    {{ order.get_total_quantity() | fa }}
+                {% endif %}
+            </td>
+            <td colspan="2" class="centerp">{{ order.get_subtotal() | price }} {{ currency_symbol() }}</td>
+        </tr>
+        {% if order.get_total_discount() > 0 %}
+            <tr>
+                <td colspan="2" class="leftp">تخفیف:</td>
+                <td colspan="2" class="centerp">{{ order.get_total_discount() | price }}</td>
+            </tr>
+        {% endif %}
+        {% if order.get_shipping_methods() %}
+            <tr>
+                <td colspan="2" class="leftp">هزینه ارسال - {{ order.get_shipping_method() }}:</td>
+                <td colspan="2" class="centerp">{{ order.get_shipping_total() | price }}</td>
+            </tr>
+        {% endif %}
+        {% if order.get_total_tax() > 0 %}
+            <tr>
+                <td colspan="2" class="leftp">مالیات:</td>
+                <td colspan="2" class="centerp">{{ order.get_total_tax() | price }}</td>
+            </tr>
+        {% endif %}
+        <tr>
+            <td colspan="2" class="leftp">روش پرداخت:</td>
+            <td colspan="2" class="centerp">{{ order.get_payment_method_title() }}</td>
+        </tr>
+        {% if order.get_total_refunded() > 0 %}
+            <tr>
+                <td colspan="2" class="leftp">مسترد شده:</td>
+                <td colspan="2" class="centerp">{{ order.get_total_refunded() | price }}</td>
+            </tr>
+        {% endif %}
+        <tr>
+            <th colspan="2">مجموع مبلغ نهایی</th>
+            <th colspan="2"
+                class="centerp">{{ order.get_total_without_refunded() | price }} {{ currency_symbol() }}</th>
+        </tr>
+    </table>
+    <div class="emza centerp" {{ options.info.store_description | show_hide }}>
+        {{ wpautop( options.info.store_description ) }}
+    </div>
+    <div class="emza centerp" {{ options.design.show_customer_note | show_hide }} {{ order.get_customer_note() | show_hide }}>
+        {{ wpautop( order.get_customer_note() ) }}
+    </div>
+</div>
