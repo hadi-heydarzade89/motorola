@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-08-18 16:51:48+0000\n"
+"PO-Revision-Date: 2023-09-12 09:09:08+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,26 @@ msgstr ""
 "X-Generator: GlotPress/4.0.0-alpha.7\n"
 "Language: fa\n"
 "Project-Id-Version: Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release)\n"
+
+#: modules/nested-tabs/widgets/nested-tabs.php:1093
+#: modules/nested-tabs/widgets/nested-tabs.php:1256
+msgid "Open tab (Enter or Space) | Return (Escape)"
+msgstr "باز کردن زبانه (Enter یا Space) | بازگشت (Escape)"
+
+#: modules/nested-tabs/widgets/nested-tabs.php:183
+#: modules/nested-tabs/widgets/nested-tabs.php:875
+msgid "Below"
+msgstr "پایین"
+
+#: modules/nested-tabs/widgets/nested-tabs.php:179
+#: modules/nested-tabs/widgets/nested-tabs.php:867
+msgid "Above"
+msgstr "بالا"
+
+#: includes/elements/container.php:353
+msgctxt "Flex Container Control"
+msgid "Gaps"
+msgstr "شکاف‌ها"
 
 #: modules/nested-accordion/widgets/nested-accordion.php:354
 msgid "Space between Items"
@@ -68,10 +88,6 @@ msgstr "تازه! اپلیکیشن‌های محبوب"
 msgid "Apps"
 msgstr "اپلیکیشن‌ها"
 
-#: modules/apps/admin-apps-page.php:25
-msgid "Please note that certain services on this page are developed by third-party companies. When you click on the their action button, you may be redirected to an external website."
-msgstr "لطفا توجه داشته باشید که برخی از خدمات این برگه توسط شرکت‌های شخص ثالث توسعه داده شده است. وقتی روی دکمه آنها کلیک می‌کنید، ممکن است به یک وب سایت خارجی هدایت شوید."
-
 #: modules/apps/admin-apps-page.php:17
 msgid "Learn more about this page."
 msgstr "درباره این برگه بیشتر بدانید"
@@ -93,11 +109,11 @@ msgid "Choose Video File"
 msgstr "فایل ویدیویی را انتخاب کنید"
 
 #. translators: 1: Slide count, 2: Total slides count.
-#: includes/widgets/image-carousel.php:895
+#: includes/widgets/image-carousel.php:894
 msgid "%1$s of %2$s"
 msgstr "%1$s از %2$s"
 
-#: includes/widgets/icon-box.php:207 includes/widgets/image-box.php:194
+#: includes/widgets/icon-box.php:206 includes/widgets/image-box.php:193
 msgid "Box"
 msgstr "جعبه"
 
@@ -106,7 +122,7 @@ msgstr "جعبه"
 msgid "Changes will be reflected only after %1$s saving %3$s and %2$s reloading %3$s preview."
 msgstr "تغییرات فقط پس از %1$s ذخیره %3$s و %2$s بارگیری مجدد %3$s پیش‌نمایش منعکس می‌شوند."
 
-#: core/admin/admin.php:638
+#: core/admin/admin.php:628
 msgid "Build Smart with AI"
 msgstr "با هوش مصنوعی هوشمند بسازید"
 
@@ -122,11 +138,11 @@ msgstr "پیش‌نمایش زنده از تغییرات رنگ‌ها و فون
 msgid "Global Style Guide"
 msgstr "راهنمای سبک جهانی"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:344
+#: modules/nested-tabs/widgets/nested-tabs.php:362
 msgid "Note: Scroll tabs if they don’t fit into their parent container."
 msgstr "توجه: اگر برگه‌ها در محفظه اصلی خود جا نمی‌شوند، اسکرول کنید."
 
-#: modules/nested-tabs/widgets/nested-tabs.php:342
+#: modules/nested-tabs/widgets/nested-tabs.php:360
 msgid "Horizontal Scroll"
 msgstr "پیمایش افقی"
 
@@ -155,11 +171,11 @@ msgstr "گزینه #%s"
 msgid "You are currently editing a Toggle widget in its old version. Drag a new Accordion widget onto your page to use a newer version, providing nested capabilities."
 msgstr "شما در حال حاضر در حال ویرایش یک ویجت تغییر وضعیت در نسخه قدیمی آن هستید. یک ویجت جدید آکاردئون را روی صفحه خود بکشید تا از نسخه جدیدتر استفاده کنید و قابلیت های تو در تو را ارائه دهید."
 
-#: includes/widgets/image.php:374
+#: includes/widgets/image.php:373
 msgid "Object Position"
 msgstr "موقعیت شیء"
 
-#: includes/widgets/icon.php:318
+#: includes/widgets/icon.php:317
 msgid "Fit to Size"
 msgstr "متناسب با اندازه"
 
@@ -212,7 +228,7 @@ msgid "Panels"
 msgstr "پنل‌ها"
 
 #: includes/controls/gallery.php:83 includes/controls/gallery.php:85
-#: assets/js/editor.js:13729
+#: assets/js/editor.js:13735
 msgid "Clear gallery"
 msgstr "پاک کردن گالری"
 
@@ -222,7 +238,7 @@ msgstr "برای پیش‌نمایش تغییرات خود در رنگ‌ها و
 
 #: core/settings/editor-preferences/model.php:159
 #: modules/styleguide/module.php:143
-#: assets/js/9901e5ed764a3348e6e0.bundle.js:448
+#: assets/js/d3bdd130eb38d3b07f85.bundle.js:448
 msgid "Style Guide Preview"
 msgstr "پیش نمایش راهنمای سبک"
 
@@ -242,7 +258,7 @@ msgstr "نوع قالب نامعتبر است."
 msgid "You do not have permissions to install plugins on this site."
 msgstr "شما اجازه نصب افزونه در این سایت را ندارید."
 
-#: core/admin/admin.php:355
+#: core/admin/admin.php:345
 msgid "Get Elementor Pro"
 msgstr "دریافت المنتور پیشرفته"
 
@@ -251,12 +267,12 @@ msgid "AI"
 msgstr "AI"
 
 #. translators: 1: Link open tag, 2: Link close tag.
-#: includes/widgets/image-carousel.php:326
-#: includes/widgets/image-gallery.php:146 includes/widgets/image.php:223
+#: includes/widgets/image-carousel.php:325
+#: includes/widgets/image-gallery.php:146 includes/widgets/image.php:222
 msgid "Manage your site’s lightbox settings in the %1$sLightbox panel%2$s."
 msgstr "تنظیمات لایت باکس سایت خود را در %1$sپنل جعبه نور%2$s مدیریت کنید."
 
-#: includes/elements/container.php:336 includes/elements/container.php:353
+#: includes/elements/container.php:376 includes/elements/container.php:394
 msgid "Container Layout"
 msgstr "چیدمان کانتینر"
 
@@ -272,15 +288,17 @@ msgstr "ناوبر را ببندید"
 msgid "Close structure"
 msgstr "ساختار بسته"
 
-#: includes/editor-templates/navigator.php:16 assets/js/editor.js:34323
+#: includes/editor-templates/navigator.php:16 assets/js/editor.js:34215
 msgid "Expand all elements"
 msgstr "همه عناصر را گسترش دهید"
 
-#: includes/editor-templates/global.php:66 includes/elements/container.php:342
+#: includes/editor-templates/global.php:66 includes/elements/container.php:100
+#: includes/elements/container.php:108 includes/elements/container.php:382
+#: assets/js/editor.js:32342 assets/js/editor.js:40817
 msgid "Grid"
 msgstr "شبکه ای"
 
-#: includes/editor-templates/global.php:58 includes/elements/container.php:341
+#: includes/editor-templates/global.php:58 includes/elements/container.php:381
 msgid "Flexbox"
 msgstr "فلکس باکس"
 
@@ -292,82 +310,84 @@ msgstr "از کدام چیدمان می‌خواهید استفاده کنید؟
 msgid "Select your structure"
 msgstr "ساختار خود را انتخاب کنید"
 
-#: includes/controls/groups/grid-container.php:220
+#: includes/controls/groups/grid-container.php:226
 msgctxt "Grid Container Control"
 msgid "Align Content"
 msgstr "تراز محتوا"
 
-#: includes/controls/groups/grid-container.php:206
-#: includes/controls/groups/grid-container.php:246
+#: includes/controls/groups/grid-container.php:212
+#: includes/controls/groups/grid-container.php:252
 msgctxt "Grid Container Control"
 msgid "Space Evenly"
 msgstr "فاصله‌گذاری برابر"
 
-#: includes/controls/groups/grid-container.php:202
-#: includes/controls/groups/grid-container.php:242
+#: includes/controls/groups/grid-container.php:208
+#: includes/controls/groups/grid-container.php:248
 msgctxt "Grid Container Control"
 msgid "Space Around"
 msgstr "فاصله اطراف"
 
-#: includes/controls/groups/grid-container.php:198
-#: includes/controls/groups/grid-container.php:238
+#: includes/controls/groups/grid-container.php:204
+#: includes/controls/groups/grid-container.php:244
 msgctxt "Grid Container Control"
 msgid "Space Between"
 msgstr "فاصله میانی"
 
-#: includes/controls/groups/grid-container.php:190
-#: includes/controls/groups/grid-container.php:230
+#: includes/controls/groups/grid-container.php:196
+#: includes/controls/groups/grid-container.php:236
 msgctxt "Grid Container Control"
 msgid "Middle"
 msgstr "میانه"
 
-#: includes/controls/groups/grid-container.php:180
+#: includes/controls/groups/grid-container.php:186
 msgctxt "Grid Container Control"
 msgid "Justify Content"
 msgstr "محتوای تراز"
 
-#: includes/controls/groups/grid-container.php:153
+#: includes/controls/groups/grid-container.php:159
 msgctxt "Grid Container Control"
 msgid "Align Items"
 msgstr "چینش موارد"
 
-#: includes/controls/groups/grid-container.php:141
-#: includes/controls/groups/grid-container.php:169
+#: includes/controls/groups/grid-container.php:147
+#: includes/controls/groups/grid-container.php:175
 msgctxt "Grid Container Control"
 msgid "Stretch"
 msgstr "کشیده"
 
-#: includes/controls/groups/grid-container.php:137
-#: includes/controls/groups/grid-container.php:165
-#: includes/controls/groups/grid-container.php:194
-#: includes/controls/groups/grid-container.php:234
+#: includes/controls/groups/grid-container.php:143
+#: includes/controls/groups/grid-container.php:171
+#: includes/controls/groups/grid-container.php:200
+#: includes/controls/groups/grid-container.php:240
 msgctxt "Grid Container Control"
 msgid "End"
 msgstr "پایان"
 
-#: includes/controls/groups/grid-container.php:133
-#: includes/controls/groups/grid-container.php:161
+#: includes/controls/groups/grid-container.php:139
+#: includes/controls/groups/grid-container.php:167
 msgctxt "Grid Container Control"
 msgid "Center"
 msgstr "وسط"
 
-#: includes/controls/groups/grid-container.php:129
-#: includes/controls/groups/grid-container.php:157
-#: includes/controls/groups/grid-container.php:186
-#: includes/controls/groups/grid-container.php:226
+#: includes/controls/groups/grid-container.php:135
+#: includes/controls/groups/grid-container.php:163
+#: includes/controls/groups/grid-container.php:192
+#: includes/controls/groups/grid-container.php:232
 msgctxt "Grid Container Control"
 msgid "Start"
 msgstr "آغاز"
 
-#: includes/controls/groups/grid-container.php:125
+#: includes/controls/groups/grid-container.php:131
 msgctxt "Grid Container Control"
 msgid "Justify Items"
 msgstr "تراز کردن متن"
 
-#: includes/controls/groups/grid-container.php:110
+#: includes/controls/groups/grid-container.php:115
 msgid "Auto Flow"
 msgstr "جریان خودکار"
 
+#: core/kits/documents/tabs/settings-layout.php:102
+#: includes/controls/groups/flex-container.php:156
 #: includes/controls/groups/grid-container.php:96
 msgid "Gaps"
 msgstr "شکاف‌ها"
@@ -380,8 +400,8 @@ msgstr "ردیف‌ها"
 msgid "Grid Outline"
 msgstr "طرح کلی شبکه"
 
-#: includes/controls/gaps.php:60
-#: includes/controls/groups/grid-container.php:113
+#: includes/controls/gaps.php:59
+#: includes/controls/groups/grid-container.php:118
 msgid "Row"
 msgstr "ردیف"
 
@@ -390,26 +410,22 @@ msgid "Switch units"
 msgstr "تغییر واحدها"
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
-#: core/experiments/manager.php:419
+#: core/experiments/manager.php:421
 msgid "Create pixel perfect layouts by placing elements in a customizable grid. Activate to add the CSS Grid option to container elements. %1$sLearn more%2$s"
 msgstr "با قرار دادن عناصر در یک شبکه قابل تنظیم، طرح‌بندی‌های کامل پیکسلی ایجاد کنید. برای افزودن گزینه CSS Grid به عناصر کانتینر، آن را فعال کنید. %1$sبیشتر بیاموزید%2$s"
 
-#: core/experiments/manager.php:416
+#: core/experiments/manager.php:418
 msgid "Grid Container"
 msgstr "کانتینر شبکه"
 
-#: core/experiments/manager.php:395
+#: core/experiments/manager.php:397
 msgid "If you deactivate Flexbox Container, you will permanently delete all content created with containers and lose access to container-based features like Tabs and Menu widgets"
 msgstr "اگر کانتینر فلکس باکس را غیرفعال کنید، تمام محتوای ایجاد شده با کانتینرها را برای همیشه حذف می‌کنید و دسترسی به ویژگی‌های مبتنی بر کانتینر مانند تب‌ها و ویجت‌های منو را از دست خواهید داد."
 
-#: core/editor/templates/editor-body-v2.view.php:29
-msgid "Top Bar"
-msgstr "نوار بالا"
-
-#: core/editor/templates/editor-body-v1.view.php:27
-#: core/editor/templates/editor-body-v2.view.php:27
+#: core/editor/loader/v1/templates/editor-body-v1.view.php:27
+#: core/editor/loader/v2/templates/editor-body-v2.view.php:27
 #: includes/editor-templates/editor-wrapper.php:30
-#: assets/js/packages/editor.js:221
+#: assets/js/packages/editor/editor.js:231
 msgid "Edit \"%s\" with Elementor"
 msgstr "ویرایش \"%s\" با المنتور"
 
@@ -418,11 +434,11 @@ msgstr "ویرایش \"%s\" با المنتور"
 msgid "Set a different selector for the title in the %1$sLayout panel%2$s."
 msgstr "انتخابگر دیگری برای عنوان در %1$s پانل چیدمان%2$s تنظیم کنید."
 
-#: includes/widgets/icon-list.php:578
+#: includes/widgets/icon-list.php:577
 msgid "Adjust Vertical Position"
 msgstr "تنظیم موقعیت عمودی"
 
-#: includes/widgets/icon-list.php:521
+#: includes/widgets/icon-list.php:520
 msgid "Horizontal Alignment"
 msgstr "تراز افقی"
 
@@ -473,64 +489,64 @@ msgstr "اندازه نمایشگر"
 msgid "Accent Color"
 msgstr "رنگ تاکیدی"
 
-#: core/experiments/manager.php:595
+#: core/experiments/manager.php:597
 msgid "Deactivate All"
 msgstr "غیرفعال کردن همه"
 
-#: core/experiments/manager.php:594
+#: core/experiments/manager.php:596
 msgid "Activate All"
 msgstr "همه را فعال کنید"
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
-#: core/experiments/manager.php:576
+#: core/experiments/manager.php:578
 msgid "Personalize your Elementor experience by controlling which features and experiments are active on your site. Help make Elementor better by %1$ssharing your experience and feedback with us%2$s."
 msgstr "با کنترل اینکه کدام ویژگی‌ها و آزمایش‌ها در سایت شما فعال هستند، تجربه المنتور خود را شخصی کنید. با %1$s اشتراک گذاری تجربه و بازخورد خود با ما%2$s، به بهتر شدن المنتور کمک کنید."
 
-#: core/experiments/manager.php:570
+#: core/experiments/manager.php:572
 msgid "Experiments and Features"
 msgstr "آزمایش ها و ویژگی ها"
 
-#: core/experiments/manager.php:405
+#: core/experiments/manager.php:407
 msgid "Prepare your website for future improvements to carousel features by upgrading the Swiper library integrated into your site from v5.36 to v8.45. This experiment includes markup changes so it might require updating custom code and cause compatibility issues with third party plugins."
 msgstr "با ارتقای کتابخانه Swiper ادغام شده در سایت خود از نسخه 5.36 به نسخه 8.45، وب سایت خود را برای بهبودهای آینده در ویژگی های چرخ فلک آماده کنید. این آزمایش شامل تغییرات نشانه‌گذاری است، بنابراین ممکن است نیاز به به‌روزرسانی کد سفارشی داشته باشد و باعث مشکلات سازگاری با افزونه‌های شخص ثالث شود."
 
-#: core/experiments/manager.php:404
+#: core/experiments/manager.php:406
 msgid "Upgrade Swiper Library"
 msgstr "ارتقای کتابخانه Swiper"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:668
+#: modules/nested-tabs/widgets/nested-tabs.php:688
 msgid "Titles"
 msgstr "عنوان‌ها"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:488
-#: modules/nested-tabs/widgets/nested-tabs.php:547
-#: modules/nested-tabs/widgets/nested-tabs.php:631
+#: modules/nested-tabs/widgets/nested-tabs.php:508
+#: modules/nested-tabs/widgets/nested-tabs.php:567
+#: modules/nested-tabs/widgets/nested-tabs.php:651
 msgid "Shadow"
 msgstr "سایه"
 
 #: modules/nested-accordion/widgets/nested-accordion.php:375
-#: modules/nested-tabs/widgets/nested-tabs.php:427
+#: modules/nested-tabs/widgets/nested-tabs.php:447
 msgid "Distance from content"
 msgstr "فاصله از محتوا"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:412
+#: modules/nested-tabs/widgets/nested-tabs.php:432
 msgid "Gap between tabs"
 msgstr "فاصله بین تب‌ها"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:397
+#: modules/nested-tabs/widgets/nested-tabs.php:417
 msgid "Note: Choose at which breakpoint tabs will automatically switch to a vertical (“accordion”) layout."
 msgstr "توجه: انتخاب کنید که در کدام نقطه شکست٬ طرح‌بندی تب‌ها به عمودی (\"آکاردیون\") عوض شود."
 
 #. translators: 1: Breakpoint label, 2: `>` character, 3: Breakpoint value.
-#: modules/nested-tabs/widgets/nested-tabs.php:385
+#: modules/nested-tabs/widgets/nested-tabs.php:405
 msgid "%1$s (%2$s %3$dpx)"
 msgstr "%1$s (%2$s %3$dpx)"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:307
+#: modules/nested-tabs/widgets/nested-tabs.php:325
 msgid "Align Title"
 msgstr "چینش عنوان"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:160
+#: modules/nested-tabs/widgets/nested-tabs.php:162
 msgid "Tab #3"
 msgstr "زبانه ۳"
 
@@ -604,7 +620,7 @@ msgstr "بارگذاری تنبل تصاویری که در نمای دید نی�
 msgid "Lazy Load Background Images"
 msgstr "تصاویر پس زمینه بار تنبل"
 
-#: includes/elements/container.php:1768
+#: includes/elements/container.php:1808
 msgid "Note: Avoid applying transform properties on sticky containers. Doing so might cause unexpected results."
 msgstr "توجه: از اعمال خواص تبدیل روی ظروف چسبناک خودداری کنید. انجام این کار ممکن است باعث نتایج غیرمنتظره شود."
 
@@ -613,7 +629,7 @@ msgctxt "Typography Control"
 msgid "Default"
 msgstr "پیش‌‌فرض"
 
-#: includes/elements/container.php:583
+#: includes/elements/container.php:624
 msgid "(link)"
 msgstr "(پیوند)"
 
@@ -662,7 +678,7 @@ msgctxt "Typography Control"
 msgid "(Thin)"
 msgstr "(باریک)"
 
-#: core/experiments/manager.php:666
+#: core/experiments/manager.php:668
 msgid "Requires"
 msgstr "ضروری است"
 
@@ -691,7 +707,7 @@ msgstr "تمام محتوا و تنظیمات سایت همراه با \"%1$s\" 
 #. Translators: %s is the current item index.
 #: modules/nested-accordion/widgets/nested-accordion.php:74
 #: modules/nested-elements/base/widget-nested-base.php:45
-#: assets/js/editor.js:24500
+#: assets/js/editor.js:24310
 msgid "Item #%d"
 msgstr "مورد #%d"
 
@@ -715,14 +731,9 @@ msgstr "‫موقعیت عمودی"
 msgid "Dismiss Icon"
 msgstr "رد‌کردن آیکون"
 
-#: includes/elements/container.php:604
+#: includes/elements/container.php:645
 msgid "Don’t add links to elements nested in this container - it will break the layout."
 msgstr "به عناصر تو در تو در این کانتینر پیوند اضافه نکنید - چیدمان را خراب می کند."
-
-#: includes/elements/container.php:313
-msgctxt "Flex Container Control"
-msgid "Gap between elements"
-msgstr "فاصله بین المان‌ها"
 
 #: includes/editor-templates/panel.php:60
 msgid "Any time you can change the settings in %1$sUser Preferences%2$s"
@@ -732,7 +743,7 @@ msgstr "هر زمان که می‌توانید تنظیمات را در %1$s ت�
 msgid "Now you can choose where you want to go on the site from the following options"
 msgstr "اکنون می توانید از میان گزینه های زیر محل مورد نظر خود را در سایت انتخاب کنید"
 
-#: includes/controls/groups/flex-container.php:196
+#: includes/controls/groups/flex-container.php:191
 msgctxt "Flex Container Control"
 msgid "Items within the container can stay in a single line (No wrap), or break into multiple lines (Wrap)."
 msgstr "اقلام داخل ظرف می توانند در یک خط باقی بمانند (بدون بسته بندی)، یا به چند خط تقسیم شوند (Wrap)."
@@ -777,19 +788,15 @@ msgstr "تعیین کنید که بعد از کلیک بر روی گزینه خ�
 msgid "Exit to"
 msgstr "رفتن به"
 
-#: core/kits/documents/tabs/settings-layout.php:100
-msgid "Gap between elements"
-msgstr "فاصله بین المان‌ها"
-
-#: core/kits/documents/tabs/settings-layout.php:91
+#: core/kits/documents/tabs/settings-layout.php:93
 msgid "Sets the default space inside the container (Default is 10px)"
 msgstr "فضای پیش‌فرض داخل ظرف را تنظیم می‌کند (پیش‌فرض 10 پیکسل)"
 
-#: core/kits/documents/tabs/settings-layout.php:88
+#: core/kits/documents/tabs/settings-layout.php:90
 msgid "Container Padding"
 msgstr "فاصله کانتینر"
 
-#: core/experiments/manager.php:386
+#: core/experiments/manager.php:385
 msgid ""
 "Create advanced layouts and responsive designs with the new %1$sFlexbox Container element%2$s.\n"
 "\t\t\t\tThis experiment replaces the current section/column structure, but you'll still keep your existing\n"
@@ -800,13 +807,13 @@ msgstr ""
 "\t\t\t\tستون ها را حفظ خواهید کرد و می توانید آنها را ویرایش کنید. آماده اید تا امتحان کنید؟ بررسی کنید ابزار\n"
 "%3$sFlexbox playground%4$s."
 
-#: core/experiments/manager.php:417
+#: core/experiments/manager.php:419
 msgid "Feature"
 msgstr "ویژگی"
 
-#: core/experiments/manager.php:319 core/experiments/manager.php:331
-#: core/experiments/manager.php:343 core/experiments/manager.php:358
-#: core/experiments/manager.php:369 modules/lazyload/module.php:25
+#: core/experiments/manager.php:321 core/experiments/manager.php:333
+#: core/experiments/manager.php:345 core/experiments/manager.php:357
+#: core/experiments/manager.php:368 modules/lazyload/module.php:25
 msgid "Performance"
 msgstr "کارایی"
 
@@ -838,23 +845,23 @@ msgstr "یادداشت‌ها"
 #: core/editor/notice-bar.php:24 core/editor/promotion.php:26
 #: includes/editor-templates/panel-elements.php:24
 #: includes/editor-templates/panel-elements.php:68
-#: includes/managers/controls.php:1114
+#: includes/managers/controls.php:1113
 #: modules/promotions/admin-menu-items/base-promotion-item.php:28
-#: assets/js/app-packages.js:2648 assets/js/app-packages.js:5856
-#: assets/js/app-packages.js:6123 assets/js/app.js:3714
-#: assets/js/editor.js:8010
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:509
+#: assets/js/app-packages.js:2416 assets/js/app-packages.js:5624
+#: assets/js/app-packages.js:5891 assets/js/app.js:3417
+#: assets/js/editor.js:8007
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:509
 msgid "Upgrade Now"
 msgstr "هم اکنون ارتقا دهید"
 
-#: core/admin/admin.php:631 core/role-manager/role-manager.php:161
+#: core/admin/admin.php:621 core/role-manager/role-manager.php:161
 #: includes/editor-templates/panel.php:313
 #: modules/promotions/admin-menu-items/go-pro-promotion-item.php:24
 #: assets/js/ai-admin.js:750 assets/js/ai-admin.js:758
 #: assets/js/ai-admin.js:1289 assets/js/ai.js:935 assets/js/ai.js:943
-#: assets/js/ai.js:1474 assets/js/app-packages.js:6088 assets/js/editor.js:6498
+#: assets/js/ai.js:1474 assets/js/app-packages.js:5856 assets/js/editor.js:6495
 #: assets/js/notes.js:153
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:763
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:763
 #: assets/js/styleguide.js:196
 msgid "Upgrade"
 msgstr "ارتقا"
@@ -882,33 +889,36 @@ msgstr "تبدیل به کانتینر"
 msgid "Play Video about"
 msgstr "نمایش ویدیو درباره"
 
-#: includes/widgets/image-carousel.php:583
+#: includes/widgets/image-carousel.php:582
 msgid "Pagination"
 msgstr "صفحه بندی"
 
-#: includes/elements/container.php:513
+#: includes/elements/container.php:554
 msgid "To achieve full height Container use %s."
 msgstr "برای دستیابی به کانتینر با ارتفاع کامل، از %s استفاده کنید."
 
-#: includes/elements/container.php:68 includes/elements/container.php:374
-#: modules/library/documents/container.php:52 assets/js/editor.js:10022
-#: assets/js/editor.js:38012
+#: includes/elements/container.php:70 includes/elements/container.php:415
+#: modules/library/documents/container.php:52 assets/js/editor.js:10027
+#: assets/js/editor.js:32342 assets/js/editor.js:37956
 msgid "Container"
 msgstr "کانتینر"
 
 #: includes/elements/column.php:436 includes/elements/section.php:727
+#: includes/widgets/heading.php:283
 msgid "Hue"
 msgstr "رنگ"
 
 #: includes/elements/column.php:435 includes/elements/section.php:726
+#: includes/widgets/heading.php:282
 msgid "Exclusion"
 msgstr "استثنا"
 
 #: includes/elements/column.php:434 includes/elements/section.php:725
+#: includes/widgets/heading.php:281
 msgid "Difference"
 msgstr "تفاوت"
 
-#: includes/editor-templates/global.php:34 assets/js/editor.js:32344
+#: includes/editor-templates/global.php:34 assets/js/editor.js:32197
 msgid "Add New Container"
 msgstr "افزودن کانتینر جدید"
 
@@ -1007,46 +1017,41 @@ msgctxt "Flex Item Control"
 msgid "Flex Basis"
 msgstr "فلکس مبنا"
 
-#: includes/controls/groups/flex-container.php:213
+#: includes/controls/groups/flex-container.php:208
 msgctxt "Flex Container Control"
 msgid "Default"
 msgstr "پیش‌فرض"
 
-#: includes/controls/groups/flex-container.php:209
+#: includes/controls/groups/flex-container.php:204
 msgctxt "Flex Container Control"
 msgid "Align Content"
 msgstr "تراز محتوا"
 
-#: includes/controls/groups/flex-container.php:188
+#: includes/controls/groups/flex-container.php:183
 msgctxt "Flex Container Control"
 msgid "No Wrap"
 msgstr "No Wrap"
 
-#: includes/controls/groups/flex-container.php:184
-#: includes/controls/groups/flex-container.php:192
+#: includes/controls/groups/flex-container.php:179
+#: includes/controls/groups/flex-container.php:187
 msgctxt "Flex Container Control"
 msgid "Wrap"
 msgstr "Wrap"
 
-#: includes/controls/groups/flex-container.php:156
-msgctxt "Flex Item Control"
-msgid "Gap"
-msgstr "شکاف"
-
 #: includes/controls/groups/flex-container.php:117
-#: includes/controls/groups/flex-container.php:219
+#: includes/controls/groups/flex-container.php:214
 msgctxt "Flex Container Control"
 msgid "Space Evenly"
 msgstr "فاصله‌گذاری برابر"
 
 #: includes/controls/groups/flex-container.php:113
-#: includes/controls/groups/flex-container.php:218
+#: includes/controls/groups/flex-container.php:213
 msgctxt "Flex Container Control"
 msgid "Space Around"
 msgstr "فاصله در اطراف"
 
 #: includes/controls/groups/flex-container.php:109
-#: includes/controls/groups/flex-container.php:217
+#: includes/controls/groups/flex-container.php:212
 msgctxt "Flex Container Control"
 msgid "Space Between"
 msgstr "فاصله میانی"
@@ -1061,19 +1066,19 @@ msgctxt "Flex Container Control"
 msgid "Stretch"
 msgstr "کشیدگی"
 
-#: includes/controls/groups/flex-container.php:216
+#: includes/controls/groups/flex-container.php:211
 msgctxt "Flex Container Control"
 msgid "Flex End"
 msgstr "فلکس انتها"
 
 #: includes/controls/groups/flex-container.php:101
 #: includes/controls/groups/flex-container.php:137
-#: includes/controls/groups/flex-container.php:214
+#: includes/controls/groups/flex-container.php:209
 msgctxt "Flex Container Control"
 msgid "Center"
 msgstr "وسط"
 
-#: includes/controls/groups/flex-container.php:215
+#: includes/controls/groups/flex-container.php:210
 msgctxt "Flex Container Control"
 msgid "Flex Start"
 msgstr "فلکس ابتدا"
@@ -1101,7 +1106,7 @@ msgid "Direction"
 msgstr "جهت"
 
 #: includes/controls/groups/background.php:687
-#: includes/widgets/image-carousel.php:378
+#: includes/widgets/image-carousel.php:377
 msgid "Lazyload"
 msgstr "بارگذاری تنبل"
 
@@ -1110,16 +1115,16 @@ msgid "Reorder"
 msgstr "مرتب‌سازی دوباره"
 
 #: core/kits/documents/tabs/global-typography.php:160
-#: assets/js/9901e5ed764a3348e6e0.bundle.js:229
+#: assets/js/d3bdd130eb38d3b07f85.bundle.js:229
 msgid "System Fonts"
 msgstr "فونت‌های سیستم"
 
 #: core/kits/documents/tabs/global-colors.php:101
-#: assets/js/9901e5ed764a3348e6e0.bundle.js:180
+#: assets/js/d3bdd130eb38d3b07f85.bundle.js:180
 msgid "System Colors"
 msgstr "رنگ‌های سیستم"
 
-#: core/experiments/manager.php:385
+#: core/experiments/manager.php:384
 msgid "Flexbox Container"
 msgstr "کانتینر فلکس باکس"
 
@@ -1143,7 +1148,7 @@ msgstr "مشکلی در تنظیم آرم سایت شما وجود داشت"
 msgid "Add New Page Template"
 msgstr "افزودن قالب برگه جدید"
 
-#: core/editor/promotion.php:25 assets/js/editor.js:6498 assets/js/notes.js:153
+#: core/editor/promotion.php:25 assets/js/editor.js:6495 assets/js/notes.js:153
 #: assets/js/styleguide.js:196
 msgid "Connect & Activate"
 msgstr "اتصال و فعال‌سازی"
@@ -1158,71 +1163,71 @@ msgstr "استفاده از عناصر"
 msgid "Set your Google Maps API Key in Elementor's %1$sIntegrations Settings%3$s page. Create your key %2$shere.%3$s"
 msgstr "کلید API گوگل مپ را در صفحه %1$sتنظیمات یکپارچه سازی%3$s تنظیم کنید. میتونید از %2$sاینجا%3$s کلید api بسازید"
 
-#: includes/base/element-base.php:1256
+#: includes/base/element-base.php:1271
 msgid "Y Anchor Point"
 msgstr "Y Anchor Point"
 
-#: includes/base/element-base.php:1228
+#: includes/base/element-base.php:1243
 msgid "X Anchor Point"
 msgstr "X Anchor Point"
 
-#: includes/base/element-base.php:1155 includes/base/element-base.php:1159
+#: includes/base/element-base.php:1170 includes/base/element-base.php:1174
 msgid "Flip Vertical"
 msgstr "برگردان عمودی"
 
-#: includes/base/element-base.php:1136 includes/base/element-base.php:1140
+#: includes/base/element-base.php:1151 includes/base/element-base.php:1155
 msgid "Flip Horizontal"
 msgstr "برگردان افقی"
 
-#: includes/base/element-base.php:1112
+#: includes/base/element-base.php:1127
 msgid "Skew Y"
 msgstr "خمیدگی محور Y"
 
-#: includes/base/element-base.php:1090
+#: includes/base/element-base.php:1105
 msgid "Skew X"
 msgstr "خمیدگی محور X"
 
-#: includes/base/element-base.php:1078
+#: includes/base/element-base.php:1093
 msgid "Skew"
 msgstr "خمیدگی"
 
-#: includes/base/element-base.php:1053
+#: includes/base/element-base.php:1068
 msgid "Scale Y"
 msgstr "محور Y"
 
-#: includes/base/element-base.php:1030
+#: includes/base/element-base.php:1045
 msgid "Scale X"
 msgstr "محور X"
 
-#: includes/base/element-base.php:996
+#: includes/base/element-base.php:1011
 msgid "Keep Proportions"
 msgstr "حفظ تناسب"
 
-#: includes/base/element-base.php:956
+#: includes/base/element-base.php:971
 msgid "Offset Y"
 msgstr "انحراف محور Y"
 
-#: includes/base/element-base.php:930
+#: includes/base/element-base.php:945
 msgid "Offset X"
 msgstr "انحراف محور X"
 
-#: includes/base/element-base.php:894
+#: includes/base/element-base.php:909
 msgid "Perspective"
 msgstr "پرسپکتیو"
 
-#: includes/base/element-base.php:871
+#: includes/base/element-base.php:886
 msgid "Rotate Y"
 msgstr "چرخش y"
 
-#: includes/base/element-base.php:848
+#: includes/base/element-base.php:863
 msgid "Rotate X"
 msgstr "چرخش X"
 
-#: includes/base/element-base.php:832
+#: includes/base/element-base.php:847
 msgid "3D Rotate"
 msgstr "چرخش سه‌بعدی"
 
-#: includes/base/element-base.php:768
+#: includes/base/element-base.php:783
 msgid "Transform"
 msgstr "تبدیل"
 
@@ -1258,12 +1263,12 @@ msgid "Text Stroke"
 msgstr "مرز متن"
 
 #: includes/admin-templates/beta-tester.php:53 assets/js/ai-admin.js:2722
-#: assets/js/ai-admin.js:7719 assets/js/ai.js:3040 assets/js/ai.js:8037
+#: assets/js/ai-admin.js:7736 assets/js/ai.js:3040 assets/js/ai.js:8054
 msgid "Privacy Policy"
 msgstr "سیاست حفظ حریم خصوصی"
 
 #: includes/admin-templates/beta-tester.php:48 assets/js/ai-admin.js:2718
-#: assets/js/ai-admin.js:7715 assets/js/ai.js:3036 assets/js/ai.js:8033
+#: assets/js/ai-admin.js:7732 assets/js/ai.js:3036 assets/js/ai.js:8050
 msgid "Terms of Service"
 msgstr "شرایط استفاده از خدمات"
 
@@ -1276,19 +1281,19 @@ msgstr "با کلیک بر روی ثبت‌نام، با %1$s و %2$s المنت
 msgid "Log"
 msgstr "گزارش"
 
-#: core/experiments/manager.php:600
+#: core/experiments/manager.php:602
 msgid "Ongoing Experiments"
 msgstr "آزمایشات در حال انجام"
 
-#: core/experiments/manager.php:556
+#: core/experiments/manager.php:558
 msgid "Stable Features"
 msgstr "امکانات باثبات"
 
-#: core/experiments/manager.php:359
+#: core/experiments/manager.php:358
 msgid "The “Inline Font Icons” will render the icons as inline SVG without loading the Font-Awesome and the eicons libraries and its related CSS files and fonts."
 msgstr "\"فونت آیکون‌های توکار\" نمادها را بدون بارگیری Font-Awesome و کتابخانه‌های eicons و فایل‌ها و فونت‌های CSS مربوط به آن، به‌صورت SVG توکار ارائه می‌کند."
 
-#: core/experiments/manager.php:357
+#: core/experiments/manager.php:356
 msgid "Inline Font Icons"
 msgstr "نمادهای فونت درون خطی"
 
@@ -1333,17 +1338,6 @@ msgstr "یا %1$sموارد حذف شده%1$s را ببینید"
 msgid "Learn more about %1$sWordPress revisions%2$s"
 msgstr "درباره %1$sبازبینی‌های وردپرس%2$s بیشتر بیاموزید"
 
-#. translators: 1: Function argument, 2: Elementor version number.
-#: modules/dev-tools/deprecation.php:291
-msgid "The %1$s argument is deprecated since version %2$s!"
-msgstr "آرگومنت %1$s از نسخه %2$s منسوخ شده است!"
-
-#. translators: 1: Function argument, 2: Elementor version number, 3:
-#. Replacement argument name.
-#: modules/dev-tools/deprecation.php:287
-msgid "The %1$s argument is deprecated since version %2$s! Use %3$s instead."
-msgstr "آرگومنت %1$s از نسخه %2$s منسوخ شده است! به جای آن از %3$s استفاده کنید."
-
 #. translators: 1: Link open tag, 2: Link close tag.
 #: includes/widgets/common.php:934
 msgid "Explore additional Premium Shape packs and use them in your site. %1$sLearn More%2$s"
@@ -1354,11 +1348,11 @@ msgstr "بسته های شکل پریمیوم اضافی را کاوش کنید 
 msgid "%1$sClick here%2$s to join our first-to-know email updates."
 msgstr "برای پیوستن به بروزرسانی‌های ایمیلی %1$sاینجا را کلیک کنید%2$s."
 
-#: includes/managers/controls.php:1091
+#: includes/managers/controls.php:1090
 msgid "Meet Page Transitions"
 msgstr "‫با انتقال‌های صفحه آشنا شوید"
 
-#: includes/managers/controls.php:1079
+#: includes/managers/controls.php:1078
 msgid "Page Transitions let you style entrance and exit animations between pages as well as display loader until your page assets load."
 msgstr "انتقال‌های صفحه به شما امکان می‌دهد انیمیشن‌های ورود و خروج بین صفحات و همچنین نمایش دریافت را تنظیم کنید تا زمانی که محتوای صفحه شما دریافت شوند."
 
@@ -1367,43 +1361,43 @@ msgstr "انتقال‌های صفحه به شما امکان می‌دهد ان
 msgid "Select one or go ahead and %1$screate one%2$s now."
 msgstr "یکی را انتخاب کنید یا ادامه دهید و یکی %1$sایجاد کنید%2$s."
 
-#: includes/elements/column.php:437 includes/elements/container.php:839
-#: includes/elements/section.php:724
+#: includes/elements/column.php:437 includes/elements/container.php:879
+#: includes/elements/section.php:724 includes/widgets/heading.php:284
 msgid "Luminosity"
 msgstr "درخشش"
 
-#: includes/elements/column.php:432 includes/elements/container.php:837
-#: includes/elements/section.php:722
+#: includes/elements/column.php:432 includes/elements/container.php:877
+#: includes/elements/section.php:722 includes/widgets/heading.php:279
 msgid "Saturation"
 msgstr "اشباع رنگی"
 
-#: includes/elements/column.php:431 includes/elements/container.php:836
-#: includes/elements/section.php:721
+#: includes/elements/column.php:431 includes/elements/container.php:876
+#: includes/elements/section.php:721 includes/widgets/heading.php:278
 msgid "Color Dodge"
 msgstr "رنگ دوج"
 
-#: includes/elements/column.php:430 includes/elements/container.php:835
-#: includes/elements/section.php:720
+#: includes/elements/column.php:430 includes/elements/container.php:875
+#: includes/elements/section.php:720 includes/widgets/heading.php:277
 msgid "Lighten"
 msgstr "خیلی روشن"
 
-#: includes/elements/column.php:429 includes/elements/container.php:834
-#: includes/elements/section.php:719
+#: includes/elements/column.php:429 includes/elements/container.php:874
+#: includes/elements/section.php:719 includes/widgets/heading.php:276
 msgid "Darken"
 msgstr "خیلی تیره"
 
-#: includes/elements/column.php:428 includes/elements/container.php:833
-#: includes/elements/section.php:718
+#: includes/elements/column.php:428 includes/elements/container.php:873
+#: includes/elements/section.php:718 includes/widgets/heading.php:275
 msgid "Overlay"
 msgstr "روکش"
 
-#: includes/elements/column.php:427 includes/elements/container.php:832
-#: includes/elements/section.php:717
+#: includes/elements/column.php:427 includes/elements/container.php:872
+#: includes/elements/section.php:717 includes/widgets/heading.php:274
 msgid "Screen"
 msgstr "صفحه"
 
-#: includes/elements/column.php:426 includes/elements/container.php:831
-#: includes/elements/section.php:716
+#: includes/elements/column.php:426 includes/elements/container.php:871
+#: includes/elements/section.php:716 includes/widgets/heading.php:273
 msgid "Multiply"
 msgstr "ضرب"
 
@@ -1417,7 +1411,7 @@ msgid "You can enable it from the %1$sElementor settings page%2$s."
 msgstr "شما میتوانید این را در%1$s تنظیمات المنتور %2$s.فعال کنید."
 
 #. translators: %s: Device name.
-#: includes/base/element-base.php:1302
+#: includes/base/element-base.php:1317
 msgid "Hide On %s"
 msgstr "مخفی سازی در %s"
 
@@ -1432,39 +1426,39 @@ msgid "In order for Theme Style to affect all relevant Elementor elements, pleas
 msgstr "برای اینکه سبک قالب بر تمام عناصر مرتبط المنتور تأثیر بگذارد، لطفاً رنگ‌ها و قلم‌های پیش‌فرض را از %1$sصفحه تنظیمات%2$s غیرفعال کنید."
 
 #: core/kits/documents/tabs/settings-page-transitions.php:19
-#: includes/managers/controls.php:1073
+#: includes/managers/controls.php:1072
 msgid "Page Transitions"
 msgstr "انتقال‌های صفحه"
 
-#: core/kits/documents/tabs/settings-layout.php:346
+#: core/kits/documents/tabs/settings-layout.php:354
 msgid "Widescreen breakpoint settings will apply from the selected value and up."
 msgstr "تنظیمات نقطه شکست عریض از مقدار انتخاب شده به بالا اعمال می‌شود."
 
-#: core/experiments/manager.php:370
+#: core/experiments/manager.php:369
 msgid "Get pixel-perfect design for every screen size. You can now add up to 6 customizable breakpoints beyond the default desktop setting: mobile, mobile extra, tablet, tablet extra, laptop, and widescreen."
 msgstr "برای هر اندازه صفحه‌نمایش، طراحی کامل پیکسلی دریافت کنید. اکنون می‌توانید تا ۶ نقطه شکست قابل تنظیم، فراتر از تنظیمات پیش‌فرض دسک‌تاپ اضافه کنید: تلفن همراه، تلفن همراه بزرگ، تبلت، تبلت بزرگ، لپ‌تاپ و نمایشگر عریض."
 
-#: core/experiments/manager.php:368
+#: core/experiments/manager.php:367
 msgid "Additional Custom Breakpoints"
 msgstr "نقاط قطع سفارشی اضافی (جهت رسپانسیو سایت به کار میره)"
 
 #: includes/managers/elements.php:308
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:3551
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:3551
 msgid "Favorites"
 msgstr "علاقه‌مندی‌ها"
 
-#: core/experiments/manager.php:533
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:3174
+#: core/experiments/manager.php:535
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:3174
 msgid "Features"
 msgstr "ویژگی‌ها"
 
 #: includes/template-library/sources/admin-menu-items/templates-categories-menu-item.php:23
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:3167
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:3167
 msgid "Categories"
 msgstr "دسته‌بندی‌ها"
 
-#: modules/nested-accordion/widgets/nested-accordion.php:498
-#: assets/js/app-packages.js:5610
+#: modules/nested-accordion/widgets/nested-accordion.php:501
+#: assets/js/app-packages.js:5378
 msgid "Header"
 msgstr "سربرگ"
 
@@ -1477,7 +1471,7 @@ msgid "It seems like your site doesn't have any active Kit. The active Kit inclu
 msgstr "به نظر می رسد سایت شما هیچ کیت فعالی ندارد. کیت فعال شامل تمام تنظیمات سایت شما می شود. با ایجاد مجدد کیت خود، می توانید دوباره تنظیمات سایت خود را ویرایش کنید."
 
 #: includes/settings/tools.php:397 includes/settings/tools.php:400
-#: assets/js/editor.js:28123
+#: assets/js/editor.js:27933
 msgid "Recreate Kit"
 msgstr "ساخت مجدد کیت"
 
@@ -1523,7 +1517,7 @@ msgid "Submissions"
 msgstr "ارسالی ها"
 
 #: includes/editor-templates/panel.php:286
-#: includes/editor-templates/panel.php:288 assets/js/editor.js:12987
+#: includes/editor-templates/panel.php:288 assets/js/editor.js:12993
 msgid "Color Sampler"
 msgstr "نمونه‌گیر رنگ"
 
@@ -1539,11 +1533,11 @@ msgstr "عناصر پنهان"
 msgid "Responsive Preview"
 msgstr "پیشنمایش حالت رسپانسیو"
 
-#: core/experiments/manager.php:344
+#: core/experiments/manager.php:346
 msgid "Please Note! The “Improved CSS Loading” mode reduces the amount of CSS code that is loaded on the page by default. When activated, the CSS code will be loaded, rather inline or in a dedicated file, only when needed. Activating this experiment may cause conflicts with incompatible plugins."
 msgstr "لطفا توجه داشته باشید! حالت \"بارگذاری CSS بهبود یافته\" میزان کد CSS را که به طور پیش فرض در صفحه بارگیری می شود کاهش می دهد. هنگامی که فعال می شود ، کد CSS فقط در صورت لزوم به صورت درون ریز یا در یک فایل اختصاصی بارگیری می شود. فعال کردن این آزمایش ممکن است با افزونه های ناسازگار درگیری ایجاد کند."
 
-#: core/experiments/manager.php:342
+#: core/experiments/manager.php:344
 msgid "Improved CSS Loading"
 msgstr "بارگذاری CSS بهبود یافته"
 
@@ -1561,10 +1555,10 @@ msgstr "کیت وجود ندارد"
 #: app/modules/kit-library/module.php:33 app/modules/kit-library/module.php:34
 #: core/common/modules/finder/categories/general.php:78
 #: assets/js/import-export-admin.js:315
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:1530
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:3604
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:4095
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:4396
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:1530
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:3604
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:4095
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:4396
 msgid "Kit Library"
 msgstr "کتابخانه کیت"
 
@@ -1625,43 +1619,43 @@ msgstr "موقعیت عمودی"
 msgid "X Position"
 msgstr "موقعیت افقی"
 
-#: includes/widgets/common.php:1013 includes/widgets/image.php:385
+#: includes/widgets/common.php:1013 includes/widgets/image.php:384
 msgid "Bottom Right"
 msgstr "پایین راست"
 
-#: includes/widgets/common.php:1012 includes/widgets/image.php:384
+#: includes/widgets/common.php:1012 includes/widgets/image.php:383
 msgid "Bottom Left"
 msgstr "پایین چپ"
 
-#: includes/widgets/common.php:1011 includes/widgets/image.php:383
+#: includes/widgets/common.php:1011 includes/widgets/image.php:382
 msgid "Bottom Center"
 msgstr "پایین وسط"
 
-#: includes/widgets/common.php:1010 includes/widgets/image.php:382
+#: includes/widgets/common.php:1010 includes/widgets/image.php:381
 msgid "Top Right"
 msgstr "بالا راست"
 
-#: includes/widgets/common.php:1009 includes/widgets/image.php:381
+#: includes/widgets/common.php:1009 includes/widgets/image.php:380
 msgid "Top Left"
 msgstr "بالا چپ"
 
-#: includes/widgets/common.php:1008 includes/widgets/image.php:380
+#: includes/widgets/common.php:1008 includes/widgets/image.php:379
 msgid "Top Center"
 msgstr "بالا وسط"
 
-#: includes/widgets/common.php:1007 includes/widgets/image.php:379
+#: includes/widgets/common.php:1007 includes/widgets/image.php:378
 msgid "Center Right"
 msgstr "وسط راست"
 
-#: includes/widgets/common.php:1006 includes/widgets/image.php:378
+#: includes/widgets/common.php:1006 includes/widgets/image.php:377
 msgid "Center Left"
 msgstr "وسط چپ"
 
-#: includes/widgets/common.php:1005 includes/widgets/image.php:377
+#: includes/widgets/common.php:1005 includes/widgets/image.php:376
 msgid "Center Center"
 msgstr "وسط وسط"
 
-#: includes/base/element-base.php:984 includes/base/element-base.php:1007
+#: includes/base/element-base.php:999 includes/base/element-base.php:1022
 #: includes/widgets/common.php:966
 msgid "Scale"
 msgstr "مقیاس"
@@ -1797,8 +1791,8 @@ msgid "Design sites faster with a template kit that contains some or all compone
 msgstr "سایت‌ها را با یک کیت قالب که شامل برخی یا همه اجزای یک سایت کامل است، مانند قالب‌ها، محتوا و تنظیمات سایت، سریع‌تر طراحی کنید. %1$sمی‌توانید یک کیت را وارد کنید و آن را در سایت خود اعمال کنید، یا عناصر را از این سایت صادر کنید. در هر جای دیگری استفاده می شود. %2$s"
 
 #: app/modules/import-export/module.php:129 core/admin/admin-notices.php:368
-#: core/editor/editor.php:616 assets/js/app.js:8622
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:3386
+#: core/editor/editor.php:616 assets/js/app.js:8325
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:3386
 msgid "Learn more"
 msgstr "بیشتر بدانید"
 
@@ -1898,17 +1892,17 @@ msgstr "خطایی در خواندن پروندهٔ WXR رخ داد"
 msgid "This does not appear to be a WXR file, missing/invalid WXR version number"
 msgstr "به نظر نمی رسد این یک پرونده WXR باشد ، شماره نسخه WXR از دست رفته / نامعتبر باشد"
 
-#: core/kits/documents/tabs/settings-layout.php:204
+#: core/kits/documents/tabs/settings-layout.php:212
 msgid "Mobile and Tablet options cannot be deleted."
 msgstr "گزینه‌های تلفن همراه و تبلت قابل حذف نیستند."
 
-#: core/kits/documents/tabs/settings-layout.php:202
+#: core/kits/documents/tabs/settings-layout.php:210
 msgid "Active Breakpoints"
 msgstr "نقاط شکست فعال"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:727
-#: modules/nested-tabs/widgets/nested-tabs.php:774
-#: modules/nested-tabs/widgets/nested-tabs.php:820
+#: modules/nested-tabs/widgets/nested-tabs.php:747
+#: modules/nested-tabs/widgets/nested-tabs.php:794
+#: modules/nested-tabs/widgets/nested-tabs.php:840
 #: modules/shapes/widgets/text-path.php:503
 #: modules/shapes/widgets/text-path.php:568
 msgid "Stroke"
@@ -1976,32 +1970,32 @@ msgstr "کمان (Arc)"
 msgid "Wave"
 msgstr "موج"
 
-#: core/admin/notices/elementor-dev-notice.php:87
+#: core/admin/notices/elementor-dev-notice.php:81
 msgid "Install & Activate"
 msgstr "نصب و فعالسازی"
 
-#: core/admin/notices/elementor-dev-notice.php:82
+#: core/admin/notices/elementor-dev-notice.php:76
 msgid "Get a sneak peek at our in progress development versions, and help us improve Elementor to perfection. Developer Edition releases contain experimental functionality for testing purposes."
 msgstr "به نسخه های در حال پیشرفت ما سری بزنید و به ما کمک کنید تا المنتور را به بهترین شکل توسعه دهیم.  نسخه توسعه دهنده دارای قابلیت های آزمایشی برای اهداف آزمایش هستند."
 
-#: core/admin/notices/elementor-dev-notice.php:81
+#: core/admin/notices/elementor-dev-notice.php:75
 msgid "Elementor Developer Edition"
 msgstr "نسخه توسعه دهنده المنتور"
 
-#: core/experiments/manager.php:729
+#: core/experiments/manager.php:731
 msgid "Inactive by default"
 msgstr "به صورت پیشفرض غیرفعال است"
 
-#: core/experiments/manager.php:728
+#: core/experiments/manager.php:730
 msgid "Active by default"
 msgstr "به صورت پیشفرض فعال است"
 
-#: core/experiments/manager.php:618
+#: core/experiments/manager.php:620
 msgid "Status: %s"
 msgstr "وضعیت: %s"
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
-#: core/experiments/manager.php:586
+#: core/experiments/manager.php:588
 msgid "To use an experiment or feature on your site, simply click on the dropdown next to it and switch to Active. You can always deactivate them at any time. %1$sLearn More.%2$s"
 msgstr "برای استفاده از یک آزمایش یا ویژگی در سایت خود، کافی است روی منوی کشویی کنار آن کلیک کنید و به فعال بروید. شما همیشه می توانید آنها را در هر زمان غیرفعال کنید. %1$sبیشتر بیاموزید.%2$s"
 
@@ -2009,44 +2003,44 @@ msgstr "برای استفاده از یک آزمایش یا ویژگی در سا
 msgid "Experiments"
 msgstr "تجربیات"
 
-#: core/experiments/manager.php:521
+#: core/experiments/manager.php:523
 msgid "The current version of Elementor doesn't have any experimental features . if you're feeling curious make sure to come back in future versions."
 msgstr "نسخه فعلی المنتور هیچ ویژگی آزمایشی ندارد. اگر احساس کنجکاوی می کنید حتما در نسخه های آینده بازگردید."
 
-#: core/experiments/manager.php:518
+#: core/experiments/manager.php:520
 msgid "No available experiments"
 msgstr "آزمایش در دسترس نیست"
 
-#: core/experiments/manager.php:459
+#: core/experiments/manager.php:461
 msgid "Stable"
 msgstr "پایدار"
 
-#: core/experiments/manager.php:458
+#: core/experiments/manager.php:460
 msgid "Release Candidate"
 msgstr "نامزد انتشار"
 
-#: core/experiments/manager.php:457 assets/js/ai-admin.js:378
+#: core/experiments/manager.php:459 assets/js/ai-admin.js:378
 #: assets/js/ai.js:563
 msgid "Beta"
 msgstr "بتا"
 
-#: core/experiments/manager.php:456
+#: core/experiments/manager.php:458
 msgid "Alpha"
 msgstr "آلفا"
 
-#: core/experiments/manager.php:455
+#: core/experiments/manager.php:457
 msgid "Development"
 msgstr "توسعه"
 
-#: core/experiments/manager.php:332
+#: core/experiments/manager.php:334
 msgid "Please Note! The \"Improved Asset Loading\" mode reduces the amount of code that is loaded on the page by default. When activated, parts of the infrastructure code will be loaded dynamically, only when needed. Keep in mind that activating this experiment may cause conflicts with incompatible plugins."
 msgstr "لطفا توجه داشته باشید! حالت \"بهبود بارگذاری فایل ها\" میزان کدی را که به طور پیش فرض در صفحه بارگیری می شود کاهش می دهد. با فعال شدن، بخشهایی از کد زیرساخت به صورت پویا بارگیری می شوند، فقط در صورت نیاز. بخاطر داشته باشید که فعال کردن این آزمایش ممکن است با افزونه های ناسازگار درگیری ایجاد کند."
 
-#: core/experiments/manager.php:330
+#: core/experiments/manager.php:332
 msgid "Improved Asset Loading"
 msgstr "بارگذاری دارایی بهبود یافته"
 
-#: core/experiments/manager.php:320
+#: core/experiments/manager.php:322
 msgid "Developers, Please Note! This experiment includes some markup changes. If you've used custom code in Elementor, you might have experienced a snippet of code not running. Turning this experiment off allows you to keep prior Elementor markup output settings, and have that lovely code running again."
 msgstr "توسعه دهندگان، لطفا توجه داشته باشید! این آزمایش شامل برخی تغییرات نشانه گذاری است. اگر از کد سفارشی در المنتور استفاده کرده‌اید ، ممکن است قطعه کد اجرا نشده را تجربه کرده باشید. خاموش کردن این آزمایش به شما این امکان را می دهد تنظیمات المنتور را قبل از خروج حفظ کرده و آن کد را دوباره اجرا کنید."
 
@@ -2095,7 +2089,7 @@ msgstr "نوع جدیدی از عناصر النمتور را اضافه می ک
 #: modules/landing-pages/documents/landing-page.php:54
 #: modules/landing-pages/module.php:47 modules/landing-pages/module.php:138
 #: modules/landing-pages/module.php:269 modules/landing-pages/module.php:281
-#: assets/js/app.js:11343 assets/js/editor.js:50178
+#: assets/js/app.js:11046 assets/js/editor.js:50152
 msgid "Landing Pages"
 msgstr "صفحات فرود"
 
@@ -2160,14 +2154,13 @@ msgid "The Elementor Website Builder has it all: drag and drop page builder, pix
 msgstr "سازنده وب سایت المنتور همه این موارد را دارد: صفحه ساز به صورت کشیدن و رها کردن، طراحی عالی پیکسل ، ویرایش واکنشگرا برای موبایل و موارد دیگر در حال حاضر آغاز شده است!"
 
 #: core/kits/documents/tabs/global-colors.php:24
-#: core/kits/documents/tabs/global-colors.php:43
-#: assets/js/9901e5ed764a3348e6e0.bundle.js:175 assets/js/app.js:11351
-#: assets/js/editor.js:45758
+#: core/kits/documents/tabs/global-colors.php:43 assets/js/app.js:11054
+#: assets/js/d3bdd130eb38d3b07f85.bundle.js:175 assets/js/editor.js:45732
 msgid "Global Colors"
 msgstr "رنگ های عمومی"
 
-#: core/kits/documents/tabs/settings-layout.php:324
-#: modules/nested-tabs/widgets/nested-tabs.php:395
+#: core/kits/documents/tabs/settings-layout.php:332
+#: modules/nested-tabs/widgets/nested-tabs.php:415
 msgid "Breakpoint"
 msgstr "نقطه توقف"
 
@@ -2175,26 +2168,26 @@ msgstr "نقطه توقف"
 msgid "Error"
 msgstr "خطا"
 
-#: includes/widgets/social-icons.php:450
+#: includes/widgets/social-icons.php:449
 msgid "Rows Gap"
 msgstr "فاصله خط ها"
 
-#: includes/widgets/icon-list.php:192
+#: includes/widgets/icon-list.php:191
 msgid "Apply Link On"
 msgstr "اعمال لینک روی"
 
 #: includes/controls/groups/flex-container.php:24
 #: includes/controls/groups/grid-container.php:26
-#: includes/widgets/icon-list.php:159
+#: includes/widgets/icon-list.php:158
 #: modules/nested-accordion/widgets/nested-accordion.php:123
 msgid "Items"
 msgstr "آیتم ها"
 
-#: includes/widgets/common.php:952 includes/widgets/image.php:360
+#: includes/widgets/common.php:952 includes/widgets/image.php:359
 msgid "Fill"
 msgstr "پر"
 
-#: includes/widgets/image.php:353
+#: includes/widgets/image.php:352
 msgid "Object Fit"
 msgstr "متناسب با Object"
 
@@ -2202,7 +2195,7 @@ msgstr "متناسب با Object"
 msgid "Download"
 msgstr "دانلود"
 
-#: core/experiments/manager.php:318
+#: core/experiments/manager.php:320
 msgid "Optimized DOM Output"
 msgstr "بهینه سازی خروجی DOM"
 
@@ -2215,28 +2208,28 @@ msgid "Panel Width"
 msgstr "عرض پنل"
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
-#: core/admin/admin.php:811
+#: core/admin/admin.php:805
 msgid "The latest update includes some substantial changes across different areas of the plugin. We highly recommend you %1$sbackup your site before upgrading%2$s, and make sure you first update in a staging environment"
 msgstr "آخرین بروزرسانی شامل برخی تغییرات اساسی در مناطق مختلف افزونه است. اکیداً توصیه می‌کنیم %1$sاز سایت خود قبل از ارتقا نسخه پشتیبان تهیه کنید%2$s و مطمئن شوید که ابتدا در یک محیط استیجینگ بروزرسانی می‌کنید."
 
-#: core/admin/admin.php:805
+#: core/admin/admin.php:799
 msgid "Heads up, Please backup before upgrade!"
 msgstr "حواست باشه، قبل از ارتقا نسخه پشتیبان تهیه کنید!"
 
 #: core/settings/editor-preferences/model.php:38
-#: includes/editor-templates/hotkeys.php:156 assets/js/editor.js:37136
-#: assets/js/packages/editor-app-bar.js:1094
+#: includes/editor-templates/hotkeys.php:156 assets/js/editor.js:37075
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:1146
 msgid "User Preferences"
 msgstr "تنظیمات کاربر"
 
 #: core/kits/manager.php:429 includes/editor-templates/hotkeys.php:118
-#: assets/js/app.js:11349 assets/js/app.js:11830 assets/js/editor.js:45707
-#: assets/js/editor.js:45711 assets/js/editor.js:45721
-#: assets/js/packages/editor-app-bar.js:1021
+#: assets/js/app.js:11052 assets/js/app.js:11533 assets/js/editor.js:45681
+#: assets/js/editor.js:45685 assets/js/editor.js:45695
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:1073
 msgid "Site Settings"
 msgstr "تنظیمات سایت"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:336 assets/js/editor.js:46130
+#: modules/nested-tabs/widgets/nested-tabs.php:354 assets/js/editor.js:46104
 msgid "Additional Settings"
 msgstr "تنظیمات اضافی"
 
@@ -2266,7 +2259,7 @@ msgid "Suggested image dimensions: %1$s × %2$s pixels."
 msgstr "ابعاد پیشنهاد تصویر: %1$s × %2$s پیکسل."
 
 #: core/kits/documents/tabs/settings-site-identity.php:93
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:1003
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:1003
 msgid "Site Logo"
 msgstr "لوگو سایت"
 
@@ -2283,7 +2276,7 @@ msgid "Choose name"
 msgstr "یک نام انتخاب کنید"
 
 #: core/kits/documents/tabs/settings-site-identity.php:71
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:999
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:999
 msgid "Site Name"
 msgstr "نام سایت"
 
@@ -2291,19 +2284,19 @@ msgstr "نام سایت"
 msgid "Site Identity"
 msgstr "هویت سایت"
 
-#: core/kits/documents/tabs/settings-layout.php:181
+#: core/kits/documents/tabs/settings-layout.php:189
 msgid "Breakpoints"
 msgstr "نقطه شکست"
 
-#: core/kits/documents/tabs/settings-layout.php:170
+#: core/kits/documents/tabs/settings-layout.php:178
 msgid "Theme"
 msgstr "پوسته"
 
-#: core/kits/documents/tabs/settings-layout.php:167
+#: core/kits/documents/tabs/settings-layout.php:175
 msgid "Default Page Layout"
 msgstr "طرح‌بندی پیش فرض"
 
-#: core/kits/documents/tabs/settings-layout.php:47 assets/js/app.js:11351
+#: core/kits/documents/tabs/settings-layout.php:47 assets/js/app.js:11054
 msgid "Layout Settings"
 msgstr "تنظیمات طرح"
 
@@ -2329,7 +2322,7 @@ msgstr "با تماشای مجموعه های ویدیویی \"شروع کار\"
 
 #: includes/settings/settings.php:326 assets/js/admin.js:282
 #: assets/js/admin.js:289 assets/js/common.js:2090 assets/js/common.js:2097
-#: assets/js/editor.js:38856 assets/js/editor.js:38863
+#: assets/js/editor.js:38804 assets/js/editor.js:38811
 msgid "Enable Unfiltered File Uploads"
 msgstr "فعال سازی آپلود فایل های فیلتر نشده"
 
@@ -2386,15 +2379,15 @@ msgstr "ما به شدت توصیه می کنیم قبل از انجام این 
 msgid "The upgrade process includes a database update"
 msgstr "فرایند بروزرسانی شامل بروزرسانی پایگاه داده است"
 
-#: includes/managers/controls.php:1169
+#: includes/managers/controls.php:1168
 msgid "Attributes lets you add custom HTML attributes to any element."
 msgstr "خصوصیات به شما امکان اضافه کردن خصوصیات HTML را به هر المنتی می دهد."
 
-#: includes/managers/controls.php:1167
+#: includes/managers/controls.php:1166
 msgid "Meet Our Attributes"
 msgstr "مشاهده Attributes های ما"
 
-#: includes/managers/controls.php:1157
+#: includes/managers/controls.php:1156
 msgid "Attributes"
 msgstr "ویژگی‌ها"
 
@@ -2433,9 +2426,9 @@ msgstr "با استفاده از ویجت %s و ده ها قابلیت پرو، 
 msgid "%s Widget"
 msgstr "%s ویجت"
 
-#: core/experiments/manager.php:140 includes/editor-templates/global.php:29
-#: assets/js/ai-admin.js:3037 assets/js/ai.js:3355 assets/js/app.js:8193
-#: assets/js/editor.js:46019
+#: core/experiments/manager.php:142 includes/editor-templates/global.php:29
+#: assets/js/ai-admin.js:3037 assets/js/ai.js:3355 assets/js/app.js:7896
+#: assets/js/editor.js:45993
 msgid "Back"
 msgstr "قبلی"
 
@@ -2485,7 +2478,7 @@ msgstr "کیت"
 msgid "Already connected."
 msgstr "متصل شده است."
 
-#: includes/widgets/image-carousel.php:419
+#: includes/widgets/image-carousel.php:418
 msgid "Pause on Interaction"
 msgstr "مکث در واکنش"
 
@@ -2498,16 +2491,16 @@ msgstr "%s پخش کننده ویدئو"
 msgid "Background Position"
 msgstr "موقعیت پس زمینه"
 
-#: includes/controls/groups/background.php:651 includes/widgets/image.php:362
+#: includes/controls/groups/background.php:651 includes/widgets/image.php:361
 msgid "Contain"
 msgstr "دربرگیرنده"
 
-#: includes/controls/groups/background.php:650 includes/widgets/image.php:361
+#: includes/controls/groups/background.php:650 includes/widgets/image.php:360
 msgid "Cover"
 msgstr "پوشش"
 
 #: includes/controls/groups/background.php:649
-#: includes/elements/container.php:566 includes/widgets/social-icons.php:276
+#: includes/elements/container.php:607 includes/widgets/social-icons.php:275
 #: includes/widgets/video.php:534
 msgid "Auto"
 msgstr "خودکار"
@@ -2598,17 +2591,17 @@ msgstr "ویدیو"
 msgid "Clear Log"
 msgstr "پاک کردن لاگ"
 
-#: includes/frontend.php:1394 assets/js/app.js:8132 assets/js/app.js:9814
-#: assets/js/app.js:10730
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:1471
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:1522
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:1801
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:2078
+#: includes/frontend.php:1394 assets/js/app.js:7835 assets/js/app.js:9517
+#: assets/js/app.js:10433
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:1471
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:1522
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:1801
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:2078
 msgid "Next"
 msgstr "بعدی"
 
-#: includes/frontend.php:1393 assets/js/app.js:9006 assets/js/app.js:9801
-#: assets/js/app.js:10723
+#: includes/frontend.php:1393 assets/js/app.js:8709 assets/js/app.js:9504
+#: assets/js/app.js:10426
 msgid "Previous"
 msgstr "قبلی"
 
@@ -2616,7 +2609,8 @@ msgstr "قبلی"
 msgid "Amount"
 msgstr "مبلغ"
 
-#: includes/widgets/divider.php:474 assets/js/packages/editor-app-bar.js:842
+#: includes/widgets/divider.php:474
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:894
 msgid "Add Element"
 msgstr "افزودن المنت"
 
@@ -2821,7 +2815,7 @@ msgid "Template not exist."
 msgstr "قالب وجود ندارد."
 
 #. translators: 1: Link open tag, 2: Link close tag.
-#: includes/elements/column.php:910 includes/elements/container.php:1723
+#: includes/elements/column.php:910 includes/elements/container.php:1763
 #: includes/elements/section.php:1371 includes/widgets/common.php:1141
 msgid "Responsive visibility will take effect only on %1$s preview mode %2$s or live page, and not while editing in Elementor."
 msgstr "توجه: تنظیمات نمایش (نمایش/مخفی کردن برای موبایل، تبلت یا کامپیوتر رومیزی) تنها زمانی اثر می کند که شما در حالت پیشنمایش یا سفارشی سازی زنده باشید."
@@ -2900,48 +2894,48 @@ msgid "Sign Up"
 msgstr "ثبت نام"
 
 #: includes/controls/media.php:267 includes/controls/media.php:269
-#: assets/js/editor.js:7839
+#: assets/js/editor.js:7836
 msgid "Upload"
 msgstr "بارگذاری"
 
 #: includes/controls/icons.php:90 includes/controls/icons.php:116
-#: includes/controls/icons.php:200 assets/js/editor.js:8439
+#: includes/controls/icons.php:200 assets/js/editor.js:8436
 msgid "Icon Library"
 msgstr "کتابخانه آیکون"
 
-#: core/editor/editor.php:203
+#: core/editor/editor.php:204
 msgid "Document not found."
 msgstr "مستندی یافت نشد."
 
-#: includes/elements/container.php:1488 includes/widgets/common.php:466
+#: includes/elements/container.php:1528 includes/widgets/common.php:466
 msgid "Vertical Orientation"
 msgstr "جهت عمودی"
 
-#: includes/base/element-base.php:918 includes/elements/container.php:1410
-#: includes/elements/container.php:1449 includes/elements/container.php:1512
-#: includes/elements/container.php:1550 includes/widgets/common.php:388
+#: includes/base/element-base.php:933 includes/elements/container.php:1450
+#: includes/elements/container.php:1489 includes/elements/container.php:1552
+#: includes/elements/container.php:1590 includes/widgets/common.php:388
 #: includes/widgets/common.php:427 includes/widgets/common.php:490
 #: includes/widgets/common.php:528
 msgid "Offset"
 msgstr "افست"
 
-#: includes/elements/container.php:1385 includes/widgets/common.php:363
+#: includes/elements/container.php:1425 includes/widgets/common.php:363
 msgid "Horizontal Orientation"
 msgstr "جهت افقی"
 
-#: includes/elements/container.php:1366 includes/widgets/common.php:349
+#: includes/elements/container.php:1406 includes/widgets/common.php:349
 msgid "Fixed"
 msgstr "ثابت"
 
-#: includes/elements/container.php:1365 includes/widgets/common.php:348
+#: includes/elements/container.php:1405 includes/widgets/common.php:348
 msgid "Absolute"
 msgstr "مطلق"
 
-#: includes/elements/container.php:1346 includes/widgets/common.php:330
+#: includes/elements/container.php:1386 includes/widgets/common.php:330
 msgid "Custom positioning is not considered best practice for responsive web design and should not be used too frequently."
 msgstr "موقعیت سفارشی بهترین روش برای طراحی سایت واکنشگرا نیست و نباید بیش از حد از آن استفاده کرد."
 
-#: includes/elements/container.php:1346 includes/widgets/common.php:330
+#: includes/elements/container.php:1386 includes/widgets/common.php:330
 msgid "Please note!"
 msgstr "لطفا توجه داشته باشید!"
 
@@ -2953,15 +2947,15 @@ msgstr "مدیرکل"
 msgid "Get Help"
 msgstr "دریافت راهنمایی"
 
-#: includes/elements/container.php:565 includes/elements/section.php:477
+#: includes/elements/container.php:606 includes/elements/section.php:477
 msgid "Hidden"
 msgstr "مخفی"
 
-#: includes/elements/container.php:560 includes/elements/section.php:472
+#: includes/elements/container.php:601 includes/elements/section.php:472
 msgid "Overflow"
 msgstr "Overflow"
 
-#: includes/elements/column.php:847 includes/elements/container.php:1645
+#: includes/elements/column.php:847 includes/elements/container.php:1685
 #: includes/elements/section.php:1282 includes/widgets/common.php:621
 msgid "Motion Effects"
 msgstr "موشن افکت"
@@ -2981,7 +2975,7 @@ msgid "Space Around"
 msgstr "فضای اطراف"
 
 #: includes/elements/column.php:183 includes/elements/section.php:444
-#: includes/widgets/common.php:304 includes/widgets/image-carousel.php:671
+#: includes/widgets/common.php:304 includes/widgets/image-carousel.php:670
 msgid "Vertical Align"
 msgstr "تراز عمودی"
 
@@ -3094,8 +3088,8 @@ msgstr "دریافت پاپ آپ ساز"
 #: includes/template-library/sources/local.php:1722
 #: modules/promotions/admin-menu-items/popups-promotion-item.php:17
 #: modules/promotions/admin-menu-items/popups-promotion-item.php:21
-#: assets/js/app.js:11334
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:2208
+#: assets/js/app.js:11037
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:2208
 msgid "Popups"
 msgstr "پاپ آپ"
 
@@ -3103,8 +3097,8 @@ msgstr "پاپ آپ"
 #: app/modules/site-editor/module.php:31
 #: core/common/modules/finder/categories/general.php:72
 #: includes/template-library/sources/local.php:1721
-#: assets/js/app-packages.js:6157 assets/js/editor.js:45732
-#: assets/js/packages/editor-app-bar.js:1073
+#: assets/js/app-packages.js:5925 assets/js/editor.js:45706
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:1125
 msgid "Theme Builder"
 msgstr "پوسته ساز"
 
@@ -3175,7 +3169,7 @@ msgstr "پشتیبانی نمیشود"
 msgid "Users"
 msgstr "کاربران"
 
-#: core/common/modules/finder/categories/site.php:76 assets/js/app.js:11838
+#: core/common/modules/finder/categories/site.php:76 assets/js/app.js:11541
 msgid "Plugins"
 msgstr "افزونه‌ها"
 
@@ -3227,8 +3221,8 @@ msgstr "پیوست کپشن"
 msgid "Quit"
 msgstr "ساکت"
 
-#: includes/editor-templates/hotkeys.php:205 assets/js/editor.js:7137
-#: assets/js/packages/editor-app-bar.js:938
+#: includes/editor-templates/hotkeys.php:205 assets/js/editor.js:7134
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:990
 msgid "Keyboard Shortcuts"
 msgstr "کدهای کوتاه کیبورد"
 
@@ -3240,13 +3234,13 @@ msgstr "نمایش / مخفی کردن پنل"
 msgid "Go To"
 msgstr "برو به"
 
-#: includes/editor-templates/hotkeys.php:33 assets/js/ai-admin.js:6260
-#: assets/js/ai.js:6578
+#: includes/editor-templates/hotkeys.php:33 assets/js/ai-admin.js:6269
+#: assets/js/ai.js:6587
 msgid "Redo"
 msgstr "مجدداً"
 
-#: includes/editor-templates/hotkeys.php:25 assets/js/ai-admin.js:6249
-#: assets/js/ai.js:6567 assets/js/kit-elements-defaults-editor.js:236
+#: includes/editor-templates/hotkeys.php:25 assets/js/ai-admin.js:6258
+#: assets/js/ai.js:6576 assets/js/kit-elements-defaults-editor.js:236
 msgid "Undo"
 msgstr "واگرد"
 
@@ -3255,8 +3249,8 @@ msgid "Type to find anything in Elementor"
 msgstr "برای پیدا کردن هر چیزی در المنتور تایپ کنید"
 
 #: includes/editor-templates/hotkeys.php:102 assets/js/admin-top-bar.js:127
-#: assets/js/common.js:4704 assets/js/editor.js:37148
-#: assets/js/packages/editor-app-bar.js:870
+#: assets/js/common.js:4704 assets/js/editor.js:37087
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:922
 msgid "Finder"
 msgstr "جستجوگر"
 
@@ -3273,11 +3267,12 @@ msgid "Dashboard"
 msgstr "پیشخوان"
 
 #: core/common/modules/finder/categories/site.php:46
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:1060
 msgid "Homepage"
 msgstr "صفحه اصلی"
 
 #: core/common/modules/finder/categories/create.php:27
-#: assets/js/editor.js:44269
+#: assets/js/editor.js:44243
 msgid "Create"
 msgstr "ایجاد"
 
@@ -3289,7 +3284,7 @@ msgstr "تخفیف"
 msgid "Disconnected successfully."
 msgstr "اتصال با موفقیت قطع شد."
 
-#: core/common/modules/connect/apps/base-app.php:218 assets/js/editor.js:10448
+#: core/common/modules/connect/apps/base-app.php:218 assets/js/editor.js:10453
 msgid "Connected successfully."
 msgstr "با موفقیت متصل شد."
 
@@ -3301,7 +3296,7 @@ msgstr "با موفقیت متصل شد."
 msgid "Connect"
 msgstr "اتصال"
 
-#: core/base/document.php:1743
+#: core/base/document.php:1771
 msgid "Future"
 msgstr "آینده"
 
@@ -3349,11 +3344,11 @@ msgstr "صفحه اول خود را ایجاد کنید"
 #: includes/settings/admin-menu-items/getting-started-menu-item.php:23
 #: includes/settings/admin-menu-items/getting-started-menu-item.php:27
 #: includes/settings/admin-menu-items/getting-started-menu-item.php:52
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:788
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:788
 msgid "Getting Started"
 msgstr "شروع به کار"
 
-#: includes/widgets/inner-section.php:35 assets/js/editor.js:27254
+#: includes/widgets/inner-section.php:35 assets/js/editor.js:27064
 msgid "Inner Section"
 msgstr "بخش داخلی"
 
@@ -3372,19 +3367,19 @@ msgstr "خالی"
 #: includes/editor-templates/hotkeys.php:129
 #: includes/editor-templates/navigator.php:21
 #: includes/editor-templates/panel.php:88
-#: includes/editor-templates/panel.php:94 assets/js/editor.js:30786
+#: includes/editor-templates/panel.php:94 assets/js/editor.js:30620
 msgid "Navigator"
 msgstr "ناوبر"
 
 #: includes/editor-templates/library-layout.php:13
 #: includes/settings/admin-menu-items/getting-started-menu-item.php:55
 #: includes/settings/admin-menu-items/getting-started-menu-item.php:56
-#: assets/js/app-packages.js:3075 assets/js/app.js:4261
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:1221
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:1376
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:1617
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:1792
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:2113
+#: assets/js/app-packages.js:2843 assets/js/app.js:3964
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:1221
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:1376
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:1617
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:1792
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:2113
 msgid "Skip"
 msgstr "پرش"
 
@@ -3461,11 +3456,11 @@ msgstr "دیلی موشن"
 msgid "Source"
 msgstr "منبع"
 
-#: includes/widgets/traits/button-trait.php:225
+#: includes/widgets/traits/button-trait.php:224
 msgid "Please make sure the ID is unique and not used elsewhere on the page this form is displayed. This field allows %1$sA-z 0-9%2$s & underscore chars without spaces."
 msgstr "لطفاً مطمئن شوید که شناسه منحصر به فرد است و در جای دیگری از صفحه نمایش این فرم استفاده نشده است. این فیلد به %1$sA-z 0-9%2$s و نویسه‌های زیرخط بدون فاصله اجازه می‌دهد."
 
-#: includes/widgets/traits/button-trait.php:214
+#: includes/widgets/traits/button-trait.php:213
 msgid "Button ID"
 msgstr "شناسه دکمه"
 
@@ -3487,12 +3482,12 @@ msgstr "سایت"
 msgid "Pro"
 msgstr "پرو"
 
-#: includes/elements/column.php:422 includes/elements/container.php:827
+#: includes/elements/column.php:422 includes/elements/container.php:867
 #: includes/elements/section.php:712 includes/widgets/heading.php:269
 msgid "Blend Mode"
 msgstr "حالت ادغام"
 
-#: includes/editor-templates/hotkeys.php:42 assets/js/editor.js:29888
+#: includes/editor-templates/hotkeys.php:42 assets/js/editor.js:29718
 msgid "Copy"
 msgstr "کپی"
 
@@ -3553,7 +3548,7 @@ msgstr "من لایسنس اصلی افزونه را دارم"
 msgid "Elementor Debugger"
 msgstr "دیباگرِ المنتور"
 
-#: core/admin/admin.php:227 assets/js/admin.js:2025 assets/js/gutenberg.js:109
+#: core/admin/admin.php:217 assets/js/admin.js:2025 assets/js/gutenberg.js:122
 msgid "Back to WordPress Editor"
 msgstr "بازگشت به ویرایشگر وردپرس"
 
@@ -3563,7 +3558,7 @@ msgid "Elementor %s"
 msgstr "المنتور %s"
 
 #. translators: %s: Template type label.
-#: core/base/document.php:174
+#: core/base/document.php:210
 #: core/common/modules/finder/categories/create.php:86
 #: includes/template-library/sources/local.php:1377
 msgid "Add New %s"
@@ -3582,28 +3577,28 @@ msgstr "Canvas المنتور"
 #: core/kits/documents/tabs/theme-style-images.php:95
 #: core/kits/documents/tabs/theme-style-images.php:166
 #: includes/elements/column.php:391 includes/elements/column.php:465
-#: includes/elements/container.php:781 includes/elements/container.php:895
+#: includes/elements/container.php:821 includes/elements/container.php:935
 #: includes/elements/section.php:666 includes/elements/section.php:770
-#: includes/widgets/image-box.php:398 includes/widgets/image-box.php:452
-#: includes/widgets/image.php:416 includes/widgets/image.php:450
+#: includes/widgets/image-box.php:397 includes/widgets/image-box.php:451
+#: includes/widgets/image.php:415 includes/widgets/image.php:449
 msgid "Opacity"
 msgstr "شفافیت"
 
-#: includes/widgets/image.php:296
+#: includes/widgets/image.php:295
 msgid "Max Width"
 msgstr "حداکثر عرض"
 
-#: includes/elements/container.php:1360 includes/widgets/common.php:343
+#: includes/elements/container.php:1400 includes/widgets/common.php:343
 #: includes/widgets/common.php:1002 includes/widgets/divider.php:744
-#: includes/widgets/divider.php:884 includes/widgets/image-carousel.php:531
-#: includes/widgets/image-carousel.php:595 includes/widgets/tabs.php:171
+#: includes/widgets/divider.php:884 includes/widgets/image-carousel.php:530
+#: includes/widgets/image-carousel.php:594 includes/widgets/tabs.php:171
 #: modules/nested-accordion/widgets/nested-accordion.php:190
-#: modules/nested-tabs/widgets/nested-tabs.php:838
+#: modules/nested-tabs/widgets/nested-tabs.php:863
 msgid "Position"
 msgstr "جایگاه"
 
 #. translators: 1: Elementor, 2: Link to plugin review
-#: core/admin/admin.php:411
+#: core/admin/admin.php:401
 msgid "Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your support!"
 msgstr "لذت بردید%1$s?لطفا به ما امتیاز a %2$s دهید.از پشتیبانی شما سپاسگذاریم!"
 
@@ -3632,7 +3627,7 @@ msgid "Play Video"
 msgstr "پخش ویدیو"
 
 #: includes/widgets/common.php:226 includes/widgets/icon-list.php:104
-#: includes/widgets/icon-list.php:196
+#: includes/widgets/icon-list.php:195
 msgid "Inline"
 msgstr "در متن"
 
@@ -3641,7 +3636,8 @@ msgid "Separator"
 msgstr "جداکننده"
 
 #: includes/template-library/sources/admin-menu-items/add-new-template-menu-item.php:23
-#: modules/landing-pages/module.php:271 assets/js/app-packages.js:4842
+#: modules/landing-pages/module.php:271 assets/js/app-packages.js:4610
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:1113
 msgid "Add New"
 msgstr "افزودن جدید"
 
@@ -3698,7 +3694,7 @@ msgstr "افزودن فونت‌های سفارشی"
 #: core/kits/documents/tabs/global-typography.php:182
 #: modules/promotions/admin-menu-items/custom-fonts-promotion-item.php:11
 #: modules/promotions/admin-menu-items/custom-fonts-promotion-item.php:15
-#: assets/js/9901e5ed764a3348e6e0.bundle.js:237
+#: assets/js/d3bdd130eb38d3b07f85.bundle.js:237
 msgid "Custom Fonts"
 msgstr "فونت‌های سفارشی"
 
@@ -3711,10 +3707,11 @@ msgid "Search Templates:"
 msgstr "جستجوی قالب ها:"
 
 #: core/document-types/page.php:65 modules/library/documents/page.php:61
-#: assets/js/app.js:12120 assets/js/editor.js:9750
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:2194
-#: assets/js/packages/editor-site-navigation.js:756
-#: assets/js/packages/editor-site-navigation.js:783
+#: assets/js/app.js:11823 assets/js/editor.js:9755
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:2194
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:434
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:1161
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:1180
 msgid "Pages"
 msgstr "برگه‌ها"
 
@@ -3728,9 +3725,9 @@ msgid "Groove"
 msgstr "شیاردار"
 
 #. translators: %s: Document title.
-#: core/base/document.php:1130 core/settings/page/model.php:126
+#: core/base/document.php:1158 core/settings/page/model.php:126
 #: includes/editor-templates/panel.php:83
-#: assets/js/packages/editor-app-bar.js:588
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:639
 msgid "%s Settings"
 msgstr "تنظیمات %s"
 
@@ -3769,7 +3766,7 @@ msgstr "تصویر شاخص"
 msgid "Body Style"
 msgstr "استایل بدنه"
 
-#: core/base/document.php:166
+#: core/base/document.php:202
 msgid "Document"
 msgstr "داکیومنت"
 
@@ -3789,7 +3786,7 @@ msgstr "مشخص کنید چه تعداد اسلاید در هر چرخش اسک
 msgid "Note: Attachment Fixed works only on desktop."
 msgstr "توجه: حالت های ضمیمه و ثابت فقط در نسخه دسکتاپ به کار می روند."
 
-#: core/admin/admin.php:480
+#: core/admin/admin.php:470
 msgid "Create New Post"
 msgstr "ایجاد نوشته جدید"
 
@@ -3835,27 +3832,27 @@ msgid "This is an Alert"
 msgstr "این یک هشدار است"
 
 #: includes/widgets/accordion.php:200 includes/widgets/toggle.php:203
-#: modules/nested-tabs/widgets/nested-tabs.php:119
+#: modules/nested-tabs/widgets/nested-tabs.php:121
 msgid "Active Icon"
 msgstr "آیکن فعال"
 
 #. translators: 1: Editing date, 2: Author display name.
-#: core/base/document.php:1448
+#: core/base/document.php:1476
 msgid "Last edited on %1$s by %2$s"
 msgstr "در %1$s توسط %2$s ویرایش شده است"
 
 #. translators: 1: Saving date, 2: Author display name.
-#: core/base/document.php:1445
+#: core/base/document.php:1473
 msgid "Draft saved on %1$s by %2$s"
 msgstr "در %1$s توسط %2$s پیشنویس شده است."
 
-#: core/base/document.php:1440
+#: core/base/document.php:1468
 msgctxt "revision date format"
 msgid "M j, H:i"
 msgstr "M j, H:i"
 
 #. translators: %s: Document title.
-#: core/base/document.php:149
+#: core/base/document.php:185
 msgid "Hurray! Your %s is live."
 msgstr "هورا ! %s شما آنلاین است."
 
@@ -3864,19 +3861,19 @@ msgstr "هورا ! %s شما آنلاین است."
 msgid "Published"
 msgstr "منتشر شده"
 
-#: core/common/modules/finder/template.php:19 assets/js/editor.js:10795
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:1871
+#: core/common/modules/finder/template.php:19 assets/js/editor.js:10800
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:1871
 msgid "No Results Found"
 msgstr "نتیجه ای یافت نشد"
 
-#: includes/editor-templates/templates.php:245 assets/js/app-packages.js:2763
-#: assets/js/app.js:3949
+#: includes/editor-templates/templates.php:245 assets/js/app-packages.js:2531
+#: assets/js/app.js:3652
 msgid "Select File"
 msgstr "انتخاب فایل"
 
 #: includes/editor-templates/templates.php:244
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:1964
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:2308
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:1964
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:2308
 msgid "or"
 msgstr "یا"
 
@@ -3891,9 +3888,9 @@ msgstr "درون ریزی قالب به کتابخانه شما"
 #: includes/editor-templates/templates.php:233
 #: includes/editor-templates/templates.php:249
 #: includes/editor-templates/templates.php:262
-#: includes/widgets/traits/button-trait.php:58 assets/js/app.js:7873
-#: assets/js/app.js:8879
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:2320
+#: includes/widgets/traits/button-trait.php:58 assets/js/app.js:7576
+#: assets/js/app.js:8582
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:2320
 msgid "Click here"
 msgstr "اینجا کلیک کنید"
 
@@ -3924,7 +3921,7 @@ msgid "My Favorites"
 msgstr "مورد علاقه من"
 
 #: includes/editor-templates/templates.php:70
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:3700
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:3700
 msgid "Popular"
 msgstr "محبوب"
 
@@ -3933,7 +3930,7 @@ msgid "Trend"
 msgstr "پر مصرف"
 
 #: includes/editor-templates/templates.php:66
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:3696
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:3696
 msgid "New"
 msgstr "جدید"
 
@@ -3946,13 +3943,14 @@ msgstr "درون‌ریزی قالب"
 #: includes/controls/icons.php:85 includes/controls/media.php:215
 #: includes/controls/media.php:217 includes/controls/media.php:263
 #: includes/controls/media.php:265 includes/editor-templates/repeater.php:27
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:919
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:919
 msgid "Remove"
 msgstr "حذف"
 
 #: includes/editor-templates/hotkeys.php:74
-#: includes/editor-templates/repeater.php:21 assets/js/editor.js:29873
-#: assets/js/editor.js:48849 assets/js/packages/editor-site-navigation.js:567
+#: includes/editor-templates/repeater.php:21 assets/js/editor.js:29703
+#: assets/js/editor.js:48823
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:859
 msgid "Duplicate"
 msgstr "تکثیر"
 
@@ -3961,35 +3959,36 @@ msgid "Drag & Drop"
 msgstr "درگ اند دراپ"
 
 #: includes/editor-templates/panel.php:151
-#: includes/editor-templates/panel.php:153 assets/js/editor.js:35543
+#: includes/editor-templates/panel.php:153 assets/js/editor.js:35435
 msgid "Hide Panel"
 msgstr "مخفی سازی پنل"
 
-#: includes/editor-templates/panel.php:143 assets/js/editor.js:32332
-#: assets/js/editor.js:32795 assets/js/packages/editor-app-bar.js:665
+#: includes/editor-templates/panel.php:143 assets/js/editor.js:32185
+#: assets/js/editor.js:32680
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:716
 msgid "Save as Template"
 msgstr "ذخیره قالب"
 
 #: includes/editor-templates/panel.php:139
-#: assets/js/packages/editor-app-bar.js:651
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:702
 msgid "Save Draft"
 msgstr "ذخیره پیش نویس"
 
 #: includes/editor-templates/panel.php:124
 #: includes/editor-templates/panel.php:126
-#: assets/js/packages/editor-app-bar.js:748
-#: assets/js/packages/editor-app-bar.js:764
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:800
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:816
 msgid "Save Options"
 msgstr "تنظیمات ذخیره سازی"
 
-#: includes/editor-templates/panel.php:119 assets/js/editor.js:24884
-#: assets/js/packages/editor-app-bar.js:771
+#: includes/editor-templates/panel.php:119 assets/js/editor.js:24694
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:823
 msgid "Publish"
 msgstr "انتشار"
 
 #: includes/editor-templates/panel.php:107
 #: includes/editor-templates/panel.php:110
-#: assets/js/packages/editor-app-bar.js:624
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:675
 msgid "Preview Changes"
 msgstr "پیشنمایش تغییرات"
 
@@ -3997,7 +3996,7 @@ msgstr "پیشنمایش تغییرات"
 msgid "Search Widget:"
 msgstr "جستجوی ابزارک ها:"
 
-#: core/experiments/manager.php:596 includes/controls/popover-toggle.php:71
+#: core/experiments/manager.php:598 includes/controls/popover-toggle.php:71
 #: includes/controls/popover-toggle.php:73
 msgid "Back to default"
 msgstr "بازگردانی پیشفرض"
@@ -4026,32 +4025,32 @@ msgstr "دکوراسیون"
 msgid "Unlinked values"
 msgstr "عدم اتصال مقادیر"
 
-#: core/admin/admin.php:620
+#: core/admin/admin.php:610
 msgid "Blog"
 msgstr "بلاگ"
 
-#: core/admin/admin.php:600
+#: core/admin/admin.php:590
 msgid "(opens in a new window)"
 msgstr "(باز کردن در پنجره جدید)"
 
-#: core/admin/admin.php:568
+#: core/admin/admin.php:558
 msgid "News & Updates"
 msgstr "اخبار و بروزرسانی‌ها"
 
-#: core/admin/admin.php:535
+#: core/admin/admin.php:525
 msgctxt "Dashboard Overview Widget Recently Date"
 msgid "M jS"
 msgstr "M jS"
 
-#: core/admin/admin.php:527
+#: core/admin/admin.php:517
 msgid "Recently Edited"
 msgstr "به تازگی ویرایش شده"
 
-#: core/admin/admin.php:477
+#: core/admin/admin.php:467
 msgid "Create New Page"
 msgstr "ایجاد برگه جدید"
 
-#: core/admin/admin.php:431
+#: core/admin/admin.php:421
 msgid "Elementor Overview"
 msgstr "نمای کلی المنتور"
 
@@ -4070,24 +4069,26 @@ msgid "Disable Default Fonts"
 msgstr "غیرفعال کردن فونت‌های پیشفرض"
 
 #: includes/elements/column.php:218 includes/widgets/accordion.php:414
-#: includes/widgets/common.php:316 includes/widgets/icon-list.php:564
-#: includes/widgets/image-carousel.php:683 includes/widgets/tabs.php:198
+#: includes/widgets/common.php:316 includes/widgets/icon-list.php:563
+#: includes/widgets/image-carousel.php:682 includes/widgets/tabs.php:198
 #: includes/widgets/tabs.php:228 includes/widgets/toggle.php:432
 #: modules/nested-accordion/widgets/nested-accordion.php:158
 #: modules/nested-accordion/widgets/nested-accordion.php:198
-#: modules/nested-tabs/widgets/nested-tabs.php:213
-#: modules/nested-tabs/widgets/nested-tabs.php:253
+#: modules/nested-tabs/widgets/nested-tabs.php:225
+#: modules/nested-tabs/widgets/nested-tabs.php:267
+#: modules/nested-tabs/widgets/nested-tabs.php:337
 msgid "End"
 msgstr "پایان"
 
 #: includes/elements/column.php:216 includes/widgets/accordion.php:410
-#: includes/widgets/common.php:308 includes/widgets/icon-list.php:556
-#: includes/widgets/image-carousel.php:675 includes/widgets/tabs.php:190
+#: includes/widgets/common.php:308 includes/widgets/icon-list.php:555
+#: includes/widgets/image-carousel.php:674 includes/widgets/tabs.php:190
 #: includes/widgets/tabs.php:220 includes/widgets/toggle.php:428
 #: modules/nested-accordion/widgets/nested-accordion.php:150
 #: modules/nested-accordion/widgets/nested-accordion.php:194
-#: modules/nested-tabs/widgets/nested-tabs.php:205
-#: modules/nested-tabs/widgets/nested-tabs.php:245
+#: modules/nested-tabs/widgets/nested-tabs.php:217
+#: modules/nested-tabs/widgets/nested-tabs.php:259
+#: modules/nested-tabs/widgets/nested-tabs.php:329
 msgid "Start"
 msgstr "آغاز"
 
@@ -4125,20 +4126,20 @@ msgid "Switch to Revisions tab for older versions"
 msgstr "جهت مشاهده نسخه های قدیمی تر به زبانه بازنگری‌ها بروید"
 
 #: modules/history/views/history-panel-template.php:10
-#: assets/js/editor.js:48576
+#: assets/js/editor.js:48550
 msgid "Revisions"
 msgstr "بازنگری‌ها"
 
 #: includes/editor-templates/hotkeys.php:19
 #: includes/editor-templates/templates.php:124
-#: modules/history/views/history-panel-template.php:9 assets/js/editor.js:48573
+#: modules/history/views/history-panel-template.php:9 assets/js/editor.js:48547
 msgid "Actions"
 msgstr "عملیات"
 
 #: includes/editor-templates/hotkeys.php:147
 #: includes/editor-templates/panel.php:97
-#: includes/editor-templates/panel.php:99 assets/js/editor.js:49173
-#: assets/js/packages/editor-app-bar.js:914
+#: includes/editor-templates/panel.php:99 assets/js/editor.js:49147
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:966
 msgid "History"
 msgstr "تاریخچه"
 
@@ -4153,10 +4154,10 @@ msgid "UI Color"
 msgstr "رنگ رابط کاربری"
 
 #: includes/widgets/video.php:809
-#: modules/nested-accordion/widgets/nested-accordion.php:659
-#: modules/nested-tabs/widgets/nested-tabs.php:714
-#: modules/nested-tabs/widgets/nested-tabs.php:760
-#: modules/nested-tabs/widgets/nested-tabs.php:807
+#: modules/nested-accordion/widgets/nested-accordion.php:662
+#: modules/nested-tabs/widgets/nested-tabs.php:734
+#: modules/nested-tabs/widgets/nested-tabs.php:780
+#: modules/nested-tabs/widgets/nested-tabs.php:827
 msgctxt "Text Shadow Control"
 msgid "Shadow"
 msgstr "سایه"
@@ -4222,10 +4223,11 @@ msgid "Switch Editor Loader Method"
 msgstr "تغییر روش بارگذاری ویرایشگر"
 
 #: includes/settings/settings.php:271
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:506
 msgid "Integrations"
 msgstr "یکپارچه سازی"
 
-#: core/kits/documents/tabs/settings-layout.php:121
+#: core/kits/documents/tabs/settings-layout.php:120
 msgid "Sets the default space between widgets (Default: 20px)"
 msgstr "فضای بین ابزارک‌ها را تنظیم می‌کند (پیشفرض: ۲۰ پیکسل)."
 
@@ -4234,35 +4236,35 @@ msgstr "فضای بین ابزارک‌ها را تنظیم می‌کند (پی�
 msgid "Rollback to Previous Version"
 msgstr "بازگشت به نسخه قبل"
 
-#: includes/elements/column.php:882 includes/elements/container.php:1680
+#: includes/elements/column.php:882 includes/elements/container.php:1720
 #: includes/elements/section.php:1317 includes/widgets/common.php:656
 msgid "Animation Delay"
 msgstr "تاخیر انیمیشن"
 
-#: includes/elements/column.php:777 includes/elements/container.php:1588
+#: includes/elements/column.php:777 includes/elements/container.php:1628
 #: includes/elements/section.php:1232 includes/widgets/common.php:566
 msgid "Z-Index"
 msgstr "ایندکس Z"
 
 #: core/kits/documents/tabs/theme-style-form-fields.php:137
 #: core/kits/documents/tabs/theme-style-images.php:203
-#: includes/base/element-base.php:1175
+#: includes/base/element-base.php:1190
 #: includes/controls/groups/background.php:633 includes/elements/column.php:328
 #: includes/elements/column.php:496 includes/elements/column.php:603
-#: includes/elements/container.php:708 includes/elements/container.php:926
-#: includes/elements/container.php:1074 includes/elements/section.php:606
+#: includes/elements/container.php:748 includes/elements/container.php:966
+#: includes/elements/container.php:1114 includes/elements/section.php:606
 #: includes/elements/section.php:801 includes/elements/section.php:907
 #: includes/widgets/alert.php:429 includes/widgets/common.php:731
 #: includes/widgets/common.php:845 includes/widgets/google-maps.php:240
-#: includes/widgets/icon-list.php:450 includes/widgets/icon-list.php:678
-#: includes/widgets/image-box.php:416 includes/widgets/image.php:476
-#: modules/nested-tabs/widgets/nested-tabs.php:564
+#: includes/widgets/icon-list.php:449 includes/widgets/icon-list.php:677
+#: includes/widgets/image-box.php:415 includes/widgets/image.php:475
+#: modules/nested-tabs/widgets/nested-tabs.php:584
 #: modules/shapes/widgets/text-path.php:443
 #: modules/shapes/widgets/text-path.php:609
 msgid "Transition Duration"
 msgstr "مدت زمان جابجایی"
 
-#: core/kits/documents/tabs/settings-layout.php:101
+#: core/kits/documents/tabs/settings-layout.php:103
 #: includes/elements/column.php:234
 msgid "Widgets Space"
 msgstr "فضای بین ابزارک ها"
@@ -4316,22 +4318,22 @@ msgstr "فقط در مورد عیب یابی به کار گرفته شود."
 #: core/debug/inspector.php:55 includes/settings/settings.php:320
 #: includes/settings/settings.php:332 includes/settings/settings.php:343
 #: includes/settings/tools.php:384 modules/generator-tag/module.php:81
-#: modules/nested-tabs/widgets/nested-tabs.php:347
+#: modules/nested-tabs/widgets/nested-tabs.php:365
 #: modules/safe-mode/module.php:48 assets/js/admin.js:282
-#: assets/js/app-packages.js:3071 assets/js/app.js:4257
-#: assets/js/common.js:2090 assets/js/editor.js:38856
+#: assets/js/app-packages.js:2839 assets/js/app.js:3960
+#: assets/js/common.js:2090 assets/js/editor.js:38804
 msgid "Enable"
 msgstr "فعال‌سازی"
 
 #: core/debug/inspector.php:54 includes/settings/settings.php:319
 #: includes/settings/settings.php:331 includes/settings/settings.php:344
 #: includes/settings/tools.php:383 modules/generator-tag/module.php:82
-#: modules/nested-tabs/widgets/nested-tabs.php:346
+#: modules/nested-tabs/widgets/nested-tabs.php:364
 #: modules/safe-mode/module.php:47
 msgid "Disable"
 msgstr "غیرفعال"
 
-#: core/base/document.php:1749
+#: core/base/document.php:1777
 msgid "Status"
 msgstr "وضعیت"
 
@@ -4344,11 +4346,11 @@ msgstr "فضای خالی"
 msgid "Drop Cap"
 msgstr "حرف اول بزرگ"
 
-#: core/kits/documents/tabs/settings-layout.php:136
+#: core/kits/documents/tabs/settings-layout.php:144
 msgid "Elementor lets you hide the page title. This works for themes that have \"h1.entry-title\" selector. If your theme's selector is different, please enter it above."
 msgstr "المنتور به شما اجازه می دهد تا عنوان برگه را مخفی کنید. این ویژگی برای پوسته هایی که سلکتور h1.entry-title دارند کار می کند. اگر پوسته شما از سلکتور متفاوتی استفاده می کند، آن را مشخص کنید."
 
-#: core/kits/documents/tabs/settings-layout.php:132
+#: core/kits/documents/tabs/settings-layout.php:140
 msgid "Page Title Selector"
 msgstr "سلکتور عنوان برگه"
 
@@ -4361,7 +4363,7 @@ msgstr "انتخاب"
 msgid "Paste Style"
 msgstr "پیست استایل"
 
-#: core/common/modules/finder/categories/edit.php:118 assets/js/editor.js:18277
+#: core/common/modules/finder/categories/edit.php:118 assets/js/editor.js:18183
 msgid "Template"
 msgstr "قالب"
 
@@ -4382,7 +4384,7 @@ msgid "To enable maintenance mode you have to set a template for the maintenance
 msgstr "جهت فعالسازی حالت تعمیر می بایست یک قالب برای برگه در دست تعمیر تعریف کنید."
 
 #: includes/maintenance-mode.php:292 includes/maintenance-mode.php:369
-#: assets/js/app.js:10595
+#: assets/js/app.js:10298
 msgid "Edit Template"
 msgstr "ویرایش قالب"
 
@@ -4419,7 +4421,7 @@ msgid "Coming Soon"
 msgstr "به زودی"
 
 #: core/kits/documents/kit.php:169 includes/maintenance-mode.php:215
-#: assets/js/editor.js:48848
+#: assets/js/editor.js:48822
 msgid "Disabled"
 msgstr "غیرفعال شده"
 
@@ -4436,24 +4438,24 @@ msgstr "قرار دادن وبسایت در حالت تعمیر به این مع
 msgid "Maintenance Mode"
 msgstr "حالت تعمیر"
 
-#: includes/elements/container.php:1255 includes/elements/section.php:1082
+#: includes/elements/container.php:1295 includes/elements/section.php:1082
 msgid "Bring to Front"
 msgstr "جلو آوردن"
 
 #: core/kits/documents/tabs/settings-lightbox.php:18
-#: includes/widgets/image-carousel.php:322
-#: includes/widgets/image-gallery.php:142 includes/widgets/image.php:219
+#: includes/widgets/image-carousel.php:321
+#: includes/widgets/image-gallery.php:142 includes/widgets/image.php:218
 #: includes/widgets/video.php:677 includes/widgets/video.php:825
 msgid "Lightbox"
 msgstr "لایت باکس"
 
 #: includes/elements/column.php:191 includes/elements/column.php:219
-#: includes/elements/section.php:452 includes/widgets/icon-list.php:217
+#: includes/elements/section.php:452 includes/widgets/icon-list.php:216
 #: includes/widgets/toggle.php:304
 msgid "Space Between"
 msgstr "فاصله بینابینی"
 
-#: includes/widgets/icon-list.php:209
+#: includes/widgets/icon-list.php:208
 msgid "List"
 msgstr "ليست"
 
@@ -4547,15 +4549,15 @@ msgctxt "Shapes"
 msgid "Mountains"
 msgstr "کوه ها"
 
-#: includes/elements/container.php:1242 includes/elements/section.php:1069
+#: includes/elements/container.php:1282 includes/elements/section.php:1069
 msgid "Invert"
 msgstr "معکوس"
 
-#: includes/elements/container.php:1228 includes/elements/section.php:1055
+#: includes/elements/container.php:1268 includes/elements/section.php:1055
 msgid "Flip"
 msgstr "فلیپ"
 
-#: includes/elements/container.php:1124 includes/elements/section.php:951
+#: includes/elements/container.php:1164 includes/elements/section.php:951
 msgid "Shape Divider"
 msgstr "جدا کننده"
 
@@ -4566,39 +4568,39 @@ msgstr "عرض ناوبری"
 #: core/kits/documents/tabs/theme-style-buttons.php:166
 #: core/kits/documents/tabs/theme-style-images.php:134
 #: core/kits/documents/tabs/theme-style-typography.php:154
-#: includes/base/element-base.php:791 includes/elements/column.php:313
+#: includes/base/element-base.php:806 includes/elements/column.php:313
 #: includes/elements/column.php:450 includes/elements/column.php:568
-#: includes/elements/container.php:693 includes/elements/container.php:870
-#: includes/elements/container.php:1027 includes/elements/section.php:591
+#: includes/elements/container.php:733 includes/elements/container.php:910
+#: includes/elements/container.php:1067 includes/elements/section.php:591
 #: includes/elements/section.php:755 includes/elements/section.php:872
 #: includes/widgets/alert.php:412 includes/widgets/common.php:716
 #: includes/widgets/common.php:810 includes/widgets/google-maps.php:225
-#: includes/widgets/icon-box.php:356 includes/widgets/icon-list.php:430
-#: includes/widgets/icon-list.php:659 includes/widgets/icon.php:248
-#: includes/widgets/image-box.php:437 includes/widgets/image.php:443
-#: includes/widgets/traits/button-trait.php:314
-#: modules/nested-accordion/widgets/nested-accordion.php:620
-#: modules/nested-accordion/widgets/nested-accordion.php:687
-#: modules/nested-tabs/widgets/nested-tabs.php:499
-#: modules/nested-tabs/widgets/nested-tabs.php:738
-#: modules/nested-tabs/widgets/nested-tabs.php:937
+#: includes/widgets/icon-box.php:355 includes/widgets/icon-list.php:429
+#: includes/widgets/icon-list.php:658 includes/widgets/icon.php:247
+#: includes/widgets/image-box.php:436 includes/widgets/image.php:442
+#: includes/widgets/traits/button-trait.php:313
+#: modules/nested-accordion/widgets/nested-accordion.php:623
+#: modules/nested-accordion/widgets/nested-accordion.php:690
+#: modules/nested-tabs/widgets/nested-tabs.php:519
+#: modules/nested-tabs/widgets/nested-tabs.php:758
+#: modules/nested-tabs/widgets/nested-tabs.php:967
 #: modules/shapes/widgets/text-path.php:416
 #: modules/shapes/widgets/text-path.php:549
 msgid "Hover"
 msgstr "هاور"
 
-#: includes/elements/column.php:798 includes/elements/container.php:1609
+#: includes/elements/column.php:798 includes/elements/container.php:1649
 #: includes/elements/section.php:1253 includes/widgets/common.php:586
-#: includes/widgets/traits/button-trait.php:223
+#: includes/widgets/traits/button-trait.php:222
 #: modules/nested-accordion/widgets/nested-accordion.php:115
-#: modules/nested-tabs/widgets/nested-tabs.php:142
+#: modules/nested-tabs/widgets/nested-tabs.php:144
 msgid "Add your custom id WITHOUT the Pound key. e.g: my-id"
 msgstr "شناسه CSS خود را بدون # وارد کنید. مثال: my-id"
 
-#: includes/elements/column.php:789 includes/elements/container.php:1600
+#: includes/elements/column.php:789 includes/elements/container.php:1640
 #: includes/elements/section.php:1244 includes/widgets/common.php:577
 #: modules/nested-accordion/widgets/nested-accordion.php:109
-#: modules/nested-tabs/widgets/nested-tabs.php:133
+#: modules/nested-tabs/widgets/nested-tabs.php:135
 msgid "CSS ID"
 msgstr "شناسه CSS"
 
@@ -4646,19 +4648,19 @@ msgstr "با علامت زدن این گزینه، فونت های پیشفرض 
 msgid "Checking this box will disable Elementor's Default Colors, and make Elementor inherit the colors from your theme."
 msgstr "با علامت زدن این گزینه، رنگ های پیشفرض المنتور غیرفعال می شوند و المنتور رنگ های خود را از پوسته شما می گیرد."
 
-#: core/admin/admin.php:381
+#: core/admin/admin.php:371
 msgid "Video Tutorials"
 msgstr "آموزش‌های تصویری"
 
-#: core/admin/admin.php:381
+#: core/admin/admin.php:371
 msgid "View Elementor Video Tutorials"
 msgstr "مشاهده آموزش های ویدیویی المنتور"
 
-#: core/admin/admin.php:380
+#: core/admin/admin.php:370
 msgid "Docs & FAQs"
 msgstr "مستندات و سوالات متداول"
 
-#: core/admin/admin.php:380
+#: core/admin/admin.php:370
 msgid "View Elementor Documentation"
 msgstr "مشاهده مستندات المنتور"
 
@@ -4718,7 +4720,7 @@ msgstr "طراحی صفحه خود را شروع کنید و می توانید �
 msgid "Revision history lets you save your previous versions of your work, and restore them any time."
 msgstr "تاریخچه بازنگری ها به شما این امکان را می دهد تا تاریخچه ای از تغییرات کار خود را ذخیره و در هر زمان آنها را بازگردانی کنید."
 
-#: modules/apps/admin-apps-page.php:218
+#: modules/apps/admin-apps-page.php:240
 #: modules/history/views/revisions-panel-template.php:55
 msgid "By"
 msgstr "توسط"
@@ -4739,16 +4741,16 @@ msgctxt "Background Control"
 msgid "Default"
 msgstr "پیش‌ فرض"
 
-#: includes/managers/controls.php:1034
+#: includes/managers/controls.php:1033
 msgid "Custom CSS lets you add CSS code to any widget, and see it render live right in the editor."
 msgstr "کدهای CSS سفارشی به شما اجازه می دهند تا استایل های CSS را به صورت زنده بر روی ابزارک ها اعمال کنید و نتیجه آن را مشاهده نمایید."
 
-#: includes/managers/controls.php:1046
+#: includes/managers/controls.php:1045
 msgid "Meet Our Custom CSS"
 msgstr "کدهای CSS سفارشی ما را مشاهده کنید"
 
 #: core/kits/documents/tabs/settings-custom-css.php:17
-#: includes/managers/controls.php:1028
+#: includes/managers/controls.php:1027
 msgid "Custom CSS"
 msgstr "CSS سفارشی"
 
@@ -4765,18 +4767,18 @@ msgid "Get more with Elementor Pro"
 msgstr "ابزارک های بیشتری را با نسخه حرفه ای تجربه کنید"
 
 #: core/settings/editor-preferences/model.php:163
-#: includes/base/element-base.php:835 includes/base/element-base.php:999
-#: includes/widgets/common.php:888 includes/widgets/icon-list.php:264
-#: includes/widgets/icon.php:321 includes/widgets/text-editor.php:122
+#: includes/base/element-base.php:850 includes/base/element-base.php:1014
+#: includes/widgets/common.php:888 includes/widgets/icon-list.php:263
+#: includes/widgets/icon.php:320 includes/widgets/text-editor.php:122
 #: includes/widgets/video.php:680 modules/shapes/widgets/text-path.php:204
 #: modules/styleguide/module.php:147
 msgid "Off"
 msgstr "خاموش"
 
 #: core/settings/editor-preferences/model.php:164
-#: includes/base/element-base.php:834 includes/base/element-base.php:998
-#: includes/widgets/common.php:887 includes/widgets/icon-list.php:265
-#: includes/widgets/icon.php:322 includes/widgets/text-editor.php:123
+#: includes/base/element-base.php:849 includes/base/element-base.php:1013
+#: includes/widgets/common.php:887 includes/widgets/icon-list.php:264
+#: includes/widgets/icon.php:321 includes/widgets/text-editor.php:123
 #: includes/widgets/video.php:681 modules/shapes/widgets/text-path.php:203
 #: modules/styleguide/module.php:148
 msgid "On"
@@ -4814,11 +4816,11 @@ msgstr "بروزرسانی تغییرات در برگه"
 msgid "No thanks"
 msgstr "نه، ممنون"
 
-#: core/kits/documents/tabs/settings-layout.php:151
+#: core/kits/documents/tabs/settings-layout.php:159
 msgid "Enter parent element selector to which stretched sections will fit to (e.g. #primary / .wrapper / main etc). Leave blank to fit to page width."
 msgstr "سلکتور المان والدی که بخش های کشیده شده باید نسبت به آن اندازه شوند را مشخص کنید (به عنوان مثال #primary / .wrapper / main و یا ...). برای اندازه شدن نسبت به عرض برگه، این قسمت را خالی بگذارید."
 
-#: core/kits/documents/tabs/settings-layout.php:148
+#: core/kits/documents/tabs/settings-layout.php:156
 msgid "Stretched Section Fit To"
 msgstr "اندازه شدن بخش کشیده"
 
@@ -4844,7 +4846,7 @@ msgid "Reverse Columns"
 msgstr "معکوس کردن ستون ها"
 
 #: core/settings/editor-preferences/model.php:133
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:4296
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:4296
 msgid "Mobile"
 msgstr "موبایل"
 
@@ -4955,7 +4957,8 @@ msgid "Tools"
 msgstr "ابزارها"
 
 #: core/document-types/page.php:51 modules/library/documents/page.php:57
-#: assets/js/editor.js:10020
+#: assets/js/editor.js:10025
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:433
 msgid "Page"
 msgstr "صفحه"
 
@@ -4964,7 +4967,7 @@ msgid "Enter Template Name"
 msgstr "نام قالب را وارد کنید"
 
 #: includes/editor-templates/templates.php:190
-#: includes/template-library/sources/local.php:1164 assets/js/app.js:12308
+#: includes/template-library/sources/local.php:1164 assets/js/app.js:12011
 msgid "Export"
 msgstr "برون بری"
 
@@ -4973,17 +4976,17 @@ msgid "Stay tuned! More awesome templates coming real soon."
 msgstr "به گوش باشید! به زودی قالب های جذاب بیشتری عرضه خواهد شد."
 
 #: includes/editor-templates/templates.php:37
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:1465
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:1465
 msgid "Back to Library"
 msgstr "بازگشت به کتابخانه"
 
 #: includes/editor-templates/templates.php:176
 #: includes/editor-templates/templates.php:200 assets/js/ai-admin.js:2803
-#: assets/js/ai.js:3121 assets/js/editor.js:8258
+#: assets/js/ai.js:3121 assets/js/editor.js:8255
 msgid "Insert"
 msgstr "درج"
 
-#: core/common/modules/connect/apps/library.php:16 assets/js/editor.js:10347
+#: core/common/modules/connect/apps/library.php:16 assets/js/editor.js:10352
 msgid "Library"
 msgstr "کتابخانه"
 
@@ -4991,16 +4994,16 @@ msgstr "کتابخانه"
 #: includes/editor-templates/library-layout.php:16
 #: includes/editor-templates/responsive-bar.php:65
 #: includes/editor-templates/responsive-bar.php:66 includes/frontend.php:1395
-#: assets/js/1268ff89b5a9b9f27951.bundle.js:224 assets/js/app-packages.js:2261
-#: assets/js/app-packages.js:4238 assets/js/app-packages.js:4759
-#: assets/js/app.js:3202 assets/js/app.js:5320 assets/js/app.js:5723
-#: assets/js/app.js:7857 assets/js/app.js:8689 assets/js/app.js:12209
-#: assets/js/editor.js:46022 assets/js/import-export-admin.js:328
+#: assets/js/app-packages.js:2029 assets/js/app-packages.js:4006
+#: assets/js/app-packages.js:4527 assets/js/app.js:2905 assets/js/app.js:5023
+#: assets/js/app.js:5426 assets/js/app.js:7560 assets/js/app.js:8392
+#: assets/js/app.js:11912 assets/js/e8a7573e654d921656ab.bundle.js:221
+#: assets/js/editor.js:45996 assets/js/import-export-admin.js:328
 msgid "Close"
 msgstr "بستن"
 
 #: includes/template-library/sources/admin-menu-items/saved-templates-menu-item.php:23
-#: includes/template-library/sources/local.php:1720 assets/js/app.js:11333
+#: includes/template-library/sources/local.php:1720 assets/js/app.js:11036
 msgid "Saved Templates"
 msgstr "قالب های ذخیره شده"
 
@@ -5020,35 +5023,34 @@ msgstr "در صورتی که قصد ویرایش سورس کدهای پوسته 
 
 #: app/modules/import-export/module.php:148
 #: app/modules/import-export/module.php:160 core/admin/admin-notices.php:327
-#: core/experiments/manager.php:322 core/experiments/manager.php:334
-#: core/experiments/manager.php:346 core/experiments/manager.php:361
-#: core/experiments/manager.php:372 includes/controls/url.php:76
-#: modules/apps/admin-apps-page.php:228
+#: core/experiments/manager.php:324 core/experiments/manager.php:336
+#: core/experiments/manager.php:348 core/experiments/manager.php:360
+#: core/experiments/manager.php:371 includes/controls/url.php:76
+#: modules/apps/admin-apps-page.php:250
 #: modules/promotions/admin-menu-items/form-submissions-promotion-item.php:30
 #: modules/safe-mode/module.php:375 modules/safe-mode/module.php:384
 #: modules/safe-mode/mu-plugin/elementor-safe-mode.php:106
-#: assets/js/app-packages.js:2942 assets/js/app-packages.js:5928
-#: assets/js/app-packages.js:6037 assets/js/app.js:4128 assets/js/app.js:8141
-#: assets/js/app.js:9283 assets/js/app.js:10751 assets/js/app.js:11061
-#: assets/js/app.js:11107 assets/js/app.js:12208 assets/js/editor.js:14032
-#: assets/js/editor.js:27751 assets/js/editor.js:27782
-#: assets/js/editor.js:39389
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:3731
+#: assets/js/app-packages.js:2710 assets/js/app-packages.js:5696
+#: assets/js/app-packages.js:5805 assets/js/app.js:3831 assets/js/app.js:7844
+#: assets/js/app.js:8986 assets/js/app.js:10454 assets/js/app.js:10764
+#: assets/js/app.js:10810 assets/js/app.js:11911 assets/js/editor.js:14055
+#: assets/js/editor.js:27561 assets/js/editor.js:27592
+#: assets/js/editor.js:39337
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:3731
 msgid "Learn More"
 msgstr "کسب اطلاعات بیشتر"
 
 #: core/kits/documents/tabs/global-typography.php:28
-#: core/kits/documents/tabs/global-typography.php:47
-#: assets/js/9901e5ed764a3348e6e0.bundle.js:224 assets/js/app.js:11351
-#: assets/js/editor.js:45767
+#: core/kits/documents/tabs/global-typography.php:47 assets/js/app.js:11054
+#: assets/js/d3bdd130eb38d3b07f85.bundle.js:224 assets/js/editor.js:45741
 msgid "Global Fonts"
 msgstr "فونت‌های سراسری"
 
-#: includes/widgets/icon-box.php:392 includes/widgets/icon.php:286
-#: includes/widgets/image-box.php:374 includes/widgets/image.php:493
-#: includes/widgets/social-icons.php:541
-#: includes/widgets/traits/button-trait.php:366
-#: modules/nested-tabs/widgets/nested-tabs.php:556
+#: includes/widgets/icon-box.php:391 includes/widgets/icon.php:285
+#: includes/widgets/image-box.php:373 includes/widgets/image.php:492
+#: includes/widgets/social-icons.php:540
+#: includes/widgets/traits/button-trait.php:365
+#: modules/nested-tabs/widgets/nested-tabs.php:576
 #: modules/shapes/widgets/text-path.php:435
 msgid "Hover Animation"
 msgstr "انیمیشن هاور"
@@ -5058,12 +5060,12 @@ msgctxt "Background Control"
 msgid "Contain"
 msgstr "شامل"
 
-#: includes/elements/column.php:870 includes/elements/container.php:1668
+#: includes/elements/column.php:870 includes/elements/container.php:1708
 #: includes/elements/section.php:1305 includes/widgets/common.php:644
 msgid "Fast"
 msgstr "سریع"
 
-#: includes/elements/column.php:868 includes/elements/container.php:1666
+#: includes/elements/column.php:868 includes/elements/container.php:1706
 #: includes/elements/section.php:1303 includes/widgets/common.php:642
 msgid "Slow"
 msgstr "آهسته"
@@ -5072,7 +5074,7 @@ msgstr "آهسته"
 msgid "Disable Default Colors"
 msgstr "غیرفعال کردن رنگ های پیشفرض"
 
-#: includes/elements/column.php:855 includes/elements/container.php:1653
+#: includes/elements/column.php:855 includes/elements/container.php:1693
 #: includes/elements/section.php:1290 includes/widgets/common.php:629
 #: includes/widgets/video.php:873
 msgid "Entrance Animation"
@@ -5107,7 +5109,7 @@ msgstr "گسترده"
 msgid "Blur"
 msgstr "محو شدگی"
 
-#: includes/widgets/testimonial.php:171
+#: includes/widgets/testimonial.php:170
 msgid "Aside"
 msgstr "ستون کناری"
 
@@ -5116,20 +5118,20 @@ msgid "Testimonial"
 msgstr "دیدگاه مشتری"
 
 #: core/kits/documents/tabs/global-colors.php:123
-#: assets/js/9901e5ed764a3348e6e0.bundle.js:187
+#: assets/js/d3bdd130eb38d3b07f85.bundle.js:187
 msgid "Custom Colors"
 msgstr "رنگ‌های سفارشی"
 
-#: includes/widgets/social-icons.php:189 includes/widgets/social-icons.php:347
+#: includes/widgets/social-icons.php:188 includes/widgets/social-icons.php:346
 msgid "Official Color"
 msgstr "رنگ رسمی"
 
-#: includes/widgets/social-icons.php:261
+#: includes/widgets/social-icons.php:260
 msgid "Rounded"
 msgstr "گرد"
 
 #: includes/widgets/social-icons.php:42 includes/widgets/social-icons.php:85
-#: includes/widgets/social-icons.php:227
+#: includes/widgets/social-icons.php:226
 msgid "Social Icons"
 msgstr "آیکن‌های اجتماعی"
 
@@ -5173,7 +5175,7 @@ msgstr "پخش کننده ویژوال"
 msgid "SoundCloud"
 msgstr "SoundCloud"
 
-#: includes/elements/column.php:354 includes/elements/container.php:737
+#: includes/elements/column.php:354 includes/elements/container.php:777
 #: includes/elements/section.php:632
 msgid "Background Overlay"
 msgstr "روکش پس زمینه"
@@ -5238,18 +5240,18 @@ msgstr "نسخه جدیدی از صفحه ساز المنتور در دسترس 
 msgid "Custom URL"
 msgstr "آدرس سفارشی"
 
-#: includes/editor-templates/hotkeys.php:50 assets/js/editor.js:29900
-#: assets/js/editor.js:31860 assets/js/editor.js:40748
-#: assets/js/editor.js:41740
+#: includes/editor-templates/hotkeys.php:50 assets/js/editor.js:29730
+#: assets/js/editor.js:31694 assets/js/editor.js:40707
+#: assets/js/editor.js:41714
 msgid "Paste"
 msgstr "پیست"
 
 #: core/kits/documents/tabs/settings-background.php:18
-#: includes/elements/column.php:273 includes/elements/container.php:649
+#: includes/elements/column.php:273 includes/elements/container.php:689
 #: includes/elements/section.php:553 includes/widgets/accordion.php:313
 #: includes/widgets/accordion.php:478 includes/widgets/common.php:680
 #: includes/widgets/toggle.php:339 includes/widgets/toggle.php:496
-#: assets/js/ai-admin.js:4465 assets/js/ai.js:4783
+#: assets/js/ai-admin.js:4474 assets/js/ai.js:4792
 msgid "Background"
 msgstr "پس زمینه"
 
@@ -5268,39 +5270,39 @@ msgid "Intro Byline"
 msgstr "معرفی خط فرعی"
 
 #: includes/widgets/accordion.php:450 includes/widgets/divider.php:768
-#: includes/widgets/divider.php:908 includes/widgets/icon-box.php:404
-#: includes/widgets/icon-box.php:548 includes/widgets/image-box.php:300
-#: includes/widgets/image-box.php:493 includes/widgets/image-carousel.php:699
-#: includes/widgets/image-gallery.php:197 includes/widgets/image.php:625
-#: includes/widgets/social-icons.php:430 includes/widgets/star-rating.php:291
+#: includes/widgets/divider.php:908 includes/widgets/icon-box.php:403
+#: includes/widgets/icon-box.php:547 includes/widgets/image-box.php:299
+#: includes/widgets/image-box.php:492 includes/widgets/image-carousel.php:698
+#: includes/widgets/image-gallery.php:197 includes/widgets/image.php:624
+#: includes/widgets/social-icons.php:429 includes/widgets/star-rating.php:291
 #: includes/widgets/toggle.php:468
-#: modules/nested-accordion/widgets/nested-accordion.php:582
-#: modules/nested-tabs/widgets/nested-tabs.php:896
+#: modules/nested-accordion/widgets/nested-accordion.php:585
+#: modules/nested-tabs/widgets/nested-tabs.php:926
 msgid "Spacing"
 msgstr "فاصله‌گذاری"
 
-#: includes/widgets/image-carousel.php:536
-#: includes/widgets/image-carousel.php:599
+#: includes/widgets/image-carousel.php:535
+#: includes/widgets/image-carousel.php:598
 msgid "Outside"
 msgstr "بیرون"
 
-#: includes/widgets/image-carousel.php:535
-#: includes/widgets/image-carousel.php:600
+#: includes/widgets/image-carousel.php:534
+#: includes/widgets/image-carousel.php:599
 msgid "Inside"
 msgstr "درون"
 
 #: includes/controls/groups/background.php:709
-#: includes/widgets/image-carousel.php:493
-#: modules/nested-tabs/widgets/nested-tabs.php:168
+#: includes/widgets/image-carousel.php:492
+#: modules/nested-tabs/widgets/nested-tabs.php:175
 msgid "Direction"
 msgstr "جهت‌یابی"
 
-#: includes/widgets/image-carousel.php:482
+#: includes/widgets/image-carousel.php:481
 msgid "Animation Speed"
 msgstr "سرعت انیمیشن"
 
-#: includes/elements/container.php:552 includes/widgets/audio.php:135
-#: includes/widgets/image-carousel.php:371
+#: includes/elements/container.php:593 includes/widgets/audio.php:135
+#: includes/widgets/image-carousel.php:370
 msgid "Additional Options"
 msgstr "گزینه‌های اضافی"
 
@@ -5317,7 +5319,7 @@ msgstr "کشش تصویر"
 msgid "Image Carousel"
 msgstr "کاروسل تصویر"
 
-#: includes/elements/column.php:864 includes/elements/container.php:1662
+#: includes/elements/column.php:864 includes/elements/container.php:1702
 #: includes/elements/section.php:1299 includes/widgets/common.php:638
 #: includes/widgets/counter.php:159
 #: modules/nested-accordion/widgets/nested-accordion.php:320
@@ -5399,11 +5401,11 @@ msgctxt "Border Control"
 msgid "Solid"
 msgstr "یکپارچه"
 
-#: includes/widgets/image-carousel.php:470
+#: includes/widgets/image-carousel.php:469
 msgid "Fade"
 msgstr "محو"
 
-#: includes/widgets/image-carousel.php:465
+#: includes/widgets/image-carousel.php:464
 msgid "Effect"
 msgstr "افکت"
 
@@ -5416,13 +5418,13 @@ msgstr "اندازه‌ کامل"
 msgid "Edit gallery"
 msgstr "ویرایش گالری"
 
-#: includes/widgets/icon-box.php:243 includes/widgets/icon-list.php:552
-#: includes/widgets/image-box.php:230
+#: includes/widgets/icon-box.php:242 includes/widgets/icon-list.php:551
+#: includes/widgets/image-box.php:229
 msgid "Vertical Alignment"
 msgstr "ترازبندی عمودی"
 
 #: includes/controls/groups/background.php:594
-#: includes/widgets/image-carousel.php:451
+#: includes/widgets/image-carousel.php:450
 msgid "Infinite Loop"
 msgstr "حلقه بی‌نهایت"
 
@@ -5445,8 +5447,8 @@ msgctxt "Typography Control"
 msgid "None"
 msgstr "هیچ"
 
-#: includes/widgets/accordion.php:230 includes/widgets/icon-box.php:185
-#: includes/widgets/image-box.php:163 includes/widgets/progress.php:109
+#: includes/widgets/accordion.php:230 includes/widgets/icon-box.php:184
+#: includes/widgets/image-box.php:162 includes/widgets/progress.php:109
 #: includes/widgets/toggle.php:233
 #: modules/nested-accordion/widgets/nested-accordion.php:247
 msgid "Title HTML Tag"
@@ -5456,7 +5458,7 @@ msgstr "تگ HTML عنوان"
 msgid "This is the heading"
 msgstr "این یک عنوان است"
 
-#: includes/elements/column.php:817 includes/elements/container.php:1628
+#: includes/elements/column.php:817 includes/elements/container.php:1668
 #: includes/elements/section.php:1272 includes/widgets/common.php:604
 msgid "Add your custom class WITHOUT the dot. e.g: my-class"
 msgstr "کلاس CSS خود را بدون نقطه وارد کنید. مثال: my-class"
@@ -5469,19 +5471,20 @@ msgstr "فهرستی از فونت های پیشفرض که اگر فونت دل
 msgid "Form"
 msgstr "فرم"
 
-#: includes/editor-templates/panel-elements.php:10 assets/js/editor.js:18923
-#: assets/js/editor.js:20967 assets/js/editor.js:21398
-#: assets/js/editor.js:36297 assets/js/packages/editor-app-bar.js:806
+#: includes/editor-templates/panel-elements.php:10 assets/js/editor.js:18829
+#: assets/js/editor.js:20783 assets/js/editor.js:21214
+#: assets/js/editor.js:36197
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:858
 msgid "Elements"
 msgstr "المان‌ها"
 
-#: core/admin/admin.php:351 core/admin/menu/main.php:75
+#: core/admin/admin.php:341 core/admin/menu/main.php:75
 #: core/common/modules/finder/categories/settings.php:28
 #: core/dynamic-tags/base-tag.php:171 includes/editor-templates/panel.php:81
 #: includes/editor-templates/responsive-bar.php:61
 #: includes/managers/controls.php:322 includes/settings/settings.php:192
 #: includes/settings/settings.php:387 modules/usage/settings-reporter.php:13
-#: assets/js/editor.js:9291 assets/js/editor.js:37132 assets/js/editor.js:46146
+#: assets/js/editor.js:9288 assets/js/editor.js:37071 assets/js/editor.js:46120
 msgid "Settings"
 msgstr "تنظیمات"
 
@@ -5581,47 +5584,49 @@ msgid "Tab Content"
 msgstr "محتوای زبانه"
 
 #: includes/widgets/tabs.php:107 includes/widgets/tabs.php:108
-#: modules/nested-tabs/widgets/nested-tabs.php:97
-#: modules/nested-tabs/widgets/nested-tabs.php:98
+#: modules/nested-tabs/widgets/nested-tabs.php:99
+#: modules/nested-tabs/widgets/nested-tabs.php:100
 msgid "Tab Title"
 msgstr "عنوان زبانه"
 
 #: includes/widgets/tabs.php:151
-#: modules/nested-tabs/widgets/nested-tabs.php:157
+#: modules/nested-tabs/widgets/nested-tabs.php:159
 msgid "Tab #2"
 msgstr "زبانه #2"
 
 #: includes/widgets/tabs.php:147
-#: modules/nested-tabs/widgets/nested-tabs.php:154
+#: modules/nested-tabs/widgets/nested-tabs.php:156
 msgid "Tab #1"
 msgstr "زبانه #1"
 
 #: includes/widgets/tabs.php:142
-#: modules/nested-tabs/widgets/nested-tabs.php:149
+#: modules/nested-tabs/widgets/nested-tabs.php:151
 msgid "Tabs Items"
 msgstr "آیتم های زبانه"
 
 #: includes/widgets/tabs.php:46 includes/widgets/tabs.php:96
 #: includes/widgets/tabs.php:248 modules/nested-tabs/widgets/nested-tabs.php:33
-#: modules/nested-tabs/widgets/nested-tabs.php:89
-#: modules/nested-tabs/widgets/nested-tabs.php:407
+#: modules/nested-tabs/widgets/nested-tabs.php:91
+#: modules/nested-tabs/widgets/nested-tabs.php:427
+#: modules/nested-tabs/widgets/nested-tabs.php:1180
+#: modules/nested-tabs/widgets/nested-tabs.php:1225
 msgid "Tabs"
 msgstr "تب‌ها"
 
-#: includes/widgets/image-carousel.php:401
+#: includes/widgets/image-carousel.php:400
 msgid "Pause on Hover"
 msgstr "توقف هنگام هاور"
 
-#: includes/widgets/image-carousel.php:436
+#: includes/widgets/image-carousel.php:435
 msgid "Autoplay Speed"
 msgstr "سرعت پخش خودکار"
 
 #: includes/widgets/image-carousel.php:171
-#: includes/widgets/image-carousel.php:519
+#: includes/widgets/image-carousel.php:518
 msgid "Arrows"
 msgstr "پیکان‌ها"
 
-#: includes/widgets/image-carousel.php:469
+#: includes/widgets/image-carousel.php:468
 msgid "Slide"
 msgstr "اسلاید"
 
@@ -5686,16 +5691,16 @@ msgstr "لنگر"
 msgid "Menu Anchor"
 msgstr "لنگر منو"
 
-#: includes/widgets/image-box.php:202 includes/widgets/testimonial.php:167
+#: includes/widgets/image-box.php:201 includes/widgets/testimonial.php:166
 msgid "Image Position"
 msgstr "موقعیت تصویر"
 
-#: includes/widgets/image-carousel.php:715
+#: includes/widgets/image-carousel.php:714
 #: includes/widgets/image-gallery.php:214
 msgid "Image Spacing"
 msgstr "فاصله حواشی"
 
-#: includes/controls/media.php:281 includes/widgets/testimonial.php:280
+#: includes/controls/media.php:281 includes/widgets/testimonial.php:279
 msgid "Image Size"
 msgstr "اندازه عکس"
 
@@ -5703,58 +5708,58 @@ msgstr "اندازه عکس"
 msgid "Image Box"
 msgstr "کادر تصویر"
 
-#: includes/widgets/social-icons.php:487
+#: includes/widgets/social-icons.php:486
 msgid "Icon Hover"
 msgstr "هاور آیکن"
 
 #: includes/widgets/accordion.php:268 includes/widgets/divider.php:946
-#: includes/widgets/icon-box.php:499 includes/widgets/icon.php:376
+#: includes/widgets/icon-box.php:498 includes/widgets/icon.php:375
 #: includes/widgets/tabs.php:279 includes/widgets/text-editor.php:377
 #: includes/widgets/toggle.php:271
 #: modules/nested-accordion/widgets/nested-accordion.php:461
-#: modules/nested-tabs/widgets/nested-tabs.php:478
-#: modules/nested-tabs/widgets/nested-tabs.php:537
-#: modules/nested-tabs/widgets/nested-tabs.php:621
-#: modules/nested-tabs/widgets/nested-tabs.php:1002
+#: modules/nested-tabs/widgets/nested-tabs.php:498
+#: modules/nested-tabs/widgets/nested-tabs.php:557
+#: modules/nested-tabs/widgets/nested-tabs.php:641
+#: modules/nested-tabs/widgets/nested-tabs.php:1032
 msgid "Border Width"
 msgstr "ضخامت حاشیه"
 
-#: includes/base/element-base.php:798 includes/base/element-base.php:810
-#: includes/widgets/divider.php:925 includes/widgets/icon-box.php:477
-#: includes/widgets/icon.php:355 modules/shapes/widgets/text-path.php:268
+#: includes/base/element-base.php:813 includes/base/element-base.php:825
+#: includes/widgets/divider.php:925 includes/widgets/icon-box.php:476
+#: includes/widgets/icon.php:354 modules/shapes/widgets/text-path.php:268
 msgid "Rotate"
 msgstr "چرخش"
 
-#: includes/widgets/divider.php:867 includes/widgets/icon-box.php:338
-#: includes/widgets/icon-box.php:376 includes/widgets/icon.php:229
-#: includes/widgets/icon.php:269 includes/widgets/social-icons.php:212
-#: includes/widgets/social-icons.php:370 includes/widgets/social-icons.php:510
+#: includes/widgets/divider.php:867 includes/widgets/icon-box.php:337
+#: includes/widgets/icon-box.php:375 includes/widgets/icon.php:228
+#: includes/widgets/icon.php:268 includes/widgets/social-icons.php:211
+#: includes/widgets/social-icons.php:369 includes/widgets/social-icons.php:509
 #: includes/widgets/text-editor.php:293
 msgid "Secondary Color"
 msgstr "رنگ ثانویه"
 
-#: includes/widgets/divider.php:850 includes/widgets/icon-box.php:322
-#: includes/widgets/icon-box.php:363 includes/widgets/icon.php:212
-#: includes/widgets/icon.php:255 includes/widgets/social-icons.php:198
-#: includes/widgets/social-icons.php:356 includes/widgets/social-icons.php:495
+#: includes/widgets/divider.php:850 includes/widgets/icon-box.php:321
+#: includes/widgets/icon-box.php:362 includes/widgets/icon.php:211
+#: includes/widgets/icon.php:254 includes/widgets/social-icons.php:197
+#: includes/widgets/social-icons.php:355 includes/widgets/social-icons.php:494
 #: includes/widgets/text-editor.php:278
 msgid "Primary Color"
 msgstr "رنگ اولیه"
 
 #: includes/widgets/icon-box.php:130 includes/widgets/icon.php:142
-#: includes/widgets/social-icons.php:262 assets/js/ai-admin.js:4519
-#: assets/js/ai.js:4837
+#: includes/widgets/social-icons.php:261 assets/js/ai-admin.js:4528
+#: assets/js/ai.js:4846
 msgid "Square"
 msgstr "مربعی"
 
 #: includes/widgets/common.php:128 includes/widgets/icon-box.php:129
-#: includes/widgets/icon.php:141 includes/widgets/social-icons.php:263
+#: includes/widgets/icon.php:141 includes/widgets/social-icons.php:262
 #: modules/shapes/module.php:22
 msgid "Circle"
 msgstr "گرد"
 
 #: includes/widgets/common.php:896 includes/widgets/icon-box.php:126
-#: includes/widgets/icon.php:138 includes/widgets/social-icons.php:257
+#: includes/widgets/icon.php:138 includes/widgets/social-icons.php:256
 msgid "Shape"
 msgstr "شکل"
 
@@ -5772,15 +5777,15 @@ msgstr "انباشته"
 msgid "List Item"
 msgstr "آیتم لیست"
 
-#: includes/widgets/icon-list.php:178
+#: includes/widgets/icon-list.php:177
 msgid "List Item #3"
 msgstr "آیتم #3 در لیست"
 
-#: includes/widgets/icon-list.php:171
+#: includes/widgets/icon-list.php:170
 msgid "List Item #2"
 msgstr "آیتم #2 در لیست"
 
-#: includes/widgets/icon-list.php:164
+#: includes/widgets/icon-list.php:163
 msgid "List Item #1"
 msgstr "آیتم #1 در لیست"
 
@@ -5788,16 +5793,7 @@ msgstr "آیتم #1 در لیست"
 msgid "Icon List"
 msgstr "لیست آیکن"
 
-#: includes/elements/container.php:619 includes/widgets/icon-box.php:177
-#: includes/widgets/icon-list.php:152 includes/widgets/icon.php:160
-#: includes/widgets/image-box.php:155 includes/widgets/image-carousel.php:308
-#: includes/widgets/image.php:208 includes/widgets/social-icons.php:178
-#: includes/widgets/testimonial.php:160
-#: includes/widgets/traits/button-trait.php:107
-msgid "https://your-link.com"
-msgstr "https://your-link.com"
-
-#: includes/widgets/traits/button-trait.php:186
+#: includes/widgets/traits/button-trait.php:185
 msgid "Icon Spacing"
 msgstr "فاصله بین آیکن ها"
 
@@ -5813,8 +5809,8 @@ msgstr "کد HTML"
 msgid "HTML"
 msgstr "HTML"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:201
-#: modules/nested-tabs/widgets/nested-tabs.php:241
+#: modules/nested-tabs/widgets/nested-tabs.php:213
+#: modules/nested-tabs/widgets/nested-tabs.php:255
 msgid "Justify"
 msgstr "ترازبندی"
 
@@ -5842,7 +5838,7 @@ msgstr "H2"
 msgid "H1"
 msgstr "H1"
 
-#: includes/elements/column.php:261 includes/elements/container.php:593
+#: includes/elements/column.php:261 includes/elements/container.php:634
 #: includes/elements/section.php:518 includes/widgets/divider.php:525
 #: includes/widgets/heading.php:159
 msgid "HTML Tag"
@@ -5872,11 +5868,11 @@ msgstr "نقشه گوگل"
 
 #: core/kits/documents/tabs/settings-lightbox.php:101
 #: core/kits/documents/tabs/settings-lightbox.php:118
-#: includes/widgets/image-carousel.php:345
-#: includes/widgets/image-carousel.php:351
-#: includes/widgets/image-carousel.php:760
+#: includes/widgets/image-carousel.php:344
+#: includes/widgets/image-carousel.php:350
+#: includes/widgets/image-carousel.php:759
 #: includes/widgets/image-gallery.php:261 includes/widgets/image.php:159
-#: includes/widgets/image.php:539
+#: includes/widgets/image.php:538
 msgid "Caption"
 msgstr "زیرنویس"
 
@@ -5908,7 +5904,7 @@ msgstr "افزودن تصاویر"
 msgid "Image Gallery"
 msgstr "گالری تصویر"
 
-#: includes/widgets/divider.php:677 includes/widgets/icon-list.php:498
+#: includes/widgets/divider.php:677 includes/widgets/icon-list.php:497
 #: includes/widgets/star-rating.php:246
 msgid "Gap"
 msgstr "فاصله"
@@ -5918,42 +5914,43 @@ msgstr "فاصله"
 #: core/kits/documents/tabs/theme-style-typography.php:161
 #: core/kits/documents/tabs/theme-style-typography.php:206
 #: includes/controls/box-shadow.php:104 includes/controls/text-shadow.php:97
-#: includes/elements/column.php:433 includes/elements/container.php:838
-#: includes/elements/container.php:1166 includes/elements/section.php:723
+#: includes/elements/column.php:433 includes/elements/container.php:878
+#: includes/elements/container.php:1206 includes/elements/section.php:723
 #: includes/elements/section.php:993 includes/widgets/accordion.php:324
 #: includes/widgets/accordion.php:426 includes/widgets/accordion.php:489
 #: includes/widgets/alert.php:401 includes/widgets/alert.php:418
 #: includes/widgets/divider.php:576 includes/widgets/divider.php:711
-#: includes/widgets/icon-box.php:565 includes/widgets/icon-box.php:616
-#: includes/widgets/icon-list.php:375 includes/widgets/icon-list.php:412
-#: includes/widgets/icon-list.php:437 includes/widgets/icon-list.php:642
-#: includes/widgets/icon-list.php:666 includes/widgets/image-box.php:510
-#: includes/widgets/image-box.php:561 includes/widgets/image-carousel.php:568
-#: includes/widgets/image-carousel.php:632 includes/widgets/progress.php:209
-#: includes/widgets/progress.php:266 includes/widgets/social-icons.php:185
-#: includes/widgets/social-icons.php:343 includes/widgets/star-rating.php:309
+#: includes/widgets/heading.php:280 includes/widgets/icon-box.php:564
+#: includes/widgets/icon-box.php:615 includes/widgets/icon-list.php:374
+#: includes/widgets/icon-list.php:411 includes/widgets/icon-list.php:436
+#: includes/widgets/icon-list.php:641 includes/widgets/icon-list.php:665
+#: includes/widgets/image-box.php:509 includes/widgets/image-box.php:560
+#: includes/widgets/image-carousel.php:567
+#: includes/widgets/image-carousel.php:631 includes/widgets/progress.php:209
+#: includes/widgets/progress.php:266 includes/widgets/social-icons.php:184
+#: includes/widgets/social-icons.php:342 includes/widgets/star-rating.php:309
 #: includes/widgets/tabs.php:334 includes/widgets/tabs.php:427
 #: includes/widgets/toggle.php:351 includes/widgets/toggle.php:444
 #: includes/widgets/toggle.php:507 includes/widgets/video.php:765
-#: modules/nested-accordion/widgets/nested-accordion.php:643
-#: modules/nested-accordion/widgets/nested-accordion.php:710
-#: modules/nested-tabs/widgets/nested-tabs.php:699
-#: modules/nested-tabs/widgets/nested-tabs.php:745
-#: modules/nested-tabs/widgets/nested-tabs.php:792
-#: modules/nested-tabs/widgets/nested-tabs.php:925
-#: modules/nested-tabs/widgets/nested-tabs.php:942
-#: modules/nested-tabs/widgets/nested-tabs.php:959
+#: modules/nested-accordion/widgets/nested-accordion.php:646
+#: modules/nested-accordion/widgets/nested-accordion.php:713
+#: modules/nested-tabs/widgets/nested-tabs.php:719
+#: modules/nested-tabs/widgets/nested-tabs.php:765
+#: modules/nested-tabs/widgets/nested-tabs.php:812
+#: modules/nested-tabs/widgets/nested-tabs.php:955
+#: modules/nested-tabs/widgets/nested-tabs.php:972
+#: modules/nested-tabs/widgets/nested-tabs.php:989
 #: modules/shapes/widgets/text-path.php:399
 #: modules/shapes/widgets/text-path.php:423
 #: modules/shapes/widgets/text-path.php:491
 #: modules/shapes/widgets/text-path.php:511
 #: modules/shapes/widgets/text-path.php:556
-#: modules/shapes/widgets/text-path.php:576 assets/js/editor.js:46284
-#: assets/js/editor.js:46327
+#: modules/shapes/widgets/text-path.php:576 assets/js/editor.js:46258
+#: assets/js/editor.js:46301
 msgid "Color"
 msgstr "رنگ"
 
-#: includes/widgets/divider.php:592 includes/widgets/icon-list.php:298
+#: includes/widgets/divider.php:592 includes/widgets/icon-list.php:297
 msgid "Weight"
 msgstr "وزن فونت"
 
@@ -5963,7 +5960,7 @@ msgstr "فاصله گذار"
 
 #: includes/widgets/divider.php:46 includes/widgets/divider.php:356
 #: includes/widgets/divider.php:515 includes/widgets/divider.php:565
-#: includes/widgets/icon-list.php:262
+#: includes/widgets/icon-list.php:261
 msgid "Divider"
 msgstr "جداکننده"
 
@@ -6000,7 +5997,7 @@ msgstr "عدد آغازین"
 msgid "Counter"
 msgstr "شمارنده"
 
-#: includes/widgets/audio.php:144 includes/widgets/image-carousel.php:387
+#: includes/widgets/audio.php:144 includes/widgets/image-carousel.php:386
 #: includes/widgets/video.php:288
 msgid "Autoplay"
 msgstr "پخش خودکار"
@@ -6019,83 +6016,87 @@ msgstr "اسلایدها جهت نمایش"
 msgid "Choose Image"
 msgstr "تصویر را انتخاب کنید"
 
-#: includes/widgets/common.php:910 includes/widgets/image-box.php:289
-#: includes/widgets/image-carousel.php:663 includes/widgets/image.php:45
-#: includes/widgets/image.php:104 includes/widgets/image.php:253
-#: includes/widgets/testimonial.php:269
+#: includes/widgets/common.php:910 includes/widgets/image-box.php:288
+#: includes/widgets/image-carousel.php:662 includes/widgets/image.php:45
+#: includes/widgets/image.php:104 includes/widgets/image.php:252
+#: includes/widgets/testimonial.php:268
 msgid "Image"
 msgstr "تصویر"
 
-#: includes/elements/column.php:521 includes/elements/container.php:958
+#: includes/elements/column.php:521 includes/elements/container.php:998
 #: includes/elements/section.php:827 includes/widgets/common.php:763
 msgid "Border"
 msgstr "حاشیه"
 
-#: core/dynamic-tags/tag.php:105 includes/widgets/traits/button-trait.php:177
+#: core/dynamic-tags/tag.php:105 includes/widgets/traits/button-trait.php:176
+#: modules/nested-tabs/widgets/nested-tabs.php:187
+#: modules/nested-tabs/widgets/nested-tabs.php:871
 msgid "After"
 msgstr "بعد"
 
-#: core/dynamic-tags/tag.php:95 includes/widgets/traits/button-trait.php:176
+#: core/dynamic-tags/tag.php:95 includes/widgets/traits/button-trait.php:175
+#: modules/nested-tabs/widgets/nested-tabs.php:191
+#: modules/nested-tabs/widgets/nested-tabs.php:879
 msgid "Before"
 msgstr "قبل"
 
-#: includes/widgets/icon-box.php:215
-#: includes/widgets/traits/button-trait.php:172
+#: includes/widgets/icon-box.php:214
+#: includes/widgets/traits/button-trait.php:171
 msgid "Icon Position"
 msgstr "محل قرارگیری آیکن"
 
 #: includes/widgets/accordion.php:172 includes/widgets/accordion.php:395
 #: includes/widgets/alert.php:153 includes/widgets/divider.php:487
 #: includes/widgets/divider.php:548 includes/widgets/divider.php:787
-#: includes/widgets/icon-box.php:95 includes/widgets/icon-box.php:302
-#: includes/widgets/icon-list.php:134 includes/widgets/icon-list.php:395
+#: includes/widgets/icon-box.php:95 includes/widgets/icon-box.php:301
+#: includes/widgets/icon-list.php:134 includes/widgets/icon-list.php:394
 #: includes/widgets/icon.php:44 includes/widgets/icon.php:103
-#: includes/widgets/icon.php:110 includes/widgets/icon.php:195
-#: includes/widgets/social-icons.php:94 includes/widgets/social-icons.php:335
+#: includes/widgets/icon.php:110 includes/widgets/icon.php:194
+#: includes/widgets/social-icons.php:94 includes/widgets/social-icons.php:334
 #: includes/widgets/star-rating.php:123 includes/widgets/toggle.php:175
-#: includes/widgets/toggle.php:413 includes/widgets/traits/button-trait.php:159
+#: includes/widgets/toggle.php:413 includes/widgets/traits/button-trait.php:158
 #: includes/widgets/video.php:642
 #: modules/nested-accordion/widgets/nested-accordion.php:182
-#: modules/nested-accordion/widgets/nested-accordion.php:546
-#: modules/nested-tabs/widgets/nested-tabs.php:108
-#: modules/nested-tabs/widgets/nested-tabs.php:833
+#: modules/nested-accordion/widgets/nested-accordion.php:549
+#: modules/nested-tabs/widgets/nested-tabs.php:110
+#: modules/nested-tabs/widgets/nested-tabs.php:853
 msgid "Icon"
 msgstr "آیکن"
 
 #: includes/widgets/alert.php:342 includes/widgets/common.php:948
 #: includes/widgets/divider.php:617 includes/widgets/divider.php:813
-#: includes/widgets/heading.php:142 includes/widgets/icon-box.php:425
-#: includes/widgets/icon-list.php:471 includes/widgets/icon.php:298
-#: includes/widgets/image-carousel.php:548
-#: includes/widgets/image-carousel.php:612
-#: includes/widgets/social-icons.php:385 includes/widgets/star-rating.php:274
+#: includes/widgets/heading.php:142 includes/widgets/icon-box.php:424
+#: includes/widgets/icon-list.php:470 includes/widgets/icon.php:297
+#: includes/widgets/image-carousel.php:547
+#: includes/widgets/image-carousel.php:611
+#: includes/widgets/social-icons.php:384 includes/widgets/star-rating.php:274
 #: includes/widgets/text-editor.php:316
-#: includes/widgets/traits/button-trait.php:147 includes/widgets/video.php:781
-#: modules/nested-accordion/widgets/nested-accordion.php:554
-#: modules/nested-tabs/widgets/nested-tabs.php:871
+#: includes/widgets/traits/button-trait.php:146 includes/widgets/video.php:781
+#: modules/nested-accordion/widgets/nested-accordion.php:557
+#: modules/nested-tabs/widgets/nested-tabs.php:901
 #: modules/shapes/widgets/text-path.php:235
 msgid "Size"
 msgstr "اندازه"
 
 #: includes/elements/column.php:721 includes/elements/section.php:1177
-#: includes/widgets/heading.php:195 includes/widgets/icon-box.php:287
-#: includes/widgets/image-box.php:274 includes/widgets/image-carousel.php:787
-#: includes/widgets/image-gallery.php:301 includes/widgets/image.php:566
+#: includes/widgets/heading.php:195 includes/widgets/icon-box.php:286
+#: includes/widgets/image-box.php:273 includes/widgets/image-carousel.php:786
+#: includes/widgets/image-gallery.php:301 includes/widgets/image.php:565
 #: includes/widgets/star-rating.php:186 includes/widgets/text-editor.php:204
-#: includes/widgets/traits/button-trait.php:134
+#: includes/widgets/traits/button-trait.php:133
 msgid "Justified"
 msgstr "تراز شده"
 
 #: includes/widgets/accordion.php:406 includes/widgets/divider.php:448
-#: includes/widgets/heading.php:179 includes/widgets/icon-box.php:271
-#: includes/widgets/icon-list.php:239 includes/widgets/icon.php:167
-#: includes/widgets/image-box.php:258 includes/widgets/image-carousel.php:771
+#: includes/widgets/heading.php:179 includes/widgets/icon-box.php:270
+#: includes/widgets/icon-list.php:238 includes/widgets/icon.php:166
+#: includes/widgets/image-box.php:257 includes/widgets/image-carousel.php:770
 #: includes/widgets/image-gallery.php:285 includes/widgets/image.php:134
-#: includes/widgets/image.php:550 includes/widgets/social-icons.php:297
+#: includes/widgets/image.php:549 includes/widgets/social-icons.php:296
 #: includes/widgets/star-rating.php:170 includes/widgets/tabs.php:186
 #: includes/widgets/tabs.php:216 includes/widgets/tabs.php:390
-#: includes/widgets/testimonial.php:185 includes/widgets/text-editor.php:188
-#: includes/widgets/toggle.php:424 includes/widgets/traits/button-trait.php:118
+#: includes/widgets/testimonial.php:184 includes/widgets/text-editor.php:188
+#: includes/widgets/toggle.php:424 includes/widgets/traits/button-trait.php:117
 #: modules/shapes/widgets/text-path.php:156
 msgid "Alignment"
 msgstr "چیدمان"
@@ -6137,20 +6138,20 @@ msgstr "ویرایش"
 #: core/kits/documents/tabs/theme-style-images.php:83
 #: core/kits/documents/tabs/theme-style-images.php:154
 #: includes/elements/column.php:546 includes/elements/column.php:583
-#: includes/elements/container.php:1003 includes/elements/container.php:1054
+#: includes/elements/container.php:1043 includes/elements/container.php:1094
 #: includes/elements/section.php:851 includes/elements/section.php:887
 #: includes/widgets/common.php:788 includes/widgets/common.php:825
-#: includes/widgets/divider.php:969 includes/widgets/icon-box.php:514
-#: includes/widgets/icon.php:391 includes/widgets/image-box.php:361
-#: includes/widgets/image-carousel.php:746
-#: includes/widgets/image-gallery.php:247 includes/widgets/image.php:514
-#: includes/widgets/progress.php:245 includes/widgets/social-icons.php:473
-#: includes/widgets/testimonial.php:307 includes/widgets/text-editor.php:358
-#: includes/widgets/traits/button-trait.php:389
+#: includes/widgets/divider.php:969 includes/widgets/icon-box.php:513
+#: includes/widgets/icon.php:390 includes/widgets/image-box.php:360
+#: includes/widgets/image-carousel.php:745
+#: includes/widgets/image-gallery.php:247 includes/widgets/image.php:513
+#: includes/widgets/progress.php:245 includes/widgets/social-icons.php:472
+#: includes/widgets/testimonial.php:306 includes/widgets/text-editor.php:358
+#: includes/widgets/traits/button-trait.php:388
 #: modules/nested-accordion/widgets/nested-accordion.php:404
 #: modules/nested-accordion/widgets/nested-accordion.php:470
-#: modules/nested-tabs/widgets/nested-tabs.php:643
-#: modules/nested-tabs/widgets/nested-tabs.php:1011
+#: modules/nested-tabs/widgets/nested-tabs.php:663
+#: modules/nested-tabs/widgets/nested-tabs.php:1041
 msgid "Border Radius"
 msgstr "انحنای مرز"
 
@@ -6158,13 +6159,13 @@ msgstr "انحنای مرز"
 #: core/kits/documents/tabs/settings-lightbox.php:113
 #: core/kits/documents/tabs/settings-lightbox.php:120
 #: includes/compatibility.php:154 includes/widgets/alert.php:291
-#: includes/widgets/icon-box.php:158 includes/widgets/icon-box.php:607
-#: includes/widgets/image-box.php:135 includes/widgets/image-box.php:552
-#: includes/widgets/image-carousel.php:352
+#: includes/widgets/icon-box.php:158 includes/widgets/icon-box.php:606
+#: includes/widgets/image-box.php:135 includes/widgets/image-box.php:551
+#: includes/widgets/image-carousel.php:351
 msgid "Description"
 msgstr "توضیحات"
 
-#: core/base/document.php:1727
+#: core/base/document.php:1755
 #: core/kits/documents/tabs/settings-lightbox.php:96
 #: core/kits/documents/tabs/settings-lightbox.php:100
 #: core/kits/documents/tabs/settings-lightbox.php:117
@@ -6174,33 +6175,33 @@ msgstr "توضیحات"
 #: includes/widgets/common.php:184 includes/widgets/counter.php:199
 #: includes/widgets/counter.php:275 includes/widgets/heading.php:104
 #: includes/widgets/heading.php:111 includes/widgets/heading.php:220
-#: includes/widgets/icon-box.php:144 includes/widgets/icon-box.php:539
-#: includes/widgets/image-box.php:121 includes/widgets/image-box.php:484
-#: includes/widgets/image-carousel.php:350 includes/widgets/progress.php:95
+#: includes/widgets/icon-box.php:144 includes/widgets/icon-box.php:538
+#: includes/widgets/image-box.php:121 includes/widgets/image-box.php:483
+#: includes/widgets/image-carousel.php:349 includes/widgets/progress.php:95
 #: includes/widgets/star-rating.php:158 includes/widgets/star-rating.php:202
 #: includes/widgets/tabs.php:105 includes/widgets/tabs.php:325
-#: includes/widgets/testimonial.php:143 includes/widgets/testimonial.php:367
+#: includes/widgets/testimonial.php:143 includes/widgets/testimonial.php:366
 #: includes/widgets/toggle.php:110 includes/widgets/toggle.php:331
 #: modules/nested-accordion/widgets/nested-accordion.php:95
-#: modules/nested-accordion/widgets/nested-accordion.php:507
-#: modules/nested-tabs/widgets/nested-tabs.php:95
+#: modules/nested-accordion/widgets/nested-accordion.php:510
+#: modules/nested-tabs/widgets/nested-tabs.php:97
 msgid "Title"
 msgstr "عنوان"
 
 #: core/kits/documents/tabs/settings-lightbox.php:130
 #: core/kits/documents/tabs/theme-style-form-fields.php:199
-#: includes/widgets/alert.php:207 includes/widgets/image.php:595
+#: includes/widgets/alert.php:207 includes/widgets/image.php:594
 #: includes/widgets/progress.php:223 includes/widgets/tabs.php:313
 #: includes/widgets/video.php:838
-#: modules/nested-tabs/widgets/nested-tabs.php:459
-#: modules/nested-tabs/widgets/nested-tabs.php:518
-#: modules/nested-tabs/widgets/nested-tabs.php:602
-#: modules/nested-tabs/widgets/nested-tabs.php:986
+#: modules/nested-tabs/widgets/nested-tabs.php:479
+#: modules/nested-tabs/widgets/nested-tabs.php:538
+#: modules/nested-tabs/widgets/nested-tabs.php:622
+#: modules/nested-tabs/widgets/nested-tabs.php:1016
 msgid "Background Color"
 msgstr "رنگ پس زمینه"
 
 #: core/settings/editor-preferences/model.php:120
-#: includes/base/element-base.php:1306
+#: includes/base/element-base.php:1321
 #: includes/controls/groups/grid-container.php:34
 #: includes/widgets/alert.php:145 includes/widgets/audio.php:154
 #: includes/widgets/audio.php:165 includes/widgets/audio.php:176
@@ -6217,7 +6218,7 @@ msgid "Hide"
 msgstr "پنهان"
 
 #: core/settings/editor-preferences/model.php:119
-#: includes/base/element-base.php:1307
+#: includes/base/element-base.php:1322
 #: includes/controls/groups/grid-container.php:33
 #: includes/widgets/alert.php:144 includes/widgets/audio.php:155
 #: includes/widgets/audio.php:166 includes/widgets/audio.php:177
@@ -6253,13 +6254,13 @@ msgid "Success"
 msgstr "موفق"
 
 #: includes/widgets/alert.php:100 includes/widgets/progress.php:137
-#: includes/widgets/traits/button-trait.php:75 assets/js/app-packages.js:5917
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:3326
+#: includes/widgets/traits/button-trait.php:75 assets/js/app-packages.js:5685
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:3326
 msgid "Info"
 msgstr "اطلاعات"
 
 #: includes/editor-templates/templates.php:113
-#: includes/elements/container.php:1155 includes/elements/section.php:982
+#: includes/elements/container.php:1195 includes/elements/section.php:982
 #: includes/template-library/sources/local.php:1691
 #: includes/widgets/alert.php:96 includes/widgets/progress.php:132
 #: includes/widgets/traits/button-trait.php:70
@@ -6272,19 +6273,19 @@ msgid "Alert"
 msgstr "هشدار"
 
 #: includes/widgets/accordion.php:339 includes/widgets/accordion.php:438
-#: includes/widgets/image-carousel.php:647 includes/widgets/tabs.php:348
+#: includes/widgets/image-carousel.php:646 includes/widgets/tabs.php:348
 #: includes/widgets/toggle.php:366 includes/widgets/toggle.php:456
 msgid "Active Color"
 msgstr "رنگ فعال"
 
 #: includes/widgets/accordion.php:290 includes/widgets/alert.php:218
-#: includes/widgets/social-icons.php:526 includes/widgets/tabs.php:302
-#: includes/widgets/toggle.php:292 includes/widgets/traits/button-trait.php:351
+#: includes/widgets/social-icons.php:525 includes/widgets/tabs.php:302
+#: includes/widgets/toggle.php:292 includes/widgets/traits/button-trait.php:350
 #: modules/nested-accordion/widgets/nested-accordion.php:458
-#: modules/nested-tabs/widgets/nested-tabs.php:475
-#: modules/nested-tabs/widgets/nested-tabs.php:534
-#: modules/nested-tabs/widgets/nested-tabs.php:618
-#: modules/nested-tabs/widgets/nested-tabs.php:999
+#: modules/nested-tabs/widgets/nested-tabs.php:495
+#: modules/nested-tabs/widgets/nested-tabs.php:554
+#: modules/nested-tabs/widgets/nested-tabs.php:638
+#: modules/nested-tabs/widgets/nested-tabs.php:1029
 msgid "Border Color"
 msgstr "رنگ حاشیه"
 
@@ -6293,12 +6294,12 @@ msgstr "رنگ حاشیه"
 #: includes/widgets/divider.php:501 includes/widgets/divider.php:798
 #: includes/widgets/google-maps.php:189 includes/widgets/heading.php:209
 #: includes/widgets/icon-box.php:108 includes/widgets/icon.php:123
-#: includes/widgets/image-box.php:183 includes/widgets/image-carousel.php:360
-#: includes/widgets/image-gallery.php:178 includes/widgets/image.php:242
-#: includes/widgets/progress.php:190 includes/widgets/social-icons.php:324
+#: includes/widgets/image-box.php:182 includes/widgets/image-carousel.php:359
+#: includes/widgets/image-gallery.php:178 includes/widgets/image.php:241
+#: includes/widgets/progress.php:190 includes/widgets/social-icons.php:323
 #: includes/widgets/spacer.php:133 includes/widgets/tabs.php:162
-#: includes/widgets/testimonial.php:212 includes/widgets/text-editor.php:263
-#: includes/widgets/toggle.php:166 includes/widgets/traits/button-trait.php:204
+#: includes/widgets/testimonial.php:211 includes/widgets/text-editor.php:263
+#: includes/widgets/toggle.php:166 includes/widgets/traits/button-trait.php:203
 #: includes/widgets/video.php:567
 msgid "View"
 msgstr "نمایش"
@@ -6334,44 +6335,44 @@ msgstr "آکاردیون"
 msgid "Sure! I'd love to help"
 msgstr "حتما ! کمک خواهم کرد"
 
-#: modules/system-info/module.php:198
+#: modules/system-info/module.php:204
 msgid "You don't have permissions to download this file"
 msgstr "شما دسترسی لازم برای دانلود این فایل را ندارید"
 
-#: modules/system-info/module.php:180
+#: modules/system-info/module.php:162 modules/system-info/module.php:186
 msgid "Download System Info"
 msgstr "دانلود اطلاعات سیستم"
 
-#: modules/system-info/module.php:162
+#: modules/system-info/module.php:168
 msgid "You can copy the below info as simple text with Ctrl+C / Ctrl+V:"
 msgstr "شما می توانید اطلاعات زیر را در قالب یک متن ساده و با استفاده از کلیدهای ترکیبی  Ctrl+C / Ctrl+V کپی کنید:"
 
-#: modules/system-info/module.php:160
+#: modules/system-info/module.php:166
 msgid "Copy & Paste Info"
 msgstr "اطلاعات را کپی و پیست کنید"
 
 #: core/common/modules/finder/categories/general.php:55
-#: modules/system-info/module.php:158
+#: modules/system-info/module.php:159
 #: modules/system-info/system-info-menu-item.php:29
 #: modules/system-info/system-info-menu-item.php:33
 msgid "System Info"
 msgstr "اطلاعات سیستم"
 
-#: core/experiments/manager.php:443 core/experiments/manager.php:732
+#: core/experiments/manager.php:445 core/experiments/manager.php:734
 msgid "Inactive"
 msgstr "غیرفعال"
 
-#: core/experiments/manager.php:442 core/experiments/manager.php:731
-#: modules/nested-accordion/widgets/nested-accordion.php:624
-#: modules/nested-accordion/widgets/nested-accordion.php:691
-#: modules/nested-tabs/widgets/nested-tabs.php:583
-#: modules/nested-tabs/widgets/nested-tabs.php:785
-#: modules/nested-tabs/widgets/nested-tabs.php:954
+#: core/experiments/manager.php:444 core/experiments/manager.php:733
+#: modules/nested-accordion/widgets/nested-accordion.php:627
+#: modules/nested-accordion/widgets/nested-accordion.php:694
+#: modules/nested-tabs/widgets/nested-tabs.php:603
+#: modules/nested-tabs/widgets/nested-tabs.php:805
+#: modules/nested-tabs/widgets/nested-tabs.php:984
 msgid "Active"
 msgstr "فعال"
 
 #: includes/editor-templates/templates.php:109
-#: includes/widgets/testimonial.php:131 includes/widgets/testimonial.php:322
+#: includes/widgets/testimonial.php:131 includes/widgets/testimonial.php:321
 msgid "Name"
 msgstr "نام"
 
@@ -6381,24 +6382,24 @@ msgstr "پوسته ها"
 
 #: includes/controls/switcher.php:73 includes/managers/icons.php:475
 #: includes/widgets/audio.php:127 includes/widgets/image-carousel.php:157
-#: includes/widgets/image-carousel.php:334
-#: includes/widgets/image-carousel.php:392
-#: includes/widgets/image-carousel.php:406
-#: includes/widgets/image-carousel.php:424
-#: includes/widgets/image-carousel.php:456
-#: includes/widgets/image-gallery.php:154 includes/widgets/image.php:231
-msgid "No"
-msgstr "خیر"
-
-#: includes/controls/switcher.php:74 includes/managers/icons.php:476
-#: includes/widgets/audio.php:126 includes/widgets/image-carousel.php:158
 #: includes/widgets/image-carousel.php:333
 #: includes/widgets/image-carousel.php:391
 #: includes/widgets/image-carousel.php:405
 #: includes/widgets/image-carousel.php:423
 #: includes/widgets/image-carousel.php:455
-#: includes/widgets/image-gallery.php:153 includes/widgets/image.php:230
-#: assets/js/app.js:9970
+#: includes/widgets/image-gallery.php:154 includes/widgets/image.php:230
+msgid "No"
+msgstr "خیر"
+
+#: includes/controls/switcher.php:74 includes/managers/icons.php:476
+#: includes/widgets/audio.php:126 includes/widgets/image-carousel.php:158
+#: includes/widgets/image-carousel.php:332
+#: includes/widgets/image-carousel.php:390
+#: includes/widgets/image-carousel.php:404
+#: includes/widgets/image-carousel.php:422
+#: includes/widgets/image-carousel.php:454
+#: includes/widgets/image-gallery.php:153 includes/widgets/image.php:229
+#: assets/js/app.js:9673
 msgid "Yes"
 msgstr "بله"
 
@@ -6410,7 +6411,7 @@ msgstr "نادیده گرفتن نقش‌ها"
 msgid "Post Types"
 msgstr "انواع نوشته"
 
-#: core/base/document.php:1719
+#: core/base/document.php:1747
 #: core/common/modules/finder/categories/settings.php:50
 msgid "General Settings"
 msgstr "تنظیمات عمومی"
@@ -6424,7 +6425,7 @@ msgstr "شدت"
 #: core/kits/documents/tabs/global-typography.php:142
 #: includes/widgets/divider.php:483 includes/widgets/divider.php:510
 #: includes/widgets/divider.php:700 includes/widgets/icon-list.php:120
-#: includes/widgets/icon-list.php:606
+#: includes/widgets/icon-list.php:605
 #: includes/widgets/traits/button-trait.php:59
 #: modules/shapes/widgets/text-path.php:94
 #: modules/shapes/widgets/text-path.php:289
@@ -6450,7 +6451,7 @@ msgid "Posts"
 msgstr "پست ها"
 
 #: includes/widgets/image-carousel.php:166
-#: includes/widgets/image-carousel.php:508
+#: includes/widgets/image-carousel.php:507
 msgid "Navigation"
 msgstr "ناوبری"
 
@@ -6458,7 +6459,7 @@ msgstr "ناوبری"
 msgid "Basic"
 msgstr "ویجت‌های پایه"
 
-#: includes/elements/container.php:1713 includes/elements/section.php:1360
+#: includes/elements/container.php:1753 includes/elements/section.php:1360
 msgid "Visibility"
 msgstr "نمایانی"
 
@@ -6467,16 +6468,16 @@ msgid "Content Position"
 msgstr "موقعیت محتوا"
 
 #: includes/elements/column.php:189 includes/elements/section.php:427
-#: includes/elements/section.php:450 includes/widgets/icon-box.php:251
-#: includes/widgets/image-box.php:238
+#: includes/elements/section.php:450 includes/widgets/icon-box.php:250
+#: includes/widgets/image-box.php:237
 msgid "Middle"
 msgstr "وسط"
 
 #: includes/elements/section.php:425 includes/widgets/tabs.php:202
 #: includes/widgets/tabs.php:232
 #: modules/nested-accordion/widgets/nested-accordion.php:162
-#: modules/nested-tabs/widgets/nested-tabs.php:217
-#: modules/nested-tabs/widgets/nested-tabs.php:257
+#: modules/nested-tabs/widgets/nested-tabs.php:229
+#: modules/nested-tabs/widgets/nested-tabs.php:271
 msgid "Stretch"
 msgstr "کشیده"
 
@@ -6488,7 +6489,7 @@ msgstr "موقعیت ستون"
 msgid "Minimum Height"
 msgstr "کمترین ارتفاع"
 
-#: includes/elements/container.php:499 includes/elements/section.php:337
+#: includes/elements/container.php:540 includes/elements/section.php:337
 #: includes/elements/section.php:386
 msgid "Min Height"
 msgstr "کمترین ارتفاع"
@@ -6498,10 +6499,10 @@ msgid "Fit To Screen"
 msgstr "هم اندازه صفحه نمایش"
 
 #: includes/controls/image-dimensions.php:100
-#: includes/elements/container.php:1209 includes/elements/section.php:331
+#: includes/elements/container.php:1249 includes/elements/section.php:331
 #: includes/elements/section.php:380 includes/elements/section.php:1036
-#: includes/widgets/google-maps.php:167 includes/widgets/icon-list.php:342
-#: includes/widgets/image.php:331 includes/widgets/progress.php:234
+#: includes/widgets/google-maps.php:167 includes/widgets/icon-list.php:341
+#: includes/widgets/image.php:330 includes/widgets/progress.php:234
 msgid "Height"
 msgstr "ارتفاع"
 
@@ -6522,39 +6523,39 @@ msgid "Columns Gap"
 msgstr "فاصله بین ستون ها"
 
 #: core/kits/documents/tabs/settings-layout.php:55
-#: includes/elements/container.php:397 includes/elements/section.php:245
+#: includes/elements/container.php:438 includes/elements/section.php:245
 #: includes/widgets/video.php:898
 msgid "Content Width"
 msgstr "عرض محتوا"
 
-#: includes/elements/container.php:402 includes/elements/section.php:250
-#: includes/widgets/common.php:225 includes/widgets/icon-list.php:195
+#: includes/elements/container.php:443 includes/elements/section.php:250
+#: includes/widgets/common.php:225 includes/widgets/icon-list.php:194
 msgid "Full Width"
 msgstr "تمام عرض"
 
-#: includes/elements/container.php:401 includes/elements/section.php:249
+#: includes/elements/container.php:442 includes/elements/section.php:249
 msgid "Boxed"
 msgstr "جعبه ای"
 
 #: includes/controls/image-dimensions.php:95
-#: includes/elements/container.php:411 includes/elements/container.php:1180
+#: includes/elements/container.php:452 includes/elements/container.php:1220
 #: includes/elements/section.php:259 includes/elements/section.php:1007
 #: includes/widgets/common.php:220 includes/widgets/common.php:242
-#: includes/widgets/divider.php:421 includes/widgets/icon-list.php:323
-#: includes/widgets/image-box.php:324 includes/widgets/image.php:261
-#: modules/nested-tabs/widgets/nested-tabs.php:279
+#: includes/widgets/divider.php:421 includes/widgets/icon-list.php:322
+#: includes/widgets/image-box.php:323 includes/widgets/image.php:260
+#: modules/nested-tabs/widgets/nested-tabs.php:295
 #: modules/shapes/widgets/text-path.php:523
 #: modules/shapes/widgets/text-path.php:588
 msgid "Width"
 msgstr "عرض"
 
 #: core/kits/documents/tabs/settings-layout.php:24
-#: includes/elements/column.php:113 includes/elements/container.php:1297
+#: includes/elements/column.php:113 includes/elements/container.php:1337
 #: includes/elements/section.php:227 includes/managers/controls.php:321
 #: includes/managers/elements.php:281 includes/widgets/common.php:175
 #: includes/widgets/icon-list.php:95
 #: modules/nested-accordion/widgets/nested-accordion.php:87
-#: assets/js/editor.js:36114
+#: assets/js/editor.js:36006
 msgid "Layout"
 msgstr "طرح‌بندی"
 
@@ -6562,7 +6563,7 @@ msgstr "طرح‌بندی"
 msgid "Column Width"
 msgstr "عرض ستون"
 
-#: includes/elements/column.php:807 includes/elements/container.php:1618
+#: includes/elements/column.php:807 includes/elements/container.php:1658
 #: includes/elements/section.php:1262 includes/widgets/common.php:595
 msgid "CSS Classes"
 msgstr "کلاس های CSS"
@@ -6570,46 +6571,46 @@ msgstr "کلاس های CSS"
 #: core/document-types/page-base.php:141
 #: core/kits/documents/tabs/theme-style-buttons.php:243
 #: core/kits/documents/tabs/theme-style-form-fields.php:158
-#: includes/elements/column.php:765 includes/elements/container.php:1317
+#: includes/elements/column.php:765 includes/elements/container.php:1357
 #: includes/elements/section.php:1220 includes/widgets/accordion.php:381
 #: includes/widgets/accordion.php:522 includes/widgets/common.php:205
-#: includes/widgets/divider.php:830 includes/widgets/icon-box.php:443
-#: includes/widgets/icon.php:335 includes/widgets/social-icons.php:404
+#: includes/widgets/divider.php:830 includes/widgets/icon-box.php:442
+#: includes/widgets/icon.php:334 includes/widgets/social-icons.php:403
 #: includes/widgets/toggle.php:399 includes/widgets/toggle.php:540
-#: includes/widgets/traits/button-trait.php:411
+#: includes/widgets/traits/button-trait.php:410
 #: modules/nested-accordion/widgets/nested-accordion.php:417
-#: modules/nested-accordion/widgets/nested-accordion.php:482
-#: modules/nested-tabs/widgets/nested-tabs.php:656
-#: modules/nested-tabs/widgets/nested-tabs.php:1034
+#: modules/nested-accordion/widgets/nested-accordion.php:485
+#: modules/nested-tabs/widgets/nested-tabs.php:676
+#: modules/nested-tabs/widgets/nested-tabs.php:1064
 msgid "Padding"
 msgstr "فاصله داخلی"
 
 #: core/document-types/page-base.php:129 includes/elements/column.php:746
-#: includes/elements/container.php:1305 includes/elements/section.php:1201
+#: includes/elements/container.php:1345 includes/elements/section.php:1201
 #: includes/widgets/common.php:193
 msgid "Margin"
 msgstr "حاشیه‌خارجی"
 
-#: includes/base/element-base.php:1236 includes/base/element-base.php:1264
+#: includes/base/element-base.php:1251 includes/base/element-base.php:1279
 #: includes/elements/column.php:217 includes/elements/column.php:713
 #: includes/elements/section.php:1169 includes/widgets/common.php:312
 #: includes/widgets/divider.php:456 includes/widgets/divider.php:752
 #: includes/widgets/divider.php:892 includes/widgets/heading.php:187
-#: includes/widgets/icon-box.php:279 includes/widgets/icon-list.php:247
-#: includes/widgets/icon-list.php:529 includes/widgets/icon-list.php:560
-#: includes/widgets/icon.php:175 includes/widgets/image-box.php:266
-#: includes/widgets/image-carousel.php:679
-#: includes/widgets/image-carousel.php:779
+#: includes/widgets/icon-box.php:278 includes/widgets/icon-list.php:246
+#: includes/widgets/icon-list.php:528 includes/widgets/icon-list.php:559
+#: includes/widgets/icon.php:174 includes/widgets/image-box.php:265
+#: includes/widgets/image-carousel.php:678
+#: includes/widgets/image-carousel.php:778
 #: includes/widgets/image-gallery.php:293 includes/widgets/image.php:142
-#: includes/widgets/image.php:558 includes/widgets/social-icons.php:305
+#: includes/widgets/image.php:557 includes/widgets/social-icons.php:304
 #: includes/widgets/star-rating.php:178 includes/widgets/tabs.php:194
 #: includes/widgets/tabs.php:224 includes/widgets/tabs.php:398
-#: includes/widgets/testimonial.php:194 includes/widgets/text-editor.php:196
-#: includes/widgets/traits/button-trait.php:126 includes/widgets/video.php:922
+#: includes/widgets/testimonial.php:193 includes/widgets/text-editor.php:196
+#: includes/widgets/traits/button-trait.php:125 includes/widgets/video.php:922
 #: modules/nested-accordion/widgets/nested-accordion.php:154
-#: modules/nested-tabs/widgets/nested-tabs.php:209
-#: modules/nested-tabs/widgets/nested-tabs.php:249
-#: modules/nested-tabs/widgets/nested-tabs.php:315
+#: modules/nested-tabs/widgets/nested-tabs.php:221
+#: modules/nested-tabs/widgets/nested-tabs.php:263
+#: modules/nested-tabs/widgets/nested-tabs.php:333
 #: modules/shapes/widgets/text-path.php:165
 msgid "Center"
 msgstr "وسط"
@@ -6638,20 +6639,20 @@ msgstr "رنگ سربرگ"
 #: includes/elements/column.php:669 includes/elements/section.php:1125
 #: includes/widgets/alert.php:259 includes/widgets/alert.php:299
 #: includes/widgets/counter.php:232 includes/widgets/counter.php:283
-#: includes/widgets/heading.php:228 includes/widgets/image-carousel.php:801
-#: includes/widgets/image-gallery.php:318 includes/widgets/image.php:580
+#: includes/widgets/heading.php:228 includes/widgets/image-carousel.php:800
+#: includes/widgets/image-gallery.php:318 includes/widgets/image.php:579
 #: includes/widgets/progress.php:306 includes/widgets/star-rating.php:213
-#: includes/widgets/testimonial.php:232 includes/widgets/testimonial.php:330
-#: includes/widgets/testimonial.php:375 includes/widgets/text-editor.php:217
-#: includes/widgets/traits/button-trait.php:278
-#: includes/widgets/traits/button-trait.php:322
+#: includes/widgets/testimonial.php:231 includes/widgets/testimonial.php:329
+#: includes/widgets/testimonial.php:374 includes/widgets/text-editor.php:217
+#: includes/widgets/traits/button-trait.php:277
+#: includes/widgets/traits/button-trait.php:321
 msgid "Text Color"
 msgstr "رنگ متن"
 
 #: core/kits/documents/tabs/theme-style-typography.php:19
 #: core/kits/documents/tabs/theme-style-typography.php:38
 #: includes/elements/column.php:647 includes/elements/section.php:1104
-#: assets/js/editor-modules.js:1439 assets/js/editor.js:41419
+#: assets/js/editor-modules.js:1439 assets/js/editor.js:41390
 msgid "Typography"
 msgstr "تایپوگرافی"
 
@@ -6659,14 +6660,14 @@ msgstr "تایپوگرافی"
 msgid "Add"
 msgstr "اضافه کردن"
 
-#: includes/controls/gaps.php:59
-#: includes/controls/groups/grid-container.php:114
+#: includes/controls/gaps.php:58
+#: includes/controls/groups/grid-container.php:119
 #: includes/elements/column.php:60
 msgid "Column"
 msgstr "ستون"
 
 #: includes/elements/section.php:78 modules/library/documents/section.php:43
-#: assets/js/container-converter.js:99 assets/js/editor.js:10021
+#: assets/js/container-converter.js:99 assets/js/editor.js:10026
 msgid "Section"
 msgstr "بخش (سکشن)"
 
@@ -6674,12 +6675,12 @@ msgstr "بخش (سکشن)"
 #: includes/editor-templates/navigator.php:20
 #: includes/editor-templates/panel.php:87
 #: includes/editor-templates/panel.php:93 includes/elements/section.php:531
-#: includes/elements/section.php:539 assets/js/editor.js:30786
-#: assets/js/packages/editor-app-bar.js:1049
+#: includes/elements/section.php:539 assets/js/editor.js:30620
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:1101
 msgid "Structure"
 msgstr "ساختار"
 
-#: includes/elements/column.php:900 includes/elements/container.php:1705
+#: includes/elements/column.php:900 includes/elements/container.php:1745
 #: includes/elements/section.php:1336 includes/managers/controls.php:320
 #: includes/widgets/common.php:1131
 msgid "Responsive"
@@ -6688,31 +6689,31 @@ msgstr "واکنش‌گرا"
 #: core/common/modules/finder/categories/settings.php:55
 #: core/dynamic-tags/tag.php:88 includes/elements/column.php:737
 #: includes/elements/section.php:1193 includes/managers/controls.php:319
-#: includes/settings/settings.php:296 assets/js/editor.js:9297
-#: assets/js/editor.js:36111
+#: includes/settings/settings.php:296 assets/js/editor.js:9294
+#: assets/js/editor.js:36003
 msgid "Advanced"
 msgstr "پیشرفته"
 
 #: includes/managers/controls.php:318 includes/widgets/divider.php:363
-#: includes/widgets/icon-list.php:276 assets/js/ai-admin.js:3791
-#: assets/js/ai.js:4109 assets/js/editor.js:9294 assets/js/editor.js:36108
+#: includes/widgets/icon-list.php:275 assets/js/ai-admin.js:3791
+#: assets/js/ai.js:4109 assets/js/editor.js:9291 assets/js/editor.js:36000
 msgid "Style"
 msgstr "استایل"
 
 #: includes/managers/controls.php:317 includes/widgets/accordion.php:123
 #: includes/widgets/accordion.php:470 includes/widgets/alert.php:126
-#: includes/widgets/icon-box.php:531 includes/widgets/image-box.php:476
+#: includes/widgets/icon-box.php:530 includes/widgets/image-box.php:475
 #: includes/widgets/tabs.php:119 includes/widgets/tabs.php:418
-#: includes/widgets/testimonial.php:95 includes/widgets/testimonial.php:224
+#: includes/widgets/testimonial.php:95 includes/widgets/testimonial.php:223
 #: includes/widgets/toggle.php:123 includes/widgets/toggle.php:488
 #: modules/nested-accordion/widgets/nested-accordion.php:436
-#: modules/nested-tabs/widgets/nested-tabs.php:973 assets/js/app.js:11341
-#: assets/js/app.js:11834 assets/js/editor.js:36105
+#: modules/nested-tabs/widgets/nested-tabs.php:1003 assets/js/app.js:11044
+#: assets/js/app.js:11537 assets/js/editor.js:35997
 msgid "Content"
 msgstr "محتوا"
 
 #: includes/controls/groups/grid-container.php:42
-#: includes/widgets/image-gallery.php:118 includes/widgets/social-icons.php:272
+#: includes/widgets/image-gallery.php:118 includes/widgets/social-icons.php:271
 #: includes/widgets/text-editor.php:136
 msgid "Columns"
 msgstr "ستون‌ها"
@@ -6724,12 +6725,12 @@ msgstr "تنظیمات صفحه"
 #: includes/controls/image-dimensions.php:102
 #: includes/editor-templates/panel.php:175
 #: modules/history/views/revisions-panel-template.php:14
-#: assets/js/editor.js:9929 assets/js/editor.js:37205
+#: assets/js/editor.js:9934 assets/js/editor.js:37144
 msgid "Apply"
 msgstr "اعمال تغییرات"
 
 #: modules/history/views/revisions-panel-template.php:11
-#: assets/js/editor.js:5007 assets/js/editor.js:43526
+#: assets/js/editor.js:5007 assets/js/editor.js:43500
 msgid "Discard"
 msgstr "بیخیال"
 
@@ -6737,8 +6738,8 @@ msgstr "بیخیال"
 msgid "Reset"
 msgstr "تنظیم مجدد"
 
-#: core/editor/templates/editor-body-v1.view.php:31
-#: core/editor/templates/editor-body-v2.view.php:33
+#: core/editor/loader/v1/templates/editor-body-v1.view.php:31
+#: core/editor/loader/v2/templates/editor-body-v2.view.php:33
 #: includes/editor-templates/templates.php:172
 msgid "Preview"
 msgstr "پیش‌نمایش"
@@ -6748,12 +6749,12 @@ msgstr "پیش‌نمایش"
 #: includes/editor-templates/templates.php:19
 #: includes/editor-templates/templates.php:217
 #: includes/editor-templates/templates.php:228 assets/js/editor.js:5006
-#: assets/js/editor.js:43525 assets/js/kit-elements-defaults-editor.js:615
+#: assets/js/editor.js:43499 assets/js/kit-elements-defaults-editor.js:615
 msgid "Save"
 msgstr "ذخیره"
 
-#: core/admin/admin.php:624 core/admin/menu/main.php:41
-#: assets/js/packages/editor-app-bar.js:898
+#: core/admin/admin.php:614 core/admin/menu/main.php:41
+#: assets/js/packages/editor-app-bar/editor-app-bar.js:950
 msgid "Help"
 msgstr "راهنما"
 
@@ -6766,7 +6767,7 @@ msgid "Mobile Landscape"
 msgstr "حالت افقی موبایل"
 
 #: core/settings/editor-preferences/model.php:134
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:4287
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:4287
 msgid "Tablet"
 msgstr "تبلت"
 
@@ -6775,9 +6776,9 @@ msgid "Laptop"
 msgstr "لپ تاپ"
 
 #: core/settings/editor-preferences/model.php:135
-#: includes/base/element-base.php:1296 includes/editor-templates/panel.php:266
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:4280
-#: assets/js/packages/editor-responsive.js:203
+#: includes/base/element-base.php:1311 includes/editor-templates/panel.php:266
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:4280
+#: assets/js/packages/editor-responsive/editor-responsive.js:203
 msgid "Desktop"
 msgstr "دسکتاپ"
 
@@ -6805,18 +6806,19 @@ msgstr "جستجوی ابزارک..."
 msgid "Add New Section"
 msgstr "افزودن بخش جدید"
 
-#: core/admin/admin.php:250 core/editor/templates/editor-body-v1.view.php:23
-#: core/editor/templates/editor-body-v2.view.php:23
+#: core/admin/admin.php:240
+#: core/editor/loader/v1/templates/editor-body-v1.view.php:23
+#: core/editor/loader/v2/templates/editor-body-v2.view.php:23
 #: includes/editor-templates/templates.php:50 modules/gutenberg/module.php:122
-#: assets/js/app-packages.js:5544
-#: assets/js/kit-library.61bec15242b147d7ac1b.bundle.js:236
-#: assets/js/onboarding.ea5b3ccf176bfa64221c.bundle.js:46
+#: assets/js/app-packages.js:5312
+#: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:236
+#: assets/js/onboarding.d1f3b86a6e269191f707.bundle.js:46
 msgid "Loading"
 msgstr "در حال بارگذاری"
 
 #. Plugin Name of the plugin
-#: app/view.php:23 core/admin/admin.php:300 core/admin/admin.php:412
-#: core/admin/admin.php:490 core/admin/menu/main.php:17
+#: app/view.php:23 core/admin/admin.php:290 core/admin/admin.php:402
+#: core/admin/admin.php:480 core/admin/menu/main.php:17
 #: core/admin/menu/main.php:18 core/documents-manager.php:381
 #: core/upgrade/custom-tasks-manager.php:29 core/upgrade/manager.php:36
 #: includes/plugin.php:885
@@ -6824,7 +6826,7 @@ msgstr "در حال بارگذاری"
 #: includes/settings/admin-menu-items/admin-menu-item.php:31
 #: includes/settings/settings.php:82 includes/settings/settings.php:83
 #: includes/settings/settings.php:390 modules/compatibility-tag/module.php:36
-#: assets/js/app-packages.js:2053 assets/js/app.js:2994
+#: assets/js/app-packages.js:1821 assets/js/app.js:2697
 msgid "Elementor"
 msgstr "المنتور"
 
@@ -6834,10 +6836,11 @@ msgstr "افزودن آیتم"
 
 #: core/kits/views/trash-kit-confirmation.php:30
 #: includes/editor-templates/hotkeys.php:67
-#: includes/editor-templates/templates.php:185 assets/js/editor.js:10156
-#: assets/js/editor.js:27472 assets/js/editor.js:29965
-#: assets/js/editor.js:46337 assets/js/import-export-admin.js:287
-#: assets/js/packages/editor-site-navigation.js:585
+#: includes/editor-templates/templates.php:185 assets/js/editor.js:10161
+#: assets/js/editor.js:27282 assets/js/editor.js:29795
+#: assets/js/editor.js:46311 assets/js/import-export-admin.js:287
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:882
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.js:915
 msgid "Delete"
 msgstr "حذف"
 
@@ -6848,10 +6851,10 @@ msgstr "انتخاب آیکن"
 #: core/kits/manager.php:139 includes/elements/section.php:290
 #: includes/maintenance-mode.php:238 includes/widgets/common.php:137
 #: includes/widgets/common.php:227 includes/widgets/common.php:953
-#: includes/widgets/common.php:1014 includes/widgets/image-carousel.php:703
-#: includes/widgets/image-gallery.php:201 includes/widgets/social-icons.php:190
-#: includes/widgets/social-icons.php:348 modules/shapes/module.php:29
-#: assets/js/editor.js:44095
+#: includes/widgets/common.php:1014 includes/widgets/image-carousel.php:702
+#: includes/widgets/image-gallery.php:201 includes/widgets/social-icons.php:189
+#: includes/widgets/social-icons.php:347 modules/shapes/module.php:29
+#: assets/js/editor.js:44069
 msgid "Custom"
 msgstr "سفارشی"
 
@@ -6874,26 +6877,26 @@ msgstr "ارتفاع خط"
 #: core/kits/documents/tabs/theme-style-form-fields.php:117
 #: core/kits/documents/tabs/theme-style-images.php:63
 #: core/kits/documents/tabs/theme-style-typography.php:125
-#: includes/base/element-base.php:791 includes/elements/column.php:283
+#: includes/base/element-base.php:806 includes/elements/column.php:283
 #: includes/elements/column.php:367 includes/elements/column.php:425
 #: includes/elements/column.php:531 includes/elements/column.php:869
-#: includes/elements/container.php:662 includes/elements/container.php:750
-#: includes/elements/container.php:830 includes/elements/container.php:971
-#: includes/elements/container.php:1667 includes/elements/section.php:563
+#: includes/elements/container.php:702 includes/elements/container.php:790
+#: includes/elements/container.php:870 includes/elements/container.php:1011
+#: includes/elements/container.php:1707 includes/elements/section.php:563
 #: includes/elements/section.php:642 includes/elements/section.php:715
 #: includes/elements/section.php:837 includes/elements/section.php:1304
 #: includes/widgets/alert.php:395 includes/widgets/common.php:643
 #: includes/widgets/common.php:690 includes/widgets/common.php:773
 #: includes/widgets/google-maps.php:209 includes/widgets/heading.php:272
-#: includes/widgets/icon-box.php:315 includes/widgets/icon-list.php:405
-#: includes/widgets/icon-list.php:635 includes/widgets/icon.php:205
-#: includes/widgets/image-box.php:383 includes/widgets/image.php:409
-#: includes/widgets/traits/button-trait.php:270
-#: modules/nested-accordion/widgets/nested-accordion.php:628
-#: modules/nested-accordion/widgets/nested-accordion.php:682
-#: modules/nested-tabs/widgets/nested-tabs.php:446
-#: modules/nested-tabs/widgets/nested-tabs.php:692
-#: modules/nested-tabs/widgets/nested-tabs.php:920
+#: includes/widgets/icon-box.php:314 includes/widgets/icon-list.php:404
+#: includes/widgets/icon-list.php:634 includes/widgets/icon.php:204
+#: includes/widgets/image-box.php:382 includes/widgets/image.php:408
+#: includes/widgets/traits/button-trait.php:269
+#: modules/nested-accordion/widgets/nested-accordion.php:631
+#: modules/nested-accordion/widgets/nested-accordion.php:685
+#: modules/nested-tabs/widgets/nested-tabs.php:466
+#: modules/nested-tabs/widgets/nested-tabs.php:712
+#: modules/nested-tabs/widgets/nested-tabs.php:950
 #: modules/shapes/widgets/text-path.php:392
 #: modules/shapes/widgets/text-path.php:484
 msgid "Normal"
@@ -6934,19 +6937,19 @@ msgctxt "Border Control"
 msgid "Width"
 msgstr "عرض"
 
-#: includes/widgets/divider.php:323 includes/widgets/icon-list.php:282
+#: includes/widgets/divider.php:323 includes/widgets/icon-list.php:281
 msgid "Dashed"
 msgstr "خط فاصله دار"
 
-#: includes/widgets/divider.php:322 includes/widgets/icon-list.php:281
+#: includes/widgets/divider.php:322 includes/widgets/icon-list.php:280
 msgid "Dotted"
 msgstr "نقطه ای"
 
-#: includes/widgets/divider.php:321 includes/widgets/icon-list.php:280
+#: includes/widgets/divider.php:321 includes/widgets/icon-list.php:279
 msgid "Double"
 msgstr "دوبل"
 
-#: includes/widgets/divider.php:320 includes/widgets/icon-list.php:279
+#: includes/widgets/divider.php:320 includes/widgets/icon-list.php:278
 #: includes/widgets/star-rating.php:143
 msgid "Solid"
 msgstr "یکپارچه"
@@ -6955,19 +6958,19 @@ msgstr "یکپارچه"
 #: core/kits/documents/tabs/settings-lightbox.php:116
 #: includes/controls/animation.php:153 includes/controls/groups/border.php:64
 #: includes/controls/hover-animation.php:125 includes/controls/icons.php:108
-#: includes/controls/icons.php:192 includes/elements/container.php:1132
+#: includes/controls/icons.php:192 includes/elements/container.php:1172
 #: includes/elements/section.php:959 includes/widgets/divider.php:479
 #: includes/widgets/image-carousel.php:173
 #: includes/widgets/image-carousel.php:296
-#: includes/widgets/image-carousel.php:349
+#: includes/widgets/image-carousel.php:348
 #: includes/widgets/image-gallery.php:134 includes/widgets/image.php:162
 #: includes/widgets/image.php:193 includes/widgets/video.php:535
-#: modules/nested-tabs/widgets/nested-tabs.php:369 assets/js/ai-admin.js:4451
-#: assets/js/ai-admin.js:4457 assets/js/ai-admin.js:4467
-#: assets/js/ai-admin.js:4478 assets/js/ai-admin.js:4489
-#: assets/js/ai-admin.js:4505 assets/js/ai.js:4769 assets/js/ai.js:4775
-#: assets/js/ai.js:4785 assets/js/ai.js:4796 assets/js/ai.js:4807
-#: assets/js/ai.js:4823
+#: modules/nested-tabs/widgets/nested-tabs.php:389 assets/js/ai-admin.js:4460
+#: assets/js/ai-admin.js:4466 assets/js/ai-admin.js:4476
+#: assets/js/ai-admin.js:4487 assets/js/ai-admin.js:4498
+#: assets/js/ai-admin.js:4514 assets/js/ai.js:4778 assets/js/ai.js:4784
+#: assets/js/ai.js:4794 assets/js/ai.js:4805 assets/js/ai.js:4816
+#: assets/js/ai.js:4832
 msgid "None"
 msgstr "هیچ"
 
@@ -7145,7 +7148,7 @@ msgid "System"
 msgstr "سیستم"
 
 #: core/kits/documents/tabs/theme-style-typography.php:115
-#: includes/elements/container.php:614 includes/widgets/audio.php:103
+#: includes/elements/container.php:655 includes/widgets/audio.php:103
 #: includes/widgets/heading.php:127 includes/widgets/icon-box.php:172
 #: includes/widgets/icon-list.php:147 includes/widgets/icon.php:155
 #: includes/widgets/image-box.php:150 includes/widgets/image-carousel.php:292
@@ -7159,77 +7162,67 @@ msgstr "سیستم"
 msgid "Link"
 msgstr "پیوند"
 
-#: includes/base/element-base.php:1232 includes/controls/dimensions.php:85
-#: includes/elements/column.php:709 includes/elements/container.php:1376
+#: includes/base/element-base.php:1247 includes/controls/dimensions.php:85
+#: includes/elements/column.php:709 includes/elements/container.php:1416
 #: includes/elements/section.php:1165 includes/widgets/common.php:357
 #: includes/widgets/common.php:358 includes/widgets/divider.php:452
 #: includes/widgets/divider.php:748 includes/widgets/divider.php:888
-#: includes/widgets/heading.php:183 includes/widgets/icon-box.php:221
-#: includes/widgets/icon-box.php:275 includes/widgets/icon-list.php:243
-#: includes/widgets/icon-list.php:525 includes/widgets/icon.php:171
-#: includes/widgets/image-box.php:207 includes/widgets/image-box.php:262
-#: includes/widgets/image-carousel.php:497
-#: includes/widgets/image-carousel.php:775
+#: includes/widgets/heading.php:183 includes/widgets/icon-box.php:220
+#: includes/widgets/icon-box.php:274 includes/widgets/icon-list.php:242
+#: includes/widgets/icon-list.php:524 includes/widgets/icon.php:170
+#: includes/widgets/image-box.php:206 includes/widgets/image-box.php:261
+#: includes/widgets/image-carousel.php:496
+#: includes/widgets/image-carousel.php:774
 #: includes/widgets/image-gallery.php:289 includes/widgets/image.php:138
-#: includes/widgets/image.php:554 includes/widgets/social-icons.php:301
+#: includes/widgets/image.php:553 includes/widgets/social-icons.php:300
 #: includes/widgets/star-rating.php:174 includes/widgets/tabs.php:394
-#: includes/widgets/testimonial.php:190 includes/widgets/text-editor.php:192
-#: includes/widgets/traits/button-trait.php:122
-#: modules/nested-tabs/widgets/nested-tabs.php:81
-#: modules/nested-tabs/widgets/nested-tabs.php:82
-#: modules/nested-tabs/widgets/nested-tabs.php:311
+#: includes/widgets/testimonial.php:189 includes/widgets/text-editor.php:192
+#: includes/widgets/traits/button-trait.php:121
 #: modules/shapes/widgets/text-path.php:161
 msgid "Left"
 msgstr "چپ"
 
-#: includes/base/element-base.php:1268 includes/controls/dimensions.php:84
-#: includes/elements/column.php:190 includes/elements/container.php:1141
-#: includes/elements/container.php:1498 includes/elements/section.php:428
+#: includes/base/element-base.php:1283 includes/controls/dimensions.php:84
+#: includes/elements/column.php:190 includes/elements/container.php:1181
+#: includes/elements/container.php:1538 includes/elements/section.php:428
 #: includes/elements/section.php:451 includes/elements/section.php:968
-#: includes/widgets/common.php:476 includes/widgets/icon-box.php:255
-#: includes/widgets/image-box.php:242
-#: modules/nested-tabs/widgets/nested-tabs.php:176
-#: modules/nested-tabs/widgets/nested-tabs.php:850
+#: includes/widgets/common.php:476 includes/widgets/icon-box.php:254
+#: includes/widgets/image-box.php:241
 msgid "Bottom"
 msgstr "پائین"
 
-#: includes/base/element-base.php:1240 includes/controls/dimensions.php:83
-#: includes/elements/column.php:717 includes/elements/container.php:1377
+#: includes/base/element-base.php:1255 includes/controls/dimensions.php:83
+#: includes/elements/column.php:717 includes/elements/container.php:1417
 #: includes/elements/section.php:1173 includes/widgets/common.php:357
 #: includes/widgets/common.php:358 includes/widgets/divider.php:460
 #: includes/widgets/divider.php:756 includes/widgets/divider.php:896
-#: includes/widgets/heading.php:191 includes/widgets/icon-box.php:229
-#: includes/widgets/icon-box.php:283 includes/widgets/icon-list.php:251
-#: includes/widgets/icon-list.php:533 includes/widgets/icon.php:179
-#: includes/widgets/image-box.php:215 includes/widgets/image-box.php:270
-#: includes/widgets/image-carousel.php:498
-#: includes/widgets/image-carousel.php:783
+#: includes/widgets/heading.php:191 includes/widgets/icon-box.php:228
+#: includes/widgets/icon-box.php:282 includes/widgets/icon-list.php:250
+#: includes/widgets/icon-list.php:532 includes/widgets/icon.php:178
+#: includes/widgets/image-box.php:214 includes/widgets/image-box.php:269
+#: includes/widgets/image-carousel.php:497
+#: includes/widgets/image-carousel.php:782
 #: includes/widgets/image-gallery.php:297 includes/widgets/image.php:146
-#: includes/widgets/image.php:562 includes/widgets/social-icons.php:309
+#: includes/widgets/image.php:561 includes/widgets/social-icons.php:308
 #: includes/widgets/star-rating.php:182 includes/widgets/tabs.php:402
-#: includes/widgets/testimonial.php:198 includes/widgets/text-editor.php:200
-#: includes/widgets/traits/button-trait.php:130
-#: modules/nested-tabs/widgets/nested-tabs.php:81
-#: modules/nested-tabs/widgets/nested-tabs.php:82
-#: modules/nested-tabs/widgets/nested-tabs.php:319
+#: includes/widgets/testimonial.php:197 includes/widgets/text-editor.php:200
+#: includes/widgets/traits/button-trait.php:129
 #: modules/shapes/widgets/text-path.php:169
 msgid "Right"
 msgstr "راست"
 
-#: includes/base/element-base.php:1260 includes/controls/dimensions.php:82
-#: includes/elements/column.php:188 includes/elements/container.php:1140
-#: includes/elements/container.php:1494 includes/elements/section.php:426
+#: includes/base/element-base.php:1275 includes/controls/dimensions.php:82
+#: includes/elements/column.php:188 includes/elements/container.php:1180
+#: includes/elements/container.php:1534 includes/elements/section.php:426
 #: includes/elements/section.php:449 includes/elements/section.php:967
-#: includes/widgets/common.php:472 includes/widgets/icon-box.php:225
-#: includes/widgets/icon-box.php:247 includes/widgets/image-box.php:211
-#: includes/widgets/image-box.php:234 includes/widgets/testimonial.php:172
+#: includes/widgets/common.php:472 includes/widgets/icon-box.php:224
+#: includes/widgets/icon-box.php:246 includes/widgets/image-box.php:210
+#: includes/widgets/image-box.php:233 includes/widgets/testimonial.php:171
 #: includes/widgets/video.php:923
-#: modules/nested-tabs/widgets/nested-tabs.php:172
-#: modules/nested-tabs/widgets/nested-tabs.php:842
 msgid "Top"
 msgstr "بالا"
 
-#: core/experiments/manager.php:441
+#: core/experiments/manager.php:443
 #: core/settings/editor-preferences/model.php:132
 #: includes/base/widget-base.php:281 includes/controls/animation.php:152
 #: includes/controls/font.php:66 includes/controls/groups/background.php:648
@@ -7240,8 +7233,8 @@ msgstr "بالا"
 #: includes/controls/groups/typography.php:181
 #: includes/editor-templates/panel.php:237 includes/elements/column.php:187
 #: includes/elements/column.php:215 includes/elements/column.php:255
-#: includes/elements/container.php:564 includes/elements/container.php:587
-#: includes/elements/container.php:1364 includes/elements/section.php:284
+#: includes/elements/container.php:605 includes/elements/container.php:628
+#: includes/elements/container.php:1404 includes/elements/section.php:284
 #: includes/elements/section.php:335 includes/elements/section.php:384
 #: includes/elements/section.php:448 includes/elements/section.php:476
 #: includes/elements/section.php:512 includes/settings/settings.php:359
@@ -7250,21 +7243,21 @@ msgstr "بالا"
 #: includes/widgets/icon-box.php:111 includes/widgets/icon-list.php:100
 #: includes/widgets/icon.php:126 includes/widgets/image-carousel.php:122
 #: includes/widgets/image-carousel.php:140
-#: includes/widgets/image-carousel.php:332
-#: includes/widgets/image-carousel.php:702
+#: includes/widgets/image-carousel.php:331
+#: includes/widgets/image-carousel.php:701
 #: includes/widgets/image-gallery.php:152
 #: includes/widgets/image-gallery.php:168
-#: includes/widgets/image-gallery.php:200 includes/widgets/image.php:229
-#: includes/widgets/image.php:359 includes/widgets/progress.php:136
+#: includes/widgets/image-gallery.php:200 includes/widgets/image.php:228
+#: includes/widgets/image.php:358 includes/widgets/progress.php:136
 #: includes/widgets/text-editor.php:131 includes/widgets/text-editor.php:266
 #: includes/widgets/traits/button-trait.php:74
 #: modules/page-templates/module.php:296
-#: modules/shapes/widgets/text-path.php:187 assets/js/editor.js:44087
-#: assets/js/editor.js:44098
+#: modules/shapes/widgets/text-path.php:187 assets/js/editor.js:44061
+#: assets/js/editor.js:44072
 msgid "Default"
 msgstr "پیش‌ فرض"
 
-#: core/admin/admin.php:231 core/admin/admin.php:239 core/base/document.php:556
+#: core/admin/admin.php:221 core/admin/admin.php:229 core/base/document.php:592
 #: modules/admin-bar/module.php:123 modules/gutenberg/module.php:100
 #: modules/gutenberg/module.php:111
 msgid "Edit with Elementor"
