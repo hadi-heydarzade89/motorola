@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://themeforest.net/item/electro-electronics-store-"
 "woocommerce-theme/15720624/support/\n"
 "POT-Creation-Date: 2022-04-11 09:09:05+00:00\n"
-"PO-Revision-Date: 2023-08-06 11:34+0330\n"
+"PO-Revision-Date: 2023-09-11 18:16+0330\n"
 "Last-Translator: \n"
 "Language-Team: Electro POT <support@transvelo.com>\n"
 "Language: fa_IR\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.3.2\n"
 
 #: inc/admin/electro-meta-box-functions.php:391
 #: inc/admin/meta-boxes/class-electro-meta-box-home-v7.php:262
@@ -1525,7 +1525,7 @@ msgstr ""
 
 #: inc/admin/electro-meta-box-functions.php:411
 msgid "Popularity"
-msgstr ""
+msgstr "محبوبترین"
 
 #: inc/admin/electro-meta-box-functions.php:412
 msgid "Rand"
@@ -2202,7 +2202,7 @@ msgstr ""
 #: inc/admin/meta-boxes/class-electro-meta-box-home-v9.php:1746
 #: inc/admin/meta-boxes/class-electro-meta-box-home-v9.php:1793
 msgid "Order By"
-msgstr ""
+msgstr "مرتب سازی :"
 
 #: inc/admin/meta-boxes/class-electro-meta-box-home-mobile-v1.php:313
 #: inc/admin/meta-boxes/class-electro-meta-box-home-mobile-v1.php:491
@@ -4538,7 +4538,7 @@ msgstr ""
 
 #: inc/classes/class-electro-breadcrumb.php:261
 msgid "Search results for &ldquo;%s&rdquo;"
-msgstr ""
+msgstr "محصول"
 
 #: inc/classes/class-electro-breadcrumb.php:270
 msgid "Page %d"
@@ -4959,23 +4959,23 @@ msgstr ""
 
 #: inc/dokan/functions.php:347
 msgid "Sort by popularity"
-msgstr ""
+msgstr "محبوب ترین"
 
 #: inc/dokan/functions.php:348
 msgid "Sort by average rating"
-msgstr ""
+msgstr "بهترین امتیاز"
 
 #: inc/dokan/functions.php:349
 msgid "Sort by latest"
-msgstr ""
+msgstr "جدیدترین"
 
 #: inc/dokan/functions.php:350
 msgid "Sort by price: low to high"
-msgstr ""
+msgstr "ارزان ترین"
 
 #: inc/dokan/functions.php:351
 msgid "Sort by price: high to low"
-msgstr ""
+msgstr "گرانترین"
 
 #: inc/dokan/functions.php:359
 #: inc/widgets/class-electro-wc-catalog-orderby.php:45
@@ -7660,15 +7660,15 @@ msgstr ""
 
 #: inc/widgets/class-electro-wc-catalog-orderby.php:35
 msgid "Sort by: Popularity"
-msgstr ""
+msgstr "محبوب ترین"
 
 #: inc/widgets/class-electro-wc-catalog-orderby.php:36
 msgid "Sort by: Rating"
-msgstr ""
+msgstr "بهترین امتیاز"
 
 #: inc/widgets/class-electro-wc-catalog-orderby.php:37
 msgid "Sort by: Date"
-msgstr ""
+msgstr "جدیدترین"
 
 #: inc/widgets/class-electro-wc-catalog-orderby.php:38
 msgid "Sort by: Price"
@@ -7828,11 +7828,11 @@ msgstr ""
 
 #: inc/woocommerce/template-tags/header.php:82
 msgid "Returning Customer ?"
-msgstr ""
+msgstr " "
 
 #: inc/woocommerce/template-tags/header.php:83
 msgid "Don't have an account ?"
-msgstr ""
+msgstr "حساب کاربری ایجاد نکرده اید؟"
 
 #: inc/woocommerce/template-tags/header.php:87
 msgid "My Account"
@@ -7840,11 +7840,11 @@ msgstr ""
 
 #: inc/woocommerce/template-tags/header.php:103
 msgid "Sign in"
-msgstr ""
+msgstr "ورود به حساب کاربری"
 
 #: inc/woocommerce/template-tags/header.php:107
 msgid "Register"
-msgstr ""
+msgstr "ساخت حساب کاربری"
 
 #: inc/woocommerce/template-tags.php:81
 msgid "%s Categories"
@@ -7864,7 +7864,7 @@ msgstr ""
 
 #: inc/woocommerce/template-tags.php:470
 msgid "Filters"
-msgstr ""
+msgstr "فیلترها"
 
 #: inc/woocommerce/template-tags.php:673
 msgid "Already Sold:"
@@ -8045,7 +8045,7 @@ msgstr ""
 
 #: templates/shop/single-product-advanced-reviews.php:64
 msgid "Be the first to review &ldquo;%s&rdquo;"
-msgstr ""
+msgstr "اولین نظر را درباره &ldquo;%s&rdquo دهید"
 
 #: templates/shop/single-product-advanced-reviews.php:65
 msgid "Leave a Reply to %s"
@@ -8057,7 +8057,7 @@ msgstr ""
 
 #: templates/shop/single-product-advanced-reviews.php:74
 msgid "Add Review"
-msgstr ""
+msgstr "ثبت نظر"
 
 #: templates/shop/single-product-advanced-reviews.php:80
 msgid "You must be <a href=\"%s\">logged in</a> to post a review."
@@ -8065,7 +8065,7 @@ msgstr ""
 
 #: templates/shop/single-product-advanced-reviews.php:84
 msgid "Your Rating"
-msgstr ""
+msgstr "امتیاز شما"
 
 #: templates/shop/single-product-advanced-reviews.php:85
 msgid "Rate&hellip;"
@@ -8093,7 +8093,7 @@ msgstr ""
 
 #: templates/shop/single-product-advanced-reviews.php:94
 msgid "Your Review"
-msgstr ""
+msgstr "نظر شما"
 
 #: templates/shop/single-product-advanced-reviews.php:103
 msgid ""
