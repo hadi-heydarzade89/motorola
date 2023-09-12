@@ -3,7 +3,7 @@ Theme Name:         Electro Child
 Theme URI:          https://themeforest.net/item/electro-electronics-store-woocommerce-theme/15720624
 Author:             Hadi Heydarzade
 Template:           electro
-Version:            0.2.0
+Version:            0.2.1
 Text Domain:        electrochild
 */
 
@@ -94,7 +94,7 @@ ul[data-view="grid-extended"] .product-short-description {
 }
 
 .irs--flat .irs-bar {
-    background-color: var(--bs-primary) !important;
+    background-color: #0787ea !important;
     height: 5px !important;
     top: 30px !important;
 }
@@ -102,16 +102,16 @@ ul[data-view="grid-extended"] .product-short-description {
 .irs--flat .irs-handle > i:first-child {
     padding: 11px;
     border-radius: 11px;
-    background-color: var(--bs-primary) !important;
+    background-color: #0787ea !important;
 }
 
 .irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single {
     color: #29323a !important;
-    background-color: var(--bs-primary) !important;
+    background-color: #0787ea !important;
 }
 
 .irs--flat .irs-from::before, .irs--flat .irs-to::before, .irs--flat .irs-single::before {
-    border-top-color: var(--bs-primary) !important;
+    border-top-color: #0787ea !important;
 }
 
 .irs-grid {
