@@ -1,0 +1,10 @@
+{
+  "require": {
+    "mobiledetect/mobiledetectlib": "^3.74"
+  },
+  "autoload": {
+    "psr-4": {
+      "ElectroApp\\": "src/"
+    }
+  }
+}

@@ -3,10 +3,221 @@ Theme Name:         Electro Child
 Theme URI:          https://themeforest.net/item/electro-electronics-store-woocommerce-theme/15720624
 Author:             Hadi Heydarzade
 Template:           electro
-Version:            0.1.0
+Version:            0.2.0
 Text Domain:        electrochild
 */
 
+
+@font-face {
+    font-family: IRANYekan;
+    font-style: normal;
+    font-weight: normal;
+    src: url('assets/fonts/IRANYekanXFaNum-Regular.woff') format('woff'),
+    url('assets/fonts/IRANYekanXFaNum-Regular.woff2') format('woff2');
+}
+
+body {
+    font-family: IRANYekan !important;
+}
+
+h1, h2, h3, h4, h5, h6, input, textarea, a, .irs-to, .irs-from {
+    font-family: IRANYekan !important;
+}
+
+h1 {
+    font-weight: bold;
+}
+
 .primary-nav-menu .nav-inline > .menu-item + .menu-item {
     margin-right: 1.5em;
+}
+
+.shopping-cart-section {
+    width: auto;
+}
+
+.cart-empty-section {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 20px;
+}
+
+ul[data-view="grid-extended"] .products > .product .loop-product-categories {
+    display: none;
+}
+
+ul[data-view="grid-extended"] .product-short-description {
+    display: none;
+}
+
+.product-sku {
+    display: none;
+}
+
+.electro-orderby {
+    display: flex;
+    margin-right: 40px;
+}
+
+.electro-orderby input[type="radio"] {
+    display: none;
+}
+
+.electro-orderby .checkbox {
+    margin-right: 10px;
+}
+
+.electro-orderby label {
+    margin-bottom: unset;
+    padding: 5px;
+}
+
+.electro-orderby .checkbox label {
+    cursor: pointer;
+    font-weight: unset;
+}
+
+.electro-orderby i {
+    margin-left: 5px;
+}
+
+.shop-control-bar .shop-view-switcher {
+    margin-left: unset;
+}
+
+.electro-orderby .checkbox.checked {
+    font-weight: 700;
+}
+
+.woocommerce-result-count {
+    margin-right: auto;
+}
+
+.irs--flat .irs-bar {
+    background-color: var(--bs-primary) !important;
+    height: 5px !important;
+    top: 30px !important;
+}
+
+.irs--flat .irs-handle > i:first-child {
+    padding: 11px;
+    border-radius: 11px;
+    background-color: var(--bs-primary) !important;
+}
+
+.irs--flat .irs-from, .irs--flat .irs-to, .irs--flat .irs-single {
+    color: #29323a !important;
+    background-color: var(--bs-primary) !important;
+}
+
+.irs--flat .irs-from::before, .irs--flat .irs-to::before, .irs--flat .irs-single::before {
+    border-top-color: var(--bs-primary) !important;
+}
+
+.irs-grid {
+    display: none !important;
+}
+
+.irs--flat .irs-line {
+    display: none;
+}
+
+.irs-grid-text {
+    display: none !important;
+}
+
+.irs-grid-pol {
+    display: none !important;
+}
+
+.irs--flat.irs-with-grid {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.woof_products_top_panel_ul {
+    display: flex;
+}
+
+.woof_products_top_panel_ul li a {
+    background-color: #efecec;
+    border-color: #efecec;
+    color: #333e48;
+    padding: 5px 10px;
+    border-radius: 15px;
+}
+
+.star-rating::before {
+    width: 0;
+}
+
+.product-loop-body .star-rating {
+    width: 12px;
+    margin-top: 2px;
+}
+
+.owl-item > .product .product-loop-body .product-rating, .products > .product .product-loop-body .product-rating {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.product-loop-body .star-rating span {
+    float: unset;
+    position: unset;
+}
+
+.electro-reviews-count {
+    padding-left: 10px;
+}
+
+.woocommerce-Price-currencySymbol {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+.product-loop-footer .woocommerce-Price-amount.amount bdi {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.product-inner .owl-item > .product .price-add-to-cart, .products > .product .price-add-to-cart {
+    justify-content: end;
+}
+
+.product-inner .owl-item > .product .price, .products > .product .price {
+    font-size: 1.6rem;
+}
+
+.product-loop-body .woocommerce-loop-product__title {
+    line-height: 1.7em;
+    height: 3.6em;
+}
+
+.product-loop-footer .electro-price del {
+    position: unset !important;
+}
+
+.product-card .card-media-left {
+    flex: unset;
+    max-width: unset;
+}
+
+.product-card .card-body-inner .loop-product-categories {
+    display: none;
+}
+
+.product-card .card-body {
+    flex: unset;
+    max-width: unset;
+}
+
+.product-card.product .price-add-to-cart {
+    margin-top: 15px;
+    text-align: left;
+}
+
+.product-card .woocommerce-loop-product__title {
+    line-height: 1.7em;
+    height: 3.6em;
 }
