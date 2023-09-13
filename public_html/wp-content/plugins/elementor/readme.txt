@@ -4,7 +4,7 @@ Tags: page builder, editor, landing page, drag-and-drop, elementor, visual edito
 Requires at least: 6.0
 Tested up to: 6.3
 Requires PHP: 7.0
-Stable tag: 3.16.0
+Stable tag: 3.16.2
 Beta tag: 3.16.0-beta4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -240,6 +240,14 @@ You can also add a new language via [translate.wordpress.org](https://go.element
 == Changelog ==
 
 See Elementor Developer Edition versions changelog [here](https://go.elementor.com/dev-changelog/)
+
+= 3.16.2 - 2023-09-13 =
+
+* Fix: Various issues with deprecation updates and 3rd party plugins
+
+= 3.16.1 - 2023-09-12 =
+
+* Fix: Flexbox Container feature is activated by default for existing sites
 
 = 3.16.0 - 2023-09-12 =
 
