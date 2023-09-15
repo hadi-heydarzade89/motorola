@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-09-12 09:09:08+0000\n"
+"PO-Revision-Date: 2023-09-14 23:03:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -11,10 +11,14 @@ msgstr ""
 "Language: fa\n"
 "Project-Id-Version: Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release)\n"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:1093
-#: modules/nested-tabs/widgets/nested-tabs.php:1256
-msgid "Open tab (Enter or Space) | Return (Escape)"
-msgstr "باز کردن زبانه (Enter یا Space) | بازگشت (Escape)"
+#: modules/nested-tabs/widgets/nested-tabs.php:1179
+#: modules/nested-tabs/widgets/nested-tabs.php:1224
+msgid "Tabs. Open items with Enter or Space, close with Escape and navigate using the Arrow keys."
+msgstr "زبانه‌ها. موارد را با Enter یا Space باز کنید، با Escape ببندید و با استفاده از کلیدهای جهت‌نما پیمایش کنید."
+
+#: modules/site-navigation/module.php:72
+msgid "Pages Panel"
+msgstr "پنل صفحات"
 
 #: modules/nested-tabs/widgets/nested-tabs.php:183
 #: modules/nested-tabs/widgets/nested-tabs.php:875
@@ -59,6 +63,10 @@ msgstr "اولی باز"
 msgid "Default State"
 msgstr "وضعیت پیش‌فرض"
 
+#: modules/nested-accordion/widgets/nested-accordion.php:285
+msgid "Interactions"
+msgstr "تعاملات"
+
 #: modules/nested-accordion/widgets/nested-accordion.php:229
 msgid "Collapse"
 msgstr "بسته"
@@ -87,6 +95,10 @@ msgstr "تازه! اپلیکیشن‌های محبوب"
 #: assets/js/admin-top-bar.js:123
 msgid "Apps"
 msgstr "اپلیکیشن‌ها"
+
+#: modules/apps/admin-apps-page.php:25
+msgid "Please note that certain services on this page are developed by third-party companies. When you click on the their action button, you may be redirected to an external website."
+msgstr "لطفا توجه داشته باشید که برخی از خدمات این برگه توسط شرکت‌های شخص ثالث توسعه داده شده است. وقتی روی دکمه آنها کلیک می‌کنید، ممکن است به یک وب سایت خارجی هدایت شوید."
 
 #: modules/apps/admin-apps-page.php:17
 msgid "Learn more about this page."
@@ -288,13 +300,13 @@ msgstr "ناوبر را ببندید"
 msgid "Close structure"
 msgstr "ساختار بسته"
 
-#: includes/editor-templates/navigator.php:16 assets/js/editor.js:34215
+#: includes/editor-templates/navigator.php:16 assets/js/editor.js:34227
 msgid "Expand all elements"
 msgstr "همه عناصر را گسترش دهید"
 
 #: includes/editor-templates/global.php:66 includes/elements/container.php:100
 #: includes/elements/container.php:108 includes/elements/container.php:382
-#: assets/js/editor.js:32342 assets/js/editor.js:40817
+#: assets/js/editor.js:32354 assets/js/editor.js:40829
 msgid "Grid"
 msgstr "شبکه ای"
 
@@ -410,15 +422,15 @@ msgid "Switch units"
 msgstr "تغییر واحدها"
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
-#: core/experiments/manager.php:421
+#: core/experiments/manager.php:425
 msgid "Create pixel perfect layouts by placing elements in a customizable grid. Activate to add the CSS Grid option to container elements. %1$sLearn more%2$s"
 msgstr "با قرار دادن عناصر در یک شبکه قابل تنظیم، طرح‌بندی‌های کامل پیکسلی ایجاد کنید. برای افزودن گزینه CSS Grid به عناصر کانتینر، آن را فعال کنید. %1$sبیشتر بیاموزید%2$s"
 
-#: core/experiments/manager.php:418
+#: core/experiments/manager.php:422
 msgid "Grid Container"
 msgstr "کانتینر شبکه"
 
-#: core/experiments/manager.php:397
+#: core/experiments/manager.php:401
 msgid "If you deactivate Flexbox Container, you will permanently delete all content created with containers and lose access to container-based features like Tabs and Menu widgets"
 msgstr "اگر کانتینر فلکس باکس را غیرفعال کنید، تمام محتوای ایجاد شده با کانتینرها را برای همیشه حذف می‌کنید و دسترسی به ویژگی‌های مبتنی بر کانتینر مانند تب‌ها و ویجت‌های منو را از دست خواهید داد."
 
@@ -489,28 +501,28 @@ msgstr "اندازه نمایشگر"
 msgid "Accent Color"
 msgstr "رنگ تاکیدی"
 
-#: core/experiments/manager.php:597
+#: core/experiments/manager.php:601
 msgid "Deactivate All"
 msgstr "غیرفعال کردن همه"
 
-#: core/experiments/manager.php:596
+#: core/experiments/manager.php:600
 msgid "Activate All"
 msgstr "همه را فعال کنید"
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
-#: core/experiments/manager.php:578
+#: core/experiments/manager.php:582
 msgid "Personalize your Elementor experience by controlling which features and experiments are active on your site. Help make Elementor better by %1$ssharing your experience and feedback with us%2$s."
 msgstr "با کنترل اینکه کدام ویژگی‌ها و آزمایش‌ها در سایت شما فعال هستند، تجربه المنتور خود را شخصی کنید. با %1$s اشتراک گذاری تجربه و بازخورد خود با ما%2$s، به بهتر شدن المنتور کمک کنید."
 
-#: core/experiments/manager.php:572
+#: core/experiments/manager.php:576
 msgid "Experiments and Features"
 msgstr "آزمایش ها و ویژگی ها"
 
-#: core/experiments/manager.php:407
+#: core/experiments/manager.php:411
 msgid "Prepare your website for future improvements to carousel features by upgrading the Swiper library integrated into your site from v5.36 to v8.45. This experiment includes markup changes so it might require updating custom code and cause compatibility issues with third party plugins."
 msgstr "با ارتقای کتابخانه Swiper ادغام شده در سایت خود از نسخه 5.36 به نسخه 8.45، وب سایت خود را برای بهبودهای آینده در ویژگی های چرخ فلک آماده کنید. این آزمایش شامل تغییرات نشانه‌گذاری است، بنابراین ممکن است نیاز به به‌روزرسانی کد سفارشی داشته باشد و باعث مشکلات سازگاری با افزونه‌های شخص ثالث شود."
 
-#: core/experiments/manager.php:406
+#: core/experiments/manager.php:410
 msgid "Upgrade Swiper Library"
 msgstr "ارتقای کتابخانه Swiper"
 
@@ -678,7 +690,7 @@ msgctxt "Typography Control"
 msgid "(Thin)"
 msgstr "(باریک)"
 
-#: core/experiments/manager.php:668
+#: core/experiments/manager.php:672
 msgid "Requires"
 msgstr "ضروری است"
 
@@ -707,7 +719,7 @@ msgstr "تمام محتوا و تنظیمات سایت همراه با \"%1$s\" 
 #. Translators: %s is the current item index.
 #: modules/nested-accordion/widgets/nested-accordion.php:74
 #: modules/nested-elements/base/widget-nested-base.php:45
-#: assets/js/editor.js:24310
+#: assets/js/editor.js:24322
 msgid "Item #%d"
 msgstr "مورد #%d"
 
@@ -796,7 +808,7 @@ msgstr "فضای پیش‌فرض داخل ظرف را تنظیم می‌کند (
 msgid "Container Padding"
 msgstr "فاصله کانتینر"
 
-#: core/experiments/manager.php:385
+#: core/experiments/manager.php:388
 msgid ""
 "Create advanced layouts and responsive designs with the new %1$sFlexbox Container element%2$s.\n"
 "\t\t\t\tThis experiment replaces the current section/column structure, but you'll still keep your existing\n"
@@ -807,13 +819,13 @@ msgstr ""
 "\t\t\t\tستون ها را حفظ خواهید کرد و می توانید آنها را ویرایش کنید. آماده اید تا امتحان کنید؟ بررسی کنید ابزار\n"
 "%3$sFlexbox playground%4$s."
 
-#: core/experiments/manager.php:419
+#: core/experiments/manager.php:423
 msgid "Feature"
 msgstr "ویژگی"
 
 #: core/experiments/manager.php:321 core/experiments/manager.php:333
-#: core/experiments/manager.php:345 core/experiments/manager.php:357
-#: core/experiments/manager.php:368 modules/lazyload/module.php:25
+#: core/experiments/manager.php:345 core/experiments/manager.php:360
+#: core/experiments/manager.php:371 modules/lazyload/module.php:25
 msgid "Performance"
 msgstr "کارایی"
 
@@ -899,7 +911,7 @@ msgstr "برای دستیابی به کانتینر با ارتفاع کامل،
 
 #: includes/elements/container.php:70 includes/elements/container.php:415
 #: modules/library/documents/container.php:52 assets/js/editor.js:10027
-#: assets/js/editor.js:32342 assets/js/editor.js:37956
+#: assets/js/editor.js:32354 assets/js/editor.js:37968
 msgid "Container"
 msgstr "کانتینر"
 
@@ -918,7 +930,7 @@ msgstr "استثنا"
 msgid "Difference"
 msgstr "تفاوت"
 
-#: includes/editor-templates/global.php:34 assets/js/editor.js:32197
+#: includes/editor-templates/global.php:34 assets/js/editor.js:32209
 msgid "Add New Container"
 msgstr "افزودن کانتینر جدید"
 
@@ -1124,7 +1136,7 @@ msgstr "فونت‌های سیستم"
 msgid "System Colors"
 msgstr "رنگ‌های سیستم"
 
-#: core/experiments/manager.php:384
+#: core/experiments/manager.php:387
 msgid "Flexbox Container"
 msgstr "کانتینر فلکس باکس"
 
@@ -1281,19 +1293,19 @@ msgstr "با کلیک بر روی ثبت‌نام، با %1$s و %2$s المنت
 msgid "Log"
 msgstr "گزارش"
 
-#: core/experiments/manager.php:602
+#: core/experiments/manager.php:606
 msgid "Ongoing Experiments"
 msgstr "آزمایشات در حال انجام"
 
-#: core/experiments/manager.php:558
+#: core/experiments/manager.php:562
 msgid "Stable Features"
 msgstr "امکانات باثبات"
 
-#: core/experiments/manager.php:358
+#: core/experiments/manager.php:361
 msgid "The “Inline Font Icons” will render the icons as inline SVG without loading the Font-Awesome and the eicons libraries and its related CSS files and fonts."
 msgstr "\"فونت آیکون‌های توکار\" نمادها را بدون بارگیری Font-Awesome و کتابخانه‌های eicons و فایل‌ها و فونت‌های CSS مربوط به آن، به‌صورت SVG توکار ارائه می‌کند."
 
-#: core/experiments/manager.php:356
+#: core/experiments/manager.php:359
 msgid "Inline Font Icons"
 msgstr "نمادهای فونت درون خطی"
 
@@ -1337,6 +1349,17 @@ msgstr "یا %1$sموارد حذف شده%1$s را ببینید"
 #: modules/history/views/revisions-panel-template.php:31
 msgid "Learn more about %1$sWordPress revisions%2$s"
 msgstr "درباره %1$sبازبینی‌های وردپرس%2$s بیشتر بیاموزید"
+
+#. translators: 1: Function argument, 2: Elementor version number.
+#: modules/dev-tools/deprecation.php:291
+msgid "The %1$s argument is deprecated since version %2$s!"
+msgstr "آرگومنت %1$s از نسخه %2$s منسوخ شده است!"
+
+#. translators: 1: Function argument, 2: Elementor version number, 3:
+#. Replacement argument name.
+#: modules/dev-tools/deprecation.php:287
+msgid "The %1$s argument is deprecated since version %2$s! Use %3$s instead."
+msgstr "آرگومنت %1$s از نسخه %2$s منسوخ شده است! به جای آن از %3$s استفاده کنید."
 
 #. translators: 1: Link open tag, 2: Link close tag.
 #: includes/widgets/common.php:934
@@ -1434,11 +1457,11 @@ msgstr "انتقال‌های صفحه"
 msgid "Widescreen breakpoint settings will apply from the selected value and up."
 msgstr "تنظیمات نقطه شکست عریض از مقدار انتخاب شده به بالا اعمال می‌شود."
 
-#: core/experiments/manager.php:369
+#: core/experiments/manager.php:372
 msgid "Get pixel-perfect design for every screen size. You can now add up to 6 customizable breakpoints beyond the default desktop setting: mobile, mobile extra, tablet, tablet extra, laptop, and widescreen."
 msgstr "برای هر اندازه صفحه‌نمایش، طراحی کامل پیکسلی دریافت کنید. اکنون می‌توانید تا ۶ نقطه شکست قابل تنظیم، فراتر از تنظیمات پیش‌فرض دسک‌تاپ اضافه کنید: تلفن همراه، تلفن همراه بزرگ، تبلت، تبلت بزرگ، لپ‌تاپ و نمایشگر عریض."
 
-#: core/experiments/manager.php:367
+#: core/experiments/manager.php:370
 msgid "Additional Custom Breakpoints"
 msgstr "نقاط قطع سفارشی اضافی (جهت رسپانسیو سایت به کار میره)"
 
@@ -1447,7 +1470,7 @@ msgstr "نقاط قطع سفارشی اضافی (جهت رسپانسیو سای�
 msgid "Favorites"
 msgstr "علاقه‌مندی‌ها"
 
-#: core/experiments/manager.php:535
+#: core/experiments/manager.php:539
 #: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:3174
 msgid "Features"
 msgstr "ویژگی‌ها"
@@ -1471,7 +1494,7 @@ msgid "It seems like your site doesn't have any active Kit. The active Kit inclu
 msgstr "به نظر می رسد سایت شما هیچ کیت فعالی ندارد. کیت فعال شامل تمام تنظیمات سایت شما می شود. با ایجاد مجدد کیت خود، می توانید دوباره تنظیمات سایت خود را ویرایش کنید."
 
 #: includes/settings/tools.php:397 includes/settings/tools.php:400
-#: assets/js/editor.js:27933
+#: assets/js/editor.js:27945
 msgid "Recreate Kit"
 msgstr "ساخت مجدد کیت"
 
@@ -1982,20 +2005,20 @@ msgstr "به نسخه های در حال پیشرفت ما سری بزنید و 
 msgid "Elementor Developer Edition"
 msgstr "نسخه توسعه دهنده المنتور"
 
-#: core/experiments/manager.php:731
+#: core/experiments/manager.php:735
 msgid "Inactive by default"
 msgstr "به صورت پیشفرض غیرفعال است"
 
-#: core/experiments/manager.php:730
+#: core/experiments/manager.php:734
 msgid "Active by default"
 msgstr "به صورت پیشفرض فعال است"
 
-#: core/experiments/manager.php:620
+#: core/experiments/manager.php:624
 msgid "Status: %s"
 msgstr "وضعیت: %s"
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
-#: core/experiments/manager.php:588
+#: core/experiments/manager.php:592
 msgid "To use an experiment or feature on your site, simply click on the dropdown next to it and switch to Active. You can always deactivate them at any time. %1$sLearn More.%2$s"
 msgstr "برای استفاده از یک آزمایش یا ویژگی در سایت خود، کافی است روی منوی کشویی کنار آن کلیک کنید و به فعال بروید. شما همیشه می توانید آنها را در هر زمان غیرفعال کنید. %1$sبیشتر بیاموزید.%2$s"
 
@@ -2003,32 +2026,32 @@ msgstr "برای استفاده از یک آزمایش یا ویژگی در سا
 msgid "Experiments"
 msgstr "تجربیات"
 
-#: core/experiments/manager.php:523
+#: core/experiments/manager.php:527
 msgid "The current version of Elementor doesn't have any experimental features . if you're feeling curious make sure to come back in future versions."
 msgstr "نسخه فعلی المنتور هیچ ویژگی آزمایشی ندارد. اگر احساس کنجکاوی می کنید حتما در نسخه های آینده بازگردید."
 
-#: core/experiments/manager.php:520
+#: core/experiments/manager.php:524
 msgid "No available experiments"
 msgstr "آزمایش در دسترس نیست"
 
-#: core/experiments/manager.php:461
+#: core/experiments/manager.php:465
 msgid "Stable"
 msgstr "پایدار"
 
-#: core/experiments/manager.php:460
+#: core/experiments/manager.php:464
 msgid "Release Candidate"
 msgstr "نامزد انتشار"
 
-#: core/experiments/manager.php:459 assets/js/ai-admin.js:378
+#: core/experiments/manager.php:463 assets/js/ai-admin.js:378
 #: assets/js/ai.js:563
 msgid "Beta"
 msgstr "بتا"
 
-#: core/experiments/manager.php:458
+#: core/experiments/manager.php:462
 msgid "Alpha"
 msgstr "آلفا"
 
-#: core/experiments/manager.php:457
+#: core/experiments/manager.php:461
 msgid "Development"
 msgstr "توسعه"
 
@@ -2089,7 +2112,7 @@ msgstr "نوع جدیدی از عناصر النمتور را اضافه می ک
 #: modules/landing-pages/documents/landing-page.php:54
 #: modules/landing-pages/module.php:47 modules/landing-pages/module.php:138
 #: modules/landing-pages/module.php:269 modules/landing-pages/module.php:281
-#: assets/js/app.js:11046 assets/js/editor.js:50152
+#: assets/js/app.js:11046 assets/js/editor.js:50164
 msgid "Landing Pages"
 msgstr "صفحات فرود"
 
@@ -2155,7 +2178,7 @@ msgstr "سازنده وب سایت المنتور همه این موارد را 
 
 #: core/kits/documents/tabs/global-colors.php:24
 #: core/kits/documents/tabs/global-colors.php:43 assets/js/app.js:11054
-#: assets/js/d3bdd130eb38d3b07f85.bundle.js:175 assets/js/editor.js:45732
+#: assets/js/d3bdd130eb38d3b07f85.bundle.js:175 assets/js/editor.js:45744
 msgid "Global Colors"
 msgstr "رنگ های عمومی"
 
@@ -2217,19 +2240,19 @@ msgid "Heads up, Please backup before upgrade!"
 msgstr "حواست باشه، قبل از ارتقا نسخه پشتیبان تهیه کنید!"
 
 #: core/settings/editor-preferences/model.php:38
-#: includes/editor-templates/hotkeys.php:156 assets/js/editor.js:37075
+#: includes/editor-templates/hotkeys.php:156 assets/js/editor.js:37087
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:1146
 msgid "User Preferences"
 msgstr "تنظیمات کاربر"
 
 #: core/kits/manager.php:429 includes/editor-templates/hotkeys.php:118
-#: assets/js/app.js:11052 assets/js/app.js:11533 assets/js/editor.js:45681
-#: assets/js/editor.js:45685 assets/js/editor.js:45695
+#: assets/js/app.js:11052 assets/js/app.js:11533 assets/js/editor.js:45693
+#: assets/js/editor.js:45697 assets/js/editor.js:45707
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:1073
 msgid "Site Settings"
 msgstr "تنظیمات سایت"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:354 assets/js/editor.js:46104
+#: modules/nested-tabs/widgets/nested-tabs.php:354 assets/js/editor.js:46116
 msgid "Additional Settings"
 msgstr "تنظیمات اضافی"
 
@@ -2322,7 +2345,7 @@ msgstr "با تماشای مجموعه های ویدیویی \"شروع کار\"
 
 #: includes/settings/settings.php:326 assets/js/admin.js:282
 #: assets/js/admin.js:289 assets/js/common.js:2090 assets/js/common.js:2097
-#: assets/js/editor.js:38804 assets/js/editor.js:38811
+#: assets/js/editor.js:38816 assets/js/editor.js:38823
 msgid "Enable Unfiltered File Uploads"
 msgstr "فعال سازی آپلود فایل های فیلتر نشده"
 
@@ -2428,7 +2451,7 @@ msgstr "%s ویجت"
 
 #: core/experiments/manager.php:142 includes/editor-templates/global.php:29
 #: assets/js/ai-admin.js:3037 assets/js/ai.js:3355 assets/js/app.js:7896
-#: assets/js/editor.js:45993
+#: assets/js/editor.js:46005
 msgid "Back"
 msgstr "قبلی"
 
@@ -3097,7 +3120,7 @@ msgstr "پاپ آپ"
 #: app/modules/site-editor/module.php:31
 #: core/common/modules/finder/categories/general.php:72
 #: includes/template-library/sources/local.php:1721
-#: assets/js/app-packages.js:5925 assets/js/editor.js:45706
+#: assets/js/app-packages.js:5925 assets/js/editor.js:45718
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:1125
 msgid "Theme Builder"
 msgstr "پوسته ساز"
@@ -3249,7 +3272,7 @@ msgid "Type to find anything in Elementor"
 msgstr "برای پیدا کردن هر چیزی در المنتور تایپ کنید"
 
 #: includes/editor-templates/hotkeys.php:102 assets/js/admin-top-bar.js:127
-#: assets/js/common.js:4704 assets/js/editor.js:37087
+#: assets/js/common.js:4704 assets/js/editor.js:37099
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:922
 msgid "Finder"
 msgstr "جستجوگر"
@@ -3272,7 +3295,7 @@ msgid "Homepage"
 msgstr "صفحه اصلی"
 
 #: core/common/modules/finder/categories/create.php:27
-#: assets/js/editor.js:44243
+#: assets/js/editor.js:44255
 msgid "Create"
 msgstr "ایجاد"
 
@@ -3348,7 +3371,7 @@ msgstr "صفحه اول خود را ایجاد کنید"
 msgid "Getting Started"
 msgstr "شروع به کار"
 
-#: includes/widgets/inner-section.php:35 assets/js/editor.js:27064
+#: includes/widgets/inner-section.php:35 assets/js/editor.js:27076
 msgid "Inner Section"
 msgstr "بخش داخلی"
 
@@ -3367,7 +3390,7 @@ msgstr "خالی"
 #: includes/editor-templates/hotkeys.php:129
 #: includes/editor-templates/navigator.php:21
 #: includes/editor-templates/panel.php:88
-#: includes/editor-templates/panel.php:94 assets/js/editor.js:30620
+#: includes/editor-templates/panel.php:94 assets/js/editor.js:30632
 msgid "Navigator"
 msgstr "ناوبر"
 
@@ -3487,7 +3510,7 @@ msgstr "پرو"
 msgid "Blend Mode"
 msgstr "حالت ادغام"
 
-#: includes/editor-templates/hotkeys.php:42 assets/js/editor.js:29718
+#: includes/editor-templates/hotkeys.php:42 assets/js/editor.js:29730
 msgid "Copy"
 msgstr "کپی"
 
@@ -3948,8 +3971,8 @@ msgid "Remove"
 msgstr "حذف"
 
 #: includes/editor-templates/hotkeys.php:74
-#: includes/editor-templates/repeater.php:21 assets/js/editor.js:29703
-#: assets/js/editor.js:48823
+#: includes/editor-templates/repeater.php:21 assets/js/editor.js:29715
+#: assets/js/editor.js:48835
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:859
 msgid "Duplicate"
 msgstr "تکثیر"
@@ -3959,12 +3982,12 @@ msgid "Drag & Drop"
 msgstr "درگ اند دراپ"
 
 #: includes/editor-templates/panel.php:151
-#: includes/editor-templates/panel.php:153 assets/js/editor.js:35435
+#: includes/editor-templates/panel.php:153 assets/js/editor.js:35447
 msgid "Hide Panel"
 msgstr "مخفی سازی پنل"
 
-#: includes/editor-templates/panel.php:143 assets/js/editor.js:32185
-#: assets/js/editor.js:32680
+#: includes/editor-templates/panel.php:143 assets/js/editor.js:32197
+#: assets/js/editor.js:32692
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:716
 msgid "Save as Template"
 msgstr "ذخیره قالب"
@@ -3981,7 +4004,7 @@ msgstr "ذخیره پیش نویس"
 msgid "Save Options"
 msgstr "تنظیمات ذخیره سازی"
 
-#: includes/editor-templates/panel.php:119 assets/js/editor.js:24694
+#: includes/editor-templates/panel.php:119 assets/js/editor.js:24706
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:823
 msgid "Publish"
 msgstr "انتشار"
@@ -3996,7 +4019,7 @@ msgstr "پیشنمایش تغییرات"
 msgid "Search Widget:"
 msgstr "جستجوی ابزارک ها:"
 
-#: core/experiments/manager.php:598 includes/controls/popover-toggle.php:71
+#: core/experiments/manager.php:602 includes/controls/popover-toggle.php:71
 #: includes/controls/popover-toggle.php:73
 msgid "Back to default"
 msgstr "بازگردانی پیشفرض"
@@ -4126,19 +4149,19 @@ msgid "Switch to Revisions tab for older versions"
 msgstr "جهت مشاهده نسخه های قدیمی تر به زبانه بازنگری‌ها بروید"
 
 #: modules/history/views/history-panel-template.php:10
-#: assets/js/editor.js:48550
+#: assets/js/editor.js:48562
 msgid "Revisions"
 msgstr "بازنگری‌ها"
 
 #: includes/editor-templates/hotkeys.php:19
 #: includes/editor-templates/templates.php:124
-#: modules/history/views/history-panel-template.php:9 assets/js/editor.js:48547
+#: modules/history/views/history-panel-template.php:9 assets/js/editor.js:48559
 msgid "Actions"
 msgstr "عملیات"
 
 #: includes/editor-templates/hotkeys.php:147
 #: includes/editor-templates/panel.php:97
-#: includes/editor-templates/panel.php:99 assets/js/editor.js:49147
+#: includes/editor-templates/panel.php:99 assets/js/editor.js:49159
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:966
 msgid "History"
 msgstr "تاریخچه"
@@ -4321,7 +4344,7 @@ msgstr "فقط در مورد عیب یابی به کار گرفته شود."
 #: modules/nested-tabs/widgets/nested-tabs.php:365
 #: modules/safe-mode/module.php:48 assets/js/admin.js:282
 #: assets/js/app-packages.js:2839 assets/js/app.js:3960
-#: assets/js/common.js:2090 assets/js/editor.js:38804
+#: assets/js/common.js:2090 assets/js/editor.js:38816
 msgid "Enable"
 msgstr "فعال‌سازی"
 
@@ -4363,7 +4386,7 @@ msgstr "انتخاب"
 msgid "Paste Style"
 msgstr "پیست استایل"
 
-#: core/common/modules/finder/categories/edit.php:118 assets/js/editor.js:18183
+#: core/common/modules/finder/categories/edit.php:118 assets/js/editor.js:18195
 msgid "Template"
 msgstr "قالب"
 
@@ -4421,7 +4444,7 @@ msgid "Coming Soon"
 msgstr "به زودی"
 
 #: core/kits/documents/kit.php:169 includes/maintenance-mode.php:215
-#: assets/js/editor.js:48822
+#: assets/js/editor.js:48834
 msgid "Disabled"
 msgstr "غیرفعال شده"
 
@@ -4998,7 +5021,7 @@ msgstr "کتابخانه"
 #: assets/js/app-packages.js:4527 assets/js/app.js:2905 assets/js/app.js:5023
 #: assets/js/app.js:5426 assets/js/app.js:7560 assets/js/app.js:8392
 #: assets/js/app.js:11912 assets/js/e8a7573e654d921656ab.bundle.js:221
-#: assets/js/editor.js:45996 assets/js/import-export-admin.js:328
+#: assets/js/editor.js:46008 assets/js/import-export-admin.js:328
 msgid "Close"
 msgstr "بستن"
 
@@ -5024,8 +5047,8 @@ msgstr "در صورتی که قصد ویرایش سورس کدهای پوسته 
 #: app/modules/import-export/module.php:148
 #: app/modules/import-export/module.php:160 core/admin/admin-notices.php:327
 #: core/experiments/manager.php:324 core/experiments/manager.php:336
-#: core/experiments/manager.php:348 core/experiments/manager.php:360
-#: core/experiments/manager.php:371 includes/controls/url.php:76
+#: core/experiments/manager.php:348 core/experiments/manager.php:363
+#: core/experiments/manager.php:374 includes/controls/url.php:76
 #: modules/apps/admin-apps-page.php:250
 #: modules/promotions/admin-menu-items/form-submissions-promotion-item.php:30
 #: modules/safe-mode/module.php:375 modules/safe-mode/module.php:384
@@ -5033,16 +5056,16 @@ msgstr "در صورتی که قصد ویرایش سورس کدهای پوسته 
 #: assets/js/app-packages.js:2710 assets/js/app-packages.js:5696
 #: assets/js/app-packages.js:5805 assets/js/app.js:3831 assets/js/app.js:7844
 #: assets/js/app.js:8986 assets/js/app.js:10454 assets/js/app.js:10764
-#: assets/js/app.js:10810 assets/js/app.js:11911 assets/js/editor.js:14055
-#: assets/js/editor.js:27561 assets/js/editor.js:27592
-#: assets/js/editor.js:39337
+#: assets/js/app.js:10810 assets/js/app.js:11911 assets/js/editor.js:14067
+#: assets/js/editor.js:27573 assets/js/editor.js:27604
+#: assets/js/editor.js:39349
 #: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:3731
 msgid "Learn More"
 msgstr "کسب اطلاعات بیشتر"
 
 #: core/kits/documents/tabs/global-typography.php:28
 #: core/kits/documents/tabs/global-typography.php:47 assets/js/app.js:11054
-#: assets/js/d3bdd130eb38d3b07f85.bundle.js:224 assets/js/editor.js:45741
+#: assets/js/d3bdd130eb38d3b07f85.bundle.js:224 assets/js/editor.js:45753
 msgid "Global Fonts"
 msgstr "فونت‌های سراسری"
 
@@ -5240,9 +5263,9 @@ msgstr "نسخه جدیدی از صفحه ساز المنتور در دسترس 
 msgid "Custom URL"
 msgstr "آدرس سفارشی"
 
-#: includes/editor-templates/hotkeys.php:50 assets/js/editor.js:29730
-#: assets/js/editor.js:31694 assets/js/editor.js:40707
-#: assets/js/editor.js:41714
+#: includes/editor-templates/hotkeys.php:50 assets/js/editor.js:29742
+#: assets/js/editor.js:31706 assets/js/editor.js:40719
+#: assets/js/editor.js:41726
 msgid "Paste"
 msgstr "پیست"
 
@@ -5471,9 +5494,9 @@ msgstr "فهرستی از فونت های پیشفرض که اگر فونت دل
 msgid "Form"
 msgstr "فرم"
 
-#: includes/editor-templates/panel-elements.php:10 assets/js/editor.js:18829
-#: assets/js/editor.js:20783 assets/js/editor.js:21214
-#: assets/js/editor.js:36197
+#: includes/editor-templates/panel-elements.php:10 assets/js/editor.js:18841
+#: assets/js/editor.js:20795 assets/js/editor.js:21226
+#: assets/js/editor.js:36209
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:858
 msgid "Elements"
 msgstr "المان‌ها"
@@ -5484,7 +5507,7 @@ msgstr "المان‌ها"
 #: includes/editor-templates/responsive-bar.php:61
 #: includes/managers/controls.php:322 includes/settings/settings.php:192
 #: includes/settings/settings.php:387 modules/usage/settings-reporter.php:13
-#: assets/js/editor.js:9288 assets/js/editor.js:37071 assets/js/editor.js:46120
+#: assets/js/editor.js:9288 assets/js/editor.js:37083 assets/js/editor.js:46132
 msgid "Settings"
 msgstr "تنظیمات"
 
@@ -5608,8 +5631,6 @@ msgstr "آیتم های زبانه"
 #: includes/widgets/tabs.php:248 modules/nested-tabs/widgets/nested-tabs.php:33
 #: modules/nested-tabs/widgets/nested-tabs.php:91
 #: modules/nested-tabs/widgets/nested-tabs.php:427
-#: modules/nested-tabs/widgets/nested-tabs.php:1180
-#: modules/nested-tabs/widgets/nested-tabs.php:1225
 msgid "Tabs"
 msgstr "تب‌ها"
 
@@ -5945,8 +5966,8 @@ msgstr "فاصله"
 #: modules/shapes/widgets/text-path.php:491
 #: modules/shapes/widgets/text-path.php:511
 #: modules/shapes/widgets/text-path.php:556
-#: modules/shapes/widgets/text-path.php:576 assets/js/editor.js:46258
-#: assets/js/editor.js:46301
+#: modules/shapes/widgets/text-path.php:576 assets/js/editor.js:46270
+#: assets/js/editor.js:46313
 msgid "Color"
 msgstr "رنگ"
 
@@ -6358,11 +6379,11 @@ msgstr "اطلاعات را کپی و پیست کنید"
 msgid "System Info"
 msgstr "اطلاعات سیستم"
 
-#: core/experiments/manager.php:445 core/experiments/manager.php:734
+#: core/experiments/manager.php:449 core/experiments/manager.php:738
 msgid "Inactive"
 msgstr "غیرفعال"
 
-#: core/experiments/manager.php:444 core/experiments/manager.php:733
+#: core/experiments/manager.php:448 core/experiments/manager.php:737
 #: modules/nested-accordion/widgets/nested-accordion.php:627
 #: modules/nested-accordion/widgets/nested-accordion.php:694
 #: modules/nested-tabs/widgets/nested-tabs.php:603
@@ -6555,7 +6576,7 @@ msgstr "عرض"
 #: includes/managers/elements.php:281 includes/widgets/common.php:175
 #: includes/widgets/icon-list.php:95
 #: modules/nested-accordion/widgets/nested-accordion.php:87
-#: assets/js/editor.js:36006
+#: assets/js/editor.js:36018
 msgid "Layout"
 msgstr "طرح‌بندی"
 
@@ -6652,7 +6673,7 @@ msgstr "رنگ متن"
 #: core/kits/documents/tabs/theme-style-typography.php:19
 #: core/kits/documents/tabs/theme-style-typography.php:38
 #: includes/elements/column.php:647 includes/elements/section.php:1104
-#: assets/js/editor-modules.js:1439 assets/js/editor.js:41390
+#: assets/js/editor-modules.js:1439 assets/js/editor.js:41402
 msgid "Typography"
 msgstr "تایپوگرافی"
 
@@ -6675,7 +6696,7 @@ msgstr "بخش (سکشن)"
 #: includes/editor-templates/navigator.php:20
 #: includes/editor-templates/panel.php:87
 #: includes/editor-templates/panel.php:93 includes/elements/section.php:531
-#: includes/elements/section.php:539 assets/js/editor.js:30620
+#: includes/elements/section.php:539 assets/js/editor.js:30632
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:1101
 msgid "Structure"
 msgstr "ساختار"
@@ -6690,13 +6711,13 @@ msgstr "واکنش‌گرا"
 #: core/dynamic-tags/tag.php:88 includes/elements/column.php:737
 #: includes/elements/section.php:1193 includes/managers/controls.php:319
 #: includes/settings/settings.php:296 assets/js/editor.js:9294
-#: assets/js/editor.js:36003
+#: assets/js/editor.js:36015
 msgid "Advanced"
 msgstr "پیشرفته"
 
 #: includes/managers/controls.php:318 includes/widgets/divider.php:363
 #: includes/widgets/icon-list.php:275 assets/js/ai-admin.js:3791
-#: assets/js/ai.js:4109 assets/js/editor.js:9291 assets/js/editor.js:36000
+#: assets/js/ai.js:4109 assets/js/editor.js:9291 assets/js/editor.js:36012
 msgid "Style"
 msgstr "استایل"
 
@@ -6708,7 +6729,7 @@ msgstr "استایل"
 #: includes/widgets/toggle.php:123 includes/widgets/toggle.php:488
 #: modules/nested-accordion/widgets/nested-accordion.php:436
 #: modules/nested-tabs/widgets/nested-tabs.php:1003 assets/js/app.js:11044
-#: assets/js/app.js:11537 assets/js/editor.js:35997
+#: assets/js/app.js:11537 assets/js/editor.js:36009
 msgid "Content"
 msgstr "محتوا"
 
@@ -6725,12 +6746,12 @@ msgstr "تنظیمات صفحه"
 #: includes/controls/image-dimensions.php:102
 #: includes/editor-templates/panel.php:175
 #: modules/history/views/revisions-panel-template.php:14
-#: assets/js/editor.js:9934 assets/js/editor.js:37144
+#: assets/js/editor.js:9934 assets/js/editor.js:37156
 msgid "Apply"
 msgstr "اعمال تغییرات"
 
 #: modules/history/views/revisions-panel-template.php:11
-#: assets/js/editor.js:5007 assets/js/editor.js:43500
+#: assets/js/editor.js:5007 assets/js/editor.js:43512
 msgid "Discard"
 msgstr "بیخیال"
 
@@ -6749,7 +6770,7 @@ msgstr "پیش‌نمایش"
 #: includes/editor-templates/templates.php:19
 #: includes/editor-templates/templates.php:217
 #: includes/editor-templates/templates.php:228 assets/js/editor.js:5006
-#: assets/js/editor.js:43499 assets/js/kit-elements-defaults-editor.js:615
+#: assets/js/editor.js:43511 assets/js/kit-elements-defaults-editor.js:615
 msgid "Save"
 msgstr "ذخیره"
 
@@ -6837,8 +6858,8 @@ msgstr "افزودن آیتم"
 #: core/kits/views/trash-kit-confirmation.php:30
 #: includes/editor-templates/hotkeys.php:67
 #: includes/editor-templates/templates.php:185 assets/js/editor.js:10161
-#: assets/js/editor.js:27282 assets/js/editor.js:29795
-#: assets/js/editor.js:46311 assets/js/import-export-admin.js:287
+#: assets/js/editor.js:27294 assets/js/editor.js:29807
+#: assets/js/editor.js:46323 assets/js/import-export-admin.js:287
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:882
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:915
 msgid "Delete"
@@ -6854,7 +6875,7 @@ msgstr "انتخاب آیکن"
 #: includes/widgets/common.php:1014 includes/widgets/image-carousel.php:702
 #: includes/widgets/image-gallery.php:201 includes/widgets/social-icons.php:189
 #: includes/widgets/social-icons.php:347 modules/shapes/module.php:29
-#: assets/js/editor.js:44069
+#: assets/js/editor.js:44081
 msgid "Custom"
 msgstr "سفارشی"
 
@@ -7222,7 +7243,7 @@ msgstr "راست"
 msgid "Top"
 msgstr "بالا"
 
-#: core/experiments/manager.php:443
+#: core/experiments/manager.php:447
 #: core/settings/editor-preferences/model.php:132
 #: includes/base/widget-base.php:281 includes/controls/animation.php:152
 #: includes/controls/font.php:66 includes/controls/groups/background.php:648
@@ -7252,8 +7273,8 @@ msgstr "بالا"
 #: includes/widgets/text-editor.php:131 includes/widgets/text-editor.php:266
 #: includes/widgets/traits/button-trait.php:74
 #: modules/page-templates/module.php:296
-#: modules/shapes/widgets/text-path.php:187 assets/js/editor.js:44061
-#: assets/js/editor.js:44072
+#: modules/shapes/widgets/text-path.php:187 assets/js/editor.js:44073
+#: assets/js/editor.js:44084
 msgid "Default"
 msgstr "پیش‌ فرض"
 
