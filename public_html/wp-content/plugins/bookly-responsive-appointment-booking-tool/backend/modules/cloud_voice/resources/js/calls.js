@@ -164,9 +164,10 @@ jQuery(function($) {
                     processing: BooklyL10n.processing
                 }
             });
-            $date_range.on('apply.daterangepicker', function() {
-                dt.ajax.reload(null, false);
-            });
+            function onChangeFilter() {
+                dt.ajax.reload();
+            }
+            $date_range.on('apply.daterangepicker', onChangeFilter);
             $(this).on('click', function() {
                 dt.ajax.reload(null, false);
             });
@@ -220,7 +221,7 @@ jQuery(function($) {
                         data: column,
                         className: 'align-middle',
                         render: function(data, type, row, meta) {
-                            return '<div class="iti-flag ' + data + '"></div>';
+                            return '<div class="iti__flag iti__' + data + '"></div>';
                         }
                     });
                     break;

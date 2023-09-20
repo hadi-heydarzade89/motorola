@@ -1770,6 +1770,9 @@ msgstr ""
 msgid "Show google maps field"
 msgstr ""
 
+msgid "Google maps address"
+msgstr ""
+
 msgid "Do not allow to select a specific staff member"
 msgstr ""
 
@@ -1910,9 +1913,6 @@ msgid ""
 "The selected time is not available anymore. Please, choose another time slot."
 msgstr ""
 
-msgid "Time"
-msgstr ""
-
 msgid "Wrong current password"
 msgstr ""
 
@@ -1939,6 +1939,9 @@ msgid "Confirm"
 msgstr ""
 
 msgid "Ok"
+msgstr ""
+
+msgid "Time"
 msgstr ""
 
 #, php-format
@@ -2928,6 +2931,24 @@ msgstr ""
 msgid "Status date"
 msgstr ""
 
+msgid "Action"
+msgstr ""
+
+msgid "Target"
+msgstr ""
+
+msgid "Target ID"
+msgstr ""
+
+msgid "Author"
+msgstr ""
+
+msgid "Comment"
+msgstr ""
+
+msgid "Reference"
+msgstr ""
+
 #, php-format
 msgid ""
 "New version of %1$s is available. <a href=\"%2$s\" %3$s>View version %4$s "
@@ -3652,25 +3673,7 @@ msgstr ""
 msgid "All actions"
 msgstr ""
 
-msgid "Target ID"
-msgstr ""
-
 msgid "Quick search"
-msgstr ""
-
-msgid "Action"
-msgstr ""
-
-msgid "Target"
-msgstr ""
-
-msgid "Author"
-msgstr ""
-
-msgid "Comment"
-msgstr ""
-
-msgid "Reference"
 msgstr ""
 
 msgid "Clear logs"
@@ -6469,6 +6472,9 @@ msgstr ""
 msgid "Gift Cards"
 msgstr ""
 
+msgid "Please note that Local payments not allowed for gift cards."
+msgstr ""
+
 msgid "Cards"
 msgstr ""
 
@@ -7012,6 +7018,9 @@ msgstr ""
 msgid "Please select a Booking product"
 msgstr ""
 
+msgid "Client birthday full date"
+msgstr ""
+
 msgid "Extras titles"
 msgstr ""
 
@@ -7186,6 +7195,9 @@ msgstr ""
 msgid "Header height"
 msgstr ""
 
+msgid "Body height"
+msgstr ""
+
 msgid "Form title"
 msgstr ""
 
@@ -7254,6 +7266,15 @@ msgid ""
 msgstr ""
 
 msgid "Step content"
+msgstr ""
+
+msgid "Cards display mode"
+msgstr ""
+
+msgid "Show all available cards"
+msgstr ""
+
+msgid "Show cards with time slots only"
 msgstr ""
 
 msgid "Add new form"
@@ -7380,6 +7401,15 @@ msgstr ""
 msgid "Do not cancel"
 msgstr ""
 
+msgid "This appointment has been already cancelled."
+msgstr ""
+
+msgid "This appointment does not exist."
+msgstr ""
+
+msgid "Cancellation of this appointment is not allowed."
+msgstr ""
+
 msgid "Import"
 msgstr ""
 
@@ -7422,9 +7452,6 @@ msgid "Recipient"
 msgstr ""
 
 msgid "Headers"
-msgstr ""
-
-msgid "Client birthday full date"
 msgstr ""
 
 msgid "Time zone of staff"
@@ -7959,6 +7986,9 @@ msgstr ""
 msgid "This service is no longer provided."
 msgstr ""
 
+msgid "Gift card type was not found"
+msgstr ""
+
 msgid "Service was not found"
 msgstr ""
 
@@ -7989,7 +8019,10 @@ msgstr ""
 msgid "Deposit only"
 msgstr ""
 
-msgid "Deposit or full price"
+msgid "Deposit or full price (deposit by default)"
+msgstr ""
+
+msgid "Full price or deposit (full price by default)"
 msgstr ""
 
 msgid ""

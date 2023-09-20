@@ -198,12 +198,15 @@ jQuery(function($) {
      */
     var dt = $payments_list.DataTable({
         order: order,
-        paging: false,
         info: false,
         searching: false,
+        lengthChange: false,
         processing: true,
         responsive: true,
-        serverSide: false,
+        pageLength: 25,
+        pagingType: 'numbers',
+        serverSide: true,
+        dom: "<'row'<'col-sm-12'tr>><'row float-left mt-3'<'col-sm-12'p>>",
         ajax: {
             url: ajaxurl,
             type: 'POST',
@@ -312,13 +315,16 @@ jQuery(function($) {
         }
     );
 
-    $id_filter.on('keyup', function() { dt.ajax.reload(null, false); });
-    $creationDateFilter.on('apply.daterangepicker', function() { dt.ajax.reload(null, false); });
-    $type_filter.on('change', function() { dt.ajax.reload(null, false); });
-    $customer_filter.on('change', function() { dt.ajax.reload(null, false); });
-    $staff_filter.on('change', function() { dt.ajax.reload(null, false); });
-    $service_filter.on('change', function() { dt.ajax.reload(null, false); });
-    $status_filter.on('change', function() { dt.ajax.reload(null, false); });
+    function onChangeFilter() {
+        dt.ajax.reload();
+    }
+    $id_filter.on('keyup', onChangeFilter);
+    $creationDateFilter.on('apply.daterangepicker', onChangeFilter);
+    $type_filter.on('change', onChangeFilter);
+    $customer_filter.on('change', onChangeFilter);
+    $staff_filter.on('change', onChangeFilter);
+    $service_filter.on('change', onChangeFilter);
+    $status_filter.on('change', onChangeFilter);
 
     /**
      * Delete payments.

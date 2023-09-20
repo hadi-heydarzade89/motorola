@@ -3,7 +3,6 @@ namespace Bookly\Backend\Components\Dialogs\Appointment\CustomerDetails;
 
 use Bookly\Lib;
 use Bookly\Lib\Entities\CustomerAppointment;
-use Bookly\Backend\Components\Dialogs\Appointment\CustomerDetails\Proxy;
 
 class Dialog extends Lib\Base\Component
 {

@@ -4,11 +4,6 @@ namespace Bookly\Backend\Modules\Diagnostics\Tests;
 
 use Bookly\Lib;
 
-/**
- * Class PluginsDirectories
- *
- * @package Bookly\Backend\Modules\Diagnostics\Tests
- */
 class PluginsDirectories extends Test
 {
     protected $slug = 'check-plugin-directories';

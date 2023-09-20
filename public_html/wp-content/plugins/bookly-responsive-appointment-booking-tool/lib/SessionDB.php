@@ -1,8 +1,6 @@
 <?php
 namespace Bookly\Lib;
 
-use Bookly\Lib\Entities;
-
 abstract class SessionDB extends Session
 {
     protected static $affected = array();

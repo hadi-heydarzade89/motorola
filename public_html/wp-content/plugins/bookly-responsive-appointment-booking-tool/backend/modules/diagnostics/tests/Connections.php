@@ -1,9 +1,8 @@
 <?php
 namespace Bookly\Backend\Modules\Diagnostics\Tests;
 
-use Bookly\Lib;
 use Bookly\Lib\API;
-use Bookly\Lib\Cloud\API as CloudAPI;
+use Bookly\Lib\Cloud;
 use Bookly\Lib\Config;
 
 class Connections extends Test
@@ -25,7 +24,7 @@ class Connections extends Test
     {
         $port = 443;
         $timeout = 5;
-        $hosts = array( parse_url( API::API_URL, PHP_URL_HOST ), parse_url( CloudAPI::API_URL, PHP_URL_HOST ) );
+        $hosts = array( parse_url( API::API_URL, PHP_URL_HOST ), parse_url( Cloud\API::API_URL, PHP_URL_HOST ) );
         if ( Config::mailchimpActive() ) {
             $hosts[] = 'mailchimp.com';
         }
@@ -37,7 +36,7 @@ class Connections extends Test
         }
 
         // Test cloud callback access.
-        $cloud = Lib\Cloud\API::getInstance();
+        $cloud = Cloud\API::getInstance();
         $data = array(
             'feedback' => array(
                 'test' => 'Connections',
@@ -49,7 +48,7 @@ class Connections extends Test
         $response = $cloud->sendPostRequest( '/1.0/test/feedback-request', $data );
 
         if ( ! ( isset( $response['data']['POST']['query'], $response['data']['GET']['query'] ) && $response['data']['POST']['query'] === self::$query && $response['data']['GET']['query'] === self::$query ) ) {
-            $this->addError( sprintf( '<b>%s</b><br/>%s', parse_url( CloudAPI::API_URL, PHP_URL_HOST ), __( 'For some reason, your server blocks Bookly Cloud requests. To fix the issue, please ask your hosting provider to whitelist the Bookly Cloud server.', 'bookly' ) ) );
+            $this->addError( sprintf( '<b>%s</b><br/>%s', parse_url( Cloud\API::API_URL, PHP_URL_HOST ), __( 'For some reason, your server blocks Bookly Cloud requests. To fix the issue, please ask your hosting provider to whitelist the Bookly Cloud server.', 'bookly' ) ) );
         }
 
         return empty( $this->errors );

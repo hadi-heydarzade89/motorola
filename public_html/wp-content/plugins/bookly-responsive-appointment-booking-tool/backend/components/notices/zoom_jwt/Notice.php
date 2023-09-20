@@ -3,11 +3,6 @@ namespace Bookly\Backend\Components\Notices\ZoomJwt;
 
 use Bookly\Lib;
 
-/**
- * Class Notice
- *
- * @package Bookly\Backend\Components\Notices\ZoomJwt
- */
 class Notice extends Lib\Base\Component
 {
     /**

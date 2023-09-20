@@ -47,7 +47,7 @@ jQuery(function($) {
     Ladda.bind('button[type=submit]', {timeout: 2000});
 
     // Customers tab.
-    $.each($.fn.intlTelInput.getCountryData(), function(index, value) {
+    $.each(window.intlTelInputGlobals.getCountryData(), function (index, value) {
         $defaultCountry.append('<option value="' + value.iso2 + '" data-code="' + value.dialCode + '">' + value.name + ' +' + value.dialCode + '</option>');
     });
     $defaultCountry.val(BooklyL10n.default_country);
@@ -468,18 +468,14 @@ jQuery(function($) {
         dt.columns.adjust().responsive.recalc();
     });
 
-    $logsDateFilter.on('apply.daterangepicker', function() {
-        dt.ajax.reload(null, false);
-    });
-    $logsTarget.on('keyup', function() {
-        dt.ajax.reload(null, false)
-    });
-    $logsAction.on('change', function() {
-        dt.ajax.reload(null, false)
-    });
-    $logsSearch.on('keyup', function() {
-        dt.ajax.reload(null, false)
-    })
+    function onChangeFilter() {
+        dt.ajax.reload();
+    }
+
+    $logsDateFilter.on('apply.daterangepicker', onChangeFilter);
+    $logsTarget.on('keyup', onChangeFilter);
+    $logsAction.on('change', onChangeFilter);
+    $logsSearch.on('keyup', onChangeFilter)
         .on('keydown', function(e) {
             if (e.keyCode == 13) {
                 e.preventDefault();

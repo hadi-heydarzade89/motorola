@@ -532,11 +532,11 @@ export default function stepTime(params, error_message) {
                 }
             }
 
-            if (typeof ResizeObserver !== undefined) {
+            if (typeof ResizeObserver === "undefined" || typeof ResizeObserver === undefined) {
+                resizeColumnizer();
+            } else {
                 columnizerObserver = new ResizeObserver(observeResizeColumnizer);
                 columnizerObserver.observe($container.get(0));
-            } else {
-                resizeColumnizer();
             }
         })
         .catch(response => { stepService({form_id: params.form_id}); })

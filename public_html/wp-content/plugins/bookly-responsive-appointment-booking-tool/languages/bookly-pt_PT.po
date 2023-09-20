@@ -8,11 +8,11 @@ msgstr ""
 "Language: pt_PT\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-31 08:27+0000\n"
-"PO-Revision-Date: 2023-07-31 21:03+0000\n"
+"POT-Creation-Date: 2023-09-11 06:50+0000\n"
+"PO-Revision-Date: 2023-09-11 12:55+0000\n"
 "Last-Translator: Isabel Andrade <estgf_nemo@hotmail.com>\n"
 "Language-Team: Portuguese (Portugal)\n"
-"X-Loco-Version: 2.3.1; wp-6.1"
+"X-Loco-Version: 2.3.1; wp-6.3.1"
 
 msgid "Invoice #{invoice_number} for your appointment"
 msgstr "Fatura #{invoice_number} da sua marcação"
@@ -2179,6 +2179,9 @@ msgstr "Exibir endereço obrigatório"
 msgid "Show google maps field"
 msgstr "Exibir campo do google maps"
 
+msgid "Google maps address"
+msgstr "Endereço do Google Maps"
+
 msgid "Do not allow to select a specific staff member"
 msgstr "Não permite selecionar um membro do staff específico"
 
@@ -2326,9 +2329,6 @@ msgstr ""
 "A hora selecionada já não se encontra disponível. Por favor escolha um outro "
 "intervalo."
 
-msgid "Time"
-msgstr "Hora"
-
 msgid "Wrong current password"
 msgstr "Senha atual incorreta"
 
@@ -2361,6 +2361,9 @@ msgstr "Confirmar"
 
 msgid "Ok"
 msgstr "Ok"
+
+msgid "Time"
+msgstr "Hora"
 
 #, php-format
 msgid " and %d more item"
@@ -3565,6 +3568,25 @@ msgstr "ID solicitado"
 msgid "Status date"
 msgstr "Data do status"
 
+msgid "Action"
+msgstr "Ação"
+
+msgid "Target"
+msgstr "Target"
+
+msgid "Target ID"
+msgstr "Target ID"
+
+msgid "Author"
+msgstr "Autor"
+
+msgid "Comment"
+msgstr "Comentário"
+
+msgid "Reference"
+msgstr ""
+"Referência\n"
+
 #, php-format
 msgid ""
 "New version of %1$s is available. <a href=\"%2$s\" %3$s>View version %4$s "
@@ -4446,27 +4468,8 @@ msgstr ""
 msgid "All actions"
 msgstr "Todas as ações "
 
-msgid "Target ID"
-msgstr "Target ID"
-
 msgid "Quick search"
 msgstr "Pesquisa rápida"
-
-msgid "Action"
-msgstr "Ação"
-
-msgid "Target"
-msgstr "Target"
-
-msgid "Author"
-msgstr "Autor"
-
-msgid "Comment"
-msgstr "Comentário"
-
-msgid "Reference"
-msgstr ""
-"Referência\n"
 
 msgid "Clear logs"
 msgstr "Apagar registos"
@@ -7848,6 +7851,11 @@ msgstr "Imprimir"
 msgid "Gift Cards"
 msgstr "Cartões de Oferta"
 
+msgid "Please note that Local payments not allowed for gift cards."
+msgstr ""
+"Por favor, note que os pagamentos locais não são permitidos para cartões de "
+"presente."
+
 msgid "Cards"
 msgstr "Cartões"
 
@@ -8578,6 +8586,10 @@ msgstr "O Segredo obtido a partir do retorno do comando"
 msgid "Please select a Booking product"
 msgstr "Por favor, selecione um produto de reserva"
 
+msgid "Client birthday full date"
+msgstr ""
+"Data completa do aniversário do cliente\n"
+
 msgid "Extras titles"
 msgstr ""
 "Títulos extras\n"
@@ -8789,6 +8801,9 @@ msgstr "Largura"
 msgid "Header height"
 msgstr "Altura do cabeçalho"
 
+msgid "Body height"
+msgstr "Altura do corpo"
+
 msgid "Form title"
 msgstr "Título do formulário"
 
@@ -8862,6 +8877,15 @@ msgstr ""
 
 msgid "Step content"
 msgstr "Conteúdo da etapa"
+
+msgid "Cards display mode"
+msgstr "Modo de visualização dos cartões"
+
+msgid "Show all available cards"
+msgstr "Mostrar todos os cartões disponíveis"
+
+msgid "Show cards with time slots only"
+msgstr "Mostrar cartões apenas com faixas horárias"
 
 msgid "Add new form"
 msgstr "Adicionar novo formulário"
@@ -8996,6 +9020,15 @@ msgstr "Confirmar cancelamento"
 msgid "Do not cancel"
 msgstr "Não cancelar"
 
+msgid "This appointment has been already cancelled."
+msgstr "Esta marcação já foi cancelada."
+
+msgid "This appointment does not exist."
+msgstr "Esta marcação não existe."
+
+msgid "Cancellation of this appointment is not allowed."
+msgstr "Não é permitido o cancelamento desta marcação."
+
 msgid "Import"
 msgstr "Importar"
 
@@ -9047,10 +9080,6 @@ msgstr "Destinatário"
 
 msgid "Headers"
 msgstr "Cabeçalhos"
-
-msgid "Client birthday full date"
-msgstr ""
-"Data completa do aniversário do cliente\n"
 
 msgid "Time zone of staff"
 msgstr "Fuso horário da equipa"
@@ -9700,6 +9729,9 @@ msgstr ""
 msgid "This service is no longer provided."
 msgstr "Este serviço já não é fornecido."
 
+msgid "Gift card type was not found"
+msgstr "O tipo de cartão presente não foi encontrado"
+
 msgid "Service was not found"
 msgstr "O serviço não foi encontrado"
 
@@ -9730,8 +9762,11 @@ msgstr "Opções de depósito"
 msgid "Deposit only"
 msgstr "Somente depósito"
 
-msgid "Deposit or full price"
-msgstr "Depósito ou preço total"
+msgid "Deposit or full price (deposit by default)"
+msgstr "Depósito ou preço total (depósito por defeito)"
+
+msgid "Full price or deposit (full price by default)"
+msgstr "Preço total ou depósito (preço total por defeito)"
 
 msgid ""
 "If you enable \"Deposit only\", customers will be requested to pay only a "

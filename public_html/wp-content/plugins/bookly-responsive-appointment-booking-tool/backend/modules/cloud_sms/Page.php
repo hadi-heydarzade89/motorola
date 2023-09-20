@@ -5,10 +5,6 @@ use Bookly\Lib;
 use Bookly\Backend\Modules\CloudProducts\Page as CloudProducts;
 use Bookly\Backend\Components;
 
-/**
- * Class Controller
- * @package Bookly\Backend\Modules\CloudSms
- */
 class Page extends Lib\Base\Component
 {
     /**

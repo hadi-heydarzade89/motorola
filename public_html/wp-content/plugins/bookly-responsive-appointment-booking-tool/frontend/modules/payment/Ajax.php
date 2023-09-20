@@ -45,18 +45,21 @@ class Ajax extends Lib\Base\Ajax
     public static function backFromPaymentSystem()
     {
         $request = Request::getInstance();
-        $gateway = $request->getGateway();
-        try {
-            switch ( $request->get( 'bookly_event' ) ) {
-                case Lib\Base\Gateway::EVENT_CANCEL:
-                    $gateway->fail();
-                    break;
-                case Lib\Base\Gateway::EVENT_RETRIEVE:
-                    $gateway->retrieve();
-                    break;
+        $order = new Lib\Entities\Order();
+        if ( $order->loadBy( array( 'token' => $request->get( 'bookly_order' ) ) ) ) {
+            $gateway = $request->getGateway();
+            try {
+                switch ( $request->get( 'bookly_event' ) ) {
+                    case Lib\Base\Gateway::EVENT_CANCEL:
+                        $gateway->fail();
+                        break;
+                    case Lib\Base\Gateway::EVENT_RETRIEVE:
+                        $gateway->retrieve();
+                        break;
+                }
+            } catch ( \Exception $e ) {
+                $gateway->fail();
             }
-        } catch ( \Exception $e ) {
-            $gateway->fail();
         }
 
         Lib\Utils\Common::redirect( self::parameter( 'bookly_referer' ) );

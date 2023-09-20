@@ -144,9 +144,10 @@ jQuery(function($) {
                     processing: BooklyL10n.processing
                 }
             });
-            $date_range.on('apply.daterangepicker', function() {
-                dt.ajax.reload(null, false);
-            });
+            function onChangeFilter() {
+                dt.ajax.reload();
+            }
+            $date_range.on('apply.daterangepicker', onChangeFilter);
             $(this).on('click', function() {
                 dt.ajax.reload(null, false);
             });

@@ -2,13 +2,7 @@
 namespace Bookly\Backend\Modules\Appearance;
 
 use Bookly\Lib;
-use Bookly\Backend\Modules\Appearance\Proxy;
 
-/**
- * Class Ajax
- *
- * @package Bookly\Backend\Modules\Appearance
- */
 class Ajax extends Lib\Base\Ajax
 {
     /**

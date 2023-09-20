@@ -3,6 +3,14 @@ namespace Bookly\Lib;
 
 class Updater extends Base\Updater
 {
+    function update_22_4()
+    {
+        $this->alterTables( array(
+            'bookly_customers' => array(
+                'ALTER TABLE `%s` ADD `full_address` VARCHAR(255) DEFAULT NULL AFTER `additional_address`',
+            )
+        ) );
+    }
 
     function update_22_2()
     {

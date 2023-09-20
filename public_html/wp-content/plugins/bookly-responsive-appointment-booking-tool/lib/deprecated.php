@@ -101,8 +101,8 @@ namespace Bookly\Frontend\Modules\ServicesForm\Proxy
 namespace Bookly\Lib\Base
 {
     abstract class ProxyProvider{public static function registerMethods(){}}
+    abstract class Controller{public static function getInstance(){$class = get_called_class();return new $class();}}
 }
-
 
 namespace Bookly\Lib\Proxy
 {

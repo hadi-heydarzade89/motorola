@@ -8,11 +8,11 @@ msgstr ""
 "Language: fr_FR\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-31 08:08+0000\n"
-"PO-Revision-Date: 2023-08-02 07:51+0000\n"
-"Last-Translator: support@bookly.info\n"
+"POT-Creation-Date: 2023-09-11 06:47+0000\n"
+"PO-Revision-Date: 2023-09-12 05:29+0000\n"
+"Last-Translator: Mathilde Massardier <mathilde.mass@icloud.com>\n"
 "Language-Team: French (France)\n"
-"X-Loco-Version: 2.3.1; wp-6.1"
+"X-Loco-Version: 2.3.1; wp-6.3.1"
 
 msgid "Invoice #{invoice_number} for your appointment"
 msgstr "Facture n° {invoice_number} de votre rendez-vous"
@@ -2167,6 +2167,9 @@ msgstr "Affichage de l'adresse requis"
 msgid "Show google maps field"
 msgstr "Afficher champ google maps"
 
+msgid "Google maps address"
+msgstr "Adresse sur Google maps"
+
 msgid "Do not allow to select a specific staff member"
 msgstr "Ne pas autoriser à séléctioner un membre du personnel spécifique "
 
@@ -2316,9 +2319,6 @@ msgstr ""
 "Le créneau horaire sélectionné n'est plus disponible. Merci d'en choisir un "
 "autre."
 
-msgid "Time"
-msgstr "Heure"
-
 msgid "Wrong current password"
 msgstr "Mot de passe en cours invalide"
 
@@ -2353,6 +2353,9 @@ msgstr "Confirmer"
 
 msgid "Ok"
 msgstr "Ok"
+
+msgid "Time"
+msgstr "Heure"
 
 #, php-format
 msgid " and %d more item"
@@ -3524,6 +3527,24 @@ msgstr "ID demandé"
 msgid "Status date"
 msgstr "Date du statut"
 
+msgid "Action"
+msgstr "Action"
+
+msgid "Target"
+msgstr "Cible"
+
+msgid "Target ID"
+msgstr "ID cible"
+
+msgid "Author"
+msgstr "Auteur"
+
+msgid "Comment"
+msgstr "Commentaire"
+
+msgid "Reference"
+msgstr "Référennce"
+
 #, php-format
 msgid ""
 "New version of %1$s is available. <a href=\"%2$s\" %3$s>View version %4$s "
@@ -4393,26 +4414,8 @@ msgstr ""
 msgid "All actions"
 msgstr "Toutes les actions"
 
-msgid "Target ID"
-msgstr "ID cible"
-
 msgid "Quick search"
 msgstr "Recherche rapide"
-
-msgid "Action"
-msgstr "Action"
-
-msgid "Target"
-msgstr "Cible"
-
-msgid "Author"
-msgstr "Auteur"
-
-msgid "Comment"
-msgstr "Commentaire"
-
-msgid "Reference"
-msgstr "Référennce"
 
 msgid "Clear logs"
 msgstr "Effacer les registres"
@@ -7663,6 +7666,11 @@ msgstr "Imprimer"
 msgid "Gift Cards"
 msgstr "Cartes cadeaux"
 
+msgid "Please note that Local payments not allowed for gift cards."
+msgstr ""
+"Veuillez noter que les paiements locaux ne sont pas autorisés pour les "
+"cartes-cadeaux."
+
 msgid "Cards"
 msgstr "Cartes"
 
@@ -8363,6 +8371,9 @@ msgstr "Le secret obtenu par le retour de commande"
 msgid "Please select a Booking product"
 msgstr "Veuillez sélectionner un produit de réservation"
 
+msgid "Client birthday full date"
+msgstr "Date complète de l'anniversaire du client"
+
 msgid "Extras titles"
 msgstr "Titres suplémentaires"
 
@@ -8569,6 +8580,9 @@ msgstr "Largeur"
 msgid "Header height"
 msgstr "Hauteur de l'en-tête"
 
+msgid "Body height"
+msgstr "Taille du corps"
+
 msgid "Form title"
 msgstr "Titre du formulaire"
 
@@ -8642,6 +8656,15 @@ msgstr ""
 
 msgid "Step content"
 msgstr "Contenu de l'étape"
+
+msgid "Cards display mode"
+msgstr "Mode affichage des cartes"
+
+msgid "Show all available cards"
+msgstr "Afficher toutes les cartes disponibles"
+
+msgid "Show cards with time slots only"
+msgstr "Afficher les cartes avec des plages horaires uniquement"
 
 msgid "Add new form"
 msgstr "Ajouter un nouveau formulaire"
@@ -8775,6 +8798,15 @@ msgstr "Confirmer l'annulation"
 msgid "Do not cancel"
 msgstr "Ne pas annuler"
 
+msgid "This appointment has been already cancelled."
+msgstr "Ce rendez-vous a déjà été annulé."
+
+msgid "This appointment does not exist."
+msgstr "Ce rendez-vous n'existe pas."
+
+msgid "Cancellation of this appointment is not allowed."
+msgstr "Vous n'êtes pas autorisé à annuler ce rendez-vous."
+
 msgid "Import"
 msgstr "Importer"
 
@@ -8826,9 +8858,6 @@ msgstr "Bénéficiaire"
 
 msgid "Headers"
 msgstr "En-têtes"
-
-msgid "Client birthday full date"
-msgstr "Date complète de l'anniversaire du client"
 
 msgid "Time zone of staff"
 msgstr "Fuseau horaire du personnel"
@@ -9468,6 +9497,9 @@ msgstr ""
 msgid "This service is no longer provided."
 msgstr "Ce service n'est plus disponible."
 
+msgid "Gift card type was not found"
+msgstr "Le type de carte cadeau n'a pas été trouvé"
+
 msgid "Service was not found"
 msgstr "Le service n'a pas été trouvé"
 
@@ -9498,8 +9530,11 @@ msgstr "Options acompte"
 msgid "Deposit only"
 msgstr "Acompte uniquement"
 
-msgid "Deposit or full price"
-msgstr "Acompte ou prix total"
+msgid "Deposit or full price (deposit by default)"
+msgstr "Acompte ou prix total (acompte par défaut)"
+
+msgid "Full price or deposit (full price by default)"
+msgstr "Prix total ou acompte (prix total par défaut)"
 
 msgid ""
 "If you enable \"Deposit only\", customers will be requested to pay only a "

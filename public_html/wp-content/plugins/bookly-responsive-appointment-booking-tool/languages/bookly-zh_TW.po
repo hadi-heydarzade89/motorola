@@ -8,11 +8,11 @@ msgstr ""
 "Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-31 08:24+0000\n"
-"PO-Revision-Date: 2023-07-31 10:20+0000\n"
+"POT-Creation-Date: 2023-09-11 06:52+0000\n"
+"PO-Revision-Date: 2023-09-11 10:37+0000\n"
 "Last-Translator: Wina H <chillhchill@gmail.com>\n"
 "Language-Team: Chinese (Taiwan)\n"
-"X-Loco-Version: 2.3.1; wp-6.1"
+"X-Loco-Version: 2.3.1; wp-6.3.1"
 
 msgid "Invoice #{invoice_number} for your appointment"
 msgstr "您預約的發票＃{invoice_number}"
@@ -1998,6 +1998,9 @@ msgstr "需要顯示地址"
 msgid "Show google maps field"
 msgstr "顯示谷歌地圖字段"
 
+msgid "Google maps address"
+msgstr "Google地圖地址"
+
 msgid "Do not allow to select a specific staff member"
 msgstr "不允許選擇某個員工"
 
@@ -2140,9 +2143,6 @@ msgid ""
 "The selected time is not available anymore. Please, choose another time slot."
 msgstr "所選時段已滿，請選擇其他的時段。"
 
-msgid "Time"
-msgstr "時間"
-
 msgid "Wrong current password"
 msgstr "密碼錯誤"
 
@@ -2170,6 +2170,9 @@ msgstr "確認"
 
 msgid "Ok"
 msgstr "可以"
+
+msgid "Time"
+msgstr "時間"
 
 #, php-format
 msgid " and %d more item"
@@ -3317,6 +3320,24 @@ msgstr "請求ID"
 msgid "Status date"
 msgstr "狀態日期"
 
+msgid "Action"
+msgstr "行動"
+
+msgid "Target"
+msgstr "目標"
+
+msgid "Target ID"
+msgstr "目標 ID"
+
+msgid "Author"
+msgstr "作者"
+
+msgid "Comment"
+msgstr "留言"
+
+msgid "Reference"
+msgstr "參考"
+
 #, php-format
 msgid ""
 "New version of %1$s is available. <a href=\"%2$s\" %3$s>View version %4$s "
@@ -4056,26 +4077,8 @@ msgstr "如果啟用此設置，則所有預約活動都將記錄在日誌表格
 msgid "All actions"
 msgstr "所有操作"
 
-msgid "Target ID"
-msgstr "目標 ID"
-
 msgid "Quick search"
 msgstr "快速搜索"
-
-msgid "Action"
-msgstr "行動"
-
-msgid "Target"
-msgstr "目標"
-
-msgid "Author"
-msgstr "作者"
-
-msgid "Comment"
-msgstr "留言"
-
-msgid "Reference"
-msgstr "參考"
 
 msgid "Clear logs"
 msgstr "清除日誌"
@@ -7040,6 +7043,9 @@ msgstr "打印"
 msgid "Gift Cards"
 msgstr "禮品卡"
 
+msgid "Please note that Local payments not allowed for gift cards."
+msgstr "請注意，禮品卡不允許本地支付。"
+
 msgid "Cards"
 msgstr "卡"
 
@@ -7606,6 +7612,9 @@ msgstr "從命令返回獲得的密鈅"
 msgid "Please select a Booking product"
 msgstr "請選擇一個預定產品"
 
+msgid "Client birthday full date"
+msgstr "客戶完整出生日期"
+
 msgid "Extras titles"
 msgstr "額外標題"
 
@@ -7780,6 +7789,9 @@ msgstr "寬度"
 msgid "Header height"
 msgstr "頁頭高度"
 
+msgid "Body height"
+msgstr "身高"
+
 msgid "Form title"
 msgstr "表單標題"
 
@@ -7850,6 +7862,15 @@ msgstr ""
 
 msgid "Step content"
 msgstr "步驟內容"
+
+msgid "Cards display mode"
+msgstr "卡片顯示模式"
+
+msgid "Show all available cards"
+msgstr "顯示所有可用卡片"
+
+msgid "Show cards with time slots only"
+msgstr "僅顯示帶時段的卡片"
 
 msgid "Add new form"
 msgstr "添加新表單"
@@ -7976,6 +7997,15 @@ msgstr "確認取消"
 msgid "Do not cancel"
 msgstr "不要取消"
 
+msgid "This appointment has been already cancelled."
+msgstr "此預約已被取消。"
+
+msgid "This appointment does not exist."
+msgstr "此預約不存在。"
+
+msgid "Cancellation of this appointment is not allowed."
+msgstr "此預約不允許取消。"
+
 msgid "Import"
 msgstr "導入"
 
@@ -8019,9 +8049,6 @@ msgstr "收件人"
 
 msgid "Headers"
 msgstr "頁頭"
-
-msgid "Client birthday full date"
-msgstr "客戶完整出生日期"
 
 msgid "Time zone of staff"
 msgstr "員工的時區"
@@ -8565,6 +8592,9 @@ msgstr "在{appointment_time}{service_name}服務的所選時段已不可用。�
 msgid "This service is no longer provided."
 msgstr "不再提供此服務。"
 
+msgid "Gift card type was not found"
+msgstr "找不到禮品卡類型"
+
 msgid "Service was not found"
 msgstr "找不到服務"
 
@@ -8596,8 +8626,11 @@ msgstr ""
 msgid "Deposit only"
 msgstr "只需按金"
 
-msgid "Deposit or full price"
-msgstr "按金或全價"
+msgid "Deposit or full price (deposit by default)"
+msgstr "按金或全價（默認按金）"
+
+msgid "Full price or deposit (full price by default)"
+msgstr "全價或按金（默認全價）"
 
 msgid ""
 "If you enable \"Deposit only\", customers will be requested to pay only a "

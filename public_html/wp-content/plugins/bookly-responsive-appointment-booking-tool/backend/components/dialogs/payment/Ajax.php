@@ -87,7 +87,7 @@ class Ajax extends Lib\Base\Ajax
             ) {
                 $data['payment']['order_link'] = admin_url( 'post.php?action=edit&post=' . $data['payment']['gateway_ref_id'] );
             }
-            $data['refundable'] = $payment->getRefId() && $payment->getType() == Lib\Entities\Payment::TYPE_CLOUD_STRIPE && $payment->getStatus() != Lib\Entities\Payment::STATUS_REFUNDED;
+            $data['refundable'] = $payment->getRefId() && $payment->getType() === Lib\Entities\Payment::TYPE_CLOUD_STRIPE && $payment->getStatus() === Lib\Entities\Payment::STATUS_COMPLETED;
             foreach ( $data['payment']['items'] as &$item ) {
                 if ( isset( $item['units'], $item['duration'] ) && $item['units'] > 1 ) {
                     $item['service_name'] .= ' (' . Lib\Utils\DateTime::secondsToInterval( $item['units'] * $item['duration'] ) . ')';

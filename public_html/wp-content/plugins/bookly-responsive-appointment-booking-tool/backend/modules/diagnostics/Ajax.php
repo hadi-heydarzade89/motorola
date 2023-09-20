@@ -1,17 +1,10 @@
 <?php
-
 namespace Bookly\Backend\Modules\Diagnostics;
 
 use Bookly\Backend\Modules\Diagnostics\Tests\Test;
 use Bookly\Backend\Modules\Diagnostics\Tools\Tool;
 use Bookly\Lib;
 
-
-/**
- * Class Ajax
- *
- * @package Bookly\Backend\Modules\Diagnostics
- */
 class Ajax extends Lib\Base\Ajax
 {
     protected static function permissions()
@@ -264,6 +257,11 @@ class Ajax extends Lib\Base\Ajax
             'bookly_zoom_oauth_client_secret',
             'bookly_zoom_jwt_api_key',
             'bookly_zoom_jwt_api_secret',
+            'bookly_smtp_host',
+            'bookly_smtp_port',
+            'bookly_smtp_user',
+            'bookly_smtp_password',
+            'bookly_cloud_token',
         );
 
         $unsafe_entities = array(
@@ -280,6 +278,8 @@ class Ajax extends Lib\Base\Ajax
         foreach ( $unsafe_options as $option ) {
             unset( $data['options'][ $option ] );
         }
+
+        $data['options']['bookly_email_gateway'] = 'wp';
 
         // Remove unsafe staff settings
         foreach ( $unsafe_entities as $entity => $entity_unsafe_values ) {

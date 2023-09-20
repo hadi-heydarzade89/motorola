@@ -4,11 +4,6 @@ namespace Bookly\Backend\Components\Dialogs\Mailing\Campaign;
 use Bookly\Lib;
 use Bookly\Backend\Components\Controls\Buttons;
 
-/**
- * Class Dialog
- *
- * @package Bookly\Backend\Components\Dialogs\Mailing\Campaign
- */
 class Dialog extends Lib\Base\Component
 {
     /**

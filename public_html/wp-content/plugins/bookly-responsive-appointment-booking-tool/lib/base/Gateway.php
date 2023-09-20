@@ -180,6 +180,8 @@ abstract class Gateway
 
         $required_sync = false;
         if ( $payment ) {
+            // Re-fetch a record from the database
+            $payment = Entities\Payment::find( $payment->getId(), false );
             if ( $payment->getStatus() !== Entities\Payment::STATUS_COMPLETED ) {
                 if ( $payment->getCouponId() ) {
                     Booking\Proxy\Coupons::claim( $payment->getCouponId() );
@@ -245,6 +247,7 @@ abstract class Gateway
             }
         }
         $this->request->getUserData()->setPaymentStatus( self::STATUS_FAILED )->sessionSave();
+        Entities\Order::query()->delete()->where( 'token', $this->request->get( 'bookly_order' ) )->execute();
     }
 
     /**

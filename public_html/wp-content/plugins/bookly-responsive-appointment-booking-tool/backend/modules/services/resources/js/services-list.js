@@ -165,10 +165,11 @@ jQuery(function($) {
     /**
      * On filter search change.
      */
+    function onChangeFilter() {
+        dt.ajax.reload();
+    }
     filters.search
-        .on('keyup', function() {
-            dt.ajax.reload(null, false);
-        })
+        .on('keyup', onChangeFilter)
         .on('keydown', function(e) {
             if (e.keyCode == 13) {
                 e.preventDefault();
@@ -177,9 +178,7 @@ jQuery(function($) {
         })
     ;
     filters.category
-        .on('change', function() {
-            dt.ajax.reload(null, false);
-        });
+        .on('change', onChangeFilter);
 
     /**
      * Select all appointments.

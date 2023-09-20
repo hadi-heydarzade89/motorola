@@ -218,7 +218,7 @@ export default function stepPayment(params) {
                                 exp_month: $('select[name="card_exp_month"]', $payment_details).val(),
                                 exp_year: $('select[name="card_exp_year"]', $payment_details).val()
                             },
-                            response_url: document.URL.split('#')[0],
+                            response_url: window.location.pathname + window.location.search.split('#')[0],
                             form_id: params.form_id,
                             gateway: gateway,
                             form_slug: 'booking-form'
@@ -235,7 +235,7 @@ export default function stepPayment(params) {
                         data: {
                             action: 'bookly_create_payment_intent',
                             form_id: params.form_id,
-                            response_url: document.URL.split('#')[0],
+                            response_url: window.location.pathname + window.location.search.split('#')[0],
                             gateway: gateway,
                             form_slug: 'booking-form'
                         }
@@ -281,7 +281,7 @@ export default function stepPayment(params) {
                         action: 'bookly_create_payment_intent',
                         form_id: params.form_id,
                         gateway: $gateway_checked.val(),
-                        response_url: document.URL.split('#')[0],
+                        response_url: window.location.pathname + window.location.search.split('#')[0],
                         form_slug: 'booking-form'
                     }
                 }).then(response => {

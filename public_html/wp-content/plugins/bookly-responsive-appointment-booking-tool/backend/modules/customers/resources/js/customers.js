@@ -169,7 +169,11 @@ jQuery(function($) {
     /**
      * On filters change.
      */
-    $filter.on('keyup', function() { dt.ajax.reload(null, false); });
+    function onChangeFilter() {
+        dt.ajax.reload();
+    }
+
+    $filter.on('keyup', onChangeFilter);
 
     /**
      * Merge list.

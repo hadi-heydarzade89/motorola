@@ -201,37 +201,54 @@ export default function stepDetails(params) {
             }
             $errors.filter(':not(.bookly-custom-field-error)').html('');
         };
-
-        // Conditional custom fields
-        $('.bookly-custom-field-row').on('change', 'select, input[type="checkbox"], input[type="radio"]', function () {
-            let $row = $(this).closest('.bookly-custom-field-row'),
-                id = $row.data('id'),
-                $that = $(this)
-            ;
+        let checkCustomFieldConditions = function ($row) {
+            let id = $row.data('id'),
+                value = [];
+            switch ($row.data('type')) {
+                case 'drop-down':
+                    value.push($row.find('select').val());
+                    break;
+                case 'radio-buttons':
+                    value.push($row.find('input:checked').val());
+                    break;
+                case 'checkboxes':
+                    $row.find('input').each(function () {
+                        if ($(this).prop('checked')) {
+                            value.push($(this).val())
+                        }
+                    });
+                    break;
+            }
             $.each(custom_fields_conditions, function (i, condition) {
-                let $target = $('.bookly-custom-field-row[data-id="' + condition.target + '"]');
+                let $target = $('.bookly-custom-field-row[data-id="' + condition.target + '"]'),
+                    target_visibility = $target.is(':visible');
                 if (parseInt(condition.source) === id) {
-                    switch ($row.data('type')) {
-                        case 'drop-down':
-                        case 'radio-buttons':
-                            if ((condition.value.includes($that.val()) && condition.equal === '1') || (!condition.value.includes($that.val()) && condition.equal !== '1')) {
-                                $target.show();
-                            } else {
-                                $target.hide();
-                            }
-                            break;
-                        case 'checkboxes':
-                            let show = false;
-                            $row.find('input').each(function () {
-                                if ($(this).prop('checked') && ((condition.value.includes($(this).val()) && condition.equal === '1') || (!condition.value.includes($(this).val()) && condition.equal !== '1'))) {
-                                    show = true;
-                                }
-                            });
-                            $target.toggle(show);
-                            break;
+                    let show = false;
+                    $.each(value, function (i, v) {
+                        if ($row.is(':visible') && ((condition.value.includes(v) && condition.equal === '1') || (!condition.value.includes(v) && condition.equal !== '1'))) {
+                            show = true;
+                        }
+                    });
+                    $target.toggle(show);
+                    if ($target.is(':visible') !== target_visibility) {
+                        checkCustomFieldConditions($target);
                     }
                 }
             });
+        }
+        // Conditional custom fields
+        $('.bookly-custom-field-row').on('change', 'select, input[type="checkbox"], input[type="radio"]', function () {
+            checkCustomFieldConditions($(this).closest('.bookly-custom-field-row'));
+        });
+        $('.bookly-custom-field-row').each(function () {
+            const _type = $(this).data('type');
+            if (['drop-down', 'radio-buttons', 'checkboxes'].includes(_type)) {
+                if (_type === 'drop-down') {
+                    $(this).find('select').trigger('change');
+                } else {
+                    $(this).find('input:checked').trigger('change');
+                }
+            }
         });
         // Custom fields date fields
         $('.bookly-js-cf-date', $container).each(function () {

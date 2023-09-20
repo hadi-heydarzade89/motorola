@@ -56,6 +56,8 @@ class UserBookingData
     /** @var string */
     protected $additional_address;
     /** @var string */
+    protected $full_address;
+    /** @var string */
     protected $phone;
     /** @var array */
     protected $birthday;
@@ -171,6 +173,10 @@ class UserBookingData
         $this->form_id = $form_id;
         $this->cart = new Cart( $this );
         $this->chain = new Chain();
+
+        if ( Config::depositPaymentsActive() && get_option( 'bookly_deposit_allow_full_payment' ) === '2' ) {
+            $this->deposit_full = 1;
+        }
 
         // If logged in then set name, email and if existing customer then also phone.
         $current_user = wp_get_current_user();
@@ -647,6 +653,9 @@ class UserBookingData
         if ( $this->getAdditionalAddress() != '' ) {
             $customer->setAdditionalAddress( $this->getAdditionalAddress() );
         }
+        if ( $this->getFullAddress() !== '' ) {
+            $customer->setFullAddress( $this->getFullAddress() );
+        }
 
         // Customer information fields.
         if ( $customer->getId() === null || get_option( 'bookly_customer_information_enabled' ) ) {
@@ -754,12 +763,12 @@ class UserBookingData
                     } else {
                         // Try to find customer by phone or email.
                         $params = Config::phoneRequired()
-                            ? ( $this->getPhone() ? array( 'phone' => $this->getPhone() ) : array() )
-                            : ( $this->getEmail() ? array( 'email' => $this->getEmail() ) : array() );
+                            ? ( $this->getPhone() !== null && $this->getPhone() !== '' ? array( 'phone' => $this->getPhone() ) : array() )
+                            : ( $this->getEmail() !== null && $this->getEmail() !== '' ? array( 'email' => $this->getEmail() ) : array() );
                         if ( ! empty ( $params ) && ! $this->customer->loadBy( $params ) ) {
                             $params = Config::phoneRequired()
-                                ? ( $this->getEmail() ? array( 'email' => $this->getEmail(), 'phone' => '' ) : array() )
-                                : ( $this->getPhone() ? array( 'phone' => $this->getPhone(), 'email' => '' ) : array() );
+                                ? ( $this->getEmail() !== null && $this->getEmail() !== '' ? array( 'email' => $this->getEmail(), 'phone' => '' ) : array() )
+                                : ( $this->getPhone() !== null && $this->getPhone() !== '' ? array( 'phone' => $this->getPhone(), 'email' => '' ) : array() );
                             if ( ! empty( $params ) ) {
                                 // Try to find customer by 'secondary' identifier, otherwise return new customer.
                                 $this->customer->loadBy( $params );
@@ -1376,6 +1385,24 @@ class UserBookingData
     public function setAdditionalAddress( $additional_address )
     {
         $this->additional_address = $additional_address;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFullAddress()
+    {
+        return $this->full_address;
+    }
+
+    /**
+     * @param string $full_address
+     */
+    public function setFullAddress( $full_address )
+    {
+        $this->full_address = $full_address;
 
         return $this;
     }

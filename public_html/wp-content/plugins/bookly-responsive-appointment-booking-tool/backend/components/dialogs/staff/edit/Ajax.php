@@ -3,14 +3,8 @@ namespace Bookly\Backend\Components\Dialogs\Staff\Edit;
 
 use Bookly\Backend\Components\Schedule\BreakItem;
 use Bookly\Backend\Components\Schedule\Component as ScheduleComponent;
-use Bookly\Backend\Components\Dialogs\Staff\Edit\Proxy;
 use Bookly\Lib;
 
-/**
- * Class Ajax
- *
- * @package Bookly\Backend\Components\Dialogs\Staff\Edit
- */
 class Ajax extends Lib\Base\Ajax
 {
     /** @var Lib\Entities\Staff */

@@ -147,7 +147,7 @@ jQuery(function($) {
             data: null,
             responsivePriority: 1,
             orderable: false,
-            className: "text-right",
+            className: 'text-right',
             render: function(data, type, row, meta) {
                 return '<button type="button" class="btn btn-default"><i class="far fa-fw fa-edit mr-lg-1"></i><span class="d-none d-lg-inline">' + BooklyL10n.edit + '…</span></button>';
             }
@@ -261,10 +261,11 @@ jQuery(function($) {
         /**
          * On filters change.
          */
+        function onChangeFilter() {
+            dt.ajax.reload();
+        }
         $filter
-            .on('keyup', function() {
-                dt.ajax.reload(null, false);
-            })
+            .on('keyup', onChangeFilter)
             .on('keydown', function(e) {
                 if (e.keyCode == 13) {
                     e.preventDefault();
@@ -287,7 +288,10 @@ jQuery(function($) {
                 columns: [],
                 order: [],
                 dt: null,
-                list_id: null
+                list_id: null,
+                onChangeFilter: function() {
+                    ml.dt.ajax.reload();
+                }
             },
             mr = {
                 $list: $('#bookly-recipients-list', $mr_container),
@@ -299,7 +303,10 @@ jQuery(function($) {
                 $list_name: $('#bookly-js-mailing-list-name', $mr_container),
                 dt: null,
                 $back: $('#bookly-js-show-mailing-list', $mr_container),
-                $add_recipients_button: $('#bookly-js-add-recipients', $mr_container)
+                $add_recipients_button: $('#bookly-js-add-recipients', $mr_container),
+                onChangeFilter: function() {
+                    mr.dt.ajax.reload();
+                }
             };
 
         mr.$add_recipients_button.on('click', function() {
@@ -340,7 +347,7 @@ jQuery(function($) {
             data: null,
             responsivePriority: 1,
             orderable: false,
-            className: "text-right",
+            className: 'text-right',
             render: function(data, type, row, meta) {
                 return '<button type="button" class="btn btn-default"><i class="far fa-fw fa-edit mr-lg-1"></i><span class="d-none d-lg-inline">' + BooklyL10n.edit + '…</span></button>';
             }
@@ -525,9 +532,7 @@ jQuery(function($) {
          * On filters change.
          */
         ml.$filter
-            .on('keyup', function() {
-                ml.dt.ajax.reload(null, false);
-            })
+            .on('keyup', ml.onChangeFilter)
             .on('keydown', function(e) {
                 if (e.keyCode == 13) {
                     e.preventDefault();
@@ -535,9 +540,7 @@ jQuery(function($) {
                 }
             });
         mr.$filter
-            .on('keyup', function() {
-                mr.dt.ajax.reload(null, false);
-            })
+            .on('keyup', mr.onChangeFilter)
             .on('keydown', function(e) {
                 if (e.keyCode == 13) {
                     e.preventDefault();
@@ -646,21 +649,27 @@ jQuery(function($) {
         if (columns.length) {
             let dt = $('#bookly-sms').DataTable({
                 ordering: false,
-                paging: false,
                 info: false,
                 searching: false,
+                lengthChange: false,
                 processing: true,
                 responsive: true,
+                pageLength: 25,
+                pagingType: 'numbers',
+                serverSide: true,
+                dom: "<'row'<'col-sm-12'tr>><'row float-left mt-3'<'col-sm-12'p>>",
                 ajax: {
                     url: ajaxurl,
+                    method: 'POST',
                     data: function(d) {
-                        return {
+                        return $.extend({}, d, {
                             action: 'bookly_get_sms_list',
                             csrf_token: BooklyL10nGlobal.csrf_token,
-                            range: $date_range.data('date')
-                        };
+                            filter: {
+                                range: $date_range.data('date')
+                            }
+                        });
                     },
-                    dataSrc: 'list'
                 },
                 columns: columns,
                 language: {
@@ -668,9 +677,10 @@ jQuery(function($) {
                     processing: BooklyL10n.processing
                 }
             });
-            $date_range.on('apply.daterangepicker', function() {
-                dt.ajax.reload(null, false);
-            });
+            function onChangeFilter() {
+                dt.ajax.reload();
+            }
+            $date_range.on('apply.daterangepicker', onChangeFilter);
             $(this).on('click', function() {
                 dt.ajax.reload(null, false);
             });
@@ -699,14 +709,14 @@ jQuery(function($) {
                         data: column,
                         className: 'align-middle',
                         render: function(data, type, row, meta) {
-                            return '<div class="iti-flag ' + data + '"></div>';
+                            return '<div class="iti__flag iti__' + data + '"></div>';
                         }
                     });
                     break;
                 case 'price':
                     columns.push({
                         data: column,
-                        className: "text-right",
+                        className: 'text-right',
                         render: function(data, type, row, meta) {
                             return formatPrice(data);
                         }
@@ -715,7 +725,7 @@ jQuery(function($) {
                 case 'price_alt':
                     columns.push({
                         data: column,
-                        className: "text-right",
+                        className: 'text-right',
                         render: function(data, type, row, meta) {
                             if (row.price_alt === '') {
                                 return BooklyL10n.na;

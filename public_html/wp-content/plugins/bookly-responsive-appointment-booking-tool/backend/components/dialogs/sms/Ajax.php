@@ -3,10 +3,6 @@ namespace Bookly\Backend\Components\Dialogs\Sms;
 
 use Bookly\Lib;
 
-/**
- * Class Ajax
- * @package Bookly\Backend\Components\Sms
- */
 class Ajax extends Lib\Base\Ajax
 {
     /**

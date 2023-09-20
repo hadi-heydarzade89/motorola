@@ -4,9 +4,6 @@ namespace Bookly\Backend\Modules\Settings\Proxy;
 use Bookly\Lib;
 
 /**
- * Class Pro
- * @package Bookly\Backend\Modules\Settings\Proxy
- *
  * @method static void renderAppointmentsSettings() Render Appointments settings.
  * @method static void renderCancellationConfirmationUrl() Render cancellation confirmation URL setting.
  * @method static void renderCreateWordPressUser() Render Create WordPress user account for customers.

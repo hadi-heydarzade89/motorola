@@ -6,10 +6,6 @@ use Bookly\Backend\Modules;
 use Bookly\Backend\Components\Notices;
 use Bookly\Backend\Components\Support\Lib\Urls;
 
-/**
- * Class Buttons
- * @package Bookly\Backend\Components\Support
- */
 class Buttons extends Lib\Base\Component
 {
     /**

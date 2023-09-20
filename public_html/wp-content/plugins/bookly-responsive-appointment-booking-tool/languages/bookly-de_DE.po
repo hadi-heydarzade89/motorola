@@ -8,11 +8,11 @@ msgstr ""
 "Language: de_DE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-31 08:32+0000\n"
-"PO-Revision-Date: 2023-08-01 16:02+0000\n"
+"POT-Creation-Date: 2023-09-11 06:40+0000\n"
+"PO-Revision-Date: 2023-09-11 12:59+0000\n"
 "Last-Translator: Birk Stern <birk.m.stern@gmail.com>\n"
 "Language-Team: German\n"
-"X-Loco-Version: 2.3.1; wp-6.1"
+"X-Loco-Version: 2.3.1; wp-6.3.1"
 
 msgid "Invoice #{invoice_number} for your appointment"
 msgstr ""
@@ -2265,6 +2265,9 @@ msgstr "Adresse anzeigen erforderlich"
 msgid "Show google maps field"
 msgstr "Google Maps anzeigen"
 
+msgid "Google maps address"
+msgstr "Adresse bei Google Maps"
+
 msgid "Do not allow to select a specific staff member"
 msgstr "Auswahl eines bestimmten Mitarbeiters nicht zulassen"
 
@@ -2418,9 +2421,6 @@ msgstr ""
 "Zeitfenster\n"
 "."
 
-msgid "Time"
-msgstr "Zeit"
-
 msgid "Wrong current password"
 msgstr "Falsches aktuelles Passwort"
 
@@ -2454,6 +2454,9 @@ msgstr "Bestätigen"
 
 msgid "Ok"
 msgstr "OK"
+
+msgid "Time"
+msgstr "Zeit"
 
 #, php-format
 msgid " and %d more item"
@@ -3679,6 +3682,24 @@ msgstr "Angeforderte ID"
 msgid "Status date"
 msgstr "Statusdatum"
 
+msgid "Action"
+msgstr "Aktion"
+
+msgid "Target"
+msgstr "Ziel"
+
+msgid "Target ID"
+msgstr "Ziel-ID"
+
+msgid "Author"
+msgstr "Autor"
+
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Reference"
+msgstr "Referenz"
+
 #, php-format
 msgid ""
 "New version of %1$s is available. <a href=\"%2$s\" %3$s>View version %4$s "
@@ -4572,26 +4593,8 @@ msgstr ""
 msgid "All actions"
 msgstr "Alle Aktionen"
 
-msgid "Target ID"
-msgstr "Ziel-ID"
-
 msgid "Quick search"
 msgstr "Schnellsuche"
-
-msgid "Action"
-msgstr "Aktion"
-
-msgid "Target"
-msgstr "Ziel"
-
-msgid "Author"
-msgstr "Autor"
-
-msgid "Comment"
-msgstr "Kommentar"
-
-msgid "Reference"
-msgstr "Referenz"
 
 msgid "Clear logs"
 msgstr "Protokolle löschen"
@@ -8036,6 +8039,11 @@ msgstr "Drucken"
 msgid "Gift Cards"
 msgstr "Geschenkgutscheine"
 
+msgid "Please note that Local payments not allowed for gift cards."
+msgstr ""
+"Bitte beachten Sie, dass vor-Ort-Zahlungen für Geschenkgutscheine nicht "
+"möglich sind."
+
 msgid "Cards"
 msgstr "Gutscheine"
 
@@ -8763,6 +8771,9 @@ msgstr "Das Geheimnis, das Sie mit dem Befehl Return erhalten"
 msgid "Please select a Booking product"
 msgstr "Bitte wählen Sie ein Buchungsprodukt"
 
+msgid "Client birthday full date"
+msgstr "Geburtstag des Kunden, vollständiges Datum"
+
 msgid "Extras titles"
 msgstr "Extras-Titel"
 
@@ -8969,6 +8980,9 @@ msgstr "Breite"
 msgid "Header height"
 msgstr "Überschriftengröße"
 
+msgid "Body height"
+msgstr "Texthöhe"
+
 msgid "Form title"
 msgstr "Titel des Formulars"
 
@@ -9043,6 +9057,15 @@ msgstr ""
 
 msgid "Step content"
 msgstr "Schritt-Inhalt"
+
+msgid "Cards display mode"
+msgstr "Kartenanzeigemodus"
+
+msgid "Show all available cards"
+msgstr "Alle verfügbaren Karten anzeigen"
+
+msgid "Show cards with time slots only"
+msgstr "Nur Karten mit Zeitfenstern anzeigen"
 
 msgid "Add new form"
 msgstr "Neues Formular hinzufügen"
@@ -9177,6 +9200,15 @@ msgstr "Stornierung bestätigen"
 msgid "Do not cancel"
 msgstr "Nicht stornieren"
 
+msgid "This appointment has been already cancelled."
+msgstr "Dieser Termin wurde bereits storniert."
+
+msgid "This appointment does not exist."
+msgstr "Dieser Termin existiert nicht."
+
+msgid "Cancellation of this appointment is not allowed."
+msgstr "Eine Stornierung dieses Termins ist nicht zulässig."
+
 msgid "Import"
 msgstr "Import"
 
@@ -9229,9 +9261,6 @@ msgstr "Empfänger"
 
 msgid "Headers"
 msgstr "Kopfzeilen"
-
-msgid "Client birthday full date"
-msgstr "Geburtstag des Kunden, vollständiges Datum"
 
 msgid "Time zone of staff"
 msgstr "Zeitzone des Mitarbeiters"
@@ -9925,6 +9954,9 @@ msgstr ""
 msgid "This service is no longer provided."
 msgstr "Dieser Service wird nicht mehr angeboten."
 
+msgid "Gift card type was not found"
+msgstr "Geschenkgutscheintyp konnte nicht gefunden werden"
+
 msgid "Service was not found"
 msgstr "Dienstleistung wurde nicht gefunden"
 
@@ -9957,8 +9989,11 @@ msgstr "Anzahlungsoptionen"
 msgid "Deposit only"
 msgstr "Nur Anzahlung"
 
-msgid "Deposit or full price"
-msgstr "Anzahlung oder voller Preis"
+msgid "Deposit or full price (deposit by default)"
+msgstr "Anzahlung oder voller Preis (standardmäßig Anzahlung)"
+
+msgid "Full price or deposit (full price by default)"
+msgstr "Voller Preis oder Anzahlung (standardmäßig voller Preis)"
 
 msgid ""
 "If you enable \"Deposit only\", customers will be requested to pay only a "

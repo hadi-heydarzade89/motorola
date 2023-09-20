@@ -64,18 +64,6 @@ class Ssbhesabfa_Webhook
                                 break;
                             }
 
-                            if($item->Action == 52) {
-                                $updatedItem = $hesabfaApi->itemGet($item->Extra);
-                                $wpFaService = new HesabfaWpFaService();
-                                $wpFa = $wpFaService->getWpFaByHesabfaId('product', $updatedItem->Result->Code);
-
-                                $newPrice = Ssbhesabfa_Admin_Functions::getPriceInWooCommerceDefaultCurrency($updatedItem->Result->SellPrice);
-
-                                if (get_option('ssbhesabfa_item_update_price') == 'yes') {
-                                    update_post_meta($wpFa->idWp, '_regular_price', $newPrice);
-                                }
-                            }
-
                             $this->itemsObjectId[] = $item->ObjectId;
                             break;
                         case 'Contact':
@@ -253,8 +241,16 @@ class Ssbhesabfa_Webhook
         $warehouseCode = get_option('ssbhesabfa_item_update_quantity_based_on');
         switch ($type) {
             case 'item':
-//                $result = $hesabfaApi->itemGetById($idList);
-                $result = $hesabfaApi->itemGetQuantity($warehouseCode, $idList);
+                if($warehouseCode == '-1') {
+                    $result = $hesabfaApi->itemGetById($idList);
+                } else {
+                    $items = $hesabfaApi->itemGetById($idList);
+                    $codeList = [];
+                    foreach ($items->Result as $item) {
+                        array_push($codeList, $item->Code);
+                    }
+                    $result = $hesabfaApi->itemGetQuantity($warehouseCode, $codeList);
+                }
                 break;
             case 'contact':
                 $result = $hesabfaApi->contactGetById($idList);
@@ -269,7 +265,9 @@ class Ssbhesabfa_Webhook
                 return false;
         }
 
-        if (is_object($result) && $result->Success) return $result->Result;
+        if (is_object($result) && $result->Success) {
+            return $result->Result;
+        }
 
         return false;
     }

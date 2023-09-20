@@ -3,8 +3,6 @@ namespace Bookly\Lib;
 
 use Bookly\Lib\DataHolders\Booking as DataHolders;
 use Bookly\Lib\Entities\CustomerAppointment;
-use Bookly\Lib\Entities;
-use Bookly\Lib\Payment;
 use Bookly\Lib\Utils\Common;
 
 class Cart

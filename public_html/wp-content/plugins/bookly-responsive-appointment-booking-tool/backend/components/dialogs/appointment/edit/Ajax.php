@@ -42,7 +42,7 @@ class Ajax extends Lib\Base\Ajax
             'customer_gr_def_app_status' => Lib\Proxy\CustomerGroups::prepareDefaultAppointmentStatuses( array( 0 => Lib\Config::getDefaultAppointmentStatus() ) ),
         );
 
-        $appointments_time_delimiter = get_option( 'bookly_appointments_time_delimiter', 0 ) * MINUTE_IN_SECONDS;
+        $appointments_time_delimiter = (int) get_option( 'bookly_appointments_time_delimiter', 0 ) * MINUTE_IN_SECONDS;
 
         // Staff list
         /** @var Staff[] $staff_members */

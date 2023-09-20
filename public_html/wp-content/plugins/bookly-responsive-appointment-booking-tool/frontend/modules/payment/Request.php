@@ -130,6 +130,7 @@ class Request extends Lib\Base\Component
                     $this->userData
                         ->setCouponCode( $coupon )
                         ->setGiftCode( $gift_card )
+                        ->setFullAddress( isset( $customer['full_address'] ) && $customer['full_address'] !== '' ? $customer['full_address'] : null )
                         ->setModernFormCustomer( $customer );
 
                     $client_fields = array();
@@ -201,16 +202,22 @@ class Request extends Lib\Base\Component
             } else {
                 $gateway = $this->getGatewayName();
                 if ( $gateway === null ) {
-                    /** @var Entities\Payment $payment */
-                    $payment = Entities\Payment::query( 'p' )
-                        ->leftJoin( 'Order', 'o', 'o.id = p.order_id' )
-                        ->where( 'o.token', $this->get( 'bookly_order' ) )
-                        ->findOne();
+                    $payment = null;
+                    if ( $this->get( 'bookly_order' ) ) {
+                        /** @var Entities\Payment $payment */
+                        $payment = Entities\Payment::query( 'p' )
+                            ->leftJoin( 'Order', 'o', 'o.id = p.order_id' )
+                            ->where( 'o.token', $this->get( 'bookly_order' ) )
+                            ->findOne();
+                    }
                     if ( $payment ) {
                         $this->gateway = $this->getGatewayByName( $payment->getType() );
                         $this->gateway->setPayment( $payment );
                     } else {
-                        $this->gateway = new Payment\NullGateway( $this );
+                        $this->gateway = new Payment\ZeroGateway( $this );
+                        if ( $this->getCartInfo()->getPayNow() > 0 ) {
+                            throw new \Exception( __( 'Incorrect payment data', 'bookly' ) );
+                        }
                     }
                 } else {
                     $this->gateway = $this->getGatewayByName( $gateway );

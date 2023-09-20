@@ -31,6 +31,7 @@ class Payment extends Base
         'refundable',
         'group_discount',
         'discounts',
+        'from_backend'
     );
 
     public function getData()

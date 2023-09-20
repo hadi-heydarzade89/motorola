@@ -8,11 +8,11 @@ msgstr ""
 "Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-31 08:34+0000\n"
-"PO-Revision-Date: 2023-08-04 10:29+0000\n"
+"POT-Creation-Date: 2023-09-11 06:55+0000\n"
+"PO-Revision-Date: 2023-09-12 11:34+0000\n"
 "Last-Translator: support@bookly.info\n"
 "Language-Team: Spanish (Spain)\n"
-"X-Loco-Version: 2.3.1; wp-6.1"
+"X-Loco-Version: 2.3.1; wp-6.3.1"
 
 msgid "Invoice #{invoice_number} for your appointment"
 msgstr "Factura #{invoice_number} por su cita"
@@ -2179,6 +2179,9 @@ msgstr "Mostrar dirección requerida"
 msgid "Show google maps field"
 msgstr "Mostrar el campo google maps"
 
+msgid "Google maps address"
+msgstr "Dirección de Google maps"
+
 msgid "Do not allow to select a specific staff member"
 msgstr "No permitir seleccionar a un miembro específico del personal"
 
@@ -2327,9 +2330,6 @@ msgstr ""
 "La hora seleccionada ya no está disponible. Por favor elije otra ranura de "
 "hora."
 
-msgid "Time"
-msgstr "Hora"
-
 msgid "Wrong current password"
 msgstr "Contraseña actual incorrecta"
 
@@ -2361,6 +2361,9 @@ msgstr "Confirmar"
 
 msgid "Ok"
 msgstr "Ok"
+
+msgid "Time"
+msgstr "Hora"
 
 #, php-format
 msgid " and %d more item"
@@ -3538,6 +3541,24 @@ msgstr "ID solicitado"
 msgid "Status date"
 msgstr "Situación a la fecha"
 
+msgid "Action"
+msgstr "Acción"
+
+msgid "Target"
+msgstr "Objetivo"
+
+msgid "Target ID"
+msgstr "ID Objetivo"
+
+msgid "Author"
+msgstr "Autor"
+
+msgid "Comment"
+msgstr "Comentario"
+
+msgid "Reference"
+msgstr "Referencia"
+
 #, php-format
 msgid ""
 "New version of %1$s is available. <a href=\"%2$s\" %3$s>View version %4$s "
@@ -4395,26 +4416,8 @@ msgstr ""
 msgid "All actions"
 msgstr "Todas las acciones"
 
-msgid "Target ID"
-msgstr "ID Objetivo"
-
 msgid "Quick search"
 msgstr "Búsqueda rápida"
-
-msgid "Action"
-msgstr "Acción"
-
-msgid "Target"
-msgstr "Objetivo"
-
-msgid "Author"
-msgstr "Autor"
-
-msgid "Comment"
-msgstr "Comentario"
-
-msgid "Reference"
-msgstr "Referencia"
 
 msgid "Clear logs"
 msgstr "Borrar registros"
@@ -7674,6 +7677,10 @@ msgstr "Imprimir"
 msgid "Gift Cards"
 msgstr "Tarjetas de regalo"
 
+msgid "Please note that Local payments not allowed for gift cards."
+msgstr ""
+"Tenga en cuenta que no se permiten pagos locales para las tarjetas de regalo."
+
 msgid "Cards"
 msgstr "Tarjetas"
 
@@ -8372,6 +8379,9 @@ msgstr "El Secreto obtenido del retorno del comando"
 msgid "Please select a Booking product"
 msgstr "Seleccione un producto de Reserva"
 
+msgid "Client birthday full date"
+msgstr "Fecha de nacimiento completa del cliente"
+
 msgid "Extras titles"
 msgstr "Títulos de extras"
 
@@ -8574,6 +8584,9 @@ msgstr "Ancho"
 msgid "Header height"
 msgstr "Altura del encabezado"
 
+msgid "Body height"
+msgstr "Peso corporal"
+
 msgid "Form title"
 msgstr "Título del formulario"
 
@@ -8647,6 +8660,15 @@ msgstr ""
 
 msgid "Step content"
 msgstr "Paso de contenido"
+
+msgid "Cards display mode"
+msgstr "Modo de visualización de tarjetas"
+
+msgid "Show all available cards"
+msgstr "Mostrar todas las tarjetas disponibles"
+
+msgid "Show cards with time slots only"
+msgstr "Mostrar tarjetas solo con franjas horarias"
 
 msgid "Add new form"
 msgstr "Añadir nuevo formulario"
@@ -8780,6 +8802,15 @@ msgstr "Confirmar cancelación"
 msgid "Do not cancel"
 msgstr "No cancelar"
 
+msgid "This appointment has been already cancelled."
+msgstr "Esta cita ya ha sido cancelada."
+
+msgid "This appointment does not exist."
+msgstr "Esta cita no existe."
+
+msgid "Cancellation of this appointment is not allowed."
+msgstr "No se permite la cancelación de esta cita."
+
 msgid "Import"
 msgstr "Importar"
 
@@ -8832,9 +8863,6 @@ msgstr "Destinatario"
 
 msgid "Headers"
 msgstr "Encabezados"
-
-msgid "Client birthday full date"
-msgstr "Fecha de nacimiento completa del cliente"
 
 msgid "Time zone of staff"
 msgstr "Zona horaria del personal"
@@ -9479,6 +9507,9 @@ msgstr ""
 msgid "This service is no longer provided."
 msgstr "Este servicio ya no se proporciona."
 
+msgid "Gift card type was not found"
+msgstr "No se encontró el tipo de tarjeta de regalo"
+
 msgid "Service was not found"
 msgstr "No se encontró el servicio"
 
@@ -9509,8 +9540,11 @@ msgstr "Opciones de depósito"
 msgid "Deposit only"
 msgstr "Solo depósito"
 
-msgid "Deposit or full price"
-msgstr "Depósito o precio completo"
+msgid "Deposit or full price (deposit by default)"
+msgstr "Depósito o precio completo (depósito por defecto)"
+
+msgid "Full price or deposit (full price by default)"
+msgstr "Precio total o depósito (precio completo por defecto)"
 
 msgid ""
 "If you enable \"Deposit only\", customers will be requested to pay only a "

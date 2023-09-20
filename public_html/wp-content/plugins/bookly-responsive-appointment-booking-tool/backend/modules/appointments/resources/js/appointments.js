@@ -42,7 +42,10 @@ jQuery(function ($) {
         isMobile = true;
     } catch (e) {}
 
-    $statusFilter.booklyDropdown({onChange: function () { dt.ajax.reload(null, false); }});
+    function onChangeFilter() {
+        dt.ajax.reload();
+    }
+    $statusFilter.booklyDropdown({onChange: onChangeFilter});
 
     $('.bookly-js-select').val(null);
 
@@ -627,11 +630,11 @@ jQuery(function ($) {
         return dt.row($el).data();
     }
 
-    $idFilter.on('keyup', function () { dt.ajax.reload(null, false); });
-    $appointmentDateFilter.on('apply.daterangepicker', function () { dt.ajax.reload(null, false); });
-    $creationDateFilter.on('apply.daterangepicker', function () { dt.ajax.reload(null, false); });
-    $staffFilter.on('change', function () { dt.ajax.reload(null, false); });
-    $customerFilter.on('change', function () { dt.ajax.reload(null, false); });
-    $serviceFilter.on('change', function () { dt.ajax.reload(null, false); });
-    $locationFilter.on('change', function () { dt.ajax.reload(null, false); });
+    $idFilter.on('keyup', onChangeFilter);
+    $appointmentDateFilter.on('apply.daterangepicker', onChangeFilter);
+    $creationDateFilter.on('apply.daterangepicker', onChangeFilter);
+    $staffFilter.on('change', onChangeFilter);
+    $customerFilter.on('change', onChangeFilter);
+    $serviceFilter.on('change', onChangeFilter);
+    $locationFilter.on('change', onChangeFilter);
 });

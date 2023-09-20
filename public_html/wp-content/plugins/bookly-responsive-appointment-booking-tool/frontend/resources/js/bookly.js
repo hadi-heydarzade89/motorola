@@ -5698,7 +5698,7 @@ var bookly = (function ($$1b) {
 	                exp_month: $__default["default"]('select[name="card_exp_month"]', $payment_details).val(),
 	                exp_year: $__default["default"]('select[name="card_exp_year"]', $payment_details).val()
 	              },
-	              response_url: document.URL.split('#')[0],
+	              response_url: window.location.pathname + window.location.search.split('#')[0],
 	              form_id: params.form_id,
 	              gateway: gateway,
 	              form_slug: 'booking-form'
@@ -5715,7 +5715,7 @@ var bookly = (function ($$1b) {
 	            data: {
 	              action: 'bookly_create_payment_intent',
 	              form_id: params.form_id,
-	              response_url: document.URL.split('#')[0],
+	              response_url: window.location.pathname + window.location.search.split('#')[0],
 	              gateway: gateway,
 	              form_slug: 'booking-form'
 	            }
@@ -5759,7 +5759,7 @@ var bookly = (function ($$1b) {
 	            action: 'bookly_create_payment_intent',
 	            form_id: params.form_id,
 	            gateway: $gateway_checked.val(),
-	            response_url: document.URL.split('#')[0],
+	            response_url: window.location.pathname + window.location.search.split('#')[0],
 	            form_slug: 'booking-form'
 	          }
 	        }).then(function (response) {
@@ -5997,50 +5997,70 @@ var bookly = (function ($$1b) {
 	      }
 	      _filterInstanceProperty($errors).call($errors, ':not(.bookly-custom-field-error)').html('');
 	    };
-
-	    // Conditional custom fields
-	    $__default["default"]('.bookly-custom-field-row').on('change', 'select, input[type="checkbox"], input[type="radio"]', function () {
-	      var $row = $__default["default"](this).closest('.bookly-custom-field-row'),
-	        id = $row.data('id'),
-	        $that = $__default["default"](this);
+	    var checkCustomFieldConditions = function checkCustomFieldConditions($row) {
+	      var id = $row.data('id'),
+	        value = [];
+	      switch ($row.data('type')) {
+	        case 'drop-down':
+	          value.push(_findInstanceProperty($row).call($row, 'select').val());
+	          break;
+	        case 'radio-buttons':
+	          value.push(_findInstanceProperty($row).call($row, 'input:checked').val());
+	          break;
+	        case 'checkboxes':
+	          _findInstanceProperty($row).call($row, 'input').each(function () {
+	            if ($__default["default"](this).prop('checked')) {
+	              value.push($__default["default"](this).val());
+	            }
+	          });
+	          break;
+	      }
 	      $__default["default"].each(custom_fields_conditions, function (i, condition) {
-	        var _context7, _context8;
-	        var $target = $__default["default"]('.bookly-custom-field-row[data-id="' + condition.target + '"]');
+	        var $target = $__default["default"]('.bookly-custom-field-row[data-id="' + condition.target + '"]'),
+	          target_visibility = $target.is(':visible');
 	        if (_parseInt(condition.source) === id) {
-	          switch ($row.data('type')) {
-	            case 'drop-down':
-	            case 'radio-buttons':
-	              if (_includesInstanceProperty(_context7 = condition.value).call(_context7, $that.val()) && condition.equal === '1' || !_includesInstanceProperty(_context8 = condition.value).call(_context8, $that.val()) && condition.equal !== '1') {
-	                $target.show();
-	              } else {
-	                $target.hide();
-	              }
-	              break;
-	            case 'checkboxes':
-	              var show = false;
-	              _findInstanceProperty($row).call($row, 'input').each(function () {
-	                var _context9, _context10;
-	                if ($__default["default"](this).prop('checked') && (_includesInstanceProperty(_context9 = condition.value).call(_context9, $__default["default"](this).val()) && condition.equal === '1' || !_includesInstanceProperty(_context10 = condition.value).call(_context10, $__default["default"](this).val()) && condition.equal !== '1')) {
-	                  show = true;
-	                }
-	              });
-	              $target.toggle(show);
-	              break;
+	          var show = false;
+	          $__default["default"].each(value, function (i, v) {
+	            var _context7, _context8;
+	            if ($row.is(':visible') && (_includesInstanceProperty(_context7 = condition.value).call(_context7, v) && condition.equal === '1' || !_includesInstanceProperty(_context8 = condition.value).call(_context8, v) && condition.equal !== '1')) {
+	              show = true;
+	            }
+	          });
+	          $target.toggle(show);
+	          if ($target.is(':visible') !== target_visibility) {
+	            checkCustomFieldConditions($target);
 	          }
 	        }
 	      });
+	    };
+	    // Conditional custom fields
+	    $__default["default"]('.bookly-custom-field-row').on('change', 'select, input[type="checkbox"], input[type="radio"]', function () {
+	      checkCustomFieldConditions($__default["default"](this).closest('.bookly-custom-field-row'));
+	    });
+	    $__default["default"]('.bookly-custom-field-row').each(function () {
+	      var _context9;
+	      var _type = $__default["default"](this).data('type');
+	      if (_includesInstanceProperty(_context9 = ['drop-down', 'radio-buttons', 'checkboxes']).call(_context9, _type)) {
+	        if (_type === 'drop-down') {
+	          var _context10;
+	          _findInstanceProperty(_context10 = $__default["default"](this)).call(_context10, 'select').trigger('change');
+	        } else {
+	          var _context11;
+	          _findInstanceProperty(_context11 = $__default["default"](this)).call(_context11, 'input:checked').trigger('change');
+	        }
+	      }
 	    });
 	    // Custom fields date fields
 	    $__default["default"]('.bookly-js-cf-date', $container).each(function () {
-	      var _context11, _context12;
+	      var _context12, _context13;
 	      var $cf_date = $__default["default"](this);
 	      $cf_date.pickadate({
 	        formatSubmit: 'yyyy-mm-dd',
 	        format: opt[params.form_id].date_format,
-	        min: $__default["default"](this).data('min') !== '' ? _mapInstanceProperty(_context11 = $__default["default"](this).data('min').split('-')).call(_context11, function (value, index) {
+	        min: $__default["default"](this).data('min') !== '' ? _mapInstanceProperty(_context12 = $__default["default"](this).data('min').split('-')).call(_context12, function (value, index) {
 	          if (index === 1) return value - 1;else return _parseInt(value);
 	        }) : false,
-	        max: $__default["default"](this).data('max') !== '' ? _mapInstanceProperty(_context12 = $__default["default"](this).data('max').split('-')).call(_context12, function (value, index) {
+	        max: $__default["default"](this).data('max') !== '' ? _mapInstanceProperty(_context13 = $__default["default"](this).data('max').split('-')).call(_context13, function (value, index) {
 	          if (index === 1) return value - 1;else return _parseInt(value);
 	        }) : false,
 	        clear: false,
@@ -6077,9 +6097,9 @@ var bookly = (function ($$1b) {
 	    // Init modals.
 	    _findInstanceProperty($container).call($container, '.bookly-js-modal.' + params.form_id).remove();
 	    $modals.addClass(params.form_id).appendTo($container).on('click', '.bookly-js-close', function (e) {
-	      var _context13, _context14, _context15;
+	      var _context14, _context15, _context16;
 	      e.preventDefault();
-	      _findInstanceProperty(_context13 = _findInstanceProperty(_context14 = _findInstanceProperty(_context15 = $__default["default"](e.delegateTarget).removeClass('bookly-in')).call(_context15, 'form').trigger('reset').end()).call(_context14, 'input').removeClass('bookly-error').end()).call(_context13, '.bookly-label-error').html('');
+	      _findInstanceProperty(_context14 = _findInstanceProperty(_context15 = _findInstanceProperty(_context16 = $__default["default"](e.delegateTarget).removeClass('bookly-in')).call(_context16, 'form').trigger('reset').end()).call(_context15, 'input').removeClass('bookly-error').end()).call(_context14, '.bookly-label-error').html('');
 	    });
 	    // Login modal.
 	    $__default["default"]('.bookly-js-login-show', $container).on('click', function (e) {
@@ -6163,7 +6183,7 @@ var bookly = (function ($$1b) {
 	      if ($terms.length && !$terms.prop('checked')) {
 	        $terms_error.html(terms_error);
 	      } else {
-	        var _context16, _context17;
+	        var _context17, _context18;
 	        var info_fields = [],
 	          custom_fields = {},
 	          checkbox_values,
@@ -6311,8 +6331,8 @@ var bookly = (function ($$1b) {
 	          first_name: $first_name_field.val(),
 	          last_name: $last_name_field.val(),
 	          phone: phone_number,
-	          email: _trimInstanceProperty(_context16 = $email_field.val()).call(_context16),
-	          email_confirm: $email_confirm_field.length === 1 ? _trimInstanceProperty(_context17 = $email_confirm_field.val()).call(_context17) : undefined,
+	          email: _trimInstanceProperty(_context17 = $email_field.val()).call(_context17),
+	          email_confirm: $email_confirm_field.length === 1 ? _trimInstanceProperty(_context18 = $email_confirm_field.val()).call(_context18) : undefined,
 	          birthday: {
 	            day: $birthday_day_field.val(),
 	            month: $birthday_month_field.val(),
@@ -7954,11 +7974,11 @@ var bookly = (function ($$1b) {
 	        $time_next_button.show();
 	      }
 	    }
-	    if ((typeof ResizeObserver === "undefined" ? "undefined" : _typeof(ResizeObserver)) !== undefined) {
+	    if (typeof ResizeObserver === "undefined" || (typeof ResizeObserver === "undefined" ? "undefined" : _typeof(ResizeObserver)) === undefined) {
+	      resizeColumnizer();
+	    } else {
 	      columnizerObserver = new ResizeObserver(observeResizeColumnizer);
 	      columnizerObserver.observe($container.get(0));
-	    } else {
-	      resizeColumnizer();
 	    }
 	  }).catch(function (response) {
 	    stepService({
@@ -14013,4 +14033,4 @@ var bookly = (function ($$1b) {
 	return main;
 
 })(jQuery);
-const bookly_js_created_at = "2023-08-09";
+const bookly_js_created_at = "2023-09-13";

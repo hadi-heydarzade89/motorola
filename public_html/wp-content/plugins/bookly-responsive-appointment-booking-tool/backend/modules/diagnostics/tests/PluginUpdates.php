@@ -4,11 +4,6 @@ namespace Bookly\Backend\Modules\Diagnostics\Tests;
 
 use Bookly\Lib;
 
-/**
- * Class PluginUpdates
- *
- * @package Bookly\Backend\Modules\Diagnostics\Tests
- */
 class PluginUpdates extends Test
 {
     protected $slug = 'bookly-plugin-updates';

@@ -5,11 +5,6 @@ use Bookly\Lib;
 use Bookly\Lib\Entities\Notification;
 use Bookly\Backend\Modules\Notifications\Proxy;
 
-/**
- * Class Codes
- *
- * @package Bookly\Backend\Modules\Notifications\Lib
- */
 class Codes
 {
     /** @var string */

@@ -81,6 +81,16 @@ abstract class Item
     }
 
     /**
+     * Check if item is gift card.
+     *
+     * @return bool
+     */
+    public function isGiftCard()
+    {
+        return $this->type === self::TYPE_GIFT_CARD;
+    }
+
+    /**
      * Set parent item
      *
      * @param Item $item

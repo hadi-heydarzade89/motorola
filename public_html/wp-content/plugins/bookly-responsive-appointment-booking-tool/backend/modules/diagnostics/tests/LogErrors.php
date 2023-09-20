@@ -4,11 +4,6 @@ namespace Bookly\Backend\Modules\Diagnostics\Tests;
 
 use Bookly\Lib;
 
-/**
- * Class LogErrors
- *
- * @package Bookly\Backend\Modules\Diagnostics\Tests
- */
 class LogErrors extends Test
 {
     protected $slug = 'check-log-errors';

@@ -8,11 +8,11 @@ msgstr ""
 "Language: nl_NL\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-07-31 10:14+0000\n"
-"PO-Revision-Date: 2023-07-31 10:17+0000\n"
+"POT-Creation-Date: 2023-09-11 06:55+0000\n"
+"PO-Revision-Date: 2023-09-11 08:19+0000\n"
 "Last-Translator: support@bookly.info\n"
 "Language-Team: Dutch\n"
-"X-Loco-Version: 2.3.1; wp-6.1"
+"X-Loco-Version: 2.3.1; wp-6.3.1"
 
 msgid "Invoice #{invoice_number} for your appointment"
 msgstr "Factuur #{invoice_number} voor uw afspraak"
@@ -2158,6 +2158,9 @@ msgstr "Toon adres verplicht"
 msgid "Show google maps field"
 msgstr "Toon google maps informatie"
 
+msgid "Google maps address"
+msgstr "Adres op Google Maps"
+
 msgid "Do not allow to select a specific staff member"
 msgstr "Sta niet toe om een specifiek personeelslid te selecteren"
 
@@ -2304,9 +2307,6 @@ msgstr ""
 "De geselecteerde tijd is niet meer beschikbaar. Kies alstublieft een ander "
 "tijdsblok."
 
-msgid "Time"
-msgstr "Tijd"
-
 msgid "Wrong current password"
 msgstr "Verkeerd huidig wachtwoord"
 
@@ -2339,6 +2339,9 @@ msgstr "Bevestig"
 
 msgid "Ok"
 msgstr "Ok"
+
+msgid "Time"
+msgstr "Tijd"
 
 #, php-format
 msgid " and %d more item"
@@ -3508,6 +3511,24 @@ msgstr "Aangevraagde ID"
 msgid "Status date"
 msgstr "Datum status"
 
+msgid "Action"
+msgstr "Actie"
+
+msgid "Target"
+msgstr "Doel"
+
+msgid "Target ID"
+msgstr "Doel-ID"
+
+msgid "Author"
+msgstr "Auteur"
+
+msgid "Comment"
+msgstr "Opmerking"
+
+msgid "Reference"
+msgstr "Referentie"
+
 #, php-format
 msgid ""
 "New version of %1$s is available. <a href=\"%2$s\" %3$s>View version %4$s "
@@ -4362,26 +4383,8 @@ msgstr ""
 msgid "All actions"
 msgstr "Alle acties"
 
-msgid "Target ID"
-msgstr "Doel-ID"
-
 msgid "Quick search"
 msgstr "Snel zoeken"
-
-msgid "Action"
-msgstr "Actie"
-
-msgid "Target"
-msgstr "Doel"
-
-msgid "Author"
-msgstr "Auteur"
-
-msgid "Comment"
-msgstr "Opmerking"
-
-msgid "Reference"
-msgstr "Referentie"
 
 msgid "Clear logs"
 msgstr "Logboeken wissen"
@@ -7603,6 +7606,9 @@ msgstr "Printen"
 msgid "Gift Cards"
 msgstr "Cadeaubonnen"
 
+msgid "Please note that Local payments not allowed for gift cards."
+msgstr "Let op: lokale betalingen zijn niet toegestaan voor cadeaukaarten."
+
 msgid "Cards"
 msgstr "Kaarten"
 
@@ -8288,6 +8294,9 @@ msgstr "Het Geheim verkregen uit command return"
 msgid "Please select a Booking product"
 msgstr "Selecteer een Booking product"
 
+msgid "Client birthday full date"
+msgstr "Geboortedatum klant volledige datum"
+
 msgid "Extras titles"
 msgstr "Extra's titels"
 
@@ -8489,6 +8498,9 @@ msgstr "Breedte"
 msgid "Header height"
 msgstr "Hoogte koptekst"
 
+msgid "Body height"
+msgstr "Lichaamslengte"
+
 msgid "Form title"
 msgstr "Formulier titel"
 
@@ -8562,6 +8574,15 @@ msgstr ""
 
 msgid "Step content"
 msgstr "Stap inhoud"
+
+msgid "Cards display mode"
+msgstr "Weergavemodus kaarten"
+
+msgid "Show all available cards"
+msgstr "Toon alle beschikbare kaarten"
+
+msgid "Show cards with time slots only"
+msgstr "Toon alleen kaarten met tijdsloten"
 
 msgid "Add new form"
 msgstr "Nieuw formulier toevoegen"
@@ -8696,6 +8717,15 @@ msgstr "Bevestig annulering"
 msgid "Do not cancel"
 msgstr "Niet annuleren"
 
+msgid "This appointment has been already cancelled."
+msgstr "Deze afspraak is al geannuleerd."
+
+msgid "This appointment does not exist."
+msgstr "Deze afspraak bestaat niet."
+
+msgid "Cancellation of this appointment is not allowed."
+msgstr "Annulering van deze afspraak is niet toegestaan."
+
 msgid "Import"
 msgstr "Importeren"
 
@@ -8747,9 +8777,6 @@ msgstr "Ontvanger"
 
 msgid "Headers"
 msgstr "Kopteksten"
-
-msgid "Client birthday full date"
-msgstr "Geboortedatum klant volledige datum"
 
 msgid "Time zone of staff"
 msgstr "Tijdzone van personeelslid"
@@ -9381,6 +9408,9 @@ msgstr ""
 msgid "This service is no longer provided."
 msgstr "Deze service wordt niet langer geleverd."
 
+msgid "Gift card type was not found"
+msgstr "Het type cadeaubon is niet gevonden"
+
 msgid "Service was not found"
 msgstr "Service niet gevonden"
 
@@ -9411,8 +9441,11 @@ msgstr "Aanbetaling opties"
 msgid "Deposit only"
 msgstr "Alleen aanbetaling"
 
-msgid "Deposit or full price"
-msgstr "Aanbetaling of totale prijs"
+msgid "Deposit or full price (deposit by default)"
+msgstr "Aanbetaling of volledige prijs (standaard aanbetaling)"
+
+msgid "Full price or deposit (full price by default)"
+msgstr "Volledige prijs of aanbetaling (standaard volledige prijs)"
 
 msgid ""
 "If you enable \"Deposit only\", customers will be requested to pay only a "

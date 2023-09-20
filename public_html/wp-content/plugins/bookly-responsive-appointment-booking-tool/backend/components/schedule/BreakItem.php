@@ -3,10 +3,6 @@ namespace Bookly\Backend\Components\Schedule;
 
 use Bookly\Lib;
 
-/**
- * Class BreakItem
- * @package Bookly\Backend\Components\Schedule
- */
 class BreakItem extends Lib\Base\Component
 {
     /** @var int */

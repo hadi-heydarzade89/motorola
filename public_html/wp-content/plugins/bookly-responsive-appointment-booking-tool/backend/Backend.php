@@ -3,11 +3,6 @@ namespace Bookly\Backend;
 
 use Bookly\Lib;
 
-/**
- * Class Backend
- *
- * @package Bookly\Backend
- */
 abstract class Backend
 {
     /**

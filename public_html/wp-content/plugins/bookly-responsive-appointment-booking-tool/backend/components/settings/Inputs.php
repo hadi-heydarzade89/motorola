@@ -3,11 +3,6 @@ namespace Bookly\Backend\Components\Settings;
 
 use Bookly\Lib;
 
-/**
- * Class Inputs
- *
- * @package Bookly\Backend\Components\Settings
- */
 class Inputs
 {
     /**

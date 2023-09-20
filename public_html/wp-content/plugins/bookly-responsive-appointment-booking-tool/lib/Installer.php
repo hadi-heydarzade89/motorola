@@ -732,6 +732,7 @@ class Installer extends Base\Installer
                 `street`             VARCHAR(255) DEFAULT NULL,
                 `street_number`      VARCHAR(255) DEFAULT NULL,
                 `additional_address` VARCHAR(255) DEFAULT NULL,
+                `full_address`       VARCHAR(255) DEFAULT NULL,
                 `notes`              TEXT NOT NULL,
                 `info_fields`        TEXT DEFAULT NULL,
                 `stripe_account`     VARCHAR(255) DEFAULT NULL,

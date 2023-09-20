@@ -155,8 +155,8 @@ class Ajax extends Lib\Base\Ajax
             }
 
             // Date time
-            $appointment['start_date']  = Lib\Slots\DatePoint::fromStr( $appointment['start_date'] )->format( 'Y-m-d\TH:i:sO' );
-            $appointment['end_date']    = Lib\Slots\DatePoint::fromStr( $appointment['end_date'] )->format( 'Y-m-d\TH:i:sO' );
+            $appointment['start_date'] = $appointment['start_date'] ? Lib\Slots\DatePoint::fromStr( $appointment['start_date'] )->format( 'Y-m-d\TH:i:sO' ) : null;
+            $appointment['end_date'] = $appointment['end_date'] ? Lib\Slots\DatePoint::fromStr( $appointment['end_date'] )->format( 'Y-m-d\TH:i:sO' ) : null;
             $appointment['updated_at']  = Lib\Slots\DatePoint::fromStr( $appointment['updated_at'] )->format( 'Y-m-d\TH:i:sO' );
 
             $customer = new Customer();

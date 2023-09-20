@@ -37,6 +37,8 @@ abstract class Sender extends Booking\BaseSender
             } elseif ( $item->isPackage() ) {
                 /** @var Package $item */
                 BooklyProxy\Packages::sendNotifications( $item->getPackage() );
+            } elseif ( $item->isGiftCard() ) {
+                // ok
             } else {
                 // Notify client.
                 static::notifyClient( $notifications['client'], $item, $order, $codes );
