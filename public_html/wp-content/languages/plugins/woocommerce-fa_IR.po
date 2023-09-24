@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-09-15 22:26:32+0000\n"
+"PO-Revision-Date: 2023-09-23 23:28:43+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -127,6 +127,24 @@ msgctxt "block description"
 msgid "A checkbox and an input to type a password to view a product."
 msgstr "یک چک‌باکس و یک ورودی برای تایپ رمز عبور برای مشاهده یک محصول."
 
+#: assets/client/admin/product-editor/blocks/blocks/product-has-variations-notice/block.json
+#: assets/client/admin/product-editor/blocks/notice/block.json
+msgctxt "block keyword"
+msgid "notice"
+msgstr "اعلان"
+
+#: assets/client/admin/product-editor/blocks/blocks/product-has-variations-notice/block.json
+#: assets/client/admin/product-editor/blocks/notice/block.json
+msgctxt "block description"
+msgid "Notice description"
+msgstr "توضیح اعلان"
+
+#: assets/client/admin/product-editor/blocks/blocks/product-has-variations-notice/block.json
+#: assets/client/admin/product-editor/blocks/notice/block.json
+msgctxt "block title"
+msgid "Notice"
+msgstr "اعلان"
+
 #: assets/client/admin/product-editor/blocks/blocks/product-catalog-visibility-field/block.json
 #: assets/client/admin/product-editor/blocks/catalog-visibility/block.json
 msgctxt "block keyword"
@@ -138,6 +156,12 @@ msgstr "کاتالوگ"
 msgctxt "block title"
 msgid "Product catalog visibility"
 msgstr "قابلیت مشاهده کاتالوگ محصول"
+
+#: assets/client/admin/product-editor/blocks/blocks/product-catalog-visibility-field/block.json
+#: assets/client/admin/product-editor/blocks/catalog-visibility/block.json
+msgctxt "block description"
+msgid "A checkbox to manage the catalog visibility of the product."
+msgstr "یک چک باکس برای مدیریت نمایان بودن کاتالوگ محصول."
 
 #: src/Internal/Admin/RemoteFreeExtensions/DefaultFreeExtensions.php:890
 msgid "Save time on content creation — unlock high-quality blog posts and pages using AI."
@@ -408,6 +432,10 @@ msgstr "قالب تایید سفارش خلاصه‌ای از خرید تکمی�
 msgctxt "Template name"
 msgid "Order Confirmation"
 msgstr "تاییدیه سفارش"
+
+#: packages/woocommerce-blocks/src/Utils/BlockTemplateUtils.php:353
+msgid "Template used to display the simplified Checkout header."
+msgstr "قالب مورد استفاده برای نمایش سربرگ ساده شده پرداخت."
 
 #: packages/woocommerce-blocks/src/Utils/BlockTemplateUtils.php:352
 msgctxt "Template name"
@@ -3585,6 +3613,10 @@ msgstr[0] "%1$d سفارش در %2$d ثانیه تایید شد."
 msgid "Verification completed."
 msgstr "تاییدیه کامل شد."
 
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:470
+msgid "Infinite loop detected, aborting. No errors found."
+msgstr "حلقه بی‌نهایت شناسایی شد، در حال متوقف کردن. هیچ خطایی پیدا نشد."
+
 #. Translators: %1$d is the number of migrated orders and %2$d is the execution
 #. time in seconds.
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:234
@@ -5418,6 +5450,10 @@ msgstr "پلتفرم برای رهگیری."
 msgid "Sorry, you post telemetry data."
 msgstr "با عرض پوزش، شما داده‌های دورسنجی را ارسال می‌کنید."
 
+#: includes/admin/views/html-admin-page-addons.php:75
+msgid "Sorry, could not find anything. Try searching again using a different term."
+msgstr "با عرض پوزش، چیزی پیدا نشد. با استفاده از عبارت دیگری دوباره جستجو کنید."
+
 #. translators: %s vendor link
 #: includes/admin/class-wc-admin-addons.php:1434
 msgid "Developed by %s"
@@ -5472,6 +5508,10 @@ msgstr "آدرس ایمیل فروشگاه."
 #: src/Admin/API/OnboardingProfile.php:434
 msgid "Whether or not this store agreed to receiving marketing contents from WooCommerce.com."
 msgstr "آیا این فروشگاه با دریافت محتوای بازاریابی از WooCommerce.com موافقت کرده یا نه."
+
+#: includes/class-wc-post-types.php:349
+msgid "This is where you can browse products in this store."
+msgstr "اینجاست که می توانید محصولات این فروشگاه را مشاهده کنید."
 
 #: includes/admin/class-wc-admin-assets.php:354
 msgid "Are you sure you want to remove the selected shipping?"
