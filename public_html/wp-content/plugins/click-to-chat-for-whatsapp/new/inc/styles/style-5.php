@@ -73,7 +73,7 @@ echo $o;
 
 ?>
 
-<div class="ht-ctc-style-5 ctc-analytics" style="cursor: pointer; z-index: 99999999;" >
+<div class="ht-ctc-style-5 ctc-analytics ctc_s_5" style="cursor: pointer; z-index: 99999999;" >
 
     <div class="s5_cta" style="<?= $s5_cta_style ?>"   >
         <img class="s5_img ctc-analytics" src="<?= $s5_img ?>" style="<?= $s5_img_style ?>" alt="<?= $call_to_action ?>">

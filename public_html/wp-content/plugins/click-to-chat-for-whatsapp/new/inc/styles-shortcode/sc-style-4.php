@@ -54,7 +54,7 @@ if ( '' == $s4_img_url ) {
 }
 
 $o .=  '
-    <div class="chip ctc-analytics ctc_cta" style="'.$s4_chip_css.'">
+    <div class="ctc_chip ctc-analytics ctc_cta" style="'.$s4_chip_css.'">
         '.$s4_img.'
         <span>'.$call_to_action.'</span>
     </div>

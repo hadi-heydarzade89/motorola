@@ -46,37 +46,37 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
         }
         //***
         $cache_folder = '_woof_stat_cache';
-        if (isset($this->woof_settings['woof_stat']['cache_folder']) AND!empty($this->woof_settings['woof_stat']['cache_folder'])) {
+        if (isset($this->woof_settings['woof_stat']['cache_folder']) AND !empty($this->woof_settings['woof_stat']['cache_folder'])) {
             $cache_folder = sanitize_title($this->woof_settings['woof_stat']['cache_folder']);
         }
         //***
-        if (isset($this->woof_settings['woof_stat']['items_for_stat']) AND!empty($this->woof_settings['woof_stat']['items_for_stat'])) {
+        if (isset($this->woof_settings['woof_stat']['items_for_stat']) AND !empty($this->woof_settings['woof_stat']['items_for_stat'])) {
             $this->items_for_stat = (array) $this->woof_settings['woof_stat']['items_for_stat'];
         }
         //***
-        if (isset($this->woof_settings['woof_stat']['user_max_requests']) AND!empty($this->woof_settings['woof_stat']['user_max_requests'])) {
+        if (isset($this->woof_settings['woof_stat']['user_max_requests']) AND !empty($this->woof_settings['woof_stat']['user_max_requests'])) {
             $this->user_max_requests = intval($this->woof_settings['woof_stat']['user_max_requests']);
             if ($this->user_max_requests <= 0) {
                 $this->user_max_requests = 10;
             }
         }
         //***
-        if (isset($this->woof_settings['woof_stat']['request_max_deep']) AND!empty($this->woof_settings['woof_stat']['request_max_deep'])) {
+        if (isset($this->woof_settings['woof_stat']['request_max_deep']) AND !empty($this->woof_settings['woof_stat']['request_max_deep'])) {
             $this->request_max_deep = intval($this->woof_settings['woof_stat']['request_max_deep']);
             if ($this->request_max_deep <= 0) {
                 $this->request_max_deep = 5;
             }
         }
         //***
-        if (isset($this->woof_settings['woof_stat']['cron_system']) AND!empty($this->woof_settings['woof_stat']['cron_system'])) {
+        if (isset($this->woof_settings['woof_stat']['cron_system']) AND !empty($this->woof_settings['woof_stat']['cron_system'])) {
             $this->cron_system = intval($this->woof_settings['woof_stat']['cron_system']);
         }
         //***
-        if (isset($this->woof_settings['woof_stat']['wp_cron_period']) AND!empty($this->woof_settings['woof_stat']['wp_cron_period'])) {
+        if (isset($this->woof_settings['woof_stat']['wp_cron_period']) AND !empty($this->woof_settings['woof_stat']['wp_cron_period'])) {
             $this->wp_cron_period = $this->woof_settings['woof_stat']['wp_cron_period'];
         }
         //***
-        if (isset($this->woof_settings['woof_stat']['max_items_per_graph']) AND!empty($this->woof_settings['woof_stat']['max_items_per_graph'])) {
+        if (isset($this->woof_settings['woof_stat']['max_items_per_graph']) AND !empty($this->woof_settings['woof_stat']['max_items_per_graph'])) {
             $max_items_per_graph = (int) $this->woof_settings['woof_stat']['max_items_per_graph'];
             if ($max_items_per_graph > 0) {
                 $this->max_items_per_graph = $max_items_per_graph;
@@ -97,7 +97,7 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
                 $this->woof_stat_wpcron_init(true);
                 if (isset($_GET['woof_stat_collection'])) {
                     $cron_secret_key = 'woof_stat_updating';
-                    if (isset($this->woof_settings['woof_stat']['cron_secret_key']) AND!empty($this->woof_settings['woof_stat']['cron_secret_key'])) {
+                    if (isset($this->woof_settings['woof_stat']['cron_secret_key']) AND !empty($this->woof_settings['woof_stat']['cron_secret_key'])) {
                         $cron_secret_key = sanitize_title($this->woof_settings['woof_stat']['cron_secret_key']);
                     }
                     if ($_GET['woof_stat_collection'] === $cron_secret_key) {
@@ -142,6 +142,9 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
 
     //ajax
     public function woof_stat_check_connection() {
+        if (!isset($_REQUEST['stat_nonce']) || !wp_verify_nonce($_REQUEST['stat_nonce'], 'woof_stat_nonce')) {
+            die('0');
+        }
         $pdo_options = array();
         $pdo_options['host'] = sanitize_text_field(WOOF_REQUEST::get('woof_stat_host'));
         $pdo_options['host_db_name'] = sanitize_text_field(WOOF_REQUEST::get('woof_stat_name'));
@@ -157,6 +160,9 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
     }
 
     public function woof_stat_update_db() {
+        if (!isset($_REQUEST['stat_nonce']) || !wp_verify_nonce($_REQUEST['stat_nonce'], 'woof_stat_nonce')) {
+            die('0');
+        }
         global $wpdb;
         $row = $wpdb->get_results("SELECT COLUMN_NAME FROM INFORMATION_SCHEMA.COLUMNS WHERE table_name = '" . $this->table_stat_buffer . "' AND column_name = 'meta_value'");
         if (empty($row)) {
@@ -267,7 +273,7 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
         if (isset($this->woof_settings['woof_stat']['server_options'])) {
             if (extension_loaded('pdo_mysql')) {
                 $pdo_options = $this->woof_settings['woof_stat']['server_options'];
-                if (!empty($pdo_options['host']) AND!empty($pdo_options['host_db_name']) AND!empty($pdo_options['host_user']) AND!empty($pdo_options['host_pass'])) {
+                if (!empty($pdo_options['host']) AND !empty($pdo_options['host_db_name']) AND !empty($pdo_options['host_user']) AND !empty($pdo_options['host_pass'])) {
                     try {
                         $this->pdo = new PDO("mysql:host={$pdo_options['host']};dbname={$pdo_options['host_db_name']}", $pdo_options['host_user'], $pdo_options['host_pass']);
                     } catch (Exception $e) {
@@ -322,9 +328,10 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
 
     //ajax
     public function woof_write_stat() {
+
         WOOF_REQUEST::set('woof_products_doing', 1);
         $_GET = WOOF_REQUEST::get('woof_products_doing');
-        if ($this->is_enabled AND!is_null($this->pdo)) {
+        if ($this->is_enabled AND !is_null($this->pdo)) {
             $this->woof_get_request_data(WOOF_REQUEST::get('woof_current_values'));
             $this->cron->process();
         } else {
@@ -335,6 +342,9 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
 
     //ajax
     public function get_operative_tables() {
+        if (!isset($_REQUEST['stat_nonce']) || !wp_verify_nonce($_REQUEST['stat_nonce'], 'woof_stat_nonce')) {
+            die('0');
+        }
         if (current_user_can('create_users')) {
             $calendar_from = intval(WOOF_REQUEST::get('calendar_from'));
             $calendar_from = mktime(0, 0, 0, date('n', $calendar_from), date('d', $calendar_from), date('y', $calendar_from));
@@ -377,6 +387,9 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
 
     //ajax
     public function woof_get_stat_data() {
+        if (!isset($_REQUEST['stat_nonce']) || !wp_verify_nonce($_REQUEST['stat_nonce'], 'woof_stat_nonce')) {
+            die('0');
+        }
         if (current_user_can('create_users')) {
             $table = sanitize_text_field(WOOF_REQUEST::get('table'));
             $calendar_from = intval(WOOF_REQUEST::get('calendar_from'));
@@ -591,6 +604,9 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
 
     //ajax
     public function woof_get_top_terms() {
+        if (!isset($_REQUEST['stat_nonce']) || !wp_verify_nonce($_REQUEST['stat_nonce'], 'woof_stat_nonce')) {
+            die('0');
+        }
         if (current_user_can('create_users')) {
 
             $stat_data = WOOF_REQUEST::get('woof_stat_data');
@@ -1155,7 +1171,7 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
     public function get_stat_min_date_db() {
         $res = get_option('woof_stat_start_data', 0);
 
-        if (!$res) {
+        if (!$res OR (!is_int($res[0]) OR !is_int($res[1]))) {
             $res = array();
             $tables = $this->get_stat_tables();
             natsort($tables);

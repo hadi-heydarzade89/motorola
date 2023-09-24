@@ -3,7 +3,7 @@ Requires at least: 4.6
 Tested up to: 6.3.1
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 3.29.4
+Stable tag: 3.30
 Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, whatsapp support, whatsapp group, click to chat for whatsapp, WhatsApp WooCommerce, whatsapp wordpress, whatsapp floating button, chat, holithemes
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -67,7 +67,7 @@ Font can well decorate with font size, font family, links, text color, text back
 
 = 📝 Form Filling =
 
-Before starting the chat, website visitors must fill out a form.
+Get the necessary information from the website visitors before initiating the chat.
 
 * Get an email notification when the user fills out the form.
 * Call a webhook with the form data to integrate with other applications. Using integrations tools add data in Google Sheet, CRM and many more applications.
@@ -554,6 +554,9 @@ or
 After Activating the plugin, add a WhatsApp Number in the plugin settings.
 
 == Changelog ==
+
+= 3.30 =
+* Admin live preview on changes of number, call to action, styles, customization of styles, animations, notification badge.
 
 = 3.29.4 =
 * Fix: Greetings Dialog position, if mobile and desktop have different positions

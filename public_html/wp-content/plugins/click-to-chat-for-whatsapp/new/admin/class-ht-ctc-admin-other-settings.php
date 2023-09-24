@@ -370,7 +370,7 @@ class HT_CTC_Admin_Other_Settings {
         $an_itr = ( isset( $options['an_itr']) ) ? esc_attr( $options['an_itr'] ) : '';
 
         $entry_effect_list = array(
-            'no-show-effects' => '--No-Show-Effects--',
+            'no-show-effects' => '--No-Entry-Effects--',
             'From Center' => 'Center (zoomIn)',
             'From Corner' => 'Corner (corner of icon)', // js 
             // // new
@@ -393,8 +393,11 @@ class HT_CTC_Admin_Other_Settings {
             'flip' => 'Flip',
         );
 
+        $an_demo_class = ('' == $an_type || 'no-animation' == $an_type) ? 'ctc_init_display_none' : '';
+        $ee_demo_class = ('' == $show_effect || 'no-show-effects' == $show_effect) ? 'ctc_init_display_none' : '';
+
         ?>
-        <ul class="collapsible ht_ctc_animations" data-collapsible="accordion">
+        <ul class="collapsible ht_ctc_animations" data-collapsible="accordion" id="ht_ctc_animations">
         <li class="">
         <div class="collapsible-header"><?php _e( 'Animations', 'click-to-chat-for-whatsapp' ); ?></div>
         <div class="collapsible-body">
@@ -419,6 +422,7 @@ class HT_CTC_Admin_Other_Settings {
                 ?>
                 </select>
                 <label><?php _e( 'Animations', 'click-to-chat-for-whatsapp' ); ?></label>
+                <p class="description ctc_an_demo_btn ctc_run_demo_btn <?= $an_demo_class ?>">Demo: Animate</p>
             </div>
         </div>
 
@@ -466,6 +470,7 @@ class HT_CTC_Admin_Other_Settings {
                 ?>
                 </select>
                 <label><?php _e( 'Entrance Effects', 'click-to-chat-for-whatsapp' ); ?></label>
+                <p class="description ctc_ee_demo_btn ctc_run_demo_btn <?= $ee_demo_class ?>">Demo: Entry effect</p>
             </div>
         </div>
 
@@ -485,7 +490,7 @@ class HT_CTC_Admin_Other_Settings {
         $notification_time = (isset($options['notification_time'])) ? esc_attr($options['notification_time']) : '';
         ?>
 
-        <ul class="collapsible ht_ctc_notification" data-collapsible="accordion" style="margin-top: 2rem;">
+        <ul class="collapsible ht_ctc_notification" data-collapsible="accordion" id="ht_ctc_notification" style="margin-top: 2rem;">
         <li class="">
         <div class="collapsible-header"><?php _e( 'Notification Badge', 'click-to-chat-for-whatsapp' ); ?></div>
         <div class="collapsible-body">
@@ -498,7 +503,7 @@ class HT_CTC_Admin_Other_Settings {
             </div>
             <div class="col s6">
                 <label>
-                    <input class="notification_field" name="<?php echo $dbrow ?>[notification_badge]" type="checkbox" value="1" <?php checked( $notification_badge, 1 ); ?> id="notification_badge" />
+                    <input class="notification_field notification_badge" name="<?php echo $dbrow ?>[notification_badge]" type="checkbox" value="1" <?php checked( $notification_badge, 1 ); ?> id="notification_badge" />
                     <span><?php _e( 'Add Notification Badge', 'click-to-chat-for-whatsapp' ); ?></span>
                 </label>
                 <br>
@@ -511,7 +516,7 @@ class HT_CTC_Admin_Other_Settings {
                 <p><?php _e( 'Notification Count', 'click-to-chat-for-whatsapp' ); ?></p>
             </div>
             <div class="input-field col s6">
-                <input name="<?= $dbrow; ?>[notification_count]" value="<?= $notification_count ?>" id="notification_count" type="number" min="0" class="notification_field" >
+                <input name="<?= $dbrow; ?>[notification_count]" value="<?= $notification_count ?>" id="notification_count" type="number" min="0" class="notification_field field_notification_count" >
                 <label for="notification_count"><?php _e( 'Notification Count', 'click-to-chat-for-whatsapp' ); ?></label>
             </div>
         </div>
@@ -522,7 +527,7 @@ class HT_CTC_Admin_Other_Settings {
                 <p><?php _e( 'Badge Background Color', 'click-to-chat-for-whatsapp' ); ?></p>
             </div>
             <div class="input-field col s6">
-                <input class="ht-ctc-color" name="<?= $dbrow; ?>[notification_bg_color]" data-default-color="#ff4c4c" value="<?= $notification_bg_color ?>" type="text">
+                <input class="ht-ctc-color field_notification_bg_color" name="<?= $dbrow; ?>[notification_bg_color]" data-default-color="#ff4c4c" value="<?= $notification_bg_color ?>" type="text" data-update-type='background-color' data-update-selector='.ctc_ad_badge'>
             </div>
         </div>
 
@@ -532,7 +537,7 @@ class HT_CTC_Admin_Other_Settings {
                 <p><?php _e( 'Text Color', 'click-to-chat-for-whatsapp' ); ?></p>
             </div>
             <div class="input-field col s6">
-                <input class="ht-ctc-color" name="<?= $dbrow; ?>[notification_text_color]" data-default-color="#ffffff" value="<?= $notification_text_color ?>" type="text">
+                <input class="ht-ctc-color field_notification_text_color" name="<?= $dbrow; ?>[notification_text_color]" data-default-color="#ffffff" value="<?= $notification_text_color ?>" type="text" data-update-type='color' data-update-selector='.ctc_ad_badge'>
             </div>
         </div>
 
@@ -542,7 +547,7 @@ class HT_CTC_Admin_Other_Settings {
                 <p><?php _e( 'Add border Color', 'click-to-chat-for-whatsapp' ); ?></p>
             </div>
             <div class="input-field col s6">
-                <input class="ht-ctc-color" name="<?= $dbrow; ?>[notification_border_color]" value="<?= $notification_border_color ?>" type="text">
+                <input class="ht-ctc-color field_notification_border_color" name="<?= $dbrow; ?>[notification_border_color]" value="<?= $notification_border_color ?>" type="text" data-update-type='border-color' data-update-selector='.ctc_ad_badge'>
             </div>
         </div>
 
@@ -552,7 +557,7 @@ class HT_CTC_Admin_Other_Settings {
                 <p><?php _e( 'Badge Time Delay', 'click-to-chat-for-whatsapp' ); ?></p>
             </div>
             <div class="input-field col s6">
-                <input name="<?= $dbrow; ?>[notification_time]" value="<?= $notification_time ?>" id="notification_time" type="number" min="0" class="notification_field" >
+                <input name="<?= $dbrow; ?>[notification_time]" value="<?= $notification_time ?>" id="notification_time" type="number" min="0" class="notification_field field_notification_time" >
                 <label for="notification_time"><?php _e( 'Time in seconds', 'click-to-chat-for-whatsapp' ); ?></label>
             </div>
         </div>
@@ -823,19 +828,19 @@ class HT_CTC_Admin_Other_Settings {
         <br>
         <hr>
         <details>
-            <summary style="cursor:pointer; margin-bottom: 5px;" class="description">Chat load hook</summary>
-
-            <br>
-            <!-- chat load hook -->
-            <div class="row">
-                <div class="input-field col s6">
-                    <select name="<?= $dbrow; ?>[chat_load_hook]" class="chat_load_hook">
-                        <option value="wp_footer" <?= $chat_load_hook == 'wp_footer' ? 'SELECTED' : ''; ?> >wp_footer</option>
-                        <option value="get_footer" <?= $chat_load_hook == 'get_footer' ? 'SELECTED' : ''; ?> >get_footer</option>
-                        <option value="wp_head" <?= $chat_load_hook == 'wp_head' ? 'SELECTED' : ''; ?> >wp_head</option>
-                    </select>
-                    <label>Chat load hook</label>
-                    <p class="description">If the chat widget is not working with the wp_footer hook, change to get_footer or wp_head - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/chat-load-hook/">more info</a></p>
+            <summary style="cursor:pointer;" class="description">Chat load hook</summary>
+            <div class="m_side_15 m_top_5">
+                <!-- chat load hook -->
+                <div class="row">
+                    <div class="input-field col s6">
+                        <select name="<?= $dbrow; ?>[chat_load_hook]" class="chat_load_hook">
+                            <option value="wp_footer" <?= $chat_load_hook == 'wp_footer' ? 'SELECTED' : ''; ?> >wp_footer</option>
+                            <option value="get_footer" <?= $chat_load_hook == 'get_footer' ? 'SELECTED' : ''; ?> >get_footer</option>
+                            <option value="wp_head" <?= $chat_load_hook == 'wp_head' ? 'SELECTED' : ''; ?> >wp_head</option>
+                        </select>
+                        <label>Chat load hook</label>
+                        <p class="description">If the chat widget is not working with the wp_footer hook, change to get_footer or wp_head - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/chat-load-hook/">more info</a></p>
+                    </div>
                 </div>
             </div>
         </details>
@@ -845,40 +850,43 @@ class HT_CTC_Admin_Other_Settings {
         ?>
         <details>
             <summary style="cursor:pointer;" class="description">WhatsApp number not saving</summary>
-            <p class="description">If WhatsApp number is not saved at admin side, disable the initl input library and add WhatsApp number</p>
-            <p style="margin-bottom:12px;">
-                <label>
-                    <input name="<?= $dbrow; ?>[no-intl]" type="checkbox" value="1" <?php checked( $no_intl_checkbox, 1 ); ?> id="no-intl" />
-                    <span>Disable Initl input library</span>
-                </label>
-            </p>
+            <div class="m_side_15">
+                <p class="description">If WhatsApp number is not saved at admin side, disable the initl input library and add WhatsApp number</p>
+                <p style="margin-bottom:12px;">
+                    <label>
+                        <input name="<?= $dbrow; ?>[no-intl]" type="checkbox" value="1" <?php checked( $no_intl_checkbox, 1 ); ?> id="no-intl" />
+                        <span>Disable Initl input library</span>
+                    </label>
+                </p>
+            </div>
         </details>
 
         <details>
             <summary style="cursor:pointer;" class="description">Delete settings</summary>
-            <?php
-
-            // delete options 
-            if ( isset( $options['delete_options'] ) ) {
-                ?>
-                <p>
-                    <label>
-                        <input name="ht_ctc_othersettings[delete_options]" type="checkbox" value="1" <?php checked( $options['delete_options'], 1 ); ?> id="delete_options"   />
-                        <span><?php _e( 'Delete this plugin settings when uninstalls', 'click-to-chat-for-whatsapp' ); ?></span>
-                    </label>
-                </p>
+            <div class="m_side_15">
                 <?php
-            } else {
+                // delete options 
+                if ( isset( $options['delete_options'] ) ) {
+                    ?>
+                    <p>
+                        <label>
+                            <input name="ht_ctc_othersettings[delete_options]" type="checkbox" value="1" <?php checked( $options['delete_options'], 1 ); ?> id="delete_options"   />
+                            <span><?php _e( 'Delete this plugin settings when uninstalls', 'click-to-chat-for-whatsapp' ); ?></span>
+                        </label>
+                    </p>
+                    <?php
+                } else {
+                    ?>
+                    <p>
+                        <label>
+                            <input name="ht_ctc_othersettings[delete_options]" type="checkbox" value="1" id="delete_options"   />
+                            <span><?php _e( 'Delete this plugin settings when uninstalls', 'click-to-chat-for-whatsapp' ); ?></span>
+                        </label>
+                    </p>
+                    <?php
+                }
                 ?>
-                <p>
-                    <label>
-                        <input name="ht_ctc_othersettings[delete_options]" type="checkbox" value="1" id="delete_options"   />
-                        <span><?php _e( 'Delete this plugin settings when uninstalls', 'click-to-chat-for-whatsapp' ); ?></span>
-                    </label>
-                </p>
-                <?php
-            }
-            ?>
+            </div>
         </details>
 
         <br>

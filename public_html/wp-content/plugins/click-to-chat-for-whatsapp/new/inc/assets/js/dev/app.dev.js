@@ -5,7 +5,7 @@
     $(function () {
 
         // variables
-        var v = '3.26';
+        var v = '3.30';
         var url = window.location.href;
         var post_title = (typeof document.title !== "undefined") ? document.title : '';
         // is_mobile yes/no,  desktop > 1024 

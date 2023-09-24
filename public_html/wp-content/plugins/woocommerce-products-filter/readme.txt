@@ -5,7 +5,7 @@ Tags: filter, products filter, product filter, woocommerce, woof, husky, product
 Requires at least: 4.9.0
 Tested up to: 6.3
 Requires PHP: 7.3
-Stable tag: 1.3.4.3
+Stable tag: 1.3.4.4
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -172,6 +172,9 @@ R: [Codex](https://products-filter.com/codex/)
 
 
 == Changelog ==
+
+= 1.3.4.4 =
+* 1 security fix, thanks to Rafie M from patchstack.com
 
 = 1.3.4.3 =
 * 2 security fixes, thanks to Darius Sveikauskas from patchstack.com

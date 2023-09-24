@@ -218,10 +218,15 @@ class HT_CTC_DB2 {
 
             's1_text_color' => '',
             's1_bg_color' => '',
-            's1_icon_color' => '',
-            's1_icon_size' => '16',
+            's1_icon_color' => '#25d366',
+            's1_icon_size' => '16px',
             
         );
+
+        // new install
+        if ( !isset ( $this->os['version'] ) ) {
+            $style_1['s1_add_icon'] = '1';
+        }
 
         $db_values = get_option( 'ht_ctc_s1', array() );
         $db_values = (is_array( $db_values)) ? $db_values : [];

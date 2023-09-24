@@ -38,6 +38,7 @@ if ( is_rtl() ) {
     $rtl_css = "flex-direction:row-reverse;";
 }
 
+// 3.30 class name chip is replaced as ctc_chip (to avoid conflict with other styles)
 
 $s4_chip_css = "display:flex;justify-content: center;align-items: center;background-color:$s4_bg_color;color:$s4_text_color;padding:0 12px;border-radius:25px;font-size:13px;line-height:32px;$rtl_css ";
 $s4_chip_svg_css ="margin:$s4_margin;order:$s4_order;";
@@ -45,18 +46,18 @@ $s4_chip_img_css ="margin:$s4_margin;order:$s4_order;height:$s4_img_size;width:$
 $ht_ctc_svg_css = "pointer-events:none; display: block; height:$s4_img_size; width:$s4_img_size;";
 ?>
 
-<div class="chip ctc-analytics ctc_nb" style="<?= $s4_chip_css ?>" data-nb_top="-10px" data-nb_right="-10px">
+<div class="ctc_chip ctc-analytics ctc_s_4 ctc_nb" style="<?= $s4_chip_css ?>" data-nb_top="-10px" data-nb_right="-10px">
     <?php
     if ( '' == $s4_img_url ) {
         include_once HT_CTC_PLUGIN_DIR .'new/inc/assets/img/ht-ctc-svg-images.php';
         $type = "$type-s4";
         ?>
-        <span style="<?= $s4_chip_svg_css ?>"><?= ht_ctc_style_3_svg( $s4_img_size, $type, $ht_ctc_svg_css ); ?></span>
+        <span class="s4_img" style="<?= $s4_chip_svg_css ?>"><?= ht_ctc_style_3_svg( $s4_img_size, $type, $ht_ctc_svg_css ); ?></span>
         <?php
     } else {
         // if user changed the image
         ?>
-        <img style="<?= $s4_chip_img_css ?>" src="<?= $s4_img_url ?>" alt="<?= $call_to_action ?>">
+        <img class="s4_img" style="<?= $s4_chip_img_css ?>" src="<?= $s4_img_url ?>" alt="<?= $call_to_action ?>">
         <?php
     }
     ?>

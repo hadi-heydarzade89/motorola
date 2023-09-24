@@ -7,19 +7,30 @@
   Tested up to: WP 6.3
   Author: realmag777
   Author URI: https://pluginus.net/
-  Version: 1.3.4.3
-  Requires PHP: 7.4
+  Version: 1.3.4.4
+  Requires PHP: 7.3
   Tags: filter,search,woocommerce,woocommerce filter,woocommerce product filter,woocommerce products filter,products filter,product filter,filter of products,filter for products,filter for woocommerce
   Text Domain: woocommerce-products-filter
   Domain Path: /languages
   Forum URI: https://pluginus.net/support/forum/woof-woocommerce-products-filter/
   WC requires at least: 5.2.0
-  WC tested up to: 8.0
+  WC tested up to: 8.1
  */
 
 //update_option('woof_settings', []);//dev: nearly absolute reset of the plugin settings
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly
+}
+
+if (defined('WOOF_PATH')) {
+    add_action('admin_notices', function () {
+        ?>
+        <div class="notice notice-error">
+            <p><?php esc_html_e("Hello, looks like you bought and installed premium version of HUSKY – Products Filter for WooCommerce Professional, please deactivate free version before, then uninstall it. 2 versions of the same plugin cannot be activated on the same time!", 'woocommerce-products-filter'); ?></p>
+        </div>
+        <?php
+    });
+    return;
 }
 
 add_action('before_woocommerce_init', function () {
@@ -45,7 +56,7 @@ define('WOOF_PATH', plugin_dir_path(__FILE__));
 define('WOOF_LINK', plugin_dir_url(__FILE__));
 define('WOOF_PLUGIN_NAME', plugin_basename(__FILE__));
 define('WOOF_EXT_PATH', WOOF_PATH . 'ext/');
-define('WOOF_VERSION', '1.3.4.3');
+define('WOOF_VERSION', '1.3.4.4');
 //define('WOOF_VERSION', uniqid('woof-')); //for dev only
 define('WOOF_MIN_WOOCOMMERCE_VERSION', '5.2');
 //classes
@@ -63,7 +74,7 @@ include WOOF_PATH . 'lib/alert/index.php';
 //***
 include WOOF_PATH . 'installer/first_settings.php';
 
-//21-08-2023
+//22-09-2023
 final class WOOF {
 
     public $settings = array();

@@ -102,6 +102,48 @@ class HT_CTC_Admin_Main_Page {
     public function chat_settings_section_cb() {
         ?>
         <h1 id="chat_settings">Click to Chat - Chat Settings </h1>
+
+        <?php
+        $is_live_preview = 'no';
+        $is_live_preview = apply_filters( 'ht_ctc_fh_is_live_preview', $is_live_preview );
+
+        $customize_styles_url = admin_url( 'admin.php?page=click-to-chat-customize-styles' );
+        $other_settings_url = admin_url( 'admin.php?page=click-to-chat-other-settings' );
+
+
+        if ( $is_live_preview == 'yes' ) {
+            ?>
+            
+            <details style="">
+                <summary class="description" style="cursor:pointer;">Admin Live preview: <strong>Active</strong></summary>
+                <p class="description" style="margin:12px;">
+                    <span class="description">Admin live preview on change: <a href="#row_number">Number</a>, <a href="#row_call_to_action">Call to Action</a>, <a href="#row_styles">Styles</a>, <a target="_blank" href="<?= $customize_styles_url ?>">Customize styles</a>, <a target="_blank" href="<?= $other_settings_url ?>#ht_ctc_animations">Animations</a>, <a target="_blank" href="<?= $other_settings_url ?>#ht_ctc_notification">Notification badge</a></span> - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/admin-live-preview/" style="text-decoration:underline;">more info</a>
+                </p>
+                <p class="description" style="margin: 0px 12px;">
+                    <a href="<?= admin_url( 'admin.php?page=click-to-chat' ); ?>&demo=deactive" class="btn btn-small">Deactivate</a>
+                </p>
+            </details>
+            <?php
+        } else if ( $is_live_preview == 'no' ) {
+            ?>
+
+            <details style="">
+                <summary class="description" style="cursor:pointer;">Admin Live preview</summary>
+                <p class="description" style="margin:12px;">
+                    Activate to live preview the changes in the admin panel. <br>
+                    <span class="description">(Call to Action, Styles, Customize styles, Animations, Notification badge)</span> - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/admin-live-preview/">more info</a>
+                </p>
+                <p class="description" style="margin: 0px 12px;">
+                    <a href="<?= admin_url( 'admin.php?page=click-to-chat' ); ?>&demo=active" class="btn btn-small">Activate Live Preview</a>
+                </p>
+            </details>
+
+
+            <?php
+        }
+
+
+        ?>
         <?php
         do_action('ht_ctc_ah_admin' );
     }
@@ -129,6 +171,13 @@ class HT_CTC_Admin_Main_Page {
             $number = HT_CTC_Formatting::wa_number( $number );
         }
 
+        /**
+         * 1: no intl-tel-input
+         *      if number set and not intl
+         * 
+         * 2: intl-tel-input
+         *      if number blank or isset intl(i.e. number set by intl input)
+         */
         $intl = '1';
 
         if ( isset( $options['intl'] ) || '' == $number ) {
@@ -153,7 +202,6 @@ class HT_CTC_Admin_Main_Page {
                 $intl = '2';
             }
         }
-
         ?>
 
         <style>
@@ -170,15 +218,21 @@ class HT_CTC_Admin_Main_Page {
         </style>
 
         <?php
-        /**
-         * if number blank or isset intl then intl-tel-input
-         */
         if ( '2' == $intl ) {
+            /**
+             * interface-2: intl-tel-input
+             * 
+             * 
+             * ht_ctc_chat_options[intl]: used to check if intl input is to display or not.
+             *  i.e. $intl 
+             *    2: intl-tel-input
+             *    1: no intl-tel-input
+             */
             if ( '' !== $number && substr($number, 0, 1) !== '+') {
                 $number = "+$number";
             }
             ?>
-            <div class="row">
+            <div class="row" id="row_number">
                 <div class="col s12 m8">
                     <input type="text" name="ht_ctc_chat_options[number]" data-name="ht_ctc_chat_options[number]" class="intl_number browser-default main_wa_number" value="<?= $number ?>">
                     <input name="ht_ctc_chat_options[intl]" style="display: none;" value="1" type="hidden">
@@ -187,9 +241,16 @@ class HT_CTC_Admin_Main_Page {
             </div>
             <?php
         } else {
+            /**
+             * interface-1: plain (no intl-tel-input)
+             * 
+             * ht_ctc_chat_options[cc] :  country code. id: whatsapp_cc
+             * ht_ctc_chat_options[num] : number (without country code). id: whatsapp_number
+             * ht_ctc_chat_options[number] - (hidden filed): full number [cc + num]. update based on js code. id: ctc_whatsapp_number
+             */
             ?>
             <!-- Full WhatsApp Number Card -->
-            <div class="row">
+            <div class="row" id="row_number">
                 <div class="col s12 m8">
                     <p class="description card-panel grey lighten-3" style="padding: 5px 24px; display: inline-block;"><?php _e( 'WhatsApp Number', 'click-to-chat-for-whatsapp' ); ?>: <span class="ht_ctc_wn"><?= $number ?></span> </p>
                 </div>
@@ -200,13 +261,13 @@ class HT_CTC_Admin_Main_Page {
 
                     <!-- country code -->
                     <div class="input-field col s3 m3 ctc_num_field">
-                        <input name="ht_ctc_chat_options[cc]" value="<?= $cc ?>" id="whatsapp_cc" type="text" placeholder="+1 " class="input-margin tooltipped" data-position="left" data-tooltip="Country Code">
+                        <input name="ht_ctc_chat_options[cc]" value="<?= $cc ?>" id="whatsapp_cc" type="text" placeholder="+1 " class="input-margin tooltipped ctc_no_demo" data-position="left" data-tooltip="Country Code">
                         <label for="whatsapp_cc"><?php _e( 'Country Code', 'click-to-chat-for-whatsapp' ); ?></label>
                     </div>
 
                     <!-- number -->
                     <div class="input-field col s9 m7 ctc_num_field">
-                        <input name="ht_ctc_chat_options[num]" value="<?= $num ?>" id="whatsapp_number" placeholder="23456789" type="text" class="input-margin tooltipped" data-position="right" data-tooltip="Number">
+                        <input name="ht_ctc_chat_options[num]" value="<?= $num ?>" id="whatsapp_number" placeholder="23456789" type="text" class="input-margin tooltipped ctc_no_demo" data-position="right" data-tooltip="Number">
                         <label for="whatsapp_number"><?php _e( 'Number', 'click-to-chat-for-whatsapp' ); ?></label>
                         <span class="helper-text ctc_wn_initial_zero" style="display: none;">zero may not needed to add before the number</span>
                     </div>
@@ -246,7 +307,7 @@ class HT_CTC_Admin_Main_Page {
         ?>
         <div class="row">
             <div class="input-field col s12">
-                <textarea style="min-height: 64px;" placeholder="<?= $placeholder ?>" name="ht_ctc_chat_options[pre_filled]" id="pre_filled" class="materialize-textarea input-margin"><?= $value ?></textarea>
+                <textarea style="min-height: 64px;" placeholder="<?= $placeholder ?>" name="ht_ctc_chat_options[pre_filled]" id="pre_filled" data-var="pre_filled" class="materialize-textarea input-margin ctc_ad_main_page_on_change_input_update_var"><?= $value ?></textarea>
                 <label for="pre_filled"><?php _e( 'Pre-filled message', 'click-to-chat-for-whatsapp' ); ?></label>
                 <p class="description"><?php _e( "Text that is pre-filled in WhatsApp Chat window. Add variables {site}, {title}, {url}, [url] to replace with the site name, post title, current webpage URL and full URL including query parameters", 'click-to-chat-for-whatsapp' ); ?> - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/pre-filled-message/"><?php _e( 'more info', 'click-to-chat-for-whatsapp' ); ?></a> </p>
             </div>
@@ -259,9 +320,9 @@ class HT_CTC_Admin_Main_Page {
         $options = get_option('ht_ctc_chat_options');
         $value = ( isset( $options['call_to_action']) ) ? esc_attr( $options['call_to_action'] ) : '';
         ?>
-        <div class="row">
+        <div class="row" id="row_call_to_action">
             <div class="input-field col s12">
-                <input name="ht_ctc_chat_options[call_to_action]" value="<?= $value ?>" id="call_to_action" type="text" class="input-margin">
+                <input name="ht_ctc_chat_options[call_to_action]" value="<?= $value ?>" id="call_to_action" type="text" class="input-margin call_to_action ctc_ad_main_page_on_change_input">
                 <label for="call_to_action"><?php _e( 'Call to Action', 'click-to-chat-for-whatsapp' ); ?></label>
                 <p class="description"><?php _e( 'Text that appears along with WhatsApp icon/button', 'click-to-chat-for-whatsapp' ); ?> - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/call-to-action/">more info</a> </p>
             <?php
@@ -331,7 +392,7 @@ class HT_CTC_Admin_Main_Page {
                 <p><?php _e( 'Open links in', 'click-to-chat-for-whatsapp' ); ?></p>
             </div>
             <div class="input-field col s6">
-                <select name="<?= $dbrow; ?>[url_target_d]" class="url_target_d">
+                <select name="<?= $dbrow; ?>[url_target_d]" data-var="url_target_d" class="url_target_d ctc_ad_main_page_on_change_input_update_var">
                     <option value="_blank" <?= $url_target_d == '_blank' ? 'SELECTED' : ''; ?> ><?php _e( 'New Tab', 'click-to-chat-for-whatsapp' ); ?></option>
                     <option value="popup" <?= $url_target_d == 'popup' ? 'SELECTED' : ''; ?> ><?php _e( 'Pop-up', 'click-to-chat-for-whatsapp' ); ?></option>
                     <option value="_self" <?= $url_target_d == '_self' ? 'SELECTED' : ''; ?> ><?php _e( 'Same Tab', 'click-to-chat-for-whatsapp' ); ?></option>
@@ -345,7 +406,7 @@ class HT_CTC_Admin_Main_Page {
                 <p><?php _e( 'Desktop', 'click-to-chat-for-whatsapp' ); ?>: <?php _e( 'URL Structure', 'click-to-chat-for-whatsapp' ); ?></p>
             </div>
             <div class="input-field col s6">
-                <select name="<?= $dbrow; ?>[url_structure_d]" class="url_structure_d">
+                <select name="<?= $dbrow; ?>[url_structure_d]" data-var="url_structure_d" class="url_structure_d ctc_ad_main_page_on_change_input_update_var">
                     <?php 
                     foreach ( $url_structure_d_list as $key => $value ) {
                     ?>
@@ -377,7 +438,7 @@ class HT_CTC_Admin_Main_Page {
                 <p><?php _e( 'Mobile', 'click-to-chat-for-whatsapp' ); ?>: <?php _e( 'URL Structure', 'click-to-chat-for-whatsapp' ); ?></p>
             </div>
             <div class="input-field col s6">
-                <select name="<?= $dbrow; ?>[url_structure_m]" class="url_structure_m">
+                <select name="<?= $dbrow; ?>[url_structure_m]" data-var="url_structure_m" class="url_structure_m ctc_ad_main_page_on_change_input_update_var">
                     <?php 
                     foreach ( $url_structure_m_list as $key => $value ) {
                     ?>
@@ -434,6 +495,14 @@ class HT_CTC_Admin_Main_Page {
             $woo_text = "(Only if WooCommerce plugin is Active)";
         }
 
+        $is_live_preview = 'no';
+        $is_live_preview = apply_filters( 'ht_ctc_fh_is_live_preview', $is_live_preview );
+
+        if ('yes' == $is_live_preview) {
+            ?>
+            <input type="hidden" name="ht_ctc_chat_options[admin_demo]" value="1">
+            <?php
+        }
 
         ?>
         <p class="description">🎉 <a target="_blank" class="em_1_1" href="<?= admin_url( 'admin.php?page=click-to-chat-greetings' ); ?>">Greetings</a>: Greetings-1, Greetings-2, Form filling(PRO), Multi Agent(PRO)</p>

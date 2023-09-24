@@ -37,7 +37,7 @@ class HT_CTC_Admin_Scripts {
 
         $css = 'admin.css';
         
-        if ( isset($os['debug_mode']) ) {
+        if ( isset($os['debug_mode']) || (isset($_GET) && isset($_GET['debug'])) ) {
             $js = 'dev/admin.dev.js';
             $greetings_js = 'dev/greetings.dev.js';
             
@@ -95,7 +95,7 @@ class HT_CTC_Admin_Scripts {
         $ctc = [
             'plugin_url' => HT_CTC_PLUGIN_DIR_URL,
             'utils' => $utils,
-            'tz' => get_option('gmt_offset')
+            'tz' => esc_attr( get_option('gmt_offset') )
         ];
 
         wp_localize_script( 'ctc_admin_js', 'ht_ctc_admin_var', $ctc );

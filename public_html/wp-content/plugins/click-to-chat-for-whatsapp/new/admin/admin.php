@@ -53,4 +53,7 @@ include_once HT_CTC_PLUGIN_DIR .'new/admin/class-ht-ctc-admin-other-settings.php
 // meta boxes - change values at page level
 include_once HT_CTC_PLUGIN_DIR .'new/admin/admin_commons/class-ht-ctc-metabox.php';
 
+// admin demo
+include_once HT_CTC_PLUGIN_DIR .'new/admin/admin_demo/class-ht-ctc-admin-demo.php';
+
 do_action('ht_ctc_ah_admin_includes' );

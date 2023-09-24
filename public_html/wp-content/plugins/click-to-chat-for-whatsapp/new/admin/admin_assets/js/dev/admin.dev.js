@@ -10,7 +10,9 @@ document.addEventListener('DOMContentLoaded', function () {
         M.Modal.init(elems, {});
         var elems = document.querySelectorAll('.tooltipped');
         M.Tooltip.init(elems, {});
-    } catch (e) { }
+    } catch (e) {
+        console.log(e);
+    }
 });
 
 (function ($) {
@@ -23,11 +25,16 @@ document.addEventListener('DOMContentLoaded', function () {
             document.dispatchEvent(
                 new CustomEvent("ht_ctc_fn_all", { detail: { admin_ctc, ctc_getItem, ctc_setItem, intl_init, intl_onchange } })
             );
-        } catch (e) { }
+        } catch (e) {
+            console.log(e);
+            console.log('cache: ht_ctc_fn_all custom event');
+        }
 
         // local storage - admin
         var ht_ctc_admin = {};
+
         var ht_ctc_admin_var = (window.ht_ctc_admin_var) ? window.ht_ctc_admin_var : {};
+        console.log(ht_ctc_admin_var);
 
         if (localStorage.getItem('ht_ctc_admin')) {
             ht_ctc_admin = localStorage.getItem('ht_ctc_admin');
@@ -84,7 +91,9 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.collapsible').collapsible();
             $('.modal').modal();
             $('.tooltipped').tooltip();
-        } catch (e) { }
+        } catch (e) {
+            console.log(e);
+        }
 
         // md tabs
         try {
@@ -118,14 +127,21 @@ document.addEventListener('DOMContentLoaded', function () {
                 }, 1200);
             }
 
-        } catch (e) { }
+        } catch (e) {
+            console.log(e);
+            console.log('cache: md tabs');
+        }
 
         try {
             intl_input('intl_number');
-        } catch (e) { }
+        } catch (e) {
+            console.log(e);
+            console.log('cache: intl_input');
+        }
 
 
         // wpColorPicker
+        // http://automattic.github.io/Iris/#change
         var color_picker = {
             palettes: [
                 '#000000',
@@ -138,8 +154,45 @@ document.addEventListener('DOMContentLoaded', function () {
                 '#ECE5DD',
                 '#00a884',
             ],
+            change: function (event, ui) {
+                try {
+                    var element = event.target;
+                    console.log(element);
+
+                    var color = ui.color.toString();
+                    console.log(color);
+
+                    // check if element have data-update attribute
+                    var update_type = $(element).attr('data-update-type'); // color, background-color, border-color, ..
+                    console.log(update_type);
+
+                    var update_class = $(element).attr('data-update-selector'); // the other filed to update
+                    console.log(update_class);
+
+                    if (update_type && update_class) {
+                        console.log('update');
+                        $(update_class).css(update_type, color);
+
+                        // if data-update-2-type and data-update-2-selector exists
+                        if ($(element).attr('data-update-2-type') && $(element).attr('data-update-2-selector')) {
+                            console.log('update-2-type');
+                            $($(element).attr('data-update-2-selector')).css($(element).attr('data-update-2-type'), color);
+                        }
+
+                    }
+                } catch (e) {
+                    console.log(e);
+                    console.log('cache: wpColorPicker on change');
+                }
+            }
         }
-        $('.ht-ctc-color').wpColorPicker(color_picker);
+        try {
+            $('.ht-ctc-color').wpColorPicker(color_picker);
+            console.log('wpColorPicker passed args');
+        } catch (e) {
+            $('.ht-ctc-color').wpColorPicker();
+            console.log('wpColorPicker default');
+        }
 
         // functions
         show_hide_options();
@@ -157,7 +210,10 @@ document.addEventListener('DOMContentLoaded', function () {
             woo_page();
             collapsible();
             update_fronend_storage();
-        } catch (e) { }
+        } catch (e) {
+            console.log(e);
+            console.log('cache: woo_page(), collapsible(), update_fronend_storage()');
+        }
 
         // jquery ui
         try {
@@ -165,7 +221,10 @@ document.addEventListener('DOMContentLoaded', function () {
                 cursor: "move",
                 handle: '.handle'
             });
-        } catch (e) { }
+        } catch (e) {
+            console.log(e);
+            console.log('cache: jquery ui - sortable');
+        }
 
 
         // show/hide settings
@@ -245,7 +304,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     $(".s1_icon_settings").hide(200);
                 }
             });
-            
+
             // dispaly all style - ask to save changes on change
             $("#display_allstyles").on("change", function (e) {
                 $(".display_allstyles_description").show(200);
@@ -377,7 +436,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         }
 
-        
+
         // woo page..
         function woo_page() {
 
@@ -598,7 +657,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // collapsible..
         function collapsible() {
 
-            
+
 
             /**
              * ht_ctc_sidebar_contat - not added, as it may cause view distraction..
@@ -636,7 +695,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     styles_list.push($(this).attr('data-coll_active'));
                 });
             }
-            
+
 
             var default_active = [
                 'ht_ctc_device_settings',
@@ -681,7 +740,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // intl
         function intl_init(v) {
 
-            var hidden_input = $(v).attr("data-name") ? $(v).attr("data-name") : '';
+            console.log('intl_init()');
+
+            var hidden_input = $(v).attr("data-name") ? $(v).attr("data-name") : 'ht_ctc_chat_options[number]';
+            console.log(hidden_input);
+
             $(v).removeAttr('name');
             var pre_countries = [];
             var country_code_date = new Date().toDateString();
@@ -702,7 +765,7 @@ document.addEventListener('DOMContentLoaded', function () {
             function call_intl() {
                 add_prefer_countrys(country_code);
                 pre_countries = (ctc_getItem('pre_countries')) ? ctc_getItem('pre_countries') : [];
-                
+
                 intl = intlTelInput(v, {
                     autoHideDialCode: false,
                     initialCountry: "auto",
@@ -728,39 +791,86 @@ document.addEventListener('DOMContentLoaded', function () {
          * intlTelInput - from intl js.. 
          */
         function intl_input(className) {
+            
+            console.log('intl_input() className: ' + className );
+
             if (document.querySelector("." + className) && typeof intlTelInput !== 'undefined') {
 
+                console.log(className + ' class name exists');
+
                 $('.' + className).each(function () {
+                    console.log('each: calling intl_init()..' + this);
                     var i = intl_init(this);
                 });
 
+                console.log('calling intl_onchange() from intl_input()');
                 intl_onchange();
             }
         }
 
         function intl_onchange() {
+
+            console.log('intl_onchange()');
+
             $('.intl_number').on("input countrychange", function (e) {
+                // if blank also it may triggers.. as if countrycode changes.
+                console.log('on change - intl_number - input, countrychange');
+
                 var changed = intlTelInputGlobals.getInstance(this);
                 // changed.getNumber()
+
+                console.log(changed.getNumber());
+
+                if (window.ht_ctc_admin_demo_var) {
+                    console.log('for demo: update number');
+                    window.ht_ctc_admin_demo_var.number = changed.getNumber();
+                    console.log(window.ht_ctc_admin_demo_var);
+                }
+
                 if (changed.isValidNumber()) {
                     // to display in format
                     changed.setNumber(changed.getNumber());
+
+                    console.log('valid number');
+
+                    var d = {
+                        number: changed.getNumber()
+                    };
+
+                    document.dispatchEvent(
+                        new CustomEvent("ht_ctc_admin_event_valid_number", { detail: { d } })
+                    );
+
                 }
             });
 
             $('.intl_number').on("countrychange", function (e) {
+
+                console.log('on change - intl_number - countrychange');
+
                 var changed = intlTelInputGlobals.getInstance(this);
+                console.log(changed);
+
+                console.log(changed.getSelectedCountryData().iso2);
+                console.log('calling add_prefer_countrys()');
                 add_prefer_countrys(changed.getSelectedCountryData().iso2);
             });
         }
 
         function add_prefer_countrys(country_code) {
+
+            console.log('add_prefer_countrys(): '+ country_code);
+            
             country_code = country_code.toUpperCase();
             var pre_countries = (ctc_getItem('pre_countries')) ? ctc_getItem('pre_countries') : [];
+            console.log(pre_countries);
+
             if (!pre_countries.includes(country_code)) {
+                console.log(country_code + ' not included. so pushing country code to pre countries');
                 pre_countries.push(country_code);
                 ctc_setItem('pre_countries', pre_countries);
             }
+            console.log('#END add_prefer_countrys()');
         }
 
 

@@ -88,7 +88,7 @@ if ( isset($is_same_side) && 'no' == $is_same_side && isset($mobile_side) ) {
 .ht-ctc .ctc_s_3_1:hover svg stop{stop-color:<?= $s3_1_bg_color_hover ?>;}.ht-ctc .ctc_s_3_1:hover .ht_ctc_padding,.ht-ctc .ctc_s_3_1:hover .ctc_cta_stick{<?= $s3_1_hover_css ?>}
 </style>
 
-<div <?= $title ?> style="<?= $s3_1_css ?>" class="ctc_s_3_1 ctc_nb" data-nb_top="-4px" data-nb_right="-4px">
+<div <?= $title ?> style="<?= $s3_1_css ?>" class="ctc_s_3_1 ctc_s3_1 ctc_nb" data-nb_top="-4px" data-nb_right="-4px">
     <p class="ctc-analytics ctc_cta ctc_cta_stick <?= $s3_1_cta_class ?>" style="<?= $s3_1_cta_css ?>"><?= $call_to_action ?></p>
     <div class="ctc-analytics ht_ctc_padding" style="<?= $s3_1_extend_css ?>">
         <?= ht_ctc_style_3_1_svg( $img_size, $type, $ht_ctc_svg_css, $others ); ?>

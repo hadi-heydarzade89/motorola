@@ -30,6 +30,10 @@ if ('' == $s1_icon_color) {
   $s1_icon_color = '#ffffff';
 }
 
+if (is_admin()) {
+  $s1_css .= "padding:5px 7px;";
+}
+
 $s1_style = ('' !== $s1_css) ? "style='$s1_css'": "";
 
 $s1_fullwidth_css = "";
@@ -47,7 +51,7 @@ if ( isset( $s1_options['s1_m_fullwidth'] ) ) {
 }
 
 ?>
-<button <?= $s1_style; ?> class="ctc-analytics s1_btn ctc_cta">
+<button <?= $s1_style; ?> class="ctc-analytics s1_btn ctc_s_1">
 <?php
 if ('' !== $s1_add_icon) {
   
@@ -63,5 +67,14 @@ if ('' !== $s1_add_icon) {
   echo ht_ctc_singlecolor( $s1_svg_attrs );
 }
 ?>
-<?= $call_to_action ?>
+<span class="ctc_cta"><?= $call_to_action ?></span>
 </button>
+<?php
+// admin - add for admin demo
+if ( is_admin() ) {
+  if (isset($_GET) && isset($_GET['page']) && ('click-to-chat' == $_GET['page'] || 'click-to-chat-customize-styles' == $_GET['page'])) {
+    ?>
+    <p class="description s1_admin_demo_note">Front-End: Theme Button</p>
+    <?php
+  }
+}

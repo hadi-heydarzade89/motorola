@@ -63,11 +63,13 @@ function woof_stat_calculate() {
     woof_stat_data = new Array();
     woof_show_info_popup(woof_stat_vars.woof_stat_calc);
     jQuery('#woof_stat_get_monitor').html("");
+    const nonce = jQuery('#woof_stat_nonce').val();
     woof_stat_process_monitor(woof_stat_vars.woof_stat_get_oper_tbls);
     var data = {
         action: "woof_get_operative_tables",
         calendar_from: calendar_from,
-        calendar_to: calendar_to
+        calendar_to: calendar_to,
+	stat_nonce: nonce
     };
     jQuery.post(ajaxurl, data, function (tables) {
         tables = JSON.parse(tables);
@@ -89,14 +91,15 @@ function woof_stat_calculate() {
 function woof_stat_request_tables_data(index, tables) {
     var calendar_from = parseInt(jQuery('#woof_stat_calendar_from').val(), 10);
     var calendar_to = parseInt(jQuery('#woof_stat_calendar_to').val(), 10);
-
+    const nonce = jQuery('#woof_stat_nonce').val();
     woof_stat_process_monitor(woof_stat_vars.woof_stat_getting_dftbls + ' ' + tables[index] + ' ...');
     var data = {
         action: "woof_get_stat_data",
         table: tables[index],
         request_snippets: woof_stat_get_request_snippets(),
         calendar_from: calendar_from,
-        calendar_to: calendar_to
+        calendar_to: calendar_to,
+	stat_nonce: nonce
     };
     jQuery.post(ajaxurl, data, function (stat_data) {
         stat_data = JSON.parse(stat_data);
@@ -108,7 +111,8 @@ function woof_stat_request_tables_data(index, tables) {
             if (Object.keys(woof_stat_get_request_snippets()).length === 0) {
                 var data = {
                     action: "woof_get_top_terms",
-                    woof_stat_data: woof_stat_data
+                    woof_stat_data: woof_stat_data,
+		    stat_nonce: jQuery('#woof_stat_nonce').val()
                 };
                 jQuery.post(ajaxurl, data, function (stat_data) {
                     woof_stat_data = JSON.parse(stat_data);
@@ -317,12 +321,14 @@ jQuery(document).ready(function () {
 
     //+++
     jQuery('#woof_stat_connection').on('click', function () {
+	const nonce = jQuery('#woof_stat_nonce').val();
         var data = {
             action: "woof_stat_check_connection",
             woof_stat_host: jQuery("input[name='woof_settings[woof_stat][server_options][host]']").val(),
             woof_stat_user: jQuery("input[name='woof_settings[woof_stat][server_options][host_user]']").val(),
             woof_stat_name: jQuery("input[name='woof_settings[woof_stat][server_options][host_db_name]']").val(),
             woof_stat_pswd: jQuery("input[name='woof_settings[woof_stat][server_options][host_pass]']").val(),
+	    stat_nonce: nonce
 
         };
         jQuery.post(ajaxurl, data, function (content) {
@@ -330,8 +336,10 @@ jQuery(document).ready(function () {
         });
     });
     jQuery('#woof_update_db').on('click', function () {
+	const nonce = jQuery('#woof_stat_nonce').val();
         var data = {
-            action: "woof_stat_update_db"
+            action: "woof_stat_update_db",
+	    stat_nonce: nonce
         };
         jQuery.post(ajaxurl, data, function (content) {
             alert(content);

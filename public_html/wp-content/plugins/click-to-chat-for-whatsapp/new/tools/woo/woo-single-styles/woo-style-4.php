@@ -45,7 +45,7 @@ $s4_chip_img_css ="margin:$s4_margin;order:$s4_order;height:$s4_img_size;width:$
 $ht_ctc_svg_css = "pointer-events:none; display: block; height:$s4_img_size; width:$s4_img_size;";
 ?>
 
-<div class="chip ctc-analytics" style="<?= $s4_chip_css ?>">
+<div class="ctc_chip ctc-analytics" style="<?= $s4_chip_css ?>">
     <?php
     if ( '' == $s4_img_url ) {
         include_once HT_CTC_PLUGIN_DIR .'new/inc/assets/img/ht-ctc-svg-images.php';
