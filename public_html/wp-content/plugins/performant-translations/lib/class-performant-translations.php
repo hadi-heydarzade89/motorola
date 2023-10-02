@@ -10,7 +10,31 @@
  */
 class Performant_Translations {
 	/**
+	 * Hook into WordPress.
+	 *
+	 * @codeCoverageIgnore
+	 *
+	 * @return void
+	 */
+	public static function init() {
+		add_filter( 'override_load_textdomain', array( __CLASS__, 'load_textdomain' ), 100, 4 );
+		add_filter( 'override_unload_textdomain', array( __CLASS__, 'unload_textdomain' ), 100, 3 );
+
+		add_action( 'init', array( __CLASS__, 'set_locale' ) );
+		add_action( 'change_locale', array( __CLASS__, 'change_locale' ) );
+
+		add_action( 'upgrader_process_complete', array( __CLASS__, 'upgrader_process_complete' ), 10, 2 );
+
+		add_action( 'wp_head', array( __CLASS__, 'add_generator_tag' ) );
+
+		// Plugin integrations.
+		add_action( 'loco_file_written', array( __CLASS__, 'regenerate_translation_file' ) );
+	}
+
+	/**
 	 * Loads a text domain.
+	 *
+	 * @global WP_Filesystem_Base $wp_filesystem WP filesystem subclass.
 	 *
 	 * @param bool        $override Whether to override the .mo file loading.
 	 * @param string      $domain   Text domain. Unique identifier for retrieving translated strings.
@@ -19,7 +43,12 @@ class Performant_Translations {
 	 * @return bool True on success, false otherwise.
 	 */
 	public static function load_textdomain( $override, $domain, $mofile, $locale ) {
-		global $l10n, $wp_textdomain_registry;
+		/**
+		 * WP filesystem subclass.
+		 *
+		 * @var WP_Filesystem_Base $wp_filesystem WP filesystem subclass.
+		 */
+		global $l10n, $wp_textdomain_registry, $wp_filesystem;
 
 		// Another override is already in progress, prevent conflicts.
 		if ( $override ) {
@@ -47,9 +76,9 @@ class Performant_Translations {
 			$preferred_format = 'php';
 		}
 
-		$mofile_preferred = str_replace( '.mo', ".$preferred_format", $mofile );
+		$mofile_preferred = "$mofile.$preferred_format";
 
-		if ( 'mo' !== $preferred_format ) {
+		if ( 'mo' !== $preferred_format && ! str_ends_with( $mofile, $preferred_format ) ) {
 			/** This action is documented in wp-includes/l10n.php */
 			do_action( 'load_textdomain', $domain, $mofile_preferred );
 
@@ -71,6 +100,10 @@ class Performant_Translations {
 			$success = Ginger_MO::instance()->load( $mofile_preferred, $domain, $locale );
 
 			if ( $success ) {
+				if ( isset( $l10n[ $domain ] ) && $l10n[ $domain ] instanceof MO ) {
+					Ginger_MO::instance()->load( $l10n[ $domain ]->get_filename(), $domain, $locale );
+				}
+
 				// Unset Noop_Translations reference in get_translations_for_domain.
 				unset( $l10n[ $domain ] );
 				$l10n[ $domain ] = new Performant_Translations_Compat_Provider( $domain );
@@ -93,6 +126,10 @@ class Performant_Translations {
 		$success = Ginger_MO::instance()->load( $mofile, $domain, $locale );
 
 		if ( $success ) {
+			if ( isset( $l10n[ $domain ] ) && $l10n[ $domain ] instanceof MO ) {
+				Ginger_MO::instance()->load( $l10n[ $domain ]->get_filename(), $domain, $locale );
+			}
+
 			// Unset Noop_Translations reference in get_translations_for_domain.
 			unset( $l10n[ $domain ] );
 
@@ -105,19 +142,25 @@ class Performant_Translations {
 			 *
 			 * Only runs when no corresponding PHP or JSON translation file exists yet.
 			 *
-			 * The preferred format is determined by the {@see 'performant_translations_prefer_php_files'} filter
-			 *
-			 * Useful for testing/debugging.
+			 * The preferred format is determined by the {@see 'performant_translations_preferred_format'} filter
 			 *
 			 * @param bool $convert Whether to convert MO files to PHP files. Default true.
 			 */
 			$convert = apply_filters( 'performant_translations_convert_files', true );
 
-			if ( 'mo' !== $preferred_format && $convert ) {
-				$source      = Ginger_MO_Translation_File::create( $mofile );
-				$destination = Ginger_MO_Translation_File::create( $mofile_preferred, 'write' );
-				if ( false !== $source && false !== $destination ) {
-					$source->export( $destination );
+			if ( 'mo' !== $preferred_format && $convert && ! str_ends_with( $mofile, $preferred_format ) ) {
+				$contents = Ginger_MO_Translation_File::transform( $mofile, $preferred_format );
+
+				if ( false !== $contents ) {
+					if ( ! function_exists( 'WP_Filesystem' ) ) {
+						require_once ABSPATH . '/wp-admin/includes/file.php';
+					}
+
+					if ( true === WP_Filesystem() ) {
+						$wp_filesystem->put_contents( $mofile_preferred, $contents, FS_CHMOD_FILE );
+					} else {
+						file_put_contents( $mofile_preferred, $contents, LOCK_EX ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_file_put_contents
+					}
 				}
 			}
 		}
@@ -172,14 +215,14 @@ class Performant_Translations {
 	 * @param string $locale The new locale.
 	 * @return void
 	 */
-	public static function change_locale( $locale ) {
+	public static function change_locale( string $locale ) {
 		Ginger_MO::instance()->set_locale( $locale );
 	}
 
 	/**
 	 * Creates PHP translation files after the translation updates process.
 	 *
-	 * @since 0.0.1
+	 * @global WP_Filesystem_Base $wp_filesystem WP filesystem subclass.
 	 *
 	 * @param WP_Upgrader $upgrader   WP_Upgrader instance. In other contexts this might be a
 	 *                                Theme_Upgrader, Plugin_Upgrader, Core_Upgrade, or Language_Pack_Upgrader instance.
@@ -206,6 +249,13 @@ class Performant_Translations {
 	 * @phpstan-param array{action: string, type: string, bulk: bool, plugins: string[], themes: string[], translations: array<int, array{language: string, type: string, slug: string, version: string}>} $hook_extra
 	 */
 	public static function upgrader_process_complete( $upgrader, $hook_extra ) {
+		/**
+		 * WP filesystem subclass.
+		 *
+		 * @var WP_Filesystem_Base $wp_filesystem WP filesystem subclass.
+		 */
+		global $wp_filesystem;
+
 		if ( 'translation' !== $hook_extra['type'] || array() === $hook_extra['translations'] ) {
 			return;
 		}
@@ -230,16 +280,22 @@ class Performant_Translations {
 					$preferred_format = 'php';
 				}
 
-				$mofile_preferred = str_replace( '.mo', ".$preferred_format", $file );
+				$mofile_preferred = "$file.$preferred_format";
 
 				/** This filter is documented in lib/class-performant-translations.php */
 				$convert = apply_filters( 'performant_translations_convert_files', true );
 
-				if ( 'mo' !== $preferred_format && $convert ) {
-					$source      = Ginger_MO_Translation_File::create( $file );
-					$destination = Ginger_MO_Translation_File::create( $mofile_preferred, 'write' );
-					if ( false !== $source && false !== $destination ) {
-						$source->export( $destination );
+				if ( 'mo' !== $preferred_format && $convert && ! str_ends_with( $file, $preferred_format ) ) {
+					$contents = Ginger_MO_Translation_File::transform( $file, $preferred_format );
+
+					if ( false === $contents ) {
+						return;
+					}
+
+					if ( true === $upgrader->fs_connect( array( dirname( $file ) ) ) ) {
+						$wp_filesystem->put_contents( $mofile_preferred, $contents, FS_CHMOD_FILE );
+					} else {
+						file_put_contents( $mofile_preferred, $contents, LOCK_EX ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_file_put_contents
 					}
 				}
 			}
@@ -265,10 +321,19 @@ class Performant_Translations {
 	 *
 	 * @codeCoverageIgnore
 	 *
+	 * @global WP_Filesystem_Base $wp_filesystem WP filesystem subclass.
+	 *
 	 * @param string $file Path to translation file.
 	 * @return void
 	 */
 	public static function regenerate_translation_file( string $file ) {
+		/**
+		 * WP filesystem subclass.
+		 *
+		 * @var WP_Filesystem_Base $wp_filesystem WP filesystem subclass.
+		 */
+		global $wp_filesystem;
+
 		if ( ! str_ends_with( $file, '.mo' ) ) {
 			return;
 		}
@@ -279,39 +344,25 @@ class Performant_Translations {
 			$preferred_format = 'php';
 		}
 
-		$mofile_preferred = str_replace( '.mo', ".$preferred_format", $file );
+		$mofile_preferred = "$file.$preferred_format";
 
 		/** This filter is documented in lib/class-performant-translations.php */
 		$convert = apply_filters( 'performant_translations_convert_files', true );
 
-		if ( 'mo' !== $preferred_format && $convert ) {
-			$source      = Ginger_MO_Translation_File::create( $file );
-			$destination = Ginger_MO_Translation_File::create( $mofile_preferred, 'write' );
-			if ( false !== $source && false !== $destination ) {
-				$source->export( $destination );
+		if ( 'mo' !== $preferred_format && $convert && ! str_ends_with( $file, $preferred_format ) ) {
+			$contents = Ginger_MO_Translation_File::transform( $file, $preferred_format );
+
+			if ( false !== $contents ) {
+				if ( ! function_exists( 'WP_Filesystem' ) ) {
+					require_once ABSPATH . '/wp-admin/includes/file.php';
+				}
+
+				if ( true === WP_Filesystem() ) {
+					$wp_filesystem->put_contents( $mofile_preferred, $contents, FS_CHMOD_FILE );
+				} else {
+					file_put_contents( $mofile_preferred, $contents, LOCK_EX ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_file_put_contents
+				}
 			}
 		}
-	}
-
-	/**
-	 * Hook into WordPress.
-	 *
-	 * @codeCoverageIgnore
-	 *
-	 * @return void
-	 */
-	public static function init() {
-		add_filter( 'override_load_textdomain', array( __CLASS__, 'load_textdomain' ), 100, 4 );
-		add_filter( 'override_unload_textdomain', array( __CLASS__, 'unload_textdomain' ), 100, 3 );
-
-		add_action( 'init', array( __CLASS__, 'set_locale' ) );
-		add_action( 'change_locale', array( __CLASS__, 'change_locale' ) );
-
-		add_action( 'upgrader_process_complete', array( __CLASS__, 'upgrader_process_complete' ), 10, 2 );
-
-		add_action( 'wp_head', array( __CLASS__, 'add_generator_tag' ) );
-
-		// Plugin integrations.
-		add_action( 'loco_file_written', array( __CLASS__, 'regenerate_translation_file' ) );
 	}
 }

@@ -1,0 +1,2 @@
+<?php
+return ['po-revision-date'=>'2019-06-18 10:40:23+0000','mime-version'=>'1.0','content-type'=>'text/plain; charset=UTF-8','content-transfer-encoding'=>'8bit','plural-forms'=>'nplurals=1; plural=0;','x-generator'=>'GlotPress/3.0.0-rc.2','language'=>'fa','project-id-version'=>'Plugins - Persian Elementor - Development (trunk)','messages'=>['المنتور فارسی'=>'المنتور فارسی','فونت فارسی'=>'فونت فارسی']];

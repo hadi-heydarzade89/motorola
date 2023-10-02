@@ -17,6 +17,8 @@ class Ginger_MO_Translation_File_JSON extends Ginger_MO_Translation_File {
 	 * @return void
 	 */
 	protected function parse_file() {
+		$this->parsed = true;
+
 		$data = file_get_contents( $this->file ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
 
 		if ( false === $data ) {
@@ -65,26 +67,22 @@ class Ginger_MO_Translation_File_JSON extends Ginger_MO_Translation_File {
 		}
 
 		unset( $this->headers['domain'] );
-
-		$this->parsed = true;
 	}
 
 	/**
-	 * Writes translations to file.
+	 * Exports translation contents as a string.
 	 *
-	 * @param array<string, string> $headers Headers.
-	 * @param array<string, string> $entries Entries.
-	 * @return bool True on success, false otherwise.
+	 * @return string Translation file contents.
 	 */
-	protected function create_file( $headers, $entries ): bool {
-		$headers = array_change_key_case( $headers );
+	public function export(): string {
+		$headers = array_change_key_case( $this->headers );
 
-		$domain = isset( $headers['domain'] ) ? $headers['domain'] : 'messages';
+		$domain = $headers['domain'] ?? 'messages';
 
 		$data = array(
 			'domain'      => $domain,
 			'locale_data' => array(
-				$domain => $entries,
+				$domain => $this->entries,
 			),
 		);
 
@@ -111,9 +109,9 @@ class Ginger_MO_Translation_File_JSON extends Ginger_MO_Translation_File {
 		$json = json_encode( $data, JSON_PRETTY_PRINT );
 
 		if ( false === $json ) {
-			return false;
+			return '';
 		}
 
-		return (bool) file_put_contents( $this->file, $json ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents
+		return $json;
 	}
 }

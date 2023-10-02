@@ -84,6 +84,7 @@ class Ginger_MO {
 		if ( null === $locale ) {
 			$locale = $this->current_locale;
 		}
+
 		$translation_file = realpath( $translation_file );
 
 		if ( false === $translation_file ) {
@@ -119,7 +120,7 @@ class Ginger_MO {
 			$this->loaded_translations[ $locale ][ $textdomain ] = array();
 		}
 
-		// Ensure that last-loaded translation takes preference.
+		// Ensure that last-loaded translation takes precedence.
 		array_unshift( $this->loaded_translations[ $locale ][ $textdomain ], $moe );
 
 		return true;
@@ -269,9 +270,7 @@ class Ginger_MO {
 		// TODO: Use nplurals from Plural-Forms header?
 		// See \Translations::translate_plural() in core.
 
-		return isset( $translation['entries'][ $num ] ) ?
-			$translation['entries'][ $num ] :
-			$translation['entries'][0];
+		return $translation['entries'][ $num ] ?? $translation['entries'][0];
 	}
 
 	/**
@@ -325,7 +324,6 @@ class Ginger_MO {
 			$entries = array_merge( $entries, $moe->entries() );
 		}
 
-		// TODO: Return Translation_Entry instances instead to maintain back compat.
 		return $entries;
 	}
 
@@ -373,10 +371,6 @@ class Ginger_MO {
 			$locale = $this->current_locale;
 		}
 
-		if ( isset( $this->loaded_translations[ $locale ][ $textdomain ] ) ) {
-			return $this->loaded_translations[ $locale ][ $textdomain ];
-		}
-
-		return array();
+		return $this->loaded_translations[ $locale ][ $textdomain ] ?? array();
 	}
 }
