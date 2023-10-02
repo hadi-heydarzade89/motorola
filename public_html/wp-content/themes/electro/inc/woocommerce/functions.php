@@ -94,8 +94,8 @@ if ( ! function_exists( 'electro_set_loop_shop_per_page' ) ) {
         elseif ( isset( $_REQUEST['ppp'] ) ) :
             $per_page = intval( $_REQUEST['ppp'] );
             WC()->session->set( 'products_per_page', intval( $_REQUEST['ppp'] ) );
-        elseif ( WC()->session->__isset( 'products_per_page' ) ) :
-            $per_page = intval( WC()->session->__get( 'products_per_page' ) );
+        //elseif ( WC()->session->__isset( 'products_per_page' ) ) :
+        //    $per_page = intval( WC()->session->__get( 'products_per_page' ) );
         else :
             $per_page = electro_set_loop_shop_columns() * 4;
             $per_page = apply_filters( 'electro_loop_shop_per_page', $per_page );
