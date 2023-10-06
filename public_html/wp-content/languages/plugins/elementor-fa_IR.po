@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-01 23:45:48+0000\n"
+"PO-Revision-Date: 2023-10-04 01:32:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -452,7 +452,7 @@ msgstr "تنظیم موقعیت عمودی"
 
 #: includes/widgets/icon-list.php:520
 msgid "Horizontal Alignment"
-msgstr "تراز افقی"
+msgstr "چیدمان افقی"
 
 #: includes/widgets/alert.php:495 includes/widgets/alert.php:534
 msgid "Dismiss this alert."
@@ -2258,7 +2258,7 @@ msgstr "تنظیمات اضافی"
 
 #: core/kits/documents/tabs/global-typography.php:197
 msgid "Fallback Font Family"
-msgstr "خانوداه فونت بازگشتی"
+msgstr "خانواده فونت جایگزین"
 
 #: core/kits/documents/tabs/settings-background.php:67
 msgid "The `theme-color` meta tag will only be available in supported browsers and devices."
@@ -3000,7 +3000,7 @@ msgstr "فضای اطراف"
 #: includes/elements/column.php:183 includes/elements/section.php:444
 #: includes/widgets/common.php:304 includes/widgets/image-carousel.php:670
 msgid "Vertical Align"
-msgstr "تراز عمودی"
+msgstr "چینش عمودی"
 
 #: modules/safe-mode/module.php:374
 msgid "Having problems loading Elementor? Please enable Safe Mode to troubleshoot."
@@ -5444,7 +5444,7 @@ msgstr "ویرایش گالری"
 #: includes/widgets/icon-box.php:242 includes/widgets/icon-list.php:551
 #: includes/widgets/image-box.php:229
 msgid "Vertical Alignment"
-msgstr "ترازبندی عمودی"
+msgstr "چیدمان عمودی"
 
 #: includes/controls/groups/background.php:594
 #: includes/widgets/image-carousel.php:450
