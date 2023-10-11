@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-04 01:32:37+0000\n"
+"PO-Revision-Date: 2023-10-09 23:08:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -240,7 +240,7 @@ msgid "Panels"
 msgstr "پنل‌ها"
 
 #: includes/controls/gallery.php:83 includes/controls/gallery.php:85
-#: assets/js/editor.js:13735
+#: assets/js/editor.js:13738
 msgid "Clear gallery"
 msgstr "پاک کردن گالری"
 
@@ -300,13 +300,13 @@ msgstr "ناوبر را ببندید"
 msgid "Close structure"
 msgstr "ساختار بسته"
 
-#: includes/editor-templates/navigator.php:16 assets/js/editor.js:34227
+#: includes/editor-templates/navigator.php:16 assets/js/editor.js:34230
 msgid "Expand all elements"
 msgstr "همه عناصر را گسترش دهید"
 
 #: includes/editor-templates/global.php:66 includes/elements/container.php:100
 #: includes/elements/container.php:108 includes/elements/container.php:382
-#: assets/js/editor.js:32354 assets/js/editor.js:40838
+#: assets/js/editor.js:32357 assets/js/editor.js:40841
 msgid "Grid"
 msgstr "شبکه ای"
 
@@ -719,7 +719,7 @@ msgstr "تمام محتوا و تنظیمات سایت همراه با \"%1$s\" 
 #. Translators: %s is the current item index.
 #: modules/nested-accordion/widgets/nested-accordion.php:74
 #: modules/nested-elements/base/widget-nested-base.php:45
-#: assets/js/editor.js:24322
+#: assets/js/editor.js:24325
 msgid "Item #%d"
 msgstr "مورد #%d"
 
@@ -910,8 +910,8 @@ msgid "To achieve full height Container use %s."
 msgstr "برای دستیابی به کانتینر با ارتفاع کامل، از %s استفاده کنید."
 
 #: includes/elements/container.php:70 includes/elements/container.php:415
-#: modules/library/documents/container.php:52 assets/js/editor.js:10027
-#: assets/js/editor.js:32354 assets/js/editor.js:37968
+#: modules/library/documents/container.php:52 assets/js/editor.js:10030
+#: assets/js/editor.js:32357 assets/js/editor.js:37971
 msgid "Container"
 msgstr "کانتینر"
 
@@ -930,7 +930,7 @@ msgstr "استثنا"
 msgid "Difference"
 msgstr "تفاوت"
 
-#: includes/editor-templates/global.php:34 assets/js/editor.js:32209
+#: includes/editor-templates/global.php:34 assets/js/editor.js:32212
 msgid "Add New Container"
 msgstr "افزودن کانتینر جدید"
 
@@ -1150,11 +1150,11 @@ msgstr "ردیاب رویداد المنتور"
 
 #: app/modules/onboarding/module.php:257 app/modules/onboarding/module.php:342
 msgid "There was a problem uploading your file"
-msgstr "مشکلی در آپلود فایل شما وجود داشت"
+msgstr "مشکلی در آپلود فایل شما وجود دارد"
 
 #: app/modules/onboarding/module.php:207
 msgid "There was a problem setting your site logo"
-msgstr "مشکلی در تنظیم آرم سایت شما وجود داشت"
+msgstr "مشکلی در تنظیم لوگوی سایت شما وجود دارد"
 
 #: modules/library/documents/page.php:65
 msgid "Add New Page Template"
@@ -1494,7 +1494,7 @@ msgid "It seems like your site doesn't have any active Kit. The active Kit inclu
 msgstr "به نظر می رسد سایت شما هیچ کیت فعالی ندارد. کیت فعال شامل تمام تنظیمات سایت شما می شود. با ایجاد مجدد کیت خود، می توانید دوباره تنظیمات سایت خود را ویرایش کنید."
 
 #: includes/settings/tools.php:397 includes/settings/tools.php:400
-#: assets/js/editor.js:27945
+#: assets/js/editor.js:27948
 msgid "Recreate Kit"
 msgstr "ساخت مجدد کیت"
 
@@ -1540,7 +1540,7 @@ msgid "Submissions"
 msgstr "ارسالی ها"
 
 #: includes/editor-templates/panel.php:286
-#: includes/editor-templates/panel.php:288 assets/js/editor.js:12993
+#: includes/editor-templates/panel.php:288 assets/js/editor.js:12996
 msgid "Color Sampler"
 msgstr "نمونه‌گیر رنگ"
 
@@ -2112,7 +2112,7 @@ msgstr "نوع جدیدی از عناصر النمتور را اضافه می ک
 #: modules/landing-pages/documents/landing-page.php:54
 #: modules/landing-pages/module.php:47 modules/landing-pages/module.php:138
 #: modules/landing-pages/module.php:269 modules/landing-pages/module.php:281
-#: assets/js/app.js:11046 assets/js/editor.js:50173
+#: assets/js/app.js:11046 assets/js/editor.js:50176
 msgid "Landing Pages"
 msgstr "صفحات فرود"
 
@@ -2178,7 +2178,7 @@ msgstr "سازنده وب سایت المنتور همه این موارد را 
 
 #: core/kits/documents/tabs/global-colors.php:24
 #: core/kits/documents/tabs/global-colors.php:43 assets/js/app.js:11054
-#: assets/js/d3bdd130eb38d3b07f85.bundle.js:175 assets/js/editor.js:45753
+#: assets/js/d3bdd130eb38d3b07f85.bundle.js:175 assets/js/editor.js:45756
 msgid "Global Colors"
 msgstr "رنگ های عمومی"
 
@@ -2240,19 +2240,19 @@ msgid "Heads up, Please backup before upgrade!"
 msgstr "حواست باشه، قبل از ارتقا نسخه پشتیبان تهیه کنید!"
 
 #: core/settings/editor-preferences/model.php:38
-#: includes/editor-templates/hotkeys.php:156 assets/js/editor.js:37087
+#: includes/editor-templates/hotkeys.php:156 assets/js/editor.js:37090
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:1146
 msgid "User Preferences"
 msgstr "تنظیمات کاربر"
 
 #: core/kits/manager.php:429 includes/editor-templates/hotkeys.php:118
-#: assets/js/app.js:11052 assets/js/app.js:11533 assets/js/editor.js:45702
-#: assets/js/editor.js:45706 assets/js/editor.js:45716
+#: assets/js/app.js:11052 assets/js/app.js:11533 assets/js/editor.js:45705
+#: assets/js/editor.js:45709 assets/js/editor.js:45719
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:1073
 msgid "Site Settings"
 msgstr "تنظیمات سایت"
 
-#: modules/nested-tabs/widgets/nested-tabs.php:354 assets/js/editor.js:46125
+#: modules/nested-tabs/widgets/nested-tabs.php:354 assets/js/editor.js:46128
 msgid "Additional Settings"
 msgstr "تنظیمات اضافی"
 
@@ -2345,7 +2345,7 @@ msgstr "با تماشای مجموعه های ویدیویی \"شروع کار\"
 
 #: includes/settings/settings.php:326 assets/js/admin.js:282
 #: assets/js/admin.js:289 assets/js/common.js:2090 assets/js/common.js:2097
-#: assets/js/editor.js:38825 assets/js/editor.js:38832
+#: assets/js/editor.js:38828 assets/js/editor.js:38835
 msgid "Enable Unfiltered File Uploads"
 msgstr "فعال سازی آپلود فایل های فیلتر نشده"
 
@@ -2451,7 +2451,7 @@ msgstr "%s ویجت"
 
 #: core/experiments/manager.php:142 includes/editor-templates/global.php:29
 #: assets/js/ai-admin.js:3037 assets/js/ai.js:3355 assets/js/app.js:7896
-#: assets/js/editor.js:46014
+#: assets/js/editor.js:46017
 msgid "Back"
 msgstr "قبلی"
 
@@ -2641,20 +2641,10 @@ msgstr "افزودن المنت"
 msgid "Line"
 msgstr "خطی"
 
-#: includes/widgets/divider.php:288
-msgctxt "shapes"
-msgid "X"
-msgstr "X"
-
 #: includes/widgets/divider.php:279
 msgctxt "shapes"
 msgid "Tribal"
 msgstr "قبیله ای"
-
-#: includes/widgets/divider.php:270
-msgctxt "shapes"
-msgid "Trees"
-msgstr "درختان"
 
 #: includes/widgets/divider.php:261
 msgctxt "shapes"
@@ -2671,16 +2661,6 @@ msgctxt "shapes"
 msgid "Leaves"
 msgstr "برگها"
 
-#: includes/widgets/divider.php:234
-msgctxt "shapes"
-msgid "Half Rounds"
-msgstr "نیم دور"
-
-#: includes/widgets/divider.php:225
-msgctxt "shapes"
-msgid "Fir Tree"
-msgstr "درخت صنوبر"
-
 #: includes/widgets/divider.php:216
 msgctxt "shapes"
 msgid "Dots"
@@ -2691,25 +2671,10 @@ msgctxt "shapes"
 msgid "Rectangles"
 msgstr "مستطیل"
 
-#: includes/widgets/divider.php:199
-msgctxt "shapes"
-msgid "Parallelogram"
-msgstr "متوازی الاضلاع"
-
-#: includes/widgets/divider.php:191
-msgctxt "shapes"
-msgid "Rhombus"
-msgstr "لوزی"
-
 #: includes/widgets/divider.php:183
 msgctxt "shapes"
 msgid "Pluses"
 msgstr "به علاوه"
-
-#: includes/widgets/divider.php:175
-msgctxt "shapes"
-msgid "Arrows"
-msgstr "پیکان‌ها"
 
 #: includes/widgets/divider.php:167 includes/widgets/divider.php:297
 msgctxt "shapes"
@@ -2721,30 +2686,10 @@ msgctxt "shapes"
 msgid "Wavy"
 msgstr "موج دار"
 
-#: includes/widgets/divider.php:151
-msgctxt "shapes"
-msgid "Squared"
-msgstr "مربعی"
-
-#: includes/widgets/divider.php:142
-msgctxt "shapes"
-msgid "Slashes"
-msgstr "خط فاصله دار"
-
-#: includes/widgets/divider.php:134
-msgctxt "shapes"
-msgid "Multiple"
-msgstr "چندگانه"
-
 #: includes/widgets/divider.php:126
 msgctxt "shapes"
 msgid "Curved"
 msgstr "خم"
-
-#: includes/widgets/divider.php:118
-msgctxt "shapes"
-msgid "Curly"
-msgstr "فرفری"
 
 #: includes/widgets/image-gallery.php:44
 msgid "Basic Gallery"
@@ -2908,7 +2853,7 @@ msgstr "ظاهرا فایل htaccess سایت شما از دست رفته است
 msgid "Some of your theme files are missing."
 msgstr "برخی از فایل های قالب شما یافت نشد است."
 
-#: core/files/file-types/svg.php:100 core/files/uploads-manager.php:543
+#: core/files/file-types/svg.php:73 core/files/uploads-manager.php:543
 msgid "This file is not allowed for security reasons."
 msgstr "این پرونده به دلایل امنیتی مجاز نیست."
 
@@ -3120,7 +3065,7 @@ msgstr "پاپ آپ"
 #: app/modules/site-editor/module.php:31
 #: core/common/modules/finder/categories/general.php:72
 #: includes/template-library/sources/local.php:1721
-#: assets/js/app-packages.js:5925 assets/js/editor.js:45727
+#: assets/js/app-packages.js:5925 assets/js/editor.js:45730
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:1125
 msgid "Theme Builder"
 msgstr "پوسته ساز"
@@ -3272,7 +3217,7 @@ msgid "Type to find anything in Elementor"
 msgstr "برای پیدا کردن هر چیزی در المنتور تایپ کنید"
 
 #: includes/editor-templates/hotkeys.php:102 assets/js/admin-top-bar.js:127
-#: assets/js/common.js:4704 assets/js/editor.js:37099
+#: assets/js/common.js:4704 assets/js/editor.js:37102
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:922
 msgid "Finder"
 msgstr "جستجوگر"
@@ -3295,7 +3240,7 @@ msgid "Homepage"
 msgstr "صفحه اصلی"
 
 #: core/common/modules/finder/categories/create.php:27
-#: assets/js/editor.js:44264
+#: assets/js/editor.js:44267
 msgid "Create"
 msgstr "ایجاد"
 
@@ -3307,7 +3252,7 @@ msgstr "تخفیف"
 msgid "Disconnected successfully."
 msgstr "اتصال با موفقیت قطع شد."
 
-#: core/common/modules/connect/apps/base-app.php:218 assets/js/editor.js:10453
+#: core/common/modules/connect/apps/base-app.php:218 assets/js/editor.js:10456
 msgid "Connected successfully."
 msgstr "با موفقیت متصل شد."
 
@@ -3371,7 +3316,7 @@ msgstr "صفحه اول خود را ایجاد کنید"
 msgid "Getting Started"
 msgstr "شروع به کار"
 
-#: includes/widgets/inner-section.php:35 assets/js/editor.js:27076
+#: includes/widgets/inner-section.php:35 assets/js/editor.js:27079
 msgid "Inner Section"
 msgstr "بخش داخلی"
 
@@ -3390,7 +3335,7 @@ msgstr "خالی"
 #: includes/editor-templates/hotkeys.php:129
 #: includes/editor-templates/navigator.php:21
 #: includes/editor-templates/panel.php:88
-#: includes/editor-templates/panel.php:94 assets/js/editor.js:30632
+#: includes/editor-templates/panel.php:94 assets/js/editor.js:30635
 msgid "Navigator"
 msgstr "ناوبر"
 
@@ -3510,7 +3455,7 @@ msgstr "پرو"
 msgid "Blend Mode"
 msgstr "حالت ادغام"
 
-#: includes/editor-templates/hotkeys.php:42 assets/js/editor.js:29730
+#: includes/editor-templates/hotkeys.php:42 assets/js/editor.js:29733
 msgid "Copy"
 msgstr "کپی"
 
@@ -3730,7 +3675,7 @@ msgid "Search Templates:"
 msgstr "جستجوی قالب ها:"
 
 #: core/document-types/page.php:65 modules/library/documents/page.php:61
-#: assets/js/app.js:11823 assets/js/editor.js:9755
+#: assets/js/app.js:11823 assets/js/editor.js:9758
 #: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:2194
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:434
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:1161
@@ -3884,7 +3829,7 @@ msgstr "هورا ! %s شما آنلاین است."
 msgid "Published"
 msgstr "منتشر شده"
 
-#: core/common/modules/finder/template.php:19 assets/js/editor.js:10800
+#: core/common/modules/finder/template.php:19 assets/js/editor.js:10803
 #: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:1871
 msgid "No Results Found"
 msgstr "نتیجه ای یافت نشد"
@@ -3971,8 +3916,8 @@ msgid "Remove"
 msgstr "حذف"
 
 #: includes/editor-templates/hotkeys.php:74
-#: includes/editor-templates/repeater.php:21 assets/js/editor.js:29715
-#: assets/js/editor.js:48844
+#: includes/editor-templates/repeater.php:21 assets/js/editor.js:29718
+#: assets/js/editor.js:48847
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:859
 msgid "Duplicate"
 msgstr "تکثیر"
@@ -3982,12 +3927,12 @@ msgid "Drag & Drop"
 msgstr "درگ اند دراپ"
 
 #: includes/editor-templates/panel.php:151
-#: includes/editor-templates/panel.php:153 assets/js/editor.js:35447
+#: includes/editor-templates/panel.php:153 assets/js/editor.js:35450
 msgid "Hide Panel"
 msgstr "مخفی سازی پنل"
 
-#: includes/editor-templates/panel.php:143 assets/js/editor.js:32197
-#: assets/js/editor.js:32692
+#: includes/editor-templates/panel.php:143 assets/js/editor.js:32200
+#: assets/js/editor.js:32695
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:716
 msgid "Save as Template"
 msgstr "ذخیره قالب"
@@ -4004,7 +3949,7 @@ msgstr "ذخیره پیش نویس"
 msgid "Save Options"
 msgstr "تنظیمات ذخیره سازی"
 
-#: includes/editor-templates/panel.php:119 assets/js/editor.js:24706
+#: includes/editor-templates/panel.php:119 assets/js/editor.js:24709
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:823
 msgid "Publish"
 msgstr "انتشار"
@@ -4149,19 +4094,19 @@ msgid "Switch to Revisions tab for older versions"
 msgstr "جهت مشاهده نسخه های قدیمی تر به زبانه بازنگری‌ها بروید"
 
 #: modules/history/views/history-panel-template.php:10
-#: assets/js/editor.js:48571
+#: assets/js/editor.js:48574
 msgid "Revisions"
 msgstr "بازنگری‌ها"
 
 #: includes/editor-templates/hotkeys.php:19
 #: includes/editor-templates/templates.php:124
-#: modules/history/views/history-panel-template.php:9 assets/js/editor.js:48568
+#: modules/history/views/history-panel-template.php:9 assets/js/editor.js:48571
 msgid "Actions"
 msgstr "عملیات"
 
 #: includes/editor-templates/hotkeys.php:147
 #: includes/editor-templates/panel.php:97
-#: includes/editor-templates/panel.php:99 assets/js/editor.js:49168
+#: includes/editor-templates/panel.php:99 assets/js/editor.js:49171
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:966
 msgid "History"
 msgstr "تاریخچه"
@@ -4344,7 +4289,7 @@ msgstr "فقط در مورد عیب یابی به کار گرفته شود."
 #: modules/nested-tabs/widgets/nested-tabs.php:365
 #: modules/safe-mode/module.php:48 assets/js/admin.js:282
 #: assets/js/app-packages.js:2839 assets/js/app.js:3960
-#: assets/js/common.js:2090 assets/js/editor.js:38825
+#: assets/js/common.js:2090 assets/js/editor.js:38828
 msgid "Enable"
 msgstr "فعال‌سازی"
 
@@ -4386,7 +4331,7 @@ msgstr "انتخاب"
 msgid "Paste Style"
 msgstr "پیست استایل"
 
-#: core/common/modules/finder/categories/edit.php:118 assets/js/editor.js:18195
+#: core/common/modules/finder/categories/edit.php:118 assets/js/editor.js:18198
 msgid "Template"
 msgstr "قالب"
 
@@ -4444,7 +4389,7 @@ msgid "Coming Soon"
 msgstr "به زودی"
 
 #: core/kits/documents/kit.php:169 includes/maintenance-mode.php:215
-#: assets/js/editor.js:48843
+#: assets/js/editor.js:48846
 msgid "Disabled"
 msgstr "غیرفعال شده"
 
@@ -4980,7 +4925,7 @@ msgid "Tools"
 msgstr "ابزارها"
 
 #: core/document-types/page.php:51 modules/library/documents/page.php:57
-#: assets/js/editor.js:10025
+#: assets/js/editor.js:10028
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:433
 msgid "Page"
 msgstr "صفحه"
@@ -5009,7 +4954,7 @@ msgstr "بازگشت به کتابخانه"
 msgid "Insert"
 msgstr "درج"
 
-#: core/common/modules/connect/apps/library.php:16 assets/js/editor.js:10352
+#: core/common/modules/connect/apps/library.php:16 assets/js/editor.js:10355
 msgid "Library"
 msgstr "کتابخانه"
 
@@ -5021,7 +4966,7 @@ msgstr "کتابخانه"
 #: assets/js/app-packages.js:4527 assets/js/app.js:2905 assets/js/app.js:5023
 #: assets/js/app.js:5426 assets/js/app.js:7560 assets/js/app.js:8392
 #: assets/js/app.js:11912 assets/js/e8a7573e654d921656ab.bundle.js:221
-#: assets/js/editor.js:46017 assets/js/import-export-admin.js:328
+#: assets/js/editor.js:46020 assets/js/import-export-admin.js:328
 msgid "Close"
 msgstr "بستن"
 
@@ -5056,16 +5001,16 @@ msgstr "در صورتی که قصد ویرایش سورس کدهای پوسته 
 #: assets/js/app-packages.js:2710 assets/js/app-packages.js:5696
 #: assets/js/app-packages.js:5805 assets/js/app.js:3831 assets/js/app.js:7844
 #: assets/js/app.js:8986 assets/js/app.js:10454 assets/js/app.js:10764
-#: assets/js/app.js:10810 assets/js/app.js:11911 assets/js/editor.js:14067
-#: assets/js/editor.js:27573 assets/js/editor.js:27604
-#: assets/js/editor.js:39358
+#: assets/js/app.js:10810 assets/js/app.js:11911 assets/js/editor.js:14070
+#: assets/js/editor.js:27576 assets/js/editor.js:27607
+#: assets/js/editor.js:39361
 #: assets/js/kit-library.b4cf9f541e44f7bbc972.bundle.js:3731
 msgid "Learn More"
 msgstr "کسب اطلاعات بیشتر"
 
 #: core/kits/documents/tabs/global-typography.php:28
 #: core/kits/documents/tabs/global-typography.php:47 assets/js/app.js:11054
-#: assets/js/d3bdd130eb38d3b07f85.bundle.js:224 assets/js/editor.js:45762
+#: assets/js/d3bdd130eb38d3b07f85.bundle.js:224 assets/js/editor.js:45765
 msgid "Global Fonts"
 msgstr "فونت‌های سراسری"
 
@@ -5263,9 +5208,9 @@ msgstr "نسخه جدیدی از صفحه ساز المنتور در دسترس 
 msgid "Custom URL"
 msgstr "آدرس سفارشی"
 
-#: includes/editor-templates/hotkeys.php:50 assets/js/editor.js:29742
-#: assets/js/editor.js:31706 assets/js/editor.js:40728
-#: assets/js/editor.js:41735
+#: includes/editor-templates/hotkeys.php:50 assets/js/editor.js:29745
+#: assets/js/editor.js:31709 assets/js/editor.js:40731
+#: assets/js/editor.js:41738
 msgid "Paste"
 msgstr "پیست"
 
@@ -5494,9 +5439,9 @@ msgstr "فهرستی از فونت های پیشفرض که اگر فونت دل
 msgid "Form"
 msgstr "فرم"
 
-#: includes/editor-templates/panel-elements.php:10 assets/js/editor.js:18841
-#: assets/js/editor.js:20795 assets/js/editor.js:21226
-#: assets/js/editor.js:36209
+#: includes/editor-templates/panel-elements.php:10 assets/js/editor.js:18844
+#: assets/js/editor.js:20798 assets/js/editor.js:21229
+#: assets/js/editor.js:36212
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:858
 msgid "Elements"
 msgstr "المان‌ها"
@@ -5507,7 +5452,7 @@ msgstr "المان‌ها"
 #: includes/editor-templates/responsive-bar.php:61
 #: includes/managers/controls.php:322 includes/settings/settings.php:192
 #: includes/settings/settings.php:387 modules/usage/settings-reporter.php:13
-#: assets/js/editor.js:9288 assets/js/editor.js:37083 assets/js/editor.js:46141
+#: assets/js/editor.js:9288 assets/js/editor.js:37086 assets/js/editor.js:46144
 msgid "Settings"
 msgstr "تنظیمات"
 
@@ -5966,8 +5911,8 @@ msgstr "فاصله"
 #: modules/shapes/widgets/text-path.php:491
 #: modules/shapes/widgets/text-path.php:511
 #: modules/shapes/widgets/text-path.php:556
-#: modules/shapes/widgets/text-path.php:576 assets/js/editor.js:46279
-#: assets/js/editor.js:46322
+#: modules/shapes/widgets/text-path.php:576 assets/js/editor.js:46282
+#: assets/js/editor.js:46325
 msgid "Color"
 msgstr "رنگ"
 
@@ -6576,7 +6521,7 @@ msgstr "عرض"
 #: includes/managers/elements.php:281 includes/widgets/common.php:175
 #: includes/widgets/icon-list.php:95
 #: modules/nested-accordion/widgets/nested-accordion.php:87
-#: assets/js/editor.js:36018
+#: assets/js/editor.js:36021
 msgid "Layout"
 msgstr "طرح‌بندی"
 
@@ -6673,7 +6618,7 @@ msgstr "رنگ متن"
 #: core/kits/documents/tabs/theme-style-typography.php:19
 #: core/kits/documents/tabs/theme-style-typography.php:38
 #: includes/elements/column.php:647 includes/elements/section.php:1104
-#: assets/js/editor-modules.js:1439 assets/js/editor.js:41411
+#: assets/js/editor-modules.js:1439 assets/js/editor.js:41414
 msgid "Typography"
 msgstr "تایپوگرافی"
 
@@ -6688,7 +6633,7 @@ msgid "Column"
 msgstr "ستون"
 
 #: includes/elements/section.php:78 modules/library/documents/section.php:43
-#: assets/js/container-converter.js:99 assets/js/editor.js:10026
+#: assets/js/container-converter.js:99 assets/js/editor.js:10029
 msgid "Section"
 msgstr "بخش (سکشن)"
 
@@ -6696,7 +6641,7 @@ msgstr "بخش (سکشن)"
 #: includes/editor-templates/navigator.php:20
 #: includes/editor-templates/panel.php:87
 #: includes/editor-templates/panel.php:93 includes/elements/section.php:531
-#: includes/elements/section.php:539 assets/js/editor.js:30632
+#: includes/elements/section.php:539 assets/js/editor.js:30635
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:1101
 msgid "Structure"
 msgstr "ساختار"
@@ -6711,13 +6656,13 @@ msgstr "واکنش‌گرا"
 #: core/dynamic-tags/tag.php:88 includes/elements/column.php:737
 #: includes/elements/section.php:1193 includes/managers/controls.php:319
 #: includes/settings/settings.php:296 assets/js/editor.js:9294
-#: assets/js/editor.js:36015
+#: assets/js/editor.js:36018
 msgid "Advanced"
 msgstr "پیشرفته"
 
 #: includes/managers/controls.php:318 includes/widgets/divider.php:363
 #: includes/widgets/icon-list.php:275 assets/js/ai-admin.js:3791
-#: assets/js/ai.js:4109 assets/js/editor.js:9291 assets/js/editor.js:36012
+#: assets/js/ai.js:4109 assets/js/editor.js:9291 assets/js/editor.js:36015
 msgid "Style"
 msgstr "استایل"
 
@@ -6729,7 +6674,7 @@ msgstr "استایل"
 #: includes/widgets/toggle.php:123 includes/widgets/toggle.php:488
 #: modules/nested-accordion/widgets/nested-accordion.php:436
 #: modules/nested-tabs/widgets/nested-tabs.php:1003 assets/js/app.js:11044
-#: assets/js/app.js:11537 assets/js/editor.js:36009
+#: assets/js/app.js:11537 assets/js/editor.js:36012
 msgid "Content"
 msgstr "محتوا"
 
@@ -6746,12 +6691,12 @@ msgstr "تنظیمات صفحه"
 #: includes/controls/image-dimensions.php:102
 #: includes/editor-templates/panel.php:175
 #: modules/history/views/revisions-panel-template.php:14
-#: assets/js/editor.js:9934 assets/js/editor.js:37156
+#: assets/js/editor.js:9937 assets/js/editor.js:37159
 msgid "Apply"
 msgstr "اعمال تغییرات"
 
 #: modules/history/views/revisions-panel-template.php:11
-#: assets/js/editor.js:5007 assets/js/editor.js:43521
+#: assets/js/editor.js:5007 assets/js/editor.js:43524
 msgid "Discard"
 msgstr "بیخیال"
 
@@ -6770,7 +6715,7 @@ msgstr "پیش‌نمایش"
 #: includes/editor-templates/templates.php:19
 #: includes/editor-templates/templates.php:217
 #: includes/editor-templates/templates.php:228 assets/js/editor.js:5006
-#: assets/js/editor.js:43520 assets/js/kit-elements-defaults-editor.js:615
+#: assets/js/editor.js:43523 assets/js/kit-elements-defaults-editor.js:615
 msgid "Save"
 msgstr "ذخیره"
 
@@ -6857,9 +6802,9 @@ msgstr "افزودن آیتم"
 
 #: core/kits/views/trash-kit-confirmation.php:30
 #: includes/editor-templates/hotkeys.php:67
-#: includes/editor-templates/templates.php:185 assets/js/editor.js:10161
-#: assets/js/editor.js:27294 assets/js/editor.js:29807
-#: assets/js/editor.js:46332 assets/js/import-export-admin.js:287
+#: includes/editor-templates/templates.php:185 assets/js/editor.js:10164
+#: assets/js/editor.js:27297 assets/js/editor.js:29810
+#: assets/js/editor.js:46335 assets/js/import-export-admin.js:287
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:882
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:915
 msgid "Delete"
@@ -6875,7 +6820,7 @@ msgstr "انتخاب آیکن"
 #: includes/widgets/common.php:1014 includes/widgets/image-carousel.php:702
 #: includes/widgets/image-gallery.php:201 includes/widgets/social-icons.php:189
 #: includes/widgets/social-icons.php:347 modules/shapes/module.php:29
-#: assets/js/editor.js:44090
+#: assets/js/editor.js:44093
 msgid "Custom"
 msgstr "سفارشی"
 
@@ -7273,8 +7218,8 @@ msgstr "بالا"
 #: includes/widgets/text-editor.php:131 includes/widgets/text-editor.php:266
 #: includes/widgets/traits/button-trait.php:74
 #: modules/page-templates/module.php:296
-#: modules/shapes/widgets/text-path.php:187 assets/js/editor.js:44082
-#: assets/js/editor.js:44093
+#: modules/shapes/widgets/text-path.php:187 assets/js/editor.js:44085
+#: assets/js/editor.js:44096
 msgid "Default"
 msgstr "پیش‌ فرض"
 
