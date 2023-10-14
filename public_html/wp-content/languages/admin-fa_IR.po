@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the WordPress - 6.3.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-08-29 13:15:12+0000\n"
+"PO-Revision-Date: 2023-10-12 19:02:03+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.0-alpha.7\n"
+"X-Generator: GlotPress/4.0.0-alpha.9\n"
 "Language: fa\n"
 "Project-Id-Version: WordPress - 6.3.x - Development - Administration\n"
 
@@ -37,8 +37,12 @@ msgctxt "default GMT offset or timezone string"
 msgid "0"
 msgstr "+3.5"
 
+#: wp-admin/includes/user.php:720 wp-admin/includes/user.php:742
+msgid "Invalid URL format."
+msgstr "ساختار url نامعتبر است."
+
 #. translators: %s: WordPress version.
-#: wp-admin/about.php:68
+#: wp-admin/about.php:68 wp-admin/about.php:93
 msgid "https://wordpress.org/support/wordpress-version/version-%s/"
 msgstr "https://wordpress.org/support/wordpress-version/version-%s/"
 
@@ -328,22 +332,22 @@ msgid "Table ordered by File Name."
 msgstr "جدول براساس نام پرونده مرتب شده است."
 
 #. translators: Hidden accessibility text.
-#: wp-admin/includes/class-wp-list-table.php:1552
+#: wp-admin/includes/class-wp-list-table.php:1566
 msgid "Descending."
 msgstr "نزولی."
 
 #. translators: Hidden accessibility text.
-#: wp-admin/includes/class-wp-list-table.php:1550
+#: wp-admin/includes/class-wp-list-table.php:1564
 msgid "Ascending."
 msgstr "صعودی."
 
 #. translators: Hidden accessibility text.
-#: wp-admin/includes/class-wp-list-table.php:1451
+#: wp-admin/includes/class-wp-list-table.php:1465
 msgid "Sort descending."
 msgstr "مرتب‌سازی نزولی."
 
 #. translators: Hidden accessibility text.
-#: wp-admin/includes/class-wp-list-table.php:1449
+#: wp-admin/includes/class-wp-list-table.php:1463
 msgid "Sort ascending."
 msgstr "مرتب‌سازی صعودی."
 
@@ -519,131 +523,131 @@ msgid "Be the future of WordPress"
 msgstr "آینده وردپرس باشید"
 
 #. translators: 1: Learn WordPress link, 2: Workshops link.
-#: wp-admin/about.php:283
+#: wp-admin/about.php:308
 msgid "<a href=\"%1$s\">Learn WordPress</a> is a free resource for new and experienced WordPress users. Learn is stocked with how-to videos on using various features in WordPress, <a href=\"%2$s\">interactive events</a> for exploring topics in-depth, and lesson plans for diving deep into specific areas of WordPress."
 msgstr "<a href=\"%1$s\">یادگیری وردپرس</a> یک منبع رایگان برای کاربران جدید و با تجربه وردپرس است. Learn همراه با ویدیوهای نحوه استفاده از ویژگی‌های مختلف در وردپرس، <a href=\"%2$s\">رویدادهای تعاملی</a> برای کاوش عمیق موضوعات، و طرح‌های درسی برای کاوش عمیق در بخش‌های مختلف وردپرس است."
 
-#: wp-admin/about.php:259
+#: wp-admin/about.php:284
 msgid "Create unique patterns to jumpstart template creation with a new modal enabling access to pattern selection."
 msgstr "الگوهای منحصربه‌فرد را برای شروع سریع ایجاد قالب با یک مودال جدید ایجاد کنید که دسترسی به انتخاب الگوها را فراهم می‌کند."
 
-#: wp-admin/about.php:258
+#: wp-admin/about.php:283
 msgid "Build templates with Patterns"
 msgstr "ساخت قالب با الگوها"
 
-#: wp-admin/about.php:248
+#: wp-admin/about.php:273
 msgid "Drag and drop to every content layer and delete any block you would like in the updated List View."
 msgstr "در هر لایه‌ای از محتوا، بکشید و رها کنید و هر بلوکی را که می‌خواهید در نمای به‌روز شده فهرست، حذف کنید."
 
-#: wp-admin/about.php:247
+#: wp-admin/about.php:272
 msgid "List View improvements"
 msgstr "بهبودهای مشاهده لیست"
 
-#: wp-admin/about.php:236
+#: wp-admin/about.php:261
 msgid "A revamped top toolbar offers parent selectors for nested blocks, options when selecting multiple blocks, and a new interface embedded into the title bar with new functionality in mind."
 msgstr "یک نوار ابزار بالا اصلاح‌شده، انتخابگرهای والد را برای بلوک‌های تودرتو، گزینه‌هایی هنگام انتخاب بلوک‌های متعدد، و یک رابط جدید تعبیه‌شده در نوار عنوان با قابلیت‌های جدید در ذهن ارائه می‌دهد."
 
-#: wp-admin/about.php:235
+#: wp-admin/about.php:260
 msgid "Rediscover the Top Toolbar"
 msgstr "نوار ابزار بالا را دوباره کشف کنید"
 
-#: wp-admin/about.php:222
+#: wp-admin/about.php:247
 msgid "Distraction-free designing is now available in the Site Editor."
 msgstr "طراحی بدون حواس پرتی اکنون در ویرایشگر سایت موجود است."
 
-#: wp-admin/about.php:221
+#: wp-admin/about.php:246
 msgid "Build your site distraction-free"
 msgstr "سایت خود را بدون حواس پرتی بسازید"
 
-#: wp-admin/about.php:212
+#: wp-admin/about.php:237
 msgid "Specify your aspect ratios and ensure design integrity, especially when using images in patterns."
 msgstr "نسبت ابعاد خود را مشخص کنید و از یکپارچگی طراحی اطمینان حاصل کنید، به خصوص هنگام استفاده از تصاویر در الگوها."
 
-#: wp-admin/about.php:211
+#: wp-admin/about.php:236
 msgid "Set aspect ratio on images"
 msgstr "تنظیم نسبت ابعاد روی تصاویر"
 
-#: wp-admin/about.php:202
+#: wp-admin/about.php:227
 msgid "Experience block themes before you switch and preview the Site Editor, with options to customize directly before committing to a new theme."
 msgstr "قبل از تغییر و پیش‌نمایش ویرایشگر سایت، با گزینه‌هایی برای سفارشی‌سازی مستقیم قبل از جابجایی به پوسته جدید، پوسته بلوک را تجربه کنید."
 
-#: wp-admin/about.php:201
+#: wp-admin/about.php:226
 msgid "Preview block themes"
 msgstr "پیش‌نمایش پوسته‌های بلوک"
 
-#: wp-admin/about.php:187
+#: wp-admin/about.php:212
 msgid "Incorporating more than 50 accessibility improvements across the platform, WordPress 6.3 is more accessible than ever. Improved labeling, optimized tab and arrow-key navigation, revised heading hierarchy, and new controls in the admin image editor allow those using assistive technologies to navigate more easily."
 msgstr "وردپرس ۶.۳ با بیش از ۵۰ بهبود دسترسی در سراسر پلتفرم، از همیشه در دسترس‌تر است. برچسب‌گذاری بهبودیافته، راهبری زبانه و کلید جهت بهینه، سلسله‌مراتب سرفصل اصلاح‌شده، و کنترل‌های جدید در ویرایشگر تصویر مدیریت به افرادی که از فناوری‌های کمکی استفاده می‌کنند اجازه می‌دهد راحت‌تر راهبری کنند."
 
-#: wp-admin/about.php:186
+#: wp-admin/about.php:211
 msgid "Accessibility remains a core focus"
 msgstr "دسترسی‌پذیری همچنان یک تمرکز اصلی است"
 
-#: wp-admin/about.php:177
+#: wp-admin/about.php:202
 msgid "WordPress 6.3 has 170+ performance updates, including defer and async support for the Scripts API and fetchpriority support for images. These improvements can improve your website&#8217;s load time as perceived by visitors, along with block template resolution, image lazy-loading, and the emoji loader."
 msgstr "وردپرس ۶.۳ دارای بیش از ۱۷۰ به‌روزرسانی عملکرد، از جمله پشتیبانی از defer و async برای API اسکریپت‌ها و پشتیبانی از fetchpriority برای تصاویر است. این پیشرفت‌ها می‌توانند زمان بارگذاری وب‌سایت شما را طوری که توسط بازدیدکنندگان حس می‌شود، همراه با بلوک وضوح قالب، بارگذاری تنبل تصویر و بارگذار ایموجی بهبود بخشند."
 
-#: wp-admin/about.php:176
+#: wp-admin/about.php:201
 msgid "Performance gets a boost"
 msgstr "عملکرد تقویت می‌شود"
 
-#: wp-admin/about.php:162
+#: wp-admin/about.php:187
 msgid "Use the block to avoid spoiling a surprise, create an interactive Q&A section, or hide a long paragraph under a heading."
 msgstr "از بلوک برای جلوگیری از افشای یک سورپرایز استفاده کنید، یک بخش پرسش و پاسخ تعاملی ایجاد کنید، یا یک پاراگراف طولانی را زیر عنوان پنهان کنید."
 
-#: wp-admin/about.php:161
+#: wp-admin/about.php:186
 msgid "Show or hide content with the Details block"
 msgstr "نمایش یا عدم نمایش محتوا با بلوک جزئیات"
 
-#: wp-admin/about.php:155
+#: wp-admin/about.php:180
 msgid "Footnotes add convenient annotations throughout your content. Now you can add and link footnotes for any paragraph."
 msgstr "پاورقی‌ها یادداشت‌های مناسبی را در سراسر محتوای شما اضافه می‌کنند. اکنون می‌توانید پاورقی‌ها را برای هر پاراگراف اضافه کرده و پیوند دهید."
 
-#: wp-admin/about.php:154
+#: wp-admin/about.php:179
 msgid "Annotate with the Footnotes block"
 msgstr "با بلوک پاورقی حاشیه‌نویسی کنید"
 
-#: wp-admin/about.php:148
+#: wp-admin/about.php:173
 msgid "You can now see how your site looked at a specific time. Visualize these revisions in a timeline and access a one-click option to restore prior styles."
 msgstr "اکنون می‌توانید ببینید که سایت شما در یک زمان خاص چطور به نظر می‌رسد. رونوشت‌ها را در یک خط زمانی تجسم کنید و به یک گزینهٔ یک کلیکی برای بازیابی سبک‌های قبلی دسترسی داشته باشید."
 
-#: wp-admin/about.php:147
+#: wp-admin/about.php:172
 msgid "Track design changes with Style Revisions"
 msgstr "دنبال کردن تغییرات طراحی از طریق رونوشت‌های سبک"
 
-#: wp-admin/about.php:133
+#: wp-admin/about.php:158
 msgid "New design controls bring more versatility for fine-tuning designs, starting with the ability to customize your caption&#8217;s styles from the Styles Interface without coding. You can manage your duotone filters in Styles for supported blocks and pick from the options provided by your theme or disable them entirely. The Cover block gets added settings for text color, layout controls, and border options, making this powerful block even more handy."
 msgstr "کنترل‌های طراحی جدید، تطبیق‌پذیری بیشتری را برای تنظیم دقیق طرح‌ها به ارمغان می‌آورد، که با توانایی سفارشی‌سازی سبک‌های زیرنویس خود از صافی Styles بدون کدنویسی شروع می‌شود. می‌توانید صافی‌های دوتن خود را در Styles برای بلوک‌های پشتیبانی‌شده مدیریت کنید و از میان گزینه‌های ارائه‌شده توسط موضوع خود انتخاب کنید یا آن‌ها را به طور کامل غیرفعال کنید. بلوک پوشش تنظیمات اضافه‌شده برای رنگ متن، کنترل‌های چیدمان و گزینه‌های حاشیه را دریافت می‌کند که این بلوک قدرتمند را حتی کاربردی‌تر می‌کند."
 
-#: wp-admin/about.php:132
+#: wp-admin/about.php:157
 msgid "Sharpen your designs with new tools"
 msgstr "طرح‌های خود را با ابزارهای جدید شارپ کنید"
 
-#: wp-admin/about.php:126
+#: wp-admin/about.php:151
 msgid "Switch to a specific template or open your editor preferences with a new tool that helps you quickly navigate expanded functionality. With simple keyboard shortcuts (⌘+k on Mac or Ctrl+k on Windows), clicking the sidebar search icon in Site View, or clicking the Title Bar, get where you need to go and do what you need to do in seconds."
 msgstr "به یک الگوی خاص بروید یا تنظیمات برگزیده ویرایشگر خود را با ابزار جدیدی باز کنید که به شما کمک می‌کند تا به سرعت عملکردهای توسعه یافته را پیمایش کنید. با میانبرهای صفحه کلید ساده (⌘+k در Mac یا Ctrl+k در ویندوز)، کلیک کردن روی نماد جستجوی نوار کناری در نمای سایت یا کلیک کردن روی نوار عنوان، به جایی که باید بروید برسید و کاری را که باید انجام دهید در چند ثانیه انجام دهید."
 
-#: wp-admin/about.php:125
+#: wp-admin/about.php:150
 msgid "Work faster with the Command Palette"
 msgstr "با پالت فرمان سریع‌تر کار کنید"
 
-#: wp-admin/about.php:109
+#: wp-admin/about.php:134
 msgid "Arrange blocks in unlimited ways and save them as Patterns for use throughout your site. You can even specify whether to sync your patterns (previously referred to as “reusable blocks”) so that one change applies to all parts of your site. Or, utilize patterns as a starting point with the ability to customize each instance."
 msgstr "بلوک‌ها را به صورت نامحدود در سایت خود قرار دهید و آن‌ها را به عنوان الگوها برای استفاده در سرتاسر سایت ذخیره کنید. حتی می‌توانید مشخص کنید که آیا الگوهای خود را همگام‌سازی کنید (قبلاً به عنوان \"بلوک‌های قابل استفاده مجدد\" شناخته می‌شد) تا تغییری که اعمال می‌کنید بر روی تمام بخش‌های سایتتان اعمال شود. یا از الگوها به عنوان نقطه شروعی استفاده کنید با قابلیت سفارشی‌سازی هر نمونه."
 
-#: wp-admin/about.php:108
+#: wp-admin/about.php:133
 msgid "Create and sync patterns"
 msgstr "ایجاد و همگام سازی الگوها"
 
-#: wp-admin/about.php:102
+#: wp-admin/about.php:127
 msgid "WordPress 6.3 brings your content, templates, and patterns together in the Site Editor for the first time. Add pages, browse style variations, create synced patterns, and enjoy fine-tuned control over your navigation menus. No more time wasted switching across different site areas—now you can focus on what matters most. Creation to completion, all in one place."
 msgstr "وردپرس ۶.۳ محتوا، قالب‌ها و الگوهای شما را برای اولین بار در ویرایشگر سایت گرد هم می‌آورد. برگه‌ها را اضافه کنید، تغییرات سبک را مرور کنید، الگوهای همگام‌سازی‌شده ایجاد کنید و از کنترل دقیق فهرست‌های راهبری خود لذت ببرید. دیگر زمانی برای جابه‌جایی بین ناحیه‌های مختلف سایت تلف نمی‌شود — حالا می‌توانید روی آنچه مهم‌تر است تمرکز کنید. ایجاد تا تکامل، همه در یک محل."
 
-#: wp-admin/about.php:101
+#: wp-admin/about.php:126
 msgid "Do everything in the Site Editor"
 msgstr "همه کارها را در ویرایشگر سایت انجام دهید"
 
-#: wp-admin/about.php:89
+#: wp-admin/about.php:114
 msgid "Create beautiful and compelling websites more efficiently than ever. Whether you want to build an entire site without coding or are a developer looking to customize every detail, WordPress 6.3 has something for you."
 msgstr "کارآمدتر از همیشه وب‌سایت‌های زیبا و جذاب ایجاد کنید. چه بخواهید یک سایت کامل را بدون کدنویسی بسازید یا یک توسعه دهنده باشید که به دنبال سفارشی کردن تمام جزئیات است، وردپرس ۶.۳ چیزی برای شما دارد."
 
@@ -795,12 +799,12 @@ msgid "<a href=\"https://wordpress.org/documentation/article/customizer/\">Docum
 msgstr "<a href=\"https://wordpress.org/documentation/article/customizer/\">مستندات سفارشی‌ساز</a>"
 
 #. translators: The localized WordPress download URL.
-#: wp-admin/about.php:408
+#: wp-admin/about.php:433
 msgid "https://wordpress.org/download/"
 msgstr "https://wordpress.org/download/"
 
 #. translators: %s: The major version of WordPress for this branch.
-#: wp-admin/about.php:405
+#: wp-admin/about.php:430
 msgid "This is the final release of WordPress %s"
 msgstr "این نسخهٔ نهایی وردپرس %s است"
 
@@ -901,21 +905,21 @@ msgid "Theme Styles & Block Settings"
 msgstr "تنظیمات سبک‌های پوسته و بلوک"
 
 #. translators: %s: The minimum recommended PHP version.
-#: wp-admin/includes/dashboard.php:1888
+#: wp-admin/includes/dashboard.php:1897
 msgid "The minimum recommended version of PHP is %s."
 msgstr "حداقل نگارش پیشنهادی PHP %s است."
 
-#: wp-admin/includes/dashboard.php:1883
+#: wp-admin/includes/dashboard.php:1892
 msgid "PHP is one of the programming languages used to build WordPress. Newer versions of PHP receive regular security updates and may increase your site&#8217;s performance."
 msgstr "PHP یکی از زبان‌های برنامه‌نویسی است که برای ساخت وردپرس استفاده می‌شود. نگارش‌های تازه‌تر PHP به روز رسانی‌های امنیتی منظم را دریافت می‌نمایند و ممکن است عملکرد سایت شما را افزایش دهند."
 
 #. translators: %s: The server PHP version.
-#: wp-admin/includes/dashboard.php:1868
+#: wp-admin/includes/dashboard.php:1877
 msgid "Your site is running on an outdated version of PHP (%s), which soon will not be supported by WordPress. Ensure that PHP is updated on your server as soon as possible. Otherwise you will not be able to upgrade WordPress."
 msgstr "سایت شما با نگارش منسوخ PHP (%s) اجرا می‌شود که به زودی از سوی وردپرس پشتیبانی نمی‌شود. مطمئن شوید که PHP به زودی روی سرور شما به روز می‌شود. در غیر این صورت نمی‌توانید وردپرس را ارتقا دهید."
 
 #. translators: %s: The server PHP version.
-#: wp-admin/includes/dashboard.php:1855
+#: wp-admin/includes/dashboard.php:1864
 msgid "Your site is running on an outdated version of PHP (%s), which does not receive security updates and soon will not be supported by WordPress. Ensure that PHP is updated on your server as soon as possible. Otherwise you will not be able to upgrade WordPress."
 msgstr "سایت شما با نگارش منسوخ PHP (%s) اجرا می‌شود که به‌روز رسانی امنیتی را  دریافت نمی‌نماید و به زودی از سوی وردپرس پشتیبانی نمی‌شود. مطمئن شوید که PHP به زودی روی سرور شما به روز می‌شود. در غیر این صورت نمی‌توانید وردپرس را ارتقا دهید."
 
@@ -1068,7 +1072,7 @@ msgstr "هنگام آزمایش REST API، با یک خطا روبرو شد:"
 
 #. translators: %s: The server PHP version.
 #: wp-admin/includes/class-wp-site-health.php:817
-#: wp-admin/includes/dashboard.php:1861
+#: wp-admin/includes/dashboard.php:1870
 msgid "Your site is running on an outdated version of PHP (%s), which does not receive security updates. It should be updated."
 msgstr "سایت شما روی نگارش منسوخ PHP (%s) اجرا می‌شود که به‌روزرسانی‌های امنیتی را دریافت نمی‌نماید. باید به‌روز شود."
 
@@ -1137,31 +1141,31 @@ msgid "Reach out to WordPress Core developers to ensure you'll never have this p
 msgstr "با توسعه‌دهندگان هستهٔ وردپرس تماس بگیرید تا مطمئن شوید دیگر هرگز با این مشکل روبرو نخواهید شد."
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:402
+#: wp-admin/about.php:427
 msgid "Important! Your version of WordPress (%1$s) will stop receiving security updates in the near future. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "مهم! نگارش وردپرس شما (%1$s) در آیندهٔ نزدیک به‌روزرسانی‌های امنیتی را دریافت نخواهد کرد. برای ایمن نگه داشتن سایتتان، لطفاً <a href=\"%2$s\">به تازه‌ترین نگارش وردپرس به‌روزرسانی نمایید</a>."
 
 #. translators: 1: WordPress version number, 2: Link to update WordPress
-#: wp-admin/about.php:399
+#: wp-admin/about.php:424
 msgid "Important! Your version of WordPress (%1$s) is no longer supported, you will not receive any security updates for your website. To keep your site secure, please <a href=\"%2$s\">update to the latest version of WordPress</a>."
 msgstr "مهم! نگارش وردپرس شما (%1$s) دیگر پشتیبانی نمی‌شود، شما هیچ به‌روزرسانی امنیتی برای وب‌سایتتان دریافت نخواهید کرد. برای ایمن نگه داشتن سایتتان، لطفاً <a href=\"%2$s\">به تازه‌ترین نگارش وردپرس به‌روزرسانی نمایید</a>."
 
-#: wp-admin/about.php:305
+#: wp-admin/about.php:330
 msgid "https://make.wordpress.org/core/2023/07/18/wordpress-6-3-field-guide/"
 msgstr "https://make.wordpress.org/core/2023/07/18/wordpress-6-3-field-guide/"
 
 #. translators: 1: WordPress Release Notes link, 2: WordPress version number.
-#: wp-admin/about.php:322
+#: wp-admin/about.php:347
 msgid "<a href=\"%1$s\">Read the WordPress %2$s Release Notes</a> for more information on the included enhancements and issues fixed, installation information, developer notes and resources, release contributors, and the list of file changes in this release."
 msgstr "برای اطلاعات بیشتر دربارهٔ پیشرفت‌ها و مشکلات حل شده، اطلاعات نصب، یادداشت‌های توسعه‌دهنده و منابع، همکاری‌کنندگان در انتشار، و فهرست تغییرات پرونده در این نسخه <a href=\"%1$s\">یادداشت‌های انتشار وردپرس %2$s را بخوانید</a>."
 
 #. translators: %s: WordPress Field Guide link.
-#: wp-admin/about.php:304
+#: wp-admin/about.php:329
 msgid "Check out the latest version of the <a href=\"%s\">WordPress Field Guide</a>. It is overflowing with detailed developer notes to help you build with WordPress."
 msgstr "تازه‌ترین نگارش <a href=\"%s\">راهنمای زمینهٔ وردپرس</a> را بررسی نمایید. سرشار از یادداشت‌های دقیق توسعه‌دهنده است که به شما کمک می‌کند با وردپرس بسازید."
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:274
+#: wp-admin/about.php:299
 msgid "Learn more about WordPress %s"
 msgstr "درباره وردپرس %s بیشتر بدانید"
 
@@ -1345,64 +1349,64 @@ msgstr[0] ""
 "این امکان دسترسی به سایت‌های %2$s که <a href=\"%1$s\">شما دارای حق مدیر کل هستید </a> را می‌دهد.\n"
 "."
 
-#: wp-admin/includes/dashboard.php:2105
+#: wp-admin/includes/dashboard.php:2114
 msgid "Learn about block themes"
 msgstr "درباره پوسته‌های بلوکی بیاموزید"
 
-#: wp-admin/includes/dashboard.php:2104
+#: wp-admin/includes/dashboard.php:2113
 msgid "There is a new kind of WordPress theme, called a block theme, that lets you build the site you&#8217;ve always wanted &#8212; with blocks and styles."
 msgstr "نوع جدیدی از پوسته وردپرس وجود دارد، که به آن پوسته بلوک می‌گویند، آن به شما امکان می‌دهد سایتی را که همیشه می‌خواستید با بلوک‌ها و شیوه‌نامه‌ها بسازید."
 
-#: wp-admin/includes/dashboard.php:2103
+#: wp-admin/includes/dashboard.php:2112
 msgid "Discover a new way to build your site."
 msgstr "یک روش تازه کشف کنید تا سایت‌تان را بسازید."
 
-#: wp-admin/includes/dashboard.php:2100
+#: wp-admin/includes/dashboard.php:2109
 msgid "Tweak your site, or give it a whole new look! Get creative &#8212; how about a new color palette or font?"
 msgstr "سایت خود را تغییر دهید یا ظاهری کاملاً جدید به آن ببخشید! خلاق باشید &#8212; نظرتان درباره یک پالت رنگی یا فونت جدید چیست؟"
 
-#: wp-admin/includes/dashboard.php:2099
+#: wp-admin/includes/dashboard.php:2108
 msgid "Switch up your site&#8217;s look & feel with Styles"
 msgstr "ظاهر و حس سایت خود را با شیوه‌نامه‌ها تغییر دهید"
 
-#: wp-admin/includes/dashboard.php:2087
+#: wp-admin/includes/dashboard.php:2096
 msgid "Open the Customizer"
 msgstr "باز کردن سفارشی‌ساز"
 
-#: wp-admin/includes/dashboard.php:2085
+#: wp-admin/includes/dashboard.php:2094
 msgid "Configure your site&#8217;s logo, header, menus, and more in the Customizer."
 msgstr "آرم، سربرگ، فهرست‌ها و موارد دیگرِ سایت خود را در سفارشی‌ساز پیکربندی کنید."
 
-#: wp-admin/includes/dashboard.php:2084
+#: wp-admin/includes/dashboard.php:2093
 msgid "Start Customizing"
 msgstr "شروع سفارشی‌سازی"
 
-#: wp-admin/includes/dashboard.php:2082
+#: wp-admin/includes/dashboard.php:2091
 msgid "Open site editor"
 msgstr "باز کردن ویرایشگر سایت"
 
-#: wp-admin/includes/dashboard.php:2081
+#: wp-admin/includes/dashboard.php:2090
 msgid "Design everything on your site &#8212; from the header down to the footer, all using blocks and patterns."
 msgstr "هر چیزی را که می‌خواهید از سربرگ تا پاورقی با کمک بلوک‌ها و الگوها در سایتتان بسازید."
 
-#: wp-admin/includes/dashboard.php:2080
+#: wp-admin/includes/dashboard.php:2089
 msgid "Customize your entire site with block themes"
 msgstr "کل سایت‌تان را با پوسته‌های بلوک سفارشی‌سازی نمایید."
 
-#: wp-admin/includes/dashboard.php:2070
+#: wp-admin/includes/dashboard.php:2079
 msgid "Add a new page"
 msgstr "افزودن برگهٔ تازه"
 
-#: wp-admin/includes/dashboard.php:2069
+#: wp-admin/includes/dashboard.php:2078
 msgid "Block patterns are pre-configured block layouts. Use them to get inspired or create new pages in a flash."
 msgstr "الگوهای بلوک، طرح‌بندی بلوک‌های از پیش پیکربندی شده‌اند. از آنها برای الهام گرفتن یا ایجاد سریع برگه‌های جدید استفاده کنید."
 
-#: wp-admin/includes/dashboard.php:2068
+#: wp-admin/includes/dashboard.php:2077
 msgid "Author rich content with blocks and patterns"
 msgstr "نویسنده محتوای غنی با بلوک‌ها و الگوها"
 
 #. translators: %s: Current WordPress version.
-#: wp-admin/includes/dashboard.php:2056
+#: wp-admin/includes/dashboard.php:2065
 msgid "Learn more about the %s version."
 msgstr "دربارهٔ نگارش %s بیشتر بدانید."
 
@@ -1485,11 +1489,11 @@ msgstr "پیشخوان اولین جایی است که هر بار که وارد
 msgid "Welcome to your WordPress Dashboard!"
 msgstr "به پیشخوان وردپرس خودتان خوش آمدید!"
 
-#: wp-admin/includes/user.php:680
+#: wp-admin/includes/user.php:678
 msgid "The application ID must be a UUID."
 msgstr "شناسه برنامه باید یک UUID باشد."
 
-#: wp-admin/includes/dashboard.php:1375
+#: wp-admin/includes/dashboard.php:1384
 msgid "Select location"
 msgstr "انتخاب مکان"
 
@@ -1657,20 +1661,20 @@ msgstr "رمزگذاری داده‌های شخصی برای برون‌بری �
 msgid "The %s post meta must be an array."
 msgstr "%s متای نوشته باید یک آرایه باشد."
 
-#: wp-admin/includes/dashboard.php:1997
+#: wp-admin/includes/dashboard.php:2006
 msgid "Your site&#8217;s health is looking good, but there is still one thing you can do to improve its performance and security."
 msgstr "سلامت سایت شما به نظر خوب می‌رسد، اما اما هنوز یک چیز وجود دارد که شما می‌توانید با انجام آن عملکرد و امنیت سایت را افزایش دهید."
 
-#: wp-admin/includes/dashboard.php:1993
+#: wp-admin/includes/dashboard.php:2002
 msgid "Your site has a critical issue that should be addressed as soon as possible to improve its performance and security."
 msgstr "سایت شما دارای یک مشکل بحرانی است که برای بهبود عملکرد و امنیت باید به سرعت به آن رسیدگی شود."
 
 #. translators: %s: Browse Happy URL.
-#: wp-admin/includes/dashboard.php:1729
+#: wp-admin/includes/dashboard.php:1738
 msgid "Learn how to <a href=\"%s\" class=\"update-browser-link\">browse happy</a>"
 msgstr "یاد بگیرید چگونه <a href=\"%s\" class=\"update-browser-link\">خوشحال مرور کنید</a>"
 
-#: wp-admin/includes/dashboard.php:1696
+#: wp-admin/includes/dashboard.php:1705
 msgid "Internet Explorer does not give you the best WordPress experience. Switch to Microsoft Edge, or another more modern browser to get the most from your site."
 msgstr "اینترنت اکسپلورر بهترین تجربه وردپرس را به شما نمی‌دهد. برای استفاده بیشتر از سایت خود، به مایکروسافت اج یا یک مرورگر مدرن دیگر بروید."
 
@@ -1874,21 +1878,21 @@ msgstr "داده پیش‌فرض"
 msgid "The tool associates data stored in WordPress with a supplied email address, including profile data and comments."
 msgstr "این ابزار دادهٔ ذخیره شده در وردپرس را با یک نشانی ایمیل ارائه شده، از جمله دادهٔ شناسنامه و دیدگاه‌ها مرتبط می‌نماید."
 
-#: wp-admin/includes/dashboard.php:1471
+#: wp-admin/includes/dashboard.php:1480
 msgid "https://make.wordpress.org/community/organize-event-landing-page/"
 msgstr "https://make.wordpress.org/community/organize-event-landing-page/"
 
 #. translators: %s: Localized meetup organization documentation URL.
-#: wp-admin/includes/dashboard.php:1470
+#: wp-admin/includes/dashboard.php:1479
 msgid "Want more events? <a href=\"%s\">Help organize the next one</a>!"
 msgstr "رویدادهای بیشتری می‌خواهید؟ <a href=\"%s\">به سازماندهی بعدی کمک کنید</a>!"
 
 #. translators: %s: User's display name.
-#: wp-admin/includes/ajax-actions.php:5584
+#: wp-admin/includes/ajax-actions.php:5600
 msgid "A password reset link was emailed to %s."
 msgstr "یک پیوند بازنشانی رمز عبور ایمیل شد به %s."
 
-#: wp-admin/includes/ajax-actions.php:5574
+#: wp-admin/includes/ajax-actions.php:5590
 msgid "Cannot send password reset, permission denied."
 msgstr "ارسال بازنشانی رمز عبور امکان پذیر نیست، دسترسی مسدود شده است."
 
@@ -2007,7 +2011,7 @@ msgid "https://wordpress.org/documentation/article/update-services/"
 msgstr "https://wordpress.org/documentation/article/update-services/"
 
 #. translators: %s: The server PHP version.
-#: wp-admin/includes/dashboard.php:1874
+#: wp-admin/includes/dashboard.php:1883
 msgid "Your site is running on an outdated version of PHP (%s), which should be updated."
 msgstr "سایت شما یک نگارش قدیمی PHP (%s) را اجرا می‌نماید، که باید به‌روزرسانی شود."
 
@@ -2086,7 +2090,7 @@ msgstr "افزودن رمز عبور برنامه جدید"
 msgid "Required to create an Application Password, but not to update the user."
 msgstr "نیازمند ایجاد یک رمز عبور برنامه، ولی بدون به‌روزرسانی کاربر."
 
-#: wp-admin/about.php:343
+#: wp-admin/about.php:368
 msgid "Go to Updates"
 msgstr "رفتن به به‌روز رسانی‌ها"
 
@@ -2119,7 +2123,7 @@ msgstr "رفتن به بالا"
 #. examples with cities in your locale, but test that they match the expected
 #. location before including them. Use endonyms (native locale names) whenever
 #. possible.
-#: wp-admin/includes/dashboard.php:1437
+#: wp-admin/includes/dashboard.php:1446
 msgid "%s could not be located. Please try another nearby city. For example: Kansas City; Springfield; Portland."
 msgstr "نمی‌توان %s را پیدا کرد. لطفا شهری نزدیک به خود را انتخاب کنید. برای نمونه: تهران، اصفهان، مشهد."
 
@@ -2245,10 +2249,10 @@ msgstr "آخرین استفاده"
 
 #. translators: 1: The Site Health action that is no longer used by core. 2:
 #. The new function that replaces it.
-#: wp-admin/includes/ajax-actions.php:5312
-#: wp-admin/includes/ajax-actions.php:5345
-#: wp-admin/includes/ajax-actions.php:5378
-#: wp-admin/includes/ajax-actions.php:5428
+#: wp-admin/includes/ajax-actions.php:5328
+#: wp-admin/includes/ajax-actions.php:5361
+#: wp-admin/includes/ajax-actions.php:5394
+#: wp-admin/includes/ajax-actions.php:5444
 msgid "The Site Health check for %1$s has been replaced with %2$s."
 msgstr "بررسی سلامت سایت برای %1$s با %2$s جایگزین شده است."
 
@@ -2298,14 +2302,6 @@ msgstr "برخی از عناصر صفحه را می‌توان با استفاد
 #: wp-admin/includes/class-wp-screen.php:1116
 msgid "Screen elements"
 msgstr "المان‌های صفحه نمایش"
-
-#: wp-admin/includes/user.php:672
-msgid "The rejection URL must be served over a secure connection."
-msgstr "پیوند عدم پذیرش باید از طریق یک اتصال ایمن باشد."
-
-#: wp-admin/includes/user.php:661
-msgid "The success URL must be served over a secure connection."
-msgstr "پیوند موفقیت باید از طریق یک اتصال ایمن باشد."
 
 #. translators: Default privacy policy text.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:571
@@ -2482,7 +2478,7 @@ msgctxt "theme"
 msgid "Activate &#8220;%s&#8221;"
 msgstr "فعال‌سازی &#8220;%s&#8221;"
 
-#: wp-admin/includes/ajax-actions.php:5518
+#: wp-admin/includes/ajax-actions.php:5534
 msgid "Sorry, you are not allowed to modify plugins."
 msgstr "با عرض پوزش، شما اجازهٔ تغییر افزونه‌ها را ندارید."
 
@@ -2730,20 +2726,20 @@ msgctxt "plugin"
 msgid "<strong>Error:</strong> Current versions of WordPress (%1$s) and PHP (%2$s) do not meet minimum requirements for %3$s. The plugin requires WordPress %4$s and PHP %5$s."
 msgstr "<strong>خطا:</strong> نگارش فعلی وردپرس (%1$s) و PHP (%2$s) حداقل نیازمندی‌های لازم برای %3$s را ندارد. افزونه نیازمند وردپرس %4$s و PHP %5$s است."
 
-#: wp-admin/includes/ajax-actions.php:5540
+#: wp-admin/includes/ajax-actions.php:5556
 msgid "Invalid data. The item does not exist."
 msgstr "داده نامعتبر است. مورد وجود ندارد."
 
-#: wp-admin/includes/ajax-actions.php:5511
-#: wp-admin/includes/ajax-actions.php:5536
+#: wp-admin/includes/ajax-actions.php:5527
+#: wp-admin/includes/ajax-actions.php:5552
 msgid "Invalid data. Unknown type."
 msgstr "داده نامعتبر است. نوع ناشناخته است."
 
-#: wp-admin/includes/ajax-actions.php:5506
+#: wp-admin/includes/ajax-actions.php:5522
 msgid "Invalid data. Unknown state."
 msgstr "داده نامعتبر است. حالت ناشناخته است."
 
-#: wp-admin/includes/ajax-actions.php:5500
+#: wp-admin/includes/ajax-actions.php:5516
 msgid "Invalid data. No selected item."
 msgstr "داده نامعتبر است. موردی انتخاب نشده است."
 
@@ -2930,14 +2926,14 @@ msgstr "شما در حال بارگذاری یک نگارش قدیمی از اف
 #. translators: 1: Current WordPress version, 2: Version required by the
 #. uploaded plugin.
 #: wp-admin/includes/class-plugin-installer-skin.php:280
-#: wp-admin/includes/class-plugin-upgrader.php:476
+#: wp-admin/includes/class-plugin-upgrader.php:512
 msgid "Your WordPress version is %1$s, however the uploaded plugin requires %2$s."
 msgstr "نگارش وردپرس شما %1$s است، اما افزونه بارگذاری شده نیازمند %2$s است."
 
 #. translators: 1: Current PHP version, 2: Version required by the uploaded
 #. plugin.
 #: wp-admin/includes/class-plugin-installer-skin.php:268
-#: wp-admin/includes/class-plugin-upgrader.php:465
+#: wp-admin/includes/class-plugin-upgrader.php:501
 msgid "The PHP version on your server is %1$s, however the uploaded plugin requires %2$s."
 msgstr "نگارش PHP روی سرور شما %1$s است، در حالی که پوسته بارگذاری شده نیازمند %2$s است."
 
@@ -3201,29 +3197,29 @@ msgid "This localized version contains both the translation and various other lo
 msgstr "این نگارش بومی شده حاوی ترجمه و اصلاحات بومی‌سازی دیگر است."
 
 #. translators: 1: Number of issues. 2: URL to Site Health screen.
-#: wp-admin/includes/dashboard.php:2009
+#: wp-admin/includes/dashboard.php:2018
 msgid "Take a look at the <strong>%1$d item</strong> on the <a href=\"%2$s\">Site Health screen</a>."
 msgid_plural "Take a look at the <strong>%1$d items</strong> on the <a href=\"%2$s\">Site Health screen</a>."
 msgstr[0] "نگاهی بیاندازید به <strong>گزینه %1$d</strong> در <a href=\"%2$s\">صفحه سلامت سایت</a>."
 
-#: wp-admin/includes/dashboard.php:1999
+#: wp-admin/includes/dashboard.php:2008
 msgid "Your site&#8217;s health is looking good, but there are still some things you can do to improve its performance and security."
 msgstr "سلامتی سایت شما به نظر خوب است، اما هنوز مواردی وجود دارد که می توانید برای بهبود عملکرد و امنیت آن انجام دهید."
 
-#: wp-admin/includes/dashboard.php:1991
+#: wp-admin/includes/dashboard.php:2000
 msgid "Great job! Your site currently passes all site health checks."
 msgstr "کارت عالی بود! سایت شما درحال‎حاضر همه بررسی‎های سلامت سایت را گذراند."
 
-#: wp-admin/includes/dashboard.php:1995
+#: wp-admin/includes/dashboard.php:2004
 msgid "Your site has critical issues that should be addressed as soon as possible to improve its performance and security."
 msgstr "سایت شما دارای مسائل مهمی است که باید در اسرع وقت بهبود عملکرد و امنیت آن مورد بررسی قرار گیرد."
 
 #. translators: %s: URL to Site Health screen.
-#: wp-admin/includes/dashboard.php:1983
+#: wp-admin/includes/dashboard.php:1992
 msgid "Site health checks will automatically run periodically to gather information about your site. You can also <a href=\"%s\">visit the Site Health screen</a> to gather information about your site now."
 msgstr "بررسی سلام سایت بطور دوره‌ای اجرا می‌شود تا اطلاعات درباره سایت شما را جمع‌آوری کند. شما همچنین می‌توانید برای جمع‌آوری اطلاعات در مورد سایتتان هم‌اکنون <a href=\"%s\">صفحه سلامت سایت را مشاهده کنید</a>."
 
-#: wp-admin/includes/dashboard.php:1970
+#: wp-admin/includes/dashboard.php:1979
 msgid "No information yet&hellip;"
 msgstr "هنوز اطلاعاتی نیست&hellip;"
 
@@ -3473,7 +3469,7 @@ msgstr "<a href=\"https://wordpress.org/documentation/article/users-add-new-scre
 msgid "This page can show you every detail about the configuration of your WordPress website. For any improvements that could be made, see the <a href=\"%s\">Site Health Status</a> page."
 msgstr "این برگه می‌تواند همه جزییات درباره پیکربندی وب‌سایت وردپرسی شما را نشان دهد. برای هر بهبودی که می‌تواند ایجاد شود، برگهٔ <a href=\"%s\">وضعیت سلامت سایت</a> را مشاهده نمایید."
 
-#: wp-admin/includes/dashboard.php:1972 wp-admin/site-health.php:127
+#: wp-admin/includes/dashboard.php:1981 wp-admin/site-health.php:127
 msgid "Results are still loading&hellip;"
 msgstr "نتایج هنوز در حال بارگذاری هستند&hellip;"
 
@@ -3631,7 +3627,7 @@ msgstr "https://wordpress.org/documentation/article/introduction-to-blogging/#ma
 msgid "https://wordpress.org/documentation/article/introduction-to-blogging/#comments"
 msgstr "https://wordpress.org/documentation/article/introduction-to-blogging/#comments"
 
-#: wp-admin/includes/dashboard.php:2105
+#: wp-admin/includes/dashboard.php:2114
 msgid "https://wordpress.org/documentation/article/block-themes/"
 msgstr "https://wordpress.org/documentation/article/block-themes/"
 
@@ -4020,17 +4016,17 @@ msgid "The authenticity of %s could not be verified as signature verification is
 msgstr "اعتبار %1$s را نمی‌توان تایید کرد زیرا تاییدیه امضا در این سیستم در دسترس نیست."
 
 #. translators: %s: Eraser friendly name.
-#: wp-admin/includes/ajax-actions.php:5187
+#: wp-admin/includes/ajax-actions.php:5203
 msgid "Eraser callback is not valid: %s."
 msgstr "فراخوان پاک‌کننده معتبر نیست: %s"
 
 #. translators: %s: Eraser friendly name.
-#: wp-admin/includes/ajax-actions.php:5177
+#: wp-admin/includes/ajax-actions.php:5193
 msgid "Eraser does not include a callback: %s."
 msgstr "پاک‌کننده شامل یک فراخوان نیست: %s."
 
-#: wp-admin/includes/ajax-actions.php:4899
-#: wp-admin/includes/ajax-actions.php:5090
+#: wp-admin/includes/ajax-actions.php:4915
+#: wp-admin/includes/ajax-actions.php:5106
 msgid "Sorry, you are not allowed to perform this action."
 msgstr "با عرض پوزش، شما مجاز به انجام این عمل نیستید."
 
@@ -5247,11 +5243,11 @@ msgid "You cannot install because <a href=\"%1$s\">WordPress %2$s</a> requires P
 msgstr "وردپرس نمی‌تواند نصب شود زیرا <a href=\"%1$s\">وردپرس %2$s</a> نیازمند PHP نگارش %3$s یا بالاتر است. شما در حال اجرا بر روی PHP نگارش %4$s می‌باشید. "
 
 #: wp-admin/includes/class-wp-site-health.php:751
-#: wp-admin/includes/dashboard.php:1900
+#: wp-admin/includes/dashboard.php:1909
 msgid "Learn more about updating PHP"
 msgstr "اطلاعات بیشتر درباره به‌روزرسانی PHP"
 
-#: wp-admin/includes/dashboard.php:1881
+#: wp-admin/includes/dashboard.php:1890
 msgid "What is PHP and how does it affect my site?"
 msgstr "PHP چیست و چگونه بر روی سایت من تاثیر می‌گذارد؟"
 
@@ -5347,7 +5343,7 @@ msgstr "نمی‌تواند نصب شود"
 
 #. translators: %s: WordPress version number.
 #. translators: %s: WordPress version.
-#: wp-admin/about.php:325 wp-admin/includes/update.php:323
+#: wp-admin/about.php:350 wp-admin/includes/update.php:323
 #: wp-admin/index.php:119 wp-admin/install.php:249 wp-admin/update-core.php:94
 #: wp-admin/upgrade.php:81
 msgid "https://wordpress.org/documentation/wordpress-version/version-%s/"
@@ -5950,7 +5946,7 @@ msgid "Report generated for"
 msgstr "گزارش تولیدشده برای"
 
 #. translators: %s: Exporter array index.
-#: wp-admin/includes/ajax-actions.php:4983
+#: wp-admin/includes/ajax-actions.php:4999
 msgid "Exporter array at index %s does not include a friendly name."
 msgstr "آرایه صادر کننده در فهرست %s یک نام دوستانه را شامل نمی‌شود."
 
@@ -5962,72 +5958,72 @@ msgstr "باعرض پوزش، شما مجاز به حذف داده‌ها در �
 msgid "Sorry, you are not allowed to export personal data on this site."
 msgstr "با عرض پوزش، شما مجاز به صدور داده‌های شخصی در این سایت نمی‌باشید."
 
-#: wp-admin/includes/ajax-actions.php:5150
+#: wp-admin/includes/ajax-actions.php:5166
 msgid "Eraser index is out of range."
 msgstr "اندیس پاک‌کننده خارج از محدوده است."
 
-#: wp-admin/includes/ajax-actions.php:5109
+#: wp-admin/includes/ajax-actions.php:5125
 msgid "Missing eraser index."
 msgstr "فاقد اندیس پاک‌کننده."
 
 #. translators: %s: Exporter friendly name.
-#: wp-admin/includes/ajax-actions.php:5034
+#: wp-admin/includes/ajax-actions.php:5050
 msgid "Expected done (boolean) in response array from exporter: %s."
 msgstr "انتظار می‌رود انجام شده (بولین) در آرایه پاسخ از صادر کننده: %s."
 
 #. translators: %s: Exporter friendly name.
-#: wp-admin/includes/ajax-actions.php:5027
+#: wp-admin/includes/ajax-actions.php:5043
 msgid "Expected data array in response array from exporter: %s."
 msgstr "آرایه داده انتظار در آرایه پاسخ از صادر کننده: %s."
 
 #. translators: %s: Exporter friendly name.
-#: wp-admin/includes/ajax-actions.php:5020
+#: wp-admin/includes/ajax-actions.php:5036
 msgid "Expected data in response array from exporter: %s."
 msgstr "داده‌های انتظار در آرایه پاسخ از صادر کننده: %s."
 
 #. translators: %s: Exporter friendly name.
-#: wp-admin/includes/ajax-actions.php:5013
+#: wp-admin/includes/ajax-actions.php:5029
 msgid "Expected response as an array from exporter: %s."
 msgstr "انتظار پاسخ به عنوان یک آرایه از صادر کننده: %s."
 
 #. translators: %s: Exporter friendly name.
-#: wp-admin/includes/ajax-actions.php:4999
+#: wp-admin/includes/ajax-actions.php:5015
 msgid "Exporter callback is not a valid callback: %s."
 msgstr "پاسخگویی صادر کننده Callback معتبر نیست: %s."
 
 #. translators: %s: Exporter friendly name.
-#: wp-admin/includes/ajax-actions.php:4992
+#: wp-admin/includes/ajax-actions.php:5008
 msgid "Exporter does not include a callback: %s."
 msgstr "برون‌ریز دارای یک فراخوان بازگشتی نیست: %s."
 
 #. translators: %s: Exporter array index.
-#: wp-admin/includes/ajax-actions.php:4976
+#: wp-admin/includes/ajax-actions.php:4992
 msgid "Expected an array describing the exporter at index %s."
 msgstr "آرایه‌ای که صادر کننده را در فهرست قرار می‌دهد انتظار می‌رود %s."
 
-#: wp-admin/includes/ajax-actions.php:4962
+#: wp-admin/includes/ajax-actions.php:4978
 msgid "Exporter index is out of range."
 msgstr "اندیس برون‌بر خارج از محدوده است."
 
-#: wp-admin/includes/ajax-actions.php:4958
+#: wp-admin/includes/ajax-actions.php:4974
 msgid "Exporter index cannot be negative."
 msgstr "فهرست برون‌بر نمی‌تواند منفی باشد."
 
-#: wp-admin/includes/ajax-actions.php:4952
+#: wp-admin/includes/ajax-actions.php:4968
 msgid "An exporter has improperly used the registration filter."
 msgstr "یک صادر کننده نامناسب از فیلتر ثبت نام استفاده می‌کند."
 
-#: wp-admin/includes/ajax-actions.php:4923
-#: wp-admin/includes/ajax-actions.php:5115
+#: wp-admin/includes/ajax-actions.php:4939
+#: wp-admin/includes/ajax-actions.php:5131
 msgid "Missing page index."
 msgstr "فاقد اندیس برگه."
 
-#: wp-admin/includes/ajax-actions.php:4917
+#: wp-admin/includes/ajax-actions.php:4933
 msgid "Missing exporter index."
 msgstr "فاقد اندیس برون‌بر."
 
-#: wp-admin/includes/ajax-actions.php:4908
-#: wp-admin/includes/ajax-actions.php:5099
+#: wp-admin/includes/ajax-actions.php:4924
+#: wp-admin/includes/ajax-actions.php:5115
 msgid "Invalid request type."
 msgstr "نوع درخواست نامعتبر."
 
@@ -6155,7 +6151,7 @@ msgstr "برون‌بری داده‌های شخصی"
 msgid "Personal Data Export for %s"
 msgstr "برون ریزی اطلاعات شخصی برای %s"
 
-#: wp-admin/includes/ajax-actions.php:4913
+#: wp-admin/includes/ajax-actions.php:4929
 msgid "A valid email address must be given."
 msgstr "یک آدرس ایمیل معتبر باید داده شود."
 
@@ -6226,61 +6222,61 @@ msgstr "درخواست تأیید دوباره با موفقیت ارسال شد
 msgid "Unable to initiate confirmation request."
 msgstr "عدم توانایی در شروع درخواست تایید."
 
-#: wp-admin/includes/ajax-actions.php:4895
-#: wp-admin/includes/ajax-actions.php:5085
+#: wp-admin/includes/ajax-actions.php:4911
+#: wp-admin/includes/ajax-actions.php:5101
 msgid "Invalid request ID."
 msgstr "شناسه درخواست نامعتبر."
 
 #. translators: 1: Eraser friendly name, 2: Eraser array index.
-#: wp-admin/includes/ajax-actions.php:5259
+#: wp-admin/includes/ajax-actions.php:5275
 msgid "Expected done flag in response array from %1$s eraser (index %2$d)."
 msgstr "انتظار می‌رود پرچم انجام شده در پاسخ آرایه از %1$s پاک کن (فهرست %2$d)."
 
 #. translators: 1: Eraser friendly name, 2: Eraser array index.
-#: wp-admin/includes/ajax-actions.php:5248
+#: wp-admin/includes/ajax-actions.php:5264
 msgid "Expected messages key to reference an array in response array from %1$s eraser (index %2$d)."
 msgstr "پیام‌های مورد انتظار برای ارجاع یک آرایه در آرایه پاسخ از %1$s پاک کن (فهرست %2$d)."
 
 #. translators: 1: Eraser friendly name, 2: Eraser array index.
-#: wp-admin/includes/ajax-actions.php:5237
+#: wp-admin/includes/ajax-actions.php:5253
 msgid "Expected messages key in response array from %1$s eraser (index %2$d)."
 msgstr "پیام‌های منتظره در آرایه پاسخ از %1$s پاک کن (فهرست %2$d)."
 
 #. translators: 1: Eraser friendly name, 2: Eraser array index.
-#: wp-admin/includes/ajax-actions.php:5226
+#: wp-admin/includes/ajax-actions.php:5242
 msgid "Expected items_retained key in response array from %1$s eraser (index %2$d)."
 msgstr "اقلام مورد انتظار کلید در آرایه پاسخ از %1$s پاک کن (فهرست %2$d)."
 
 #. translators: 1: Eraser friendly name, 2: Eraser array index.
-#: wp-admin/includes/ajax-actions.php:5215
+#: wp-admin/includes/ajax-actions.php:5231
 msgid "Expected items_removed key in response array from %1$s eraser (index %2$d)."
 msgstr "منتظر کلید items_removed در آرایهٔ پاسخ از پاک‌کنندهٔ %1$s (شاخص %2$d)."
 
 #. translators: 1: Eraser friendly name, 2: Eraser array index.
-#: wp-admin/includes/ajax-actions.php:5204
+#: wp-admin/includes/ajax-actions.php:5220
 msgid "Did not receive array from %1$s eraser (index %2$d)."
 msgstr "آرایه‌ای از پاک کننده %1$s دریافت نشد (شاخص %2$d)."
 
 #. translators: %d: Eraser array index.
-#: wp-admin/includes/ajax-actions.php:5168
+#: wp-admin/includes/ajax-actions.php:5184
 msgid "Eraser array at index %d does not include a friendly name."
 msgstr "آرایه پاک کن در فهرست %d یک نام دوستانه را شامل نمی‌شود."
 
 #. translators: %d: Eraser array index.
-#: wp-admin/includes/ajax-actions.php:5163
+#: wp-admin/includes/ajax-actions.php:5179
 msgid "Expected an array describing the eraser at index %d."
 msgstr "انتظار می‌رود یک آرایه توصیف پاک کن در فهرست %d."
 
-#: wp-admin/includes/ajax-actions.php:4966
-#: wp-admin/includes/ajax-actions.php:5154
+#: wp-admin/includes/ajax-actions.php:4982
+#: wp-admin/includes/ajax-actions.php:5170
 msgid "Page index cannot be less than one."
 msgstr "اندیس برگه نمی‌تواند کمتر از یک باشد."
 
-#: wp-admin/includes/ajax-actions.php:5146
+#: wp-admin/includes/ajax-actions.php:5162
 msgid "Eraser index cannot be less than one."
 msgstr "اندیس پاک‌کننده نمی‌تواند کمتر از یک باشد."
 
-#: wp-admin/includes/ajax-actions.php:5105
+#: wp-admin/includes/ajax-actions.php:5121
 msgid "Invalid email address in request."
 msgstr "نشانی ایمیل نامعتبر در درخواست."
 
@@ -6594,7 +6590,7 @@ msgstr "تغییرات کد PHP شما، به دلیل یک خطا در خط %1$
 
 #. translators: If a Rosetta site exists (e.g. https://es.wordpress.org/news/),
 #. then use that. Otherwise, leave untranslated.
-#: wp-admin/includes/dashboard.php:1327
+#: wp-admin/includes/dashboard.php:1336
 msgctxt "Events and News dashboard widget"
 msgid "https://wordpress.org/news/"
 msgstr "https://wordpress.org/news/"
@@ -6688,7 +6684,7 @@ msgid "Image Rotation"
 msgstr "چرخش تصویر"
 
 #. translators: %s: Meetup organization documentation URL.
-#: wp-admin/includes/dashboard.php:1495
+#: wp-admin/includes/dashboard.php:1504
 msgid "There are no events scheduled near you at the moment. Would you like to <a href=\"%s\">organize a WordPress event</a>?"
 msgstr "در حال حاضر هیچ رویدادی نزدیک شما برنامه‌ریزی نشده است. آیا می‌خواهید <a href=\"%s\">یک رویداد وردپرسی را برنامه ریزی کنید</a>؟"
 
@@ -6702,38 +6698,38 @@ msgstr "ویرایش کاربر %s"
 msgid "Edit widget: %s"
 msgstr "ویرایش ابزارک: %s"
 
-#: wp-admin/includes/dashboard.php:1487 wp-admin/includes/dashboard.php:1496
+#: wp-admin/includes/dashboard.php:1496 wp-admin/includes/dashboard.php:1505
 msgid "https://make.wordpress.org/community/handbook/meetup-organizer/welcome/"
 msgstr "https://make.wordpress.org/community/handbook/meetup-organizer/welcome/"
 
 #. translators: 1: The city the user searched for, 2: Meetup organization
 #. documentation URL.
-#: wp-admin/includes/dashboard.php:1485
+#: wp-admin/includes/dashboard.php:1494
 msgid "There are no events scheduled near %1$s at the moment. Would you like to <a href=\"%2$s\">organize a WordPress event</a>?"
 msgstr "در حال حاضر هیچ رویدادی نزدیک %1$s برنامه‌ریزی نشده است. آیا می‌خواهید <a href=\"%2$s\">یک رویداد وردپرسی را برنامه ریزی کنید</a>؟ "
 
 #. translators: %s: The name of a city.
-#: wp-admin/includes/dashboard.php:1423
+#: wp-admin/includes/dashboard.php:1432
 msgid "Attend an upcoming event near %s."
 msgstr "در رویدادهای نزدیک %s شرکت کنید."
 
-#: wp-admin/includes/dashboard.php:1393
+#: wp-admin/includes/dashboard.php:1402
 msgid "Cincinnati"
 msgstr "تهران"
 
-#: wp-admin/includes/dashboard.php:1381
+#: wp-admin/includes/dashboard.php:1390
 msgid "City:"
 msgstr "شهر:"
 
-#: wp-admin/includes/dashboard.php:1315
+#: wp-admin/includes/dashboard.php:1324
 msgid "WordCamps"
 msgstr "وردکمپ‌ها"
 
-#: wp-admin/includes/dashboard.php:1303
+#: wp-admin/includes/dashboard.php:1312
 msgid "Meetups"
 msgstr "همایش‌ها"
 
-#: wp-admin/includes/dashboard.php:1352 wp-admin/js/dashboard.js:585
+#: wp-admin/includes/dashboard.php:1361 wp-admin/js/dashboard.js:585
 msgid "An error occurred. Please try again."
 msgstr "خطایی رخ داده است. لطفاً دوباره تلاش کنید."
 
@@ -6981,7 +6977,7 @@ msgstr "با عرض پوزش، شما اجازهٔ افزودن کاربر به 
 msgid "Sorry, you are not allowed to edit this changeset."
 msgstr "با عرض پوزش، شما اجازه ویرایش این تغییرات را ندارید."
 
-#: wp-admin/includes/ajax-actions.php:4313 wp-admin/update.php:207
+#: wp-admin/includes/ajax-actions.php:4329 wp-admin/update.php:207
 #: wp-admin/update.php:230
 msgid "Sorry, you are not allowed to update themes for this site."
 msgstr "با عرض پوزش، شما مجاز به به‌روزرسانی پوسته‌های این سایت نمی‌باشید. "
@@ -7103,7 +7099,7 @@ msgstr "نمونه‌کار"
 msgid "Photography"
 msgstr "عکاسی"
 
-#: wp-admin/includes/dashboard.php:1328 wp-admin/includes/theme.php:319
+#: wp-admin/includes/dashboard.php:1337 wp-admin/includes/theme.php:319
 msgid "News"
 msgstr "اخبار"
 
@@ -7202,37 +7198,37 @@ msgstr "با عرض پوزش، شما اجازهٔ ویرایش پیوندهای
 msgid "Sorry, you are not allowed to manage privacy options on this site."
 msgstr "با عرض پوزش، شما مجاز به مدیریت حریم خصوصی در این سایت نمی‌باشید."
 
-#: wp-admin/includes/ajax-actions.php:4738
+#: wp-admin/includes/ajax-actions.php:4754
 msgid "Plugin could not be deleted."
 msgstr "افزونه نمیتواند پاک شود."
 
-#: wp-admin/includes/ajax-actions.php:4592 wp-admin/update.php:29
+#: wp-admin/includes/ajax-actions.php:4608 wp-admin/update.php:29
 #: wp-admin/update.php:57 wp-admin/update.php:80
 msgid "Sorry, you are not allowed to update plugins for this site."
 msgstr "با عرض پوزش، شما مجاز به به‌روزرسانی افزونه‌ها برای این سایت نیستید."
 
-#: wp-admin/includes/ajax-actions.php:4468
-#: wp-admin/includes/ajax-actions.php:4577
-#: wp-admin/includes/ajax-actions.php:4685
+#: wp-admin/includes/ajax-actions.php:4484
+#: wp-admin/includes/ajax-actions.php:4593
+#: wp-admin/includes/ajax-actions.php:4701
 msgid "No plugin specified."
 msgstr "افزونه‌ای مشخص نشده."
 
-#: wp-admin/includes/ajax-actions.php:4444
+#: wp-admin/includes/ajax-actions.php:4460
 msgid "Theme could not be deleted."
 msgstr "پوسته نمی‌تواند پاک شود."
 
-#: wp-admin/includes/ajax-actions.php:4406
+#: wp-admin/includes/ajax-actions.php:4422
 msgid "Sorry, you are not allowed to delete themes on this site."
 msgstr "با عرض پوزش، شما اجازهٔ پاک کردن پوسته‌های این سایت را ندارید."
 
-#: wp-admin/includes/ajax-actions.php:4186 wp-admin/theme-install.php:16
+#: wp-admin/includes/ajax-actions.php:4202 wp-admin/theme-install.php:16
 #: wp-admin/update.php:258 wp-admin/update.php:300 wp-admin/update.php:334
 msgid "Sorry, you are not allowed to install themes on this site."
 msgstr "با عرض پوزش، شما اجازهٔ نصب پوسته‌ها در این سایت را ندارید."
 
-#: wp-admin/includes/ajax-actions.php:4173
-#: wp-admin/includes/ajax-actions.php:4299
-#: wp-admin/includes/ajax-actions.php:4394
+#: wp-admin/includes/ajax-actions.php:4189
+#: wp-admin/includes/ajax-actions.php:4315
+#: wp-admin/includes/ajax-actions.php:4410
 msgid "No theme specified."
 msgstr "پوسته‌ای مشخص نشده."
 
@@ -7529,12 +7525,12 @@ msgstr "قالب تاریخ"
 msgid "Taxonomy Template"
 msgstr "قالب رده"
 
-#: wp-admin/includes/dashboard.php:1743
+#: wp-admin/includes/dashboard.php:1752
 msgid "Dismiss the browser warning panel"
 msgstr "نادیده گرفتن کادر هشدار مرورگر"
 
 #. translators: Hidden accessibility text.
-#: wp-admin/includes/dashboard.php:1113
+#: wp-admin/includes/dashboard.php:1122
 msgid "View more comments"
 msgstr "دیدن دیدگاه‌های بیشتر"
 
@@ -7625,16 +7621,16 @@ msgctxt "attachment filter"
 msgid "Trash"
 msgstr "زباله‌دان"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:820
+#: wp-admin/includes/class-wp-comments-list-table.php:833
 msgid "Quick edit this comment inline"
 msgstr "ویرایش سریع دیدگاه به صورت توکار"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:808
+#: wp-admin/includes/class-wp-comments-list-table.php:821
 #: wp-admin/includes/dashboard.php:751
 msgid "Edit this comment"
 msgstr "ویرایش این دیدگاه"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:771
+#: wp-admin/includes/class-wp-comments-list-table.php:784
 msgid "Restore this comment from the spam"
 msgstr "بازیانی این دیدگاه از جفنگ‌ها"
 
@@ -7698,7 +7694,7 @@ msgid "(Currently set to: %s)"
 msgstr "(تنظیم کنونی: %s)"
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:373
+#: wp-admin/about.php:398
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "<strong>نگارش %s</strong> یک مشکل امنیتی را برطرف کرده است."
 
@@ -7710,15 +7706,15 @@ msgstr "https://fa.gravatar.com/"
 msgid "Profile Picture"
 msgstr "تصویر شناسنامه"
 
-#: wp-admin/about.php:370
+#: wp-admin/about.php:48 wp-admin/about.php:395
 msgid "Maintenance and Security Releases"
 msgstr "نگارش‌های تعمیراتی و امنیتی"
 
-#: wp-admin/about.php:367
+#: wp-admin/about.php:392
 msgid "Security Releases"
 msgstr "انتشارهای امنیتی"
 
-#: wp-admin/about.php:364
+#: wp-admin/about.php:389
 msgid "Maintenance Releases"
 msgstr "نگارش‌های تعمیراتی"
 
@@ -8109,7 +8105,7 @@ msgid "Network Active"
 msgstr "فعال در شبکه"
 
 #. translators: Hidden accessibility text.
-#: wp-admin/includes/class-wp-list-table.php:900
+#: wp-admin/includes/class-wp-list-table.php:914
 msgid "No pending comments"
 msgstr "دیدگاهی در انتظار بررسی نیست"
 
@@ -8255,7 +8251,7 @@ msgstr "دیدگاه‌ها (%s)"
 msgid "Comments (%1$s) on &#8220;%2$s&#8221;"
 msgstr "دیدگاه‌ها (%1$s) در &#8220;%2$s&#8221;"
 
-#: wp-admin/includes/ajax-actions.php:5528
+#: wp-admin/includes/ajax-actions.php:5544
 msgid "Sorry, you are not allowed to modify themes."
 msgstr "با عرض پوزش، شما مجاز به تغییر دادن پوسته‌ها نیستید."
 
@@ -8313,7 +8309,7 @@ msgid "You will need this password to log&nbsp;in. Please store it in a secure l
 msgstr "به این رمز برای ورود نیاز خواهید داشت. لطفاً آن را در مکان امنی نگهداری کنید."
 
 #. translators: Hidden accessibility text.
-#: wp-admin/includes/class-wp-list-table.php:867
+#: wp-admin/includes/class-wp-list-table.php:881
 msgid "No approved comments"
 msgstr "دیدگاه تاییدشده‌ای وجود ندارد"
 
@@ -8329,7 +8325,7 @@ msgid "%s approved comment"
 msgid_plural "%s approved comments"
 msgstr[0] "%s نظر تاییدشده"
 
-#: wp-admin/includes/ajax-actions.php:3997
+#: wp-admin/includes/ajax-actions.php:4013
 msgid "Image could not be processed."
 msgstr "تصویر نمی‌تواند پردازش شود."
 
@@ -8345,9 +8341,9 @@ msgstr "هنگام ویرایش پروندهٔ %1$s، مطمئن شوید که �
 
 #. translators: Hidden accessibility text.
 #: wp-admin/includes/class-wp-application-passwords-list-table.php:258
-#: wp-admin/includes/class-wp-comments-list-table.php:881
+#: wp-admin/includes/class-wp-comments-list-table.php:894
 #: wp-admin/includes/class-wp-list-table.php:650
-#: wp-admin/includes/class-wp-list-table.php:1773
+#: wp-admin/includes/class-wp-list-table.php:1787
 #: wp-admin/includes/update.php:957
 msgid "Show more details"
 msgstr "نمایش جزئیات بیشتر"
@@ -8743,11 +8739,11 @@ msgstr "یرای ساختن نام‌کاربری فقط از حروف الفب�
 msgid "Enable full-height editor and distraction-free functionality."
 msgstr "فعالسازی قابلیت ویرایشگر تمام‌صفحه و بدون مزاحم."
 
-#: wp-admin/includes/dashboard.php:1564
+#: wp-admin/includes/dashboard.php:1573
 msgid "https://planet.wordpress.org/feed/"
 msgstr "http://planet.wp-persian.com/feed/"
 
-#: wp-admin/includes/dashboard.php:1555 wp-admin/index.php:98
+#: wp-admin/includes/dashboard.php:1564 wp-admin/index.php:98
 msgid "https://planet.wordpress.org/"
 msgstr "http://planet.wp-persian.com/"
 
@@ -8765,15 +8761,15 @@ msgid "Filter by comment type"
 msgstr "پالایش بر اساس نوع دیدگاه"
 
 #. translators: %s: User's display name.
-#: wp-admin/includes/ajax-actions.php:3972
+#: wp-admin/includes/ajax-actions.php:3988
 msgid "%s has been logged out."
 msgstr "%s بیرون رفت."
 
-#: wp-admin/includes/ajax-actions.php:3968
+#: wp-admin/includes/ajax-actions.php:3984
 msgid "You are now logged out everywhere else."
 msgstr "هم‌اکنون از تمام دستگاه‌های دیگر بیرون رفته‌اید."
 
-#: wp-admin/includes/ajax-actions.php:3959
+#: wp-admin/includes/ajax-actions.php:3975
 msgid "Could not log out user sessions. Please try again."
 msgstr "نمی‌توان از نشست‌های کاربری بیرون رفت. لطفاً دوباره تلاش کنید."
 
@@ -9146,12 +9142,12 @@ msgid "If you would like to see more themes to choose from, click on the &#8220;
 msgstr "اگر علاقمندید پوسته‌های بیشتری برای انتخاب ببینید، روی دکمه «افزودن پوسته تازه» کلیک کنید سپس قادر خواهید بود در بین پوسته‌های اضافی از <a href=\"%s\">مخزن پوسته WordPress.org</a> گذاری داشته و جستجو کنید. پوسته‌ها در مخزن پوسته WordPress.org توسط اشخاص ثالث طراحی و توسعه داده شده‌اند و با پروانه‌ای که وردپرس استفاده می‌کند سازگار هستند. در ضمن، آنها رایگان هستند!"
 
 #. translators: 1: Number of megabytes, 2: Percentage.
-#: wp-admin/includes/dashboard.php:1662
+#: wp-admin/includes/dashboard.php:1671
 msgid "%1$s MB (%2$s%%) Space Used"
 msgstr "%1$s MB (%2$s%%) فضا استفاده شده است"
 
 #. translators: %s: Number of megabytes.
-#: wp-admin/includes/dashboard.php:1647
+#: wp-admin/includes/dashboard.php:1656
 msgid "%s MB Space Allowed"
 msgstr "%s مگابایت فضای مجاز"
 
@@ -9330,7 +9326,7 @@ msgid "<strong>Screen Options</strong> &mdash; Use the Screen Options tab to cho
 msgstr "<strong>تنظیمات صفحه نمایش</strong> &mdash; روی زبانهٔ تنظیمات صفحه نمایش کلیک کنید تا بخش‌هایی که در پیشخوان نمایش داده می‌شوند را انتخاب کنید."
 
 #. translators: Hidden accessibility text.
-#: wp-admin/includes/dashboard.php:1655 wp-admin/includes/dashboard.php:1671
+#: wp-admin/includes/dashboard.php:1664 wp-admin/includes/dashboard.php:1680
 msgid "Manage Uploads"
 msgstr "مدیریت بارگذاری‌ها"
 
@@ -9843,7 +9839,7 @@ msgid "To navigate between revisions, <strong>drag the slider handle left or rig
 msgstr "برای پیمایش میان رونوشت‌ها، <strong>لغزندهٔ پیمایشگر را به راست یا چپ بکشید</strong> یا <strong>از دکمه‌های «قبلی» و «بعدی» استفاده کنید.</strong>."
 
 #: wp-admin/customize.php:151 wp-admin/includes/class-wp-debug-data.php:438
-#: wp-admin/includes/dashboard.php:1161 wp-admin/includes/dashboard.php:1359
+#: wp-admin/includes/dashboard.php:1170 wp-admin/includes/dashboard.php:1368
 msgid "Loading&hellip;"
 msgstr "درحال بارگذاری&hellip;"
 
@@ -10307,7 +10303,7 @@ msgstr "نام‌کاربری شما در WordPress.org:"
 msgid "If you have marked plugins as favorites on WordPress.org, you can browse them here."
 msgstr "اگر در سایت WordPress.org افزونه‌ها را به علاقه‌مندی‌های خود اضافه کرده باشید می‌توانید آن‌ها را اینجا ببینید."
 
-#: wp-admin/includes/dashboard.php:2051
+#: wp-admin/includes/dashboard.php:2060
 msgid "Welcome to WordPress!"
 msgstr "به وردپرس فارسی خوش آمدید!"
 
@@ -10370,7 +10366,7 @@ msgid "Contextual Help Tab"
 msgstr "زبانه راهنمای مفهومی"
 
 #. translators: Hidden accessibility text.
-#: wp-admin/includes/class-wp-comments-list-table.php:902
+#: wp-admin/includes/class-wp-comments-list-table.php:915
 msgid "Select comment"
 msgstr "گزینش دیدگاه"
 
@@ -10557,7 +10553,7 @@ msgid "https://wordpress.org/about/"
 msgstr "https://wordpress.org/about/"
 
 #. translators: Hidden accessibility text.
-#: wp-admin/includes/class-wp-list-table.php:1376
+#: wp-admin/includes/class-wp-list-table.php:1390
 #: wp-admin/includes/nav-menu.php:811 wp-admin/includes/nav-menu.php:1106
 #: wp-admin/update-core.php:490 wp-admin/update-core.php:614
 #: wp-admin/update-core.php:666 wp-admin/update-core.php:790
@@ -10605,7 +10601,7 @@ msgid "Plugin"
 msgstr "افزونه"
 
 #: wp-admin/includes/class-wp-comments-list-table.php:373
-#: wp-admin/includes/class-wp-comments-list-table.php:782
+#: wp-admin/includes/class-wp-comments-list-table.php:795
 #: wp-admin/includes/class-wp-media-list-table.php:184
 #: wp-admin/includes/class-wp-media-list-table.php:778
 #: wp-admin/includes/class-wp-posts-list-table.php:438
@@ -11017,44 +11013,44 @@ msgstr "نمایش نوارابزار هنگام مشاهده سایت"
 
 #. translators: %s: HelpHub URL.
 #. translators: %s: Documentation URL.
-#: wp-admin/about.php:65 wp-admin/about.php:396
+#: wp-admin/about.php:65 wp-admin/about.php:90 wp-admin/about.php:421
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "برای اطلاعات بیشتر، <a href=\"%s\">یادداشت‌های انتشار</a> را ببینید."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:390
+#: wp-admin/about.php:53 wp-admin/about.php:415
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "<strong>نگارش %1$s</strong> چند مسئله امنیتی و %2$s ایراد دیگر را برطرف کرده است."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:384
+#: wp-admin/about.php:409
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "<strong>نگارش %1$s</strong> یک مسئله امنیتی و %2$s ایراد دیگر را برطرف کرده است."
 
 #. translators: 1: WordPress version number, 2: Plural number of bugs.
-#: wp-admin/about.php:53 wp-admin/about.php:378
+#: wp-admin/about.php:78 wp-admin/about.php:403
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "<strong>نگارش %1$s</strong> %2$s ایراد را برطرف کرده است."
 
 #. translators: %s: WordPress version number.
-#: wp-admin/about.php:375
+#: wp-admin/about.php:400
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "<strong>نگارش %s</strong> یک مسئله امنیتی را برطرف کرده است."
 
-#: wp-admin/about.php:369
+#: wp-admin/about.php:394
 msgid "Maintenance and Security Release"
 msgstr "انتشار امنیتی و تعمیراتی"
 
-#: wp-admin/about.php:366
+#: wp-admin/about.php:391
 msgid "Security Release"
 msgstr "انتشار امنیتی"
 
-#: wp-admin/about.php:48 wp-admin/about.php:363
+#: wp-admin/about.php:388
 msgid "Maintenance Release"
 msgstr "انتشار تعمیراتی"
 
@@ -11332,15 +11328,15 @@ msgid "Because this is a multisite installation, you may add accounts that alrea
 msgstr "به دلیل نصب وردپرس چندسایته، می‌توانید با وارد کردن نام‌کاربری یا ایمیل و تعیین نقش، حساب‌های کاربری موجود در شبکه را به آن بیافزایید. برای دسترسی به گزینه‌های بیشتر هم‌چون تغییر رمز عبور، شما باید مدیر شبکه باشید و در مسیر مدیر شبکه > همه‌ کاربران، از پیوندهایی که هنگام بردن موشواره روی نام کاربران ظاهر می‌شود برای ویرایش آن‌ها استفاده کنید."
 
 #. translators: %s: Version number.
-#: wp-admin/about.php:83
+#: wp-admin/about.php:108
 msgid "Welcome to WordPress %s"
 msgstr "به وردپرس %s خوش آمدید."
 
-#: wp-admin/about.php:350
+#: wp-admin/about.php:375
 msgid "Go to Dashboard &rarr; Home"
 msgstr "رفتن به پیشخوان &larr; خانه"
 
-#: wp-admin/about.php:343
+#: wp-admin/about.php:368
 msgid "Go to Dashboard &rarr; Updates"
 msgstr "رفتن به پیشخوان &larr; به‌روزرسانی‌ها"
 
@@ -11371,7 +11367,7 @@ msgstr ""
 msgid "Core Developer"
 msgstr "توسعه‌دهنده ارشد"
 
-#: wp-admin/includes/class-plugin-upgrader.php:456
+#: wp-admin/includes/class-plugin-upgrader.php:492
 msgid "No valid plugins were found."
 msgstr "هیچ افزونهٔ معتبری یافت نشد."
 
@@ -11437,7 +11433,7 @@ msgid "Tumblr"
 msgstr "تامبلر"
 
 #. translators: 1: Browser update URL, 2: Browser name, 3: Browse Happy URL.
-#: wp-admin/includes/dashboard.php:1735
+#: wp-admin/includes/dashboard.php:1744
 msgid "<a href=\"%1$s\" class=\"update-browser-link\">Update %2$s</a> or learn how to <a href=\"%3$s\" class=\"browse-happy-link\">browse happy</a>"
 msgstr "<a href=\"%1$s\" class=\"update-browser-link\">%2$s را به‌روز نمایید</a> یا چگونگی <a href=\"%3$s\" class=\"browse-happy-link\">مرور شاد</a> را بیاموزید."
 
@@ -11586,8 +11582,8 @@ msgstr "مدیرکل"
 #. translators: %s: Theme version number.
 #. translators: %s: WordPress version.
 #. translators: %s: Theme version.
-#: wp-admin/includes/ajax-actions.php:4602
-#: wp-admin/includes/ajax-actions.php:4645
+#: wp-admin/includes/ajax-actions.php:4618
+#: wp-admin/includes/ajax-actions.php:4661
 #: wp-admin/includes/class-wp-debug-data.php:971
 #: wp-admin/includes/class-wp-debug-data.php:1018
 #: wp-admin/includes/class-wp-debug-data.php:1340
@@ -11741,12 +11737,12 @@ msgid "Featured Image Header"
 msgstr "تصویر شاخص سربرگ"
 
 #. translators: %s: Browser name and link.
-#: wp-admin/includes/dashboard.php:1706
+#: wp-admin/includes/dashboard.php:1715
 msgid "It looks like you're using an old version of %s. For the best WordPress experience, please update your browser."
 msgstr "به نظر می‌رسد شما از نگارش قدیمی %s استفاده می‌کنید. برای این‌که تجربهٔ بهتری از کار با وردپرس داشته باشید، لطفاً مرورگر خود را به‌روزرسانی نمایید."
 
 #. translators: %s: Browser name and link.
-#: wp-admin/includes/dashboard.php:1700
+#: wp-admin/includes/dashboard.php:1709
 msgid "It looks like you're using an insecure version of %s. Using an outdated browser makes your computer unsafe. For the best WordPress experience, please update your browser."
 msgstr "به نظر می‌رسد شما از یک نگارش غیرایمن %s استفاده می‌کنید. استفاده از یک مرورگر منسوخ، رایانهٔ شما را ناامن می‌کند. برای اینکه بهترین تجربه‌ را از کار کردن با وردپرس داشته باشید، لطفاً مرورگر خود را به‌روزرسانی نمایید."
 
@@ -11893,7 +11889,7 @@ msgstr "شما ‌این کاربران را برای حذف نمودن مشخص
 msgid "%s Page Template"
 msgstr "%s قالب برگه"
 
-#: wp-admin/includes/ajax-actions.php:4707 wp-admin/plugins.php:624
+#: wp-admin/includes/ajax-actions.php:4723 wp-admin/plugins.php:624
 msgid "You cannot delete a plugin while it is active on the main site."
 msgstr "نمی‌توانید افزونه‌ای که در سایت اصلی فعال است را حذف نمایید."
 
@@ -12035,7 +12031,7 @@ msgstr "به‌روزرسانی افزونه"
 msgid "Theme updated successfully."
 msgstr "پوسته با موفقیت به‌روزرسانی شد."
 
-#: wp-admin/includes/ajax-actions.php:4373
+#: wp-admin/includes/ajax-actions.php:4389
 #: wp-admin/includes/class-theme-upgrader.php:63
 #: wp-admin/includes/class-theme-upgrader.php:100
 msgid "Theme update failed."
@@ -12046,7 +12042,7 @@ msgstr "به‌روزرسانی پوسته ناموفق بود."
 msgid "Plugin updated successfully."
 msgstr "افزونه با موفقیت به‌‌روز شد."
 
-#: wp-admin/includes/ajax-actions.php:4664
+#: wp-admin/includes/ajax-actions.php:4680
 #: wp-admin/includes/class-plugin-upgrader.php:64
 #: wp-admin/includes/class-plugin-upgrader.php:91
 msgid "Plugin update failed."
@@ -12176,8 +12172,8 @@ msgid "To perform the requested action, WordPress needs to access your web serve
 msgstr "برای انجام دادن عملیات موردنظر، وردپرس به اطلاعات اتصال به سرویس‌دهنده نیازمند است."
 
 #. translators: Hidden accessibility text.
-#: wp-admin/includes/class-wp-list-table.php:1058
-#: wp-admin/includes/class-wp-list-table.php:1067
+#: wp-admin/includes/class-wp-list-table.php:1072
+#: wp-admin/includes/class-wp-list-table.php:1081
 msgid "Current Page"
 msgstr "برگهٔ فعلی"
 
@@ -12213,11 +12209,11 @@ msgid "%s user"
 msgid_plural "%s users"
 msgstr[0] "%s کاربر"
 
-#: wp-admin/includes/dashboard.php:1531
+#: wp-admin/includes/dashboard.php:1540
 msgid "https://wordpress.org/news/feed/"
 msgstr "https://wordpress.org/news/feed/"
 
-#: wp-admin/includes/dashboard.php:1522
+#: wp-admin/includes/dashboard.php:1531
 msgid "https://wordpress.org/news/"
 msgstr "http://wp-persian.com/blog/"
 
@@ -12258,7 +12254,7 @@ msgstr "رفتن به برگهٔ افزونه‌ها"
 msgid "Click Save Menu to make pending menu items public."
 msgstr "برای نمایش گزینه‌های در حال انتظار فهرست، روی ذخیره فهرست کلیک کنید."
 
-#: wp-admin/includes/dashboard.php:1640
+#: wp-admin/includes/dashboard.php:1649
 msgid "Storage Space"
 msgstr "فضای ذخیره‌سازی"
 
@@ -12623,12 +12619,12 @@ msgstr "این کار تصویر سربرگ اصلی را حذف می‌کند. 
 msgid "Default Images"
 msgstr "تصاویر پیش‌فرض"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:791
+#: wp-admin/includes/class-wp-comments-list-table.php:804
 #: wp-admin/includes/dashboard.php:777
 msgid "Delete this comment permanently"
 msgstr "پاک کردن این دیدگاه برای همیشه"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:781
+#: wp-admin/includes/class-wp-comments-list-table.php:794
 msgid "Restore this comment from the Trash"
 msgstr "بازگردانی این دیدگاه از زباله‌دان"
 
@@ -12740,7 +12736,7 @@ msgstr "شما از نگارش %1$s استفاده می‌کنید. به نگا�
 msgid "Enabled"
 msgstr "فعال شد"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:772
+#: wp-admin/includes/class-wp-comments-list-table.php:785
 msgctxt "comment"
 msgid "Not Spam"
 msgstr "جفنگ نیست"
@@ -12749,7 +12745,7 @@ msgstr "جفنگ نیست"
 msgid "This will restore the original background image. You will not be able to restore any customizations."
 msgstr "این تصویر پس‌زمینه اصلی را بازنشانی می‌کند. تغییرات بازگشت‌پذیر نیست."
 
-#: wp-admin/includes/dashboard.php:1540
+#: wp-admin/includes/dashboard.php:1549
 msgid "WordPress Blog"
 msgstr "وبلاگ وردپرس"
 
@@ -13088,7 +13084,7 @@ msgstr "به‌روزرسانی‌های وردپرس"
 msgid "Edit menu item"
 msgstr "ویرایش گزینه فهرست"
 
-#: wp-admin/about.php:350 wp-admin/includes/network.php:148
+#: wp-admin/about.php:375 wp-admin/includes/network.php:148
 msgid "Go to Dashboard"
 msgstr "رفتن به پیشخوان"
 
@@ -13653,7 +13649,7 @@ msgstr "پرونده‌های افزونه"
 msgid "Select plugin to edit:"
 msgstr "افزونه‌ای را برای ویرایش برگزینید:"
 
-#: wp-admin/includes/ajax-actions.php:4875 wp-admin/plugin-editor.php:187
+#: wp-admin/includes/ajax-actions.php:4891 wp-admin/plugin-editor.php:187
 #: wp-admin/theme-editor.php:194
 msgid "File edited successfully."
 msgstr "پرونده به خوبی ویرایش شد."
@@ -14553,7 +14549,7 @@ msgctxt "column name"
 msgid "Title"
 msgstr "عنوان"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:821
+#: wp-admin/includes/class-wp-comments-list-table.php:834
 #: wp-admin/includes/class-wp-posts-list-table.php:1476
 #: wp-admin/includes/class-wp-terms-list-table.php:492
 msgid "Quick&nbsp;Edit"
@@ -15386,7 +15382,7 @@ msgstr "شیوه‌نامهٔ زبان‌های راست به چپ"
 msgid "Main Index Template"
 msgstr "قالب صفحه اصلی"
 
-#: wp-admin/includes/dashboard.php:1161 wp-admin/includes/dashboard.php:1348
+#: wp-admin/includes/dashboard.php:1170 wp-admin/includes/dashboard.php:1357
 msgid "This widget requires JavaScript."
 msgstr "این ابزارک نیازمند جاوا اسکریپت است."
 
@@ -15407,7 +15403,7 @@ msgstr "[در انتظار بررسی]"
 msgid "From %1$s on %2$s %3$s"
 msgstr "توسط %1$s در %2$s %3$s"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:800
+#: wp-admin/includes/class-wp-comments-list-table.php:813
 #: wp-admin/includes/class-wp-media-list-table.php:786
 #: wp-admin/includes/class-wp-posts-list-table.php:1496
 #: wp-admin/includes/dashboard.php:786
@@ -15415,36 +15411,36 @@ msgctxt "verb"
 msgid "Trash"
 msgstr "زباله‌دان"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:799
+#: wp-admin/includes/class-wp-comments-list-table.php:812
 #: wp-admin/includes/dashboard.php:785
 msgid "Move this comment to the Trash"
 msgstr "انتقال این دیدگاه به زباله‌دان"
 
 #. translators: "Mark as spam" link.
-#: wp-admin/includes/class-wp-comments-list-table.php:764
+#: wp-admin/includes/class-wp-comments-list-table.php:777
 #: wp-admin/includes/dashboard.php:769
 msgctxt "verb"
 msgid "Spam"
 msgstr "جفنگ"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:762
+#: wp-admin/includes/class-wp-comments-list-table.php:775
 #: wp-admin/includes/dashboard.php:767
 msgid "Mark this comment as spam"
 msgstr "نشانه‌گذاری این دیدگاه با عنوان جفنگ"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:830
+#: wp-admin/includes/class-wp-comments-list-table.php:843
 #: wp-admin/includes/dashboard.php:759
 msgid "Reply to this comment"
 msgstr "پاسخ دادن به‌این دیدگاه"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:727
-#: wp-admin/includes/class-wp-comments-list-table.php:752
+#: wp-admin/includes/class-wp-comments-list-table.php:740
+#: wp-admin/includes/class-wp-comments-list-table.php:765
 #: wp-admin/includes/dashboard.php:744
 msgid "Unapprove this comment"
 msgstr "نپذیرفتن این دیدگاه"
 
-#: wp-admin/includes/class-wp-comments-list-table.php:735
-#: wp-admin/includes/class-wp-comments-list-table.php:744
+#: wp-admin/includes/class-wp-comments-list-table.php:748
+#: wp-admin/includes/class-wp-comments-list-table.php:757
 #: wp-admin/includes/dashboard.php:736
 msgid "Approve this comment"
 msgstr "پذیرفتن این دیدگاه"
@@ -15457,7 +15453,7 @@ msgstr "پیکربندی"
 msgid "View all"
 msgstr "نمایش همه"
 
-#: wp-admin/includes/dashboard.php:1573
+#: wp-admin/includes/dashboard.php:1582
 msgid "Other WordPress News"
 msgstr "دیگر اخبار وردپرس"
 
@@ -15917,15 +15913,15 @@ msgid "Pings"
 msgstr "پینگ‌ها"
 
 #: wp-admin/includes/class-wp-comments-list-table.php:365
-#: wp-admin/includes/class-wp-comments-list-table.php:736
-#: wp-admin/includes/class-wp-comments-list-table.php:745
+#: wp-admin/includes/class-wp-comments-list-table.php:749
+#: wp-admin/includes/class-wp-comments-list-table.php:758
 #: wp-admin/includes/dashboard.php:737
 msgid "Approve"
 msgstr "پذیرفتن"
 
 #: wp-admin/includes/class-wp-comments-list-table.php:361
-#: wp-admin/includes/class-wp-comments-list-table.php:728
-#: wp-admin/includes/class-wp-comments-list-table.php:753
+#: wp-admin/includes/class-wp-comments-list-table.php:741
+#: wp-admin/includes/class-wp-comments-list-table.php:766
 #: wp-admin/includes/dashboard.php:745
 msgid "Unapprove"
 msgstr "نپذیرفتن"
@@ -15995,7 +15991,7 @@ msgid "View &#8220;%s&#8221;"
 msgstr "نمایش &#8220;%s&#8221;"
 
 #: wp-admin/edit-form-comment.php:242
-#: wp-admin/includes/class-wp-comments-list-table.php:792
+#: wp-admin/includes/class-wp-comments-list-table.php:805
 #: wp-admin/includes/class-wp-media-list-table.php:799
 #: wp-admin/includes/class-wp-posts-list-table.php:1506
 #: wp-admin/includes/dashboard.php:778 wp-admin/includes/media.php:1733

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-10 22:25:08+0000\n"
+"PO-Revision-Date: 2023-10-14 19:39:59+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -34,6 +34,18 @@ msgstr "برچسب محصول"
 msgctxt "block title"
 msgid "Taxonomy"
 msgstr "طبقه‌بندی"
+
+#: packages/woocommerce-blocks/assets/js/blocks/product-gallery/inner-blocks/product-gallery-large-image-next-previous/block.json
+#: packages/woocommerce-blocks/build/product-gallery-large-image-next-previous/block.json
+msgctxt "block description"
+msgid "Dispaly next and previous buttons."
+msgstr "نمایش دکمه‌های بعدی و قبلی."
+
+#: assets/client/admin/product-editor/blocks/blocks/product-taxonomy-field/block.json
+#: assets/client/admin/product-editor/blocks/taxonomy/block.json
+msgctxt "block description"
+msgid "A block that displays a taxonomy field, allowing searching, selection, and creation of new items"
+msgstr "بلوکی که یک فیلد طبقه بندی را نمایش می دهد و امکان جستجو، انتخاب و ایجاد موارد جدید را می دهد"
 
 #: src/Internal/Features/FeaturesController.php:137
 msgid "New, faster way to find extensions and themes for your WooCommerce store"
@@ -88,6 +100,10 @@ msgstr "همگام‌سازی فعال شد."
 msgid "Sync is already enabled."
 msgstr "همگام‌سازی قبلا فعال شده است."
 
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:737
+msgid "[Failed] Orders table could not be created."
+msgstr "[ناموفق] جدول سفارشات ایجاد نشد."
+
 #: src/Admin/Features/OnboardingTasks/Tasks/Appearance.php:40
 msgid "Choose your theme"
 msgstr "پوسته خود را انتخاب کنید"
@@ -117,6 +133,10 @@ msgstr "پوسته‌ای که در حال حاضر استفاده می‌کنی
 #: src/Admin/Features/OnboardingTasks/Tasks/Appearance.php:49
 msgid "Choose a theme that best fits your brand's look and feel, then make it your own. Change the colors, add your logo, and create pages."
 msgstr "پوسته‌ای را انتخاب کنید که به بهترین وجه با ظاهر و احساس برند شما مطابقت داشته باشد، سپس آن را برای خود بسازید. رنگ‌ها را تغییر دهید، لوگوی خود را اضافه کنید و برگه ایجاد کنید."
+
+#: src/Admin/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:57
+msgid "Template for the simple product form"
+msgstr "الگویی برای فرم ساده محصول"
 
 #: packages/woocommerce-blocks/assets/js/blocks/product-gallery/inner-blocks/product-gallery-thumbnails/block.json
 #: packages/woocommerce-blocks/build/product-gallery-thumbnails/block.json
@@ -358,6 +378,10 @@ msgstr "کل مالیات بر اقلام سفارش."
 msgid "Total price of items in the order."
 msgstr "قیمت کل اقلام سفارش."
 
+#: packages/woocommerce-blocks/src/StoreApi/Routes/V1/CheckoutOrder.php:106
+msgid "This order cannot be paid for."
+msgstr "این سفارش قابل پرداخت نیست."
+
 #: packages/woocommerce-blocks/patterns/store-info-alt-image-and-text.php:64
 msgid "About us"
 msgstr "درباره ما"
@@ -370,6 +394,14 @@ msgstr "تجربه عالی"
 #: packages/woocommerce-blocks/patterns/product-collections-newest-arrivals.php:30
 msgid "More new products"
 msgstr "محصولات جدید بیشتر"
+
+#: packages/woocommerce-blocks/patterns/social-follow-us-in-social-media.php:13
+msgid "Follow us on social media"
+msgstr "ما را در رسانه های اجتماعی دنبال کنید"
+
+#: packages/woocommerce-blocks/patterns/product-collections-newest-arrivals.php:18
+msgid "Our newest arrivals"
+msgstr "جدیدترین ورودی های ما"
 
 #: packages/woocommerce-blocks/patterns/hero-product-3-split.php:49
 msgid "Waterproof Membrane"
@@ -405,6 +437,61 @@ msgstr "نان داغ"
 #: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1149
 msgid "Post password."
 msgstr "رمز ِ عبور نوشته."
+
+#: includes/rest-api/Controllers/Telemetry/class-wc-rest-telemetry-controller.php:165
+msgid "Installation date of the WooCommerce mobile app."
+msgstr "تاریخ نصب اپلیکیشن موبایل ووکامرس."
+
+#: packages/woocommerce-blocks/patterns/featured-products-fresh-and-tasty.php:87
+msgid "Fresh Lettuce (Washed)"
+msgstr "کاهوی تازه (شسته شده)"
+
+#: packages/woocommerce-blocks/patterns/hero-product-3-split.php:85
+msgid "Sustainable Dyes"
+msgstr "رنگ های پایدار"
+
+#: packages/woocommerce-blocks/patterns/hero-product-3-split.php:53
+msgid "Never worry about the weather again. Keep yourself dry, warm, and looking stylish."
+msgstr "دیگر هرگز نگران آب و هوا نباشید. خود را خشک، گرم و شیک نگه دارید."
+
+#: packages/woocommerce-blocks/patterns/hero-product-3-split.php:23
+msgid "With high-quality materials and expert craftsmanship, our products are built to last and exceed your expectations."
+msgstr "محصولات ما با مواد با کیفیت بالا و مهارت های ماهرانه ساخته شده اند تا دوام داشته باشند و فراتر از انتظارات شما باشند."
+
+#: packages/woocommerce-blocks/patterns/footer-simple-menu-and-cart.php:18
+#: packages/woocommerce-blocks/patterns/footer-with-3-menus.php:50
+msgid "Search our store"
+msgstr "فروشگاه ما را جستجو کنید"
+
+#: packages/woocommerce-blocks/patterns/featured-products-fresh-and-tasty.php:57
+msgid "Fresh Organic Tomatoes"
+msgstr "گوجه فرنگی تازه ارگانیک"
+
+#. translators: %s WooCommerce link
+#: packages/woocommerce-blocks/patterns/footer-large-dark.php:83
+#: packages/woocommerce-blocks/patterns/footer-large.php:84
+#: packages/woocommerce-blocks/patterns/footer-simple-dark.php:57
+#: packages/woocommerce-blocks/patterns/footer-simple.php:57
+#: packages/woocommerce-blocks/patterns/footer-with-2-menus-dark.php:74
+#: packages/woocommerce-blocks/patterns/footer-with-2-menus.php:73
+msgid "Built with %s"
+msgstr "ساخته شده با %s"
+
+#: packages/woocommerce-blocks/patterns/hero-product-3-split.php:61
+msgid "Expert Craftsmanship"
+msgstr "صنعتگر خبره"
+
+#: packages/woocommerce-blocks/patterns/featured-products-fresh-and-tasty.php:117
+msgid "Russet Organic Potatoes"
+msgstr "سیب‌زمینی ارگانیک زنگارگون"
+
+#: packages/woocommerce-blocks/patterns/hero-product-3-split.php:77
+msgid "We use only the highest-quality materials in our products, ensuring that they look great and last for years to come."
+msgstr "ما در محصولات خود فقط از با کیفیت‌ترین مواد استفاده می‌کنیم و اطمینان حاصل می‌کنیم که آنها عالی به نظر برسند و برای سال‌های آینده دوام می‌آورند."
+
+#: packages/woocommerce-blocks/patterns/hero-product-3-split.php:65
+msgid "Our products are made with expert craftsmanship and attention to detail, ensuring that every stitch and seam is perfect."
+msgstr "محصولات ما با مهارت و توجه به جزئیات ساخته شده‌اند و اطمینان حاصل می‌کنیم که هر دوخت و دوز عالی باشد."
 
 #: packages/woocommerce-blocks/assets/js/blocks/customer-account/block.json
 #: packages/woocommerce-blocks/build/customer-account/block.json
@@ -1268,18 +1355,6 @@ msgctxt "block title"
 msgid "Product Reviews"
 msgstr "بررسی‌های محصول"
 
-#: packages/woocommerce-blocks/assets/js/atomic/blocks/product-elements/button/block.json
-#: packages/woocommerce-blocks/assets/js/blocks/mini-cart/mini-cart-contents/inner-blocks/mini-cart-cart-button-block/block.json
-#: packages/woocommerce-blocks/assets/js/blocks/mini-cart/mini-cart-contents/inner-blocks/mini-cart-checkout-button-block/block.json
-#: packages/woocommerce-blocks/assets/js/blocks/mini-cart/mini-cart-contents/inner-blocks/mini-cart-shopping-button-block/block.json
-#: packages/woocommerce-blocks/build/inner-blocks/mini-cart-cart-button-block/block.json
-#: packages/woocommerce-blocks/build/inner-blocks/mini-cart-checkout-button-block/block.json
-#: packages/woocommerce-blocks/build/inner-blocks/mini-cart-shopping-button-block/block.json
-#: packages/woocommerce-blocks/build/product-button/block.json
-msgctxt "block style label"
-msgid "Fill"
-msgstr "تو پر"
-
 #: assets/client/admin/product-editor/blocks/blocks/product-section/block.json
 #: assets/client/admin/product-editor/blocks/blocks/product-tab/block.json
 #: assets/client/admin/product-editor/blocks/section/block.json
@@ -1303,6 +1378,18 @@ msgstr "بخش"
 msgctxt "block keyword"
 msgid "price"
 msgstr "قیمت"
+
+#: packages/woocommerce-blocks/assets/js/atomic/blocks/product-elements/button/block.json
+#: packages/woocommerce-blocks/assets/js/blocks/mini-cart/mini-cart-contents/inner-blocks/mini-cart-cart-button-block/block.json
+#: packages/woocommerce-blocks/assets/js/blocks/mini-cart/mini-cart-contents/inner-blocks/mini-cart-checkout-button-block/block.json
+#: packages/woocommerce-blocks/assets/js/blocks/mini-cart/mini-cart-contents/inner-blocks/mini-cart-shopping-button-block/block.json
+#: packages/woocommerce-blocks/build/inner-blocks/mini-cart-cart-button-block/block.json
+#: packages/woocommerce-blocks/build/inner-blocks/mini-cart-checkout-button-block/block.json
+#: packages/woocommerce-blocks/build/inner-blocks/mini-cart-shopping-button-block/block.json
+#: packages/woocommerce-blocks/build/product-button/block.json
+msgctxt "block style label"
+msgid "Fill"
+msgstr "تو پر"
 
 #: assets/client/admin/product-editor/blocks/blocks/product-name-field/block.json
 #: assets/client/admin/product-editor/blocks/name/block.json
@@ -1614,18 +1701,6 @@ msgctxt "block keyword"
 msgid "inventory"
 msgstr "موجودی کالا"
 
-#: assets/client/admin/product-editor/blocks/blocks/product-checkbox-field/block.json
-#: assets/client/admin/product-editor/blocks/checkbox/block.json
-msgctxt "block keyword"
-msgid "checkbox"
-msgstr "چک‌باکس"
-
-#: assets/client/admin/product-editor/blocks/blocks/product-checkbox-field/block.json
-#: assets/client/admin/product-editor/blocks/checkbox/block.json
-msgctxt "block description"
-msgid "The product checkbox."
-msgstr "چک باکس محصول"
-
 #: packages/woocommerce-blocks/assets/js/atomic/blocks/product-elements/button/block.json
 #: packages/woocommerce-blocks/assets/js/blocks/mini-cart/mini-cart-contents/inner-blocks/mini-cart-cart-button-block/block.json
 #: packages/woocommerce-blocks/assets/js/blocks/mini-cart/mini-cart-contents/inner-blocks/mini-cart-checkout-button-block/block.json
@@ -1637,6 +1712,18 @@ msgstr "چک باکس محصول"
 msgctxt "block style label"
 msgid "Outline"
 msgstr "خارج خط"
+
+#: assets/client/admin/product-editor/blocks/blocks/product-checkbox-field/block.json
+#: assets/client/admin/product-editor/blocks/checkbox/block.json
+msgctxt "block keyword"
+msgid "checkbox"
+msgstr "چک‌باکس"
+
+#: assets/client/admin/product-editor/blocks/blocks/product-checkbox-field/block.json
+#: assets/client/admin/product-editor/blocks/checkbox/block.json
+msgctxt "block description"
+msgid "The product checkbox."
+msgstr "چک باکس محصول"
 
 #: assets/client/admin/product-editor/blocks/blocks/product-checkbox-field/block.json
 #: assets/client/admin/product-editor/blocks/checkbox/block.json
@@ -2580,10 +2667,6 @@ msgstr "محصولات خود را در مقابل Pinners در جستجوی ا�
 msgid "Attempted to determine the edit URL for order %d, however the order does not exist."
 msgstr "تلاش برای تعیین URL ویرایش برای سفارش %d، اما ترتیب وجود ندارد."
 
-#: packages/woocommerce-blocks/patterns/store-info-alt-image-and-text.php:72
-msgid "We specialize in limited collections of handmade tableware. We collaborate with restaurants and cafes to create unique items that complement the menu perfectly. Please get in touch if you want to know more about our process and pricing."
-msgstr "ما در مجموعه های محدودی از ظروف دست ساز تخصص داریم. ما با رستوران‌ها و کافه‌ها همکاری می‌کنیم تا آیتم‌های منحصربه‌فردی ایجاد کنیم که کاملاً مکمل منو هستند. اگر می خواهید در مورد فرآیند و قیمت ما بیشتر بدانید، لطفا با ما تماس بگیرید."
-
 #: packages/woocommerce-blocks/patterns/store-info-alt-image-and-text.php:68
 msgid "Marl is an independent studio and artisanal gallery"
 msgstr "Marl یک استودیو مستقل و گالری صنایع دستی است"
@@ -2591,6 +2674,10 @@ msgstr "Marl یک استودیو مستقل و گالری صنایع دستی ا
 #: packages/woocommerce-blocks/patterns/store-info-alt-image-and-text.php:42
 msgid "Earthy, organic feel."
 msgstr "احساس خاکی و ارگانیک."
+
+#: packages/woocommerce-blocks/patterns/store-info-alt-image-and-text.php:72
+msgid "We specialize in limited collections of handmade tableware. We collaborate with restaurants and cafes to create unique items that complement the menu perfectly. Please get in touch if you want to know more about our process and pricing."
+msgstr "ما در مجموعه های محدودی از ظروف دست ساز تخصص داریم. ما با رستوران‌ها و کافه‌ها همکاری می‌کنیم تا آیتم‌های منحصربه‌فردی ایجاد کنیم که کاملاً مکمل منو هستند. اگر می خواهید در مورد فرآیند و قیمت ما بیشتر بدانید، لطفا با ما تماس بگیرید."
 
 #: packages/woocommerce-blocks/patterns/store-info-alt-image-and-text.php:33
 msgid "All items are 100% hand-made, using the potter’s wheel or traditional techniques."
@@ -3073,6 +3160,10 @@ msgstr "در مرورگر باز کنید"
 #: includes/cli/class-wc-cli-com-command.php:118
 msgid "Are you sure you want to disconnect your store from WooCommerce.com?"
 msgstr "آیا مطمئنید که می‌خواهید ارتباط فروشگاه خود را با WooCommerce.com قطع کنید؟"
+
+#: packages/woocommerce-blocks/src/Domain/Bootstrap.php:184
+msgid "The WooCommerce Blocks plugin requires a more recent version of WooCommerce and has been deactivated. Please update to the latest version of WooCommerce."
+msgstr "افزونه بلوک های ووکامرس به نسخه جدیدتر ووکامرس نیاز دارد و غیرفعال شده است. لطفا به آخرین نسخه ووکامرس به روز رسانی کنید."
 
 #: i18n/states.php:177
 msgid "Sofia District"
@@ -3683,6 +3774,10 @@ msgctxt "review"
 msgid "Not Spam"
 msgstr "هرزنامه نیست"
 
+#: src/Internal/Admin/ProductReviews/ReviewsCommentsOverrides.php:89
+msgid "Product reviews can now be managed from Products > Reviews."
+msgstr "اکنون می‌توانید نقد و بررسی‌های محصول را از محصولات > نقد و بررسی‌ها مدیریت کنید."
+
 #. translators: %1$s: a purchased product name
 #: src/Admin/Features/OnboardingTasks/Tasks/Purchase.php:71
 msgid "You added %1$s"
@@ -3691,6 +3786,10 @@ msgstr "شما %1$s را اضافه کردید"
 #: src/Admin/Features/OnboardingTasks/Tasks/Tax.php:71
 msgid "Set up tax rates"
 msgstr "نرخ‌های مالیات را تنظیم کنید"
+
+#: packages/woocommerce-blocks/woocommerce-gutenberg-products-block.php:281
+msgid "You have WooCommerce Blocks installed, but the WooCommerce bundled version is running because it is more up-to-date. This may cause unexpected compatibility issues. Please update the WooCommerce Blocks plugin."
+msgstr "شما بلوک‌های ووکامرس را نصب کرده‌اید، اما نسخه داخلی ووکامرس در حال اجرا است زیرا به‌روزتر است. این ممکن است باعث مشکلات سازگاری غیرمنتظره شود. لطفا افزونه بلوک‌های ووکامرس را به‌روز کنید."
 
 #: packages/woocommerce-blocks/assets/js/blocks/featured-items/featured-product/block.json
 #: packages/woocommerce-blocks/build/featured-product/block.json
@@ -3828,6 +3927,14 @@ msgstr "این بخش جزئیات مدیریت WC را نشان می دهد."
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:468
 msgid "Infinite loop detected, aborting. No errors found."
 msgstr "حلقه بی‌نهایت شناسایی شد، در حال متوقف کردن. هیچ خطایی پیدا نشد."
+
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:370
+msgid "There are no orders to verify, aborting."
+msgstr "هیچ دستوری برای تأیید وجود ندارد، لغو می‌شود."
+
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:165
+msgid "There are no orders to sync, aborting."
+msgstr "هیچ دستوری برای همگام‌سازی وجود ندارد، لغو می‌شود."
 
 #: packages/woocommerce-blocks/assets/js/blocks/cart/inner-blocks/cart-items-block/block.json
 #: packages/woocommerce-blocks/assets/js/blocks/checkout/inner-blocks/checkout-order-summary-cart-items/block.json
@@ -4295,6 +4402,12 @@ msgstr "فایل قابل دانلود %s نمی تواند استفاده شو�
 msgid "Headers already sent when generating download error message."
 msgstr "Headers already sent when generating download error message."
 
+#. translators: %1$s and %3$s are HTML (opening link tags). %2$s is also HTML
+#. (closing link tag).
+#: includes/admin/views/html-notice-download-dir-sync-complete.php:20
+msgid "The %1$sApproved Product Download Directories list%2$s has been updated. To protect your site, please review the list and make any changes that might be required. For more information, please refer to %3$sthis guide%2$s."
+msgstr "فهرست %1$s فهرست راهنماهای دانلود محصول تأییدشده%2$s به‌روزرسانی شده است. برای محافظت از سایت خود، لطفاً فهرست را مرور کنید و هر گونه تغییری که ممکن است لازم باشد را انجام دهید. برای اطلاعات بیشتر، لطفاً به %3$sاین راهنما%2$s مراجعه کنید."
+
 #: includes/admin/views/html-admin-page-status-report.php:746
 msgid "Is your site enforcing the use of Approved Product Download Directories?"
 msgstr "آیا سایت شما از دایرکتوری های دانلود محصول تایید شده استفاده می کند؟"
@@ -4302,12 +4415,6 @@ msgstr "آیا سایت شما از دایرکتوری های دانلود مح�
 #: includes/admin/views/html-admin-page-status-report.php:745
 msgid "Enforce Approved Product Download Directories"
 msgstr "دایرکتوری های دانلود محصول تایید شده را اجرا کنید"
-
-#. translators: %1$s and %3$s are HTML (opening link tags). %2$s is also HTML
-#. (closing link tag).
-#: includes/admin/views/html-notice-download-dir-sync-complete.php:20
-msgid "The %1$sApproved Product Download Directories list%2$s has been updated. To protect your site, please review the list and make any changes that might be required. For more information, please refer to %3$sthis guide%2$s."
-msgstr "فهرست %1$s فهرست راهنماهای دانلود محصول تأییدشده%2$s به‌روزرسانی شده است. برای محافظت از سایت خود، لطفاً فهرست را مرور کنید و هر گونه تغییری که ممکن است لازم باشد را انجام دهید. برای اطلاعات بیشتر، لطفاً به %3$sاین راهنما%2$s مراجعه کنید."
 
 #. translators: Error code
 #: includes/admin/class-wc-admin-addons.php:225
@@ -4389,11 +4496,11 @@ msgstr "اعلان PDT برای حساب دیگر دریافت شد: %1$s. شن�
 msgid "Received PDT notification for order %1$d on endpoint for order %2$d."
 msgstr "اعلان PDT برای سفارش %1$d در نقطه پایانی برای سفارش %2$d دریافت شد."
 
-#: packages/woocommerce-blocks/assets/js/blocks/mini-cart/mini-cart-contents/inner-blocks/mini-cart-items-block/block.json
-#: packages/woocommerce-blocks/build/inner-blocks/mini-cart-items-block/block.json
+#: packages/woocommerce-blocks/assets/js/blocks/checkout/block.json
+#: packages/woocommerce-blocks/build/checkout/block.json
 msgctxt "block title"
-msgid "Mini-Cart Items"
-msgstr "موارد سبد خرید کوچک"
+msgid "Checkout"
+msgstr "تسویه حساب"
 
 #: packages/woocommerce-blocks/assets/js/atomic/blocks/product-elements/add-to-cart-form/block.json
 #: packages/woocommerce-blocks/assets/js/atomic/blocks/product-elements/average-rating/block.json
@@ -4485,11 +4592,11 @@ msgctxt "block keyword"
 msgid "WooCommerce"
 msgstr "ووکامرس"
 
-#: packages/woocommerce-blocks/assets/js/blocks/checkout/block.json
-#: packages/woocommerce-blocks/build/checkout/block.json
+#: packages/woocommerce-blocks/assets/js/blocks/mini-cart/mini-cart-contents/inner-blocks/mini-cart-items-block/block.json
+#: packages/woocommerce-blocks/build/inner-blocks/mini-cart-items-block/block.json
 msgctxt "block title"
-msgid "Checkout"
-msgstr "تسویه حساب"
+msgid "Mini-Cart Items"
+msgstr "موارد سبد خرید کوچک"
 
 #: packages/woocommerce-blocks/assets/js/blocks/checkout/block.json
 #: packages/woocommerce-blocks/build/checkout/block.json
@@ -4566,6 +4673,18 @@ msgstr "تعداد این کالا برای افزودن به سبد خرید"
 msgid "Changing platforms might seem like a big hurdle to overcome, but it is easier than you might think to move your products, customers, and orders to WooCommerce. This article will help you with going through this process."
 msgstr "تغییر پلتفرم‌ها ممکن است مانع بزرگی برای غلبه بر آن به نظر برسد، اما انتقال محصولات، مشتریان و سفارشاتتان به ووکامرس آسان تر از آن چیزی است که فکر می‌کنید. این مقاله به شما کمک می‌کند تا این روند را طی کنید."
 
+#: i18n/states.php:390
+msgid "Hesse"
+msgstr "Hesse"
+
+#: i18n/states.php:389
+msgid "Hamburg"
+msgstr "Hamburg"
+
+#: i18n/states.php:388
+msgid "Bremen"
+msgstr "Bremen"
+
 #: i18n/states.php:387
 msgid "Brandenburg"
 msgstr "Brandenburg"
@@ -4617,18 +4736,6 @@ msgstr "Rhineland-Palatinate"
 #: i18n/states.php:393
 msgid "North Rhine-Westphalia"
 msgstr "North Rhine-Westphalia"
-
-#: i18n/states.php:390
-msgid "Hesse"
-msgstr "Hesse"
-
-#: i18n/states.php:389
-msgid "Hamburg"
-msgstr "Hamburg"
-
-#: i18n/states.php:388
-msgid "Bremen"
-msgstr "Bremen"
 
 #: src/Internal/Admin/Notes/MagentoMigration.php:86
 msgid "How to Migrate from Magento to WooCommerce"
@@ -5400,6 +5507,11 @@ msgstr "فهرست کارهای منسوخ شده از فیلتر سمت سرو�
 msgid "This is an order notification sent to customers containing order details after an order is placed on-hold from Pending, Cancelled or Failed order status."
 msgstr "این یک اعلان سفارش است که حاوی جزئیات سفارش پس از توقف سفارش از وضعیت سفارش در حال تعلیق، لغو شده یا ناموفق برای مشتریان ارسال می‌شود."
 
+#. translators: 1: opening product link tag. 2: closing link tag
+#: src/Internal/Admin/RemoteFreeExtensions/DefaultFreeExtensions.php:101
+msgid "Drive sales with %1$sGoogle Listings and Ads%2$s"
+msgstr "هدایت فروش‌ها با %1$sGoogle Listings and Ads%2$s"
+
 #: i18n/states.php:302
 msgid "Valparaíso"
 msgstr "Valparaíso"
@@ -5950,6 +6062,10 @@ msgstr "refund_returns"
 #: includes/admin/notes/class-wc-notes-refund-returns.php:72
 msgid "Edit page"
 msgstr "ویرایش برگه"
+
+#: src/Internal/Features/FeaturesController.php:99
+msgid "Enable WooCommerce Analytics"
+msgstr "فعال‌سازی تجزیه و تحلیل ووکامرس"
 
 #: includes/class-wc-privacy-erasers.php:66
 #: includes/class-wc-privacy-exporters.php:205
@@ -7296,6 +7412,10 @@ msgstr "مجموعه نتایج را به مواردی محدود کنید که 
 #: src/Admin/API/Reports/Controller.php:53
 msgid "Variations detailed reports."
 msgstr "گزارش‌های دقیق متغیرها."
+
+#: src/Internal/Features/FeaturesController.php:106
+msgid "Add the new WooCommerce navigation experience to the dashboard"
+msgstr "افزودن تجربه ناوبری جدید ووکامرس به پیشخوان"
 
 #: includes/admin/class-wc-admin-addons.php:656
 msgid "Payments made simple, with no monthly fees &mdash; exclusively for WooCommerce stores."
@@ -10277,6 +10397,10 @@ msgstr "فروشگاه شما برای ارائه محصولات دیجیتال 
 #: assets/client/admin/chunks/shipping-recommendations.js:1
 msgid "Get started"
 msgstr "شروع"
+
+#: src/Admin/Features/OnboardingTasks/Tasks/Appearance.php:70
+msgid "Choose theme"
+msgstr "انتخاب پوسته"
 
 #: src/Internal/Admin/RemoteFreeExtensions/DefaultFreeExtensions.php:167
 msgid "Send targeted campaigns, recover abandoned carts and much more with Mailchimp."
@@ -29978,6 +30102,18 @@ msgid "Coupon"
 msgid_plural "Coupons"
 msgstr[0] "کد تخفیف"
 
+#. translators: %s: Attribute name.
+#: includes/class-wc-cart.php:1126
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/CartController.php:1254
+msgid "%s is a required field"
+msgid_plural "%s are required fields"
+msgstr[0] "%s یک فیلد الزامی است"
+
+#. translators: %s: product name
+#: includes/class-wc-cart-session.php:177
+msgid "%s has been removed from your cart because it can no longer be purchased. Please contact us if you need assistance."
+msgstr "%s از سبد خرید شما به دلیل اینکه دیگر قادر به خریداری آن نیستیند حذف شده است. اگر نیاز به کمکی دارید با ما در تماس باشید"
+
 #. translators: %s number of products in cart.
 #. translators: %d is the count of products.
 #: packages/woocommerce-blocks/src/BlockTypes/ProductCategories.php:397
@@ -29997,18 +30133,6 @@ msgstr[0] "کد تخفیف"
 msgid "%d product"
 msgid_plural "%d products"
 msgstr[0] "%d محصول"
-
-#. translators: %s: Attribute name.
-#: includes/class-wc-cart.php:1126
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/CartController.php:1254
-msgid "%s is a required field"
-msgid_plural "%s are required fields"
-msgstr[0] "%s یک فیلد الزامی است"
-
-#. translators: %s: product name
-#: includes/class-wc-cart-session.php:177
-msgid "%s has been removed from your cart because it can no longer be purchased. Please contact us if you need assistance."
-msgstr "%s از سبد خرید شما به دلیل اینکه دیگر قادر به خریداری آن نیستیند حذف شده است. اگر نیاز به کمکی دارید با ما در تماس باشید"
 
 #: includes/admin/views/html-admin-page-status-report.php:62
 msgid "The root URL of your site."
@@ -36525,12 +36649,6 @@ msgstr "امکان دسترسی وجود ندارد - احتمالا کاربر 
 msgid "Reports"
 msgstr "گزارش‌ها"
 
-#. translators: %s: order count
-#: includes/admin/class-wc-admin-dashboard.php:335
-msgid "<strong>%s product</strong> out of stock"
-msgid_plural "<strong>%s products</strong> out of stock"
-msgstr[0] "<strong>%s محصول</strong> در انبار موجود نیست"
-
 #: includes/admin/importers/views/html-csv-import-done.php:77
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:259
 #: includes/admin/meta-boxes/views/html-order-items.php:407
@@ -36566,6 +36684,12 @@ msgstr[0] "<strong>%s محصول</strong> در انبار موجود نیست"
 msgid "Product"
 msgid_plural "Products"
 msgstr[0] "محصول"
+
+#. translators: %s: order count
+#: includes/admin/class-wc-admin-dashboard.php:335
+msgid "<strong>%s product</strong> out of stock"
+msgid_plural "<strong>%s products</strong> out of stock"
+msgstr[0] "<strong>%s محصول</strong> در انبار موجود نیست"
 
 #. translators: %s: order count
 #: includes/admin/class-wc-admin-dashboard.php:324
@@ -36632,6 +36756,10 @@ msgstr "چینش فهرست متغیرها (تعیین موقعیت در لیس�
 #: includes/admin/class-wc-admin-assets.php:295
 msgid "Do you want to generate all variations? This will create a new variation for each and every possible combination of variation attributes (max %d per run)."
 msgstr "آیا می‌خواهید همۀ متغیر‌ها را ایجاد کنید؟ این یک متغیر جدید برای هر ترکیب ممکن از ویژگی‌های متغیر ایجاد می‌کند (حداکثر %d در هر اجرا)."
+
+#: includes/admin/class-wc-admin-help.php:79
+msgid "Official themes"
+msgstr "پوسته‌های رسمی"
 
 #: i18n/states.php:1426
 msgid "Catanduanes"
