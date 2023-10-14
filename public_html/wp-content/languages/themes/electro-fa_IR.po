@@ -6,7 +6,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: https://themeforest.net/item/electro-electronics-store-"
 "woocommerce-theme/15720624/support/\n"
 "POT-Creation-Date: 2022-04-11 09:09:05+00:00\n"
-"PO-Revision-Date: 2023-09-11 18:16+0330\n"
+"PO-Revision-Date: 2023-10-09 20:33+0330\n"
 "Last-Translator: \n"
 "Language-Team: Electro POT <support@transvelo.com>\n"
 "Language: fa_IR\n"
@@ -7941,7 +7941,7 @@ msgstr ""
 
 #: inc/woocommerce/template-tags.php:1533
 msgid "Your order"
-msgstr ""
+msgstr "سفارش شما"
 
 #: templates/contents/content-none.php:13
 msgid "Nothing Found"
@@ -8041,7 +8041,7 @@ msgstr "نظر"
 
 #: templates/shop/single-product-advanced-reviews.php:64
 msgid "Add a review"
-msgstr ""
+msgstr "ثبت نظر"
 
 #: templates/shop/single-product-advanced-reviews.php:64
 msgid "Be the first to review &ldquo;%s&rdquo;"
