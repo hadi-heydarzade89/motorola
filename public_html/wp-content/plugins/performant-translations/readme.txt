@@ -1,8 +1,8 @@
 === Performant Translations ===
 
 Contributors:      swissspidy, dd32, wordpressdotorg
-Tested up to:      6.3
-Stable tag:        1.0.5
+Tested up to:      6.4
+Stable tag:        1.0.6
 License:           GPL-2.0+
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Tags:              performance, i18n, translations, localization, internationalization
@@ -21,7 +21,7 @@ If your site is using a language other than English (US), you should see immedia
 
 The primary purpose of this plugin is to allow broader testing of these enhancements, for which the goal is to eventually land in WordPress core.
 
-Performant Translations supports multiple file formats (`.mo`, `.php`, and `.json`), as well as multiple text domains and locales loaded at the same time. By default, it converts existing `.mo` files to `.php` and afterwards only loads the translations from the `.php` file.
+Performant Translations supports multiple file formats (`.mo` and `.php`), as well as multiple text domains and locales loaded at the same time. By default, it converts existing `.mo` files to `.php` and afterwards only loads the translations from the `.php` file.
 
 == Installation ==
 
@@ -84,6 +84,11 @@ To report a security issue, please visit the [WordPress HackerOne](https://hacke
 
 For the plugin's full changelog, please see [the Releases page on GitHub](https://github.com/swissspidy/performant-translations/releases).
 
+= 1.0.6 =
+
+* Enhancement: Remove JSON file support.
+* Fixed: Add hardening when using translation file paths with symlinks.
+
 = 1.0.5 =
 
 * Enhancement: Improved compatibility with Loco Translate to avoid duplicate files.
@@ -116,6 +121,10 @@ For the plugin's full changelog, please see [the Releases page on GitHub](https:
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.6 =
+
+This release removes JSON file support and includes some hardening when using symlinks.
 
 = 1.0.5 =
 
