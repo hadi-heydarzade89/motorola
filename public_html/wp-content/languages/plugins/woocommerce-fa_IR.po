@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-14 19:39:59+0000\n"
+"PO-Revision-Date: 2023-10-14 22:51:15+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -574,6 +574,10 @@ msgstr "⚠ ۱ افزونه ناسازگار شناسایی شد (%s)."
 #: src/Internal/DataStores/Orders/CustomOrdersTableController.php:468
 msgid "Currently syncing orders... %d pending"
 msgstr "در حال همگام‌سازی سفارشات... %d در انتظار"
+
+#: src/Internal/Features/FeaturesController.php:122
+msgid "High-Performance Order Storage"
+msgstr "ذخیره‌سازی سفارش با کارایی بالا"
 
 #: src/Internal/Admin/RemoteFreeExtensions/DefaultFreeExtensions.php:173
 #: assets/client/admin/chunks/multichannel-marketing.js:1
@@ -2501,6 +2505,10 @@ msgctxt "shipping packages"
 msgid "Shipment %d"
 msgstr "حمل و نقل %d"
 
+#: packages/woocommerce-blocks/src/Shipping/ShippingController.php:227
+msgid "If enabled, this method will appear on the block based checkout."
+msgstr "اگر فعال باشد، این روش در پرداخت مبتنی بر بلوک، نمایش داده می‌شود."
+
 #: includes/class-wc-countries.php:454
 msgctxt "shipping country prefix"
 msgid "to"
@@ -2937,6 +2945,14 @@ msgstr " می‌گوید"
 msgid "We recently asked you if you wanted more information about WooPayments. Run your business and manage your payments in one place with the solution built and supported by WooCommerce."
 msgstr "اخیرا از شما پرسیدیم که آیا اطلاعات بیشتری در مورد WooPayments می‌خواهید. با راه حل ساخته شده و پشتیبانی شده توسط ووکامرس، کسب و کار خود را اجرا کنید و پرداخت‌های خود را در یک مکان مدیریت کنید."
 
+#: includes/admin/views/html-admin-page-status-report.php:767
+msgid "Is data sync enabled for HPOS?"
+msgstr "آیا همگام سازی داده ها برای HPOS فعال است؟"
+
+#: includes/admin/views/html-admin-page-status-report.php:766
+msgid "HPOS data sync enabled:"
+msgstr "همگام سازی داده های HPOS فعال شد:"
+
 #: packages/woocommerce-blocks/src/BlockTypes/Cart.php:68
 #: packages/woocommerce-blocks/build/cart.js:22
 msgid "You may be interested in…"
@@ -3070,6 +3086,10 @@ msgid "⚠ There's one order pending sync from the orders table to the posts tab
 msgid_plural "⚠ There are %1$d orders pending sync from the orders table to the posts table. The feature shouldn't be disabled until these orders are synchronized."
 msgstr[0] "⚠ %1$d سفارش در انتظار همگام‌سازی از جدول سفارش‌ها به جدول نوشته‌ها وجود دارد. تا زمانی که سفارش همگام‌سازی نشود، این ویژگی نباید غیرفعال شود."
 
+#: src/Internal/Features/FeaturesController.php:118
+msgid "High-Performance Order Storage (HPOS)"
+msgstr "ذخیره‌سازی سفارش با کارایی بالا (HPOS)"
+
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:226
 msgid "Sync completed."
 msgstr "همگام‌سازی تکمیل شد."
@@ -3165,6 +3185,44 @@ msgstr "آیا مطمئنید که می‌خواهید ارتباط فروشگا
 msgid "The WooCommerce Blocks plugin requires a more recent version of WooCommerce and has been deactivated. Please update to the latest version of WooCommerce."
 msgstr "افزونه بلوک های ووکامرس به نسخه جدیدتر ووکامرس نیاز دارد و غیرفعال شده است. لطفا به آخرین نسخه ووکامرس به روز رسانی کنید."
 
+#: includes/cli/class-wc-cli-com-command.php:115
+msgid "Your store is not connected to WooCommerce.com. Run `wp wc com connect` command."
+msgstr "فروشگاه شما به WooCommerce.com متصل نیست. دستور `wp wc com connect` را اجرا کنید."
+
+#. translators: %s is the URL for the application-password section in
+#. WooCommerce.com.
+#: includes/cli/class-wc-cli-com-command.php:171
+msgid "Invalid password. Generate a new one from %s."
+msgstr "رمز عبور نامعتبر. یکی جدید در %s ایجاد کنید."
+
+#. translators: %s is the URL for the application-password section in
+#. WooCommerce.com.
+#: includes/cli/class-wc-cli-com-command.php:165
+msgid "If you don't have an application password (not your account password), generate a password from %s"
+msgstr "اگر اپلیکیشن رمز عبور ندارید (نه رمز عبور حساب خود)، یک رمز عبور در %s ایجاد کنید"
+
+#: includes/admin/class-wc-admin-assets.php:434
+msgid "Summarize this product in 1-2 short sentences. We’ll show it at the top of the page."
+msgstr "این محصول را در ۱ تا ۲ جمله کوتاه خلاصه کنید. ما آن را در بالای صفحه نشان خواهیم داد."
+
+#: includes/admin/settings/class-wc-settings-products.php:432
+msgid "Customers can still save the file to their device, but by default file will be opened instead of being downloaded (does not work with redirects)."
+msgstr "مشتریان همچنان می‌توانند فایل را در دستگاه خود ذخیره کنند، اما به طور پیش‌فرض، فایل به جای دانلود، باز می‌شود (با تغییر مسیرها کار نمی‌کند)."
+
+#: includes/admin/settings/class-wc-settings-products.php:428
+msgid "Open downloadable files in the browser, instead of saving them to the device."
+msgstr "فایل‌های قابل دانلود را به جای ذخیره در دستگاه، در مرورگر باز کنید."
+
+#: includes/admin/class-wc-admin-assets.php:432
+msgid "Product types define available product details and attributes, such as downloadable files and variations. They’re also used for analytics and inventory management."
+msgstr "انواع محصول جزئیات و ویژگی های محصول موجود را تعریف می کنند، مانند فایل ها و تغییرات قابل دانلود. آنها همچنین برای تجزیه و تحلیل و مدیریت موجودی استفاده می شوند."
+
+#: includes/admin/class-wc-admin-assets.php:433
+#: assets/client/admin/chunks/edit-product-page.js:1
+#: assets/client/admin/product-editor/index.js:2
+msgid "Describe this product. What makes it unique? What are its most important features?"
+msgstr "این محصول را توضیح دهید. چه چیزی آن را منحصر به فرد می کند؟ مهم ترین ویژگی های آن چیست؟"
+
 #: i18n/states.php:177
 msgid "Sofia District"
 msgstr "مناطق صوفیه"
@@ -3193,6 +3251,24 @@ msgctxt "block title"
 msgid "Product Categories List"
 msgstr "لیست دسته‌های محصول"
 
+#: packages/woocommerce-blocks/assets/js/blocks/products/all-products/block.json
+#: packages/woocommerce-blocks/build/all-products/block.json
+msgctxt "block description"
+msgid "Display products from your store in a grid layout."
+msgstr "محصولات فروشگاه خود را به صورت شبکه ای نمایش دهید."
+
+#: packages/woocommerce-blocks/assets/js/blocks/product-category/block.json
+#: packages/woocommerce-blocks/build/product-category/block.json
+msgctxt "block description"
+msgid "Display a grid of products from your selected categories."
+msgstr "شبکه ای از محصولات را از دسته های انتخابی خود نمایش دهید."
+
+#: packages/woocommerce-blocks/assets/js/blocks/product-categories/block.json
+#: packages/woocommerce-blocks/build/product-categories/block.json
+msgctxt "block description"
+msgid "Show all product categories as a list or dropdown."
+msgstr "همه دسته بندی های محصول را به صورت لیست یا کشویی نمایش دهید."
+
 #: templates/cart/shipping-calculator.php:86
 msgid "Postcode / ZIP:"
 msgstr "کد پستی:"
@@ -3209,6 +3285,11 @@ msgstr "شما نمی‌توانید این مورد را ویرایش کنید 
 #: templates/single-product/add-to-cart/grouped.php:67
 msgid "Buy one of this item"
 msgstr "از این کالا یکی بخرید"
+
+#: src/Admin/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:134
+#: assets/client/admin/chunks/edit-product-page.js:1
+msgid "This info will be displayed on the product page, category pages, social media, and search results."
+msgstr "این اطلاعات در صفحه محصول، صفحات دسته بندی، رسانه های اجتماعی و نتایج جستجو نمایش داده می شود."
 
 #: templates/cart/shipping-calculator.php:30
 msgid "Country / region:"
@@ -3264,6 +3345,32 @@ msgstr "وارد کردن جدید"
 msgid "&mdash; Select &mdash;"
 msgstr "— انتخاب —"
 
+#. translators: %s is a table name.
+#: src/Internal/DataStores/Orders/OrdersTableQuery.php:990
+msgid "%s can not be used as a table alias in OrdersTableQuery"
+msgstr "%s را نمی توان به عنوان نام مستعار جدول در OrdersTableQuery استفاده کرد"
+
+#: src/Internal/Admin/RemoteFreeExtensions/DefaultFreeExtensions.php:137
+msgid "List products and create ads on Facebook and Instagram."
+msgstr "لیست محصولات و ایجاد تبلیغات در فیس بوک و اینستاگرام."
+
+#: src/Internal/Admin/RemoteFreeExtensions/DefaultFreeExtensions.php:129
+msgid "List products and create ads on Facebook and Instagram with <a href=\"https://woocommerce.com/products/facebook/\">Facebook for WooCommerce</a>"
+msgstr "لیست محصولات و ایجاد تبلیغات در فیس بوک و اینستاگرام با <a href=\"https://woocommerce.com/products/facebook/\">فیس بوک برای ووکامرس</a>"
+
+#: src/Internal/Admin/Orders/PageController.php:63
+msgid "You attempted to edit an order that does not exist. Perhaps it was deleted?"
+msgstr "شما سعی کردید سفارشی را ویرایش کنید که وجود ندارد. شاید حذف شده؟"
+
+#. translators: %s is a table name.
+#: src/Internal/DataStores/Orders/OrdersTableQuery.php:1004
+msgid "Can not re-use table alias \"%s\" in OrdersTableQuery."
+msgstr "امکان استفاده مجدد از نام مستعار جدول \"%s\" در OrdersTableQuery وجود ندارد."
+
+#: src/Internal/DataStores/Orders/OrdersTableDataStore.php:1114
+msgid "Invalid order IDs in call to read_multiple()"
+msgstr "شناسه‌های سفارش نامعتبر در فراخوانی read_multiple()"
+
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:604
 msgid "Payment method is missing."
 msgstr "روش پرداخت وجود ندارد."
@@ -3309,6 +3416,11 @@ msgstr "%1$s... (%2$s بیشتر)"
 #: src/Admin/Features/Navigation/CoreMenu.php:220
 msgid "Add New (MVP)"
 msgstr "افزودن جدید (MVP)"
+
+#. translators: %d is an order ID.
+#: includes/class-wc-order-factory.php:100
+msgid "Could not find classname for order ID %d"
+msgstr "نام کلاس برای شناسه سفارش %d یافت نشد"
 
 #: packages/woocommerce-blocks/src/Utils/BlockTemplateUtils.php:336
 msgctxt "Template name"
@@ -3393,6 +3505,15 @@ msgstr "ارائه‌دهندگان پرداخت اضافی را کشف کنید
 msgid "%s order status changed."
 msgid_plural "%s order statuses changed."
 msgstr[0] "وضعیت %s سفارش تغییر کرد."
+
+#: src/Admin/Features/ShippingPartnerSuggestions/DefaultShippingPartners.php:221
+#: assets/client/admin/chunks/8994.js:1
+msgid "Buy postage when you need it"
+msgstr "در صورت نیاز هزینه پست بخرید"
+
+#: src/Admin/Features/OnboardingTasks/Tasks/WooCommercePayments.php:98
+msgid "By using WooPayments you agree to be bound by our <a href=\"https://wordpress.com/tos/\" target=\"_blank\">Terms of Service</a> and acknowledge that you have read our <a href=\"https://automattic.com/privacy/\" target=\"_blank\">Privacy Policy</a>"
+msgstr "با استفاده از WooPayments شما موافقت می‌کنید که به <a href=\"https://wordpress.com/tos/\" target=\"_blank\">شرایط استفاده از خدمات</a> ما متعهد می‌شوید و تایید می‌کنید که <a href=\"https://automattic.com/privacy/\" target=\"_blank\">سیاست حفظ حریم خصوصی</a> ما را خوانده‌اید"
 
 #. translators: %s: date
 #: includes/admin/class-wc-admin-webhooks.php:76
@@ -3787,6 +3908,10 @@ msgstr "شما %1$s را اضافه کردید"
 msgid "Set up tax rates"
 msgstr "نرخ‌های مالیات را تنظیم کنید"
 
+#: src/Admin/API/Reports/Customers/Controller.php:519
+msgid "Limit result to items with specified user ids."
+msgstr "نتیجه را به مواردی با شناسه های کاربری مشخص شده محدود کنید."
+
 #: packages/woocommerce-blocks/woocommerce-gutenberg-products-block.php:281
 msgid "You have WooCommerce Blocks installed, but the WooCommerce bundled version is running because it is more up-to-date. This may cause unexpected compatibility issues. Please update the WooCommerce Blocks plugin."
 msgstr "شما بلوک‌های ووکامرس را نصب کرده‌اید، اما نسخه داخلی ووکامرس در حال اجرا است زیرا به‌روزتر است. این ممکن است باعث مشکلات سازگاری غیرمنتظره شود. لطفا افزونه بلوک‌های ووکامرس را به‌روز کنید."
@@ -3928,6 +4053,18 @@ msgstr "این بخش جزئیات مدیریت WC را نشان می دهد."
 msgid "Infinite loop detected, aborting. No errors found."
 msgstr "حلقه بی‌نهایت شناسایی شد، در حال متوقف کردن. هیچ خطایی پیدا نشد."
 
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1957
+msgid "Whether an order needs processing before it can be completed."
+msgstr "اینکه آیا یک سفارش قبل از تکمیل نیاز به پردازش دارد یا خیر."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1951
+msgid "Whether an order needs payment, based on status and order total."
+msgstr "اینکه آیا یک سفارش بر اساس وضعیت و کل سفارش نیاز به پرداخت دارد یا خیر."
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1945
+msgid "Whether an order can be edited."
+msgstr "آیا می توان یک سفارش را ویرایش کرد."
+
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:370
 msgid "There are no orders to verify, aborting."
 msgstr "هیچ دستوری برای تأیید وجود ندارد، لغو می‌شود."
@@ -3935,6 +4072,10 @@ msgstr "هیچ دستوری برای تأیید وجود ندارد، لغو م�
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:165
 msgid "There are no orders to sync, aborting."
 msgstr "هیچ دستوری برای همگام‌سازی وجود ندارد، لغو می‌شود."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1476
+msgid "Limit results to those with a SKU that partial matches a string."
+msgstr "نتایج را به آنهایی که دارای SKU هستند که تا حدی با یک عبارت مطابقت دارد، محدود کنید."
 
 #: packages/woocommerce-blocks/assets/js/blocks/cart/inner-blocks/cart-items-block/block.json
 #: packages/woocommerce-blocks/assets/js/blocks/checkout/inner-blocks/checkout-order-summary-cart-items/block.json
