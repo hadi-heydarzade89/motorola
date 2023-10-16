@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-14 22:51:15+0000\n"
+"PO-Revision-Date: 2023-10-16 08:12:30+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -100,9 +100,53 @@ msgstr "همگام‌سازی فعال شد."
 msgid "Sync is already enabled."
 msgstr "همگام‌سازی قبلا فعال شده است."
 
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:741
+msgid "[Failed] The orders table does not exist and this is not a new shop. Please create the table by going to WooCommerce > Settings > Advanced > Features and enabling sync."
+msgstr "[ناموفق] جدول سفارشات وجود ندارد و این فروشگاه جدیدی نیست. لطفاً جدول را با رفتن به ووکامرس > تنظیمات > پیشرفته > ویژگی ها و فعال کردن همگام سازی ایجاد کنید."
+
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:737
 msgid "[Failed] Orders table could not be created."
 msgstr "[ناموفق] جدول سفارشات ایجاد نشد."
+
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:767
+msgid "HPOS pre-checks failed, please see the errors above"
+msgstr "بررسی های قبلی HPOS انجام نشد، لطفاً خطاهای بالا را ببینید"
+
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:812
+msgid "Running pre-disable checks..."
+msgstr "اجرای بررسی‌های پیش‌غیرفعال..."
+
+#: src/Internal/DataStores/Orders/CustomOrdersTableController.php:443
+msgid "WordPress posts storage (legacy)"
+msgstr "ذخیره‌سازی نوشته‌های وردپرس (قدیمی)"
+
+#. translators: %s is the command to run (wp wc cot sync).
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:750
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:821
+msgid "[Failed] There are orders pending sync. Please run `%s` to sync pending orders."
+msgstr "[ناموفق] سفارشاتی در انتظار همگام‌سازی وجود دارد. لطفا %s را برای همگام‌سازی سفارشات معلق اجرا کنید."
+
+#: src/Internal/DataStores/Orders/CustomOrdersTableController.php:444
+msgid "High-performance order storage (recommended)"
+msgstr "ذخیره‌سازی سفارش با کارایی بالا (توصیه شده)"
+
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:734
+msgid "Orders table created."
+msgstr "جدول سفارشات ایجاد شد."
+
+#: src/Internal/DataStores/Orders/CustomOrdersTableController.php:488
+msgid "Enable compatibility mode (synchronizes orders to the posts table)."
+msgstr "فعال‌سازی حالت سازگاری (سفارش‌ها را با جدول نوشته‌ها همگام می‌کند)."
+
+#. translators: %d: number of pending orders.
+#: src/Internal/DataStores/Orders/CustomOrdersTableController.php:474
+msgid "%d order pending to be synchronized. You can switch order data storage <strong>only when the posts and orders tables are in sync</strong>."
+msgid_plural "%d orders pending to be synchronized. You can switch order data storage <strong>only when the posts and orders tables are in sync</strong>."
+msgstr[0] "%d سفارش در انتظار همگام‌سازی است. می‌توانید ذخیره‌سازی داده‌های سفارش را <strong>فقط زمانی که نوشته‌ها و جداول سفارش‌ها همگام هستند</strong> تغییر دهید."
+
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:730
+msgid "Orders table does not exist. Creating..."
+msgstr "جدول سفارشات وجود ندارد. در حال ایجاد..."
 
 #: src/Admin/Features/OnboardingTasks/Tasks/Appearance.php:40
 msgid "Choose your theme"
@@ -134,9 +178,33 @@ msgstr "پوسته‌ای که در حال حاضر استفاده می‌کنی
 msgid "Choose a theme that best fits your brand's look and feel, then make it your own. Change the colors, add your logo, and create pages."
 msgstr "پوسته‌ای را انتخاب کنید که به بهترین وجه با ظاهر و احساس برند شما مطابقت داشته باشد، سپس آن را برای خود بسازید. رنگ‌ها را تغییر دهید، لوگوی خود را اضافه کنید و برگه ایجاد کنید."
 
+#: src/Admin/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:278
+msgid "Shown to customers on the product page."
+msgstr "در صفحه محصول به مشتریان نشان داده می شود."
+
 #: src/Admin/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:57
 msgid "Template for the simple product form"
 msgstr "الگویی برای فرم ساده محصول"
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:942
+msgid "Limit result set to products with or without price."
+msgstr "مجموعه نتایج را به محصولات با قیمت یا بدون قیمت محدود کنید."
+
+#: includes/gateways/bacs/class-wc-gateway-bacs.php:149
+msgid "These account details will be displayed within the order thank you page and confirmation email."
+msgstr "این جزئیات حساب در صفحه تشکر سفارش و ایمیل تأیید نمایش داده می شود."
+
+#: packages/woocommerce-blocks/patterns/testimonials-single.php:14
+msgid "Placeholder image with the avatar of the user who is writing the testimonial."
+msgstr "نگهدارنده مکان تصویر با نیم‌رخ کاربری که در حال نوشتن توصیه‌نامه است."
+
+#: includes/admin/meta-boxes/views/html-product-attribute-inner.php:44
+msgid "Select values"
+msgstr "انتخاب مقادیر"
+
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:321
+msgid "Orders table does not exist."
+msgstr "جدول سفارشات وجود ندارد."
 
 #: packages/woocommerce-blocks/assets/js/blocks/product-gallery/inner-blocks/product-gallery-thumbnails/block.json
 #: packages/woocommerce-blocks/build/product-gallery-thumbnails/block.json
@@ -382,6 +450,26 @@ msgstr "قیمت کل اقلام سفارش."
 msgid "This order cannot be paid for."
 msgstr "این سفارش قابل پرداخت نیست."
 
+#: packages/woocommerce-blocks/patterns/testimonials-single.php:27
+msgid "In the end the couch wasn't exactly what I was looking for but my experience with the Burrow team was excellent. First in providing a discount when the couch was delayed, then timely feedback and updates as the..."
+msgstr "در نهایت کاناپه دقیقاً همان چیزی نبود که من به دنبال آن بودم، اما تجربه من با تیم بارو عالی بود. ابتدا در ارائه تخفیف برای تاخیر در ارسال کاناپه، سپس بازخورد به موقع و به روز رسانی به عنوان..."
+
+#: packages/woocommerce-blocks/src/StoreApi/Schemas/V1/ItemSchema.php:23
+msgid "The item product or variation ID."
+msgstr "شناسه محصول یا تنوع کالا."
+
+#: packages/woocommerce-blocks/patterns/testimonials-3-columns.php:47
+msgid "Awesome couch and great buying experience"
+msgstr "کاناپه عالی و تجربه خرید عالی"
+
+#: packages/woocommerce-blocks/patterns/testimonials-3-columns.php:18
+msgid "In the end the couch wasn't exactly what I was looking for but my experience with the Burrow team was excellent. First in providing a discount when the couch was delayed, then timely feedback and updates as the…"
+msgstr "در نهایت کاناپه دقیقاً همان چیزی نبود که من به دنبال آن بودم، اما تجربه من با تیم بارو عالی بود. ابتدا در ارائه تخفیف در هنگام تاخیر در کاناپه، سپس بازخورد به موقع و به روز رسانی به عنوان…"
+
+#: packages/woocommerce-blocks/patterns/testimonials-3-columns.php:35
+msgid "Great couch. color as advertise. seat is nice and firm. Easy to put together. Versatile. Bought one for my mother in law as well. And she loves hers!"
+msgstr "کاناپه عالی. رنگ همانطور که تبلیغ شده. صندلی خوب و محکم است. به راحتی در کنار هم قرار می‌گیرند. روان. برای مادر شوهرم هم خریدم. و او  دوستش دارد!"
+
 #: packages/woocommerce-blocks/patterns/store-info-alt-image-and-text.php:64
 msgid "About us"
 msgstr "درباره ما"
@@ -399,9 +487,37 @@ msgstr "محصولات جدید بیشتر"
 msgid "Follow us on social media"
 msgstr "ما را در رسانه های اجتماعی دنبال کنید"
 
+#: packages/woocommerce-blocks/patterns/hero-product-3-split.php:89
+msgid "From bold prints and colors to intricate details and textures, our products are a perfect combination of style and function."
+msgstr "از چاپ و رنگ های جسورانه گرفته تا جزئیات و بافت های پیچیده، محصولات ما ترکیبی عالی از سبک و عملکرد هستند."
+
 #: packages/woocommerce-blocks/patterns/product-collections-newest-arrivals.php:18
 msgid "Our newest arrivals"
 msgstr "جدیدترین ورودی های ما"
+
+#: packages/woocommerce-blocks/patterns/social-follow-us-in-social-media.php:41
+msgid "Placeholder image used to represent products being showcased as furniture in an office."
+msgstr "نگهدارنده مکان تصویر برای نشان دادن محصولاتی که به‌عنوان مبلمان در یک دفتر کار نمایش داده می‌شوند استفاده می‌شود."
+
+#: packages/woocommerce-blocks/patterns/store-info-alt-image-and-text.php:91
+msgid "Placeholder image used to represent clay pots."
+msgstr "نگهدارنده مکان تصویر که برای نشان دادن گلدان‌های سفالی استفاده می‌شود."
+
+#: packages/woocommerce-blocks/patterns/social-follow-us-in-social-media.php:71
+msgid "Placeholder image used to represent products being showcased as furniture in a dining room."
+msgstr "نگهدارنده مکان تصویر برای نشان دادن محصولاتی که به عنوان مبلمان در یک اتاق غذاخوری به نمایش گذاشته می‌شوند استفاده می‌شود."
+
+#: packages/woocommerce-blocks/patterns/store-info-alt-image-and-text.php:16
+msgid "Placeholder image used to represent a person making a clay pot."
+msgstr "نگهدارنده مکان تصویر برای نشان دادن شخصی که یک گلدان سفالی می‌سازد استفاده می‌شود."
+
+#: packages/woocommerce-blocks/patterns/social-follow-us-in-social-media.php:61
+msgid "Placeholder image used to represent products being showcased as furniture in a living room with gray sofa."
+msgstr "نگهدارنده مکان تصویر برای نشان دادن محصولاتی که به عنوان مبلمان در یک اتاق نشیمن با مبل خاکستری به نمایش گذاشته می‌شوند استفاده می‌شود."
+
+#: packages/woocommerce-blocks/patterns/social-follow-us-in-social-media.php:51
+msgid "Placeholder image used to represent products being showcased as furniture in a living room."
+msgstr "نگهدارنده مکان تصویر برای نشان دادن محصولاتی که به عنوان مبلمان در یک اتاق نشیمن به نمایش گذاشته می‌شوند استفاده می‌شود."
 
 #: packages/woocommerce-blocks/patterns/hero-product-3-split.php:49
 msgid "Waterproof Membrane"
@@ -492,6 +608,18 @@ msgstr "ما در محصولات خود فقط از با کیفیت‌ترین �
 #: packages/woocommerce-blocks/patterns/hero-product-3-split.php:65
 msgid "Our products are made with expert craftsmanship and attention to detail, ensuring that every stitch and seam is perfect."
 msgstr "محصولات ما با مهارت و توجه به جزئیات ساخته شده‌اند و اطمینان حاصل می‌کنیم که هر دوخت و دوز عالی باشد."
+
+#: packages/woocommerce-blocks/patterns/featured-products-fresh-and-tasty.php:108
+msgid "Placeholder image used to represent a product being showcased as Russet Organic Potatoes."
+msgstr "نگهدارنده مکان تصویر مورد استفاده برای نشان دادن محصولی که به‌عنوان سیب‌زمینی ارگانیک زنگارگون به نمایش گذاشته می‌شود."
+
+#: packages/woocommerce-blocks/patterns/featured-products-fresh-and-tasty.php:48
+msgid "Placeholder image used to represent a product being showcased as Fresh Organic Tomatoes."
+msgstr "نگهدارنده مکان تصویر مورد استفاده برای نشان دادن محصولی که به‌عنوان گوجه‌فرنگی تازه ارگانیک به نمایش گذاشته می‌شود."
+
+#: packages/woocommerce-blocks/patterns/featured-products-fresh-and-tasty.php:18
+msgid "Placeholder image used to represent a product being showcased as Sweet organic Lemons."
+msgstr "نگهدارنده مکان تصویر مورد استفاده برای نشان دادن محصولی که به‌عنوان لیموهای ارگانیک شیرین به نمایش گذاشته می‌شود."
 
 #: packages/woocommerce-blocks/assets/js/blocks/customer-account/block.json
 #: packages/woocommerce-blocks/build/customer-account/block.json
@@ -2505,6 +2633,10 @@ msgctxt "shipping packages"
 msgid "Shipment %d"
 msgstr "حمل و نقل %d"
 
+#: packages/action-scheduler/classes/abstracts/ActionScheduler_Abstract_QueueRunner.php:155
+msgid "This action appears to be consistently failing. A new instance will not be scheduled."
+msgstr "به نظر می رسد این اقدام به طور مداوم در حال شکست است. نمونه جدیدی برنامه ریزی نمی شود."
+
 #: packages/woocommerce-blocks/src/Shipping/ShippingController.php:227
 msgid "If enabled, this method will appear on the block based checkout."
 msgstr "اگر فعال باشد، این روش در پرداخت مبتنی بر بلوک، نمایش داده می‌شود."
@@ -2953,6 +3085,14 @@ msgstr "آیا همگام سازی داده ها برای HPOS فعال است؟
 msgid "HPOS data sync enabled:"
 msgstr "همگام سازی داده های HPOS فعال شد:"
 
+#: includes/admin/meta-boxes/views/html-product-data-variations.php:208
+msgid "Add price to all variations that don't have a price"
+msgstr "قیمت را به همه تنوع‌هایی که قیمت ندارند اضافه کنید"
+
+#: packages/woocommerce-blocks/src/StoreApi/Schemas/V1/ProductSchema.php:257
+msgid "List of attributes (taxonomy terms) assigned to the product. For variable products, these are mapped to variations (see the `variations` field)."
+msgstr "فهرست ویژگی‌های (موارد طبقه‌بندی) اختصاص داده شده به محصول. برای محصولات متغیر، اینها به تنوع‌ها نگاشت شدند (به قسمت `تنوع‌ها` مراجعه کنید)."
+
 #: packages/woocommerce-blocks/src/BlockTypes/Cart.php:68
 #: packages/woocommerce-blocks/build/cart.js:22
 msgid "You may be interested in…"
@@ -3090,6 +3230,11 @@ msgstr[0] "⚠ %1$d سفارش در انتظار همگام‌سازی از جد
 msgid "High-Performance Order Storage (HPOS)"
 msgstr "ذخیره‌سازی سفارش با کارایی بالا (HPOS)"
 
+#. translators: 1: class::method 2: before_woocommerce_init
+#: src/Internal/Features/FeaturesController.php:303
+msgid "%1$s should be called inside the %2$s action."
+msgstr "%1$s باید در درون عملکرد %2$s فراخوانی شود."
+
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:226
 msgid "Sync completed."
 msgstr "همگام‌سازی تکمیل شد."
@@ -3101,6 +3246,11 @@ msgstr "هیچ سفارشی همگام‌سازی نشد."
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:267
 msgid "Migrate command is deprecated. Please use `sync` instead."
 msgstr "دستور انتقال منسوخ شده است. لطفا به جای آن از «همگام‌سازی» استفاده کنید."
+
+#. translators: 1: opening product link tag. 2: closing link tag
+#: src/Internal/Admin/RemoteFreeExtensions/DefaultFreeExtensions.php:844
+msgid "Create ad campaigns and reach one billion global users with %1$sTikTok for WooCommerce%2$s"
+msgstr "%1$sTikTok for WooCommerce%2$s کمپین‌های تبلیغاتی ایجاد کنید و به یک میلیارد کاربر جهانی دسترسی پیدا کنید"
 
 #: packages/woocommerce-blocks/assets/js/blocks/filter-wrapper/block.json
 #: packages/woocommerce-blocks/build/filter-wrapper/block.json
@@ -3162,6 +3312,21 @@ msgstr "چت‌پک متصل نشده است."
 #: src/Admin/Features/OnboardingTasks/Tasks/GetMobileApp.php:27
 msgid "Get the free WooCommerce mobile app"
 msgstr "اپلیکیشن موبایل ووکامرس را رایگان دریافت کنید"
+
+#. translators: 1: order ID, 2: order status
+#: src/Internal/DataStores/Orders/OrdersTableDataStore.php:2297
+msgid "The previous status of order %1$d (\"%2$s\") is invalid. It could not be restored."
+msgstr "وضعیت قبلی سفارش %1$d (\"%2$s\") نامعتبر است. قابل بازیابی نبود."
+
+#. translators: 1: order ID, 2: order status
+#: src/Internal/DataStores/Orders/OrdersTableDataStore.php:2285
+msgid "The previous status of order %1$d (\"%2$s\") is invalid. It has been restored to \"pending\" status instead."
+msgstr "وضعیت قبلی سفارش %1$d (\"%2$s\") نامعتبر است. در عوض به وضعیت \"در انتظار\" بازیابی شد."
+
+#. translators: 1: order ID, 2: order status
+#: src/Internal/DataStores/Orders/OrdersTableDataStore.php:2267
+msgid "Order %1$d cannot be restored from the trash: it has already been restored to status \"%2$s\"."
+msgstr "سفارش %1$d از زباله‌دان قابل بازیابی نیست: به وضعیت \"%2$s\" بازیابی شد."
 
 #. translators: %s is the URL for the application-password section in
 #. WooCommerce.com.
@@ -3506,6 +3671,10 @@ msgid "%s order status changed."
 msgid_plural "%s order statuses changed."
 msgstr[0] "وضعیت %s سفارش تغییر کرد."
 
+#: includes/admin/meta-boxes/views/html-product-data-variations.php:43
+msgid "Choose a default form value if you want a certain variation already selected when a user visits the product page."
+msgstr "اگر می‌خواهید زمانی که کاربر از صفحه محصول بازدید می‌کند، تنوع خاصی از قبل انتخاب شده باشد، یک مقدار فرم پیش‌فرض را انتخاب کنید."
+
 #: src/Admin/Features/ShippingPartnerSuggestions/DefaultShippingPartners.php:221
 #: assets/client/admin/chunks/8994.js:1
 msgid "Buy postage when you need it"
@@ -3514,6 +3683,15 @@ msgstr "در صورت نیاز هزینه پست بخرید"
 #: src/Admin/Features/OnboardingTasks/Tasks/WooCommercePayments.php:98
 msgid "By using WooPayments you agree to be bound by our <a href=\"https://wordpress.com/tos/\" target=\"_blank\">Terms of Service</a> and acknowledge that you have read our <a href=\"https://automattic.com/privacy/\" target=\"_blank\">Privacy Policy</a>"
 msgstr "با استفاده از WooPayments شما موافقت می‌کنید که به <a href=\"https://wordpress.com/tos/\" target=\"_blank\">شرایط استفاده از خدمات</a> ما متعهد می‌شوید و تایید می‌کنید که <a href=\"https://automattic.com/privacy/\" target=\"_blank\">سیاست حفظ حریم خصوصی</a> ما را خوانده‌اید"
+
+#. translators: %s: Order date
+#: includes/class-wc-order-refund.php:83
+#: includes/data-stores/abstract-wc-order-data-store-cpt.php:382
+#: includes/data-stores/class-wc-order-refund-data-store-cpt.php:120
+#: src/Internal/DataStores/Orders/OrdersTableRefundDataStore.php:199
+msgctxt "Order date parsed by DateTime::format"
+msgid "M d, Y @ h:i A"
+msgstr "M d, Y @ h:i A"
 
 #. translators: %s: date
 #: includes/admin/class-wc-admin-webhooks.php:76
@@ -3899,6 +4077,14 @@ msgstr "هرزنامه نیست"
 msgid "Product reviews can now be managed from Products > Reviews."
 msgstr "اکنون می‌توانید نقد و بررسی‌های محصول را از محصولات > نقد و بررسی‌ها مدیریت کنید."
 
+#. Translators: %1$d is number of errors and %2$s is the formatted array of
+#. order IDs.
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:412
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:513
+msgid "%1$d error found: %2$s. Please review the error above."
+msgid_plural "%1$d errors found: %2$s. Please review the errors above."
+msgstr[0] "%1$d خطا پیدا شد: %2$s. لطفا خطای بالا را بررسی کنید."
+
 #. translators: %1$s: a purchased product name
 #: src/Admin/Features/OnboardingTasks/Tasks/Purchase.php:71
 msgid "You added %1$s"
@@ -3912,9 +4098,33 @@ msgstr "نرخ‌های مالیات را تنظیم کنید"
 msgid "Limit result to items with specified user ids."
 msgstr "نتیجه را به مواردی با شناسه های کاربری مشخص شده محدود کنید."
 
+#: src/Admin/API/Reports/Categories/Controller.php:299
+#: src/Admin/API/Reports/Customers/Stats/Controller.php:391
+#: src/Admin/API/Reports/Downloads/Controller.php:359
+#: src/Admin/API/Reports/GenericController.php:118
+#: src/Admin/API/Reports/Orders/Controller.php:462
+#: src/Admin/API/Reports/Orders/Stats/Controller.php:553
+#: src/Admin/API/Reports/Variations/Controller.php:380
+msgid "Force retrieval of fresh data instead of from the cache."
+msgstr "بازیابی اجباری داده های تازه به جای کش."
+
 #: packages/woocommerce-blocks/woocommerce-gutenberg-products-block.php:281
 msgid "You have WooCommerce Blocks installed, but the WooCommerce bundled version is running because it is more up-to-date. This may cause unexpected compatibility issues. Please update the WooCommerce Blocks plugin."
 msgstr "شما بلوک‌های ووکامرس را نصب کرده‌اید، اما نسخه داخلی ووکامرس در حال اجرا است زیرا به‌روزتر است. این ممکن است باعث مشکلات سازگاری غیرمنتظره شود. لطفا افزونه بلوک‌های ووکامرس را به‌روز کنید."
+
+#. translators: %1$s: a purchaseable product name, %2$d the number of other
+#. products to purchase
+#: src/Admin/Features/OnboardingTasks/Tasks/Purchase.php:101
+msgid "Add %1$s and %2$d more product to my store"
+msgid_plural "Add %1$s and %2$d more products to my store"
+msgstr[0] "%1$s و %2$d محصول دیگر را به فروشگاه من اضافه کنید"
+
+#. translators: %1$s: a purchased product name, %2$d the number of other
+#. products purchased
+#: src/Admin/Features/OnboardingTasks/Tasks/Purchase.php:79
+msgid "You added %1$s and %2$d other product"
+msgid_plural "You added %1$s and %2$d other products"
+msgstr[0] "%1$s و %2$d محصول دیگر را اضافه کردید"
 
 #: packages/woocommerce-blocks/assets/js/blocks/featured-items/featured-product/block.json
 #: packages/woocommerce-blocks/build/featured-product/block.json
@@ -4401,6 +4611,29 @@ msgstr "URL های دایرکتوری تایید شده نمی توانند بی
 #: src/Internal/ProductDownloads/ApprovedDirectories/Admin/Table.php:63
 msgid "No approved directory URLs found."
 msgstr "هیچ نشانی وب دایرکتوری تأیید شده ای یافت نشد."
+
+#. translators: %d: count
+#: src/Internal/ProductDownloads/ApprovedDirectories/Admin/UI.php:419
+msgid "%d approved directory URL disabled."
+msgid_plural "%d approved directory URLs disabled."
+msgstr[0] "%d URL دایرکتوری تایید شده، غیرفعال است."
+
+#. translators: %d: count
+#: src/Internal/ProductDownloads/ApprovedDirectories/Admin/UI.php:411
+msgid "%d approved directory URL enabled."
+msgid_plural "%d approved directory URLs enabled."
+msgstr[0] "%d URL دایرکتوری تایید شده، فعال است."
+
+#. translators: %d: count
+#: src/Internal/ProductDownloads/ApprovedDirectories/Admin/UI.php:403
+msgid "%d approved directory URL deleted."
+msgid_plural "%d approved directory URLs deleted."
+msgstr[0] "%d URL دایرکتوری تایید شده، حذف شد."
+
+#. translators: %s is a URL, %d is a product ID.
+#: src/Internal/ProductDownloads/ApprovedDirectories/Synchronize.php:240
+msgid "Product download migration: %1$s (for product %1$d) could not be added to the list of approved download directories."
+msgstr "انتقال بارگیری محصول: %1$s (برای محصول %1$d) نمی‌تواند به فهرست دانلود دایرکتوری‌های تایید شده اضافه شود."
 
 #: src/Admin/Features/PaymentGatewaySuggestions/DefaultPaymentGateways.php:100
 #: assets/client/admin/chunks/wcpay-payment-welcome-page.js:1
@@ -6839,6 +7072,11 @@ msgstr "آستانه موجودی فروشگاه (%d)"
 #: includes/admin/meta-boxes/views/html-variation-admin.php:227
 msgid "Parent product's threshold (%d)"
 msgstr "آستانه موجودی محصول والد (%d)"
+
+#. translators: 1: product link, 2: product name
+#: includes/class-wc-cart.php:1141
+msgid "The selected product isn't a variation of %2$s, please choose product options by visiting <a href=\"%1$s\" title=\"%2$s\">%2$s</a>."
+msgstr "محصول انتخاب شده یک تنوع از %2$s نیست, لطفا گزینه‌های محصول را با مراجعه به <a href=\"%1$s\" title=\"%2$s\">%2$s</a> انتخاب کنید."
 
 #: src/Admin/Features/PaymentGatewaySuggestions/DefaultPaymentGateways.php:387
 #: assets/client/admin/chunks/wcpay-payment-welcome-page.js:1
