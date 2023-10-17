@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-16 08:12:30+0000\n"
+"PO-Revision-Date: 2023-10-16 20:50:55+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.0-alpha.9\n"
+"X-Generator: GlotPress/4.0.0-alpha.10\n"
 "Language: fa\n"
 "Project-Id-Version: Plugins - WooCommerce - Stable (latest release)\n"
 
@@ -3327,6 +3327,11 @@ msgstr "وضعیت قبلی سفارش %1$d (\"%2$s\") نامعتبر است. د
 #: src/Internal/DataStores/Orders/OrdersTableDataStore.php:2267
 msgid "Order %1$d cannot be restored from the trash: it has already been restored to status \"%2$s\"."
 msgstr "سفارش %1$d از زباله‌دان قابل بازیابی نیست: به وضعیت \"%2$s\" بازیابی شد."
+
+#. translators: 1: order ID, 2: order status
+#: src/Internal/DataStores/Orders/OrdersTableDataStore.php:2333
+msgid "Something went wrong when trying to restore order %d from the trash. It could not be restored."
+msgstr "هنگام تلاش برای بازیابی سفارش %d از زباله‌دان، مشکلی پیش آمد. قابل بازیابی نبود."
 
 #. translators: %s is the URL for the application-password section in
 #. WooCommerce.com.
