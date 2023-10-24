@@ -1,6 +1,6 @@
 <?php
 /* ======================================================
- # Login as User for WordPress - v1.4.7 (free version)
+ # Login as User for WordPress - v1.4.8 (free version)
  # -------------------------------------------------------
  # For WordPress
  # Author: Web357
@@ -9,7 +9,7 @@
  # Website: https:/www.web357.com
  # Demo: https://demo.web357.com/wordpress/login-as-user/wp-admin/
  # Support: support@web357.com
- # Last modified: Thursday 27 July 2023, 03:31:06 AM
+ # Last modified: Monday 23 October 2023, 12:29:41 AM
  ========================================================= */
 class LoginAsUser_Admin {
 

@@ -3,9 +3,9 @@ Contributors: yiannistaos, johnbillion
 Tags: user, login, admin, login as user, web357
 Donate link: https://www.paypal.me/web357
 Requires at least: 5.3
-Tested up to: 6.2
-Requires PHP: 7.0
-Stable tag: 1.4.7
+Tested up to: 6.3
+Requires PHP: 7.3
+Stable tag: 1.4.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,10 @@ This plugin is helpful if you are an admin and you want to sign in as any user, 
 5. Settings.
 
 == Changelog ==
+= 23-Oct-2023 : v1.4.8 =
+* Fully compatible with WordPress v6.3.x and WooCommerce v8.2.x
+* Minor fixes and improvements
+
 = 27-Jul-2023 : v1.4.7 =
 * Added PHP 8.2 Compatibility to the Plugin Update Checker and fix deprecation notices regarding PHP 8.2.x.
 * Fix CSS issues regarding z-index on Divi themes.
