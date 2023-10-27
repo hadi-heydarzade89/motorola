@@ -213,6 +213,9 @@ final class WOOF_EXT_URL_REQUEST extends WOOF_EXT {
             $links = explode(PHP_EOL, trim($this->woof_settings['woof_url_request']['yoast_sitemap']));
         }
         foreach ($links as $l) {
+			if (!$l){
+				continue;
+			}
             $appended_text .= "<sitemap><loc>{$l}</loc></sitemap>";
         }
 

@@ -83,7 +83,8 @@ if (!function_exists('woof_sd_assemble_terms')) {
 
             //+++
 
-            if (str_contains($html, '__RESET_RADIO_BTN__')) {
+            //if (str_contains($html, '__RESET_RADIO_BTN__')) {  for 8 php 
+			if (strpos($html, '__RESET_RADIO_BTN__') !== false) {	
                 $html = str_replace('__RESET_RADIO_BTN__', WOOF_HELPER::generate_html_item('a', [
                             'href' => '#',
                             'data-name' => esc_attr(woof()->check_slug($tax_slug)),
@@ -106,7 +107,8 @@ if (!function_exists('woof_sd_assemble_terms')) {
                 $html = str_replace('__COLOR__', apply_filters('get_woof_sd_term_color', intval($term['term_id'])), $html);
                 $image = apply_filters('get_woof_sd_term_color_image', intval($term['term_id']));
                 $html = str_replace('__IMAGE__', $image, $html);
-                if (str_contains($image, 'http')) {
+                //if (str_contains($image, 'http')) { for 8 php 
+				if (strpos($image, 'http') !== false) {	
                     $html = str_replace('__CLASS_HAS_IMAGE__', 'woof-sd-color-has-image', $html);
                 } else {
                     $html = str_replace('__CLASS_HAS_IMAGE__', '', $html);

@@ -3,9 +3,9 @@ Contributors: RealMag777
 Donate link: https://pluginus.net/affiliate/woocommerce-products-filter
 Tags: filter, products filter, product filter, woocommerce, woof, husky, products, ajax filter, category filter, woocommerce products filter, woocommerce price filter, attributes filter, advanced product filter
 Requires at least: 4.9.0
-Tested up to: 6.3
+Tested up to: 6.4
 Requires PHP: 7.3
-Stable tag: 1.3.4.4
+Stable tag: 1.3.4.5
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -172,6 +172,9 @@ R: [Codex](https://products-filter.com/codex/)
 
 
 == Changelog ==
+
+= 1.3.4.5 =
+* set of small fixes
 
 = 1.3.4.4 =
 * 1 security fix, thanks to Rafie M from patchstack.com
@@ -443,7 +446,7 @@ Plugin release. Operate all the basic functions.
 
 == License ==
 
-This plugin is copyright pluginus.net &copy; 2012-2023 with [GNU General Public License][] by realmag777.
+This plugin is copyright pluginus.net &copy; 2012-2024 with [GNU General Public License][] by realmag777.
 
 This program is free software; you can redistribute it and/or modify it under the terms of the [GNU General Public License][] as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
 

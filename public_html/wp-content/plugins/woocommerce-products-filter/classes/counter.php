@@ -31,7 +31,8 @@ final class WP_QueryWoofCounter {
 
         WOOF_REQUEST::set('woof_before_recount_query', 1);
         if (isset($woof_settings['cache_count_data']) AND $woof_settings['cache_count_data']) {
-            $this->expire = $woof_settings['cache_count_data_auto_clean'];
+			//thank you Benedikt
+			$this->expire = isset($woof_settings['cache_count_data_auto_clean']) ? $woof_settings['cache_count_data_auto_clean'] : DAY_IN_SECONDS * 7;
 
             /*
              * If the user uses the object cache (otherwise it will give nothing)

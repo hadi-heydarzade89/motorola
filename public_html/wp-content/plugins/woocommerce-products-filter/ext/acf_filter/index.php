@@ -55,7 +55,7 @@ final class WOOF_ACF_FILTER extends WOOF_EXT {
 
     public function get_all_acf_meta() {
 
-        if (!function_exists('acf_get_field_groups')) {
+        if (!function_exists('acf_get_field_groups') || !function_exists('acf_get_raw_fields')) {
             return array();
         }
 
@@ -74,7 +74,7 @@ final class WOOF_ACF_FILTER extends WOOF_EXT {
             }
 
             //$fields = acf_get_fields($item);
-            $fields = acf_get_raw_fields($item['ID']);
+			$fields = acf_get_raw_fields( $item['ID'] );
             $group_name = $item['title'];
             foreach ($fields as $field) {
                 $type = $field['type'];

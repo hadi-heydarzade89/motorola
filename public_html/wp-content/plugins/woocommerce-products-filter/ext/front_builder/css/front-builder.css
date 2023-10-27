@@ -73,7 +73,7 @@
     padding: 9px;
 }
 
-select:invalid,
+select.woof-front-builder-selector:invalid,
 select.woof-front-builder-selector
 {
     color: #2eca8b !important;
@@ -264,11 +264,5 @@ select.woof-front-builder-selector option:not([value=""])
 
 .woof-front-builder-container .woof_auto_1_columns .woof_container{
     padding: 0 0 15px 0;
-}
-
-@media all and (max-width: 600px) {
-    .woof_sid_front_builder .woof_container{
-        width: 100% !important;
-    }
 }
 

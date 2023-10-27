@@ -22,12 +22,6 @@ class WOOF_SEO {
         $this->rules = $rules;
         $this->curr_url = $url;
 
-        if (isset(woof()->woof_settings['woof_url_request']['page_index'])) {
-            $this->no_index_search = woof()->woof_settings['woof_url_request']['page_index'];
-        }
-        if (isset(woof()->woof_settings['woof_url_request']['index_deep'])) {
-            $this->index_deep = woof()->woof_settings['woof_url_request']['index_deep'];
-        }
 
         $this->special_filters = array(
             'instock' => array('stock' => 'instock'),
@@ -52,8 +46,21 @@ class WOOF_SEO {
         //for ajax
         add_filter('woof_draw_products_get_args', array($this, 'ajax_page_title'), 100, 2);
     }
+	public function get_index_deep() {
+        if (isset(woof()->settings['woof_url_request']['index_deep'])) {
+            return woof()->settings['woof_url_request']['index_deep'];
+        }
+		return 2;
+	}
+	public function get_no_index_search() {
 
-    public function check_search_rules() {
+        if (isset(woof()->settings['woof_url_request']['page_index'])) {
+            return woof()->settings['woof_url_request']['page_index'];
+        }
+		return false;
+	}
+	
+	public function check_search_rules() {
 
         $rules = $this->rules;
         $current_url = $this->curr_url;
@@ -105,8 +112,9 @@ class WOOF_SEO {
     }
 
     public function do_index() {
-        $do_index = $this->no_index_search;
-        if ($this->get_request_deep() > $this->index_deep) {
+        $do_index = $this->get_no_index_search();
+
+        if ($this->get_request_deep() > $this->get_index_deep()) {
             return $do_index;
         }
         if ($this->check_search_rules()) {

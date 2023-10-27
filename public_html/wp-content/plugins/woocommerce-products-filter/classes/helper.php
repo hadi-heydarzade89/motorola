@@ -118,7 +118,6 @@ final class WOOF_HELPER {
 
     public static function get_terms($taxonomy, $hide_empty = true, $get_childs = true, $selected = 0, $category_parent = 0) {
         static $collector = array();
-
         $lang_key = ""; //WPML compatibility
         if (class_exists('SitePress')) {
             // $lang_key = ICL_LANGUAGE_CODE;

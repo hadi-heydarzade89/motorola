@@ -614,7 +614,6 @@ jQuery(document).ready(function () {
             jQuery('#woof_hide_dynamic_empty_pos').prop('disabled', true);
             jQuery('#woof_hide_dynamic_empty_pos_turbo_mode').prop('disabled', true);
             jQuery('select[name="woof_settings[hide_terms_count_txt]"]').prop('disabled', true);
-            jQuery('select[name="woof_settings[show_images_by_attr_show]"]').prop('disabled', true);
             //***
             jQuery('#swoof_search_slug').prop('disabled', true);
             jQuery('#swoof_search_slug').val('In the premium version');

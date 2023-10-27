@@ -725,7 +725,7 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
             }
 
             foreach ($general_search_terms as $terms) {
-                $sub_sql[] = $wpdb->prepare("({$terms} $search_type %s)",  $like);
+                $sub_sql[] = $wpdb->prepare("({$wpdb->posts}.{$terms} $search_type %s)",  $like);
             }
             if ($tax_search) {
                 $sub_sql[] = $wpdb->prepare("( trm.name $search_type %s)", $word);

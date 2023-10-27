@@ -29,8 +29,6 @@ export default class Panel {
                         name: 'click',
                         callback: e => {
 
-                            console.log(e.which);
-
                             if (lock) {
                                 return false;
                             }

@@ -38,9 +38,13 @@ div#nested-list-subheader,a.MuiButtonBase-root.MuiMenuItem-root.MuiMenuItem-gutt
 h2#elementor-navigator__header__title,.elementor-control-input-wrapper.elementor-control-unit-5,button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeLarge.MuiButton-containedSizeLarge.MuiButtonGroup-grouped.MuiButtonGroup-groupedHorizontal.MuiButtonGroup-groupedContained.MuiButtonGroup-groupedContainedHorizontal.MuiButtonGroup-groupedContainedPrimary.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeLarge.MuiButton-containedSizeLarge.eui-button.eui-rtl-2v0k8i,
 .elementor-nerd-box-title,.elementor-nerd-box-message,span.MuiTypography-root.MuiTypography-body1.MuiListItemText-primary.eui-rtl-1u5uj05,.MuiButtonBase-root.MuiMenuItem-root.MuiMenuItem-dense.MuiMenuItem-gutters.MuiMenuItem-root.MuiMenuItem-dense.MuiMenuItem-gutters.eui-menu-item.eui-rtl-14c94tx,
 li.MuiButtonBase-root.MuiMenuItem-root.MuiMenuItem-dense.MuiMenuItem-gutters.MuiMenuItem-root.MuiMenuItem-dense.MuiMenuItem-gutters.eui-menu-item.eui-rtl-jbxpg6,.e-con-select-type__title,.eui-rtl-5omgw0,.dialog-tooltip-widget .dialog-tooltip-header,
-.dialog-tooltip-widget .dialog-tooltip-message,.elementor-repeater-row-item-title,.eui-rtl-b8meod,h3.elementor-control-title,li.ui-menu-item
+.dialog-tooltip-widget .dialog-tooltip-message,.elementor-repeater-row-item-title,.eui-rtl-b8meod,h3.elementor-control-title,li.ui-menu-item,span.MuiTypography-root.MuiTypography-body2.MuiListItemText-primary.eui-rtl-14tqbo1,.MuiTooltip-tooltip.MuiTooltip-tooltipArrow.MuiTooltip-tooltipPlacementBottom.eui-rtl-hc94nj,button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeLarge.MuiButton-containedSizeLarge.Mui-disabled.MuiButtonGroup-grouped.MuiButtonGroup-groupedHorizontal.MuiButtonGroup-groupedContained.MuiButtonGroup-groupedContainedHorizontal.MuiButtonGroup-groupedContainedPrimary.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeLarge.MuiButton-containedSizeLarge.eui-button.eui-rtl-1k7tcru,.eui-rtl-1ssw4uy,span.MuiTypography-root.MuiTypography-body1.MuiListItemText-primary.eui-rtl-yb0lig,span.MuiChip-label.MuiChip-labelSmall.eui-rtl-1pjtbja,button.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.Mui-disabled.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.eui-button.eui-rtl-16yijr4
  {
     font-family: IRANYekanX !important;
+}
+
+button {
+    font-family: 'IRANYekanX'!important;
 }
 
 .elementor-panel-heading-title,.elementor-nerd-box-title,.elementor-panel #elementor-panel-header {

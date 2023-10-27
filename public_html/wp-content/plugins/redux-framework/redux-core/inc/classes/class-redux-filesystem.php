@@ -418,12 +418,14 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 
 			if ( ! $res ) {
 				if ( 'dirlist' === $action ) {
-					if ( empty( $res ) && is_array( $res ) ) {
+					if ( empty( $res ) ) {
 						return;
 					}
 
-					if ( count( glob( "$file*" ) ) === 0 ) {
-						return;
+					if ( ! is_array( $res ) ) {
+						if ( count( glob( "$file*" ) ) === 0 ) {
+							return;
+						}
 					}
 				}
 
@@ -540,8 +542,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 
 			if ( ! $return && $this->use_filesystem ) {
 				$abs_path = $this->get_sanitized_path( $abs_path );
-
-				// phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_is_writable, WordPress.WP.AlternativeFunctions.file_system_operations_is_writable
+				// phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_is_writable
 				$return = is_writable( $abs_path ) && $this->wp_filesystem->put_contents( $abs_path, $contents, $perms );
 			}
 
@@ -806,7 +807,7 @@ if ( ! class_exists( 'Redux_Filesystem', false ) ) {
 
 			try {
 				// phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_is_writable, WordPress.WP.AlternativeFunctions.file_system_operations_is_writable
-				$mkdirp = is_writable( $abs_path ) && wp_mkdir_p( $abs_path );
+				$mkdirp = wp_mkdir_p( $abs_path );
 			} catch ( Exception $e ) {
 				$mkdirp = false;
 			}

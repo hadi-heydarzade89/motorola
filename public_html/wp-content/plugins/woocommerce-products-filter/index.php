@@ -3,18 +3,18 @@
   Plugin Name: HUSKY - Products Filter Professional for WooCommerce
   Plugin URI: https://products-filter.com/
   Description: HUSKY - WooCommerce Products Filter Professional. Flexible, easy and robust products filter for WooCommerce store site!
-  Requires at least: WP 5.2.0
-  Tested up to: WP 6.3
+  Requires at least: WP 4.9.0
+  Tested up to: WP 6.4
   Author: realmag777
   Author URI: https://pluginus.net/
-  Version: 1.3.4.4
+  Version: 1.3.4.5
   Requires PHP: 7.3
   Tags: filter,search,woocommerce,woocommerce filter,woocommerce product filter,woocommerce products filter,products filter,product filter,filter of products,filter for products,filter for woocommerce
   Text Domain: woocommerce-products-filter
   Domain Path: /languages
   Forum URI: https://pluginus.net/support/forum/woof-woocommerce-products-filter/
-  WC requires at least: 5.2.0
-  WC tested up to: 8.1
+  WC requires at least: 6.0
+  WC tested up to: 8.2
  */
 
 //update_option('woof_settings', []);//dev: nearly absolute reset of the plugin settings
@@ -56,9 +56,9 @@ define('WOOF_PATH', plugin_dir_path(__FILE__));
 define('WOOF_LINK', plugin_dir_url(__FILE__));
 define('WOOF_PLUGIN_NAME', plugin_basename(__FILE__));
 define('WOOF_EXT_PATH', WOOF_PATH . 'ext/');
-define('WOOF_VERSION', '1.3.4.4');
+define('WOOF_VERSION', '1.3.4.5');
 //define('WOOF_VERSION', uniqid('woof-')); //for dev only
-define('WOOF_MIN_WOOCOMMERCE_VERSION', '5.2');
+define('WOOF_MIN_WOOCOMMERCE_VERSION', '6.0');
 //classes
 include WOOF_PATH . 'classes/request.php';
 include WOOF_PATH . 'classes/storage.php';
@@ -74,7 +74,7 @@ include WOOF_PATH . 'lib/alert/index.php';
 //***
 include WOOF_PATH . 'installer/first_settings.php';
 
-//22-09-2023
+//26-10-2023
 final class WOOF {
 
     public $settings = array();
@@ -2740,7 +2740,7 @@ final class WOOF {
                     if ($this->is_really_current_term_exists()) {
                         $t = $this->get_really_current_term();
                         if ($tax_key == $t->taxonomy) {
-                            if (isset($args['taxonomies'][$tax_key][$t->term_id])) {
+                            if (isset($args['taxonomies'][$tax_key][$t->term_id]) && !empty($args['taxonomies'][$tax_key][$t->term_id]['childs'])) {
                                 $args['taxonomies'][$tax_key] = $args['taxonomies'][$tax_key][$t->term_id]['childs'];
                             } else {
                                 if ($t->parent != 0) {
@@ -3835,7 +3835,7 @@ final class WOOF {
         public function get_price_filter_types() {
             return [
                 0 => esc_html__('No', 'woocommerce-products-filter'),
-                //1 => esc_html__('As woo range-slider', 'woocommerce-products-filter'),
+                1 => esc_html__('As woo range-slider', 'woocommerce-products-filter'),
                 2 => esc_html__('As drop-down', 'woocommerce-products-filter'),
                 3 => esc_html__('As ion range-slider', 'woocommerce-products-filter'),
                 4 => esc_html__('As textinputs', 'woocommerce-products-filter'),

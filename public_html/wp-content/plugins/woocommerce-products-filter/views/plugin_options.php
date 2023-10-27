@@ -25,22 +25,10 @@
                 <i><?php printf(esc_html__('Actualized for WooCommerce v.%s.x', 'woocommerce-products-filter'), WOOCOMMERCE_VERSION) ?></i><br />
             </div>
             <div>
-                <?php if (time() < 1695544622): ?>
-                
-                <a href="https://products-filter.com/downloads" title="33% discount until 24th september 2023" target="_blank"><img width="120" src="https://pluginus.net/wp-content/uploads/2023/09/33-percents-discount-24th-sep-2023.png" alt="33% discount until 24th september 2023" /></a>
-
-                <?php else: ?>
-
-                    <?php if ($this->show_notes): ?>
-                        <br>
-                        <a href="https://codecanyon.pluginus.net/item/woof-woocommerce-products-filter/11498469" target="_blank" class="woof-button">
-                            <span class="icon-upload"></span><?php esc_html_e('Upgrade', 'woocommerce-products-filter') ?>
-                        </a>
-                    <?php endif; ?>
-
+                <?php if ($this->show_notes): ?>
+                    <br>
+                    <a href="https://codecanyon.pluginus.net/item/woof-woocommerce-products-filter/11498469" target="_blank" class="woof-button"><span class="icon-upload"></span><?php esc_html_e('Upgrade', 'woocommerce-products-filter') ?></a>
                 <?php endif; ?>
-
-
             </div>
         </div>
 
@@ -1201,13 +1189,13 @@
                                     </div>
 
                                 </div>
-                                <div class="woof-control-section woof_premium_only">
+                                <div class="woof-control-section">
                                     <?php
                                     $show_images_by_attr = array(
                                         0 => esc_html__("No", 'woocommerce-products-filter'),
                                         1 => esc_html__("Yes", 'woocommerce-products-filter')
                                     );
-                                    if (!isset($woof_settings['show_images_by_attr_show']) OR empty($woof_settings['show_images_by_attr_show']) && $this->show_notes) {
+                                    if (!isset($woof_settings['show_images_by_attr_show']) OR $woof_settings['show_images_by_attr_show']) {
                                         $woof_settings['show_images_by_attr_show'] = 0;
                                     }
                                     ?>

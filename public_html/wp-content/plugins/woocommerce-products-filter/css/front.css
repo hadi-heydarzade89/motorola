@@ -1234,3 +1234,6 @@ ul.chosen-results{
     background: #fff;
 }
 
+.widget_price_filter .price_slider_wrapper .price_slider {
+    min-width: 200px;
+}

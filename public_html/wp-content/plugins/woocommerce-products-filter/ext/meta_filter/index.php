@@ -85,7 +85,7 @@ final class WOOF_META_FILTER extends WOOF_EXT {
         );
 
         $this->meta_filter_types = apply_filters('woof_meta_filter_add_types', $this->meta_filter_types);
-
+        
         if (isset($this->woof_settings['meta_filter']) AND is_array($this->woof_settings['meta_filter'])) {
             $counter = 0;
             foreach ($this->woof_settings['meta_filter'] as $key => $val) {
@@ -139,7 +139,7 @@ final class WOOF_META_FILTER extends WOOF_EXT {
         }
         wp_enqueue_script('woof_qs_admin', $this->get_ext_link() . 'js/admin.js', array(), WOOF_VERSION);
         //***
-
+        
         $data = array();
 
         $data['woof_settings'] = $this->woof_settings;
@@ -154,23 +154,23 @@ final class WOOF_META_FILTER extends WOOF_EXT {
     public function woof_meta_get_keys() {
         $res = '';
 
-        if (!isset($_POST['meta_nonce']) || !wp_verify_nonce($_POST['meta_nonce'], 'woof_get_meta_keys')) {
-            die();
-        }
-
+		if (!isset($_POST[ 'meta_nonce' ]) || !wp_verify_nonce( $_POST[ 'meta_nonce' ], 'woof_get_meta_keys' ) ) {			
+			die();
+		}
+		
         require_once $this->get_ext_path() . 'classes/woof_pds_cpt.php';
         if (class_exists('WOOF_PDS_CPT', false)) {
             $pds_cpt = new WOOF_PDS_CPT();
             $this->excluded_meta = array_merge($pds_cpt->get_internal_meta_keys(), $this->excluded_meta);
         }
-
-        $product_id = intval(WOOF_REQUEST::get('product_id')); //data from AJAX request
+        
+        $product_id = intval(WOOF_REQUEST::get('product_id'));//data from AJAX request
 
         if ($product_id > 0) {
-            $meta = get_post_meta($product_id, '');
-            if (!is_array($meta)) {
-                $meta = array();
-            }
+			$meta = get_post_meta($product_id, '');
+			if(!is_array($meta)){
+				$meta = array();
+			}
             $a1 = array_keys($meta);
             $res = array_diff($a1, $this->excluded_meta);
         }
@@ -188,6 +188,7 @@ final class WOOF_META_FILTER extends WOOF_EXT {
     public function woof_print_html_type_options_meta() {//old
         $key = "";
         $key = str_replace('woof_print_html_type_options_', "", current_filter());
+        
         ?>
         <li data-key="<?php echo esc_attr($key) ?>" class="woof_options_li">
 
@@ -240,7 +241,7 @@ final class WOOF_META_FILTER extends WOOF_EXT {
 
     //compatibility with other extensions
     public static function get_meta_filter_name($request_key) {
-
+        
         foreach (woof()->settings['meta_filter'] as $item) {
             $key = $item['search_view'] . "_" . $item['meta_key'];
             if ($key == $request_key) {
@@ -252,7 +253,7 @@ final class WOOF_META_FILTER extends WOOF_EXT {
 
     //compatibility with other extensions
     public static function get_meta_filter_option_name($request_key, $request_val) {
-
+        
         $option_name = "";
         foreach (woof()->settings['meta_filter'] as $item) {
             $key = $item['search_view'] . "_" . $item['meta_key'];
