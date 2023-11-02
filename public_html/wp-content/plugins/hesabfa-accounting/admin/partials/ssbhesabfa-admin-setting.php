@@ -4,7 +4,7 @@ include_once( plugin_dir_path( __DIR__ ) . 'services/HesabfaLogService.php' );
 error_reporting(0);
 /**
  * @class      Ssbhesabfa_Setting
- * @version    2.0.82
+ * @version    2.0.83
  * @since      1.0.0
  * @package    ssbhesabfa
  * @subpackage ssbhesabfa/admin/setting
@@ -645,40 +645,40 @@ class Ssbhesabfa_Setting {
 		$ssbhesabf_setting_fields = self::ssbhesabfa_customers_setting_fields();
 
 		if ($_POST) {
-            // get additional checkout fields from post form
-            HesabfaLogService::writeLogStr( "========== سیو کردن تنظیمات مشتری =============" . "\n" . "========== customer settings save =============" );
-            // get radio
+
+            HesabfaLogService::writeLogStr( "========== customer settings save =============" );
+
             $add_fields = wc_clean( $_POST['addFieldsRadio'] );;
-            // get checkboxes
+
             $nationalCodeCheck          = wc_clean( $_POST['nationalCodeCheck'] );
             $economicCodeCheck          = wc_clean( $_POST['economicCodeCheck'] );
             $registrationNumberCheck    = wc_clean( $_POST['registrationNumberCheck'] );
             $websiteCheck               = wc_clean( $_POST['websiteCheck'] );
-            // get checkboxes
+
             $nationalCodeRequired          = wc_clean( $_POST['nationalCodeRequired'] );
             $economicCodeRequired          = wc_clean( $_POST['economicCodeRequired'] );
             $registrationNumberRequired    = wc_clean( $_POST['registrationNumberRequired'] );
             $websiteRequired               = wc_clean( $_POST['websiteRequired'] );
-            // get text inputs
+
             if(isset($_POST['nationalCode']) || isset($_POST['economicCode']) || isset($_POST['registrationNumber']) || isset($_POST['website'])) {
                 $nationalCode          = wc_clean( $_POST['nationalCode'] );
                 $economicCode          = wc_clean( $_POST['economicCode'] );
                 $registrationNumber    = wc_clean( $_POST['registrationNumber'] );
                 $website               = wc_clean( $_POST['website'] );
             }
-            // save radio options
+
             update_option( 'ssbhesabfa_contact_add_additional_checkout_fields_hesabfa', $add_fields );
-            // save checkbox options
+
             update_option( 'ssbhesabfa_contact_NationalCode_checkbox_hesabfa', $nationalCodeCheck );
             update_option( 'ssbhesabfa_contact_EconomicCode_checkbox_hesabfa', $economicCodeCheck );
             update_option( 'ssbhesabfa_contact_RegistrationNumber_checkbox_hesabfa', $registrationNumberCheck );
             update_option( 'ssbhesabfa_contact_Website_checkbox_hesabfa', $websiteCheck );
-            // save checkbox options
+
             update_option( 'ssbhesabfa_contact_NationalCode_isRequired_hesabfa', $nationalCodeRequired );
             update_option( 'ssbhesabfa_contact_EconomicCode_isRequired_hesabfa', $economicCodeRequired );
             update_option( 'ssbhesabfa_contact_RegistrationNumber_isRequired_hesabfa', $registrationNumberRequired );
             update_option( 'ssbhesabfa_contact_Website_isRequired_hesabfa', $websiteRequired );
-            // save text inputs options
+
             if(isset($nationalCode) || isset($economicCode) || isset($registrationNumber) || isset($website)) {
                 update_option('ssbhesabfa_contact_NationalCode_text_hesabfa', $nationalCode);
                 update_option('ssbhesabfa_contact_EconomicCode_text_hesabfa', $economicCode);
@@ -751,6 +751,13 @@ class Ssbhesabfa_Setting {
 		);
 
         $fields[] = array(
+            'title'   => __( "Invoice Salesman Percentage", 'ssbhesabfa' ),
+            'id'      => 'ssbhesabfa_invoice_salesman_percentage',
+            'type'    => 'text',
+            'placeholder' => __("Invoice Salesman Percentage", 'ssbhesabfa'),
+        );
+
+        $fields[] = array(
             'title' => '',
             'desc' => __('Save invoice in draft mode in Hesabfa', 'ssbhesabfa'),
             'id' => 'ssbhesabfa_invoice_draft_save_in_hesabfa',
@@ -797,7 +804,7 @@ class Ssbhesabfa_Setting {
 		$Html_output              = new Ssbhesabfa_Html_output();
 		?>
         <style>
-            #ssbhesabfa_invoice_freight_code {
+            #ssbhesabfa_invoice_freight_code, #ssbhesabfa_invoice_salesman_percentage {
                 min-width: 250px;
             }
         </style>
@@ -971,6 +978,16 @@ class Ssbhesabfa_Setting {
 			'id'    => 'ssbhesabfa_account_login_token',
 			'type'  => 'text',
 		);
+
+        $fields[] = array(
+            'title' => __( 'API Address', 'ssbhesabfa' ),
+            'id'    => 'ssbhesabfa_api_address',
+            'type'  => 'select',
+            'options' => array(
+                "0" => "api.hesabfa.com",
+                "1" => "api.hesabfa.ir"
+            )
+        );
 
 		$fields[] = array( 'type' => 'sectionend', 'id' => 'api_options' );
 
@@ -1626,8 +1643,7 @@ class Ssbhesabfa_Setting {
 					echo '<p class="hesabfa-p">' . __( 'Cannot check the last change ID. Error Message: ', 'ssbhesabfa' ) . $changes->ErrorMessage . '</p>';
 					echo '</div>';
 
-					HesabfaLogService::log( array( "عدم توانایی در دریافت تغییرات آیتم. متن خطا: $changes->ErrorMessage. کد خطا: $changes->ErrorCode" . "\n" .
-                    "Cannot check the last change ID. Error Message: $changes->ErrorMessage. Error Code: $changes->ErrorCode") );
+					HesabfaLogService::log( array("Cannot check the last change ID. Error Message: $changes->ErrorMessage. Error Code: $changes->ErrorCode") );
 				}
 
 
@@ -1683,8 +1699,7 @@ class Ssbhesabfa_Setting {
 					update_option( 'ssbhesabfa_business_expired', 0 );
 				}
 
-				HesabfaLogService::log( array( "عدم توانایی در تنظیم وب هوک حسابفا. متن خطا: $response->ErrorMessage. کد خطا: $response->ErrorCode" . "\n" .
-                "Cannot set Hesabfa webHook. Error Message: response->ErrorMessage. Error Code: $response->ErrorCode") );
+				HesabfaLogService::log( array("Cannot set Hesabfa webHook. Error Message: response->ErrorMessage. Error Code: $response->ErrorCode") );
 			}
 		} else {
 			update_option( 'ssbhesabfa_live_mode', 0 );
@@ -1693,7 +1708,7 @@ class Ssbhesabfa_Setting {
 			echo '<p class="hesabfa-p">' . __( 'Cannot connect to Hesabfa servers. Please check your Internet connection', 'ssbhesabfa' ) . '</p>';
 			echo '</div>';
 
-			HesabfaLogService::log( array( "نمی توان با سرورهای حسابفا ارتباط برقرار کرد. اتصال اینترنت خود را بررسی کنید." . "\n" . "Cannot connect to hesabfa servers. Check your internet connection" ) );
+			HesabfaLogService::log( array("Cannot connect to hesabfa servers. Check your internet connection" ) );
 		}
 
 		return $response;
@@ -1724,8 +1739,7 @@ class Ssbhesabfa_Setting {
 			echo '<p class="hesabfa-p">' . __( 'Cannot get Banks detail.', 'ssbhesabfa' ) . '</p>';
 			echo '</div>';
 
-			HesabfaLogService::log( array( "نمی توان اطلاعات بانکی را دریافت کرد. کدخطا: $banks->ErrorCode. متن خطا: $banks->ErrorMessage." . "\n" .
-                "Cannot get banking information. Error Code: $banks->ErrorCode. Error Message: $banks->ErrorMessage." ) );
+			HesabfaLogService::log( array("Cannot get banking information. Error Code: $banks->ErrorCode. Error Message: $banks->ErrorMessage." ) );
 
 			return array( '0' => __( 'Cannot get Banks detail.', 'ssbhesabfa' ) );
 		}
@@ -1765,8 +1779,7 @@ class Ssbhesabfa_Setting {
 			echo '<div class="error">';
 			echo '<p class="hesabfa-p">' . __( 'Cannot get Projects detail.', 'ssbhesabfa' ) . '</p>';
 			echo '</div>';
-			HesabfaLogService::log( array( "نمی توان اطلاعات پروژه ها را دریافت کرد. کدخطا: $projects->ErrorCode. متن خطا: $projects->ErrorMessage." . "\n" .
-            "Cannot get projects information. Error Code:$projects->ErrorCode. Error Message: $projects->ErrorMessage.") );
+			HesabfaLogService::log( array("Cannot get projects information. Error Code:$projects->ErrorCode. Error Message: $projects->ErrorMessage.") );
 
 			return array( '0' => __( 'Cannot get projects detail.', 'ssbhesabfa' ) );
 		}
@@ -1791,8 +1804,7 @@ class Ssbhesabfa_Setting {
 			echo '<div class="error">';
 			echo '<p class="hesabfa-p">' . __( 'Cannot get Salesmen detail.', 'ssbhesabfa' ) . '</p>';
 			echo '</div>';
-			HesabfaLogService::log( array( "نمی توان  اطلاعات فروشنده ها را دریافت کرد. کدخطا: $salesmen->ErrorCode. متن خطا: $salesmen->ErrorMessage." . "\n" .
-            "Cannot get salesmen information. Error Code: $salesmen->ErrorCode Error Message: .$salesmen->ErrorMessage.") );
+			HesabfaLogService::log( array("Cannot get salesmen information. Error Code: $salesmen->ErrorCode Error Message: .$salesmen->ErrorMessage.") );
 
 			return array( '0' => __( 'Cannot get salesmen detail.', 'ssbhesabfa' ) );
 		}
@@ -1981,7 +1993,7 @@ class Ssbhesabfa_Setting {
                     }
                     if (is_file($file)) {
                         if (unlink($file)) {
-                            HesabfaLogService::writeLogStr("=====فایل لاگ انتخاب شده پاک شد=====" . "\n" . "=====Selected Log File deleted=====");
+                            HesabfaLogService::writeLogStr("=====Selected Log File deleted=====");
                             header("refresh:0");
                         } else {
                             HesabfaLogService::writeLogStr("Unable to delete the file");
@@ -2004,7 +2016,7 @@ class Ssbhesabfa_Setting {
                                 $endObj = DateTime::createFromFormat('Y-m-d', $endDate);
 
                                 if ($dateObj >= $startObj && $dateObj <= $endObj) {
-                                     HesabfaLogService::writeLogStr("=====فایل های لاگ پاک شدند=====" . "\n" . "=====Log Files deleted=====");
+                                     HesabfaLogService::writeLogStr("=====Log Files deleted=====");
                                      unlink($file);
                                 }
                             }
@@ -2071,8 +2083,7 @@ class Ssbhesabfa_Setting {
 			echo '<div class="error">';
 			echo '<p class="hesabfa-p">' . __( 'Cannot get warehouses.', 'ssbhesabfa' ) . '</p>';
 			echo '</div>';
-			HesabfaLogService::log( array( "عدم توانایی در دریافت انبارها. کدخطا: $warehouses->ErrorCode. متن خطا: $warehouses->ErrorMessage." . "\n" .
-            "Cannot get warehouses. Error Code: $warehouses->ErrorCode. Error Message: .$warehouses->ErrorMessage.") );
+			HesabfaLogService::log( array("Cannot get warehouses. Error Code: $warehouses->ErrorCode. Error Message: .$warehouses->ErrorMessage.") );
 
 			return array( '0' => __( 'Cannot get warehouses.', 'ssbhesabfa' ) );
 		}

@@ -78,10 +78,12 @@ class Persian_Woocommerce_Notice {
 	public function notices(): array {
 		global $pagenow;
 
-		$post_type    = sanitize_text_field( $_GET['post_type'] ?? null );
-		$page         = sanitize_text_field( $_GET['page'] ?? null );
-		$tab          = sanitize_text_field( $_GET['tab'] ?? null );
-		$has_shipping = wc_shipping_enabled();
+		$post_type = sanitize_text_field( $_GET['post_type'] ?? null );
+		$page      = sanitize_text_field( $_GET['page'] ?? null );
+		$tab       = sanitize_text_field( $_GET['tab'] ?? null );
+
+		$has_shipping    = wc_shipping_enabled() && is_plugin_inactive( 'persian-woocommerce-shipping/woocommerce-shipping.php' );
+		$pws_install_url = admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-shipping' );
 
 		$notices = [
 			[
@@ -96,7 +98,7 @@ class Persian_Woocommerce_Notice {
 <a href="https://yun.ir/pwto" target="_blank">
 <input type="button" class="button button-primary" value="اطلاعات بیشتر">
 </a>
-<a href="' . admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-shipping' ) . '" target="_blank">
+<a href="' . $pws_install_url . '" target="_blank">
 <input type="button" class="button" value="نصب افزونه پیشخوان پست">
 </a>',
 				'condition' => $pagenow == 'edit.php' && $post_type == 'shop_order' && $has_shipping,
@@ -114,7 +116,7 @@ class Persian_Woocommerce_Notice {
 <a href="https://yun.ir/pwts" target="_blank">
 <input type="button" class="button button-primary" value="اطلاعات بیشتر">
 </a>
-<a href="' . admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-shipping' ) . '" target="_blank">
+<a href="' . $pws_install_url . '" target="_blank">
 <input type="button" class="button" value="نصب افزونه پیشخوان پست">
 </a>',
 				'condition' => $page == 'wc-settings' && $tab == 'shipping' && $has_shipping,
@@ -141,7 +143,7 @@ class Persian_Woocommerce_Notice {
 <a href="https://yun.ir/pwtd" target="_blank">
 <input type="button" class="button button-primary" value="اطلاعات بیشتر">
 </a>
-<a href="' . admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-shipping' ) . '" target="_blank">
+<a href="' . $pws_install_url . '" target="_blank">
 <input type="button" class="button" value="نصب افزونه پیشخوان پست">
 </a>',
 				'condition' => $pagenow == 'index.php' && $has_shipping,
@@ -155,8 +157,15 @@ class Persian_Woocommerce_Notice {
 			],
 			[
 				'id'        => 'pws',
-				'content'   => sprintf( 'بنظر میرسه هنوز حمل و نقل (پست پیشتاز، سفارشی، پیک موتوری و...) فروشگاه رو پیکربندی نکردید؟ <a href="%s" target="_blank">نصب افزونه حمل و نقل فارسی ووکامرس و پیکربندی.</a>', admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-shipping' ) ),
-				'condition' => is_plugin_inactive( 'persian-woocommerce-shipping/woocommerce-shipping.php' ) && $has_shipping,
+				'content'   => sprintf( 'بنظر میرسه هنوز حمل و نقل (پست پیشتاز، سفارشی، پیک موتوری و...) فروشگاه رو پیکربندی نکردید؟ <a href="%s" target="_blank">نصب افزونه حمل و نقل فارسی ووکامرس و پیکربندی.</a>', $pws_install_url ),
+				'condition' => $has_shipping,
+				'dismiss'   => 6 * MONTH_IN_SECONDS,
+			],
+			[
+				'id'        => 'pw_shipping_plugin',
+				'content'   => sprintf( '<b>افزونه رایگان حمل و نقل ووکامرس: </b> به راحتی روش‌های حمل و نقل پست پیشتاز، سفارشی و پیک موتوری را اضافه کنید و هزینه‌های ارسال را به صورت خودکار محاسبه کنید. <a href="%s" target="_blank">دانلود و نصب رایگان</a>.',
+					$pws_install_url ),
+				'condition' => $has_shipping && $page == 'wc-settings' && $tab == 'shipping',
 				'dismiss'   => 6 * MONTH_IN_SECONDS,
 			],
 			[
@@ -177,13 +186,6 @@ class Persian_Woocommerce_Notice {
 					'https://woosupport.ir/woocommerce-payment/',
 					'https://woocommerce.ir/product/%d8%a7%d9%81%d8%b2%d9%88%d9%86%d9%87-%d9%be%d8%b1%d8%af%d8%a7%d8%ae%d8%aa-%d9%88%d8%ac%d9%87-%da%a9%d8%a7%d8%b1%d8%aa-%d8%a8%d9%87-%da%a9%d8%a7%d8%b1%d8%aa-%d9%88%d9%88%da%a9%d8%a7%d9%85%d8%b1%d8%b3-c/' ),
 				'condition' => $page == 'wc-settings' && $tab == 'checkout',
-				'dismiss'   => 6 * MONTH_IN_SECONDS,
-			],
-			[
-				'id'        => 'pw_shipping_plugin',
-				'content'   => sprintf( '<b>افزونه رایگان حمل و نقل ووکامرس: </b> به راحتی روش‌های حمل و نقل پست پیشتاز، سفارشی و پیک موتوری را اضافه کنید و هزینه‌های ارسال را به صورت خودکار محاسبه کنید. <a href="%s" target="_blank">دانلود و نصب رایگان</a>.',
-					admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-shipping' ) ),
-				'condition' => is_plugin_inactive( 'persian-woocommerce-shipping/woocommerce-shipping.php' ) && $page == 'wc-settings' && $tab == 'shipping',
 				'dismiss'   => 6 * MONTH_IN_SECONDS,
 			],
 		];

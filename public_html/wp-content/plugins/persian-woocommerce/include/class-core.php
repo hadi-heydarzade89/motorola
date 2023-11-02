@@ -93,7 +93,7 @@ class Persian_Woocommerce_Core {
 				'callback'   => '',
 			],
 			45 => [
-				'title'      => 'اتصال به پیامک',
+				'title'      => 'ملی پیامک',
 				'capability' => 'manage_woocommerce',
 				'slug'       => 'persian-wc-melipayamak',
 				'callback'   => [ $this, 'melipayamak_page', ],

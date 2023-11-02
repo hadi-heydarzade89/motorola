@@ -28,43 +28,44 @@ if ( ! defined( 'ABSPATH' ) ) {
 				</svg>
 			</div>
 			<div>
-				<h1 class="text-gary-dark sm:text-2xl text-lg font-bold mb-1">
+				<h1 class="text-gary-dark rtl sm:text-2xl text-lg font-bold mb-1">
 					اتصال به ملی پیامک
 				</h1>
-				<h2 class="text-gray-light sm:text-lg text-sm">
+				<h2 class="text-gray-light rtl sm:text-lg text-sm">
 					ارتباط سریع و بی دردسر
 				</h2>
 			</div>
 		</div>
 
-		<div class="bg-gray-light-2 rounded-md text-sm1 p-4 mb-6">
+		<div class="bg-gray-light-2 rtl rounded-md text-sm1 p-4 mb-6">
 
 			وب‌سرویس ملی پیامک به شما اجازه می‌دهد وب‌سایت ووکامرسی خود را با استفاده از افزونه‌های پیامکی به سامانه
-			ملی‌پیامک متصل کرده و در زمان ورود و عضویت، ثبت یا تغییر وضعیت سفارش، تحویل کالا، تکمیل فرم و... مشتریان
-			خود را آگاه سازید.
+			ملی‌پیامک متصل کرده و در زمان ورود و عضویت، ثبت یا تغییر وضعیت سفارش، تحویل کالا، تکمیل فرم و... مشتریان خود
+			را آگاه سازید.
 		</div>
 
 		<div class="text-center mb-5">
 			<div class="offer">
-				<div class="text">
+				<div class="text rtl">
 					20% تخفیف ملی پیامک
 				</div>
 
 				<div class="holder-code">
-                        <span class="code">
+                        <span class="code rtl">
                             PWSMS
                         </span>
-					<button class="btn-copy" onclick="copyToClipboard(this, 'PWSMS')">
+					<button class="btn-copy rtl" onclick="copyToClipboard(this, 'PWSMS')">
 						کپی کد
 					</button>
 				</div>
 			</div>
 		</div>
 
-		<div class="text-center sm:w-64 w-60 mx-auto mb-14">
-			<a href="<?php echo admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-sms' ); ?>"
-			   class="flex w-full items-center justify-center gap-2 bg-blue text-white rounded-[3px] py-3 sm:px-5 px-3 mb-4 hover:shadow-xl hover:-translate-y-0.5"
-			   target="_blank">
+		<div class="d-flex justify-contet-between" style="display: flex;justify-content: center;flex-wrap: wrap;">
+			<div class="text-center  ml-20 mb-2">
+				<a href="https://www.melipayamak.com/?utm_source=wordpress-admin&utm_medium=landing&utm_campaign=persian-woocommerce/"
+				   class="flex w-full items-center justify-center gap-2 bg-blue text-white rounded-[3px] py-3 sm:px-5 px-3  hover:shadow-xl hover:-translate-y-0.5 a2:hover"
+				   target="_blank">
                     <span class="sm:h-7 h-6">
                         <svg class="h-full" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -73,59 +74,79 @@ if ( ! defined( 'ABSPATH' ) ) {
 							/>
                         </svg>
                     </span>
-				<span>
-                        شروع اتصال به ملی پیامک
+					<span class="rtl">
+                        خرید پنل پیامکی
                     </span>
-			</a>
-			<div class="flex gap-2 w-full items-center justify-between text-sm">
-                    <span>
+				</a>
+
+			</div>
+
+			<div class="text-center  mb-2">
+				<a href="<?php echo admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-sms' ); ?>"
+				   class="flex w-full items-center justify-center gap-2 bg-gray-button rounded-[3px] py-3 sm:px-5 px-3  hover:shadow-xl hover:-translate-y-0.5 a2:hover"
+				   target="_blank">
+                    <span class="rtl" style="font-size: 16px;">
+                        نصب افزونه پیامک ووکامرس
+                    </span>
+				</a>
+			</div>
+
+		</div>
+
+
+		<div class="flex gap-2 w-full items-center justify-content-md-center  justify-content-evenly text-sm container-sm">
+                    <span class="rtl">
                         سوالی دارید؟
                     </span>
-				<div>
-					<a href="tel:+982163404">
-						۰۲۱-۶۳۴۰۴
-					</a>
-					<span class="inline-block bg-gray-light-2 text-gray-light text-xs rounded-[4px] p-1 mr-1">
+			<div>
+				<a href="tel:+982163404" class="rtl">
+					۰۲۱-۶۳۴۰۴
+				</a>
+				<span class="inline-block bg-gray-light-2 text-gray-light text-xs rounded-[4px] p-1 mr-1 rtl">
                             داخلی ۱
                         </span>
-				</div>
 			</div>
 		</div>
+
+
+	</div>
+
+	<div class="container">
 
 		<div class="md:mb-14 mb-10">
 			<div class="flex lg:flex-row flex-col items-center lg:pr-8 gap-x-12 gap-y-6">
 				<div class="holder-sms start-right">
-					<div class="sms top-7">
+					<div class="sms top-7 rtl">
 						رمز یکبار مصرف شما : ۴۱۱۳۰
 					</div>
-					<div class="sms top-20">
+					<div class="sms top-20 rtl">
 						محمد عزیز خوش آمدید!
 					</div>
-					<div class="sms bottom-7">
+					<div class="sms bottom-7 rtl">
 						مدیر عزیز سفارش جدید داریم.
 					</div>
 				</div>
 				<div>
 					<div class="mb-4 lg:text-right text-center">
-						<h3 class="text-xl font-bold mb-3">
-							مدیریت کامل کاربران
+						<h3 class="text-xl font-bold mb-3 rtl">
+							عضویت و ورود با پیامک
 						</h3>
-						<h5 class="text-gray-light">
-							پیامک، ساده‌ترین راه ورود و عضویت
+						<h5 class="text-gray-light rtl">
+							ورود و عضویت همانند دیجی کالا و اسنپ
 						</h5>
 					</div>
 					<ul class="text-sm">
-						<li class="mb-2">
-							عضویت و ورود با پیامک
+						<li class="mb-2 rtl">
+							مدیریت کامل کاربران
 						</li>
-						<li class="mb-2">
+						<li class="mb-2 rtl">
 							فراموشی رمز و پیامک یکبار مصرف
 						</li>
-						<li class="mb-2">
-							خوش‌آمدگویی با اس‌ام‌اس
+						<li class="mb-2 rtl">
+							خوش آمدگویی با اس ام اس
 						</li>
-						<li class="mb-2">
-							اطلاع‌رسانی فروش جدید، کمبود موجودی و ... به مدیر
+						<li class="mb-2 rtl">
+							اطلاع‌رسانی فروش جدید، کمبود موجودی و... به مدیر
 						</li>
 					</ul>
 				</div>
@@ -135,75 +156,89 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<div class="lg:mb-10 mb-5">
 			<div class="flex lg:flex-row flex-col items-center lg:pr-8 gap-x-12 gap-y-6">
 				<div class="holder-sms start-left">
-					<div class="sms top-7">
+					<div class="sms top-7 rtl">
 						کدرهگیری مرسوله پستی شما:
 					</div>
-					<div class="sms top-20">
+					<div class="sms top-20 rtl">
 						نظر شما برای ما مهم است!
 					</div>
-					<div class="sms bottom-7">
+					<div class="sms bottom-7 rtl">
 						مدیر عزیز، فرم *** تکمیل شد.
 					</div>
 				</div>
 				<div>
 					<div class="mb-4 lg:text-right text-center">
-						<h3 class="text-xl font-bold mb-3">
-							افزایش فروش و رضایت مشتری
+						<h3 class="text-xl font-bold mb-3 rtl">
+							فروش بیشتر با تخفیف پیامکی
 						</h3>
-						<h5 class="text-gray-light">
+						<h5 class="text-gray-light rtl">
 							اطلاع‌رسانی پیامکی در همه مراحل سفارش
 						</h5>
 					</div>
 					<ul class="text-sm">
-						<li class="mb-2">
+						<li class="mb-2 rtl">
 							حمل‌ و نقل و رهگیری مرسوله با پیامک
 						</li>
-						<li class="mb-2">
+						<li class="mb-2 rtl">
 							پیامک ثبت سفارش و نظرسنجی به مشتری
 						</li>
-						<li class="mb-2">
+						<li class="mb-2 rtl">
 							اطلاع‌رسانی تخفیف‌ها و خبرنامه پیامکی
 						</li>
-						<li class="mb-2">
+						<li class="mb-2 rtl">
 							سازگاری با گرویتی فرم و ۱۰ افزونه وردپرس دیگر
 						</li>
 					</ul>
 				</div>
 			</div>
 		</div>
+
+	</div>
+
+
+	<div class="mb-6 text-lg"
+		 style="color: #4d4d8f;font-weight: 800;/* font-size: 17px; */text-decoration: underline;text-align: center;">
+		<a href="https://www.melipayamak.com/blog/posts/wordpress-woocommerce-plugins/" class="rtl" target="_blank">جزئیات
+			بیشتر اتصال ووکامرس به پیامک</a>
 	</div>
 
 	<div class="border-t border-gray-light py-6 sm:px-8 px-6">
 		<div class="text-center mb-6">
-			<h3 class="font-bold mb-2">
+			<h4 class="text-lg font-bold mb-2 rtl">
 				وب‌سایتت رو به پیامک مجهز کن!
-			</h3>
-			<p class="text-gray-light text-sm">
+			</h4>
+			<p class="text-gray-light text-sm rtl">
 				با ارسال پیامک از لحظه ثبت‌نام تا لحظه تحویل محصول در کنار مشتری خود باشید.
 			</p>
 		</div>
-
+		<div class="bg-gray-light-2 rounded-md text-sm1 p-4 mb-6 rtl"
+			 style="color: #004085; border-color: #b8daff; background-color: #cce5ff; font-weight:500; font-size:14px;">
+			اگر قصد دارید فرآیند ورود و عضویت وب‌سایت خود را با احراز هویت پیامکی انجام دهید، پس از خرید پنل از سامانه
+			ملی پیامک به ما از قسمت پشتیبانی یک تیکت ارسال کنید تا در اسرع وقت افزونه‌های ورود با شماره موبایل برای شما
+			ارسال گردد.
+		</div>
 		<div class="text-center mb-5">
 			<div class="offer">
-				<div class="text">
+				<div class="text rtl">
 					20% تخفیف ملی پیامک
 				</div>
 
 				<div class="holder-code">
-                        <span class="code">
+                        <span class="code rtl">
                             PWSMS
                         </span>
-					<button class="btn-copy" onclick="copyToClipboard(this, 'PWSMS')">
+					<button class="btn-copy rtl" onclick="copyToClipboard(this, 'PWSMS')">
 						کپی کد
 					</button>
 				</div>
 			</div>
 		</div>
 
-		<div class="text-center sm:w-64 w-60 mx-auto mb-3">
-			<a href="<?php echo admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-sms' ); ?>"
-			   class="flex w-full items-center justify-center gap-2 bg-blue text-white rounded-[3px] py-3 sm:px-5 px-3 mb-4 hover:shadow-xl hover:-translate-y-0.5"
-			   target="_blank">
+		<div class="d-flex justify-contet-between" style="display: flex;justify-content: center;flex-wrap: wrap;">
+			<div class="text-center  ml-20 mb-2">
+				<a href="https://www.melipayamak.com/?utm_source=wordpress-admin&utm_medium=landing&utm_campaign=persian-woocommerce/"
+				   class="flex w-full items-center justify-center gap-2 bg-blue text-white rounded-[3px] py-3 sm:px-5 px-3  hover:shadow-xl hover:-translate-y-0.5 a2:hover"
+				   target="_blank">
                     <span class="sm:h-7 h-6">
                         <svg class="h-full" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -212,27 +247,46 @@ if ( ! defined( 'ABSPATH' ) ) {
 							/>
                         </svg>
                     </span>
-				<span>
-                        شروع اتصال به ملی پیامک
+					<span class="rtl">
+                        خرید پنل پیامکی
                     </span>
-			</a>
-			<div class="flex gap-2 w-full items-center justify-between text-sm">
+				</a>
+
+			</div>
+
+			<div class="text-center  mb-2">
+				<a href="<?php echo admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-sms' ); ?>"
+				   class="flex w-full items-center justify-center gap-2 bg-gray-button rounded-[3px] py-3 sm:px-5 px-3  hover:shadow-xl hover:-translate-y-0.5 a2:hover"
+				   target="_blank">
+                    <span class="rtl" style="font-size: 16px;">
+                        نصب افزونه پیامک ووکامرس
+                    </span>
+				</a>
+			</div>
+
+		</div>
+
+
+		<div class="flex gap-2 w-full items-center justify-content-md-center  justify-content-evenly text-sm container-sm rtl">
                     <span>
                         سوالی دارید؟
                     </span>
-				<div>
-					<a href="tel:+982163404">
-						۰۲۱-۶۳۴۰۴
-					</a>
-					<span class="inline-block bg-gray-light-2 text-gray-light text-xs rounded-[4px] p-1 mr-1">
+			<div>
+				<a href="tel:+982163404" class="rtl">
+					۰۲۱-۶۳۴۰۴
+				</a>
+				<span class="inline-block bg-gray-light-2 text-gray-light text-xs rounded-[4px] p-1 mr-1 rtl">
                             داخلی ۱
                         </span>
-				</div>
 			</div>
 		</div>
+
+
 	</div>
 
+
 </div>
+
 
 <script>
     //copyToClipboard
@@ -247,8 +301,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 <style>
     /*
-! tailwindcss v3.0.18 | MIT License | https://tailwindcss.com
-*/
+	! tailwindcss v3.0.18 | MIT License | https://tailwindcss.com
+	*/
 
     /*
 	1. Prevent padding and border from affecting element width. (https://github.com/mozdevs/cssremedy/issues/4)
@@ -290,7 +344,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         -o-tab-size: 4;
         tab-size: 4;
         /* 3 */
-        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
         /* 4 */
     }
 
@@ -923,6 +977,13 @@ if ( ! defined( 'ABSPATH' ) ) {
     .bg-blue {
         --tw-bg-opacity: 1;
         background-color: rgb(34 113 177 / var(--tw-bg-opacity));
+        border: 1px solid #2271b1;
+    }
+
+    .bg-gray-button {
+        background: #F6F7F5;
+        border: 1px solid #2271b1;
+        color: #2271b1;
     }
 
     .p-4 {
@@ -962,8 +1023,12 @@ if ( ! defined( 'ABSPATH' ) ) {
         text-align: center;
     }
 
+    .rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6 {
+        font-family: IRANSans !important;
+    }
+
     .font-iran-sans {
-        font-family: IRANSans, IRANYekan, IRANYekanX, Sahel, tahoma;
+        font-family: IRANSans;
     }
 
     .text-lg {
@@ -1320,6 +1385,15 @@ if ( ! defined( 'ABSPATH' ) ) {
         box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
     }
 
+    /*
+	a2:active,a2:focus,a2:hover {
+		color: #ffffff !important;
+	}
+	*/
+    a.flex.w-full.items-center.justify-center.gap-2.bg-blue.text-white.rounded-\[3px\].py-3.sm\:px-5.px-3.hover\:shadow-xl.hover\:-translate-y-0\.5.a2\:hover {
+        color: #fff;
+    }
+
     @media (min-width: 640px) {
         .sm\:h-16 {
             height: 4rem;
@@ -1330,7 +1404,7 @@ if ( ! defined( 'ABSPATH' ) ) {
         }
 
         .sm\:h-7 {
-            height: 1.75rem;
+            height: 24px;
         }
 
         .sm\:w-64 {
@@ -1366,12 +1440,15 @@ if ( ! defined( 'ABSPATH' ) ) {
             font-size: 1.025rem;
             line-height: 1.75rem;
         }
+
     }
 
     @media (min-width: 782px) {
         .md\:mb-14 {
             margin-bottom: 3.5rem;
         }
+
+
     }
 
     @media (min-width: 1024px) {
@@ -1390,7 +1467,72 @@ if ( ! defined( 'ABSPATH' ) ) {
         .lg\:text-right {
             text-align: right;
         }
+
+        .ml-20 {
+            margin-left: 20px;
+        }
     }
 
     /*# sourceMappingURL=styles.css.map */
+    @media (max-width: 991px) {
+        .justify-content-evenly {
+            justify-content: space-evenly;
+        }
+    }
+
+    @media (min-width: 991px) {
+        .justify-content-md-center {
+            justify-content: center;
+        }
+    }
+
+    .container, .container-fluid, .container-sm, .container-md, .container-lg, .container-xl, .container-xxl {
+        width: 100%;
+        padding-right: 15px;
+        padding-left: 15px;
+        margin-right: auto;
+        margin-left: auto
+    }
+
+    @media (min-width: 576px) {
+        .container, .container-xs, .container-sm {
+            max-width: 540px
+        }
+    }
+
+    @media (min-width: 768px) {
+        .container, .container-xs, .container-sm, .container-md {
+            max-width: 720px
+        }
+    }
+
+    @media (min-width: 992px) {
+        .container, .container-xs, .container-sm, .container-md, .container-lg {
+            max-width: 960px
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .container-sm {
+            max-width: 450px
+        }
+    }
+
+    @media (min-width: 1400px) {
+        .container-sm {
+            max-width: 450px
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .container, .container-xs, .container-md, .container-lg, .container-xl {
+            max-width: 620px
+        }
+    }
+
+    @media (min-width: 1400px) {
+        .container, .container-xs, .container-md, .container-lg, .container-xl, .container-xxl {
+            max-width: 620px
+        }
+    }
 </style>

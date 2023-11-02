@@ -155,7 +155,7 @@ function PW_Load_Zibal_Gateway() {
 
 			$Description = 'خریدار: ' . $order->get_formatted_billing_full_name();
 
-			$Mobile = get_post_meta( $order_id, '_billing_phone', true ) ? get_post_meta( $order_id, '_billing_phone', true ) : '-';
+			$Mobile = $order->get_meta( '_billing_phone' ) ? $order->get_meta( '_billing_phone' ) : '-';
 
 			$Mobile = preg_match( '/^09[0-9]{9}/i', $Mobile ) ? $Mobile : '';
 
@@ -228,9 +228,8 @@ function PW_Load_Zibal_Gateway() {
 				exit;
 			}
 
-			$order    = new WC_Order( $order_id );
+			$order    = wc_get_order( $order_id );
 			$currency = $order->get_currency();
-
 
 			$Amount = intval( $order->get_total() );
 
@@ -282,9 +281,10 @@ function PW_Load_Zibal_Gateway() {
 
 				if ( $Status == 'completed' && isset( $Transaction_ID ) && $Transaction_ID != 0 ) {
 
-					update_post_meta( $order_id, '_transaction_id', $Transaction_ID );
-					update_post_meta( $order_id, 'zibal_payment_card_number', $verify_card_no );
-					update_post_meta( $order_id, 'zibal_payment_ref_number', $verify_ref_num );
+					$order->update_meta_data( '_transaction_id', $Transaction_ID );
+					$order->update_meta_data( 'zibal_payment_card_number', $verify_card_no );
+					$order->update_meta_data( 'zibal_payment_ref_number', $verify_ref_num );
+					$order->save_meta_data();
 
 					$order->payment_complete( $Transaction_ID );
 					WC()->cart->empty_cart();
@@ -337,7 +337,7 @@ function PW_Load_Zibal_Gateway() {
 				}
 			} else {
 
-				$Transaction_ID = get_post_meta( $order_id, '_transaction_id', true );
+				$Transaction_ID = $order->get_meta( '_transaction_id' );
 
 				$Notice = wpautop( wptexturize( $this->success_massage ) );
 

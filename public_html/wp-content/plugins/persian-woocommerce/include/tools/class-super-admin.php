@@ -14,6 +14,14 @@ class PW_Super_Admin {
 			deactivate_plugins( 'super-admin/super-admin.php' );
 		}
 
+		// Woocommerce.com - Not working and useful in IRAN
+		if ( 'yes' === get_option( 'woocommerce_allow_tracking', 'no' ) ) {
+			update_option( 'woocommerce_allow_tracking', 'no', 'yes' );
+		}
+
+		add_filter( 'woocommerce_allow_marketplace_suggestions', '__return_false' );
+		// Woocommerce.com
+
 		if ( PW()->get_options( 'super_admin_boost_woo', 'no' ) == 'yes' ) {
 
 			add_action( 'admin_menu', function () {
@@ -24,7 +32,7 @@ class PW_Super_Admin {
 
 			$this->blocked_url['woocommerce.com/wp-json/wccom-extensions/1.0/featured']                                        = '[]';
 			$this->blocked_url['woocommerce.com/wp-json/wccom-extensions/2.0/featured']                                        = '[]';
-			$this->blocked_url['woocommerce.com/wp-json/wccom-extensions/1.0/search']                                          = '[]';
+			$this->blocked_url['woocommerce.com/wp-json/wccom-extensions/1.0/search']                                          = '{}';
 			$this->blocked_url['woocommerce.com/wp-json/wccom/obw-free-extensions/3.0/extensions.json']                        = '[]';
 			$this->blocked_url['woocommerce.com/wp-json/wccom/payment-gateway-suggestions/1.0/payment-method/promotions.json'] = '[]';
 			$this->blocked_url['woocommerce.com/wp-json/wccom/payment-gateway-suggestions/1.0/suggestions.json']               = '[]';

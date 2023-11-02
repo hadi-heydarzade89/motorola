@@ -7,6 +7,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
+use Automattic\WooCommerce\Internal\DataStores\Orders\OrdersTableDataStore;
 use Morilog\Jalali\CalendarUtils;
 use Morilog\Jalali\Jalalian;
 
@@ -19,11 +20,12 @@ use Morilog\Jalali\Jalalian;
 class Persian_Woocommerce_Date {
 
 	public function __construct() {
-		global $wp_version;
 
 		if ( PW()->get_options( 'enable_jalali_datepicker', 'no' ) != 'yes' ) {
 			return false;
 		}
+
+		add_filter( 'woocommerce_mail_callback_params', [ $this, 'fix_mail_date' ], 10, 2 );
 
 		add_action( 'woocommerce_process_shop_order_meta', [ $this, 'process_shop_order_meta' ], 100, 1 );
 		add_action( 'woocommerce_process_product_meta', [ $this, 'process_product_meta' ], 100, 1 );
@@ -33,11 +35,37 @@ class Persian_Woocommerce_Date {
 		add_filter( 'pre_get_posts', [ $this, 'pre_get_posts' ] );
 		add_action( 'restrict_manage_posts', [ $this, 'restrict_manage_posts' ] );
 
-		if ( version_compare( $wp_version, '5.3', '<' ) ) {
-			add_filter( 'date_i18n', [ $this, 'date_i18n' ], 100, 4 );
-		}
+		add_filter( 'woocommerce_order_query_args', [ $this, 'pre_get_orders' ] );
+		add_action( 'woocommerce_order_list_table_restrict_manage_orders', [ $this, 'restrict_manage_orders' ] );
 
 		add_filter( 'wp_date', [ $this, 'wp_date' ], 100, 4 );
+	}
+
+	public function fix_mail_date( array $args, WC_Email $email ): array {
+
+		if ( is_a( $email->object, 'WC_Order' ) ) {
+			$current_date = wc_format_datetime( $email->object->get_date_created() );
+
+			if ( $email->object->get_date_created()->format( 'Y' ) >= 2000 ) {
+				$new_date = date_i18n( 'j F Y', $email->object->get_date_created()->getOffsetTimestamp() );
+			} else {
+				$jDate    = Jalalian::fromFormat( 'Y-m-d H:i:s', $email->object->get_date_created()->format( 'Y-m-d H:i:s' ) );
+				$new_date = wp_date( 'j F Y', $jDate->toCarbon()->timestamp );
+			}
+
+			$new_date = str_replace( range( 0, 9 ), [ '۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹' ], $new_date );
+			$args[2]  = str_replace( $current_date, $new_date, $args[2] );
+		}
+
+		$find    = "'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif";
+		$replace = 'Sahel, Vazir, B Nazanin, ' . $find;
+		$args[2] = str_replace( $find, $replace, $args[2] );
+
+		$find    = '"Helvetica Neue",Helvetica,Roboto,Arial,sans-serif';
+		$replace = 'Sahel, Vazir, B Nazanin, ' . $find;
+		$args[2] = str_replace( $find, $replace, $args[2] );
+
+		return $args;
 	}
 
 	public function process_shop_order_meta( $order_id ) {
@@ -193,7 +221,7 @@ class Persian_Woocommerce_Date {
 
 		$year_month = intval( $_GET['pwp_m'] ?? 0 );
 
-		if ( empty( $year_month ) || ! is_numeric( $year_month ) ) {
+		if ( empty( $year_month ) || ! is_numeric( $year_month ) || strlen( $year_month ) != 6 ) {
 			return $query;
 		}
 
@@ -204,13 +232,16 @@ class Persian_Woocommerce_Date {
 			return $query;
 		}
 
-		$date                                     = new Morilog\Jalali\Jalalian( $year, $month, 1 );
-		$query->query_vars['date_query']['after'] = $date->toCarbon()->format( 'Y-m-d' );
+		try {
+			$date                                     = new Morilog\Jalali\Jalalian( $year, $month, 1 );
+			$query->query_vars['date_query']['after'] = $date->toCarbon()->format( 'Y-m-d' );
 
-		$date                                      = new Morilog\Jalali\Jalalian( $year, $month, $date->getMonthDays() );
-		$query->query_vars['date_query']['before'] = $date->toCarbon()->format( 'Y-m-d' );
+			$date                                      = new Morilog\Jalali\Jalalian( $year, $month, $date->getMonthDays() );
+			$query->query_vars['date_query']['before'] = $date->toCarbon()->format( 'Y-m-d' );
 
-		$query->query_vars['date_query']['inclusive'] = true;
+			$query->query_vars['date_query']['inclusive'] = true;
+		} catch ( Exception $e ) {
+		}
 
 		return $query;
 	}
@@ -223,7 +254,7 @@ class Persian_Woocommerce_Date {
 			sprintf( "
 				SELECT date( post_date_gmt ) AS date, count(*) as count
 
-				FROM `%sposts`
+				FROM `%s`
 				
 				WHERE post_status != 'trash'
 				and post_type = 'shop_order'
@@ -232,7 +263,120 @@ class Persian_Woocommerce_Date {
 
 				GROUP BY date( post_date_gmt )
 				ORDER BY post_date_gmt DESC;
-			", $wpdb->prefix )
+			", $wpdb->posts )
+		);
+
+		$dates = [];
+
+		foreach ( $order_dates as $order_date ) {
+
+			$date = call_user_func_array( [
+				CalendarUtils::class,
+				'toJalali',
+			], explode( '-', $order_date->date ) );
+
+			if ( ! isset( $dates[ $date[0] ][ $date[1] ] ) ) {
+				$dates[ $date[0] ][ $date[1] ] = 0;
+			}
+
+			$dates[ $date[0] ][ $date[1] ] += $order_date->count;
+		}
+
+		$month_names = [
+			1  => 'فروردین',
+			2  => 'اردیبهشت',
+			3  => 'خرداد',
+			4  => 'تیر',
+			5  => 'مرداد',
+			6  => 'شهریور',
+			7  => 'مهر',
+			8  => 'آبان',
+			9  => 'آذر',
+			10 => 'دی',
+			11 => 'بهمن',
+			12 => 'اسفند',
+		];
+
+		$m = intval( $_GET['pwp_m'] ?? 0 );
+		echo '<select name="pwp_m" id="filter-by-pdate">';
+		echo '<option ' . selected( $m, 0, false ) . ' value="0">همه تاریخ‌ها</option>';
+
+		foreach ( $dates as $year => $months ) {
+
+			printf( '<optgroup label="سال %s">', CalendarUtils::convertNumbers( $year ) );
+
+			foreach ( $months as $month => $count ) {
+
+				printf( '<option %s value="%d">%s %s (%s)</option>',
+					selected( $year . zeroise( $month, 2 ), $m, true ),
+					$year . zeroise( $month, 2 ),
+					$month_names[ $month ],
+					CalendarUtils::convertNumbers( $year ),
+					CalendarUtils::convertNumbers( $count )
+				);
+
+			}
+
+			printf( '</optgroup>' );
+		}
+
+		echo '</select>';
+		?>
+		<style>
+            #filter-by-date {
+                display: none;
+            }
+		</style>
+		<?php
+	}
+
+	public function pre_get_orders( array $args ): array {
+
+		$year_month = intval( $_GET['pwp_m'] ?? 0 );
+
+		if ( empty( $year_month ) || ! is_numeric( $year_month ) || strlen( $year_month ) != 6 ) {
+			return $args;
+		}
+
+		$year  = (int) substr( $year_month, 0, 4 );
+		$month = (int) substr( $year_month, 4, 2 );
+
+		if ( $month < 0 || $month > 12 ) {
+			return $args;
+		}
+
+		try {
+			$date                        = new Morilog\Jalali\Jalalian( $year, $month, 1 );
+			$args['date_query']['after'] = $date->toCarbon()->format( 'Y-m-d' );
+
+			$date                         = new Morilog\Jalali\Jalalian( $year, $month, $date->getMonthDays() );
+			$args['date_query']['before'] = $date->toCarbon()->format( 'Y-m-d' );
+
+			$args['date_query']['inclusive'] = true;
+		} catch ( Exception $e ) {
+		}
+
+		return $args;
+	}
+
+	public function restrict_manage_orders() {
+		global $wpdb;
+
+		// phpcs:disable WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$order_dates = $wpdb->get_results(
+			sprintf( "
+				SELECT date( date_created_gmt ) AS date, count(*) as count
+
+				FROM `%s`
+				
+				WHERE status != 'trash'
+				and type = 'shop_order'
+				and date( date_created_gmt ) != '0000-00-00' 
+				and year( date_created_gmt ) > '2010'
+
+				GROUP BY date( date_created_gmt )
+				ORDER BY date_created_gmt DESC;
+			", OrdersTableDataStore::get_orders_table_name() )
 		);
 
 		$dates = [];

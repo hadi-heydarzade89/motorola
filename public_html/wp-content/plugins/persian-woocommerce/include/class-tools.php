@@ -61,7 +61,7 @@ class Persian_Woocommerce_Tools extends Persian_Woocommerce_Core {
 		echo '</h2>';
 
 		if ( count( $html_sections ) ) {
-			printf( '<ul class="subsubsub">%s</ul><br>', implode( $html_sections, " | " ) );
+			printf( '<ul class="subsubsub">%s</ul><br>', implode( " | ", $html_sections ) );
 		}
 
 		return array_values( $active );
@@ -454,6 +454,7 @@ PW()->tools = new Persian_Woocommerce_Tools();
 
 require_once 'tools/class-general.php';
 require_once 'tools/class-price.php';
+require_once 'tools/class-rank-math.php';
 require_once 'tools/class-datepicker.php';
 require_once 'tools/class-date.php';
 require_once 'tools/class-checkout.php';

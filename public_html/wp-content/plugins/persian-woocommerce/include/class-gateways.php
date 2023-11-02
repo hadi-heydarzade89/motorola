@@ -1,5 +1,8 @@
 <?php
 
+use Automattic\WooCommerce\Internal\DataStores\Orders\OrdersTableDataStore;
+use Automattic\WooCommerce\Utilities\OrderUtil;
+
 defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'Persian_Woocommerce_Gateways' ) && class_exists( 'WC_Payment_Gateway' ) ) :
@@ -267,7 +270,7 @@ if ( ! class_exists( 'Persian_Woocommerce_Gateways' ) && class_exists( 'WC_Payme
 			if ( is_numeric( $order ) ) {
 				$this->order_id = $order;
 
-				$order = new WC_Order( $order );
+				$order = wc_get_order( $order );
 			}
 
 			return $order;
@@ -440,12 +443,15 @@ if ( ! class_exists( 'Persian_Woocommerce_Gateways' ) && class_exists( 'WC_Payme
 			return ! empty( $fields['shortcodes'] ) && is_array( $fields['shortcodes'] ) ? $fields['shortcodes'] : [];
 		}
 
-		protected function get_shortcodes_values() {
+		protected function get_shortcodes_values(): array {
 
 			$shortcodes = [];
+
+			$order = $this->get_order();
+
 			foreach ( $this->fields_shortcodes() as $key => $value ) {
 				$key                = trim( $key, '\{\}' );
-				$shortcodes[ $key ] = get_post_meta( $this->order_id, '_' . $key, true );
+				$shortcodes[ $key ] = $order->get_meta( '_' . $key );
 			}
 
 			return $shortcodes;
@@ -455,6 +461,8 @@ if ( ! class_exists( 'Persian_Woocommerce_Gateways' ) && class_exists( 'WC_Payme
 
 			$fields_shortcodes = $this->fields_shortcodes();
 
+			$order = $this->get_order();
+
 			foreach ( $shortcodes as $key => $value ) {
 
 				if ( is_numeric( $key ) ) {
@@ -463,9 +471,12 @@ if ( ! class_exists( 'Persian_Woocommerce_Gateways' ) && class_exists( 'WC_Payme
 
 				if ( ! empty( $key ) && ! is_array( $key ) ) {
 					$key = trim( $key, '\{\}' );
-					update_post_meta( $this->order_id, '_' . $key, $value );
+
+					$order->update_meta_data( '_' . $key, $value );
 				}
 			}
+
+			$order->save_meta_data();
 		}
 
 		protected function set_message( $status, $error = '', $notice = true, $redirect = false, $failed_note = false ) {
@@ -515,17 +526,37 @@ if ( ! class_exists( 'Persian_Woocommerce_Gateways' ) && class_exists( 'WC_Payme
 			$params = $this->id . '_' . $params;
 
 			global $wpdb;
-			$query = "SELECT * FROM {$wpdb->prefix}postmeta WHERE meta_key='_verification_params' AND meta_value='%s'";
-			$check = $wpdb->get_row( $wpdb->prepare( $query, $params ) );
-			if ( ! empty( $check ) ) {
-				return $this->set_message( 'failed', 'این تراکنش قبلا یکبار وریفای شده بود.', true, $this->get_checkout_url(), true );
+
+			if ( OrderUtil::custom_orders_table_usage_is_enabled() ) {
+
+				$table = esc_sql( OrdersTableDataStore::get_meta_table_name() );
+				$query = "SELECT * FROM {$table} WHERE meta_key='_verification_params' AND meta_value='%s'";
+				$check = $wpdb->get_row( $wpdb->prepare( $query, $params ) );
+				if ( ! empty( $check ) ) {
+					return $this->set_message( 'failed', 'این تراکنش قبلا یکبار وریفای شده بود.', true, $this->get_checkout_url(), true );
+				}
+
+			} else {
+
+				$table = esc_sql( $wpdb->postmeta );
+				$query = "SELECT * FROM {$table} WHERE meta_key='_verification_params' AND meta_value='%s'";
+				$check = $wpdb->get_row( $wpdb->prepare( $query, $params ) );
+				if ( ! empty( $check ) ) {
+					return $this->set_message( 'failed', 'این تراکنش قبلا یکبار وریفای شده بود.', true, $this->get_checkout_url(), true );
+				}
+
 			}
+
 			$this->verification_params = $params;
 		}
 
 		protected function set_verification() {
 			if ( ! empty( $this->verification_params ) ) {
-				update_post_meta( $this->order_id, '_verification_params', $this->verification_params );
+
+				$order = $this->get_order();
+
+				$order->update_meta_data( '_verification_params', $this->verification_params );
+				$order->save_meta_data();
 			}
 		}
 
@@ -561,12 +592,18 @@ if ( ! class_exists( 'Persian_Woocommerce_Gateways' ) && class_exists( 'WC_Payme
 
 		protected function store_date( $key, $value ) {
 			$this->session( 'set', $key, $value );
-			update_post_meta( $this->order_id, '_' . $this->id . '_' . $key, $value );
+
+			$order = $this->get_order();
+
+			$order->update_meta_data( '_' . $this->id . '_' . $key, $value );
+			$order->save_meta_data();
 		}
 
 		protected function get_stored( $key ) {
 
-			$value = get_post_meta( $this->order_id, '_' . $this->id . '_' . $key, true );
+			$order = $this->get_order();
+
+			$value = $order->get_meta( '_' . $this->id . '_' . $key );
 
 			return ! empty( $value ) ? $value : $this->session( 'get', $key );
 		}
@@ -632,25 +669,35 @@ if ( ! class_exists( 'Persian_Woocommerce_Gateways' ) && class_exists( 'WC_Payme
 			if ( headers_sent() ) {
 				?>
 				<script type="text/javascript">
-                    function PWformSubmit(){ document.<?php echo esc_attr( $name ); ?>.submit(); } PWformSubmit();
-                    document.<?php echo esc_attr( $name ); ?>.submit();
+                    function PWformSubmit() {
+                        document
+                    .<?php echo esc_attr( $name ); ?>.
+                        submit();
+                    }
+
+                    PWformSubmit();
+                    document
+                    .<?php echo esc_attr( $name ); ?>.
+                    submit();
 				</script>
 				<?php
 
 				echo wp_kses( $form, [
-				  'form'  => [ 'id' => [], 'name' => [], 'class' => [], 'method' => [], 'action' => [] ],
-				  'input' => [ 'id' => [], 'name' => [], 'class' => [], 'type' => [], 'value' => [] ],
+					'form'  => [ 'id' => [], 'name' => [], 'class' => [], 'method' => [], 'action' => [] ],
+					'input' => [ 'id' => [], 'name' => [], 'class' => [], 'type' => [], 'value' => [] ],
 				] );
 
 			} else {
 				echo wp_kses( $form, [
-				  'form'  => [ 'id' => [], 'name' => [], 'class' => [], 'method' => [], 'action' => [] ],
-				  'input' => [ 'id' => [], 'name' => [], 'class' => [], 'type' => [], 'value' => [] ],
+					'form'  => [ 'id' => [], 'name' => [], 'class' => [], 'method' => [], 'action' => [] ],
+					'input' => [ 'id' => [], 'name' => [], 'class' => [], 'type' => [], 'value' => [] ],
 				] );
 
 				?>
 				<script type="text/javascript">
-                    document.<?php echo esc_attr( $name ); ?>.submit();
+                    document
+                    .<?php echo esc_attr( $name ); ?>.
+                    submit();
 				</script>
 				<?php
 			}

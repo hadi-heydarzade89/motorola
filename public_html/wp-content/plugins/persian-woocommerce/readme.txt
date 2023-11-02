@@ -4,10 +4,10 @@ Contributors: Persianscript, mahdiy
 author URI: https://www.woosupport.ir/
 plugin URI: https://www.woosupport.ir/download/
 Tags: ووکامرس,ووکامرس فارسی,persian woocommerce,woocommerce,iran,persian,farsi,jalali,shamsi
-Requires at least: 5.0
-Tested up to: 6.2.2
-Requires PHP: 7.2.5
-Stable tag: 7.0.2
+Requires at least: 6.0.0
+Tested up to: 6.3.2
+Requires PHP: 7.4
+Stable tag: 7.1.0
 
 بسته ووکامرس پارسی به راحتی سیستم فروشگاه ساز ووکامرس را فارسی می کند و امکانات جدید متناسب با ایران را به ووکامرس اضافه میکند.
 
@@ -73,6 +73,12 @@ Stable tag: 7.0.2
 میتوانید راهنما و مستندات را از طریق سایت [WooSupport.ir](https://www.woosupport.ir) بدست بیاورید
 
 == Changelog ==
+= 7.1.0 =
+* سازگاری با HPOS
+* سازگاری با php 8.1
+* بهبود ابزار افزایش سرعت ووکامرس
+* سازگاری کامل با اسکیما‌های رنک مث
+* بهبود نمایش قالب و تاریخ ایمیل‌های ووکامرس
 = 7.0.2 =
 * حل مشکل review ها در schema افزونه رنک مث
 = 7.0.1 =

@@ -15,6 +15,7 @@
 namespace Assert;
 
 use LogicException;
+use ReflectionClass;
 
 /**
  * Chaining builder for assertions.
@@ -23,15 +24,15 @@ use LogicException;
  *
  * @method AssertionChain alnum(string|callable $message = null, string $propertyPath = null) Assert that value is alphanumeric.
  * @method AssertionChain base64(string|callable $message = null, string $propertyPath = null) Assert that a constant is defined.
- * @method AssertionChain between(mixed $lowerLimit, mixed $upperLimit, string|callable $message = null, string $propertyPath = null) Assert that a value is greater or equal than a lower limit, and less than or equal to an upper limit.
- * @method AssertionChain betweenExclusive(mixed $lowerLimit, mixed $upperLimit, string|callable $message = null, string $propertyPath = null) Assert that a value is greater than a lower limit, and less than an upper limit.
+ * @method AssertionChain between(mixed $lowerLimit, mixed $upperLimit, string $message = null, string $propertyPath = null) Assert that a value is greater or equal than a lower limit, and less than or equal to an upper limit.
+ * @method AssertionChain betweenExclusive(mixed $lowerLimit, mixed $upperLimit, string $message = null, string $propertyPath = null) Assert that a value is greater than a lower limit, and less than an upper limit.
  * @method AssertionChain betweenLength(int $minLength, int $maxLength, string|callable $message = null, string $propertyPath = null, string $encoding = 'utf8') Assert that string length is between min and max lengths.
  * @method AssertionChain boolean(string|callable $message = null, string $propertyPath = null) Assert that value is php boolean.
  * @method AssertionChain choice(array $choices, string|callable $message = null, string $propertyPath = null) Assert that value is in array of choices.
  * @method AssertionChain choicesNotEmpty(array $choices, string|callable $message = null, string $propertyPath = null) Determines if the values array has every choice as key and that this choice has content.
  * @method AssertionChain classExists(string|callable $message = null, string $propertyPath = null) Assert that the class exists.
  * @method AssertionChain contains(string $needle, string|callable $message = null, string $propertyPath = null, string $encoding = 'utf8') Assert that string contains a sequence of chars.
- * @method AssertionChain count(int $count, string|callable $message = null, string $propertyPath = null) Assert that the count of countable is equal to count.
+ * @method AssertionChain count(int $count, string $message = null, string $propertyPath = null) Assert that the count of countable is equal to count.
  * @method AssertionChain date(string $format, string|callable $message = null, string $propertyPath = null) Assert that date is valid and corresponds to the given format.
  * @method AssertionChain defined(string|callable $message = null, string $propertyPath = null) Assert that a constant is defined.
  * @method AssertionChain digit(string|callable $message = null, string $propertyPath = null) Validates if an integer or integerish is a digit.
@@ -72,23 +73,23 @@ use LogicException;
  * @method AssertionChain lessOrEqualThan(mixed $limit, string|callable $message = null, string $propertyPath = null) Determines if the value is less or equal than given limit.
  * @method AssertionChain lessThan(mixed $limit, string|callable $message = null, string $propertyPath = null) Determines if the value is less than given limit.
  * @method AssertionChain max(mixed $maxValue, string|callable $message = null, string $propertyPath = null) Assert that a number is smaller as a given limit.
- * @method AssertionChain maxCount(int $count, string|callable $message = null, string $propertyPath = null) Assert that the countable have at most $count elements.
+ * @method AssertionChain maxCount(int $count, string $message = null, string $propertyPath = null) Assert that the countable have at most $count elements.
  * @method AssertionChain maxLength(int $maxLength, string|callable $message = null, string $propertyPath = null, string $encoding = 'utf8') Assert that string value is not longer than $maxLength chars.
  * @method AssertionChain methodExists(mixed $object, string|callable $message = null, string $propertyPath = null) Determines that the named method is defined in the provided object.
  * @method AssertionChain min(mixed $minValue, string|callable $message = null, string $propertyPath = null) Assert that a value is at least as big as a given limit.
- * @method AssertionChain minCount(int $count, string|callable $message = null, string $propertyPath = null) Assert that the countable have at least $count elements.
+ * @method AssertionChain minCount(int $count, string $message = null, string $propertyPath = null) Assert that the countable have at least $count elements.
  * @method AssertionChain minLength(int $minLength, string|callable $message = null, string $propertyPath = null, string $encoding = 'utf8') Assert that a string is at least $minLength chars long.
  * @method AssertionChain noContent(string|callable $message = null, string $propertyPath = null) Assert that value is empty.
  * @method AssertionChain notBlank(string|callable $message = null, string $propertyPath = null) Assert that value is not blank.
  * @method AssertionChain notContains(string $needle, string|callable $message = null, string $propertyPath = null, string $encoding = 'utf8') Assert that string does not contains a sequence of chars.
  * @method AssertionChain notEmpty(string|callable $message = null, string $propertyPath = null) Assert that value is not empty.
  * @method AssertionChain notEmptyKey(string|int $key, string|callable $message = null, string $propertyPath = null) Assert that key exists in an array/array-accessible object and its value is not empty.
- * @method AssertionChain notEq(mixed $value2, string|callable $message = null, string $propertyPath = null) Assert that two values are not equal (using ==).
+ * @method AssertionChain notEq(mixed $value2, string|callable $message = null, string $propertyPath = null) Assert that two values are not equal (using == ).
  * @method AssertionChain notInArray(array $choices, string|callable $message = null, string $propertyPath = null) Assert that value is not in array of choices.
  * @method AssertionChain notIsInstanceOf(string $className, string|callable $message = null, string $propertyPath = null) Assert that value is not instance of given class-name.
  * @method AssertionChain notNull(string|callable $message = null, string $propertyPath = null) Assert that value is not null.
  * @method AssertionChain notRegex(string $pattern, string|callable $message = null, string $propertyPath = null) Assert that value does not match a regex.
- * @method AssertionChain notSame(mixed $value2, string|callable $message = null, string $propertyPath = null) Assert that two values are not the same (using ===).
+ * @method AssertionChain notSame(mixed $value2, string|callable $message = null, string $propertyPath = null) Assert that two values are not the same (using === ).
  * @method AssertionChain null(string|callable $message = null, string $propertyPath = null) Assert that value is null.
  * @method AssertionChain numeric(string|callable $message = null, string $propertyPath = null) Assert that value is numeric.
  * @method AssertionChain objectOrClass(string|callable $message = null, string $propertyPath = null) Assert that the value is an object, or a class that exists.
@@ -105,7 +106,6 @@ use LogicException;
  * @method AssertionChain string(string|callable $message = null, string $propertyPath = null) Assert that value is a string.
  * @method AssertionChain subclassOf(string $className, string|callable $message = null, string $propertyPath = null) Assert that value is subclass of given class-name.
  * @method AssertionChain true(string|callable $message = null, string $propertyPath = null) Assert that the value is boolean True.
- * @method AssertionChain uniqueValues(string|callable $message = null, string $propertyPath = null) Assert that values in array are unique (using strict equality).
  * @method AssertionChain url(string|callable $message = null, string $propertyPath = null) Assert that value is an URL.
  * @method AssertionChain uuid(string|callable $message = null, string $propertyPath = null) Assert that the given string is a valid UUID.
  * @method AssertionChain version(string $operator, string $version2, string|callable $message = null, string $propertyPath = null) Assert comparison of two versions.
@@ -113,19 +113,8 @@ use LogicException;
  */
 class AssertionChain
 {
-    /**
-     * @var mixed
-     */
     private $value;
-
-    /**
-     * @var string|callable|null
-     */
     private $defaultMessage;
-
-    /**
-     * @var string|null
-     */
     private $defaultPropertyPath;
 
     /**
@@ -145,13 +134,7 @@ class AssertionChain
     /** @var string|Assertion Class to use for assertion calls */
     private $assertionClassName = 'Assert\Assertion';
 
-    /**
-     * AssertionChain constructor.
-     *
-     * @param mixed $value
-     * @param string|callable|null $defaultMessage
-     */
-    public function __construct($value, $defaultMessage = null, string $defaultPropertyPath = null)
+    public function __construct($value, $defaultMessage = null, $defaultPropertyPath = null)
     {
         $this->value = $value;
         $this->defaultMessage = $defaultMessage;
@@ -162,19 +145,22 @@ class AssertionChain
      * Call assertion on the current value in the chain.
      *
      * @param string $methodName
-     * @param array $args
+     * @param array  $args
+     *
+     * @return \Assert\AssertionChain
      */
-    public function __call($methodName, $args): AssertionChain
+    public function __call($methodName, $args)
     {
         if (true === $this->alwaysValid) {
             return $this;
         }
 
-        try {
-            $method = new \ReflectionMethod($this->assertionClassName, $methodName);
-        } catch (\ReflectionException $exception) {
+        if (!\method_exists($this->assertionClassName, $methodName)) {
             throw new \RuntimeException("Assertion '".$methodName."' does not exist.");
         }
+
+        $reflClass = new ReflectionClass($this->assertionClassName);
+        $method = $reflClass->getMethod($methodName);
 
         \array_unshift($args, $this->value);
         $params = $method->getParameters();
@@ -184,13 +170,12 @@ class AssertionChain
                 continue;
             }
 
-            switch ($param->getName()) {
-                case 'message':
-                    $args[$idx] = $this->defaultMessage;
-                    break;
-                case 'propertyPath':
-                    $args[$idx] = $this->defaultPropertyPath;
-                    break;
+            if ('message' == $param->getName()) {
+                $args[$idx] = $this->defaultMessage;
+            }
+
+            if ('propertyPath' == $param->getName()) {
+                $args[$idx] = $this->defaultPropertyPath;
             }
         }
 
@@ -205,8 +190,10 @@ class AssertionChain
 
     /**
      * Switch chain into validation mode for an array of values.
+     *
+     * @return \Assert\AssertionChain
      */
-    public function all(): AssertionChain
+    public function all()
     {
         $this->all = true;
 
@@ -215,8 +202,10 @@ class AssertionChain
 
     /**
      * Switch chain into mode allowing nulls, ignoring further assertions.
+     *
+     * @return \Assert\AssertionChain
      */
-    public function nullOr(): AssertionChain
+    public function nullOr()
     {
         if (null === $this->value) {
             $this->alwaysValid = true;
@@ -230,7 +219,7 @@ class AssertionChain
      *
      * @return $this
      */
-    public function setAssertionClassName($className): AssertionChain
+    public function setAssertionClassName($className)
     {
         if (!\is_string($className)) {
             throw new LogicException('Exception class name must be passed as a string');
