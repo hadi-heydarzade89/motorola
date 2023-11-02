@@ -4,7 +4,7 @@ Tags: accounting cloud hesabfa
 Requires at least: 5.2
 Tested up to: 6.3.2
 Requires PHP: 5.6
-Stable tag: 2.0.78
+Stable tag: 2.0.82
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -379,3 +379,14 @@ by clicking update stock and price button in hesabfa tab in product edit page
 * bug fix: special sale currency bug fixed
 * bug fix: shipping address bug fixed
 * codes refactored
+
+= 2.0.80 - 28.10.2023 =
+* unnecessary files removed
+* bug fix: fix woocommerce state bug
+* persian log removed
+* some functions refactored
+
+= 2.0.81 - 30.10.2023 =
+* salesman percentage option added
+
+= 2.0.82 - 01.11.2023 =
