@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-27 07:49:09+0000\n"
+"PO-Revision-Date: 2023-10-30 09:22:01+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -803,7 +803,7 @@ msgstr "بارگذاری تنبل تصاویری که در نمای دید نی�
 
 #: modules/lazyload/module.php:24
 msgid "Lazy Load Background Images"
-msgstr "تصاویر پس زمینه بار تنبل"
+msgstr "بارگذاری تنبل تصاویر پس‌زمینه"
 
 #: includes/elements/container.php:1808
 msgid "Note: Avoid applying transform properties on sticky containers. Doing so might cause unexpected results."
@@ -2652,6 +2652,106 @@ msgstr "افزودن المنت"
 #: includes/widgets/divider.php:318 modules/shapes/module.php:23
 msgid "Line"
 msgstr "خطی"
+
+#: includes/widgets/divider.php:288
+msgctxt "Shapes"
+msgid "X"
+msgstr "X"
+
+#: includes/widgets/divider.php:279
+msgctxt "Shapes"
+msgid "Tribal"
+msgstr "قبیله‌ای"
+
+#: includes/widgets/divider.php:270
+msgctxt "Shapes"
+msgid "Trees"
+msgstr "درختان"
+
+#: includes/widgets/divider.php:261
+msgctxt "Shapes"
+msgid "Squares"
+msgstr "چهارخانه"
+
+#: includes/widgets/divider.php:252
+msgctxt "Shapes"
+msgid "Stripes"
+msgstr "راه‌راه"
+
+#: includes/widgets/divider.php:243
+msgctxt "Shapes"
+msgid "Leaves"
+msgstr "برگ‌ها"
+
+#: includes/widgets/divider.php:234
+msgctxt "Shapes"
+msgid "Half Rounds"
+msgstr "نیم دور"
+
+#: includes/widgets/divider.php:225
+msgctxt "Shapes"
+msgid "Fir Tree"
+msgstr "درخت صنوبر"
+
+#: includes/widgets/divider.php:216
+msgctxt "Shapes"
+msgid "Dots"
+msgstr "نقطه‌چین"
+
+#: includes/widgets/divider.php:207
+msgctxt "Shapes"
+msgid "Rectangles"
+msgstr "مستطیلی"
+
+#: includes/widgets/divider.php:199
+msgctxt "Shapes"
+msgid "Parallelogram"
+msgstr "متوازی الاضلاع"
+
+#: includes/widgets/divider.php:191
+msgctxt "Shapes"
+msgid "Rhombus"
+msgstr "لوزی"
+
+#: includes/widgets/divider.php:183
+msgctxt "Shapes"
+msgid "Pluses"
+msgstr "بعلاوه"
+
+#: includes/widgets/divider.php:175
+msgctxt "Shapes"
+msgid "Arrows"
+msgstr "پیکان‌ها"
+
+#: includes/widgets/divider.php:159
+msgctxt "Shapes"
+msgid "Wavy"
+msgstr "موج‌دار"
+
+#: includes/widgets/divider.php:151
+msgctxt "Shapes"
+msgid "Squared"
+msgstr "مربعی"
+
+#: includes/widgets/divider.php:142
+msgctxt "Shapes"
+msgid "Slashes"
+msgstr "خط فاصله دار"
+
+#: includes/widgets/divider.php:134
+msgctxt "Shapes"
+msgid "Multiple"
+msgstr "چندگانه"
+
+#: includes/widgets/divider.php:126
+msgctxt "Shapes"
+msgid "Curved"
+msgstr "منحنی‌وار"
+
+#: includes/widgets/divider.php:118
+msgctxt "Shapes"
+msgid "Curly"
+msgstr "فرفری"
 
 #: includes/widgets/image-gallery.php:44
 msgid "Basic Gallery"
@@ -4570,6 +4670,12 @@ msgstr "<strong>تذکر مهم:</strong> شدیدا توصیه می شود که
 msgid "Replace URL"
 msgstr "جایگزینی URL"
 
+#. translators: 1: Minimum recommended_memory, 2: Preferred memory, 3:
+#. WordPress wp-config memory documentation.
+#: modules/system-info/reporters/server.php:171
+msgid "We recommend setting memory to at least %1$s. (%2$s or higher is preferred) For more information, read about <a href=\"%3$s\">how to increase memory allocated to PHP</a>."
+msgstr "توصیه می‌کنیم حافظه را حداقل روی %1$s تنظیم کنید. (%2$s یا بالاتر توصیه می‌شود) برای اطلاعات بیشتر، درباره <a href=\"%3$s\">نحوه افزایش حافظه اختصاص داده شده به PHP</a> بخوانید."
+
 #. translators: 1: Human readable time difference, 2: Date.
 #: modules/history/revisions-manager.php:179
 msgid "%1$s ago (%2$s)"
@@ -4887,6 +4993,11 @@ msgstr "کتابخانه‌ قالب‌ها"
 #: includes/editor-templates/global.php:43
 msgid "Add Template"
 msgstr "افزودن قالب"
+
+#. translators: %s: WordPress child themes documentation.
+#: modules/system-info/reporters/theme.php:207
+msgid "If you want to modify the source code of your theme, we recommend using a <a href=\"%s\">child theme</a>."
+msgstr "در صورتی که قصد ویرایش سورس کدهای پوسته خود را دارید پیشنهاد می‌کنیم از <a href=\"%s\">پوسته فرزند</a> استفاده کنید."
 
 #: app/modules/import-export/module.php:148
 #: app/modules/import-export/module.php:160 core/admin/admin-notices.php:327
