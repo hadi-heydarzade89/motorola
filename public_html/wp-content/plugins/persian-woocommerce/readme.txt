@@ -5,9 +5,9 @@ author URI: https://www.woosupport.ir/
 plugin URI: https://www.woosupport.ir/download/
 Tags: ووکامرس,ووکامرس فارسی,persian woocommerce,woocommerce,iran,persian,farsi,jalali,shamsi
 Requires at least: 6.0.0
-Tested up to: 6.3.2
+Tested up to: 6.4.1
 Requires PHP: 7.4
-Stable tag: 7.1.0
+Stable tag: 7.1.1
 
 بسته ووکامرس پارسی به راحتی سیستم فروشگاه ساز ووکامرس را فارسی می کند و امکانات جدید متناسب با ایران را به ووکامرس اضافه میکند.
 
@@ -73,6 +73,8 @@ Stable tag: 7.1.0
 میتوانید راهنما و مستندات را از طریق سایت [WooSupport.ir](https://www.woosupport.ir) بدست بیاورید
 
 == Changelog ==
+= 7.1.1 =
+* حل مشکل تداخل با درگاه پاسارگاد (حذف تابع jdate)
 = 7.1.0 =
 * سازگاری با HPOS
 * سازگاری با php 8.1

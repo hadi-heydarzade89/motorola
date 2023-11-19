@@ -133,7 +133,7 @@ class Kitpack_Lite_elementor {
 		 * class.
 		 */
 
-		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/js/kitpack-lite-elementor.js', array( 'jquery' ), $this->version, false );
+//		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'assets/js/kitpack-lite-elementor.js', array( 'jquery' ), $this->version, false );
 
 	}
 	public function kitpack_elementor_template() {

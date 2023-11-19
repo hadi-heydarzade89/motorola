@@ -2,9 +2,9 @@
 author: کیت پک
 Contributors: kitpack
 Tags: المنتور, المنتور فارسی,وردپرس,کیت پک,persians,iranian,rtl,fa_IR,persian,iran,farsi,elementor,persian elementor
-Requires at least: 6.0.2
-Tested up to: 6.0.2
-Stable tag: 6.0.2
+Requires at least: 6.0
+Tested up to: 6.5.9
+Stable tag: 6.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -56,6 +56,17 @@ e.g.
 متاسفانه در نسخه رایگان افزونه فقط فونت های رایگان قرار گرفته است..
 
 == Changelog ==
+
+=2.1.1=
+بهبود: رفع تداخل با نسخه آخر وردپرس
+
+=2.1.0=
+بهبود: بهبود ترجمه المنتور پرو
+بهبود: بهبود ساختار فایل ها
+بهبود: سازگاری با آخرین نسخه المنتور و المنتور پرو
+بهبود: سازگاری با نسخه آخر وردپرس
+بهبود: اصلاح استایل های المنتور
+بهبود: بهینه سازی فایل های افزونه
 
 =2.0=
 جدید: اضافه شدن بخش تمپلیت های فارسی

@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Elementor Pro\n"
-"POT-Creation-Date: 2022-06-27 01:35+0430\n"
-"PO-Revision-Date: 2022-10-07 21:32+0330\n"
+"POT-Creation-Date: 2023-10-25 16:59+0330\n"
+"PO-Revision-Date: 2023-11-17 21:27+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fa_IR\n"
@@ -19,24 +19,18 @@ msgstr ""
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "Report-Msgid-Bugs-To: \n"
-"X-Loco-Version: 2.6.2; wp-6.0.2\n"
+"X-Loco-Version: 2.6.6; wp-6.4.1\n"
 "X-Loco-Fallback: fa_IR\n"
 "X-Loco-Template: elementor-pro-fa_IR.mo\n"
 "X-Loco-Template-Mode: PO,JSON\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-msgid ""
-" Please note: The Stripe name and logos are trademarks or service marks of "
-"Stripe, Inc.or its affiliates in the U.S. and other countries.  %1$s Other "
-"names may be trademarks of their respective owners."
-msgstr ""
-" لطفا توجه داشته باشید: نام و نشان‌های Stripe علائم تجاری یا علائم خدماتی "
-"Stripe، Inc. یا شرکت‌های وابسته به آن در ایالات متحده و سایر کشورها هستند.  "
-"%1$s نام‌های دیگر ممکن است علائم تجاری صاحبان مربوطه باشند."
-
 msgid "\"All\" Filter"
 msgstr "فیلتر \"همه\""
+
+msgid "\"All\" Filter Label"
+msgstr "لیبل فیلتر \"همه\""
 
 msgid ""
 "You have not entered a valid secret key for this environment, Please add a "
@@ -58,11 +52,17 @@ msgstr ""
 "شما باید ویجت %1$s را در قالب اضافه کنید (%2$s), به این ترتیب المنتور در این "
 "برگه کار میکند."
 
+msgid "You need an active Elementor Pro license"
+msgstr "شما به لایسنس فعال المنتور پرو نیاز دارید"
+
 msgid "You need at least one WooCommerce order to preview the order here."
 msgstr "برای پیش نمایش سفارش در اینجا به حداقل یک سفارش ووکامرس نیاز دارید."
 
 msgid "You're connected as %s."
 msgstr "شما به عنوان %s متصل شده اید."
+
+msgid "You're not using Elementor Pro yet!"
+msgstr "شما هنوز از المنتور پرو استفاده نمی کنید!"
 
 msgid "YouTube"
 msgstr "YouTube"
@@ -70,11 +70,35 @@ msgstr "YouTube"
 msgid "YouTube or Vimeo link"
 msgstr "لینک یوتیوب و یا Vimeo"
 
+msgid "Your Elementor Pro license has expired."
+msgstr "مجوز المنتور پروشما منقضی شده است."
+
+msgid ""
+"Your Elementor Pro license is about to expire. Renew now and get an "
+"exclusive, time-limited %s discount."
+msgstr ""
+"مجوز المنتور پرو شما رو به اتمام است. اکنون تمدید کنید و از %s تخفیف انحصاری "
+"و با زمان محدود برخوردار شوید."
+
+msgid ""
+"Your Elementor Pro license is about to expire. Renew now and get updates, "
+"support, Pro widgets & templates for another year."
+msgstr ""
+"مجوز المنتور پرو شما رو به اتمام است. اکنون تمدید کنید و به‌روزرسانی‌ها، "
+"پشتیبانی، ابزارک‌های حرفه‌ای و قالب‌ها را برای یک سال دیگر دریافت کنید."
+
+msgid ""
+"Your Elementor Pro license is inactive. To access premium Elementor widgets, "
+"templates, support & plugin updates activate your Pro license."
+msgstr ""
+"مجوز المنتور پرو شما غیرفعال است. برای دسترسی به ویجت‌ها، قالب‌ها، پشتیبانی و "
+"به‌روزرسانی‌های پلاگین ممتاز Elementor، مجوز Pro خود را فعال کنید."
+
 msgid "Your Fontello, IcoMoon or Fontastic .zip file"
 msgstr "فایل zip شما از سایت Fontello, IcoMoon یا Fontastic"
 
-msgid "Your License Has Expired"
-msgstr "لایسنس شما منقضی شده است"
+msgid "Your Global Widget is locked"
+msgstr "ویجت عمومی شما قفل شده است"
 
 msgid "Your License Is Inactive"
 msgstr "لایسنس شما غیرفعال است"
@@ -87,9 +111,6 @@ msgstr "لایسنس  شما در %s منقضی میشود."
 
 msgid "Your Order"
 msgstr "سفارش شما"
-
-msgid "Your Widget is Now Locked"
-msgstr "ویجت عمومی شما قفل شد"
 
 msgid "Your cart is currently empty."
 msgstr "سبد خرید شما خالی است."
@@ -106,6 +127,18 @@ msgstr "لایسنس شما اشتباده است لطفا کلید خود را 
 
 msgid "Your license key should look something like this: %s"
 msgstr "کلید لایسنس شما باید شبیه این باشید : %s"
+
+msgid "Your submission failed because of a server error."
+msgstr "ارسال شما به دلیل یک خطای سرور انجام نشد."
+
+msgid "Your submission failed because of an error."
+msgstr "ارسال شما به دلیل یک خطا ناموفق بود."
+
+msgid "Your submission failed because the form is invalid."
+msgstr "ارسال شما ناموفق بود زیرا فرم نامعتبر است."
+
+msgid "Your submission was successful."
+msgstr "ارسال شما با موفقیت انجام شد."
 
 msgid "Your trial expires in %s"
 msgstr "دوره آزمایشی شما در %s منقضی می‌شود"
@@ -124,6 +157,9 @@ msgstr "بزرگنمایی"
 msgid "Zoom Direction"
 msgstr "جهت بزرگنمایی"
 
+msgid "Zoom Out"
+msgstr "کوچک نمایی"
+
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr "F j, Y (فرمت تاریخ آرشیو روزانه)"
@@ -140,6 +176,9 @@ msgstr "کلید|مقدر"
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y(فرمت تاریخ آرشیو ماهانه)"
+
+msgid "of"
+msgstr "از"
 
 msgctxt "post format archive title"
 msgid "Asides"
@@ -192,9 +231,6 @@ msgstr "هزینه ارسال"
 msgid "terms and conditions"
 msgstr "شرایط و قوانین"
 
-msgid "user profile"
-msgstr "مشخصات کاربر"
-
 msgid "via Elementor"
 msgstr "از طریق المنتور"
 
@@ -205,20 +241,8 @@ msgstr "Y"
 msgid "{number} Responses"
 msgstr "{number} پاسخ ها"
 
-msgid "Add New Font Type"
-msgstr "افزودن نوع فونت جدید"
-
-msgid "Add New Icon Set"
-msgstr "افزودن مجموعه فونت جدید"
-
-msgid "Add New Popup"
-msgstr "افزون پاپ آپ جدید"
-
-msgid "Add New Theme Template"
-msgstr "افزودن پوسته جدید قالب"
-
-msgid "Add To Cart"
-msgstr "اضافه به سبد خرید"
+msgid "Add Your Custom Icons"
+msgstr "آیکون های سفارشی خود را اضافه کنید"
 
 msgid "Add Your Text Here"
 msgstr "متن خود را در اینجا اضافه کنید"
@@ -281,8 +305,8 @@ msgstr "کلاس CSS خود را بدون نقطه وارد کنید. مثال: 
 msgid "Add your custom id WITHOUT the Pound key. e.g: my-id"
 msgstr "شناسه CSS خود را بدون # وارد کنید. مثال: my-id"
 
-msgid "Add your own custom CSS here"
-msgstr "کد های سفارشی CSS را در این قسمت وارد کنید"
+msgid "Add your own custom CSS"
+msgstr "CSS سفارشی خود را اضافه کنید"
 
 msgid "Additional Info"
 msgstr "اطلاعات تکمیلی"
@@ -296,8 +320,12 @@ msgstr "تب اطلاعات اضافی"
 msgid "Additional Options"
 msgstr "گزینه‌های اضافی"
 
-msgid "Additional settings are available in the Yoast SEO"
-msgstr "تنظیمات اضافی در Yoast SEO در دسترس می باشد"
+msgid "Additional Settings"
+msgstr "تنظیمات اضافی"
+
+msgid ""
+"Additional settings are available in the Yoast SEO %1$sBreadcrumbs Panel%2$s"
+msgstr "تنظیمات اضافی در Yoast SEO %1$sBreadcrumbs Panel%2$s موجود است"
 
 msgid "Addresses"
 msgstr "آدرس ها"
@@ -322,9 +350,6 @@ msgstr "بعد از عدم فعالیت"
 
 msgid "After Text"
 msgstr "بعد از متن"
-
-msgid "Align"
-msgstr "هم تراز کردن"
 
 msgid "Alignment"
 msgstr "چیدمان"
@@ -354,7 +379,7 @@ msgid "All Product Archives"
 msgstr "آرشیو همه محصولات"
 
 msgid "All Singular"
-msgstr "منحصر به فرد"
+msgstr "همه تکی ها"
 
 msgid "All Users"
 msgstr "همه کاربران"
@@ -368,11 +393,17 @@ msgstr "اجازه سفارش"
 msgid "Allow Resubscribe"
 msgstr "اجازه اشتراک کجدد"
 
+msgid "Allow keyboard tab navigation for accessibility"
+msgstr "برای دسترسی به ناوبری صفحه کلید مجاز است"
+
 msgid "Allow user to access the Notes feature."
 msgstr "به کاربر اجازه دسترسی به ویژگی یادداشت ها را بدهید."
 
 msgid "Allowed File Types"
 msgstr "نوع فایل های مجاز"
+
+msgid "Already renewed?"
+msgstr "قبلا تمدید شده؟"
 
 msgid "Alt"
 msgstr "Alt"
@@ -434,9 +465,6 @@ msgstr "انیمیشن"
 msgid "Animation Duration"
 msgstr "دروه  انیمیشن"
 
-msgid "Animation Speed (ms)"
-msgstr "سرعت انیمیشن (ms)"
-
 msgid "Another check is in progress."
 msgstr "بررسی دیگر در حال انجام است."
 
@@ -470,11 +498,20 @@ msgstr "اعمال افکت روی"
 msgid "Apply Link On"
 msgstr "اعمال لینک روی"
 
+msgid "Apply Once"
+msgstr "یکبار درخواست کنید"
+
+msgid "Apply an alternate template"
+msgstr "یک الگوی جایگزین اعمال کنید"
+
 msgid "Apply coupon"
 msgstr "اعمال تخفیف"
 
 msgid "Apply to custom Excerpt"
 msgstr "اعمال برای چکیده سفارشی"
+
+msgid "Apply to post content"
+msgstr "برای ارسال مطالب اقدام کنید"
 
 msgid "Archive"
 msgstr "آرشیو"
@@ -525,7 +562,7 @@ msgid "Arrow Circle Negative"
 msgstr "دایره فلش منفی"
 
 msgid "Arrows"
-msgstr "پیکان‌ها"
+msgstr "فلش ها"
 
 msgid "Arrows Color"
 msgstr "رنگ فلش ها"
@@ -540,7 +577,7 @@ msgid "Arrows Type"
 msgstr "نوع فلش ها"
 
 msgid "Arrows and Dots"
-msgstr "پیکان ها و نقطه ها"
+msgstr "فلش ها و نقطه ها"
 
 msgid "Aside"
 msgstr "راست"
@@ -584,6 +621,9 @@ msgstr "نشانی اینترنتی نویسنده"
 msgid "Author Website"
 msgstr "وبسایت آرشیو"
 
+msgid "Author picture"
+msgstr "تصویر نویسنده"
+
 msgid "Author: %s"
 msgstr "نویسنده: %s"
 
@@ -610,6 +650,12 @@ msgstr "پخش خودکار"
 
 msgid "Autoplay Speed"
 msgstr "سرعت پخش خودکار"
+
+msgid "Autoscroll"
+msgstr "اسکرول خودکار"
+
+msgid "Autoscroll offset"
+msgstr "افست اسکرول خودکار"
 
 msgid "Avatar"
 msgstr "آواتار"
@@ -645,7 +691,7 @@ msgstr "شامل"
 
 msgctxt "Background Control"
 msgid "Cover"
-msgstr "Cover"
+msgstr "پوشش"
 
 msgctxt "Background Control"
 msgid "Image"
@@ -681,20 +727,6 @@ msgstr "قبل"
 
 msgid "Before Text"
 msgstr "قبل از متن"
-
-msgid ""
-"Before you can use all the features of Elementor Pro, you need to activate "
-"the Elementor plugin first."
-msgstr ""
-"قبل از اینکه بتوانید از تمام ویژگی های المنتور پرواستفاده کنید، ابتدا باید "
-"افزونه المنتور را فعال کنید."
-
-msgid ""
-"Before you can use all the features of Elementor Pro, you need to install "
-"and activate the Elementor plugin first."
-msgstr ""
-"قبل از اینکه بتوانید از تمام ویژگی های المنتور پرو استفاده کنید، ابتدا باید "
-"افزونه المنتور را نصب و فعال کنید."
 
 msgid "Below"
 msgstr "پایین"
@@ -767,9 +799,6 @@ msgstr "یکپارچه"
 msgid "Border Radius"
 msgstr "شعاع کادر"
 
-msgid "Border Size"
-msgstr "اندازه‌ی حاشیه"
-
 msgid "Border Type"
 msgstr "نوع حاشیه"
 
@@ -815,14 +844,14 @@ msgstr "جعبه"
 msgid "Breadcrumbs"
 msgstr "مسیر پیمایش"
 
-msgid "Breadcrumbs Panel"
-msgstr "پنل مسیر سایت"
-
 msgid "Breakpoint"
 msgstr "نقطه توقف"
 
 msgid "Bring to Front"
 msgstr "جلو آوردن"
+
+msgid "Browser Default"
+msgstr "مرورگر پیش فرض"
 
 msgid "Bubble"
 msgstr "حباب"
@@ -904,6 +933,9 @@ msgstr "مجموعه آیکون"
 msgid "CSS Classes"
 msgstr "کلاس های CSS"
 
+msgid "CSS ID"
+msgstr "شناسه CSS"
+
 msgid "CSS Prefix"
 msgstr "پیشوند CSS"
 
@@ -919,17 +951,11 @@ msgstr "Call to Action"
 msgid "Can not connect to the reCAPTCHA server (%d)."
 msgstr "نمیتوان به سرور reCAPTCHA متصل شد (%d)."
 
-msgid "Cannot create reply on reply"
-msgstr "نمی توان در پاسخ پاسخ ایجاد کرد"
+msgid "Cancelled"
+msgstr "لغو شد"
 
 msgid "Cannot save those conditions."
 msgstr "نمی توانید آن شرایط را ذخیره کنید."
-
-msgid "Cannot update 'is_public' on reply."
-msgstr "در پاسخ نمی توان 'is_public' را بروزرسانی کرد."
-
-msgid "Cannot update 'is_resolved' or 'is_public' on reply."
-msgstr "در پاسخ نمی توان'is_resolved' یا'is_public' را بروزرسانی کرد."
 
 msgid "Canvas"
 msgstr "بوم"
@@ -951,6 +977,9 @@ msgstr "مراقبت"
 
 msgid "Carousel"
 msgstr "گردونه"
+
+msgid "Carousel Items"
+msgstr "آیتم های کاروسل"
 
 msgid "Cart"
 msgstr "سبد خرید"
@@ -994,6 +1023,9 @@ msgstr "وسط"
 msgid "Centered Slides"
 msgstr "اسلایدها در مرکز"
 
+msgid "Change Site Logo"
+msgstr "تغییر لوگوی سایت"
+
 msgid "Changelog"
 msgstr "تاریخچه تغییرات"
 
@@ -1005,6 +1037,9 @@ msgstr "کانال"
 
 msgid "Chat"
 msgstr "چت"
+
+msgid "Check license status"
+msgstr "وضعیت مجوز را بررسی کنید"
 
 msgid "Checkbox"
 msgstr "چک باکس"
@@ -1045,14 +1080,26 @@ msgstr "تصویر را انتخاب کنید"
 msgid "Choose Template"
 msgstr "انتخاب قالب"
 
+msgid "Choose a Loop Grid to view the Taxonomy Filter."
+msgstr "برای مشاهده فیلتر طبقه بندی، یک شبکه حلقه را انتخاب کنید."
+
 msgid "Choose a page or add a URL"
 msgstr "یک صفحه را انتخاب کنید یا یک URL اضافه کنید"
+
+msgid "Choose a template"
+msgstr "یک قالب انتخاب کنید"
 
 msgid "Choose from the most used Font Types"
 msgstr "انتخاب از بیشترین نوع فونت های استفاده شده"
 
+msgid "Choose source type"
+msgstr "نوع منبع را انتخاب کنید"
+
 msgid "Choose template"
 msgstr "انتخاب قالب"
+
+msgid "Choose template type"
+msgstr "نوع قالب را انتخاب کنید"
 
 msgid "Choose your plan"
 msgstr "پلن خود را انتخاب کنید"
@@ -1093,6 +1140,9 @@ msgstr "برای وارد کردن کد تخفیف خود اینجا را کلی
 msgid "Click here to login"
 msgstr "برای ورود کلیک کنید"
 
+msgid "Click on the menu item to edit its dropdown content."
+msgstr "روی آیتم فهرست کلیک کنید تا محتوای کشویی آن را ویرایش کنید."
+
 msgid "Clicks"
 msgstr "کلیک ها"
 
@@ -1111,6 +1161,12 @@ msgstr "آیکون بستن"
 msgid "Close Popup"
 msgstr "بستن پاپ آپ"
 
+msgid "Close table of contents"
+msgstr "فهرست مطالب را ببندید"
+
+msgid "Close this search box."
+msgstr "این کادر جستجو را ببندید."
+
 msgid "Code"
 msgstr "کد"
 
@@ -1125,6 +1181,9 @@ msgstr "جمع کردن"
 
 msgid "Collect Submissions"
 msgstr "جمع آوری فرم های ارسالی"
+
+msgid "Collect Your Form Submissions"
+msgstr "فرم های ارسالی خود را جمع آوری کنید"
 
 msgid ""
 "Collected Submissions will be saved to Elementor > <a href=\"%s\" target="
@@ -1147,6 +1206,9 @@ msgstr "رنگ‌بندی"
 
 msgid "Column"
 msgstr "ستون"
+
+msgid "Column Span"
+msgstr "طول ستون"
 
 msgid "Column Width"
 msgstr "عرض ستون"
@@ -1215,9 +1277,12 @@ msgstr "تماس با ما"
 msgid "Contact URL"
 msgstr "URL تماس"
 
-msgid "Contact the site admin or turn off notifications for Notes in your %s."
+msgid ""
+"Contact the site admin or turn off notifications for Notes in your %1$suser "
+"profile%2$s."
 msgstr ""
-"با سرپرست سایت تماس بگیرید یا اعلان‌های یادداشت را در %s خود خاموش کنید."
+"با سرپرست سایت تماس بگیرید یا اعلان‌های Notes را در%1$sحساب کاربری%2$s. خود "
+"خاموش کنید."
 
 msgid "Contain"
 msgstr "شامل"
@@ -1240,6 +1305,9 @@ msgstr "ناحیه محتوای"
 msgid "Content Color"
 msgstr "رنگ محتوا"
 
+msgid "Content Horizontal Position"
+msgstr "موقعیت افقی محتوا"
+
 msgid "Content Padding"
 msgstr "پدینگ محتوا"
 
@@ -1260,6 +1328,9 @@ msgstr "کلید لایسنس را از حساب خود کپی کنید و آن 
 
 msgid "Copy to Clipboard"
 msgstr "کپی در کلیپبورد"
+
+msgid "Could not retrieve query data."
+msgstr "داده های کوئری بازیابی نشد."
 
 msgid "Could not unzip or empty archive."
 msgstr "آرشیو خالی یا به صورت فشرده نشده باشد."
@@ -1288,11 +1359,26 @@ msgstr "پوشش"
 msgid "Coverflow"
 msgstr "جریان کاری"
 
+msgid "Create a template"
+msgstr "یک قالب ایجاد کنید"
+
 msgid "Create an Account"
 msgstr "یک حساب کاربری ایجاد کنید"
 
 msgid "Create an account?"
 msgstr "ایجاد حساب کاربری؟"
+
+msgid ""
+"Create beautiful menus and mega menus with new nested capabilities. Mega "
+"menus are ideal for websites with complex navigation structures and unique "
+"designs. %1$sLearn More%2$s"
+msgstr ""
+"منوهای زیبا و مگا فهرست با قابلیت های تو در تو جدید ایجاد کنید. مگا منوها "
+"برای وب سایت هایی با ساختارهای ناوبری پیچیده و طراحی های منحصر به فرد ایده "
+"آل هستند. %1$sبیشتر بیاموزید%2$s"
+
+msgid "Create template"
+msgstr "ایجاد قالب"
 
 msgid "Created At"
 msgstr "ایجاد شده در"
@@ -1442,11 +1528,25 @@ msgstr "کپشن دلخواه"
 msgid "Custom Code"
 msgstr "کد سفارشی"
 
+msgid ""
+"Custom Code is a tool gives you one place where you can insert scripts, "
+"rather than dealing with dozens of different plugins and deal with code."
+msgstr ""
+"کد سفارشی ابزاری است که به شما امکان وارد کردن اسکریپت ها را می دهد، نه "
+"اینکه با ده ها افزونه مختلف سر و کار داشته باشید و با کد سروکار داشته باشید."
+
 msgid "Custom Date Format"
 msgstr "فرمت تاریخ سفارشی"
 
 msgid "Custom Fonts"
 msgstr "فونت های سفارشی"
+
+msgid ""
+"Custom Fonts allows you to add your self-hosted fonts and use them on your "
+"Elementor projects to create a unique brand language."
+msgstr ""
+"فونت های سفارشی به شما این امکان را می دهد که فونت های خود خود را اضافه کنید "
+"و از آنها در پروژه های المنتور، در طراحی صفحات استفاده کنید."
 
 msgid "Custom Format"
 msgstr "فرمت سفارشی"
@@ -1456,6 +1556,9 @@ msgstr "ارتفاع سفارشی"
 
 msgid "Custom Hotspot Size"
 msgstr "اندازه سفارشی نقطه کانونی"
+
+msgid "Custom Icon"
+msgstr "آیکون سفارشی"
 
 msgid "Custom Icons"
 msgstr "آیکون های سفارشی"
@@ -1468,6 +1571,9 @@ msgstr "برچسب سفارشی"
 
 msgid "Custom Messages"
 msgstr "پیام سفارشی"
+
+msgid "Custom Position"
+msgstr "موقعیت سفارشی"
 
 msgid "Custom Symbol"
 msgstr "سمبل سفارشی"
@@ -1493,8 +1599,8 @@ msgstr "کد سفارشی منتشر شد."
 msgid "Custom code saved."
 msgstr "کد سفارشی ذخیره شد."
 
-msgid "Custom code scheduled for: %1$s."
-msgstr "کد سفارشی زمانبندی شد برای: %1$s."
+msgid "Custom code scheduled for %s."
+msgstr "کد سفارشی برای %s برنامه ریزی شده است."
 
 msgid "Custom code submitted."
 msgstr "کد سفارشی ثبت شد."
@@ -1600,11 +1706,17 @@ msgstr "مارس 6 , 2018 (F j, Y)"
 msgid "Date Modified"
 msgstr "تاریخ ویرایش"
 
+msgid "Date Time Field"
+msgstr "فیلد تاریخ زمان"
+
 msgid "Date set according to your timezone: %s."
 msgstr "تاریخ تعیین شده با توجه به منطقه زمانی شما:%s."
 
 msgid "Date:"
 msgstr "تاریخ:"
+
+msgid "Day"
+msgstr "روز"
 
 msgid "Day Of Cycle"
 msgstr "چرخه روز"
@@ -1654,6 +1766,9 @@ msgstr "توضیحات"
 msgid "Description Color"
 msgstr "رنگ توضیحات"
 
+msgid "Description HTML Tag"
+msgstr "توضیحات برچسب HTML"
+
 msgid "Descriptions"
 msgstr "توضیحات"
 
@@ -1684,9 +1799,6 @@ msgstr "غیرفعال"
 msgid "Disable Page Scrolling"
 msgstr "غیر فعال کردن اسکرول صفحه"
 
-msgid "Disabled"
-msgstr "غیرفعال شده"
-
 msgid "Disc"
 msgstr "دیسک"
 
@@ -1702,6 +1814,9 @@ msgstr "نام نمایشی"
 msgid "Display Percentage"
 msgstr "نمایش درصد"
 
+msgid "Displayed Elements"
+msgstr "عناصر نمایش داده شده"
+
 msgid ""
 "Displayed if no relevant results are found. Manual selection display order "
 "is random"
@@ -1711,6 +1826,12 @@ msgstr ""
 
 msgid "Distance"
 msgstr "فاصله"
+
+msgid "Distance from content"
+msgstr "فاصله از محتوا"
+
+msgid "Distance from dropdown"
+msgstr "فاصله از کشویی"
 
 msgid "Divider"
 msgstr "جداکننده"
@@ -1738,6 +1859,15 @@ msgstr "مستندات در قالب بندی تاریخ و زمان"
 
 msgid "Don't Show Again"
 msgstr "دوباره نمایش نده"
+
+msgid ""
+"Don't rely solely on the FontAwesome icons everyone else is using! "
+"Differentiate your website and your style with custom icons you can upload "
+"from your favorite icons source."
+msgstr ""
+"فقط به آیکون های FontAwesome که دیگران استفاده می کنند تکیه نکنید! وب سایت و "
+"سبک خود را با آیکون های سفارشی که می توانید از منبع آیکون های مورد علاقه خود "
+"آپلود کنید متمایز کنید."
 
 msgid "Don't want to receive these notifications?"
 msgstr "نمی خواهید این اعلان ها را دریافت کنید؟"
@@ -1791,14 +1921,26 @@ msgstr ""
 msgid "Dropdown"
 msgstr "لیست کرکره‌ای"
 
+msgid "Dropdown Box"
+msgstr "جعبه کشویی"
+
+msgid "Dropdown Content"
+msgstr "محتوای کشویی"
+
+msgid "Dropdown Effect"
+msgstr "افکت کشویی"
+
+msgid "Dropdown Indicator"
+msgstr "نشانگر کشویی"
+
+msgid "Dropdown Menu"
+msgstr "فهرست کشویی"
+
 msgid "Due Date"
 msgstr "تاریخ سررسید"
 
 msgid "Duration"
 msgstr "مدت زمان"
-
-msgid "Duration (ms)"
-msgstr "مدت زمان (میلی ثانیه)"
 
 msgid "Edge"
 msgstr "Edge"
@@ -1812,6 +1954,9 @@ msgstr "ویرایش فونت"
 msgid "Edit Font Type"
 msgstr "ویرایش نوع فونت"
 
+msgid "Edit Handle Selector"
+msgstr "انتخابگر دسته را ویرایش کنید"
+
 msgid "Edit Icon Set"
 msgstr "ویرایش مجموعه فونت"
 
@@ -1823,6 +1968,9 @@ msgstr "ویرایش کد"
 
 msgid "Edit global widget"
 msgstr "ویرایش ویجت عمومی"
+
+msgid "Edit template"
+msgstr "ویرایش قالب"
 
 msgid ""
 "Edit this global widget to simultaneously update every place you used it, or "
@@ -1839,7 +1987,14 @@ msgid "Effects Offset"
 msgstr "افکت افست"
 
 msgid "Effects Relative To"
-msgstr "تاثیر مرتبط با"
+msgstr "اثرات مرتبط با"
+
+msgid ""
+"Either choose an existing template or create a new one and use it as the "
+"main item for your loop."
+msgstr ""
+"یا یک قالب موجود را انتخاب کنید یا یک قالب جدید ایجاد کنید و از آن به عنوان "
+"آیتم اصلی حلقه خود استفاده کنید."
 
 msgid "Element"
 msgstr "المان"
@@ -1885,10 +2040,8 @@ msgstr "المنتور پرو"
 msgid "Elementor Pro Data Updater"
 msgstr "بروزرسانی داده های المنتور پرو"
 
-msgid ""
-"Elementor Pro is not working because you are using an old version of "
-"Elementor."
-msgstr "المنتور کار نمی کند زیرا شما از یک نسخه قدیمی المنتور استفاده می کنید."
+msgid "Elementor Pro plugin requires installing the Elementor plugin"
+msgstr "المنتور پرو کار نمی کند زیرا شما نیاز به نصب افزونه المنتور دارید"
 
 msgid "Elementor Pro v%s"
 msgstr "المنتور پرو v%s"
@@ -1900,6 +2053,9 @@ msgid ""
 "Elementor recognized that you have set this location for other templates: "
 msgstr ""
 "المنتور متوجه شده است که شما این مکان را برای سایر قالب ها تنظیم کرده اید: "
+
+msgid "Elementor template shortcode for template %s"
+msgstr "کد کوتاه قالب المنتور برای قالب %s"
 
 msgid "Elementor.com"
 msgstr "ترجمه: المنتور پلاس"
@@ -1932,6 +2088,9 @@ msgstr "Embedded OpenType، استفاده شده توسط مرورگر IE6-IE9"
 
 msgid "Empty Cart Message Color"
 msgstr "رنگ پیام سبد خرید خالی"
+
+msgid "Empty Items"
+msgstr "آیتم های خالی"
 
 msgid "Empty Star Color"
 msgstr "خالی گذاشتن رنگ ستاره"
@@ -2043,6 +2202,12 @@ msgstr "ورودی"
 msgid "Entrance Animation"
 msgstr "انیمیشن ورودی"
 
+msgid "Equal Height"
+msgstr "ارتفاع برابر"
+
+msgid "Equal height"
+msgstr "ارتفاع برابر"
+
 msgid "Error 404"
 msgstr "خطای 404"
 
@@ -2063,9 +2228,6 @@ msgstr "خطایی روی داد، نسخه انتخابی نامعتبر است
 msgid "Error while saving conditions."
 msgstr "هنگام ذخیره شرایط خطایی رخ داد."
 
-msgid "Error with TypeKit fonts"
-msgstr "خطا در فونت های TypeKit"
-
 msgid "Error!"
 msgstr "خطا!"
 
@@ -2082,10 +2244,10 @@ msgid "Excerpt Length"
 msgstr "طول چکیده"
 
 msgid "Exclude"
-msgstr "استثناء"
+msgstr "استثنا"
 
 msgid "Exclude By"
-msgstr "رد کردن توسط"
+msgstr "استثنا توسط"
 
 msgid "Exit"
 msgstr "خروج"
@@ -2096,11 +2258,17 @@ msgstr "انیمیشن خروج"
 msgid "Expand"
 msgstr "بسط دادن"
 
-msgid "Experiments"
-msgstr "آزمایش‌ها"
+msgid "Expand: "
+msgstr "بسط دادن: "
 
 msgid "Expired"
 msgstr "منقضی شده است"
+
+msgid "Explore Apps"
+msgstr "برنامه ها را بررسی کنید"
+
+msgid "Extend Elementor With Apps"
+msgstr "المنتور را با برنامه ها گسترش دهید"
 
 msgid "External Links"
 msgstr "لینک خارجی"
@@ -2147,6 +2315,9 @@ msgstr "محو"
 
 msgid "Fade By Direction"
 msgstr "محو شدن بر اساس جهت"
+
+msgid "Fade in"
+msgstr "محو شدن"
 
 msgid "Failed to write file to disk."
 msgstr "فیلد برای نوشتن فایل بر روی دسیک."
@@ -2199,6 +2370,12 @@ msgstr ""
 
 msgid "Firefox"
 msgstr "Firefox"
+
+msgid "First Item"
+msgstr "اولین آیتم"
+
+msgid "First Item Title"
+msgstr "عنوان اولین آیتم"
 
 msgid "First Name"
 msgstr "نام کوچک"
@@ -2267,9 +2444,6 @@ msgstr "نوع فونت"
 msgid "Font draft updated."
 msgstr "فونت درفت بروزرسانی شد."
 
-msgid "Font missing in Project"
-msgstr "فونت های نا پدید شده در پروژه"
-
 msgid "Font restored to revision from %s"
 msgstr "فونت به نسخه %s بازگشت"
 
@@ -2314,6 +2488,20 @@ msgid ""
 msgstr "به عنوان مثال، «تمام سایت» را برای نمایش الگو در سایت خود انتخاب کنید."
 
 msgid ""
+"For multiple Loop Widgets on the same page, toggle this on to control the "
+"pagination for each individually. Note: It affects the page's URL structure."
+msgstr ""
+"برای چندین ویجت حلقه در یک صفحه، این را روشن کنید تا صفحه بندی هر کدام به "
+"صورت جداگانه کنترل شود. توجه: بر ساختار URL صفحه تأثیر می گذارد."
+
+msgid ""
+"For multiple Posts Widgets on the same page, toggle this on to control the "
+"pagination for each individually. Note: It affects the page's URL structure."
+msgstr ""
+"برای ویجت‌های چند پست در یک صفحه، این مورد را روشن کنید تا صفحه‌بندی هر کدام "
+"به‌صورت جداگانه کنترل شود. توجه: بر ساختار URL صفحه تأثیر می گذارد."
+
+msgid ""
 "For this widget to work, you need to set your Stripe API keys in the "
 "%1$sIntegrations Settings%2$s."
 msgstr "شناسه برنامه Facebook خود را در %1$sتنظیمات یکپارچگی%2$s تنظیم کنید."
@@ -2333,6 +2521,9 @@ msgstr "فرم"
 msgid "Form Data"
 msgstr "فرم اطلاعات"
 
+msgid "Form Error"
+msgstr "خطای فرم"
+
 msgid "Form Fields"
 msgstr "فیلد های فرم"
 
@@ -2350,6 +2541,9 @@ msgstr "نام فرم (شناسه)"
 
 msgid "Form Submissions"
 msgstr "فرم های ارسالی"
+
+msgid "Form Validation"
+msgstr "اعتبار سنجی فرم"
 
 msgid "Format"
 msgstr "قالب"
@@ -2399,8 +2593,20 @@ msgstr "گالری"
 msgid "Gallery Field"
 msgstr "فیلد گالری"
 
+msgid "Gallery filter"
+msgstr "فیلتر گالری"
+
 msgid "Gap"
 msgstr "فاصله"
+
+msgid "Gap between columns"
+msgstr "فاصله بین ستون ها"
+
+msgid "Gap between rows"
+msgstr "فاصله بین ردیف ها"
+
+msgid "Gap between slides"
+msgstr "فاصله بین اسلایدها"
 
 msgid "Gateway not connected. Contact seller"
 msgstr "هیچ روش پرداختی متصل نیست. یا فروشنده در تماس باشید"
@@ -2410,6 +2616,9 @@ msgstr "کلی"
 
 msgid "General Text"
 msgstr "متن عمومی"
+
+msgid "Get Popup Builder"
+msgstr "پاپ آپ ساز را دریافت کنید"
 
 msgid "Get Project ID"
 msgstr "دریافت ID پروژه"
@@ -2584,7 +2793,7 @@ msgid "Hover Animation"
 msgstr "انیمیشن هاور"
 
 msgid "Hover Area"
-msgstr "بخش هاور"
+msgstr "منطقه هاور"
 
 msgid "Hover Effect"
 msgstr "افکت حالت هاور"
@@ -2659,6 +2868,9 @@ msgstr "فاصله بین آیکن ها"
 
 msgid "Icon Start"
 msgstr "آیکون شروع"
+
+msgid "Icons"
+msgstr "آیکن ها"
 
 msgid "Icons Count"
 msgstr "شمارنده آیکون"
@@ -2794,14 +3006,27 @@ msgid ""
 "Indicates whether next post must be within the same taxonomy term as the "
 "current post, this lets you set a taxonomy per each post type"
 msgstr ""
-"نشان می دهد که آیا پست بعدی باید در همان طبقه بندی به عنوان نوشته فعلی باشد، "
+"نشان می دهد که آیا پست بعدی باید در همان طبقه بندی به عنوان پست فعلی باشد، "
 "این به شما اجازه می دهد تا طبقه بندی را در هر نوع نوشته تعیین کنید"
+
+msgid "Individual Pagination"
+msgstr "صفحه بندی جداگانه"
 
 msgid "Infinite Loop"
 msgstr "حلقه بی‌نهایت"
 
 msgid "Infinite Scroll"
 msgstr "اسکرول بی نهایت"
+
+msgid "Infinite scroll"
+msgstr "اسکرول بی نهایت"
+
+msgid ""
+"Infinite scroll is inactive while editing. Preview your page to see it in "
+"action."
+msgstr ""
+"اسکرول بی نهایت در حین ویرایش غیرفعال است. صفحه خود را پیش نمایش کنید تا آن "
+"را در عمل ببینید."
 
 msgid "Info"
 msgstr "اطلاعات"
@@ -2837,20 +3062,20 @@ msgstr ""
 msgid "Inside"
 msgstr "درون"
 
-msgid "Install Elementor"
-msgstr "المنتور را نصب کنید"
+msgid "Install Now"
+msgstr "الان نصب کن"
 
-msgid "Install and Activate the Elementor Plugin"
-msgstr "افزونه المنتور را نصب و فعال کنید"
+msgid ""
+"Install and activate the Elementor plugin to access all the Pro features."
+msgstr ""
+"افزونه المنتور را نصب و فعال کنید تا به تمام ویژگی های پرو دسترسی داشته "
+"باشید."
 
 msgid "Instances"
 msgstr "نمونه ها"
 
 msgid "Integration requires an email field"
 msgstr "Drip Integration به یک فیلد ایمیل نیاز دارد"
-
-msgid "Integration requires an email field and a selected list"
-msgstr "یکپارچگی نیازمند یک فیلد ایمیل و انتخاب لیست می باشد"
 
 msgid "Integrations"
 msgstr "یکپارچه سازی"
@@ -2864,23 +3089,17 @@ msgstr "لینک داخلی"
 msgid "Internet Explorer"
 msgstr "Internet Explorer"
 
-msgid "Invalid"
-msgstr "نامعتبر"
-
-msgid "Invalid Form - reCAPTCHA validation failed"
-msgstr "فرم نامعتبر - اعتبار سنجی reCAPTCHA خطا رفت"
+msgid "Invalid Form"
+msgstr "فرم نامعتبر"
 
 msgid "Invalid Form."
 msgstr "فرم نامعتبر."
 
-msgid "Invalid Message"
-msgstr "پيام نامعتبر"
-
 msgid "Invalid SVG Format, file not uploaded for security reasons"
 msgstr "فرمت SVG نامعتبر، فایل به دلایل امنیتی آپلود نشد"
 
-msgid "Invalid Time, Time should be in HH:MM format!"
-msgstr "زمان نامعتبر، زمان باید در قالب HH:MM باشد!"
+msgid "Invalid form, reCAPTCHA validation failed."
+msgstr "فرم نامعتبر، اعتبار سنجی reCAPTCHA ناموفق بود."
 
 msgid "It seems we can't find what you're looking for."
 msgstr "به نظر میرسد چیزی که دنبالش هستید یافت نشد."
@@ -2891,8 +3110,26 @@ msgstr "ایتالیک"
 msgid "Item"
 msgstr "ایتم"
 
+msgid "Item #%d"
+msgstr "آیتم #%d"
+
+msgid "Item #1"
+msgstr "آیتم #1"
+
+msgid "Item #2"
+msgstr "آیتم #2"
+
+msgid "Item #3"
+msgstr "آیتم #3"
+
+msgid "Item Alignment"
+msgstr "هم ترازی آیتم"
+
 msgid "Item Gap"
 msgstr "فاصبه آیتم"
+
+msgid "Item Layout"
+msgstr "طرح بندی آیتم"
 
 msgid "Item Name"
 msgstr "نام آیتم"
@@ -2900,14 +3137,23 @@ msgstr "نام آیتم"
 msgid "Item Overlay"
 msgstr "روکش آیتم"
 
+msgid "Item Position"
+msgstr "موقعیت آیتم"
+
 msgid "Item Ratio"
 msgstr "نسبت آیتم ها"
+
+msgid "Item Title"
+msgstr "عنوان آیتم"
 
 msgid "Items"
 msgstr "آیتم ها"
 
 msgid "Items Indicator"
 msgstr "موارد آیتم"
+
+msgid "Items Per Page"
+msgstr "آیتم در هر صفحه"
 
 msgid "John Doe"
 msgstr "جان دوو"
@@ -2917,6 +3163,9 @@ msgstr "تراز شده"
 
 msgid "Justify"
 msgstr "هم تراز"
+
+msgid "Keep Your Website’s Shine On"
+msgstr "درخشش وب سایت خود را حفظ کنید"
 
 msgid ""
 "Keep your site's visitors happy when they get lost by displaying your recent "
@@ -2950,6 +3199,9 @@ msgstr "زبان"
 msgid "Large"
 msgstr "بزرگ"
 
+msgid "Last Modified"
+msgstr "آخرین اصلاح"
+
 msgid "Last Name"
 msgstr "نام خانوادگی"
 
@@ -2979,9 +3231,6 @@ msgstr "سطح"
 
 msgid "License"
 msgstr "کد لایسنس"
-
-msgid "License Invalid"
-msgstr "لایسنس نامعتبر"
 
 msgid "License Mismatch"
 msgstr "عدم تطابق لایسنس"
@@ -3055,6 +3304,9 @@ msgstr "Secret key اصلی"
 msgid "Load More"
 msgstr "مشاهده بیشتر"
 
+msgid "Load Type"
+msgstr "نوع بارگذاری"
+
 msgid "Load on Click"
 msgstr "بارگذاری با کلیک"
 
@@ -3107,6 +3359,27 @@ msgstr ""
 msgid "Loop"
 msgstr "حلقه"
 
+msgid "Loop Base"
+msgstr "پایه حلقه"
+
+msgid "Loop Carousel"
+msgstr "کاروسل حلقه"
+
+msgid "Loop Carousel starts with a template."
+msgstr "کاروسل حلقه با یک قالب شروع می شود."
+
+msgid "Loop Grid"
+msgstr "شبکه بندی حلقه"
+
+msgid "Loop Grid starts with a template."
+msgstr "شبکه بندی حلقه با یک قالب شروع می شود."
+
+msgid "Loop Item"
+msgstr "آیتم حلقه"
+
+msgid "Loop Items"
+msgstr "آیتم های حلقه"
+
 msgid "Lorem ipsum dolor sit amet consectetur adipiscing elit dolor"
 msgstr "برای ویرایش متن روی دکمه کلیک کنید"
 
@@ -3139,10 +3412,13 @@ msgid "MailerLite"
 msgstr "MailerLite"
 
 msgid "Main Menu"
-msgstr "منو اصلی"
+msgstr "فهرست اصلی"
 
 msgid "Manage Your Font Files"
 msgstr "فایل های فونت خود را مدیریت کنید"
+
+msgid "Manage your site’s lightbox settings in the %1$sLightbox panel%2$s."
+msgstr "تنظیمات لایت باکس سایت خود را در %1$sپنلLightbox%2$s مدیریت کنید."
 
 msgid "Manual Selection"
 msgstr "انتخاب دستی"
@@ -3202,16 +3478,29 @@ msgid "Menu"
 msgstr "منو"
 
 msgid "Menu Cart"
-msgstr "منو سبد خرید"
+msgstr "فهرست سبد خرید"
 
 msgid "Menu Icon"
 msgstr "آیکن منو"
+
+msgid "Menu Items"
+msgstr "آیتم های منو"
 
 msgid "Menu Order"
 msgstr "سفارش منو"
 
 msgid "Menu Toggle"
 msgstr "تنظیم منو"
+
+msgid "Menu Toggle | Open (Enter or Space) | Return (Escape)"
+msgstr "تغییر وضعیت فهرست | باز کردن (Enter یا Space) | بازگشت (Esc)"
+
+msgid ""
+"Menu | Open (Enter or Space) | Return (Escape) | Other Menu Items (Arrow, "
+"Home & End Keys)"
+msgstr ""
+"فهرست | باز کردن (Enter یا Space) | بازگشت (Esc) | سایر موارد فهرست (کلیدهای "
+"جهت، Home و End)"
 
 msgid "Merchant Account"
 msgstr "حساب من"
@@ -3288,11 +3577,11 @@ msgstr "گم شده"
 msgid "Missing a temporary folder."
 msgstr "یک پوشه‌ی موقت گم شده است ."
 
-msgid "Mobile"
-msgstr "موبایل"
-
 msgid "Mobile Dropdown"
-msgstr "منو موبایل کشویی"
+msgstr "فهرست موبایل کشویی"
+
+msgid "Month"
+msgstr "ماه"
 
 msgid "Month: %s"
 msgstr "ماه : %s"
@@ -3302,9 +3591,6 @@ msgstr "ماهیانه"
 
 msgid "Months"
 msgstr "ماه"
-
-msgid "More information about %s"
-msgstr "اطلاعات بیشتر درباره %s"
 
 msgid "Mouse Effects"
 msgstr "افکت موس"
@@ -3332,9 +3618,6 @@ msgstr "نام"
 
 msgid "Native HTML5"
 msgstr "استفاده از HTML5 محلی"
-
-msgid "Nav Menu"
-msgstr "فهرست ناوبری"
 
 msgid "Navigation"
 msgstr "ناوبری"
@@ -3385,6 +3668,9 @@ msgstr "دکمه ارسال و بعدی"
 msgid "Next &raquo;"
 msgstr "بعدی &raquo;"
 
+msgid "Next Arrow"
+msgstr "فلش بعدی"
+
 msgid "Next Button"
 msgstr "دکمه بعدی"
 
@@ -3393,6 +3679,9 @@ msgstr "لیبل بعدی"
 
 msgid "Next Up"
 msgstr "بعدی"
+
+msgid "Next slide"
+msgstr "اسلاید بعدی"
 
 msgid "No"
 msgstr "خیر"
@@ -3454,6 +3743,9 @@ msgstr "سبد خرید خالی است."
 msgid "No project data was returned."
 msgstr "اطلاعات پروژه ای بازیافت نشد."
 
+msgid "No taxonomy terms found."
+msgstr "هیچ عبارت طبقه بندی یافت نشد."
+
 msgid "None"
 msgstr "هیچ"
 
@@ -3492,8 +3784,38 @@ msgstr ""
 "توجه: تغییراتی که در اینجا ایجاد می‌کنید در تنظیمات ووکامرس در پیشخوان وردپرس "
 "شما نیز منعکس خواهند شد"
 
+msgid ""
+"Note: Item layout will switch to dropdown on any screen smaller than the "
+"selected breakpoint."
+msgstr ""
+"توجه: طرح‌بندی آیتم در هر صفحه‌ای که کوچک‌تر از نقطه شکست انتخاب‌شده باشد، به "
+"کشویی تغییر می‌کند."
+
+msgid "Note: Item will span across a number of columns."
+msgstr "توجه: آیتم در تعدادی از ستون ها قرار می گیرد."
+
+msgid "Note: Repeat the alternate template once every chosen number of items."
+msgstr "توجه: الگوی جایگزین را یک بار در هر تعداد مورد انتخاب شده تکرار کنید."
+
+msgid "Note: Scroll menu items if they don’t fit into their parent container."
+msgstr "توجه: اگر آیتم های منو در محفظه اصلی خود قرار نمی گیرند، پیمایش کنید."
+
+msgid ""
+"Note: Static Items remain in place when new items are added to grid. Other "
+"items appear according to query settings."
+msgstr ""
+"توجه: هنگامی که آیتم جدید به شبکه اضافه می شود، آیتم های ثابت باقی می مانند. "
+"موارد دیگر با توجه به تنظیمات کوئری ظاهر می شوند."
+
 msgid "Note: The Cross-Sells Query is available when creating a Cart page"
 msgstr "توجه: هنگام ایجاد صفحه سبد خرید، کوئری Cross-Sells در دسترس است"
+
+msgid ""
+"Note: The Masonry option combined with Column Span might cause unexpected "
+"results and break the layout."
+msgstr ""
+"توجه: گزینه Masonry همراه با Column Span ممکن است باعث نتایج غیرمنتظره و "
+"خراب شدن طرح شود."
 
 msgid ""
 "Note: The Related Products Query is available when creating a Single Product "
@@ -3519,7 +3841,8 @@ msgstr ""
 "در آنجا تغییر دهید."
 
 msgid "Note: To find an order ID, go to the WP dashboard: WooCommerce > Orders"
-msgstr "توجه: برای یافتن شناسه سفارش، به داشبورد WP بروید: ووکامرس > سفارشات"
+msgstr ""
+"توجه: برای یافتن شناسه سفارش، به داشبورد وردپرس بروید: ووکامرس > سفارشات"
 
 msgid ""
 "Note: You can only track progress relative to Post Content on a single post "
@@ -3566,11 +3889,23 @@ msgstr "اطلاعیه"
 msgid "Number"
 msgstr "شماره"
 
+msgid "Number of slides"
+msgstr "تعداد اسلایدها"
+
+msgid "Number of taxonomies"
+msgstr "تعداد طبقه بندی ها"
+
 msgid "Numbers"
 msgstr "شماره"
 
 msgid "Numeric"
 msgstr "عددی"
+
+msgid "OFF"
+msgstr "خاموش"
+
+msgid "ON"
+msgstr "روشن"
 
 msgid "Oblique"
 msgstr "مورب"
@@ -3584,34 +3919,32 @@ msgstr "رسمی"
 msgid "Offset"
 msgstr "افست"
 
-msgid ""
-"Oh-oh! Your Elementor Pro license is about to expire. Renew now and enjoy "
-"updates, support and Pro templates for another year."
-msgstr ""
-"اوه اوه مجوز Elementor Pro شما به پایان رسیده است. اکنون تمدید کنید و از یک "
-"نسخه دیگر از قالب های پشتیبانی ، پشتیبانی و Pro برای یک سال دیگر لذت ببرید."
+msgid "Offset Sides"
+msgstr "کناره های افست"
+
+msgid "Offset Width"
+msgstr "عرض افست"
 
 msgid ""
-"Oh-oh... Looks like your Elementor Pro license is about to expire. Renew now "
-"and get an exclusive, time-limited %s discount."
+"Offset is inactive while editing. Preview your page to see it in action."
 msgstr ""
-"اوه اوه ... به نظر می رسد که مجوز Elementor Pro شما به پایان رسیده است. "
-"اکنون تمدید کنید و %s تخفیف محدودی کسب کنید."
+"افست هنگام ویرایش غیرفعال است. صفحه خود را پیش نمایش کنید تا آن را در عمل "
+"ببینید."
 
 msgid "On"
 msgstr "روشن"
 
 msgid "On Click"
-msgstr "روی کلیک کنید"
+msgstr "در کلیک"
 
 msgid "On Close"
 msgstr "در بستن"
 
 msgid "On Hover"
-msgstr "هنگام هاور"
+msgstr "در هاور"
 
 msgid "On Hover Out"
-msgstr "خارج شدن از هاور"
+msgstr "در خارج شدن از هاور"
 
 msgid "On Load"
 msgstr "دربارگذاری"
@@ -3635,8 +3968,8 @@ msgid ""
 "On desktop, this will affect the submenu. On mobile, this will affect the "
 "entire menu."
 msgstr ""
-"بر روی دسکتاپ، زیر منو را تحت تاثیر قرار می دهد. در تلفن همراه، منوی کامل را "
-"تحت تاثیر قرار می دهد."
+"بر روی دسکتاپ، زیر فهرست را تحت تاثیر قرار می دهد. در تلفن همراه، منوی کامل "
+"را تحت تاثیر قرار می دهد."
 
 msgid ""
 "Once deleted, those notes will remain and include an indication that this "
@@ -3666,12 +3999,6 @@ msgstr "فقط شماره ها و کاراکترهای تلفن (#, -, *, etc) �
 msgid "Only zip files are allowed"
 msgstr "فقط فایل zip مجاز می باشد"
 
-msgid "Oops, the note you are looking for cannot be found."
-msgstr "اوه، یادداشتی که به دنبال آن هستید یافت نشد."
-
-msgid "Oops, this is how an error notice would look."
-msgstr "اوپس، یک اعلان خطا به این صورت می باشد."
-
 msgid "Opacity"
 msgstr "شفافیت"
 
@@ -3684,11 +4011,17 @@ msgstr "باز شدن با سلکتور"
 msgid "Open Cart"
 msgstr "سبد خرید باز"
 
+msgid "Open On"
+msgstr "باز کردن در"
+
 msgid "Open Popup"
 msgstr "باز کردن پاپ آپ"
 
 msgid "Open in new window"
 msgstr "بازکردن در پنجره جدید"
+
+msgid "Open table of contents"
+msgstr "فهرست مطالب را باز کنید"
 
 msgid "Open the cart every time an item is added."
 msgstr "هربار که آیتمی اضافه می شود سبد خرید را باز کنید."
@@ -3742,6 +4075,9 @@ msgstr ""
 msgid "Orders"
 msgstr "سفارشات"
 
+msgid "Orientation"
+msgstr "جهت یابی"
+
 msgid "Original"
 msgstr "اصلی"
 
@@ -3789,6 +4125,9 @@ msgstr "محدودیت برگه"
 
 msgid "Page Not Found"
 msgstr "صفحه مورد نظر پیدا نشد"
+
+msgid "Page Reload"
+msgstr "بارگذاری مجدد صفحه"
 
 msgid "Page Title"
 msgstr "عنوان صفحه"
@@ -3853,17 +4192,26 @@ msgstr "سال گذشته"
 msgid "Paste URL"
 msgstr "URL یا نوع را جایگذاری کنید"
 
+msgid "Paste URL or type"
+msgstr "URL یا نوع را جایگذاری کنید"
+
 msgid "Paste the URL of the Facebook page."
 msgstr "URL فیس بوک خود را پیست کنید."
 
 msgid "Pause"
-msgstr "مکث کنید"
+msgstr "مکث"
 
 msgid "Pause on Hover"
 msgstr "توقف به محض بردن موس"
 
 msgid "Pause on Interaction"
 msgstr "مکث در واکنش"
+
+msgid "Pause on hover"
+msgstr "توقف به محض بردن موس"
+
+msgid "Pause on interaction"
+msgstr "توقف در واکنش"
 
 msgid "PayPal Account"
 msgstr "حساب من"
@@ -3880,6 +4228,9 @@ msgstr "جزئیات پرداخت"
 msgid "Payment Method:"
 msgstr "روش پرداخت:"
 
+msgid "Per"
+msgstr "در هر"
+
 msgid "Percentage"
 msgstr "درصد"
 
@@ -3892,8 +4243,14 @@ msgstr "دوره"
 msgid "Permissions"
 msgstr "مجوزها"
 
+msgid "Persisting"
+msgstr "ماندگار"
+
 msgid "Phone"
 msgstr "تلفن"
+
+msgid "Picture Size"
+msgstr "اندازه تصویر"
 
 msgid "Placeholder"
 msgstr "برچسب (Placeholder)"
@@ -3975,6 +4332,18 @@ msgstr ""
 "لطفا توجه داشته باشید که این کاربر دارای یادداشت/پاسخ در ویژگی یادداشت "
 "المنتور است."
 
+msgid ""
+"Please note: The Stripe name and logos are trademarks or service marks of "
+"Stripe, Inc. or its affiliates in the U.S. and other countries. %s Other "
+"names may be trademarks of their respective owners."
+msgstr ""
+"لطفاً توجه داشته باشید: نام و نشان‌های Stripe علائم تجاری یا علائم خدمات "
+"Stripe، Inc. یا شرکت‌های وابسته آن در ایالات متحده و سایر کشورها هستند. %s "
+"نام‌های دیگر ممکن است علائم تجاری صاحبان مربوطه باشند."
+
+msgid "Please select a taxonomy."
+msgstr "لطفا یک طبقه بندی انتخاب کنید."
+
 msgid "Please set a valid product"
 msgstr "لطفا یم محصول معتبر وارد کنید"
 
@@ -4008,6 +4377,15 @@ msgstr "محبوبیت"
 msgid "Popup"
 msgstr "پاپ آپ"
 
+msgid ""
+"Popup Builder lets you take advantage of all the amazing features in "
+"Elementor, so you can build beautiful & highly converting popups. Go pro and "
+"start designing your popups today."
+msgstr ""
+"پاپ آپ ساز به شما امکان می‌دهد از تمام ویژگی‌های شگفت‌انگیز المنتور استفاده "
+"کنید، بنابراین می‌توانید پاپ‌آپ‌های زیبا و بسیار تبدیل‌کننده بسازید. حرفه ای "
+"شوید و همین امروز شروع به طراحی پنجره های بازشو کنید."
+
 msgid "Popups"
 msgstr "پاپ آپ ها"
 
@@ -4016,6 +4394,9 @@ msgstr "نمونه کارها"
 
 msgid "Position"
 msgstr "جایگاه"
+
+msgid "Position in grid"
+msgstr "موقعیت در شبکه"
 
 msgid "Post"
 msgstr "نوشته"
@@ -4033,10 +4414,10 @@ msgid "Post Custom Field"
 msgstr "فیلد سفارشی پست"
 
 msgid "Post Date"
-msgstr "تاریخ نوشته"
+msgstr "تاریخ پست"
 
 msgid "Post Excerpt"
-msgstr "چکیده نوشته"
+msgstr "چکیده پست"
 
 msgid "Post ID"
 msgstr "ID پست"
@@ -4048,22 +4429,22 @@ msgid "Post Info"
 msgstr "اطلاعات پست"
 
 msgid "Post Modified"
-msgstr "نوشته اصلاح شده"
+msgstr "پست اصلاح شده"
 
 msgid "Post Navigation"
 msgstr "ناوبری پست"
 
 msgid "Post Published"
-msgstr "نوشته منتشر شده"
+msgstr "پست منتشر شده"
 
 msgid "Post Terms"
-msgstr "طبقه بندی نوشته"
+msgstr "طبقه بندی پست"
 
 msgid "Post Time"
-msgstr "زمان نوشته"
+msgstr "زمان پست"
 
 msgid "Post Title"
-msgstr "عنوان نوشته"
+msgstr "عنوان پست"
 
 msgid "Post Type"
 msgstr "پست تایپ"
@@ -4099,8 +4480,8 @@ msgstr "قبل از متن"
 msgid "Preloader"
 msgstr "پیش بارگذاری"
 
-msgid "Preloader Delay (ms)"
-msgstr "تأخیر پیش باگذاری (ms)"
+msgid "Preloader Delay"
+msgstr "تاخیر پیش باگذاری"
 
 msgid "Pretty Permalink"
 msgstr "پیوند یکتا زیبا"
@@ -4129,17 +4510,26 @@ msgstr "پیش نمایش انتقال صفحه"
 msgid "Preview Settings"
 msgstr "تنظیمات پیش نمایش"
 
+msgid "Preview a specific post or item"
+msgstr "پیش نمایش یک پست یا مورد خاص"
+
 msgid "Preview order with"
 msgstr "پیش نمایش سفارش با"
 
 msgid "Previous"
 msgstr "قبل"
 
+msgid "Previous Arrow"
+msgstr "فلش قبلی"
+
 msgid "Previous Button"
 msgstr "دکمه قبلی"
 
 msgid "Previous Label"
 msgstr "لیبل قبلی"
+
+msgid "Previous slide"
+msgstr "اسلاید قبلی"
 
 msgid "Previous/Next"
 msgstr "قبلی/بعدی"
@@ -4168,8 +4558,11 @@ msgstr "رنگ اولیه"
 msgid "Priority"
 msgstr "اولویت"
 
+msgid "Pro"
+msgstr "پرو"
+
 msgid "Proceed to Checkout"
-msgstr "ادامه جهت تسوبه حساب"
+msgstr "ادامه جهت تسویه حساب"
 
 msgid "Product"
 msgstr "تولید - محصول"
@@ -4261,6 +4654,9 @@ msgstr "تصویر پروفایل"
 msgid "Progress"
 msgstr "پیش رفتن"
 
+msgid "Progress Bar"
+msgstr "نوار پیشرفت"
+
 msgid "Progress Color"
 msgstr "رنگ پیشرفت"
 
@@ -4333,9 +4729,6 @@ msgstr "واکنش"
 msgid "Reactivate License"
 msgstr "فعالسازی دوباره لایسنس"
 
-msgid "Read"
-msgstr "خوانده شده"
-
 msgid "Read Less Label"
 msgstr "لیبل نمایش کمتر"
 
@@ -4351,10 +4744,16 @@ msgstr "متن ادامه مطلب"
 msgid "Read More »"
 msgstr "ادامه مطلب »"
 
+msgid "Read more about %s"
+msgstr "درباره %s بیشتر بخوانید"
+
 msgid "Recent Posts"
-msgstr "آخرین نوشته ها"
+msgstr "آخرین پست ها"
 
 msgid "Recommend"
+msgstr "توصیه شده"
+
+msgid "Recommended"
 msgstr "توصیه شده"
 
 msgid "Redirect"
@@ -4376,7 +4775,7 @@ msgid "Redirect URL"
 msgstr "لینک ریدایرکت"
 
 msgid "Redirect to link after selected timeout"
-msgstr "پس از اتمام زمان انتخاب شده، به پیوند هدایت شوید"
+msgstr "پس از اتمام زمان انتخاب شده، به پیوند هدایت شود"
 
 msgid "Referer"
 msgstr "ارجاع دهنده"
@@ -4400,7 +4799,10 @@ msgid "Related"
 msgstr "مرتبط"
 
 msgid "Related Products"
-msgstr "محصولات پیشنهادی"
+msgstr "محصولات مرتبط"
+
+msgid "Reload Editor"
+msgstr "بارگذاری مجدد ویرایشگر"
 
 msgid "Remember Me"
 msgstr "مرا به یاد بسپار"
@@ -4429,18 +4831,34 @@ msgstr "حذف کردن این آیتم"
 msgid "Renderer"
 msgstr "رندر"
 
-msgid ""
-"Renew Elementor Pro and enjoy updates, support and Pro templates for another "
-"year."
-msgstr ""
-"المنتور پرو را تجدید کنید و برای یک سال دیگر از به روزرسانی ، پشتیبانی و "
-"الگوهای Pro لذت ببرید."
-
-msgid "Renew License"
-msgstr "تجدید لایسنس"
-
 msgid "Renew Now"
 msgstr "تمدید خودکار"
+
+msgid "Renew now"
+msgstr "تمدید خودکار"
+
+msgid "Renew to unlock all Elementor Pro features"
+msgstr "تمدید کنید تا قفل تمام ویژگی های المنتور پرو باز شود"
+
+msgid ""
+"Renew your Elementor Pro subscription to get %s and dozens more Pro widgets "
+"to expand your web-creation toolbox."
+msgstr ""
+"اشتراک المنتور پرو خود را تمدید کنید تا %s و ده ها ویجت Pro دیگر را برای "
+"گسترش جعبه ابزار ایجاد وب خود دریافت کنید."
+
+msgid ""
+"Renew your license today, and get an exclusive, time-limited %s discount."
+msgstr ""
+"همین امروز مجوز خود را تمدید کنید و از تخفیف انحصاری %s با زمان محدود "
+"برخوردار شوید."
+
+msgid ""
+"Renew your license today, to keep getting feature updates, premium support, "
+"Pro widgets & unlimited access to the template library."
+msgstr ""
+"مجوز خود را امروز تمدید کنید تا به روز رسانی ویژگی ها، پشتیبانی ممتاز، "
+"ابزارک های حرفه ای و دسترسی نامحدود به کتابخانه الگو ادامه دهید."
 
 msgid "Repeater State - hidden"
 msgstr "حالت تکرار کننده - پنهان"
@@ -4465,17 +4883,20 @@ msgstr "دکمه پاسخ به"
 msgid "Reply-To"
 msgstr "پاسخ دادن به"
 
+msgid "Request Locked"
+msgstr "درخواست قفل شد"
+
 msgid "Request Parameter"
 msgstr "پارامتر های درخواستی"
 
 msgid "Required"
 msgstr "مورد نیاز"
 
+msgid "Required Field"
+msgstr "فیلد مورد نیاز"
+
 msgid "Required Mark"
 msgstr "نیازمند های نشانگذاری"
-
-msgid "Required Message"
-msgstr "پیام الزامی"
 
 msgid "Returning Customer"
 msgstr "مشتری برگشتی"
@@ -4563,7 +4984,7 @@ msgid "Safari"
 msgstr "Safari"
 
 msgid "Sale"
-msgstr "فروش"
+msgstr "حراج"
 
 msgid "Sale Flash"
 msgstr "فروش فوق العاده"
@@ -4593,8 +5014,18 @@ msgstr ""
 "یک ویجت به عنوان عمومی ذخیره کنید، سپس آن را به چندین قسمت اضافه کنید. همه "
 "مناطق قابل ویرایش از یک مکان واحد است."
 
+msgid ""
+"Save and manage all of your form submissions in one single place. All within "
+"a simple, intuitive place."
+msgstr ""
+"تمام فرم های ارسالی خود را در یک مکان ذخیره و مدیریت کنید. همه در یک مکان "
+"ساده و شهودی."
+
 msgid "Scale"
 msgstr "تغییر اندازه"
+
+msgid "Schedule date and time"
+msgstr "تاریخ و زمان را برنامه ریزی کنید"
 
 msgid "Score Threshold"
 msgstr "آستانه امتیاز"
@@ -4603,7 +5034,7 @@ msgid "Score threshold should be a value between 0 and 1, default: 0.5"
 msgstr "آستانه امتیاز باید مقداری بین 0 و 1 باشد. پیش فرض : 0.5"
 
 msgid "Scroll"
-msgstr "نوار پیمایش"
+msgstr "اسکرول"
 
 msgid "Scroll Padding"
 msgstr "پدینگ اسنپ"
@@ -4620,6 +5051,12 @@ msgid ""
 msgstr ""
 "اسنپ اسکرول باعث می‌شود که هنگام پایان اسکرول، در یک موقعیت خاص از یک بخش، "
 "viewport متوقف شود."
+
+msgid "Scroll Speed"
+msgstr "سرعت اسکرول"
+
+msgid "Scroll items if they don’t fit into their parent container"
+msgstr "اگر موارد در کانتینر اصلی خود جا نمی‌شوند، پیمایش کنید"
 
 msgid "Scrolling Effects"
 msgstr "افکت اسکرول"
@@ -4673,7 +5110,7 @@ msgid "Secret Key"
 msgstr "کلید خصوصی"
 
 msgid "Section"
-msgstr "بخش (سکشن)"
+msgstr "بخش"
 
 msgid "Section Title"
 msgstr "عنوان بخش"
@@ -4722,6 +5159,9 @@ msgstr "انتخاب..."
 msgid "Selected Text"
 msgstr "متن انتخاب شده"
 
+msgid "Selected loop grid"
+msgstr "شبکه حلقه انتخاب شده"
+
 msgid "Selection Color"
 msgstr "رنگ انتخاب شده"
 
@@ -4764,14 +5204,17 @@ msgstr "رنگ جداکننده"
 msgid "Separator Width"
 msgstr "عرض جدا کننده"
 
-msgid "Sequence Duration (ms)"
-msgstr "مدت زمان توالی (میلی ثانیه)"
+msgid "Sequence Duration"
+msgstr "مدت زمان دنباله"
 
 msgid "Sequenced Animation"
 msgstr "انیمیشن تکراری"
 
-msgid "Server error. Form not sent."
-msgstr "خطا سرور. فرم ارسال نشد."
+msgid "Server Error"
+msgstr "خطای سرور"
+
+msgid "Session"
+msgstr "جلسه"
 
 msgid "Sessions"
 msgstr "جلسات"
@@ -4906,6 +5349,9 @@ msgstr "جزئیات حمل و نقل"
 msgid "Shipping Price"
 msgstr "قیمت حمل و نقل"
 
+msgid "Shop"
+msgstr "فروشگاه"
+
 msgid "Shop Page"
 msgstr "صفحه فروشگاه"
 
@@ -5000,7 +5446,7 @@ msgid "Single Pages"
 msgstr "برگه تکی"
 
 msgid "Single Post"
-msgstr "پست تکی"
+msgstr "نوشته تکی"
 
 msgid "Single Posts"
 msgstr "نوشته تکی"
@@ -5056,6 +5502,18 @@ msgstr "اسلک"
 msgid "Slide"
 msgstr "اسلاید"
 
+msgid "Slide #%d"
+msgstr "اسلاید #%d"
+
+msgid "Slide #1"
+msgstr "اسلاید #1"
+
+msgid "Slide #2"
+msgstr "اسلاید #2"
+
+msgid "Slide #3"
+msgstr "اسلاید #3"
+
 msgid "Slide 1 Heading"
 msgstr "عنوان اول اسلاید"
 
@@ -5071,6 +5529,9 @@ msgstr "اسلاید براساس جهت"
 msgid "Slide Heading"
 msgstr "عنوان اسلاید"
 
+msgid "Slide Title"
+msgstr "عنوان اسلاید"
+
 msgid "Slider Options"
 msgstr "تنظیمات اسلایدر"
 
@@ -5079,6 +5540,12 @@ msgstr "اسلاید ها"
 
 msgid "Slides Per View"
 msgstr "اسلایدها در هر نمایش"
+
+msgid "Slides on display"
+msgstr "اسلایدهای نمایش داده شده"
+
+msgid "Slides on scroll"
+msgstr "اسلایدها روی اسکرول"
 
 msgid "Slides to Scroll"
 msgstr "اسلایدها جهت پیمایش"
@@ -5113,14 +5580,20 @@ msgstr "خطایی رخ داد"
 msgid "Something went wrong, please refresh the page."
 msgstr "مشکلی پیش آمد، لطفا صفحه را مجدد بارگذاری کنید."
 
-msgid "Something went wrong."
-msgstr "خطایی رخ داد."
-
 msgid "Source"
 msgstr "منبع"
 
+msgid "Source Type"
+msgstr "نوع منبع"
+
 msgid "Space Between"
 msgstr "فاصله بینابینی"
+
+msgid "Space From slides"
+msgstr "فاصله از اسلاید ها"
+
+msgid "Space between Items"
+msgstr "فاصله بین آیتم ها"
 
 msgid "Spacing"
 msgstr "فاصله‌گذاری"
@@ -5150,13 +5623,26 @@ msgid "Star Size"
 msgstr "سایز ستاره"
 
 msgid "Start"
-msgstr "آغاز"
+msgstr "شروع"
 
 msgid "Start Point"
 msgstr "نقطه شروع"
 
+msgid ""
+"Start by creating a master item. All the other instances in the grid will "
+"match this design. Then go back to the widget in the editor panel and assign "
+"both a template and a source of content. Your grid should populate "
+"automatically."
+msgstr ""
+"با ایجاد یک آیتم اصلی شروع کنید. تمام نمونه های دیگر در شبکه با این طرح "
+"مطابقت دارند. سپس به ویجت در پنل ویرایشگر برگردید و هم یک الگو و هم منبع "
+"محتوا را اختصاص دهید. شبکه شما باید به طور خودکار پر شود."
+
 msgid "State"
 msgstr "استان"
+
+msgid "Static item position"
+msgstr "موقعیت آیتم ثابت"
 
 msgid "Status"
 msgstr "وضعیت"
@@ -5198,7 +5684,10 @@ msgid "Stretch"
 msgstr "کش آمدن"
 
 msgid "Stretch the dropdown of the menu to full width."
-msgstr "منو را بکشید تا به عرض کامل برسد."
+msgstr "فهرست را بکشید تا به عرض کامل برسد."
+
+msgid "Stripe"
+msgstr "درگاه استرایپ"
 
 msgid "Stripe Button"
 msgstr "دکمه Stripe"
@@ -5208,6 +5697,14 @@ msgstr "محیط تست Stripe"
 
 msgid "Style"
 msgstr "استایل"
+
+msgid "Style the dropdown box that contains menu items."
+msgstr "به کادر کشویی که حاوی آیتم های فهرست است استایل بدهید."
+
+msgid "Styles apply to items when the menu switches to dropdown layout"
+msgstr ""
+"هنگامی که فهرست به طرح‌بندی کشویی تغییر می‌کند، استایل ها برای آیتم اعمال "
+"می‌شوند"
 
 msgid "Sub Title"
 msgstr "عنوان فرعی"
@@ -5288,9 +5785,6 @@ msgstr "جدول"
 msgid "Table of Contents"
 msgstr "فهرست مطالب"
 
-msgid "Tablet"
-msgstr "تبلت"
-
 msgid "Tabs"
 msgstr "زبانه‌ها"
 
@@ -5324,11 +5818,28 @@ msgstr "نرخ مالیات"
 msgid "Taxonomy"
 msgstr "رده بندی"
 
+msgid "Taxonomy Children"
+msgstr "طبقه بندی فرزندان"
+
+msgid "Taxonomy Filter"
+msgstr "فیلتر طبقه بندی"
+
+msgid ""
+"Taxonomy Filter is a powerful tool that enables users to easily filter and "
+"sort their posts and product categories. %1$sLearn More%2$s"
+msgstr ""
+"فیلتر طبقه بندی ابزاری قدرتمند است که کاربران را قادر می سازد تا پست ها و "
+"دسته بندی های محصولات خود را به راحتی فیلتر و مرتب کنند. %1$sبیشتر بیاموزید"
+"%2$s"
+
 msgid "Tel"
 msgstr "تلفن"
 
 msgid "Template"
 msgstr "قالب"
+
+msgid "Templates"
+msgstr "قالب ها"
 
 msgid "Term"
 msgstr "شرایط"
@@ -5358,6 +5869,9 @@ msgstr "کاروسل نظرات مشتریان"
 msgid "Text"
 msgstr "متن"
 
+msgid "Text  Align"
+msgstr "تراز کردن متن"
+
 msgid "Text Align"
 msgstr "جهت متن"
 
@@ -5366,9 +5880,6 @@ msgstr "رنگ متن"
 
 msgid "Text Padding"
 msgstr "حاشیه درونی متن"
-
-msgid "Text Shadow"
-msgstr "سایه متن"
 
 msgctxt "Text Shadow Control"
 msgid "Shadow"
@@ -5391,6 +5902,13 @@ msgstr ""
 
 msgid "The %s Widget was not found in your template."
 msgstr "%s ویجت در قالب شما پیدا نشد."
+
+msgid ""
+"The Autoplay is inactive while editing. Preview your page to see it in "
+"action."
+msgstr ""
+"پخش خودکار هنگام ویرایش غیرفعال است. صفحه خود را پیش نمایش کنید تا آن را در "
+"عمل ببینید."
 
 msgid "The Captcha field cannot be blank. Please enter a value."
 msgstr "فیلد کپچا نمی توانید خالی باشد. لطفا یک مقدار وارد کنید."
@@ -5426,15 +5944,24 @@ msgstr ""
 "پیش نمایش ویرایشگر ممکن است ظاهرا متفاوتی با ظاهر اصلی سایت داشته باشد. لطفا "
 "مطمئن شوید ظاهرا اصلی را بررسی می کنید."
 
+msgid "The field accepts only numbers and phone characters (#, -, *, etc)."
+msgstr "این فیلد فقط اعداد و کاراکترهای تلفن (#، -، *، و غیره) را می پذیرد."
+
+msgid "The field should be in HH:MM format."
+msgstr "فیلد باید در قالب HH:MM باشد."
+
+msgid "The field value must be greater than or equal to %s."
+msgstr "مقدار فیلد باید بزرگتر یا مساوی %s باشد."
+
+msgid "The field value must be less than or equal to %s."
+msgstr "مقدار فیلد باید کمتر یا مساوی %s باشد."
+
 msgid ""
 "The footer template allows you to easily design and edit custom WordPress "
 "footers without the limits of your theme’s footer design constraints"
 msgstr ""
 "قالب پاورقی به شما اجازه می دهد تا به راحتی پارورقی سفارشی وردپرس را به رحتی "
 "بدون محدودیت های قالب سایت، ویرایش و طراحی کنید"
-
-msgid "The form was sent successfully."
-msgstr "فرم باموفقیت ارسال شد."
 
 msgid ""
 "The header template allows you to easily design and edit custom WordPress "
@@ -5443,6 +5970,16 @@ msgid ""
 msgstr ""
 "قالب سربرگ به شما امکان می دهد تا به راحتی سربرگ های سفارشی وردپرس را طراحی "
 "و ویرایش کنید، بنابراین دیگر محدودیت طراحی ندارید."
+
+msgid ""
+"The hover effect is inactive while editing. Preview your page to see it in "
+"action."
+msgstr ""
+"افکت شناور هنگام ویرایش غیرفعال است. صفحه خود را پیش نمایش کنید تا آن را در "
+"عمل ببینید."
+
+msgid "The note you are looking for was not found."
+msgstr "یادداشتی که به دنبال آن هستید یافت نشد."
 
 msgid "The response parameter is invalid or malformed."
 msgstr "پارامتر response نا معتبر است."
@@ -5477,12 +6014,6 @@ msgstr ""
 msgid "The uploaded file was only partially uploaded."
 msgstr "فایل آپلود شده تنها تا حدی آپلود شد."
 
-msgid "The value must be greater than or equal %s"
-msgstr "مقدار باید بزرگ تر یا برابر با %s باشد"
-
-msgid "The value must be less than or equal to %s"
-msgstr "مقدار باید کمتر یا برابر با %s باشید"
-
 msgid "The zip file provided is not supported!"
 msgstr "فایل زیپ تهیه شده پشتیبانی نمی شود!"
 
@@ -5496,7 +6027,7 @@ msgid "Theme Comments"
 msgstr "قالب نظرات"
 
 msgid "There are no menus in your site."
-msgstr "در سایت شما هیچ منو وجود ندارد."
+msgstr "در سایت شما هیچ فهرست وجود ندارد."
 
 msgid "There is no error, the file uploaded with success."
 msgstr "هیچ خطایی وجود ندارد.فایل با موفقیت آپلود شد."
@@ -5506,9 +6037,6 @@ msgstr "هیچ چیز برای خروجی وجود ندارد."
 
 msgid "There was an error while trying to upload your file."
 msgstr "هنگام تلاش برای بارگیری فایل شما خطایی روی داد."
-
-msgid "There's something wrong. The form is invalid."
-msgstr "خطایی رخ داده است. فرم نامعتبر است."
 
 msgid ""
 "These keys will serve as your default API key for all stripe implementations "
@@ -5523,8 +6051,12 @@ msgstr "این پیام‌ها، پیام‌های خطای Stripe را لغو �
 msgid "Third item on the list"
 msgstr "سومین آیتم در لیست"
 
-msgid "This Message is not visible for site visitors."
-msgstr "این پیام برای بازدید کنندگان قابل مشاهده نیست."
+msgid ""
+"This affects the types of widgets and templates you can use for your master "
+"item."
+msgstr ""
+"این روی انواع ویجت‌ها و قالب‌هایی که می‌توانید برای آیتم اصلی خود استفاده کنید، "
+"تاثیر می‌گذارد."
 
 msgid ""
 "This control confines the Table of Contents to heading elements under a "
@@ -5532,11 +6064,11 @@ msgid ""
 msgstr "این کنترل فهرست مطالب را در عنوان تحت یک ظرف خاص محدود می کند"
 
 msgid ""
-"This feature is currently an experiment, you can turn it on in Elementor --> "
-"Settings --> %s."
+"This feature is currently an experiment, you can turn it on in Elementor > "
+"Settings > %1$sExperiments%2$s."
 msgstr ""
-"این ویژگی در حال حاضر یک آزمایشی است، می توانید آن را در Elementor --> "
-"Settings --> %s فعال کنید."
+"این ویژگی در حال حاضر یک آزمایش است، می‌توانید آن را در المنتور > تنظیمات > "
+"%1$sآزمایشی ها%2$s فعال کنید."
 
 msgid "This field is required."
 msgstr "این فیلد الزامی می باشد."
@@ -5556,6 +6088,9 @@ msgstr ""
 
 msgid "This is how WooCommerce provides an info notice."
 msgstr "این یک اعلان اطلاعاتی ارائه شده توسط ووکامرس است."
+
+msgid "This is how an error notice would look."
+msgstr "اخطار خطا اینگونه به نظر می رسد."
 
 msgid "This is text element"
 msgstr "این یک المنت متن می باشد"
@@ -5577,6 +6112,9 @@ msgstr "این رنگ، پشت صفحه انیمیشن لود می باشد"
 msgid "This is what a WooCommerce message notice looks like."
 msgstr "یک اعلان پیام توسط ووکامرس به این صورت است."
 
+msgid "This message is not visible to site visitors."
+msgstr "این پیام برای بازدیدکنندگان سایت قابل مشاهده نیست."
+
 msgid ""
 "This option will allow the right column (e.g, Cart Totals) to be sticky "
 "while scrolling."
@@ -5588,7 +6126,7 @@ msgid "This page is"
 msgstr "این یک برگه"
 
 msgid "This post is password protected. Enter the password to view comments."
-msgstr "این نوشته رمزگذاری شده است. برای مشاهده نظر، رمز را وارد کنید."
+msgstr "این پست رمزگذاری شده است. برای مشاهده نظر، رمز را وارد کنید."
 
 msgid "This subscriber already exists."
 msgstr "این مشترک در حال حاضر وجود دارد."
@@ -5617,11 +6155,14 @@ msgstr "زمان ها"
 msgid "Timestamp"
 msgstr "Timestamp"
 
+msgid "Timezone"
+msgstr "منطقه زمانی"
+
 msgid "Title"
 msgstr "عنوان"
 
-msgid "Title & Description"
-msgstr "عنوان و توضیح"
+msgid "Title Alignment"
+msgstr "تراز عنوان"
 
 msgid "Title Color"
 msgstr "عنوان رنگ"
@@ -5653,9 +6194,6 @@ msgstr "برای تغییر طرح آرشیو محصولات، به Appearance> 
 msgid ""
 "To change the design of your notices, go to your %1$sWooCommerce Settings%2$s"
 msgstr "برای تغییر طراحی اعلان‌های خود، به %1$sتنظیمات ووکامرس%2$s خود بروید"
-
-msgid "To edit the logo of your site, go to %1$sSite Identity%2$s."
-msgstr "برای تغییر طراحی اعلان‌های خود، به %1$sتنظیمات ووکامرس%2$s خود بروید."
 
 msgid "To edit the title of your site, go to %1$sSite Identity%2$s."
 msgstr "برای تغییر طراحی اعلان‌های خود، به %1$sتنظیمات ووکامرس%2$s خود بروید."
@@ -5693,6 +6231,9 @@ msgstr "تراز بندی تغییر وضعیت"
 
 msgid "Toggle Button"
 msgstr "دکمه تغییر وضعیت"
+
+msgid "Toggle Icon"
+msgstr "آیکن تغییر وضعیت"
 
 msgid "Toggle Popup"
 msgstr "تغییر وضعیت پاپ آپ"
@@ -5749,9 +6290,6 @@ msgstr "سرعت انتقال"
 
 msgid "Transparency"
 msgstr "شفافیت"
-
-msgid "Trash"
-msgstr "سطل زباله"
 
 msgid "Trigger"
 msgstr "دستگیره"
@@ -5820,9 +6358,6 @@ msgstr "رنگ بدون مارک"
 msgid "Unmarked Style"
 msgstr "استای بدون مارک"
 
-msgid "Unread"
-msgstr "خوانده نشده"
-
 msgid "Unsupported"
 msgstr "پشتیبانی نشده"
 
@@ -5841,11 +6376,11 @@ msgstr "بروزرسانی خودکار سبد خرید"
 msgid "Update Cart Button"
 msgstr "بروزرسانی سبد خرید"
 
-msgid "Update Elementor Now"
-msgstr "به روز رسانی المنتور"
-
 msgid "Update Font Type"
 msgstr "بروزرسانی  نوع فونت"
+
+msgid "Update Now"
+msgstr "بروزرسانی کنید"
 
 msgid "Update Shipping Button"
 msgstr "دکمه به روز رسانی حمل و نقل"
@@ -5884,19 +6419,19 @@ msgstr "در حال آپلود&hellip;"
 msgid "Upsell"
 msgstr "پرفروش ها"
 
-msgid "Upsells"
-msgstr "پرفروش ها"
+msgid ""
+"Use %1$scustom CSS%3$s to style your content or add %2$sthe \"selector\" "
+"prefix%3$s to target specific elements."
+msgstr ""
+"از %1$sCSS سفارشی%3$s برای استایل دادن به محتوای خود استفاده کنید یا "
+"%2$sپیشوند «selector»%3$s را برای هدف قرار دادن عناصر خاص اضافه کنید."
 
 msgid ""
-"Use \"selector\" to target wrapper element. Examples:%1$sselector {color: "
-"red;} // For main element%1$sselector .child-element {margin: 10px;} // For "
-"child element%1$s.my-class {text-align: center;} // Or use any custom "
-"selector"
+"Use %s widget and dozens more pro features to extend your toolbox and build "
+"sites faster and better."
 msgstr ""
-"استفاده از \"selector\" برای هدف گذاری wrapper المنت. برای مثال %1$s "
-"selector {color: red;} // برای المنت اصلی %1$s selector .child-element "
-"{margin: 10px;} // برای المنت فرزند.%1$smy-class {text-align: center;} // r "
-"یا استفاده از هر selector سفارشی دیگر"
+"از ویجت %s و ده ها ویژگی حرفه ای دیگر برای گسترش جعبه ابزار خود و ساخت سایت "
+"های سریع تر و بهتر استفاده کنید."
 
 msgid "Use the letters: %s"
 msgstr "استفاده از این حروف : %s"
@@ -5909,9 +6444,6 @@ msgstr "برای تنظیم یک کلید API سفارشی برای فرم فع�
 
 msgid "Use this field to set a custom API URL for the current form"
 msgstr "برای تنظیم یک URL API سفارشی برای فرم فعلی از این فیلد استفاده کنید"
-
-msgid "Use this field to set a custom API key for the current form"
-msgstr "برای تنظیم API سفارشی برای فرم فعلی از این فیلد استفاده کنید"
 
 msgid "Use this setting to skip over posts (e.g. '2' to skip over 2 posts)."
 msgstr ""
@@ -5996,6 +6528,9 @@ msgstr "لینک ویدیو"
 msgid "Video Playlist"
 msgstr "پلی لیست ویدئو"
 
+msgid "Video Position"
+msgstr "موقعیت ویدیو"
+
 msgid "Video URL"
 msgstr "نشانی ویدئو"
 
@@ -6026,9 +6561,6 @@ msgstr "مشاهده سایت"
 msgid "View cart"
 msgstr "نمایش سبد خرید"
 
-msgid "View details"
-msgstr "نمایش جزئیات"
-
 msgid "Viewport"
 msgstr "مشاهده"
 
@@ -6037,6 +6569,9 @@ msgstr "Vimeo"
 
 msgid "Visible only if selected step type contains \"Icon\""
 msgstr "زمانی که آیکون مرحله انتخاب شده باید نمایش داده شود."
+
+msgid "Visitor"
+msgstr "بازدید کننده"
 
 msgid "Want to activate this website by a different license?"
 msgstr "آیا می خواهید این وب سایت را با مجوز دیگری فعال کنید؟"
@@ -6050,6 +6585,18 @@ msgstr ""
 
 msgid "Want to deactivate the license for any reason?"
 msgstr "آیا می خواهید این وب سایت را با مجوز دیگری فعال کنید؟"
+
+msgid "Want to give access only to content?"
+msgstr "آیا می خواهید فقط به محتوا دسترسی داشته باشید؟"
+
+msgid ""
+"Want to keep creating secure and high-performing websites? Renew your "
+"subscription to regain access to all of the Elementor Pro widgets, "
+"templates, updates & more"
+msgstr ""
+"آیا می خواهید به ایجاد وب سایت های ایمن و با عملکرد بالا ادامه دهید؟ اشتراک "
+"خود را تمدید کنید تا دوباره به همه ویجت‌ها، قالب‌ها، به‌روزرسانی‌ها و موارد دیگر "
+"المنتور پرو دسترسی پیدا کنید"
 
 msgid "Want to learn more about Elementor library?"
 msgstr "میخواهید درباره کتابخانه المنتور بیشتر بدانید؟"
@@ -6069,14 +6616,14 @@ msgstr "ویز"
 msgid "Webhook"
 msgstr "وب هوک"
 
-msgid "Webhook Error"
-msgstr "وب هوک"
-
 msgid "Webhook URL"
 msgstr "آدرس وب هوک"
 
 msgid "Website"
 msgstr "وبسایت"
+
+msgid "Week"
+msgstr "هفته‌"
 
 msgid "Weekly"
 msgstr "هفتگی"
@@ -6113,6 +6660,9 @@ msgstr "قالب نتایج جستجو چیست؟"
 
 msgid "What is a Single Product Template?"
 msgstr "قالب محصول تکی چیست؟"
+
+msgid "What is a loop?"
+msgstr "قالب حلقه چیست؟"
 
 msgid "What is an Archive Template?"
 msgstr "قالب آرشیو چیست؟"
@@ -6165,6 +6715,9 @@ msgstr "برگه های ووکامرس"
 
 msgid "Word Wrap"
 msgstr "Wrap کلمه"
+
+msgid "WordPress Menu"
+msgstr "فهرست وردپرس"
 
 msgid "X Anchor Point"
 msgstr "X Anchor Point"
