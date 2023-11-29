@@ -6,5 +6,8 @@
     "psr-4": {
       "ElectroApp\\": "src/"
     }
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^5.4"
   }
 }
