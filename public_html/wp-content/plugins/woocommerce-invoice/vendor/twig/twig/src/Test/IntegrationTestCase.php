@@ -157,51 +157,51 @@ abstract class IntegrationTestCase extends TestCase
         $loader = new ArrayLoader($templates);
 
         foreach ($outputs as $i => $match) {
-	        $config = array_merge( [
-		        'cache'            => false,
-		        'strict_variables' => true,
-	        ], $match[2] ? eval( $match[2] . ';' ) : [] );
-	        $twig   = new Environment( $loader, $config );
-	        $twig->addGlobal( 'global', 'global' );
-	        foreach ( $this->getRuntimeLoaders() as $runtimeLoader ) {
-		        $twig->addRuntimeLoader( $runtimeLoader );
-	        }
+            $config = array_merge([
+                'cache' => false,
+                'strict_variables' => true,
+            ], $match[2] ? eval($match[2].';') : []);
+            $twig = new Environment($loader, $config);
+            $twig->addGlobal('global', 'global');
+            foreach ($this->getRuntimeLoaders() as $runtimeLoader) {
+                $twig->addRuntimeLoader($runtimeLoader);
+            }
 
-	        foreach ( $this->getExtensions() as $extension ) {
-		        $twig->addExtension( $extension );
-	        }
+            foreach ($this->getExtensions() as $extension) {
+                $twig->addExtension($extension);
+            }
 
-	        foreach ( $this->getTwigFilters() as $filter ) {
-		        $twig->addFilter( $filter );
-	        }
+            foreach ($this->getTwigFilters() as $filter) {
+                $twig->addFilter($filter);
+            }
 
-	        foreach ( $this->getTwigTests() as $test ) {
-		        $twig->addTest( $test );
-	        }
+            foreach ($this->getTwigTests() as $test) {
+                $twig->addTest($test);
+            }
 
-	        foreach ( $this->getTwigFunctions() as $function ) {
-		        $twig->addFunction( $function );
-	        }
+            foreach ($this->getTwigFunctions() as $function) {
+                $twig->addFunction($function);
+            }
 
-	        // avoid using the same PHP class name for different cases
-	        $p = new \ReflectionProperty( $twig, 'templateClassPrefix' );
-	        $p->setAccessible( true );
-	        $p->setValue( $twig, '__TwigTemplate_' . hash( \PHP_VERSION_ID < 80100 ? 'sha256' : 'xxh128', uniqid( mt_rand(), true ), false ) . '_' );
+            // avoid using the same PHP class name for different cases
+            $p = new \ReflectionProperty($twig, 'templateClassPrefix');
+            $p->setAccessible(true);
+            $p->setValue($twig, '__TwigTemplate_'.hash(\PHP_VERSION_ID < 80100 ? 'sha256' : 'xxh128', uniqid(mt_rand(), true), false).'_');
 
-	        $deprecations = [];
-	        try {
-		        $prevHandler = set_error_handler( function ( $type, $msg, $file, $line, $context = [] ) use ( &$deprecations, &$prevHandler ) {
-			        if ( \E_USER_DEPRECATED === $type ) {
-				        $deprecations[] = $msg;
+            $deprecations = [];
+            try {
+                $prevHandler = set_error_handler(function ($type, $msg, $file, $line, $context = []) use (&$deprecations, &$prevHandler) {
+                    if (\E_USER_DEPRECATED === $type) {
+                        $deprecations[] = $msg;
 
-				        return true;
-			        }
+                        return true;
+                    }
 
-			        return $prevHandler ? $prevHandler( $type, $msg, $file, $line, $context ) : false;
-		        } );
+                    return $prevHandler ? $prevHandler($type, $msg, $file, $line, $context) : false;
+                });
 
-		        $template = $twig->load( 'index.twig' );
-	        } catch (\Exception $e) {
+                $template = $twig->load('index.twig');
+            } catch (\Exception $e) {
                 if (false !== $exception) {
                     $message = $e->getMessage();
                     $this->assertSame(trim($exception), trim(sprintf('%s: %s', \get_class($e), $message)));
@@ -233,9 +233,9 @@ abstract class IntegrationTestCase extends TestCase
             }
 
             if (false !== $exception) {
-	            [ $class ] = explode( ':', $exception );
-	            $constraintClass = class_exists( 'PHPUnit\Framework\Constraint\Exception' ) ? 'PHPUnit\Framework\Constraint\Exception' : 'PHPUnit_Framework_Constraint_Exception';
-	            $this->assertThat( null, new $constraintClass( $class ) );
+                list($class) = explode(':', $exception);
+                $constraintClass = class_exists('PHPUnit\Framework\Constraint\Exception') ? 'PHPUnit\Framework\Constraint\Exception' : 'PHPUnit_Framework_Constraint_Exception';
+                $this->assertThat(null, new $constraintClass($class));
             }
 
             $expected = trim($match[3], "\n ");

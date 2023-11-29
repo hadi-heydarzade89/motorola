@@ -25,7 +25,7 @@ interface SecurityPolicyInterface
      *
      * @throws SecurityError
      */
-    public function checkSecurity( $tags, $filters, $functions ): void;
+    public function checkSecurity($tags, $filters, $functions): void;
 
     /**
      * @param object $obj
@@ -33,7 +33,7 @@ interface SecurityPolicyInterface
      *
      * @throws SecurityNotAllowedMethodError
      */
-    public function checkMethodAllowed( $obj, $method ): void;
+    public function checkMethodAllowed($obj, $method): void;
 
     /**
      * @param object $obj
@@ -41,5 +41,5 @@ interface SecurityPolicyInterface
      *
      * @throws SecurityNotAllowedPropertyError
      */
-    public function checkPropertyAllowed( $obj, $property ): void;
+    public function checkPropertyAllowed($obj, $property): void;
 }

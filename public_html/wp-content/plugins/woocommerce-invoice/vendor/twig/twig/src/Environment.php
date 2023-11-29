@@ -25,6 +25,8 @@ use Twig\Extension\OptimizerExtension;
 use Twig\Loader\ArrayLoader;
 use Twig\Loader\ChainLoader;
 use Twig\Loader\LoaderInterface;
+use Twig\Node\Expression\Binary\AbstractBinary;
+use Twig\Node\Expression\Unary\AbstractUnary;
 use Twig\Node\ModuleNode;
 use Twig\Node\Node;
 use Twig\NodeVisitor\NodeVisitorInterface;
@@ -36,22 +38,24 @@ use Twig\TokenParser\TokenParserInterface;
  *
  * @author Fabien Potencier <fabien@symfony.com>
  */
-class Environment {
-	public const VERSION = '3.4.3';
-	public const VERSION_ID = 30403;
-	public const MAJOR_VERSION = 3;
-	public const MINOR_VERSION = 4;
-	public const RELEASE_VERSION = 3;
-	public const EXTRA_VERSION = '';
+class Environment
+{
+    public const VERSION = '3.7.1';
+    public const VERSION_ID = 30701;
+    public const MAJOR_VERSION = 3;
+    public const MINOR_VERSION = 7;
+    public const RELEASE_VERSION = 1;
+    public const EXTRA_VERSION = '';
 
-	private $charset;
-	private $loader;
-	private $debug;
-	private $autoReload;
-	private $cache;
-	private $lexer;
-	private $parser;
-	private $compiler;
+    private $charset;
+    private $loader;
+    private $debug;
+    private $autoReload;
+    private $cache;
+    private $lexer;
+    private $parser;
+    private $compiler;
+    /** @var array<string, mixed> */
     private $globals = [];
     private $resolvedGlobals;
     private $loadedTemplates;
@@ -226,8 +230,8 @@ class Environment {
     public function setCache($cache)
     {
         if (\is_string($cache)) {
-	        $this->originalCache = $cache;
-	        $this->cache         = new FilesystemCache( $cache, $this->autoReload ? FilesystemCache::FORCE_BYTECODE_INVALIDATION : 0 );
+            $this->originalCache = $cache;
+            $this->cache = new FilesystemCache($cache, $this->autoReload ? FilesystemCache::FORCE_BYTECODE_INVALIDATION : 0);
         } elseif (false === $cache) {
             $this->originalCache = $cache;
             $this->cache = new NullCache();
@@ -259,7 +263,7 @@ class Environment {
     {
         $key = $this->getLoader()->getCacheKey($name).$this->optionsHash;
 
-	    return $this->templateClassPrefix . hash( \PHP_VERSION_ID < 80100 ? 'sha256' : 'xxh128', $key ) . ( null === $index ? '' : '___' . $index );
+        return $this->templateClassPrefix.hash(\PHP_VERSION_ID < 80100 ? 'sha256' : 'xxh128', $key).(null === $index ? '' : '___'.$index);
     }
 
     /**
@@ -381,7 +385,7 @@ class Environment {
      */
     public function createTemplate(string $template, string $name = null): TemplateWrapper
     {
-	    $hash = hash( \PHP_VERSION_ID < 80100 ? 'sha256' : 'xxh128', $template, false );
+        $hash = hash(\PHP_VERSION_ID < 80100 ? 'sha256' : 'xxh128', $template, false);
         if (null !== $name) {
             $name = sprintf('%s (string template %s)', $name, $hash);
         } else {
@@ -432,20 +436,20 @@ class Environment {
             return $this->load($names);
         }
 
-	    $count = \count( $names );
+        $count = \count($names);
         foreach ($names as $name) {
-	        if ( $name instanceof Template ) {
-		        return $name;
-	        }
-	        if ( $name instanceof TemplateWrapper ) {
-		        return $name;
-	        }
+            if ($name instanceof Template) {
+                return $name;
+            }
+            if ($name instanceof TemplateWrapper) {
+                return $name;
+            }
 
-	        if ( 1 !== $count && ! $this->getLoader()->exists( $name ) ) {
-		        continue;
-	        }
+            if (1 !== $count && !$this->getLoader()->exists($name)) {
+                continue;
+            }
 
-	        return $this->load( $name );
+            return $this->load($name);
         }
 
         throw new LoaderError(sprintf('Unable to find one of the following templates: "%s".', implode('", "', $names)));
@@ -535,59 +539,64 @@ class Environment {
     {
         if ('UTF8' === $charset = null === $charset ? null : strtoupper($charset)) {
             // iconv on Windows requires "UTF-8" instead of "UTF8"
-	        $charset = 'UTF-8';
+            $charset = 'UTF-8';
         }
 
-	    $this->charset = $charset;
+        $this->charset = $charset;
     }
 
-	public function getCharset(): string {
-		return $this->charset;
-	}
+    public function getCharset(): string
+    {
+        return $this->charset;
+    }
 
-	public function hasExtension( string $class ): bool {
-		return $this->extensionSet->hasExtension( $class );
-	}
+    public function hasExtension(string $class): bool
+    {
+        return $this->extensionSet->hasExtension($class);
+    }
 
-	public function addRuntimeLoader( RuntimeLoaderInterface $loader ) {
-		$this->runtimeLoaders[] = $loader;
-	}
+    public function addRuntimeLoader(RuntimeLoaderInterface $loader)
+    {
+        $this->runtimeLoaders[] = $loader;
+    }
 
-	/**
-	 * @template TExtension of ExtensionInterface
-	 *
-	 * @param class-string<TExtension> $class
-	 *
-	 * @return TExtension
-	 */
-	public function getExtension( string $class ): ExtensionInterface {
-		return $this->extensionSet->getExtension( $class );
-	}
+    /**
+     * @template TExtension of ExtensionInterface
+     *
+     * @param class-string<TExtension> $class
+     *
+     * @return TExtension
+     */
+    public function getExtension(string $class): ExtensionInterface
+    {
+        return $this->extensionSet->getExtension($class);
+    }
 
-	/**
-	 * Returns the runtime implementation of a Twig element (filter/function/tag/test).
-	 *
-	 * @template TRuntime of object
-	 *
-	 * @param class-string<TRuntime> $class A runtime class name
-	 *
-	 * @return TRuntime The runtime implementation
-	 *
-	 * @throws RuntimeError When the template cannot be found
-	 */
-	public function getRuntime( string $class ) {
-		if ( isset( $this->runtimes[ $class ] ) ) {
-			return $this->runtimes[ $class ];
-		}
+    /**
+     * Returns the runtime implementation of a Twig element (filter/function/tag/test).
+     *
+     * @template TRuntime of object
+     *
+     * @param class-string<TRuntime> $class A runtime class name
+     *
+     * @return TRuntime The runtime implementation
+     *
+     * @throws RuntimeError When the template cannot be found
+     */
+    public function getRuntime(string $class)
+    {
+        if (isset($this->runtimes[$class])) {
+            return $this->runtimes[$class];
+        }
 
-		foreach ( $this->runtimeLoaders as $loader ) {
-			if ( null !== $runtime = $loader->load( $class ) ) {
-				return $this->runtimes[ $class ] = $runtime;
-			}
-		}
+        foreach ($this->runtimeLoaders as $loader) {
+            if (null !== $runtime = $loader->load($class)) {
+                return $this->runtimes[$class] = $runtime;
+            }
+        }
 
-		throw new RuntimeError( sprintf( 'Unable to load the "%s" runtime.', $class ) );
-	}
+        throw new RuntimeError(sprintf('Unable to load the "%s" runtime.', $class));
+    }
 
     public function addExtension(ExtensionInterface $extension)
     {
@@ -769,6 +778,8 @@ class Environment {
 
     /**
      * @internal
+     *
+     * @return array<string, mixed>
      */
     public function getGlobals(): array
     {
@@ -798,6 +809,8 @@ class Environment {
 
     /**
      * @internal
+     *
+     * @return array<string, array{precedence: int, class: class-string<AbstractUnary>}>
      */
     public function getUnaryOperators(): array
     {
@@ -806,6 +819,8 @@ class Environment {
 
     /**
      * @internal
+     *
+     * @return array<string, array{precedence: int, class: class-string<AbstractBinary>, associativity: ExpressionParser::OPERATOR_*}>
      */
     public function getBinaryOperators(): array
     {

@@ -80,51 +80,36 @@
             </tr>
         {% endfor %}
         <!----->
-        <tr>
-            <td colspan="1" class="leftp">مجموع:</td>
-            <td colspan="1" class="centerp">
-                {% if order.get_total_quantity_refunded() %}
-                    <del>{{ order.get_total_quantity() | fa }}</del>
-                    <ins>{{ order.get_total_quantity_without_refunded() | fa }}</ins>
-                {% else %}
-                    {{ order.get_total_quantity() | fa }}
-                {% endif %}
-            </td>
-            <td colspan="2" class="centerp">{{ order.get_subtotal() | price }} {{ currency_symbol() }}</td>
-        </tr>
-        {% if order.get_total_discount() > 0 %}
-            <tr>
-                <td colspan="2" class="leftp">تخفیف:</td>
-                <td colspan="2" class="centerp">{{ order.get_total_discount() | price }}</td>
-            </tr>
-        {% endif %}
-        {% if order.get_shipping_methods() %}
-            <tr>
-                <td colspan="2" class="leftp">هزینه ارسال - {{ order.get_shipping_method() }}:</td>
-                <td colspan="2" class="centerp">{{ order.get_shipping_total() | price }}</td>
-            </tr>
-        {% endif %}
-        {% if order.get_total_tax() > 0 %}
-            <tr>
-                <td colspan="2" class="leftp">مالیات:</td>
-                <td colspan="2" class="centerp">{{ order.get_total_tax() | price }}</td>
-            </tr>
-        {% endif %}
-        <tr>
-            <td colspan="2" class="leftp">روش پرداخت:</td>
-            <td colspan="2" class="centerp">{{ order.get_payment_method_title() }}</td>
-        </tr>
-        {% if order.get_total_refunded() > 0 %}
-            <tr>
-                <td colspan="2" class="leftp">مسترد شده:</td>
-                <td colspan="2" class="centerp">{{ order.get_total_refunded() | price }}</td>
-            </tr>
-        {% endif %}
-        <tr>
-            <th colspan="2">مجموع مبلغ نهایی</th>
-            <th colspan="2"
-                class="centerp">{{ order.get_total_without_refunded() | price }} {{ currency_symbol() }}</th>
-        </tr>
+
+        {% for id, row in order.get_order_item_totals() %}
+
+            {% if id == 'cart_subtotal' %}
+                <tr>
+                    <td colspan="1" class="leftp">{{ row.label }}</td>
+                    <td colspan="1" class="centerp">
+                        {% if order.get_total_quantity_refunded() %}
+                            <del>{{ order.get_total_quantity() | fa }}</del>
+                            <ins>{{ order.get_total_quantity_without_refunded() | fa }}</ins>
+                        {% else %}
+                            {{ order.get_total_quantity() | fa }}
+                        {% endif %}
+                    </td>
+                    <td colspan="2" class="centerp">{{ row.value | raw }}</td>
+                </tr>
+            {% elseif loop.last %}
+                <tr>
+                    <th colspan="2" class="leftp">{{ row.label }}</th>
+                    <th colspan="2" class="centerp">{{ row.value | raw }}</th>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="2" class="leftp">{{ row.label }}</td>
+                    <td colspan="2" class="centerp">{{ row.value | raw }}</td>
+                </tr>
+            {% endif %}
+
+        {% endfor %}
+
     </table>
     <div class="emza centerp" {{ options.info.store_description | show_hide }}>
         {{ wpautop( options.info.store_description ) }}

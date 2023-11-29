@@ -1,50 +1,51 @@
 name: "CI"
 
 on:
-  pull_request:
-  push:
-    branches:
-      - '3.x'
+    pull_request:
+    push:
+        branches:
+            - '3.x'
 
 env:
-  SYMFONY_PHPUNIT_DISABLE_RESULT_CACHE: 1
+    SYMFONY_PHPUNIT_DISABLE_RESULT_CACHE: 1
 
 permissions:
   contents: read
 
 jobs:
-  tests:
-    name: "PHP ${{ matrix.php-version }}"
+    tests:
+        name: "PHP ${{ matrix.php-version }}"
 
-    runs-on: 'ubuntu-latest'
+        runs-on: 'ubuntu-latest'
 
-    continue-on-error: ${{ matrix.experimental }}
+        continue-on-error: ${{ matrix.experimental }}
 
-    strategy:
-      matrix:
-        php-version:
-          - '7.2.5'
-            - '7.3'
-            - '7.4'
-            - '8.0'
-          - '8.1'
-        experimental: [ false ]
+        strategy:
+            matrix:
+                php-version:
+                    - '7.2.5'
+                    - '7.3'
+                    - '7.4'
+                    - '8.0'
+                    - '8.1'
+                    - '8.2'
+                experimental: [false]
 
-      steps:
-        - name: "Checkout code"
-          uses: actions/checkout@v2
+        steps:
+            - name: "Checkout code"
+              uses: actions/checkout@v3
 
             - name: "Install PHP with extensions"
               uses: shivammathur/setup-php@v2
               with:
-                coverage: "none"
-                php-version: ${{ matrix.php-version }}
-                ini-values: memory_limit=-1
+                  coverage: "none"
+                  php-version: ${{ matrix.php-version }}
+                  ini-values: memory_limit=-1
 
             - name: "Add PHPUnit matcher"
               run: echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
-        - run: composer install
+            - run: composer install
 
             - name: "Install PHPUnit"
               run: vendor/bin/simple-phpunit install
@@ -56,8 +57,8 @@ jobs:
               run: vendor/bin/simple-phpunit
 
     extension-tests:
-      needs:
-        - 'tests'
+        needs:
+            - 'tests'
 
         name: "${{ matrix.extension }} with PHP ${{ matrix.php-version }}"
 
@@ -65,34 +66,35 @@ jobs:
 
         continue-on-error: true
 
-      strategy:
-        matrix:
-          php-version:
-            - '7.2.5'
-              - '7.3'
-              - '7.4'
-              - '8.0'
-            - '8.1'
-            extension:
-              - 'extra/cache-extra'
-              - 'extra/cssinliner-extra'
-              - 'extra/html-extra'
-              - 'extra/inky-extra'
-              - 'extra/intl-extra'
-                - 'extra/markdown-extra'
-                - 'extra/string-extra'
-                - 'extra/twig-extra-bundle'
-          experimental: [ false ]
+        strategy:
+            matrix:
+                php-version:
+                    - '7.2.5'
+                    - '7.3'
+                    - '7.4'
+                    - '8.0'
+                    - '8.1'
+                    - '8.2'
+                extension:
+                    - 'extra/cache-extra'
+                    - 'extra/cssinliner-extra'
+                    - 'extra/html-extra'
+                    - 'extra/inky-extra'
+                    - 'extra/intl-extra'
+                    - 'extra/markdown-extra'
+                    - 'extra/string-extra'
+                    - 'extra/twig-extra-bundle'
+                experimental: [false]
 
         steps:
-          - name: "Checkout code"
-            uses: actions/checkout@v2
+            - name: "Checkout code"
+              uses: actions/checkout@v3
 
-          - name: "Install PHP with extensions"
-            uses: shivammathur/setup-php@v2
-            with:
-              coverage: "none"
-              php-version: ${{ matrix.php-version }}
+            - name: "Install PHP with extensions"
+              uses: shivammathur/setup-php@v2
+              with:
+                  coverage: "none"
+                  php-version: ${{ matrix.php-version }}
                   ini-values: memory_limit=-1
 
             - name: "Add PHPUnit matcher"
@@ -114,36 +116,33 @@ jobs:
               working-directory: ${{ matrix.extension}}
               run: ../../vendor/bin/simple-phpunit
 
-#
-#    Drupal does not support Twig 3 now!
-#
-#    integration-tests:
-#        needs:
-#            - 'tests'
-#
-#        name: "Integration tests with PHP ${{ matrix.php-version }}"
-#
-#        runs-on: 'ubuntu-20.04'
-#
-#        continue-on-error: true
-#
-#        strategy:
-#            matrix:
-#                php-version:
-#                    - '7.3'
-#
-#        steps:
-#            - name: "Checkout code"
-#              uses: actions/checkout@v2
-#
-#            - name: "Install PHP with extensions"
-#              uses: shivammathur/setup-php@2
-#              with:
-#                  coverage: "none"
-#                  extensions: "gd, pdo_sqlite"
-#                  php-version: ${{ matrix.php-version }}
-#                  ini-values: memory_limit=-1
-#                  tools: composer:v2
-#
-#            - run: bash ./tests/drupal_test.sh
-#              shell: "bash"
+    integration-tests:
+        needs:
+            - 'tests'
+
+        name: "Integration tests with PHP ${{ matrix.php-version }}"
+
+        runs-on: 'ubuntu-latest'
+
+        continue-on-error: true
+
+        strategy:
+            matrix:
+                php-version:
+                    - '8.2'
+
+        steps:
+            - name: "Checkout code"
+              uses: actions/checkout@v3
+
+            - name: "Install PHP with extensions"
+              uses: shivammathur/setup-php@v2
+              with:
+                  coverage: "none"
+                  extensions: "gd, pdo_sqlite"
+                  php-version: ${{ matrix.php-version }}
+                  ini-values: memory_limit=-1
+                  tools: composer:v2
+
+            - run: bash ./tests/drupal_test.sh
+              shell: "bash"

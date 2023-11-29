@@ -27,32 +27,32 @@ abstract class CallExpression extends AbstractExpression
         if (\is_string($callable) && false === strpos($callable, '::')) {
             $compiler->raw($callable);
         } else {
-	        [ $r, $callable ] = $this->reflectCallable( $callable );
+            [$r, $callable] = $this->reflectCallable($callable);
 
-	        if ( \is_string( $callable ) ) {
-		        $compiler->raw( $callable );
-	        } elseif ( \is_array( $callable ) && \is_string( $callable[0] ) ) {
-		        if ( ! $r instanceof \ReflectionMethod || $r->isStatic() ) {
-			        $compiler->raw( sprintf( '%s::%s', $callable[0], $callable[1] ) );
-		        } else {
-			        $compiler->raw( sprintf( '$this->env->getRuntime(\'%s\')->%s', $callable[0], $callable[1] ) );
-		        }
-	        } elseif ( \is_array( $callable ) && $callable[0] instanceof ExtensionInterface ) {
-		        $class = \get_class( $callable[0] );
-		        if ( ! $compiler->getEnvironment()->hasExtension( $class ) ) {
-			        // Compile a non-optimized call to trigger a \Twig\Error\RuntimeError, which cannot be a compile-time error
-			        $compiler->raw( sprintf( '$this->env->getExtension(\'%s\')', $class ) );
-		        } else {
-			        $compiler->raw( sprintf( '$this->extensions[\'%s\']', ltrim( $class, '\\' ) ) );
-		        }
+            if (\is_string($callable)) {
+                $compiler->raw($callable);
+            } elseif (\is_array($callable) && \is_string($callable[0])) {
+                if (!$r instanceof \ReflectionMethod || $r->isStatic()) {
+                    $compiler->raw(sprintf('%s::%s', $callable[0], $callable[1]));
+                } else {
+                    $compiler->raw(sprintf('$this->env->getRuntime(\'%s\')->%s', $callable[0], $callable[1]));
+                }
+            } elseif (\is_array($callable) && $callable[0] instanceof ExtensionInterface) {
+                $class = \get_class($callable[0]);
+                if (!$compiler->getEnvironment()->hasExtension($class)) {
+                    // Compile a non-optimized call to trigger a \Twig\Error\RuntimeError, which cannot be a compile-time error
+                    $compiler->raw(sprintf('$this->env->getExtension(\'%s\')', $class));
+                } else {
+                    $compiler->raw(sprintf('$this->extensions[\'%s\']', ltrim($class, '\\')));
+                }
 
-		        $compiler->raw( sprintf( '->%s', $callable[1] ) );
-	        } else {
-		        $compiler->raw( sprintf( '$this->env->get%s(\'%s\')->getCallable()', ucfirst( $this->getAttribute( 'type' ) ), $this->getAttribute( 'name' ) ) );
-	        }
+                $compiler->raw(sprintf('->%s', $callable[1]));
+            } else {
+                $compiler->raw(sprintf('$this->env->get%s(\'%s\')->getCallable()', ucfirst($this->getAttribute('type')), $this->getAttribute('name')));
+            }
         }
 
-	    $this->compileArguments( $compiler );
+        $this->compileArguments($compiler);
     }
 
     protected function compileArguments(Compiler $compiler, $isArray = false): void
@@ -122,44 +122,44 @@ abstract class CallExpression extends AbstractExpression
                 throw new SyntaxError(sprintf('Positional arguments cannot be used after named arguments for %s "%s".', $callType, $callName), $this->getTemplateLine(), $this->getSourceContext());
             }
 
-	        $parameters[ $name ] = $node;
+            $parameters[$name] = $node;
         }
 
-	    $isVariadic = $this->hasAttribute( 'is_variadic' ) && $this->getAttribute( 'is_variadic' );
-	    if ( ! $named && ! $isVariadic ) {
-		    return $parameters;
-	    }
+        $isVariadic = $this->hasAttribute('is_variadic') && $this->getAttribute('is_variadic');
+        if (!$named && !$isVariadic) {
+            return $parameters;
+        }
 
-	    if ( ! $callable ) {
-		    if ( $named ) {
-			    $message = sprintf( 'Named arguments are not supported for %s "%s".', $callType, $callName );
-		    } else {
-			    $message = sprintf( 'Arbitrary positional arguments are not supported for %s "%s".', $callType, $callName );
-		    }
+        if (!$callable) {
+            if ($named) {
+                $message = sprintf('Named arguments are not supported for %s "%s".', $callType, $callName);
+            } else {
+                $message = sprintf('Arbitrary positional arguments are not supported for %s "%s".', $callType, $callName);
+            }
 
-		    throw new \LogicException( $message );
-	    }
+            throw new \LogicException($message);
+        }
 
-	    [ $callableParameters, $isPhpVariadic ] = $this->getCallableParameters( $callable, $isVariadic );
-	    $arguments         = [];
-	    $names             = [];
-	    $missingArguments  = [];
-	    $optionalArguments = [];
-	    $pos               = 0;
-	    foreach ( $callableParameters as $callableParameter ) {
-		    $name = $this->normalizeName( $callableParameter->name );
-		    if ( \PHP_VERSION_ID >= 80000 && 'range' === $callable ) {
-			    if ( 'start' === $name ) {
-				    $name = 'low';
-			    } elseif ( 'end' === $name ) {
-				    $name = 'high';
-			    }
-		    }
+        list($callableParameters, $isPhpVariadic) = $this->getCallableParameters($callable, $isVariadic);
+        $arguments = [];
+        $names = [];
+        $missingArguments = [];
+        $optionalArguments = [];
+        $pos = 0;
+        foreach ($callableParameters as $callableParameter) {
+            $name = $this->normalizeName($callableParameter->name);
+            if (\PHP_VERSION_ID >= 80000 && 'range' === $callable) {
+                if ('start' === $name) {
+                    $name = 'low';
+                } elseif ('end' === $name) {
+                    $name = 'high';
+                }
+            }
 
-		    $names[] = $name;
+            $names[] = $name;
 
-		    if ( \array_key_exists( $name, $parameters ) ) {
-			    if ( \array_key_exists( $pos, $parameters ) ) {
+            if (\array_key_exists($name, $parameters)) {
+                if (\array_key_exists($pos, $parameters)) {
                     throw new SyntaxError(sprintf('Argument "%s" is defined twice for %s "%s".', $name, $callType, $callName), $this->getTemplateLine(), $this->getSourceContext());
                 }
 
@@ -239,7 +239,7 @@ abstract class CallExpression extends AbstractExpression
 
     private function getCallableParameters($callable, bool $isVariadic): array
     {
-	    [ $r, , $callableName ] = $this->reflectCallable( $callable );
+        [$r, , $callableName] = $this->reflectCallable($callable);
 
         $parameters = $r->getParameters();
         if ($this->hasNode('node')) {
@@ -263,56 +263,59 @@ abstract class CallExpression extends AbstractExpression
             if ($isArray && $argument->isDefaultValueAvailable() && [] === $argument->getDefaultValue()) {
                 array_pop($parameters);
             } elseif ($argument && $argument->isVariadic()) {
-	            array_pop( $parameters );
-	            $isPhpVariadic = true;
+                array_pop($parameters);
+                $isPhpVariadic = true;
             } else {
-	            throw new \LogicException( sprintf( 'The last parameter of "%s" for %s "%s" must be an array with default value, eg. "array $arg = []".', $callableName, $this->getAttribute( 'type' ), $this->getAttribute( 'name' ) ) );
+                throw new \LogicException(sprintf('The last parameter of "%s" for %s "%s" must be an array with default value, eg. "array $arg = []".', $callableName, $this->getAttribute('type'), $this->getAttribute('name')));
             }
         }
 
-	    return [ $parameters, $isPhpVariadic ];
+        return [$parameters, $isPhpVariadic];
     }
 
-	private function reflectCallable( $callable ) {
-		if ( null !== $this->reflector ) {
-			return $this->reflector;
-		}
+    private function reflectCallable($callable)
+    {
+        if (null !== $this->reflector) {
+            return $this->reflector;
+        }
 
-		if ( \is_string( $callable ) && false !== $pos = strpos( $callable, '::' ) ) {
-			$callable = [ substr( $callable, 0, $pos ), substr( $callable, 2 + $pos ) ];
-		}
+        if (\is_string($callable) && false !== $pos = strpos($callable, '::')) {
+            $callable = [substr($callable, 0, $pos), substr($callable, 2 + $pos)];
+        }
 
-		if ( \is_array( $callable ) && method_exists( $callable[0], $callable[1] ) ) {
-			$r = new \ReflectionMethod( $callable[0], $callable[1] );
+        if (\is_array($callable) && method_exists($callable[0], $callable[1])) {
+            $r = new \ReflectionMethod($callable[0], $callable[1]);
 
-			return $this->reflector = [ $r, $callable, $r->class . '::' . $r->name ];
-		}
+            return $this->reflector = [$r, $callable, $r->class.'::'.$r->name];
+        }
 
-		$checkVisibility = $callable instanceof \Closure;
-		try {
-			$closure = \Closure::fromCallable( $callable );
-		} catch ( \TypeError $e ) {
-			throw new \LogicException( sprintf( 'Callback for %s "%s" is not callable in the current scope.', $this->getAttribute( 'type' ), $this->getAttribute( 'name' ) ), 0, $e );
-		}
-		$r = new \ReflectionFunction( $closure );
+        $checkVisibility = $callable instanceof \Closure;
+        try {
+            $closure = \Closure::fromCallable($callable);
+        } catch (\TypeError $e) {
+            throw new \LogicException(sprintf('Callback for %s "%s" is not callable in the current scope.', $this->getAttribute('type'), $this->getAttribute('name')), 0, $e);
+        }
+        $r = new \ReflectionFunction($closure);
 
-		if ( false !== strpos( $r->name, '{closure}' ) ) {
-			return $this->reflector = [ $r, $callable, 'Closure' ];
-		}
+        if (false !== strpos($r->name, '{closure}')) {
+            return $this->reflector = [$r, $callable, 'Closure'];
+        }
 
-		if ( $object = $r->getClosureThis() ) {
-			$callable     = [ $object, $r->name ];
-			$callableName = ( \function_exists( 'get_debug_type' ) ? get_debug_type( $object ) : \get_class( $object ) ) . '::' . $r->name;
-		} elseif ( $class = $r->getClosureScopeClass() ) {
-			$callableName = ( \is_array( $callable ) ? $callable[0] : $class->name ) . '::' . $r->name;
-		} else {
-			$callable = $callableName = $r->name;
-		}
+        if ($object = $r->getClosureThis()) {
+            $callable = [$object, $r->name];
+            $callableName = (\function_exists('get_debug_type') ? get_debug_type($object) : \get_class($object)).'::'.$r->name;
+        } elseif (\PHP_VERSION_ID >= 80111 && $class = $r->getClosureCalledClass()) {
+            $callableName = $class->name.'::'.$r->name;
+        } elseif (\PHP_VERSION_ID < 80111 && $class = $r->getClosureScopeClass()) {
+            $callableName = (\is_array($callable) ? $callable[0] : $class->name).'::'.$r->name;
+        } else {
+            $callable = $callableName = $r->name;
+        }
 
-		if ( $checkVisibility && \is_array( $callable ) && method_exists( ...$callable ) && ! ( new \ReflectionMethod( ...$callable ) )->isPublic() ) {
-			$callable = $r->getClosure();
-		}
+        if ($checkVisibility && \is_array($callable) && method_exists(...$callable) && !(new \ReflectionMethod(...$callable))->isPublic()) {
+            $callable = $r->getClosure();
+        }
 
-		return $this->reflector = [ $r, $callable, $callableName ];
-	}
+        return $this->reflector = [$r, $callable, $callableName];
+    }
 }
