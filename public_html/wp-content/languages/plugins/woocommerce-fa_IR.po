@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-11-16 19:22:39+0000\n"
+"PO-Revision-Date: 2023-11-27 21:03:17+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,11 @@ msgstr ""
 "X-Generator: GlotPress/4.0.0-alpha.11\n"
 "Language: fa\n"
 "Project-Id-Version: Plugins - WooCommerce - Stable (latest release)\n"
+
+#. translators: %1$s Coupon codes, %2$s Reason
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:212
+msgid "\"%1$s\" was removed from the cart. %2$s"
+msgstr "\"%1$s\" از سبد خرید حذف شد. %2$s"
 
 #: packages/woocommerce-blocks/assets/js/blocks/page-content-wrapper/block.json
 #: packages/woocommerce-blocks/build/page-content-wrapper/block.json
@@ -59,6 +64,12 @@ msgctxt "block title"
 msgid "Order Status"
 msgstr "وضعیت سفارش"
 
+#: packages/woocommerce-blocks/assets/js/blocks/order-confirmation/shipping-wrapper/block.json
+#: packages/woocommerce-blocks/build/order-confirmation-shipping-wrapper/block.json
+msgctxt "block description"
+msgid "Display the order confirmation shipping section."
+msgstr "بخش حمل و نقل تاییدیه سفارش را نمایش دهید."
+
 #: packages/woocommerce-blocks/assets/js/blocks/order-confirmation/downloads/block.json
 #: packages/woocommerce-blocks/build/order-confirmation-downloads/block.json
 msgctxt "block title"
@@ -88,6 +99,18 @@ msgstr "اطلاعات اضافی"
 msgctxt "block keyword"
 msgid "Filters"
 msgstr "فیلترها"
+
+#: packages/woocommerce-blocks/assets/js/blocks/collection-filters/block.json
+#: packages/woocommerce-blocks/build/collection-filters/block.json
+msgctxt "block title"
+msgid "Collection Filters"
+msgstr "صافی‌های مجموعه"
+
+#: assets/client/admin/product-editor/blocks/product-fields/downloads/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/product-downloads-field/block.json
+msgctxt "block title"
+msgid "Product downloads"
+msgstr "دریافت محصول"
 
 #: assets/client/admin/product-editor/blocks/generic/product-text-field/block.json
 #: assets/client/admin/product-editor/blocks/generic/text/block.json
@@ -568,7 +591,7 @@ msgstr "با ابزارهای افزایش عملکرد Jetpack، فروشگاه
 msgid "Optimize store performance with Jetpack Boost"
 msgstr "عملکرد فروشگاه را با Jetpack Boost بهینه کنید"
 
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:478
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:570
 msgid "Invalid order ID or key provided."
 msgstr "شناسه یا کلید سفارش ارائه شده نامعتبر است."
 
@@ -6427,7 +6450,7 @@ msgctxt "block title"
 msgid "Express Checkout"
 msgstr "پرداخت سریع"
 
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:459
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:551
 #: packages/woocommerce-blocks/build/cart-frontend.js:2
 #: packages/woocommerce-blocks/build/cart.js:2
 #: packages/woocommerce-blocks/build/checkout-frontend.js:2
@@ -6795,11 +6818,6 @@ msgstr "اجازۀ استفاده از حالت تغییر مسیر (ناامن)
 #: src/Admin/Features/OnboardingTasks/Tasks/Shipping.php:63
 msgid "Set your store location and where you'll ship to."
 msgstr "مکان فروشگاه خود و اینکه به کجا ارسال می کنید را مشخص کنید."
-
-#: src/Admin/Features/OnboardingTasks/Tasks/AdditionalPayments.php:58
-#: src/Admin/Features/OnboardingTasks/Tasks/Payments.php:49
-msgid "Choose payment providers and enable payment methods at checkout."
-msgstr "ارائه دهندگان پرداخت را انتخاب کرده و روش های پرداخت را در هنگام پرداخت فعال کنید."
 
 #: src/Admin/Features/OnboardingTasks/Tasks/WooCommercePayments.php:61
 #: assets/client/admin/app/index.js:2
@@ -7411,39 +7429,39 @@ msgid "The provided email address is not valid"
 msgstr "نشانی ایمیل ارائه شده معتبر نیست"
 
 #. translators: %s Field label.
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:403
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:419
 msgid "%s is required"
 msgstr "%s اجباری است"
 
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:316
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:332
 msgid "billing address"
 msgstr "نشانی صورتحساب"
 
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:316
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:332
 msgid "shipping address"
 msgstr "آدرس گیرنده"
 
 #. translators: %s Address type.
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:315
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:331
 msgid "There was a problem with the provided %s:"
 msgstr "مشکلی در %s ارائه شده وجود داشت:"
 
 #. translators: %s country code.
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:284
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:300
 msgid "Sorry, we do not allow orders from the provided country (%s)"
 msgstr "متأسفیم، ما سفارشات از کشور مشخص شده را مجاز نمی دانیم (%s)"
 
 #. translators: %s country code.
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:269
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:285
 msgid "Sorry, we do not ship orders to the provided country (%s)"
 msgstr "متأسفیم، ما سفارشات را به کشور مشخص نشده ارسال نمی کنیم (%s)"
 
 #. translators: %s provided email.
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:244
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:260
 msgid "The provided email address (%s) is not valid—please provide a valid email address"
 msgstr "نشانی ایمیل (%s) ارائه شده معتبر نیست—لطفا یک نشانی ایمیل معتبر ارائه کنید"
 
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:234
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:250
 msgid "A valid email address is required"
 msgstr "یک نشانی ایمیل معتبر لازم است."
 
@@ -9745,7 +9763,7 @@ msgstr "گزینه‌های تنوع"
 msgid "%d left in stock"
 msgstr "%d عدد در انبار باقی مانده است"
 
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:374
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:390
 #: packages/woocommerce-blocks/build/wc-settings.js:1
 msgid "Country/Region"
 msgstr "کشور / منطقه"
@@ -10048,7 +10066,7 @@ msgid "State/County code, or name of the state, county, province, or district."
 msgstr "کد ایالت / شهرستان ، یا نام ایالت ، شهرستان ، استان یا منطقه."
 
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/V1/AbstractAddressSchema.php:45
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:370
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:386
 #: packages/woocommerce-blocks/build/checkout.js:26
 #: packages/woocommerce-blocks/build/wc-settings.js:1
 msgid "Apartment, suite, etc."
@@ -10203,7 +10221,7 @@ msgid "Cart item is invalid."
 msgstr "مورد سبد خرید نامعتبر است."
 
 #. translators: %s Coupon codes.
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:211
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:226
 msgid "Invalid coupons were removed from the cart: \"%s\""
 msgstr "کدهای تخفیف نامعتبر از سبد خرید حذف شدند: «%s»"
 
@@ -14523,7 +14541,7 @@ msgstr "شهر / روستا"
 
 #: includes/class-wc-countries.php:977 includes/class-wc-countries.php:1292
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/V1/AbstractAddressSchema.php:63
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:386
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:402
 #: assets/client/admin/chunks/analytics-report-customers.js:1
 #: packages/woocommerce-blocks/build/wc-settings.js:1
 msgid "Postal code"
@@ -15821,7 +15839,7 @@ msgstr "%1$s معتبر نیست شما می توانید یک Eircode درست 
 #. translators: %s: product name
 #: includes/class-wc-cart.php:793
 #: includes/shortcodes/class-wc-shortcode-checkout.php:167
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:557
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:649
 msgid "Sorry, we do not have enough \"%1$s\" in stock to fulfill your order (%2$s available). We apologize for any inconvenience caused."
 msgstr "متاسفانه تعداد موجودی محصول «%1$s» از تعداد مورد نیاز شما کمتر است و هم اکنون %2$s عدد از این محصول برای سفارش در انبار موجود است. بابت مشکل پیش آمده پوزش میخواهیم."
 
@@ -18693,7 +18711,7 @@ msgstr "لطفا یک آدرس ایمیل معتبر وارد نمائید"
 
 #. translators: %s: product name
 #: includes/shortcodes/class-wc-shortcode-checkout.php:153
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:530
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:622
 msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
 msgstr "با عرض پوزش، \"%s\" دیگر موجود نیست، بنابراین این سفارش را نمی توان پرداخت کرد. از هر گونه دلخوری پیش آمده پوزش می طلبیم."
 
@@ -34555,7 +34573,7 @@ msgstr "آدرسی برای صورت حساب تنظیم نشده."
 #: includes/admin/class-wc-admin-setup-wizard.php:511
 #: includes/wc-account-functions.php:102
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/V1/AbstractAddressSchema.php:39
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:366
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:382
 #: assets/client/admin/app/index.js:2
 #: packages/woocommerce-blocks/build/wc-settings.js:1
 #: packages/woocommerce-blocks/build/wc-shipping-method-pickup-location.js:232
@@ -35428,7 +35446,7 @@ msgstr "ایمیل"
 msgid "State / County or state code"
 msgstr "کد استان"
 
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:382
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:398
 #: packages/woocommerce-blocks/build/wc-settings.js:1
 msgid "State/County"
 msgstr "استان"
@@ -35447,7 +35465,7 @@ msgstr "کد پستی"
 #: includes/admin/settings/class-wc-settings-tax.php:244
 #: includes/admin/settings/views/html-settings-tax.php:35
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/V1/AbstractAddressSchema.php:51
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:378
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:394
 #: src/Admin/API/Reports/Customers/Controller.php:563
 #: templates/cart/shipping-calculator.php:80 assets/client/admin/app/index.js:2
 #: assets/client/admin/chunks/analytics-report-customers.js:1
@@ -35461,7 +35479,7 @@ msgstr "شهر"
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:60
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:119
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/V1/AbstractAddressSchema.php:33
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:362
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:378
 #: packages/woocommerce-blocks/build/checkout.js:26
 #: packages/woocommerce-blocks/build/wc-settings.js:1
 msgid "Company"
@@ -35473,7 +35491,7 @@ msgstr "شرکت"
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:115
 #: includes/class-wc-countries.php:738 includes/class-wc-form-handler.php:279
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/V1/AbstractAddressSchema.php:27
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:358
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:374
 #: templates/myaccount/form-edit-account.php:31
 #: packages/woocommerce-blocks/build/wc-settings.js:1
 msgid "Last name"
@@ -35485,7 +35503,7 @@ msgstr "نام خانوادگی"
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:111
 #: includes/class-wc-countries.php:731 includes/class-wc-form-handler.php:278
 #: packages/woocommerce-blocks/src/StoreApi/Schemas/V1/AbstractAddressSchema.php:21
-#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:354
+#: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:370
 #: templates/myaccount/form-edit-account.php:27
 #: packages/woocommerce-blocks/build/wc-settings.js:1
 msgid "First name"
@@ -36396,10 +36414,6 @@ msgstr "اگر از هسته ووکامرس باگی پیداکردید،از ط
 #: includes/admin/class-wc-admin-help.php:66
 msgid "Found a bug?"
 msgstr "یک اشکال پیدا کردید؟"
-
-#: includes/admin/class-wc-admin-help.php:56
-msgid "Before asking for help, we recommend checking the system status page to identify any problems with your configuration."
-msgstr "قبل از درخواست کمک ما توصیه می کنیم صفحه وضعیت سیستم را بررسی کنید تا مشکلات مربوط به پیکربندی شما مشخص شود."
 
 #. translators: %s: Documentation URL
 #: includes/admin/class-wc-admin-help.php:47

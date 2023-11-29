@@ -103,7 +103,7 @@ msgstr "هنگام انجام کارهای دسته‌جمعی می‌توانی
 msgid "<a href=\"%1$s\">Read the WordPress %2$s Release Notes</a> for information on installation, enhancements, fixed issues, release contributors, learning resources, and the list of file changes."
 msgstr "برای اطلاعات در مورد نصب، بهبودها، مشکلات برطرف‌شده، مشارکت‌کنندگان انتشار، منابع یادگیری و فهرست تغییرات فایل‌ها <a href=\"%1$s\">یادداشت‌های انتشار %2$s وردپرس را بخوانید</a>."
 
-#. translators: %s: WordPress Field Guide link.
+#. translators: 1: WordPress Field Guide link, 2: WordPress version number.
 #: wp-admin/about.php:276
 msgid "Explore the <a href=\"%1$s\">WordPress %2$s Field Guide</a>. Learn about the changes in this release with detailed developer notes to help you build with WordPress."
 msgstr "<a href=\"%1$s\">راهنمای میدانی وردپرس %2$s</a> را کاوش کنید. در مورد تغییرات این نسخه با یادداشت‌های دقیق توسعه‌دهنده اطلاعات کسب کنید که به شما در ساختن با وردپرس کمک می‌کند."
