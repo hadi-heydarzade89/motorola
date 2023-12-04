@@ -118,7 +118,12 @@ class WoocommerceIR_SMS_Gateways {
 			'candoo'			 => 'candoosms.com',
 			'satsms'             => 'satsms.ir',
 			'webone'             => 'webone-sms.com',
-			'asiasms'             => 'asiasms.ir',
+			'asiasms'            => 'asiasms.ir',
+			'signalads'          => 'panel.signalads.com',
+			'limosms'      		 => 'limosms.com',
+			'payamakyab'         => 'payamakyab.com',
+			'araditc'         => 'Arad ITC',
+			'smsnegarir'         => 'SMSNegar.ir',
 		];
 
 		return apply_filters( 'pwoosms_sms_gateways', $gateway );
@@ -1891,6 +1896,37 @@ class WoocommerceIR_SMS_Gateways {
 
 		return $response;
 	}
+	
+	
+	public function signalads() {
+
+		$response = false;
+		$username = $this->username;
+		$password = $this->password;
+		$from     = $this->senderNumber;
+		$massage  = $this->message;
+
+		if ( empty( $username ) || empty( $password ) ) {
+			return false;
+		}
+
+		$to = implode( ',', $this->mobile );
+
+		$url = "https://panel.signalads.com/webservice/url/send.php?method=sendsms?from=$from&to=$to&text=$message&username=$username&password=$password&type=0&format=json";
+
+		$remote = wp_remote_get( $url );
+
+		$response = wp_remote_retrieve_body( $remote );
+
+		if ( intval($response) > 1 ) {
+			return true; // Success
+		}
+		else{
+			return $response;
+		}
+
+		return $response;
+	}
 
 	public function kavenegar() {
 
@@ -1971,12 +2007,63 @@ class WoocommerceIR_SMS_Gateways {
 		return $response;
 	}
 	
+	public function araditc() {
+
+		$baseurl = $this->username;
+		$apikey = $this->password;
+		$from     = $this->senderNumber;
+		$massage  = $this->message;
+
+		if ( empty( $username ) ) {
+			return false;
+		}
+		$to = implode( '', $this->mobile );
+		$to = preg_replace('#^(\+98|0)?#', '', $to);
+
+		$body = array(
+            'SourceAddress'    => $from,
+            'MessageText'    => $massage,
+            'DestinationAddress'   => $to,
+        );
+
+
+		$args = array(
+            'body'        => json_encode($body),
+            'timeout'     => '45',
+            'headers'     => array(
+                "Content-Type"  => "application/json",
+                "Accept"        => "application/json",
+                "Authorization" => "Bearer 4|".$apikey,
+            ),
+            'data_format' => 'body',
+        );
+
+		try {
+
+			$remote = wp_remote_post( $baseurl,$args );
+
+			$response = json_decode( wp_remote_retrieve_body( $remote ) );
+			
+
+		} catch ( Exception $ex ) {
+			return $response = "error";
+		}
+
+		if ( $response->message == 'عملیات با موفقیت انجام شد' ) {
+			return $response = true;
+		} else {
+			$response = $response->message;
+		}
+
+		return $response;
+	}
+	
 	public function limosms() {
 
 		$username = $this->username;
 		$from     = $this->senderNumber;
 		$massage  = $this->message;
-		$key	  = $this->password;
+		$password	  = $this->password;
 
 		if ( empty( $username ) ) {
 			return false;
@@ -1987,20 +2074,18 @@ class WoocommerceIR_SMS_Gateways {
 
 		$body = array(
             'Message'    => $massage,
-            'Mobiles'   => array($to),
-            'SenderNumber'   => $from,
-            'SendTimeSpan'   => '',
-			
+			'SenderNumber'   => $from,
+            'MobileNumber'   => json_encode($to)
         );
-
+		echo json_encode($to);
+		die;
 
 		$args = array(
             'body'        => json_encode($body),
             'timeout'     => '45',
             'headers'     => array(
                 "Content-Type"  => "application/json; charset=utf-8",
-                "Accept"        => "application/json",
-                "ApiKey" 		=> $key,
+                "ApiKey" 		=> $username,
             ),
             'data_format' => 'body',
         );
@@ -2017,9 +2102,9 @@ class WoocommerceIR_SMS_Gateways {
 		}
 
 		if ( $response->Success == true ) {
-			return $response = true;
+			return $response->Success == true;
 		} else {
-			$response = $response->Message;
+			$response = $response->success;
 		}
 
 		return $response;
@@ -3159,6 +3244,49 @@ class WoocommerceIR_SMS_Gateways {
 
 		return $response;
 	}
+	
+	public function payamakyab() {
+
+		$username = $this->username;
+		$password = $this->password;
+		$from     = $this->senderNumber;
+		$to       = $this->mobile;
+		$massage  = $this->message;
+
+		if ( empty( $username ) || empty( $password ) ) {
+			return false;
+		}
+
+		try {
+
+			$client       = new SoapClient( "http://smspanel.payamakyab.com/Post/Send.asmx?wsdl" );
+			$encoding     = "UTF-8";
+			$parameters   = [
+				'username' => $username,
+				'password' => $password,
+				'from'     => $from,
+				'to'       => $to,
+				'text'     => iconv( $encoding, 'UTF-8//TRANSLIT', $massage ),
+				'isflash'  => false,
+				'udh'      => "",
+				'recId'    => [ 0 ],
+				'status'   => 0,
+			];
+			$sms_response = $client->SendSms( $parameters )->SendSmsResult;
+		} catch ( SoapFault $ex ) {
+			$sms_response = $ex->getMessage();
+		}
+
+		if ( $sms_response == 1 ) {
+			return true; // Success
+		} else {
+			$response = $sms_response;
+		}
+
+		return $response;
+	}
+	
+	
 	public function satsms() {
 
 		$username = $this->username;
@@ -3454,6 +3582,39 @@ class WoocommerceIR_SMS_Gateways {
 		return $response;
 	}
 	
+	public function smsnegarir() {
+
+		$username = $this->username;
+		$password = $this->password;
+		$from     = $this->senderNumber;
+		$massage  = $this->message;
+
+		if ( empty( $username ) || empty( $password ) ) {
+			return false;
+		}
+
+		$to = implode( '-', $this->mobile );
+
+		$data = [
+			'username'        => rawurlencode( $username ),
+			'password'        => rawurlencode( $password ),
+			'domain'			=> 'sms.smsnegar',
+			'reciverNumber' => rawurlencode( $to ),
+			'senderNumber'   => rawurlencode( $from ),
+			'smsText'            => $massage,
+		];
+
+		$remote = wp_remote_get( 'http://sms.smsnegar.ir/sendSMSURL.aspx?' . http_build_query( $data ) );
+
+		$response = wp_remote_retrieve_body( $remote );
+
+		if ( ! empty( $response ) && $response >= 8 ) {
+			return true; // Success
+		}
+
+		return $response;
+	}
+	
 	public function samait() {
 
 		$username = $this->username;
@@ -3532,31 +3693,32 @@ class WoocommerceIR_SMS_Gateways {
 		}
 
 
-		$domain = 'yazd';//todo: smspanel.eshare.ir
 
 		try {
 
 			$client = new SoapClient( "http://sms.smsnegar.com/webservice/Service.asmx?wsdl" );
 
-			$result = $client->SendSms( [
-				"cUserName"     => $username,
-				"cPassword"     => $password,
-				"cDomainname"   => $domain,
-				"cBody"         => $massage,
-				"cSmsnumber"    => $to,
-				"cGetid"        => "0",
-				"nCMessage"     => "1",
-				"nTypeSent"     => "1",
+			$result = $client->SendSms( [			
+				"cUserName" => $username,
+				"cPassword" => $password,
+				"cBody" => $massage,
+				"cSmsnumber" => $to,
+				"cGetid" => "0",
+				"nCMessage" => "1",
+				"nTypeSent" => "1",
 				"m_SchedulDate" => "",
-				"nSpeedsms"     => "0",
-				"nPeriodmin"    => "0",
-				"cstarttime"    => "",
-				"cEndTime"      => "",
+				"cDomainname" => "yazd",
+				"nSpeedsms" =>"0",
+				"nPeriodmin" => "0",
+				"cstarttime" => "",
+				"cEndTime" => ""
 			] );
 
 			if ( ! empty( $result->SendSmsResult ) ) {
 
-				$result  = $result->SendSmsResult;
+				//$result  = $result->SendSmsResult;
+				return $result->SendSmsResult;
+				die;
 				$results = explode( ',', $result );
 				unset( $result );
 

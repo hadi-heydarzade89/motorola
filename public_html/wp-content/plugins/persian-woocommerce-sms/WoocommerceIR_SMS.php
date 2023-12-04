@@ -3,11 +3,11 @@
  * Plugin Name: پیامک حرفه ای ووکامرس
  * Plugin URI: https://woosupport.ir
  * Description: افزونه کامل و حرفه ای برای اطلاع رسانی پیامکی سفارشات و رویداد های محصولات ووکامرس. تمامی حقوق این افزونه متعلق به <a href="http://woosupport.ir" target="_blank">تیم ووکامرس پارسی</a> می باشد و هر گونه کپی برداری، فروش آن غیر مجاز می باشد.
- * Version: 6.0.0
+ * Version: 6.1.0
  * Author: ووکامرس فارسی
  * Author URI: https://woosupport.ir
- * WC requires at least: 5.0.0
- * WC tested up to: 7.8.0
+ * WC requires at least: 6.0.0
+ * WC tested up to: 8.3.1
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'PWOOSMS_VERSION' ) ) {
-	define( 'PWOOSMS_VERSION', '6.0.0' );
+	define( 'PWOOSMS_VERSION', '6.1.0' );
 }
 
 if ( ! defined( 'PWOOSMS_URL' ) ) {
@@ -63,3 +63,8 @@ function load_woo_sms_admin_style() {
 	wp_enqueue_style( 'persian_woo_admin_style', plugin_dir_url( __FILE__ ) . 'assets/css/admin-style.css' );
 }
 
+add_action( 'before_woocommerce_init', function() {
+	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
+		\Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility( 'custom_order_tables', __FILE__, true );
+	}
+} );

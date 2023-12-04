@@ -2,7 +2,7 @@
 
 defined( 'ABSPATH' ) || exit;
 
-class WoocommerceIR_SMS_Metabox {
+class WoocommerceIR_SMS_MetaBox {
 
 	private $enable_metabox = false;
 	private $enable_notification = false;
@@ -19,22 +19,32 @@ class WoocommerceIR_SMS_Metabox {
 		$this->enable_product_admin_sms = PWooSMS()->Options( 'enable_product_admin_sms' );//مدیر محصول
 
 		if ( $this->enable_metabox || $this->enable_notification || $this->enable_product_admin_sms ) {
-			add_action( 'add_meta_boxes', [ $this, 'addMetabox' ] );
+			add_action( 'add_meta_boxes', [ $this, 'addMetaBox' ] );
 			add_action( 'wp_ajax_pwoosms_metabox', [ $this, 'ajaxCallback' ] );
-			//add_action( 'wp_ajax_nopriv_pwoosms_metabox', array( $this, 'ajaxCallback' ) );
 		}
 	}
 
-	public function addMetabox( string $post_type ) {
+	public function addMetaBox( ) {
 
-		if ( $post_type == 'shop_order' && $this->enable_metabox ) {
-			add_meta_box( 'send_sms_to_buyer', 'ارسال پیامک به مشتری',
-				[ $this, 'orderMetaboxHtml' ], 'shop_order', 'side', 'high' );
+		if ( $this->enable_metabox ) {
+			
+			add_meta_box( 'send_sms_to_buyer', 'ارسال پیامک به مشتری', [
+				$this,
+				'orderMetaBoxHtml',
+			], [
+				'shop_order',
+				wc_get_page_screen_id( 'shop-order' ),
+			], 'side', 'high' );
+			
 		}
 
-		if ( $post_type == 'product' && ( $this->enable_notification || $this->enable_product_admin_sms ) ) {
-			add_meta_box( 'send_sms_to_buyer', 'ارسال پیامک به مشترکین این محصول',
-				[ $this, 'productMetaboxHtml' ], 'product', 'side', 'high' );
+		if ( $this->enable_notification || $this->enable_product_admin_sms ) {
+			
+			add_meta_box( 'send_sms_to_buyer', 'ارسال پیامک به مشترکین این محصول', [
+				$this,
+				'productMetaBoxHtml',
+			], 'product', 'side', 'high' );
+			
 		}
 	}
 
@@ -51,11 +61,11 @@ class WoocommerceIR_SMS_Metabox {
 		switch ( $_POST['post_type'] ) {
 
 			case 'shop_order':
-				$this->orderMetaboxResult( intval( $_POST['post_id'] ), $message );
+				$this->orderMetaBoxResult( intval( $_POST['post_id'] ), $message );
 				break;
 
 			case 'product':
-				$this->productMetaboxResult( intval( $_POST['post_id'] ), $message, sanitize_text_field( $_POST['group'] ?? '' ) );
+				$this->productMetaBoxResult( intval( $_POST['post_id'] ), $message, sanitize_text_field( $_POST['group'] ?? '' ) );
 				break;
 
 			default:
@@ -63,7 +73,7 @@ class WoocommerceIR_SMS_Metabox {
 		}
 	}
 
-	public function orderMetaboxResult( $order_id, $message ) {
+	public function orderMetaBoxResult( $order_id, $message ) {
 
 		$order  = new WC_Order( $order_id );
 		$mobile = PWooSMS()->buyerMobile( $order_id );
@@ -80,7 +90,7 @@ class WoocommerceIR_SMS_Metabox {
 			$order->add_order_note( sprintf( 'پیامک با موفقیت به مشتری با شماره موبایل %s ارسال شد.<br>متن پیامک: %s', $mobile, $message ) );
 			wp_send_json_success( [
 				'message'    => 'پیامک با موفقیت ارسال شد.',
-				'order_note' => PWooSMS()->orderNoteMetaBox( $order_id ),
+				'order_note' => PWooSMS()->orderNoteMetaBox( $order ),
 			] );
 
 		} else {
@@ -88,7 +98,7 @@ class WoocommerceIR_SMS_Metabox {
 			$order->add_order_note( sprintf( 'پیامک به مشتری با شماره موبایل %s ارسال نشد.<br>متن پیامک: %s<br>پاسخ وبسرویس: %s', $mobile, $message, $result ) );
 			wp_send_json_error( [
 				'message'    => sprintf( 'ارسال پیامک با خطا مواجه شد. %s', $result ),
-				'order_note' => PWooSMS()->orderNoteMetaBox( $order_id ),
+				'order_note' => PWooSMS()->orderNoteMetaBox( $order ),
 			] );
 
 		}
@@ -96,7 +106,7 @@ class WoocommerceIR_SMS_Metabox {
 
 	/*سفارش*/
 
-	public function productMetaboxResult( int $product_id, string $message, string $group ) {
+	public function productMetaBoxResult( int $product_id, string $message, string $group ) {
 
 		if ( empty( $group ) ) {
 			wp_send_json_error( [ 'message' => 'یک گروه برای دریافت پیامک انتخاب کنید.' ] );
@@ -142,8 +152,9 @@ class WoocommerceIR_SMS_Metabox {
 		}
 	}
 
-	public function orderMetaboxHtml( $post ) {
-		$order_id = $post->ID;
+	public function orderMetaBoxHtml( $post_or_order_object ) {
+		$order_id = $post_or_order_object instanceof WC_Order ? $post_or_order_object->get_id() : $post_or_order_object->ID;
+
 		$mobile   = PWooSMS()->buyerMobile( $order_id );
 
 		if ( empty( $mobile ) ) {
@@ -165,45 +176,44 @@ class WoocommerceIR_SMS_Metabox {
 
 	private function metaBoxHtml( int $post_id, $post_type, $html_above = '', $html_below = '' ) { ?>
 
-        <div id="pwoosms_metabox_result"></div>
+		<div id="pwoosms_metabox_result"></div>
 
 		<?php
-		$safemetabox = array(
-		'a' =>array('href'=>true , 'title' =>true ,'target'=>true) ,
-		'p' => array(),
-		'select' => ['id' =>true, 'class' =>true],
-		'option' => array('value'=>true),
-		'label' => array('for'=>true),
-		'optgroup' => array(
-			'label' => true
-		),
-
-	
-		
-		);
-
-		echo wp_kses($html_above, $safemetabox);
+		$safemetabox = [
+			'a'        => [ 'href' => true, 'title' => true, 'target' => true ],
+			'p'        => [],
+			'select'   => [ 'id' => true, 'class' => true ],
+			'option'   => [ 'value' => true ],
+			'label'    => [ 'for' => true ],
+			'optgroup' => [
+				'label' => true,
+			],
 
 
-	 ?>
+		];
 
-        <p>
+		echo wp_kses( $html_above, $safemetabox );
+
+
+		?>
+
+		<p>
             <textarea rows="5" cols="20" class="input-text" id="pwoosms_message"
-                      name="pwoosms_message" style="width: 100%; height: 78px;" title=""></textarea>
-        </p>
+					  name="pwoosms_message" style="width: 100%; height: 78px;" title=""></textarea>
+		</p>
 
-		<?php echo wp_kses($html_below,$safemetabox) ; ?>
+		<?php echo wp_kses( $html_below, $safemetabox ); ?>
 
-        <div class="wide" id="pwoosms_divider" style="text-align: left">
-            <input type="submit" class="button save_order button-primary" name="pwoosms_submit"
-                   id="pwoosms_submit" value="ارسال پیامک">
-        </div>
+		<div class="wide" id="pwoosms_divider" style="text-align: left">
+			<input type="submit" class="button save_order button-primary" name="pwoosms_submit"
+				   id="pwoosms_submit" value="ارسال پیامک">
+		</div>
 
-        <div class="pwoosms_loading">
-            <img src="<?php echo PWOOSMS_URL . '/assets/images/ajax-loader.gif'; ?>">
-        </div>
+		<div class="pwoosms_loading">
+			<img src="<?php echo PWOOSMS_URL . '/assets/images/ajax-loader.gif'; ?>">
+		</div>
 
-        <style type="text/css">
+		<style type="text/css">
             .pwoosms_loading {
                 position: absolute;
                 background: rgba(255, 255, 255, 0.5);
@@ -246,9 +256,9 @@ class WoocommerceIR_SMS_Metabox {
                 border-top: 1px solid #e9e9e9;
                 padding-top: 5px;
             }
-        </style>
+		</style>
 
-        <script type="text/javascript">
+		<script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $('#pwoosms_submit').on('click', function (e) {
                     e.preventDefault();
@@ -278,21 +288,21 @@ class WoocommerceIR_SMS_Metabox {
                     });
                 });
             });
-        </script>
+		</script>
 		<?php
 	}
 
-	public function productMetaboxHtml( $post ) {
+	public function productMetaBoxHtml( $post ) {
 
 		$product_id = $post->ID;
 
 		ob_start(); ?>
-        <p>
-            <label for="select_group">ارسال پیامک به:</label><br>
-            <select name="select_group" class="wc-enhanced-select" id="select_group" style="width: 100%;">
+		<p>
+			<label for="select_group">ارسال پیامک به:</label><br>
+			<select name="select_group" class="wc-enhanced-select" id="select_group" style="width: 100%;">
 
 				<?php if ( $this->enable_product_admin_sms ) { ?>
-                    <option value="_product_admins">به مدیران این محصول</option>
+					<option value="_product_admins">به مدیران این محصول</option>
 				<?php }
 
 				if ( $this->enable_notification ) {
@@ -300,18 +310,18 @@ class WoocommerceIR_SMS_Metabox {
 					$groups = WoocommerceIR_SMS_Contacts::getGroups( $product_id, false, true );
 
 					if ( ! empty( $groups ) ) { ?>
-                        <optgroup label="به مشترکین گروه های زیر:">
+						<optgroup label="به مشترکین گروه های زیر:">
 							<?php foreach ( $groups as $code => $text ) { ?>
-                                <option
-                                    value="<?php echo esc_attr( $code ); ?>"><?php echo esc_attr( $text ); ?></option>
+								<option
+										value="<?php echo esc_attr( $code ); ?>"><?php echo esc_attr( $text ); ?></option>
 							<?php } ?>
-                        </optgroup>
+						</optgroup>
 					<?php }
 				}
 				?>
 
-            </select>
-        </p>
+			</select>
+		</p>
 		<?php
 		$html_above = ob_get_clean();
 
@@ -326,4 +336,4 @@ class WoocommerceIR_SMS_Metabox {
 
 }
 
-new WoocommerceIR_SMS_Metabox();
+new WoocommerceIR_SMS_MetaBox();

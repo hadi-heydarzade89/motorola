@@ -257,14 +257,15 @@ class WoocommerceIR_SMS_Helper {
 
 		$timestamp = '';
 		$method    = 'get_date_on_sale_' . $type;
+
 		if ( method_exists( $product, $method ) ) {
 			$timestamp = $product->$method();
-			if ( method_exists( $timestamp, 'getOffsetTimestamp' ) ) {
+
+			if ( is_object( $timestamp ) && method_exists( $timestamp, 'getOffsetTimestamp' ) ) {
 				$timestamp = $timestamp->getOffsetTimestamp();
-			} else {
-				$timestamp = '';
 			}
 		}
+
 		if ( empty( $timestamp ) ) {
 			$timestamp = get_post_meta( $product_id, '_sale_price_dates_' . $type, true );
 		}
@@ -503,11 +504,10 @@ class WoocommerceIR_SMS_Helper {
 		return ( $mod == '' ) ? [ $jy, $jm, $jd ] : $jy . $mod . $jm . $mod . $jd;
 	}
 
-	public function ReplaceShortCodes( $content, $order_status, $order, $vendor_items_array = [] ) {
+	public function ReplaceShortCodes( $content, $order_status, WC_Order $order, $vendor_items_array = [] ) {
 
-		$order_id = $this->OrderId( $order );
-		$price    = strip_tags( $this->OrderProp( $order, 'formatted_order_total', [ '', false ] ) );
-		$price    = html_entity_decode( $price );
+		$price = strip_tags( $this->OrderProp( $order, 'formatted_order_total', [ '', false ] ) );
+		$price = html_entity_decode( $price );
 
 		$all_product_list = $this->AllItems( $order );
 		$all_product_ids  = ! empty( $all_product_list['product_ids'] ) ? $all_product_list['product_ids'] : [];
@@ -534,10 +534,8 @@ class WoocommerceIR_SMS_Helper {
 		$bill_country = ( isset( $country->countries[ $this->OrderProp( $order, 'billing_country' ) ] ) ) ? $country->countries[ $this->OrderProp( $order, 'billing_country' ) ] : $this->OrderProp( $order, 'billing_country' );
 		$bill_state   = ( $this->OrderProp( $order, 'billing_country' ) && $this->OrderProp( $order, 'billing_state' ) && isset( $country->states[ $this->OrderProp( $order, 'billing_country' ) ][ $this->OrderProp( $order, 'billing_state' ) ] ) ) ? $country->states[ $this->OrderProp( $order, 'billing_country' ) ][ $this->OrderProp( $order, 'billing_state' ) ] : $this->OrderProp( $order, 'billing_state' );
 
-		$shipp_country = ( isset( $country->countries[ $this->OrderProp( $order, 'shipping_country' ) ] ) ) ? $country->countries[ $this->OrderProp( $order, 'shipping_country' ) ] : $this->OrderProp( $order, 'shipping_country' );
-		$shipp_state   = ( $this->OrderProp( $order, 'shipping_country' ) && $this->OrderProp( $order, 'shipping_state' ) && isset( $country->states[ $this->OrderProp( $order, 'shipping_country' ) ][ $this->OrderProp( $order, 'shipping_state' ) ] ) ) ? $country->states[ $this->OrderProp( $order, 'shipping_country' ) ][ $this->OrderProp( $order, 'shipping_state' ) ] : $this->OrderProp( $order, 'shipping_state' );
-
-		$post = get_post( $order_id );
+		$ship_country = ( isset( $country->countries[ $this->OrderProp( $order, 'shipping_country' ) ] ) ) ? $country->countries[ $this->OrderProp( $order, 'shipping_country' ) ] : $this->OrderProp( $order, 'shipping_country' );
+		$ship_state   = ( $this->OrderProp( $order, 'shipping_country' ) && $this->OrderProp( $order, 'shipping_state' ) && isset( $country->states[ $this->OrderProp( $order, 'shipping_country' ) ][ $this->OrderProp( $order, 'shipping_state' ) ] ) ) ? $country->states[ $this->OrderProp( $order, 'shipping_country' ) ][ $this->OrderProp( $order, 'shipping_state' ) ] : $this->OrderProp( $order, 'shipping_state' );
 
 		$tags = [
 			'{b_first_name}'  => $this->OrderProp( $order, 'billing_first_name' ),
@@ -554,16 +552,16 @@ class WoocommerceIR_SMS_Helper {
 			'{sh_company}'    => $this->OrderProp( $order, 'shipping_company' ),
 			'{sh_address_1}'  => $this->OrderProp( $order, 'shipping_address_1' ),
 			'{sh_address_2}'  => $this->OrderProp( $order, 'shipping_address_2' ),
-			'{sh_state}'      => $shipp_state,
+			'{sh_state}'      => $ship_state,
 			'{sh_city}'       => $this->OrderProp( $order, 'shipping_city' ),
 			'{sh_postcode}'   => $this->OrderProp( $order, 'shipping_postcode' ),
-			'{sh_country}'    => $shipp_country,
-			'{phone}'         => get_post_meta( $order_id, '_billing_phone', true ),
-			'{mobile}'        => $this->buyerMobile( $order_id ),
+			'{sh_country}'    => $ship_country,
+			'{phone}'         => $this->buyerMobile( $order->get_id() ),
+			'{mobile}'        => $this->buyerMobile( $order->get_id() ),
 			'{email}'         => $this->OrderProp( $order, 'billing_email' ),
 			'{order_id}'      => $this->OrderProp( $order, 'order_number' ),
 			'{date}'          => $this->OrderDate( $order ),
-			'{post_id}'       => $order_id,
+			'{post_id}'       => $order->get_id(),
 			'{status}'        => $this->statusName( $order_status, true ),
 			'{price}'         => $price,
 
@@ -576,18 +574,18 @@ class WoocommerceIR_SMS_Helper {
 			'{count_vendor_items}' => count( $vendor_items ),
 			'{vendor_price}'       => $vendor_price,
 
-			'{transaction_id}'  => get_post_meta( $order_id, '_transaction_id', true ),
+			'{transaction_id}'  => $order->get_meta( '_transaction_id' ),
 			'{payment_method}'  => $payment_method,
 			'{shipping_method}' => $shipping_method,
-			'{description}'     => nl2br( esc_html( $post->post_excerpt ) ),
+			'{description}'     => nl2br( esc_html( $order->get_customer_note() ) ),
 		];
 
-		$content = apply_filters( 'pwoosms_order_sms_body_before_replace', $content, array_keys( $tags ), array_values( $tags ), $order_id, $order, $all_product_ids, $vendor_product_ids );
+		$content = apply_filters( 'pwoosms_order_sms_body_before_replace', $content, array_keys( $tags ), array_values( $tags ), $order->get_id(), $order, $all_product_ids, $vendor_product_ids );
 
 		$content = str_ireplace( array_keys( $tags ), array_values( $tags ), $content );
 		$content = str_ireplace( [ '<br>', '<br/>', '<br />', '&nbsp;' ], [ '', '', '', ' ' ], $content );
 
-		$content = apply_filters( 'pwoosms_order_sms_body_after_replace', $content, $order_id, $order, $all_product_ids, $vendor_product_ids );
+		$content = apply_filters( 'pwoosms_order_sms_body_after_replace', $content, $order->get_id(), $order, $all_product_ids, $vendor_product_ids );
 
 		return $content;
 	}
@@ -597,7 +595,18 @@ class WoocommerceIR_SMS_Helper {
 	}
 
 	public function buyerMobile( $order_id ) {
-		return apply_filters( 'pwoosms_order_buyer_mobile', get_post_meta( $order_id, '_' . $this->buyerMobileMeta(), true ), $order_id );
+
+		$order = wc_get_order( $order_id );
+
+		$meta = $this->buyerMobileMeta();
+
+		if ( is_callable( [ $order, 'get_' . $meta ] ) ) {
+			$buyer_mobile = $order->{'get_' . $meta}();
+		} else {
+			$buyer_mobile = $order->get_meta( '_' . $meta );
+		}
+
+		return apply_filters( 'pwoosms_order_buyer_mobile', $buyer_mobile, $order_id, $order );
 	}
 
 	public function validateMobile( $mobile ) {
@@ -628,9 +637,7 @@ class WoocommerceIR_SMS_Helper {
 			$modified = '0' . $modified;
 		}
 
-		$modified = str_replace( '+980', '0', $modified );
-
-		return $modified;
+		return str_replace( '+980', '0', $modified );
 	}
 
 	public function EnglishNumberMobile( $mobile ) {
@@ -936,7 +943,7 @@ class WoocommerceIR_SMS_Helper {
 		return $this->mayBeJalaliDate( $order_date );
 	}
 
-	public function orderNoteMetaBox( $post_id = 0 ) {
+	public function orderNoteMetaBox( WC_Order $order ) {
 
 		if ( ! class_exists( 'WC_Meta_Box_Order_Notes' ) ) {
 			return '';
@@ -946,13 +953,8 @@ class WoocommerceIR_SMS_Helper {
 			return '';
 		}
 
-		global $post;
-		if ( empty( $post ) || ! is_object( $post ) ) {
-			$post = get_post( $post_id );
-		}
-
 		ob_start();
-		WC_Meta_Box_Order_Notes::output( $post );
+		WC_Meta_Box_Order_Notes::output( $order );
 
 		return ob_get_clean();
 	}
@@ -993,8 +995,6 @@ class WoocommerceIR_SMS_Helper {
 				$gateway_object->message = $message;
 
 				$result = $gateway_object->$gateway_method( $data );
-			} catch ( SoapFault $e ) {
-				$result = $e->getMessage();
 			} catch ( Exception $e ) {
 				$result = $e->getMessage();
 			}

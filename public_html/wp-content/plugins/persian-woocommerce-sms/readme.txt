@@ -6,9 +6,9 @@ Donate link: https://www.woosupport.ir
 plugin URI: https://woosupport.ir
 Tags: sms,ووکامرس فارسی,woocommerce,persian woocommerce,پیامک
 Requires at least: 5.8
-Tested up to: 6.2.2
-Requires PHP: 7.2
-Stable tag: 6.0.0
+Tested up to: 6.3.2
+Requires PHP: 7.4
+Stable tag: 6.1.0
 
 افزونه کامل و حرفه ای برای اطلاع رسانی پیامکی سفارشات و رویداد های محصولات ووکامرس
 
@@ -119,6 +119,9 @@ Stable tag: 6.0.0
  * satsms.ir
  * asiasms.ir
  * LimoSMS.com
+ * payamakyab.com
+ * Arad ITC
+ * SMSNegar.ir
  
 
 = پشتیبانی =
@@ -146,6 +149,10 @@ Stable tag: 6.0.0
 14. Screen shot 14
 
 == Changelog ==
+= 6.1.0 =
+* سازگاری با HPOS
+* حل مشکل ارسال تکراری در خبرنامه
+* سازگاری با php 8.1
 = 6.0.0 =
 * تغییر و بهبود دیتابیس
 * افزوده شدن وبسرویس لیمو اس ام اس و بروزرسانی چند پنل پیامک

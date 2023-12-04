@@ -178,21 +178,25 @@ class WoocommerceIR_SMS_Orders {
 			return;
 		}
 
-		update_post_meta( $order_id, '_force_enable_buyer', PWooSMS()->Options( 'force_enable_buyer', '__' ) );
-		update_post_meta( $order_id, '_allow_buyer_select_status', PWooSMS()->Options( 'allow_buyer_select_status', '__' ) );
+		$order = wc_get_order( $order_id );
+
+		$order->update_meta_data( '_force_enable_buyer', PWooSMS()->Options( 'force_enable_buyer', '__' ) );
+		$order->update_meta_data( '_allow_buyer_select_status', PWooSMS()->Options( 'allow_buyer_select_status', '__' ) );
 
 		if ( ! empty( $_POST['buyer_sms_notify'] ) || PWooSMS()->Options( 'force_enable_buyer' ) ) {
-			update_post_meta( $order_id, '_buyer_sms_notify', 'yes' );
+			$order->update_meta_data( '_buyer_sms_notify', 'yes' );
 		} else {
-			delete_post_meta( $order_id, '_buyer_sms_notify' );
+			$order->delete_meta_data( '_buyer_sms_notify' );
 		}
 
 		if ( ! empty( $_POST['buyer_sms_status'] ) ) {
 			$statuses = is_array( $_POST['buyer_sms_status'] ) ? array_map( 'sanitize_text_field', $_POST['buyer_sms_status'] ) : sanitize_text_field( $_POST['buyer_sms_status'] );
-			update_post_meta( $order_id, '_buyer_sms_status', $statuses );
+			$order->update_meta_data( '_buyer_sms_status', $statuses );
 		} else {
-			delete_post_meta( $order_id, '_buyer_sms_status' );
+			$order->delete_meta_data( '_buyer_sms_status' );
 		}
+
+		$order->save_meta_data();
 	}
 
 	public function buyerSmsDetails( WC_Order $order ) {
@@ -213,17 +217,17 @@ class WoocommerceIR_SMS_Orders {
 			return;
 		}
 
-		if ( PWooSMS()->maybeBool( get_post_meta( $order->get_id(), '_force_enable_buyer', true ) ) ) {
+		if ( PWooSMS()->maybeBool( $order->get_meta( '_force_enable_buyer' ) ) ) {
 			echo '<p>مشتری حق انتخاب دریافت یا عدم دریافت پیامک را ندارد.</p>';
 		} else {
-			$want_sms = get_post_meta( $order->get_id(), '_buyer_sms_notify', true );
+			$want_sms = $order->get_meta( '_buyer_sms_notify' );
 			echo '<p>آیا مشتری مایل به دریافت پیامک هست : ' . ( PWooSMS()->maybeBool( $want_sms ) ? 'بله' : 'خیر' ) . '</p>';
 		}
 
 		echo '<p>';
-		if ( PWooSMS()->maybeBool( get_post_meta( $order->get_id(), '_allow_buyer_select_status', true ) ) ) {
+		if ( PWooSMS()->maybeBool( $order->get_meta( '_allow_buyer_select_status' ) ) ) {
 
-			$buyer_sms_status = (array) get_post_meta( $order->get_id(), '_buyer_sms_status', true );
+			$buyer_sms_status = (array) $order->get_meta( '_buyer_sms_status' );
 			$buyer_sms_status = array_filter( $buyer_sms_status );
 
 			echo 'وضعیت های انتخابی توسط مشتری برای دریافت پیامک : ';
@@ -358,10 +362,11 @@ class WoocommerceIR_SMS_Orders {
 			$status      = PWooSMS()->OrderProp( $order, 'status' );
 			$created_via = PWooSMS()->OrderProp( $order, 'created_via' );
 			if ( $created_via == 'admin' || ! in_array( $status, array_keys( PWooSMS()->GetAllStatuses() ) ) ) {
-				update_post_meta( $order_id, '_force_enable_buyer', PWooSMS()->Options( 'force_enable_buyer', '__' ) );
-				update_post_meta( $order_id, '_allow_buyer_select_status', PWooSMS()->Options( 'allow_buyer_select_status', '__' ) );
-				update_post_meta( $order_id, '_buyer_sms_notify', 'yes' );
-				update_post_meta( $order_id, '_buyer_sms_status', $allowed_status );
+				$order->update_meta_data( '_force_enable_buyer', PWooSMS()->Options( 'force_enable_buyer', '__' ) );
+				$order->update_meta_data( '_allow_buyer_select_status', PWooSMS()->Options( 'allow_buyer_select_status', '__' ) );
+				$order->update_meta_data( '_buyer_sms_notify', 'yes' );
+				$order->update_meta_data( '_buyer_sms_status', $allowed_status );
+				$order->save_meta_data();
 			}
 		}
 
@@ -371,10 +376,10 @@ class WoocommerceIR_SMS_Orders {
 
 		$buyer_can_get_sms = false;
 
-		if ( in_array( $new_status, $allowed_status ) && PWooSMS()->maybeBool( get_post_meta( $order_id, '_buyer_sms_notify', true ) ) ) {
+		if ( in_array( $new_status, $allowed_status ) && PWooSMS()->maybeBool( $order->get_meta( '_buyer_sms_notify' ) ) ) {
 
-			$buyer_sms_status    = (array) get_post_meta( $order_id, '_buyer_sms_status', true );
-			$allow_select_status = PWooSMS()->maybeBool( get_post_meta( $order_id, '_allow_buyer_select_status', true ) );
+			$buyer_sms_status    = (array) $order->get_meta( '_buyer_sms_status' );
+			$allow_select_status = PWooSMS()->maybeBool( $order->get_meta( '_allow_buyer_select_status' ) );
 
 			if ( ! $allow_select_status || in_array( $new_status, $buyer_sms_status ) ) {
 				$buyer_can_get_sms = true;

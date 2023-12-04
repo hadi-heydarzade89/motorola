@@ -1,5 +1,7 @@
 <?php
 
+use Automattic\WooCommerce\Utilities\OrderUtil;
+
 defined( 'ABSPATH' ) || exit;
 
 if ( ! class_exists( 'WP_List_Table' ) ) {
@@ -54,20 +56,22 @@ class WoocommerceIR_SMS_Archive_List_Table extends WP_List_Table {
 			return '-';
 		}
 
-		$post_id   = intval( $item['post_id'] );
-		$post_type = get_post_type( $post_id );
+		$post_id = intval( $item['post_id'] );
+
+		$is_order   = OrderUtil::is_order( $post_id, wc_get_order_types() );
+		$is_product = get_post_type( $post_id ) == 'product';
 
 		$value = [];
 
-		switch ( $post_type ) {
+		switch ( true ) {
 
-			case 'shop_order':
+			case $is_order:
 				$edit_title   = 'مدیریت سفارش';
 				$filter_title = 'مشاهده آرشیو پیامک‌های این سفارش';
 				$value[]      = 'سفارش #' . $post_id;
 				break;
 
-			case 'product':
+			case $is_product:
 				$edit_title   = 'مدیریت محصول';
 				$filter_title = 'مشاهده آرشیو پیامک‌های این محصول';
 				$value[]      = 'محصول';

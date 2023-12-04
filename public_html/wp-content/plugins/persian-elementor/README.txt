@@ -3,9 +3,9 @@ author: المنتور فارسی
 Contributors: mohammadr3z,elementorir
 Tags: elementor,persian,parsi,farsi,iran,iranian,rtl,fa_IR,المنتور
 Requires at least: 5.0
-Tested up to: 6.3.1
+Tested up to: 6.4.1
 Requires PHP: 7.0
-Stable tag: 2.6.5
+Stable tag: 2.6.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +121,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.6.7 =
+بهبود ترجمه برای المنتور و المنتور پرو نسخه 3.18
+
+= 2.6.6 =
+بهبود ترجمه برای المنتور و المنتور پرو نسخه 3.17
+
 = 2.6.5 =
 بهبود ترجمه برای المنتور و المنتور پرو نسخه 3.16
 

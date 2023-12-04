@@ -43,16 +43,10 @@ class WoocommerceIR_SMS_Product_Events {
 	}
 
 	// وقتی محصول فروش ویژه شد : کاربر
-	public function smsIsOnSale( $product_id = 0 ) {
-
-		$product_id = PWooSMS()->MayBeVariable( $product_id );
-		if ( is_array( $product_id ) ) {
-			return array_map( [ $this, __FUNCTION__ ], $product_id );
-		}
+	public function smsIsOnSale( int $product_id ) {
 
 		$product           = wc_get_product( $product_id );
-		$parent_product_id = PWooSMS()->ProductProp( $product, 'parent_id' );
-		$parent_product_id = ! empty( $parent_product_id ) ? $parent_product_id : $product_id;
+		$parent_product_id = $product->get_parent_id() ? $product->get_parent_id() : $product->get_id();
 		/*-----------------------------------------------------------------*/
 
 		$post_meta   = '_onsale_send';
@@ -60,10 +54,10 @@ class WoocommerceIR_SMS_Product_Events {
 		$sale_price  = $product->get_sale_price();
 		$is_schedule = current_action() == $schedule;
 
-		if ( $sale_price === get_post_meta( $product_id, $post_meta, true ) ) {
+		if ( $sale_price === get_post_meta( $parent_product_id, $post_meta, true ) ) {
 			return false;
 		} elseif ( ! $is_schedule ) {
-			delete_post_meta( $product_id, $post_meta );
+			delete_post_meta( $parent_product_id, $post_meta );
 		}
 
 		if ( PWooSMS()->hasNotifCond( 'enable_onsale', $parent_product_id ) ) {
@@ -77,7 +71,7 @@ class WoocommerceIR_SMS_Product_Events {
 					}
 				}
 
-				return delete_post_meta( $product_id, $post_meta );
+				return delete_post_meta( $parent_product_id, $post_meta );
 			}
 
 			wp_clear_scheduled_hook( $schedule );
@@ -90,35 +84,29 @@ class WoocommerceIR_SMS_Product_Events {
 			];
 
 			if ( PWooSMS()->SendSMS( $data ) === true ) {
-				//return update_post_meta( $product_id, $post_meta, $sale_price );
+				//return update_post_meta( $parent_product_id, $post_meta, $sale_price );
 				//} else {
-				//return delete_post_meta( $product_id, $post_meta );
+				//return delete_post_meta( $parent_product_id, $post_meta );
 			}
 
-			return update_post_meta( $product_id, $post_meta, $sale_price );
+			return update_post_meta( $parent_product_id, $post_meta, $sale_price );
 		}
 	}
 
 	// وقتی محصول موجود شد : کاربر
 	public function smsInStock( $product_id ) {
 
-		$product_id = PWooSMS()->MayBeVariable( $product_id );
-		if ( is_array( $product_id ) ) {
-			return array_map( [ $this, __FUNCTION__ ], $product_id );
-		}
-
 		$product           = wc_get_product( $product_id );
-		$parent_product_id = PWooSMS()->ProductProp( $product, 'parent_id' );
-		$parent_product_id = ! empty( $parent_product_id ) ? $parent_product_id : $product_id;
+		$parent_product_id = $product->get_parent_id() ? $product->get_parent_id() : $product->get_id();
 		/*-----------------------------------------------------------------*/
 
 		$post_meta = '_in_stock_send';
 
 		if ( ! $product->is_in_stock() ) {
-			return delete_post_meta( $product_id, $post_meta );
+			return delete_post_meta( $parent_product_id, $post_meta );
 		}
 
-		if ( PWooSMS()->maybeBool( get_post_meta( $product_id, $post_meta, true ) ) ) {
+		if ( PWooSMS()->maybeBool( get_post_meta( $parent_product_id, $post_meta, true ) ) ) {
 			return false;
 		}
 
@@ -132,45 +120,39 @@ class WoocommerceIR_SMS_Product_Events {
 			];
 
 			if ( PWooSMS()->SendSMS( $data ) === true ) {
-				//return update_post_meta( $product_id, $post_meta, 'yes' );
+				//return update_post_meta( $parent_product_id, $post_meta, 'yes' );
 				//} else {
-				//return delete_post_meta( $product_id, $post_meta );
+				//return delete_post_meta( $parent_product_id, $post_meta );
 			}
 
-			return update_post_meta( $product_id, $post_meta, 'yes' );
+			return update_post_meta( $parent_product_id, $post_meta, 'yes' );
 		}
 	}
 
 	// وقتی محصول ناموجود شد : مدیران کل و مدیران محصول
 	public function smsOutStock( $product_id ) {
 
-		$product_id = PWooSMS()->MayBeVariable( $product_id );
-		if ( is_array( $product_id ) ) {
-			return array_map( [ $this, __FUNCTION__ ], $product_id );
-		}
-
 		$product           = wc_get_product( $product_id );
-		$parent_product_id = PWooSMS()->ProductProp( $product, 'parent_id' );
-		$parent_product_id = ! empty( $parent_product_id ) ? $parent_product_id : $product_id;
+		$parent_product_id = $product->get_parent_id() ? $product->get_parent_id() : $product->get_id();
 		/*-----------------------------------------------------------------*/
 
 		$post_meta = '_out_stock_send_sms';
 
 		if ( $product->is_in_stock() ) {
-			return delete_post_meta( $product_id, $post_meta );
+			return delete_post_meta( $parent_product_id, $post_meta );
 		}
 
-		if ( PWooSMS()->maybeBool( get_post_meta( $product_id, $post_meta, true ) ) ) {
+		if ( PWooSMS()->maybeBool( get_post_meta( $parent_product_id, $post_meta, true ) ) ) {
 			return false;
 		}
 
 		if ( $this->smsAdminsStocks( $product_id, $parent_product_id, 'out', 7 ) ) {
-			//return update_post_meta( $product_id, $post_meta, 'yes' );
+			//return update_post_meta( $parent_product_id, $post_meta, 'yes' );
 			//} else {
-			//return delete_post_meta( $product_id, $post_meta );
+			//return delete_post_meta( $parent_product_id, $post_meta );
 		}
 
-		return update_post_meta( $product_id, $post_meta, 'yes' );
+		return update_post_meta( $parent_product_id, $post_meta, 'yes' );
 	}
 
 	// محصول رو به اتمام است : مدیر و کاربر
@@ -210,14 +192,8 @@ class WoocommerceIR_SMS_Product_Events {
 			return false;
 		}
 
-		$product_id = PWooSMS()->MayBeVariable( $product_id );
-		if ( is_array( $product_id ) ) {
-			return array_map( [ $this, __FUNCTION__ ], $product_id );
-		}
-
 		$product           = wc_get_product( $product_id );
-		$parent_product_id = PWooSMS()->ProductProp( $product, 'parent_id' );
-		$parent_product_id = ! empty( $parent_product_id ) ? $parent_product_id : $product_id;
+		$parent_product_id = $product->get_parent_id() ? $product->get_parent_id() : $product->get_id();
 		/*-----------------------------------------------------------------*/
 
 		if ( ! PWooSMS()->IsStockManaging( $product ) ) {
@@ -228,10 +204,10 @@ class WoocommerceIR_SMS_Product_Events {
 
 		$quantity = PWooSMS()->ProductStockQty( $product );
 		if ( $quantity > get_option( 'woocommerce_notify_low_stock_amount' ) || $quantity <= get_option( 'woocommerce_notify_no_stock_amount' ) ) {
-			return delete_post_meta( $product_id, $post_meta );
+			return delete_post_meta( $parent_product_id, $post_meta );
 		}
 
-		if ( PWooSMS()->maybeBool( get_post_meta( $product_id, $post_meta, true ) ) ) {
+		if ( PWooSMS()->maybeBool( get_post_meta( $parent_product_id, $post_meta, true ) ) ) {
 			return false;
 		}
 
@@ -248,12 +224,12 @@ class WoocommerceIR_SMS_Product_Events {
 
 		//مدیر
 		if ( $this->smsAdminsStocks( $product_id, $parent_product_id, 'low', 8 ) || ! empty( $result_users ) ) {
-			//return update_post_meta( $product_id, $post_meta, 'yes' );
+			//return update_post_meta( $parent_product_id, $post_meta, 'yes' );
 			//} else {
-			//return delete_post_meta( $product_id, $post_meta );
+			//return delete_post_meta( $parent_product_id, $post_meta );
 		}
 
-		return update_post_meta( $product_id, $post_meta, 'yes' );
+		return update_post_meta( $parent_product_id, $post_meta, 'yes' );
 	}
 }
 

@@ -43,7 +43,7 @@ li.MuiButtonBase-root.MuiMenuItem-root.MuiMenuItem-dense.MuiMenuItem-gutters.Mui
     font-family: IRANYekanX !important;
 }
 
-button {
+button,span,p,li,span,div{
     font-family: 'IRANYekanX'!important;
 }
 
@@ -66,6 +66,10 @@ input#elementor-panel-elements-search-input {
 .elementor-loading-title {
     letter-spacing: 0px !important;
     font-size: 13px !important;
+}
+.elementor-hotkeys__item--shortcut span {
+    margin-inline-start: 27px;
+    margin-inline-end: 0px!important;
 }
 /* Font */
 
