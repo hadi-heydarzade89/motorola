@@ -479,7 +479,18 @@ if (!function_exists('digitsCheckMob')) {
             if ($digit_gateway == 1 || $digit_gateway == 13) {
                 $result = 1;
             } else {
-                $result = digitCreateOtp($countrycode, $mobileno, $_POST['register_national_id']);
+                if (isset($_POST['register_national_id'])) {
+                    $nationalId = $_POST['register_national_id'];
+                } else {
+                    $nationalId = get_user_meta($user1->ID, 'national_id');
+                    if (count($nationalId) > 0) {
+                        $nationalId = $nationalId[0];
+                    } else {
+                        $nationalId = 0;
+                    }
+
+                }
+                $result = digitCreateOtp($countrycode, $mobileno, $nationalId);
             }
             $data['code'] = $result;
             digit_send_json_status($data);
