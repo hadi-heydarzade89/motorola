@@ -104,17 +104,17 @@ class Skin_Loop_Base extends Skin_Base {
 	protected function handle_no_posts_found() {
 		$settings = $this->parent->get_settings_for_display();
 
-		if ( ! isset( $settings['enable_nothing_found_message'] ) || 'yes' !== $settings['enable_nothing_found_message'] ) {
-			return;
-		}
-
-		$nothing_found_message_html_tag = Utils::validate_html_tag( $settings['nothing_found_message_html_tag'] );
 		?>
 		<div class="e-loop-nothing-found-message">
+		<?php
+		if ( isset( $settings['enable_nothing_found_message'] ) && 'yes' === $settings['enable_nothing_found_message'] ) {
+			$nothing_found_message_html_tag = Utils::validate_html_tag( $settings['nothing_found_message_html_tag'] ); ?>
 			<<?php Utils::print_validated_html_tag( $nothing_found_message_html_tag ); ?> class="e-loop-nothing-found-message__text">
 				<?php Utils::print_unescaped_internal_string( $settings['nothing_found_message_text'] ); ?>
 			</<?php Utils::print_validated_html_tag( $nothing_found_message_html_tag ); ?>>
-		</div>
+			<?php
+		}
+		?></div>
 		<?php
 	}
 

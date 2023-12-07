@@ -1,4 +1,4 @@
-/*! elementor - v3.18.0 - 04-12-2023 */
+/*! elementor - v3.18.0 - 06-12-2023 */
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
@@ -2995,7 +2995,7 @@ var UpgradeChip = function UpgradeChip(_ref3) {
   }, /*#__PURE__*/_react.default.createElement(Chip, {
     color: "accent",
     label: (0, _i18n.__)('Upgrade', 'elementor'),
-    icon: /*#__PURE__*/_react.default.createElement(_icons.UpgradeIcon, null),
+    icon: /*#__PURE__*/_react.default.createElement(_icons.AIIcon, null),
     size: "small"
   }), /*#__PURE__*/_react.default.createElement(_ui.Popper, {
     open: isPopoverOpen,
@@ -3040,7 +3040,7 @@ var UpgradeChip = function UpgradeChip(_ref3) {
     size: "small",
     href: actionUrl,
     target: "_blank",
-    startIcon: /*#__PURE__*/_react.default.createElement(_icons.UpgradeIcon, null),
+    startIcon: /*#__PURE__*/_react.default.createElement(_icons.AIIcon, null),
     sx: {
       '&:hover': {
         color: 'accent.contrastText'
@@ -3833,6 +3833,7 @@ var normalizeResponse = function normalizeResponse(_ref) {
   if (optional.base_template_id) {
     normalized.baseTemplateId = optional.base_template_id;
   }
+  normalized.type = optional.template_type;
   return normalized;
 };
 var usePrompt = function usePrompt(fetchData, initialState) {
@@ -5582,7 +5583,8 @@ var ConfigProvider = function ConfigProvider(props) {
       onInsert: props.onInsert,
       onSelect: props.onSelect,
       onGenerate: props.onGenerate,
-      currentContext: props.currentContext
+      currentContext: props.currentContext,
+      hasPro: props.hasPro
     }
   }, props.children);
 };
@@ -5597,7 +5599,8 @@ ConfigProvider.propTypes = {
   onInsert: _propTypes.default.func.isRequired,
   onSelect: _propTypes.default.func.isRequired,
   onGenerate: _propTypes.default.func.isRequired,
-  currentContext: _propTypes.default.object
+  currentContext: _propTypes.default.object,
+  hasPro: _propTypes.default.bool
 };
 var _default = ConfigContext;
 exports["default"] = _default;

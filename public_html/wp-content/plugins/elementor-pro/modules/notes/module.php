@@ -182,7 +182,9 @@ class Module extends App {
 	}
 
 	private function on_elementor_pro_init() {
-		$is_active = API::is_license_active() && API::is_licence_has_feature( static::LICENSE_FEATURE_NAME );
+		$is_active = Plugin::elementor()->experiments->is_feature_active( static::NAME ) &&
+			API::is_license_active() &&
+			API::is_licence_has_feature( static::LICENSE_FEATURE_NAME );
 
 		if ( ! $is_active ) {
 			return;
