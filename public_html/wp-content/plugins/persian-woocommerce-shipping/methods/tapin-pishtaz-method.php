@@ -23,8 +23,8 @@ class Tapin_Pishtaz_Method extends PWS_Tapin_Method {
 
 		$this->id                 = 'Tapin_Pishtaz_Method';
 		$this->instance_id        = absint( $instance_id );
-		$this->method_title       = __( 'پست تاپین - پیشتاز' );
-		$this->method_description = 'پیشخوان مجازی تاپین - ارسال کالا با استفاده از پست پیشتاز';
+		$this->method_title       = 'پست پیشتاز - تاپین';
+		$this->method_description = 'ارسال کالا با استفاده از پست پیشتاز - تاپین';
 
 		parent::__construct();
 	}
@@ -113,9 +113,7 @@ class Tapin_Pishtaz_Method extends PWS_Tapin_Method {
 
 		}
 
-		$content_type = apply_filters( 'pws_tapin_cart_content_type', PWS()->get_option( 'tapin.content_type', 4 ) );
-
-		if ( $content_type != 1 || $weight >= 2500 ) {
+		if ( $args['content_type'] != 1 || $weight >= 2500 ) {
 			$cost *= 1.25;
 		}
 

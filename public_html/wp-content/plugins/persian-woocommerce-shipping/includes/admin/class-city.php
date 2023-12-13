@@ -27,6 +27,7 @@ class PWS_City {
 			add_filter( 'edit_state_city_per_page', [ $this, 'tapin_get_state_city_per_page' ] );
 			add_action( 'admin_footer', [ $this, 'tapin_admin_footer' ] );
 			add_filter( 'get_terms', [ $this, 'tapin_get_states' ], 20, 4 );
+			add_filter( 'get_edit_term_link', [ $this, 'tapin_edit_term_link' ], 20, 4 );
 		}
 	}
 
@@ -350,12 +351,25 @@ class PWS_City {
 			$city_term->term_id     = intval( $state_id );
 			$city_term->name        = $state_name;
 			$city_term->slug        = $state_name;
+			$city_term->taxonomy    = 'state_city';
 			$city_term->description = 'استان ' . $state_name;
 			$city_term->parent      = 0;
-			$terms[]                = $city_term;
+
+			wp_cache_add( $city_term->term_id, $city_term, 'terms' );
+
+			$terms[] = $city_term;
 		}
 
 		return $terms;
+	}
+
+	public function tapin_edit_term_link( $location, $term_id, $taxonomy, $object_type ) {
+
+		if ( $taxonomy === 'state_city' ) {
+			return '';
+		}
+
+		return $location;
 	}
 }
 

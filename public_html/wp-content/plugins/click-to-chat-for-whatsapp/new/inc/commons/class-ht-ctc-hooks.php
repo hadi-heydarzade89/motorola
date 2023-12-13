@@ -141,8 +141,11 @@ class HT_CTC_Hooks {
         $othersettings = get_option('ht_ctc_othersettings');
 
         $ht_ctc_os['v'] = HT_CTC_VERSION;
-        $ht_ctc_os['is_ga_enable'] = (isset( $othersettings['google_analytics'] )) ? 'yes' : 'no';
-        $ht_ctc_os['ga4'] = (isset( $othersettings['ga4'] )) ? 'yes' : 'no';
+
+        $ht_ctc_os['is_ga_enable'] = (isset( $othersettings['g_an'] )) ? 'yes' : 'no';
+        // $ht_ctc_os['is_ga_enable'] = (isset( $othersettings['google_analytics'] )) ? 'yes' : 'no';
+        // $ht_ctc_os['ga4'] = (isset( $othersettings['ga4'] )) ? 'yes' : 'no';
+
         $ht_ctc_os['is_fb_pixel'] = (isset( $othersettings['fb_pixel'] )) ? 'yes' : 'no';
         $ht_ctc_os['ga_ads'] = (isset( $othersettings['ga_ads'] )) ? 'yes' : 'no';
         

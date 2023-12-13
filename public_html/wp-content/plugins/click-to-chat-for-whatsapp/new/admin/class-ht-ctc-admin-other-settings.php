@@ -106,7 +106,6 @@ class HT_CTC_Admin_Other_Settings {
 
         $options = get_option('ht_ctc_othersettings');
         $dbrow = 'ht_ctc_othersettings';
-
         ?>
         <ul class="collapsible ht_ctc_analytics" data-collapsible="accordion" id="ht_ctc_analytics">
         <li class="">
@@ -117,75 +116,445 @@ class HT_CTC_Admin_Other_Settings {
         
         <?php
 
+        /**
+         * parms_saved - hidden input filed. 
+         * adds to db. while user save changes. useful to identify user saved the params. (especially if user deletes all params - fallback values adds only if parms_saved not exits. (backward compatible))
+         * @since 3.31
+         * 
+         * before 3.31 google_analytics, ga4 checkbox exists. and now it become one g_an checkbox and value of g_an is ga4 by default(new installs). and for upgrades it will be ga/ga4. updated at class ht-ctc-update-db.php
+         * 
+         */
+        ?>
+        <input name="<?= $dbrow; ?>[parms_saved]" value="after_3_31" type="hidden" class="hide">
+        <?php
+
         // Google Analytics
-        if ( isset( $options['google_analytics'] ) ) {
-            ?>
-            <p>
-                <label>
-                    <input name="<?= $dbrow; ?>[google_analytics]" type="checkbox" value="1" <?php checked( $options['google_analytics'], 1 ); ?> id="google_analytics" />
-                    <span><?php _e( 'Google Analytics', 'click-to-chat-for-whatsapp' ); ?></span>
-                </label>
-            </p>
-            <?php
-        } else {
+        $g_an_value = ( isset( $options['g_an'] ) ) ? esc_attr( $options['g_an'] ) : 'ga4';
+
+        $google_analytics_checkbox = ( isset( $options['g_an']) ) ? 1 : '';
+        // $google_analytics_checkbox = ( isset( $options['g_an']) ) ? esc_attr( $options['g_an'] ) : '';
+
+
         ?>
         <p>
             <label>
-                <input name="<?= $dbrow; ?>[google_analytics]" type="checkbox" value="1" id="google_analytics" />
+                <input name="<?= $dbrow; ?>[g_an]" type="checkbox" value="<?= $g_an_value ?>" <?php checked( $google_analytics_checkbox, 1 ); ?> id="google_analytics" />
                 <span><?php _e( 'Google Analytics', 'click-to-chat-for-whatsapp' ); ?></span>
             </label>
         </p>
         <?php
+
+        /**
+         * updated analytics. 
+         *  new: settings for event name, type, params.
+         * @since 3.31
+         */
+
+        // g_an_params not exits. (and user not yet saved/clear the params.) backward compatible.
+        if ( !isset($options['g_an_params']) && !isset($options['parms_saved']) ) {
+
+            if ('ga' == $g_an_value) {
+                // if only ga is set. 
+                $options['g_an_params'] = [
+                    'g_an_param_1',
+                    'g_an_param_2',
+                ];
+
+                $options['g_an_param_1'] = [
+                    'key'=> 'event_category',
+                    'value'=> 'Click to Chat for WhatsApp',
+                ];
+
+                $options['g_an_param_2'] = [
+                    'key'=> 'event_label',
+                    'value'=> '{title}, {url}',
+                ];
+
+            } else {
+                // ga4 or .. 
+                $options['g_an_params'] = [
+                    'g_an_param_1',
+                    'g_an_param_2',
+                    'g_an_param_3',
+                ];
+
+                $options['g_an_param_1'] = [
+                    'key'=> 'number',
+                    'value'=> '{number}',
+                ];
+
+                $options['g_an_param_2'] = [
+                    'key'=> 'title',
+                    'value'=> '{title}',
+                ];
+
+                $options['g_an_param_3'] = [
+                    'key'=> 'url',
+                    'value'=> '{url}',
+                ];
+            }
+
+            
         }
 
-        // ga4
-        if ( isset( $options['ga4'] ) ) {
-            ?>
-            <p class="ctc_ga4" style="margin-left:40px;">
-                <label>
-                    <input name="<?= $dbrow; ?>[ga4]" type="checkbox" value="1" <?php checked( $options['ga4'], 1 ); ?> id="ga4" />
-                    <span><?php _e( 'If Google Analytics 4 is installed', 'click-to-chat-for-whatsapp' ); ?></span>
-                </label>
-            </p>
-            <?php
-        } else {
-            ?>
-            <p class="ctc_ga4" style="margin-left:40px;">
-                <label>
-                    <input name="<?= $dbrow; ?>[ga4]" type="checkbox" value="1" id="ga4" />
-                    <span><?php _e( 'If Google Analytics 4 is installed', 'click-to-chat-for-whatsapp' ); ?></span>
-                </label>
-            </p>
-            <?php
-            }
+        $g_an_event_name = (isset($options['g_an_event_name'])) ? esc_attr( $options['g_an_event_name'] ) : 'click to chat';
+        // list of all g_an params..
+
+        $g_an_params = (isset($options['g_an_params']) && is_array($options['g_an_params']) ) ? array_map( 'esc_attr', $options['g_an_params'] ) : '';
+
+        // count of g_an params.. used for adding new params.. always raises..
+        $g_an_param_order = ( isset( $options['g_an_param_order']) ) ? esc_attr( $options['g_an_param_order'] ) : 5;
+        $key_gen = 1;
+
+
         ?>
+
+
+        <div class="row ctc_ga_values ctc_init_display_none">
+
+            <div style="display:flex; justify-content:center; gap:5px;">
+                <div class="input-field">
+                    <p class="description"><?php _e( 'Event Name', 'click-to-chat-for-whatsapp' ); ?></p>
+                    <input style="visibility:hidden;" type="text" class="input-margin">
+                </div>
+                <div class="input-field" style="">
+                    <input name="<?= $dbrow; ?>[g_an_event_name]" value="<?= $g_an_event_name ?>" placeholder="click to chat" id="g_an_event_name" type="text" class="input-margin">
+                    <label for="g_an_event_name"><?php _e( 'Event Name', 'click-to-chat-for-whatsapp' ); ?></label>
+                </div>
+                <div class="input-field">
+                    <span style="visibility:hidden;" class="dashicons dashicons-no-alt" title="Remove Parameter"></span>
+                </div>
+            </div>
+            
+            <div class="ctc_an_params ctc_g_an_params ctc_sortable">
+                <?php
+
+                $num = '';
+
+                if ( is_array($g_an_params) && isset($g_an_params[0]) ) {
+
+                    foreach ($g_an_params as $param ) {
+
+                        $param_options = ( isset($options[$param]) && is_array($options[$param]) ) ? map_deep( $options[$param], 'esc_attr' ) : '';
+
+                        $key = ( isset( $param_options['key']) ) ? esc_attr( $param_options['key'] ) : '';
+                        $value = ( isset( $param_options['value']) ) ? esc_attr( $param_options['value'] ) : '';
+
+                        // if key and value not empty..
+                        if ( !empty($key) && !empty($value) ) {
+                            ?>
+                            <div class="ctc_an_param g_an_param row" style="margin-bottom:5px; display:flex; gap:5px; justify-content:center;">
+
+                                <input style="display: none;" name="ht_ctc_othersettings[g_an_params][]" type="text" class="g_an_param_order_ref_number" value="<?= $param ?>">
+
+                                <div class="input-field">
+                                    <input name="ht_ctc_othersettings[<?= $param ?>][key]" value="<?= $key ?>" id="<?= $param .'_key'?>" type="text" class="ht_ctc_g_an_param_key input-margin">
+                                    <label for="<?= $param .'_key' ?>"><?php _e( 'Event Parameter', 'click-to-chat-for-whatsapp' ); ?></label>
+                                </div>
+
+                                <div class="input-field">
+                                    <input name="ht_ctc_othersettings[<?= $param ?>][value]" value="<?= $value ?>" id="<?= $param ?>" type="text" class="ht_ctc_g_an_param_value input-margin">
+                                    <label for="<?= $param ?>"><?php _e( 'Value', 'click-to-chat-for-whatsapp' ); ?></label>
+                                </div>
+
+                                <div class="input-field">
+                                    <span style="color:#ddd; margin-left:auto; cursor:pointer;" class="an_param_remove dashicons dashicons-no-alt" title="Remove Parameter"></span>
+                                </div>
+
+
+                            </div>
+                            <?php
+                        }
+                    
+                        $key_gen++;
+                    }
+                    
+                    
+                }
+
+                ?>
+                <!-- new fileds - for adding -->
+                <div class="ctc_new_g_an_param">
+                </div>
+
+
+                <!-- Add parameter - button -->
+                <div style="text-align:center;">
+                    <div class="ctc_add_g_an_param_button" style="display:inline-flex; margin: 10px 0px; cursor:pointer; font-size:16px; font-weight:500; padding: 8px; justify-content:center;">
+                        <span style="color: #039be5;" class="dashicons dashicons-plus-alt2" ></span>
+                        <span style="color: #039be5;">Add Parameter</span>
+                    </div>
+                </div>
+
+
+                <!-- snippets -->
+                <div class="ctc_g_an_param_snippets" style="display: none;">
+
+                    <!-- g_an_param order. next key. (uses from js, saves in db) -->
+                    <input type="text" name="ht_ctc_othersettings[g_an_param_order]" class="g_an_param_order" value="<?= $g_an_param_order ?>">
+
+                    
+                    <!-- snippet: add g_an_param -->
+                    <div class="ctc_an_param g_an_param ht_ctc_g_an_add_param">
+
+                        <div class="row" style="display:flex; gap:5px; justify-content:center;">
+
+                            <input style="display: none;" type="text" class="g_an_param_order_ref_number" value="<?= $g_an_param_order ?>">
+
+                            <div class="input-field">
+                                <input type="text" placeholder="click" class="ht_ctc_g_an_add_param_key input-margin">
+                                <label><?php _e( 'Event Parameter', 'click-to-chat-for-whatsapp' ); ?></label>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="text" placeholder="chat" class="ht_ctc_g_an_add_param_value input-margin">
+                                <label><?php _e( 'Value', 'click-to-chat-for-whatsapp' ); ?></label>
+                            </div>
+
+                            <div class="input-field">
+                                <span style="color:#ddd; margin-left:auto; cursor:pointer;" class="an_param_remove dashicons dashicons-no-alt" title="Remove Parameter"></span>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+                    
+            <!-- todo:l we can add - click count, date, username, if woo... add product details, .... -->
+            <p class="description" style="margin:0px 10px;">Variables: {title}, {url}, {number} replace page title, url, and number that are assigned to the widget.</p>
+            
+        </div>
+
         <p class="description"><?php _e( 'If Google Analytics installed creates an Event there', 'click-to-chat-for-whatsapp' ); ?> - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/google-analytics/"><?php _e( 'more info', 'click-to-chat-for-whatsapp' ); ?></a> </p>
+        <p class="description"><?php _e( 'Create Event form Google Tag manager (GTM)' ); ?> - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/create-event-from-google-tag-manager-using-datalayer-send-to-google-analytics/"><?php _e( 'dataLayer', 'click-to-chat-for-whatsapp' ); ?></a> </p>
         <br>
 
 
         <?php
 
-        // Facebook Pixel
-        if ( isset( $options['fb_pixel'] ) ) {
-            ?>
-            <p>
-                <label>
-                    <input name="<?= $dbrow; ?>[fb_pixel]" type="checkbox" value="1" <?php checked( $options['fb_pixel'], 1 ); ?> id="fb_pixel" />
-                    <span><?php _e( 'Facebook Pixel', 'click-to-chat-for-whatsapp' ); ?></span>
-                </label>
-            </p>
-            <?php
-        } else {
+        /**
+         * Facebook Pixel
+         * updated: 3.31 (able to change event name, type, edit/add params)
+         */
+
+        $fb_pixel_checkbox = ( isset( $options['fb_pixel']) ) ? esc_attr( $options['fb_pixel'] ) : '';
+        
         ?>
         <p>
             <label>
-                <input name="<?= $dbrow; ?>[fb_pixel]" type="checkbox" value="1" id="fb_pixel" />
+                <input name="<?= $dbrow; ?>[fb_pixel]" type="checkbox" value="1" <?php checked( $fb_pixel_checkbox, 1 ); ?> id="fb_pixel" />
                 <span><?php _e( 'Facebook Pixel', 'click-to-chat-for-whatsapp' ); ?></span>
             </label>
         </p>
         <?php
+
+
+        // if params not exits. (and user not yet saved/clear the params.)
+        if ( !isset($options['pixel_params']) && !isset($options['parms_saved']) ) {
+            
+            $options['pixel_params'] = [
+                'pixel_param_1',
+                'pixel_param_2',
+                'pixel_param_3',
+                'pixel_param_4',
+            ];
+            
+            $options['pixel_param_1'] = [
+                'key'=> 'Category',
+                'value'=> 'Click to Chat for WhatsApp',
+            ];
+            
+            $options['pixel_param_2'] = [
+                'key'=> 'ID',
+                'value'=> '{number}',
+            ];
+            
+            $options['pixel_param_3'] = [
+                'key'=> 'Title',
+                'value'=> '{title}',
+            ];
+            
+            $options['pixel_param_4'] = [
+                'key'=> 'URL',
+                'value'=> '{url}',
+            ];
+            
         }
+        
+        $pixel_event_type = (isset($options['pixel_event_type'])) ? esc_attr( $options['pixel_event_type'] ) : 'trackCustom';
+        $pixel_custom_event_name = (isset($options['pixel_custom_event_name'])) ? esc_attr( $options['pixel_custom_event_name'] ) : 'Click to Chat by HoliThemes';
+        $pixel_standard_event_name = (isset($options['pixel_standard_event_name'])) ? esc_attr( $options['pixel_standard_event_name'] ) : 'Lead';
+
+        $pixel_params = (isset($options['pixel_params'])) ? array_map( 'esc_attr', $options['pixel_params'] ) : '' ;
+
+        // count of pixel params.. used for adding new params.. always raises..
+        $pixel_param_order = ( isset( $options['pixel_param_order']) ) ? esc_attr( $options['pixel_param_order'] ) : 5;
+        $key_gen = 1;
+
+        // https://developers.facebook.com/docs/meta-pixel/implementation/conversion-tracking, https://developers.facebook.com/docs/meta-pixel/reference/
         ?>
+        <div class="row ctc_pixel_values ctc_init_display_none">
+
+            <div style="display:flex; justify-content:center; gap:5px;">
+                <div class="input-field">
+                    <p class="description"><?php _e( 'Event Type', 'click-to-chat-for-whatsapp' ); ?></p>
+                    <input style="visibility:hidden;" type="text" class="input-margin">
+                </div>
+                <div class="" style="">
+                    <select class="pixel_event_type" name="<?= $dbrow; ?>[pixel_event_type]">
+                        <option value="trackCustom" <?= $pixel_event_type == 'trackCustom' ? 'SELECTED' : ''; ?> >Custom Event</option>
+                        <option value="track" <?= $pixel_event_type == 'track' ? 'SELECTED' : ''; ?> >Standard</option>
+                    </select>
+                </div>
+                <div class="input-field">
+                    <span style="visibility:hidden;" class="dashicons dashicons-no-alt" title="Remove Parameter"></span>
+                </div>
+            </div>
+
+            <div class="pixel_custom_event ctc_init_display_none">
+                <div style="display:flex; justify-content:center; gap:5px;">
+                    <div class="input-field">
+                        <p class="description"><?php _e( 'Event Name', 'click-to-chat-for-whatsapp' ); ?></p>
+                        <input style="visibility:hidden;" type="text" class="input-margin">
+                    </div>
+                    <div class="input-field" style="">
+                        <input name="<?= $dbrow; ?>[pixel_custom_event_name]" value="<?= $pixel_custom_event_name ?>" placeholder="click to chat" id="pixel_custom_event_name" type="text" class="input-margin">
+                        <label for="pixel_custom_event_name"><?php _e( 'Custom Event Name', 'click-to-chat-for-whatsapp' ); ?></label>
+                    </div>
+                    <div class="input-field">
+                        <span style="visibility:hidden;" class="dashicons dashicons-no-alt" title="Remove Parameter"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pixel_standard_event ctc_init_display_none">
+                <div style="display:flex; justify-content:center; gap:5px;">
+                    <div class="input-field">
+                        <p class="description"><?php _e( 'Event Name', 'click-to-chat-for-whatsapp' ); ?></p>
+                        <input style="visibility:hidden;" type="text" class="input-margin">
+                    </div>
+                    <div class="input-field" style="">
+                        <select class="pixel_standard_event_name" name="<?= $dbrow; ?>[pixel_standard_event_name]">
+                            <option value="Lead" <?= $pixel_standard_event_name == 'Lead' ? 'SELECTED' : ''; ?> >Lead</option>
+                            <option value="Contact" <?= $pixel_standard_event_name == 'Contact' ? 'SELECTED' : ''; ?> >Contact</option>
+                            <option value="Purchase" <?= $pixel_standard_event_name == 'Purchase' ? 'SELECTED' : ''; ?> >Purchase</option>
+                            <option value="Schedule" <?= $pixel_standard_event_name == 'Schedule' ? 'SELECTED' : ''; ?> >Schedule</option>
+                            <option value="Subscribe" <?= $pixel_standard_event_name == 'Subscribe' ? 'SELECTED' : ''; ?> >Subscribe</option>
+                            <option value="ViewContent" <?= $pixel_standard_event_name == 'ViewContent' ? 'SELECTED' : ''; ?> >ViewContent</option>
+                        </select>
+                    </div>
+                    <div class="input-field">
+                        <span style="visibility:hidden;" class="dashicons dashicons-no-alt" title="Remove Parameter"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="ctc_an_params ctc_pixel_params ctc_sortable">
+                <?php
+
+                $num = '';
+
+                if ( is_array($pixel_params) && isset($pixel_params[0]) ) {
+
+                    foreach ($pixel_params as $param ) {
+
+                        $param_options = ( isset($options[$param]) && is_array($options[$param]) ) ? map_deep( $options[$param], 'esc_attr' ) : '';
+
+                        $key = ( isset( $param_options['key']) ) ? esc_attr( $param_options['key'] ) : '';
+                        $value = ( isset( $param_options['value']) ) ? esc_attr( $param_options['value'] ) : '';
+
+                        if ( !empty($key) && !empty($value) ) {
+                            ?>
+                            <div class="ctc_an_param pixel_param row" style="margin-bottom:5px; display:flex; gap:5px; justify-content:center;">
+
+                                <input style="display: none;" name="ht_ctc_othersettings[pixel_params][]" type="text" class="pixel_param_order_ref_number" value="<?= $param ?>">
+
+                                <div class="input-field">
+                                    <input name="ht_ctc_othersettings[<?= $param ?>][key]" value="<?= $key ?>" id="<?= $param .'_key'?>" type="text" class="ht_ctc_g_an_param_key input-margin">
+                                    <label for="<?= $param .'_key' ?>"><?php _e( 'Event Parameter', 'click-to-chat-for-whatsapp' ); ?></label>
+                                </div>
+
+                                <div class="input-field">
+                                    <input name="ht_ctc_othersettings[<?= $param ?>][value]" value="<?= $value ?>" id="<?= $param ?>" type="text" class="ht_ctc_g_an_param_value input-margin">
+                                    <label for="<?= $param ?>"><?php _e( 'Value', 'click-to-chat-for-whatsapp' ); ?></label>
+                                </div>
+
+                                <div class="input-field">
+                                    <span style="color:#ddd; margin-left:auto; cursor:pointer;" class="an_param_remove dashicons dashicons-no-alt" title="Remove Parameter"></span>
+                                </div>
+
+
+                            </div>
+                            <?php
+                        }
+                    
+                        $key_gen++;
+                    }
+                    
+                    
+                }
+
+                ?>
+                <!-- new fileds - for adding -->
+                <div class="ctc_new_pixel_param">
+                </div>
+
+
+                <!-- Add parameter - button -->
+                <div style="text-align:center;">
+                    <div class="ctc_add_pixel_param_button" style="display:inline-flex; margin: 10px 0px; cursor:pointer; font-size:16px; font-weight:500; padding: 8px; justify-content:center;">
+                        <span style="color: #039be5;" class="dashicons dashicons-plus-alt2" ></span>
+                        <span style="color: #039be5;">Add Parameter</span>
+                    </div>
+                </div>
+
+
+                <!-- snippets -->
+                <div class="ctc_pixel_param_snippets" style="display: none;">
+
+                    <!-- pixel_param order. next key. (uses from js, saves in db) -->
+                    <input type="text" name="ht_ctc_othersettings[pixel_param_order]" class="pixel_param_order" value="<?= $pixel_param_order ?>">
+
+                    
+                    <!-- snippet: add pixel_param -->
+                    <div class="ctc_an_param pixel_param ht_ctc_pixel_add_param">
+
+                        <div class="row" style="display:flex; gap:5px; justify-content:center;">
+
+                            <input style="display: none;" type="text" class="pixel_param_order_ref_number" value="<?= $pixel_param_order ?>">
+
+                            <div class="input-field">
+                                <input type="text" placeholder="click" class="ht_ctc_pixel_add_param_key input-margin">
+                                <label><?php _e( 'Event Parameter', 'click-to-chat-for-whatsapp' ); ?></label>
+                            </div>
+
+                            <div class="input-field">
+                                <input type="text" placeholder="chat" class="ht_ctc_pixel_add_param_value input-margin">
+                                <label><?php _e( 'Value', 'click-to-chat-for-whatsapp' ); ?></label>
+                            </div>
+
+                            <div class="input-field">
+                                <span style="color:#ddd; margin-left:auto; cursor:pointer;" class="an_param_remove dashicons dashicons-no-alt" title="Remove Parameter"></span>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+                    
+                </div>
+                
+                
+            </div>
+
+
+            <p class="description" style="margin:0px 10px;">Variables: {title}, {url}, {number} replace page title, url, and number that are assigned to the widget.</p>
+        </div>
+
+
         <p class="description"><?php _e( 'If Facebook Pixel installed creates an Event there', 'click-to-chat-for-whatsapp' ); ?> - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/facebook-pixel/"><?php _e( 'more info', 'click-to-chat-for-whatsapp' ); ?></a> </p>
         <br>
 
@@ -353,6 +722,7 @@ class HT_CTC_Admin_Other_Settings {
         }
         ?>
        
+       <p class="description" style="margin-top:10px;">If Click to Chat Form is added to your website, use the <a href="https://holithemes.com/plugins/click-to-chat/greetings-form/webhooks" target="_blank">Greetings Form webhook</a> feature to get form details.</p>
 
         </div>
         </li>
@@ -931,16 +1301,21 @@ class HT_CTC_Admin_Other_Settings {
 
         foreach ($input as $key => $value) {
 
-            if ( 'placeholder' == $key ) {
-                if ( function_exists('sanitize_textarea_field') ) {
-                    $new_input[$key] = sanitize_textarea_field( $input[$key] );
-                } else {
+            if ( is_array( $input[$key] ) ) {
+                $new_input[$key] = map_deep( $input[$key], 'sanitize_text_field' );
+            } else {
+                if ( 'placeholder' == $key ) {
+                    if ( function_exists('sanitize_textarea_field') ) {
+                        $new_input[$key] = sanitize_textarea_field( $input[$key] );
+                    } else {
+                        $new_input[$key] = sanitize_text_field( $input[$key] );
+                    }
+                } elseif ( 'hook_v' == $key ) {
+                    // todo:l hook_v might covers at array itself
+                    $new_input[$key] = array_map( 'sanitize_text_field', $input[$key] );
+                } elseif ( isset( $input[$key] ) ) {
                     $new_input[$key] = sanitize_text_field( $input[$key] );
                 }
-            } elseif ( 'hook_v' == $key ) {
-                $new_input[$key] = array_map( 'sanitize_text_field', $input[$key] );
-            } elseif ( isset( $input[$key] ) ) {
-                $new_input[$key] = sanitize_text_field( $input[$key] );
             }
 
         }

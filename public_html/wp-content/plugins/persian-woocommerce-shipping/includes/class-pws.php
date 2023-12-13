@@ -323,6 +323,8 @@ class PWS_Core {
 
 	public function checkout_update_order_meta( $order_id ) {
 
+		$order = wc_get_order( $order_id );
+
 		$types  = $this->types();
 		$fields = [ 'state', 'city', 'district' ];
 
@@ -330,12 +332,25 @@ class PWS_Core {
 
 			foreach ( $fields as $field ) {
 
-				$term_id = get_post_meta( $order_id, "_{$type}_{$field}", true );
-				$term    = get_term( intval( $term_id ) );
+				$meta_key = "_{$type}_{$field}";
+
+				if ( method_exists( $order, "get{$meta_key}" ) ) {
+					$term_id = $order->{"get{$meta_key}"}();
+				} else {
+					$term_id = $order->get_meta( $meta_key );
+				}
+
+				$term = get_term( intval( $term_id ) );
 
 				if ( ! is_wp_error( $term ) && ! is_null( $term ) ) {
-					update_post_meta( $order_id, "_{$type}_{$field}", $term->name );
-					update_post_meta( $order_id, "_{$type}_{$field}_id", $term_id );
+
+					if ( method_exists( $order, "set{$meta_key}" ) ) {
+						$order->{"set{$meta_key}"}( $term->name );
+					} else {
+						$order->update_meta_data( "_{$type}_{$field}", $term->name );
+					}
+
+					$order->update_meta_data( "_{$type}_{$field}_id", $term_id );
 				}
 
 			}
@@ -345,16 +360,31 @@ class PWS_Core {
 
 			foreach ( $fields as $field ) {
 
-				$label = get_post_meta( $order_id, "_billing_{$field}", true );
-				$id    = get_post_meta( $order_id, "_billing_{$field}_id", true );
+				$meta_key = "_billing_{$field}";
 
-				update_post_meta( $order_id, "_shipping_{$field}", $label );
-				update_post_meta( $order_id, "_shipping_{$field}_id", $id );
+				if ( method_exists( $order, "get{$meta_key}" ) ) {
+					$label = $order->{"get{$meta_key}"}();
+				} else {
+					$label = $order->get_meta( "_billing_{$field}" );
+				}
+
+				$id = $order->get_meta( "_billing_{$field}_id" );
+
+				$meta_key = "_shipping_{$field}";
+
+				if ( method_exists( $order, "set{$meta_key}" ) ) {
+					$order->{"set{$meta_key}"}( $label );
+				} else {
+					$order->update_meta_data( "_shipping_{$field}", $label );
+				}
+
+				$order->update_meta_data( "_shipping_{$field}_id", $id );
 
 			}
 
 		}
 
+		$order->save();
 	}
 
 	public function checkout_process() {
@@ -563,7 +593,7 @@ class PWS_Core {
 		}
 
 		for ( $i = 0; $i < count( $packages ); $i ++ ) {
-			$packages[ $i ]['destination']['district'] = $data[ $type . '_district' ] ?? null;
+			$packages[ $i ]['destination']['district'] = strval( $data[ $type . '_district' ] ?? null );
 		}
 
 		return $packages;
@@ -588,19 +618,19 @@ class PWS_Core {
 		return $formats;
 	}
 
-	public function order_formatted_shipping_address( $data, $args ) {
+	public function order_formatted_shipping_address( $data, WC_Order $order ) {
 
 		if ( is_array( $data ) ) {
-			$data['district'] = get_post_meta( $args->get_id(), '_shipping_district', true );
+			$data['district'] = $order->get_meta( '_shipping_district' );
 		}
 
 		return $data;
 	}
 
-	public function order_formatted_billing_address( $data, $args ) {
+	public function order_formatted_billing_address( $data, WC_Order $order ) {
 
 		if ( is_array( $data ) ) {
-			$data['district'] = get_post_meta( $args->get_id(), '_billing_district', true );
+			$data['district'] = $order->get_meta( '_billing_district' );
 		}
 
 		return $data;
@@ -924,7 +954,24 @@ class PWS_Core {
 		return isset( $is_beside[ strtoupper( $source ) ][ strtoupper( $destination ) ] ) && $is_beside[ strtoupper( $source ) ][ strtoupper( $destination ) ] === true ? 'beside' : 'out';
 	}
 
-	public function convert_currency( $price ) {
+	public function convert_currency_to_IRR( int $price ): int {
+
+		switch ( get_woocommerce_currency() ) {
+			case 'IRT':
+				$price *= 10;
+				break;
+			case 'IRHR':
+				$price *= 1000;
+				break;
+			case 'IRHT':
+				$price *= 10000;
+				break;
+		}
+
+		return $price;
+	}
+
+	public function convert_currency_from_IRR( int $price ): int {
 
 		switch ( get_woocommerce_currency() ) {
 			case 'IRT':
@@ -939,6 +986,14 @@ class PWS_Core {
 		}
 
 		return ceil( $price );
+	}
+
+	// Backward compatibility
+	public function convert_currency( int $price ): int {
+
+		_doing_it_wrong( 'PWS()->convert_currency', 'Use PWS()->convert_currency_from_IRR', '4.0.0' );
+
+		return $this->convert_currency_from_IRR( $price );
 	}
 
 	public function get_term_option( $term_id ): array {

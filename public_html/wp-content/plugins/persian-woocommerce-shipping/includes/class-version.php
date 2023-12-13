@@ -9,15 +9,17 @@ defined( 'ABSPATH' ) || exit;
 
 class PWS_Version {
 
+	const VERSION_KEY = 'pws_version';
+
 	public function __construct() {
 
-		$current_version = get_option( 'pws_version', '2.1.6' );
+		$installed_version = get_option( self::VERSION_KEY, '2.1.6' );
 
-		if ( in_array( $current_version, [ '3.0.10', '3.0.11' ] ) ) {
-			$current_version = '3.1.0';
+		if ( in_array( $installed_version, [ '3.0.10', '3.0.11' ] ) ) {
+			$installed_version = '3.1.0';
 		}
 
-		if ( $current_version == PWS_VERSION ) {
+		if ( $installed_version == PWS_VERSION ) {
 			return;
 		}
 
@@ -29,10 +31,10 @@ class PWS_Version {
 
 		set_time_limit( 0 );
 
-		$current_version = (int) str_replace( '.', '', $current_version );
-		$pws_version     = (int) str_replace( '.', '', PWS_VERSION );
+		$installed_version = (int) str_replace( '.', '', $installed_version );
+		$pws_version       = (int) str_replace( '.', '', PWS_VERSION );
 
-		for ( $version = $current_version; $version <= $pws_version; $version ++ ) {
+		for ( $version = $installed_version; $version <= $pws_version; $version ++ ) {
 			if ( method_exists( $this, "update_{$version}" ) ) {
 				$this->{"update_{$version}"}();
 			}
@@ -40,7 +42,7 @@ class PWS_Version {
 
 		delete_transient( 'pws_admin_updating' );
 
-		update_option( 'pws_version', PWS_VERSION );
+		update_option( self::VERSION_KEY, PWS_VERSION );
 	}
 
 	public function update_219() {
@@ -245,4 +247,4 @@ class PWS_Version {
 
 add_action( 'admin_init', function () {
 	new PWS_Version();
-} );
+}, 110 );

@@ -139,7 +139,7 @@ class PWS_SMS {
 			'{order}'      => $order->get_id(),
 			'{first_name}' => $order->get_billing_first_name(),
 			'{last_name}'  => $order->get_billing_last_name(),
-			'{barcode}'    => get_post_meta( $order->get_id(), 'post_barcode', true ),
+			'{barcode}'    => $order->get_meta( 'post_barcode' ),
 			'{total}'      => $order->get_total(),
 		];
 

@@ -23,7 +23,7 @@ class Tapin_Sefareshi_Method extends PWS_Tapin_Method {
 
 		$this->id                 = 'Tapin_Sefareshi_Method';
 		$this->instance_id        = absint( $instance_id );
-		$this->method_title       = __( 'پست تاپین - سفارشی' );
+		$this->method_title       = 'پست سفارشی - تاپین';
 		$this->method_description = 'در حال حاضر توسط اداره پست پشتیبانی نمی‌شود، لطفا از پست پیشتاز استفاده کنید.';
 
 		parent::__construct();
@@ -75,9 +75,7 @@ class Tapin_Sefareshi_Method extends PWS_Tapin_Method {
 			$cost = $rates[5000][ $checked_state ] + ( $rates[ $weight_indicator ] * ceil( ( $weight - 5000 ) / 1000 ) );
 		}
 
-		$content_type = apply_filters( 'pws_tapin_cart_content_type', PWS()->get_option( 'tapin.content_type', 4 ) );
-
-		if ( $content_type != 1 || $weight >= 2500 ) {
+		if ( $args['content_type'] != 1 || $weight >= 2500 ) {
 			$cost *= 1.25;
 		}
 

@@ -44,6 +44,17 @@ class PWS_Settings_Tapin extends PWS_Settings {
 			$shop = '';
 		}
 
+		if ( isset( $_GET['tapin_check_ip'] ) ) {
+
+			$response = wp_remote_get( 'https://checkip.tapin.ir/' );
+			$response = wp_remote_retrieve_body( $response );
+
+			if ( $response ) {
+				$shop .= ' | ' . $response;
+			}
+
+		}
+
 		if ( ( $_GET['page'] ?? null ) == 'pws-tapin' ) {
 			do_action( 'pws_state_city_updated' );
 		}
@@ -90,10 +101,10 @@ class PWS_Settings_Tapin extends PWS_Settings {
 					'type'    => 'select',
 					'desc'    => 'بسته‌های تاپین به صورت پیشفرض با این نوع ثبت می‌شوند. (در بخش ویرایش سفارش، برای هر سفارش قابل تغییر و شخصی سازی است)',
 					'options' => [
-						1      => 'عادی',
-						2      => 'شکستنی',
-						3      => 'مایعات',
-						4      => 'غیراستاندارد',
+						1 => 'عادی',
+						2 => 'شکستنی',
+						3 => 'مایعات',
+						4 => 'غیراستاندارد',
 					],
 				],
 				[
@@ -103,8 +114,8 @@ class PWS_Settings_Tapin extends PWS_Settings {
 					'type'    => 'select',
 					'desc'    => 'در صورتی که فروشگاه کتاب است، پست کتاب و در غیر اینصورت پست تاپین را انتخاب کنید.',
 					'options' => [
-						'tapin'      => 'پست تاپین',
-						'posteketab' => 'پست کتاب',
+						'tapin'      => 'پست تاپین - tapin.ir',
+						'posteketab' => 'پست کتاب - posteketab.com',
 					],
 				],
 				[
@@ -124,8 +135,8 @@ class PWS_Settings_Tapin extends PWS_Settings {
 				[
 					'name' => 'notes',
 					'desc' => 'نکات:<ol>
-<li>پست سفارشی و پیشتاز بسته با حداکثر وزن 30 کیلوگرم را می پذیرد.</li>
-<li>بیمه غرامت پست برای محصولات با حداکثر ارزش 20 میلیون تومان پرداخت می شود.</li>
+<li>پست سفارشی و پیشتاز بسته با حداکثر وزن ۳۰ کیلوگرم را می پذیرد.</li>
+<li>بیمه غرامت پست برای محصولات با حداکثر ارزش ۳۰ میلیون تومان پرداخت می شود.</li>
 </ol>',
 					'type' => 'html',
 				],

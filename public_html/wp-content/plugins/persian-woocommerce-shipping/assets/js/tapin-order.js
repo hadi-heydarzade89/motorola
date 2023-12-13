@@ -1,7 +1,5 @@
 jQuery(document).ready(function ($) {
 
-    const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
     let pws_button_submit = $("#pws-tapin-submit");
     let pws_button_ship = $("#pws-tapin-ship");
 
@@ -25,7 +23,7 @@ jQuery(document).ready(function ($) {
 
     function pws_change_status_ajax(status) {
 
-        let id = urlParams.get('post');
+        let id = pws_tapin.order_id;
 
         let data = {
             'action': 'pws_change_order_status',

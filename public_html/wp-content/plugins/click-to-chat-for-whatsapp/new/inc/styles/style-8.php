@@ -64,7 +64,7 @@ $s8_main_span_css = "display: flex; $rtl_css padding: 0 2rem;letter-spacing: .5p
 </style>
 
 <div class = "ht-ctc-style-8 ctc_s_8 ctc-analytics" >
-  <span class="s_8 waves-effect waves-light ctc-analytics" style="<?= $s8_main_span_css ?>">
+  <span class="s_8 ctc-analytics" style="<?= $s8_main_span_css ?>">
     <?php 
     if ('hide' !== $s8_icon_position) {
       include_once HT_CTC_PLUGIN_DIR .'new/inc/assets/img/ht-ctc-svg-images.php';

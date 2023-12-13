@@ -23,8 +23,8 @@ class WC_Forehand_Method extends PWS_Shipping_Method {
 
 		$this->id                 = 'WC_Forehand_Method';
 		$this->instance_id        = absint( $instance_id );
-		$this->method_title       = __( 'پست پیشتاز' );
-		$this->method_description = __( 'ارسال کالا با استفاده از پست پیشتاز' );
+		$this->method_title       =  'پست پیشتاز' ;
+		$this->method_description =  'ارسال کالا با استفاده از پست پیشتاز' ;
 
 		parent::__construct();
 	}
@@ -71,7 +71,9 @@ class WC_Forehand_Method extends PWS_Shipping_Method {
 
 		$weight = PWS_Cart::get_weight();
 
-		if ( $weight > PWS()->get_option( 'tools.post_weight_limit', 30000 ) ) {
+		$post_weight_limit = intval( PWS()->get_option( 'tools.post_weight_limit', 30000 ) );
+
+		if ( $post_weight_limit && $weight > $post_weight_limit ) {
 			$this->is_available = false;
 		}
 
@@ -148,6 +150,6 @@ class WC_Forehand_Method extends PWS_Shipping_Method {
 		// Round Up
 		$cost = ceil( $cost / 1000 ) * 1000;
 
-		$this->add_rate_cost( PWS()->convert_currency( $cost ), $package );
+		$this->add_rate_cost( PWS()->convert_currency_from_IRR( $cost ), $package );
 	}
 }

@@ -60,12 +60,6 @@ class PWS_Admin {
 				'slug'       => 'admin.php?page=wc-settings&tab=shipping&section=pws_rules',
 				'callback'   => '',
 			],
-			60 => [
-				'title'      => 'کارتن و ملزومات',
-				'capability' => $capability,
-				'slug'       => 'https://yun.ir/pwsblu',
-				'callback'   => '',
-			],
 		];
 
 		if ( ! defined( 'PWS_PRO_VERSION' ) ) {
@@ -97,7 +91,6 @@ class PWS_Admin {
 		<script type="text/javascript">
             jQuery(document).ready(function ($) {
                 $("ul#adminmenu a[href*='yun.ir/pws-pro']").attr('target', '_blank');
-                $("ul#adminmenu a[href*='yun.ir/pwsblu']").attr('target', '_blank');
             });
 		</script>
 		<?php

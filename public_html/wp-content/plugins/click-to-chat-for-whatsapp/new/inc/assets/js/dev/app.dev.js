@@ -32,22 +32,62 @@
         }
 
         var ctc = '';
-        if (typeof ht_ctc_chat_var !== "undefined") {
-            ctc = ht_ctc_chat_var;
-            chat_data();
-            start();
-        } else {
-            try {
-                if (document.querySelector('.ht_ctc_chat_data')) {
-                    var settings = $('.ht_ctc_chat_data').attr('data-settings');
-                    ctc = JSON.parse(settings);
-                    window.ht_ctc_chat_var = ctc;
+        variable_ctc();
+
+        var ctc_values = {};
+        variable_ctc_values();
+        
+        chat_data();
+        start();
+
+        /**
+         * get ht_ctc_chat_var and assing to ctc variable
+         */
+        function variable_ctc() {
+            if (typeof ht_ctc_chat_var !== "undefined") {
+                ctc = ht_ctc_chat_var;
+            } else {
+                try {
+                    if (document.querySelector('.ht_ctc_chat_data')) {
+                        var settings = $('.ht_ctc_chat_data').attr('data-settings');
+                        ctc = JSON.parse(settings);
+                        window.ht_ctc_chat_var = ctc;
+                    }
+                } catch (e) {
+                    ctc = {};
                 }
-            } catch (e) {
-                ctc = {};
             }
-            chat_data();
-            start();
+        }
+
+        /**
+         * get ht_ctc_variables and assing to ctc_values variable
+         */
+        function variable_ctc_values() {
+            console.log('variable_ctc_values');
+
+            if (typeof ht_ctc_variables !== "undefined") {
+                ctc_values = ht_ctc_variables;
+            } else {
+                // fallback values(dont merge).. only if ht_ctc_variables not loaded.
+                // later remove params in this fallback values to reduce size.
+                ctc_values = {
+                    'g_an_event_name': 'click to chat',
+                    'pixel_event_name': 'Click to Chat by HoliThemes',
+                    'pixel_event_type': 'trackCustom',
+                    'g_an_params': ['g_an_param_1', 'g_an_param_2', 'g_an_param_3'],
+                    'g_an_param_1': { 'key': 'number', 'value': '{number}' },
+                    'g_an_param_2': { 'key': 'title', 'value': '{title}' },
+                    'g_an_param_3': { 'key': 'url', 'value': '{url}' },
+                    'pixel_params': ['pixel_param_1', 'pixel_param_2', 'pixel_param_3', 'pixel_param_4'],
+                    'pixel_param_1': { 'key': 'Category', 'value': 'Click to Chat for WhatsApp' },
+                    'pixel_param_2': { 'key': 'return_type', 'value': 'chat' },
+                    'pixel_param_3': { 'key': 'ID', 'value': '{number}' },
+                    'pixel_param_4': { 'key': 'Title', 'value': '{title}' },
+                }
+                window.ht_ctc_chat_var = ctc_values;
+                console.log(ht_ctc_chat_var);
+            }
+            console.log(ctc_values);
         }
 
         function chat_data() {
@@ -224,7 +264,7 @@
          */
         function greetings_open(message = 'open') {
             console.log('open');
-            
+
             stop_notification_badge();
 
             $('.ctc_cta_stick').remove();
@@ -307,7 +347,7 @@
         function display_notifications() {
             console.log('display_notifications');
             if (document.querySelector('.ht_ctc_notification') && 'stop' !== ctc_getItem('n_badge')) {
-                
+
                 if (document.querySelector('.ctc_nb')) {
                     console.log('overwrite top, right');
                     // get parent of badge and then get top, right with in that element. (to avoid conflict with other styles if added using shortcode or so...)
@@ -319,9 +359,9 @@
                         "right": $(main).find('.ctc_nb').attr('data-nb_right')
                     });
                 }
-                
 
-                var n_time = (ctc.n_time) ? ctc.n_time*1000 : '150'
+
+                var n_time = (ctc.n_time) ? ctc.n_time * 1000 : '150'
                 setTimeout(() => {
                     console.log('display_notifications: show');
                     $('.ht_ctc_notification').show(400);
@@ -361,8 +401,11 @@
         function ht_ctc_chat_analytics(values) {
 
             console.log('analytics');
+            console.log(values);
 
             if (ctc.analytics) {
+
+                // todo:l - maybe else need if user changed to all clicks. 
                 if ('session' == ctc.analytics) {
 
                     if (sessionStorage.getItem('ht_ctc_analytics')) {
@@ -381,12 +424,29 @@
 
             }
 
+            // apply variables
+            function apply_variables(v, number) {
+                console.log('apply_variables');
+                try {
+                    // v = v.replace(/\{number\}/gi, number);
+                    // v = v.replace(/\{title\}/gi, post_title);
+                    // v = v.replace(/\{url\}/gi, url);
+                    v = v.replace('{number}', number);
+                    v = v.replace('{title}', post_title);
+                    v = v.replace('{url}', url);
+                } catch (e) { }
+
+                console.log(v);
+                return v;
+            }
+
 
             document.dispatchEvent(
                 new CustomEvent("ht_ctc_event_analytics")
             );
 
             // global number (fixed, user created elememt)
+            // todo:l multi agent, random number.. 
             var id = ctc.number;
 
             // if its shortcode
@@ -395,32 +455,63 @@
                 id = values.getAttribute('data-number');
             }
 
+            console.log(id);
+
             // Google Analytics
-            var ga_category = 'Click to Chat for WhatsApp';
-            var ga_action = 'chat: ' + id;
-            var ga_label = post_title + ', ' + url;
+
+            /**
+             * if installed using GTM then gtag may not work. so user can create event using dataLayer object.
+             * 
+             * if google analytics installed directly. then gtag works. 
+             */
+
+
+            /**
+             * analytics - event names added to ht_ctc_chat_var (its loads most cases with out issue) and event params added to ht_ctc_variables.
+             */
 
             // if ga_enabled
-            if (ctc.ga || ctc.ga4) {
+            if (ctc.ga) {
                 console.log('google analytics');
 
+                var g_event_name = (ctc.g_an_event_name && '' !== ctc.g_an_event_name) ? ctc.g_an_event_name : 'click to chat';
+                console.log('Event Name: ' + g_event_name);
+                g_event_name = apply_variables(g_event_name, id);
+
+                var ga_parms = {};
+                var ga_category = 'Click to Chat for WhatsApp';
+                var ga_action = 'chat: ' + id;
+                var ga_label = post_title + ', ' + url;
+
+
+                // if ht_ctc_variables is not loaded to front end, then use default values.
+                // since 3.31. with user defined event name, params
+                console.log(ctc_values);
+
+                if (ctc_values.g_an_params) {
+                    console.log('g_an_params');
+                    console.log(ctc_values.g_an_params);
+                    ctc_values.g_an_params.forEach(e => {
+                        console.log(e);
+                        if (ctc_values[e]) {
+                            var p = ctc_values[e];
+                            console.log(p);
+                            var k = p['key'];
+                            var v = p['value'];
+                            k = apply_variables(k, id);
+                            v = apply_variables(v, id);
+                            console.log(k);
+                            console.log(v);
+                            ga_parms[k] = v;
+                        }
+                    });
+                }
+                console.log(ga_parms);
+
                 if (typeof gtag !== "undefined") {
+                    // gtag may not work if google anlatyics installed using gtm (from GTM user can create event usind gtm datalayer object, ...)
                     console.log('gtag');
-                    if (ctc.ga4) {
-                        // ga4
-                        // gtag may not work if ga4 installed using gtm
-                        console.log('ga4');
-                        gtag('event', 'click to chat', {
-                            'number': id,
-                            'title': post_title,
-                            'url': url,
-                        });
-                    } else {
-                        gtag('event', ga_action, {
-                            'event_category': ga_category,
-                            'event_label': ga_label,
-                        });
-                    }
+                    gtag('event', g_event_name, ga_parms);
                 } else if (typeof ga !== "undefined" && typeof ga.getAll !== "undefined") {
                     console.log('ga');
                     var tracker = ga.getAll();
@@ -428,8 +519,10 @@
                     // ga('send', 'event', 'check ga_category', 'ga_action', 'ga_label');
                     // ga.getAll()[0].send("event", 'check ga_category', 'ga_action', 'ga_label');
                 } else if (typeof __gaTracker !== "undefined") {
+                    console.log('__gaTracker');
                     __gaTracker('send', 'event', ga_category, ga_action, ga_label);
                 }
+
             }
 
             // dataLayer
@@ -456,17 +549,47 @@
                 }
             }
 
-            // FB Pixel
+            /**
+             * FB Pixel
+             * https://developers.facebook.com/docs/meta-pixel/implementation/conversion-tracking
+             */
             if (ctc.fb) {
                 console.log('fb pixel');
+
                 if (typeof fbq !== "undefined") {
-                    fbq('trackCustom', 'Click to Chat by HoliThemes', {
-                        'Category': 'Click to Chat for WhatsApp',
-                        'return_type': 'chat',
-                        'ID': id,
-                        'Title': post_title,
-                        'URL': url
-                    });
+
+                    // event name
+                    var pixelEventName = (ctc.pixel_event_name && '' !== ctc.pixel_event_name) ? ctc.pixel_event_name : 'Click to Chat by HoliThemes';
+                    console.log('Event Name: ' + pixelEventName);
+
+                    // Event type: track/trackCustom
+                    var pixelTrack = (ctc_values.pixel_event_type && '' !== ctc_values.pixel_event_type) ? ctc_values.pixel_event_type : 'trackCustom';
+                    console.log('Track: ' + pixelTrack);
+                    
+                    var pixelParams = {};
+                    console.log(typeof pixelParams);
+                    
+                    if (ctc_values.pixel_params) {
+                        console.log(ctc_values.pixel_params);
+                        console.log('pixel_params');
+                        ctc_values.pixel_params.forEach(e => {
+                            console.log(e);
+                            if (ctc_values[e]) {
+                                var p = ctc_values[e];
+                                console.log(p);
+                                var k = p['key'];
+                                var v = p['value'];
+                                k = apply_variables(k, id);
+                                v = apply_variables(v, id);
+                                console.log(k);
+                                console.log(v);
+                                pixelParams[k] = v;
+                            }
+                        });
+                    }
+                    console.log(pixelParams);
+
+                    fbq(pixelTrack, pixelEventName, pixelParams);
                 }
             }
 
@@ -500,12 +623,12 @@
              */
             try {
                 pre_filled = pre_filled.replaceAll('%', '%25');
-                
+
                 pre_filled = pre_filled.replace(/\[url]/gi, url);
 
                 // pre_filled = encodeURIComponent(pre_filled);
                 pre_filled = encodeURIComponent(decodeURI(pre_filled));
-            } catch (e) {}
+            } catch (e) { }
 
             if ('' == number) {
                 console.log('no number');
@@ -598,7 +721,7 @@
             //             window.open(base_url, url_target, specs);
             //         }, 1);
             //     }
-                
+
             // }
 
             // function createlink() {
@@ -608,9 +731,9 @@
             //     $('.ht_ctc_dynamic')[0].click();
             //     $('.ht_ctc_dynamic').remove();
             // }
-            
+
             window.open(base_url, url_target, specs);
-            
+
             // analytics
             ht_ctc_chat_analytics(values);
 
@@ -711,7 +834,7 @@
 
                 var h_url = ctc.hook_url;
                 hook_values = ctc.hook_v;
-                
+
                 console.log(h_url);
                 console.log(hook_values);
 

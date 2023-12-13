@@ -2,11 +2,11 @@
 Contributors: mahdiy,nabiknet
 Tags: woocommerce,shipping,persian woocommerce,persian,ووکامرس فارسی
 Donate link: https://yun.ir/pws-pro?utm_source=donate
-Requires at least: 5.8
-Tested up to: 6.2
-Requires PHP: 7.2
-Stable tag: 3.1.7
-License: GPLv2 or later
+Requires at least: 6.0.0
+Tested up to: 6.4.2
+Requires PHP: 7.4
+Stable tag: 4.0.2
+License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 ارسال مرسوله های ووکامرس از طریق پست پیشتاز، سفارشی، پیک موتوری و تیپاکس با محاسبه خودکار تعرفه
@@ -21,6 +21,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * دارای چهار روش ارسال: پیشتاز، سفارشی، تیپاکس و پیک موتوری
 * قابلیت اتصال به پیشخوان مجازی پست (تاپین)
 * ارسال پیامک وضعیت سفارشات به مشتریان (ملی پیامک)
+* سازگاری با سیستم HPOS
 * ابزارهای کاربردی برای مدیریت حمل و نقل
 * قابلیت افزودن بی نهایت استان، شهر و محله
 * قابلیت شخصی سازی کامل قیمت ها برای هر آدرس
@@ -66,8 +67,8 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * ارسال پیامک بارکد پستی مرسوله
 
 ## سازگاری
-* Woocommerce 5.*, 6.*, 7.*
-* Wordpress 5.*, 6.*
+* Woocommerce 7.*, 8.*
+* Wordpress 6.*
 * PHP 7.*, 8.*
 
 == Installation ==
@@ -99,6 +100,24 @@ Ask your questions in [Persian Woocommerce Shipping](https://nabik.net/contact/)
 6. Support Tapin dashboard
 
 == Changelog ==
+= 4.0.2 =
+* Fix: Submit order in tapin in edit order page
+* Fix: Add convert_currency function for backward compatibility
+= 4.0.1 =
+* Tweak: Compatibility with woocommerce HPOS
+* Fix: Save order state and city label in meta data
+= 4.0.0 =
+* Tweak: Compatibility with woocommerce 8.3.0
+* Tweak: Compatibility with wp object cache
+* Tweak: Introduce shipping method description
+* Tweak: Add tapin check ip tool
+* Tweak: Refactor submit order in tapin
+* Improve: Show tapin credit with improved cache
+* Improve: Install & Versioning system
+* Improve: Add helper function for exchange currency
+* Tapin: Prevent save empty barcode in order meta
+* Tapin: Improve submitted data for COD
+* Tapin: Prevent error log in states list
 = 3.1.7 =
 * Tweak: Check user access to tapin credit
 * Tweak: Make districts field required
@@ -360,6 +379,8 @@ Fix: Handle error on load zones from tapin api
 * Start, First version of plugin
 
 == Upgrade Notice ==
+= 4.0.0 =
+* با توجه به حجم تغییرات این نسخه، لطفا قبل از بروزرسانی از فروشگاه بکاپ تهیه کنید و پس از آن نیز یکبار فرآیند ثبت سفارش را بررسی بفرمایید.
 = 3.0.0 =
 * لطفا قبل از آپدیت، از تنظیمات حمل و نقل خود بکاپ تهیه کنید و پس از بروزرسانی، تنظیمات حمل و نقل خود را بررسی کنید و از صحت آن مطمئن شوید.
 = 2.2.1 =

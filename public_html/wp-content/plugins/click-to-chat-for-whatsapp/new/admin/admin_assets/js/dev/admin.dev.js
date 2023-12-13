@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function () {
             $(".tabs").tabs();
 
             // only on woo page.. 
-            if ( document.querySelector('.ctc-admin-woo-page') && ctc_getItem('woo_tab') ) {
+            if (document.querySelector('.ctc-admin-woo-page') && ctc_getItem('woo_tab')) {
 
                 var woo_tab = ctc_getItem('woo_tab');
 
@@ -210,6 +210,7 @@ document.addEventListener('DOMContentLoaded', function () {
             woo_page();
             collapsible();
             update_fronend_storage();
+            analytics();
         } catch (e) {
             console.log(e);
             console.log('cache: woo_page(), collapsible(), update_fronend_storage()');
@@ -608,21 +609,6 @@ document.addEventListener('DOMContentLoaded', function () {
             var text = $('#ctc_save_changes_hover_text').text();
             $("#submit").attr('title', text);
 
-            // analytics - ga4 display only if ga is enabled.
-            $("#google_analytics").on("change", function (e) {
-                if ($('#google_analytics').is(':checked')) {
-                    $(".ctc_ga4").show();
-                } else {
-                    $(".ctc_ga4").hide();
-                }
-            });
-
-            if ($('#google_analytics').is(':checked')) {
-                $(".ctc_ga4").show();
-            } else {
-                $(".ctc_ga4").hide();
-            }
-
             // select styles issue
 
             if ($('#select_styles_issue').is(':checked')) {
@@ -644,12 +630,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 } else {
                     $(".s3_box_shadow_hover").show(500);
                 }
-            });
-
-            // analytics count
-            $(".analytics_count_message").on("click", function (e) {
-                $(".analytics_count_message span").hide();
-                $('.analytics_count_select').show(200);
             });
 
         }
@@ -791,8 +771,8 @@ document.addEventListener('DOMContentLoaded', function () {
          * intlTelInput - from intl js.. 
          */
         function intl_input(className) {
-            
-            console.log('intl_input() className: ' + className );
+
+            console.log('intl_input() className: ' + className);
 
             if (document.querySelector("." + className) && typeof intlTelInput !== 'undefined') {
 
@@ -859,8 +839,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         function add_prefer_countrys(country_code) {
 
-            console.log('add_prefer_countrys(): '+ country_code);
-            
+            console.log('add_prefer_countrys(): ' + country_code);
+
             country_code = country_code.toUpperCase();
             var pre_countries = (ctc_getItem('pre_countries')) ? ctc_getItem('pre_countries') : [];
             console.log(pre_countries);
@@ -889,6 +869,167 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
         }
+
+
+
+        /**
+         * Analytics.. 
+         */
+        function analytics() {
+
+            console.log('analytics()');
+
+            // google analytics
+
+            // if #google_analytics is checked then display .ctc_ga_values
+            if ($('#google_analytics').is(':checked')) {
+                $(".ctc_ga_values").show();
+            }
+
+            // event name, params - display only if ga is enabled.
+            $("#google_analytics").on("change", function (e) {
+                if ($('#google_analytics').is(':checked')) {
+                    $(".ctc_ga_values").show(400);
+                } else {
+                    $(".ctc_ga_values").hide(200);
+                }
+            });
+
+
+            var g_an_param_snippet = $('.ctc_g_an_param_snippets .ht_ctc_g_an_add_param');
+            console.log(g_an_param_snippet);
+
+            // add value
+            $(document).on('click', '.ctc_add_g_an_param_button', function () {
+
+                console.log('on click: add g an param button');
+                console.log(g_an_param_snippet);
+
+                var g_an_param_order = $('.g_an_param_order').val();
+                g_an_param_order = parseInt(g_an_param_order);
+
+
+                var g_an_param_clone = g_an_param_snippet.clone();
+                console.log(g_an_param_clone);
+
+                // filed number for reference
+                $(g_an_param_clone).find('.g_an_param_order_ref_number').attr('name', `ht_ctc_othersettings[g_an_params][]`);
+                $(g_an_param_clone).find('.g_an_param_order_ref_number').val('g_an_param_' + g_an_param_order);
+
+                $(g_an_param_clone).find('.ht_ctc_g_an_add_param_key').attr('name', `ht_ctc_othersettings[g_an_param_${g_an_param_order}][key]`);
+                $(g_an_param_clone).find('.ht_ctc_g_an_add_param_value').attr('name', `ht_ctc_othersettings[g_an_param_${g_an_param_order}][value]`);
+
+
+                console.log($('.ctc_new_g_an_param'));
+
+                $('.ctc_new_g_an_param').append(g_an_param_clone);
+
+
+                g_an_param_order++;
+                $('.g_an_param_order').val(g_an_param_order);
+            });
+
+            
+
+
+
+            // fb pixel
+
+            // if #fb_pixel is checked then display .ctc_pixel_values
+            if ($('#fb_pixel').is(':checked')) {
+                $(".ctc_pixel_values").show();
+            }
+
+            // event name, params - display only if fb pixel is enabled.
+            $("#fb_pixel").on("change", function (e) {
+                if ($('#fb_pixel').is(':checked')) {
+                    $(".ctc_pixel_values").show(400);
+                } else {
+                    $(".ctc_pixel_values").hide(200);
+                }
+            });
+
+            // if pixel_event_type is 'custom' then display .ctc_pixel_custom_event_name
+            var pixel_event_type = $('.pixel_event_type').find(":selected").val();
+            if (pixel_event_type == 'trackCustom') {
+                $(".pixel_custom_event").show(100);
+            } else if (pixel_event_type == 'track') {
+                $(".pixel_standard_event").show(100);
+            }
+
+            // on change - pixel_event_type
+            $(".pixel_event_type").on("change", function (e) {
+                var pixel_event_type_change_val = e.target.value;
+                console.log(pixel_event_type_change_val);
+                if (pixel_event_type_change_val == 'trackCustom') {
+                    $(".pixel_custom_event").show(200);
+                    $(".pixel_standard_event").hide(100);
+                } else if (pixel_event_type_change_val == 'track') {
+                    $(".pixel_standard_event").show(200);
+                    $(".pixel_custom_event").hide(100);
+                }
+            });
+
+            var pixel_param_snippet = $('.ctc_pixel_param_snippets .ht_ctc_pixel_add_param');
+            console.log(pixel_param_snippet);
+
+            // add value
+            $(document).on('click', '.ctc_add_pixel_param_button', function () {
+
+                console.log('on click: add g an param button');
+                console.log(pixel_param_snippet);
+
+                var pixel_param_order = $('.pixel_param_order').val();
+                pixel_param_order = parseInt(pixel_param_order);
+
+
+                var pixel_param_clone = pixel_param_snippet.clone();
+                console.log(pixel_param_clone);
+
+                // filed number for reference
+                $(pixel_param_clone).find('.pixel_param_order_ref_number').attr('name', `ht_ctc_othersettings[pixel_params][]`);
+                $(pixel_param_clone).find('.pixel_param_order_ref_number').val('pixel_param_' + pixel_param_order);
+
+                $(pixel_param_clone).find('.ht_ctc_pixel_add_param_key').attr('name', `ht_ctc_othersettings[pixel_param_${pixel_param_order}][key]`);
+                $(pixel_param_clone).find('.ht_ctc_pixel_add_param_value').attr('name', `ht_ctc_othersettings[pixel_param_${pixel_param_order}][value]`);
+
+
+                console.log($('.ctc_new_pixel_param'));
+
+                $('.ctc_new_pixel_param').append(pixel_param_clone);
+
+
+                pixel_param_order++;
+                $('.pixel_param_order').val(pixel_param_order);
+            });
+
+
+
+
+            // Remove params
+            $('.ctc_an_params').on('click', '.an_param_remove', function (e) {
+                console.log('on click: an_param_remove');
+                e.preventDefault();
+                $(this).closest('.ctc_an_param').remove();
+            });
+
+            // analytics count
+            $(".analytics_count_message").on("click", function (e) {
+                $(".analytics_count_message span").hide();
+                $('.analytics_count_select').show(200);
+            });
+
+        }
+
+
+
+
+
+
+
+
+
+
 
 
     });

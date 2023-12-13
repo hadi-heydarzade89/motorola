@@ -28,9 +28,11 @@ class PWS_Tools {
 		add_filter( 'pws_cities', [ $this, 'fix_arabic_characters' ], 1000 );
 	}
 
-	public function admin_bar_menu( $wp_admin_bar ) {
+	public function admin_bar_menu( WP_Admin_Bar $wp_admin_bar ) {
 
-		if ( ! PWS_Tapin::is_enable() || ! current_user_can( 'manage_woocommerce' ) ) {
+		$can = apply_filters( 'pws_tapin_can_show_credit', current_user_can( 'manage_woocommerce' ) );
+
+		if ( ! PWS_Tapin::is_enable() || ! $can ) {
 			return;
 		}
 
@@ -38,31 +40,40 @@ class PWS_Tools {
 
 		$credit = get_transient( 'pws_tapin_credit' );
 
-		if ( $credit === false ) {
+		PWS_Tapin::set_gateway( PWS()->get_option( 'tapin.gateway' ) );
 
-			PWS_Tapin::set_gateway( PWS()->get_option( 'tapin.gateway' ) );
+		if ( $credit === false ) {
 
 			$credit = PWS_Tapin::request( 'v2/public/transaction/credit/', [
 				'shop_id' => PWS()->get_option( 'tapin.shop_id' ),
 			] );
 
+			$expiration = 14;
+
 			if ( is_wp_error( $credit ) ) {
 				$message = $credit->get_error_message();
 				$credit  = 'خطا';
 			} else if ( $credit->returns->status == 200 ) {
-				$credit = wc_price( PWS()->convert_currency( $credit->entries->credit ?? 0 ) );
-				set_transient( 'pws_tapin_credit', $credit, MINUTE_IN_SECONDS * 2 );
+				$credit     = wc_price( PWS()->convert_currency_from_IRR( $credit->entries->credit ?? 0 ) );
+				$expiration = 5;
 			} else {
 				$message = $credit->returns->message;
 				$credit  = 'خطا';
 			}
+
+			set_transient( 'pws_tapin_credit', $credit, MINUTE_IN_SECONDS * $expiration );
 		}
+
+		$labels = [
+			'tapin'      => 'تاپین',
+			'posteketab' => 'پست کتاب',
+		];
 
 		$args = [
 			'id'    => 'tapin_charge',
-			'title' => "اعتبار تاپین: " . $credit,
+			'title' => sprintf( "اعتبار %s: %s", $labels[ PWS_Tapin::get_gateway() ], $credit ),
 			'meta'  => [ 'class' => 'tapin' ],
-			'href'  => admin_url( 'admin.php?page=pws-tapin' ),
+			'href'  => admin_url( 'admin.php?page=pws-tapin&tapin_check_ip=1' ),
 		];
 
 		$wp_admin_bar->add_node( $args );
@@ -112,8 +123,10 @@ class PWS_Tools {
 			$data['comment_content'] = "بارکد پستی مرسوله شما: {$barcode}
                         می توانید مرسوله خود را از طریق لینک https://radgir.net رهگیری نمایید.";
 
-			update_post_meta( $args['order_id'], 'post_barcode', $barcode );
-			$order = new WC_Order( $args['order_id'] );
+			$order = wc_get_order( $args['order_id'] );
+
+			$order->update_meta_data( 'post_barcode', $barcode );
+			$order->save_meta_data();
 
 			do_action( 'pws_save_order_post_barcode', $order, $barcode );
 		}

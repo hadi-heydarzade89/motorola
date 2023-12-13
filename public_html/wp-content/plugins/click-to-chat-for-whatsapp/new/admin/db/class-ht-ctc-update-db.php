@@ -57,6 +57,13 @@ class HT_CTC_Update_DB {
                 $this->v3_23_update();
             }
 
+            /**
+             * v3.31: if not yet updated to v3.31 or above
+             */
+            if ( ! isset( $ht_ctc_plugin_details['v3_31'] ) ) {
+                $this->v3_31_update();
+            }
+
 
         }
 
@@ -67,6 +74,60 @@ class HT_CTC_Update_DB {
     /**
      * Database updates.. 
      */
+
+    
+
+
+
+
+
+
+    /**
+     * updating to v3.31 or above
+     * 
+     * 3.31 changes. if google_analytics and ga4 
+     * 
+     * @version 3.31. input fields google_analytics, ga4 become g_an. with value ga or ga4.
+     * 
+     * early if google_analytics, ga4 is enabled. 'value' is 1.
+     * @since 3.31 google_analytics, ga4 becomes one field: 'g_an' and 'value' will be ga(only google_analytics is enabled) or ga4(google_analytics and ga4 are enabled.).
+     * ga or ga4. (coampatible with older versions: g_an value updates at the time of plugin upgrade. class-ht-ctc-update-db.php)
+     * 
+     */
+    public function v3_31_update() {
+
+        $os = get_option('ht_ctc_othersettings');
+
+        $n = array();
+        $n['g_an_event_name'] = 'click to chat';
+
+        // if google_analytics is enabled. 
+        //  (for safety params not added to db.)
+        if ( isset($os['google_analytics']) ) {
+            if (isset($os['ga4'])) {
+                $n['g_an'] = 'ga4';
+            } else {
+                // only ga is enable but not ga4
+                $n['g_an'] = 'ga';
+                $n['g_an_event_name'] = 'chat: {number}';
+            }
+        }
+
+        // if ( isset($os['fb_pixel']) ) {
+        //     $n['pixel_event_type'] = 'trackCustom';
+        //     $n['pixel_custom_event_name'] = 'Click to Chat by HoliThemes';
+        //     $n['pixel_standard_event_name'] = 'Lead';
+        // }
+
+
+        $othersettings = get_option( 'ht_ctc_othersettings', array() );
+        $othersettings = (is_array( $othersettings)) ? $othersettings : [];
+        $update_othersettings = array_merge($n, $othersettings);
+        update_option('ht_ctc_othersettings', $update_othersettings);
+        
+    }
+
+
 
     
 

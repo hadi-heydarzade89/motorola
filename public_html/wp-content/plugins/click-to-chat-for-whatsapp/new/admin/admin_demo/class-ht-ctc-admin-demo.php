@@ -8,6 +8,8 @@
  * _os_ - other settings
  * 
  * @since 3.30
+ *  - s1. front end looks like theme button
+ *  - for some styles the default view may need to change. like hover effects, .. 
  * 
  */
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -327,7 +329,7 @@ class HT_CTC_Admin_Demo {
     /**
      * no live demo notice
      * 
-     * todo: at docs add content.. to reset the settings, we can check delete settings and deactivate, uninstall and install, activate again..
+     * todo:l at docs add content.. to reset the settings, we can check delete settings and deactivate, uninstall and install, activate again..
      */
     public function no_live_demo() {
         ?>
@@ -336,7 +338,7 @@ class HT_CTC_Admin_Demo {
     }
 
     // demo_messages
-    // todo.. finish how the demo messages will work..
+    // todo:l finish how the demo messages will work..
     public function demo_messages() {
         ?>
         <a href="https://holithemes.com/plugins/click-to-chat/admin-live-preview-messages/" target="_blank" class="description ctc_demo_messages" style="display:none; position:fixed; bottom:5px; right:5px;z-index:9;"></a>

@@ -10,9 +10,9 @@ defined( 'ABSPATH' ) || exit;
 
 class PWS_Tapin extends PWS_Core {
 
-	protected static $gateway = 'tapin';
+	protected static string $gateway = 'tapin';
 
-	protected static $gateways = [
+	protected static array $gateways = [
 		'tapin'      => 'tapin.ir',
 		'posteketab' => 'posteketab.com',
 	];
@@ -47,7 +47,7 @@ class PWS_Tapin extends PWS_Core {
 
 				$ancestors = wp_cache_get( 'city_ancestors', 'pws' );
 
-				if ( $ancestors !== false ) {
+				if ( ! empty( $ancestors ) ) {
 					return $ancestors;
 				}
 
@@ -94,6 +94,8 @@ class PWS_Tapin extends PWS_Core {
 
 	public function checkout_update_order_meta( $order_id ) {
 
+		$order = wc_get_order( $order_id );
+
 		$types  = $this->types();
 		$fields = [ 'state', 'city' ];
 
@@ -101,12 +103,12 @@ class PWS_Tapin extends PWS_Core {
 
 			foreach ( $fields as $field ) {
 
-				$term_id = get_post_meta( $order_id, "_{$type}_{$field}", true );
+				$term_id = $order->{"get_{$type}_{$field}"}();
 				$term    = self::{'get_' . $field}( intval( $term_id ) );
 
 				if ( ! is_null( $term ) ) {
-					update_post_meta( $order_id, "_{$type}_{$field}", $term );
-					update_post_meta( $order_id, "_{$type}_{$field}_id", $term_id );
+					$order->{"set_{$type}_{$field}"}( $term );
+					$order->update_meta_data( "_{$type}_{$field}_id", $term_id );
 				}
 
 			}
@@ -116,34 +118,17 @@ class PWS_Tapin extends PWS_Core {
 
 			foreach ( $fields as $field ) {
 
-				$label = get_post_meta( $order_id, "_billing_{$field}", true );
-				$id    = get_post_meta( $order_id, "_billing_{$field}_id", true );
+				$label = $order->{"get_billing_{$field}"}();
+				$id    = $order->get_meta( "_billing_{$field}_id" );
 
-				update_post_meta( $order_id, "_shipping_{$field}", $label );
-				update_post_meta( $order_id, "_shipping_{$field}_id", $id );
+				$order->{"set_shipping_{$field}"}( $label );
+				$order->update_meta_data( "_shipping_{$field}_id", $id );
 
 			}
 
 		}
 
-		/** @var WC_Order $order */
-		$order = wc_get_order( $order_id );
-
-		foreach ( $order->get_shipping_methods() as $shipping_item ) {
-
-			if ( in_array( $shipping_item->get_method_id(), [ 'Tapin_Pishtaz_Method', 'Tapin_Sefareshi_Method' ] ) ) {
-
-				$instance_id = $shipping_item->get_instance_id();
-
-				$data = get_option( "woocommerce_{$shipping_item->get_method_id()}_{$instance_id}_settings" );
-
-				$packaging_cost = intval( $data['extra_cost'] ?? 0 );
-
-				if ( $shipping_item->get_total() && $packaging_cost ) {
-					update_post_meta( $order_id, 'packaging_cost', $packaging_cost );
-				}
-			}
-		}
+		$order->save();
 	}
 
 	public function checkout_process() {
@@ -307,45 +292,13 @@ class PWS_Tapin extends PWS_Core {
 
 	public static function zone() {
 
-		// @todo it is not efficient
-		$zone = get_transient( 'pws_tapin_zone' );
+		$zone = wp_cache_get( 'pws_tapin_zone', 'nabik' );
 
-		if ( $zone === false || count( (array) $zone ) == 0 ) {
+		if ( $zone === false ) {
 
-			$response = wp_remote_get( 'https://public.api.tapin.ir/api/v1/public/state/tree/' );
+			$zone = json_decode( file_get_contents( PWS_DIR . '/data/tapin.json' ), true );
 
-			if ( is_wp_error( $response ) || wp_remote_retrieve_response_code( $response ) >= 300 ) {
-
-				$zone = json_decode( file_get_contents( PWS_DIR . '/data/tapin.json' ), true );
-
-			} else {
-
-				$data = wp_remote_retrieve_body( $response );
-
-				$data = json_decode( $data, true )['entries'];
-
-				$zone = [];
-
-				foreach ( $data as $state ) {
-
-					$zone[ $state['code'] ] = [
-						'title'  => trim( $state['title'] ),
-						'cities' => [],
-					];
-
-					foreach ( $state['cities'] as $city ) {
-						$title = trim( str_replace( '-' . $state['title'], '', $city['title'] ) );
-
-						$zone[ $state['code'] ]['cities'][ $city['code'] ] = $title;
-					}
-
-				}
-
-			}
-
-			set_transient( 'pws_tapin_zone', $zone, WEEK_IN_SECONDS );
-
-			do_action( 'pws_state_city_updated' );
+			wp_cache_set( 'pws_tapin_zone', $zone, 'nabik' );
 		}
 
 		return $zone;
@@ -660,6 +613,10 @@ class PWS_Tapin extends PWS_Core {
 			self::$gateway = $gateway;
 		}
 
+	}
+
+	public static function get_gateway(): string {
+		return self::$gateway;
 	}
 
 }

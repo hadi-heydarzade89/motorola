@@ -21,6 +21,13 @@ if ( class_exists( 'PWS_Shipping_Method' ) ) {
 class PWS_Shipping_Method extends WC_Shipping_Method {
 
 	/**
+	 * Shipping method description for the frontend.
+	 *
+	 * @var string
+	 */
+	public string $description;
+
+	/**
 	 * Free shipping if order total is grater than free fee
 	 *
 	 * @var string
@@ -65,12 +72,26 @@ class PWS_Shipping_Method extends WC_Shipping_Method {
 
 		// Prepend
 		$this->instance_form_fields = [
-			'title' => [
-				'title'   => 'عنوان روش',
+			'title'       => [
+				'title'   => 'عنوان',
 				'type'    => 'text',
 				'default' => $this->method_title,
 			],
+			'description' => [
+				'title'       => 'توضیحات',
+				'type'        => 'text',
+				'description' => 'توضیحاتی که می‌خواهید در زیر هر روش حمل و نقل نمایش داده شود را وارد نمایید.',
+				'default'     => null,
+				'desc_tip'    => true,
+			],
 		];
+
+		if ( ! defined( 'PWS_PRO_VERSION' ) ) {
+			$description = sprintf( 'نمایش توضیحات فقط در <a href="%s" target="_blank">نسخه حرفه‌ای</a> فعال می‌باشد.', PWS()->pws_pro_url( 'description' ) );
+
+			$this->instance_form_fields['description']['description'] = $description;
+			$this->instance_form_fields['description']['desc_tip']    = false;
+		}
 
 		$this->init_form_fields();
 
@@ -100,6 +121,12 @@ class PWS_Shipping_Method extends WC_Shipping_Method {
 			], $this );
 
 		$this->title       = $this->get_option( 'title', $this->method_title );
+		$this->description = $this->get_option( 'description' );
+
+		if ( ! empty( $this->description ) ) {
+			$this->method_description = $this->description;
+		}
+
 		$this->minimum_fee = $this->get_option( 'minimum_fee', 0 );
 		$this->free_fee    = $this->get_option( 'free_fee', '' );
 		$this->cart_total  = isset( WC()->cart ) ? WC()->cart->get_cart_contents_total() : 0;

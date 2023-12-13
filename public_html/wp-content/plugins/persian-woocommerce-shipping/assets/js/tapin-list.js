@@ -16,7 +16,7 @@ jQuery(document).ready(function ($) {
 
         pws_IDs = [];
 
-        $('.check-column input[name="post[]"]:checked').each(function () {
+        $('.check-column input[name="' + pws_tapin.order_field + '[]"]:checked').each(function () {
             pws_IDs.push($(this).val());
         });
 

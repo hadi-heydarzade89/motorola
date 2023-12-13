@@ -277,6 +277,7 @@ class HT_CTC_Admin_Others {
 
         $time = time();
 
+        // map_deep may not required. instead call post of db directly and sanitize.
         $post_data = ($_POST) ? map_deep( $_POST, 'sanitize_text_field' ) : '';
         $db_key = (isset($post_data['db'])) ? esc_attr( $post_data['db'] ) : '';
 

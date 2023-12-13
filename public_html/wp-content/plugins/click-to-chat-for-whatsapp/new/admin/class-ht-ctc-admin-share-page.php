@@ -195,19 +195,26 @@ class HT_CTC_Admin_Share_Page {
 
         foreach ($input as $key => $value) {
 
-            if ( 'side_1_value' == $key || 'side_2_value' == $key || 'mobile_side_1_value' == $key || 'mobile_side_2_value' == $key ) {
-                $input[$key] = str_replace( ' ', '', $input[$key] );
-                if ( is_numeric($input[$key]) ) {
-                    $input[$key] = $input[$key] . 'px';
+            if ( is_array( $input[$key] ) ) {
+                // key: display
+                if ( function_exists('sanitize_textarea_field') ) {
+                    $new_input[$key] = map_deep( $input[$key], 'sanitize_textarea_field' );
+                } else {
+                    $new_input[$key] = map_deep( $input[$key], 'sanitize_text_field' );
                 }
-                if ( '' == $input[$key] ) {
-                    $input[$key] = '0px';
-                }
-                $new_input[$key] = sanitize_text_field( $input[$key] );
-            } elseif ( 'display' == $key ) {
-                $new_input[$key] = array_map( 'sanitize_text_field', $input[$key] );
             } else {
-                $new_input[$key] = sanitize_text_field( $input[$key] );
+                if ( 'side_1_value' == $key || 'side_2_value' == $key || 'mobile_side_1_value' == $key || 'mobile_side_2_value' == $key ) {
+                    $input[$key] = str_replace( ' ', '', $input[$key] );
+                    if ( is_numeric($input[$key]) ) {
+                        $input[$key] = $input[$key] . 'px';
+                    }
+                    if ( '' == $input[$key] ) {
+                        $input[$key] = '0px';
+                    }
+                    $new_input[$key] = sanitize_text_field( $input[$key] );
+                } else {
+                    $new_input[$key] = sanitize_text_field( $input[$key] );
+                }
             }
             
             

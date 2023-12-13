@@ -48,6 +48,7 @@ class HT_CTC_Chat {
         $greetings = get_option('ht_ctc_greetings_options');
         $greetings_settings = get_option('ht_ctc_greetings_settings');
         $type = "chat";
+        $is_editor = '';
 
         // If db values are not correct
 		if ( !is_array($options)  || !isset($options['number']) ) {
@@ -407,11 +408,7 @@ class HT_CTC_Chat {
         if ( 'yes' == $ht_ctc_os['is_ga_enable'] ) {
             $ctc['ga'] = 'yes';
         }
-        // ga4
-        if ( 'yes' == $ht_ctc_os['ga4'] ) {
-            $ctc['ga4'] = 'yes';
-        }
-
+        
         // ads
         if ( 'yes' == $ht_ctc_os['ga_ads'] ) {
             $ctc['ads'] = 'yes';
@@ -473,7 +470,26 @@ class HT_CTC_Chat {
             $ctc['g_device'] = $g_device;
         }
 
-        
+        /**
+         * ht_ctc_chat_var sends to front end in better way then ht_ctc_variables. so including event name here..
+         */
+        $g_an_event_name = (isset($othersettings['g_an_event_name'])) ? esc_attr( $othersettings['g_an_event_name'] ) : 'click to chat';
+        $ctc['g_an_event_name'] = $g_an_event_name;
+
+        $pixel_event_type = ( isset($othersettings['pixel_event_type']) ) ? esc_attr( $othersettings['pixel_event_type'] ) : 'trackCustom';
+        $pixel_event_name = 'Click to Chat by HoliThemes';
+        if ( 'trackCustom' == $pixel_event_type ) {
+            if (isset($othersettings['pixel_custom_event_name']) && '' !== $othersettings['pixel_custom_event_name']) {
+                $pixel_event_name = esc_attr( $othersettings['pixel_custom_event_name'] );
+            }
+        } else {
+            if (isset($othersettings['pixel_standard_event_name']) && '' !== $othersettings['pixel_standard_event_name']) {
+                // lead, ..
+                $pixel_event_name = esc_attr( $othersettings['pixel_standard_event_name'] );
+            }
+        }
+        $ctc['pixel_event_name'] = $pixel_event_name;
+
         $ctc = apply_filters( 'ht_ctc_fh_ctc', $ctc );
 
         // data-attribute - data-settings 
@@ -481,6 +497,129 @@ class HT_CTC_Chat {
         
         // localize script - ht_ctc_chat_var
         wp_localize_script( 'ht_ctc_app_js', 'ht_ctc_chat_var', $ctc );
+
+
+        $g_an_params = ( isset($othersettings['g_an_params']) && is_array($othersettings['g_an_params']) ) ? array_map( 'esc_attr', $othersettings['g_an_params'] ) : '';
+        $pixel_params = ( isset($othersettings['pixel_params']) && is_array($othersettings['pixel_params']) ) ? array_map( 'esc_attr', $othersettings['pixel_params'] ) : '';
+        
+        $g_an_value = ( isset( $options['g_an'] ) ) ? esc_attr( $options['g_an'] ) : 'ga4';
+
+        $values = array(
+            'g_an_event_name' => $g_an_event_name,
+            'pixel_event_type' => $pixel_event_type,
+            'pixel_event_name' => $pixel_event_name,
+        );
+
+        // google analytics params
+        if ( is_array($g_an_params) && isset($g_an_params[0]) ) {
+
+            foreach ($g_an_params as $param ) {
+                $param_options = ( isset($othersettings[$param]) ) ? $othersettings[$param] : [];
+                $key = ( isset($param_options['key']) ) ? esc_attr($param_options['key']) : '';
+                $value = ( isset($param_options['value']) ) ? esc_attr($param_options['value']) : '';
+
+                if ( !empty($key) && !empty($value) ) {
+                    $values['g_an_params'][] = $param;
+                    $values[$param] = [
+                        'key' => $key,
+                        'value'=> $value,
+                    ];
+                }
+            }
+        } else {
+
+            // if user not yet saved the params. (backward compatibility)
+            if (!isset($othersettings['parms_saved'])) {
+                if ('ga' == $g_an_value) {
+                    $values['g_an_params'] = [
+                        'g_an_param_1',
+                        'g_an_param_2',
+                    ];
+
+                    $values['g_an_param_1'] = [
+                        'key'=> 'event_category',
+                        'value'=> 'Click to Chat for WhatsApp',
+                    ];
+
+                    $values['g_an_param_2'] = [
+                        'key'=> 'event_label',
+                        'value'=> '{title}, {url}',
+                    ];
+                } else {
+                    $values['g_an_params'] = [
+                        'g_an_param_1',
+                        'g_an_param_2',
+                        'g_an_param_3',
+                    ];
+                    $values['g_an_param_1'] = [
+                        'key'=> 'number',
+                        'value'=> '{number}',
+                    ];
+                    $values['g_an_param_2'] = [
+                        'key'=> 'title',
+                        'value'=> '{title}',
+                    ];
+                    $values['g_an_param_3'] = [
+                        'key'=> 'url',
+                        'value'=> '{url}',
+                    ];
+                }
+            }
+        }
+
+        // pixel params
+        if ( is_array($pixel_params) && isset($pixel_params[0]) ) {
+
+            foreach ($pixel_params as $param ) {
+                $param_options = ( isset($othersettings[$param]) ) ? $othersettings[$param] : [];
+                $key = ( isset($param_options['key']) ) ? esc_attr($param_options['key']) : '';
+                $value = ( isset($param_options['value']) ) ? esc_attr($param_options['value']) : '';
+                
+                if ( !empty($key) && !empty($value) ) {
+                    $values['pixel_params'][] = $param;
+                    $values[$param] = [
+                        'key' => $key,
+                        'value'=> $value,
+                    ];
+                }
+
+            }
+        } else {
+            if ( !isset($othersettings['parms_saved']) ) {
+                $values['pixel_params'] = [
+                    'pixel_param_1',
+                    'pixel_param_2',
+                    'pixel_param_3',
+                    'pixel_param_4',
+                ];
+                
+                $values['pixel_param_1'] = [
+                    'key'=> 'Category',
+                    'value'=> 'Click to Chat for WhatsApp',
+                ];
+                
+                $values['pixel_param_2'] = [
+                    'key'=> 'ID',
+                    'value'=> '{number}',
+                ];
+                
+                $values['pixel_param_3'] = [
+                    'key'=> 'Title',
+                    'value'=> '{title}',
+                ];
+                
+                $values['pixel_param_4'] = [
+                    'key'=> 'URL',
+                    'value'=> '{url}',
+                ];
+            }
+        }
+
+
+        // data-attribute - data-values 
+        // $ht_ctc_values = htmlspecialchars(json_encode($values), ENT_QUOTES, 'UTF-8');
+
+        wp_localize_script( 'ht_ctc_app_js', 'ht_ctc_variables', $values );
 
 
 

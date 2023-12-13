@@ -5,11 +5,13 @@
  * E-Mail    : M@hdiY.IR
  */
 
+use Automattic\WooCommerce\Utilities\OrderUtil;
+
 defined( 'ABSPATH' ) || exit;
 
 class PWS_Status {
 
-	public static $status = [
+	public static array $status = [
 		2 => 'wc-pws-ready-to-ship',
 
 		1 => 'wc-pws-packaged',
@@ -27,7 +29,6 @@ class PWS_Status {
 		80 => 'wc-pws-deleted',
 
 		5  => 'wc-pws-shipping',
-		8  => 'wc-pws-shipping',
 		13 => 'wc-pws-shipping',
 		14 => 'wc-pws-shipping',
 		15 => 'wc-pws-shipping',
@@ -38,6 +39,7 @@ class PWS_Status {
 		3  => 'wc-pws-need-review',
 		4  => 'wc-pws-need-review',
 		6  => 'wc-pws-need-review',
+		8  => 'wc-pws-need-review',
 		9  => 'wc-pws-need-review',
 		12 => 'wc-pws-need-review',
 		81 => 'wc-pws-need-review',
@@ -62,6 +64,7 @@ class PWS_Status {
 			add_action( 'add_meta_boxes', [ $this, 'order_meta_box' ] );
 			add_action( 'save_post', [ $this, 'save_order_meta_box' ], 1000, 3 );
 			add_action( 'manage_posts_extra_tablenav', [ $this, 'top_order_list' ], 20, 1 );
+			add_action( 'woocommerce_order_list_table_extra_tablenav', [ $this, 'top_order_list' ], 20, 1 );
 			add_action( 'wp_ajax_pws_change_order_status', [ $this, 'change_status_callback' ] );
 			add_action( 'wp', [ $this, 'check_status_scheduled' ] );
 			add_action( 'pws_check_status', [ $this, 'check_status_callback' ] );
@@ -178,40 +181,87 @@ class PWS_Status {
 
 		$screen = get_current_screen();
 
-		if ( $screen->id == 'edit-shop_order' ) {
-			wp_enqueue_script( 'pws_tapin_list', PWS_URL . 'assets/js/tapin-list.js' );
-		}
+		if ( OrderUtil::custom_orders_table_usage_is_enabled() ) {
 
-		if ( $screen->id == 'shop_order' ) {
-			wp_enqueue_script( 'pws_tapin_list', PWS_URL . 'assets/js/tapin-order.js' );
+			$action = $_GET['action'] ?? '';
+
+			if ( in_array( $action, [ 'new', 'edit' ] ) ) {
+				wp_enqueue_script( 'pws_tapin_order', PWS_URL . 'assets/js/tapin-order.js' );
+				wp_localize_script( 'pws_tapin_order', 'pws_tapin', [
+					'order_id' => intval( $_GET['id'] ),
+				] );
+			} else {
+				wp_enqueue_script( 'pws_tapin_list', PWS_URL . 'assets/js/tapin-list.js' );
+				wp_localize_script( 'pws_tapin_list', 'pws_tapin', [
+					'order_field' => 'id',
+				] );
+			}
+
+		} else {
+
+			if ( $screen->id == 'shop_order' ) {
+				wp_enqueue_script( 'pws_tapin_order', PWS_URL . 'assets/js/tapin-order.js' );
+				wp_localize_script( 'pws_tapin_order', 'pws_tapin', [
+					'order_id' => intval( $_GET['post'] ),
+				] );
+			}
+
+			if ( $screen->id == 'edit-shop_order' ) {
+				wp_enqueue_script( 'pws_tapin_list', PWS_URL . 'assets/js/tapin-list.js' );
+				wp_localize_script( 'pws_tapin_list', 'pws_tapin', [
+					'order_field' => 'post',
+				] );
+			}
+
 		}
 	}
 
 	public function top_order_list( $which ) {
-		global $typenow;
 
-		if ( 'shop_order' === $typenow && 'top' === $which ) {
-			?>
-			<div class="alignleft actions custom">
-				<button type="button" id="pws-tapin-submit" class="button-primary"
-						title="جهت ثبت سفارشات انتخاب شده در پنل تاپین و دریافت بارکد پستی، کلیک کنید.">ثبت در تاپین
-				</button>
-				<button type="button" id="pws-tapin-ship" class="button-primary"
-						title="پس از ثبت سفارش در پنل، جهت اعلام به پست برای جمع آوری بسته اینجا کلیک کنید.">آماده ارسال
-				</button>
-			</div>
-			<?php
+		if ( ! in_array( get_current_screen()->id, [
+			'edit-shop_order',
+			wc_get_page_screen_id( 'shop-order' ),
+		] ) ) {
+			return;
 		}
+
+		if ( ! in_array( $which, [
+			'top',
+			'shop_order',
+		] ) ) {
+			return;
+		}
+
+		?>
+		<div class="alignleft actions custom">
+			<button type="button" id="pws-tapin-submit" class="button-primary"
+					title="جهت ثبت سفارشات انتخاب شده در پنل تاپین و دریافت بارکد پستی، کلیک کنید.">ثبت در تاپین
+			</button>
+			<button type="button" id="pws-tapin-ship" class="button-primary"
+					title="پس از ثبت سفارش در پنل، جهت اعلام به پست برای جمع آوری بسته اینجا کلیک کنید.">آماده ارسال
+			</button>
+		</div>
+		<?php
 	}
 
 	public function order_meta_box() {
-		add_meta_box( 'tapin_order', 'تاپین', [ $this, 'order_meta_box_callback' ], 'shop_order', 'side' );
+		add_meta_box( 'tapin_order', 'تاپین', [
+			$this,
+			'order_meta_box_callback',
+		], [
+			'shop_order',
+			wc_get_page_screen_id( 'shop-order' ),
+		], 'side' );
 	}
 
-	public function order_meta_box_callback( $post, $args ) {
+	/**
+	 * @param WC_Order|WP_Post $post_or_order_object
+	 *
+	 * @return void
+	 */
+	public function order_meta_box_callback( $post_or_order_object ) {
 
-		/** @var WC_Order $order */
-		$order = wc_get_order( $post->ID );
+		$order = ( $post_or_order_object instanceof WP_Post ) ? wc_get_order( $post_or_order_object->ID ) : $post_or_order_object;
 
 		$order_uuid   = $order->get_meta( 'tapin_order_uuid' );
 		$tapin_weight = PWS_Order::get_weight( $order );
@@ -287,7 +337,13 @@ class PWS_Status {
 
 	public function save_order_meta_box( $order_id, $post, $update ) {
 
-		$order_uuid = get_post_meta( $order_id, 'tapin_order_uuid', true );
+		$order = wc_get_order( $order_id );
+
+		if ( is_bool( $order ) ) {
+			return;
+		}
+
+		$order_uuid = $order->get_meta( 'tapin_order_uuid' );
 
 		if ( ! empty( $order_uuid ) ) {
 			return;
@@ -305,8 +361,9 @@ class PWS_Status {
 			return;
 		}
 
-		update_post_meta( $order_id, 'tapin_weight', floatval( $_POST['tapin_weight'] ) );
-		update_post_meta( $order_id, 'tapin_content_type', intval( $_POST['tapin_content_type'] ) );
+		$order->update_meta_data( 'tapin_weight', floatval( $_POST['tapin_weight'] ) );
+		$order->update_meta_data( 'tapin_content_type', intval( $_POST['tapin_content_type'] ) );
+		$order->save_meta_data();
 	}
 
 	public function change_status_callback() {
@@ -342,7 +399,7 @@ class PWS_Status {
 		/** @var WC_Order $order */
 		$order = wc_get_order( $order_id );
 
-		if ( $order == false ) {
+		if ( is_bool( $order ) ) {
 
 			echo json_encode( [
 				'success' => false,
@@ -354,13 +411,13 @@ class PWS_Status {
 
 		if ( isset( $_POST['weight'] ) ) {
 			$order->add_meta_data( 'tapin_weight', floatval( $_POST['weight'] ), true );
-			$order->save_meta_data();
 		}
 
 		if ( isset( $_POST['content_type'] ) ) {
 			$order->add_meta_data( 'tapin_content_type', intval( $_POST['content_type'] ), true );
-			$order->save_meta_data();
 		}
+
+		$order->save_meta_data();
 
 		$tapin_post_type = PWS_Order::get_shipping_method( $order );
 
@@ -374,7 +431,7 @@ class PWS_Status {
 			die();
 		}
 
-		$tapin_order_uuid = get_post_meta( $order_id, 'tapin_order_uuid', true );
+		$tapin_order_uuid = $order->get_meta( 'tapin_order_uuid' );
 
 		if ( $status == 'pws-packaged' ) { // Submit & get post barcode
 
@@ -445,42 +502,19 @@ class PWS_Status {
 			$tapin_pay_type = 1;
 
 			if ( $order->get_payment_method() == 'cod' ) {
+				$tapin_pay_type = 3;
 
 				if ( $order->get_shipping_total() ) {
-					$tapin_pay_type = 0;
 
-					$packaging_cost = $order->get_meta( 'packaging_cost' );
+					$products['shipping'] = [
+						'count'      => 1,
+						'discount'   => 0,
+						'price'      => PWS()->convert_currency_to_IRR( $order->get_shipping_total() ),
+						'title'      => __( 'هزینه ارسال + بسته بندی' ),
+						'weight'     => 0,
+						'product_id' => null,
+					];
 
-					if ( $packaging_cost ) {
-
-						if ( $packaging_cost == $order->get_shipping_total() ) {
-							$tapin_pay_type = 3;
-						}
-
-						if ( get_woocommerce_currency() == 'IRT' ) {
-							$packaging_cost *= 10;
-						}
-
-						if ( get_woocommerce_currency() == 'IRHR' ) {
-							$packaging_cost *= 1000;
-						}
-
-						if ( get_woocommerce_currency() == 'IRHT' ) {
-							$packaging_cost *= 10000;
-						}
-
-						$products[] = [
-							'count'      => 1,
-							'discount'   => 0,
-							'price'      => intval( $packaging_cost ),
-							'title'      => 'بسته بندی',
-							'weight'     => 0,
-							'product_id' => null,
-						];
-					}
-
-				} else {
-					$tapin_pay_type = 3;
 				}
 
 			}
@@ -512,7 +546,7 @@ class PWS_Status {
 				'employee_code'  => '-1',
 				'first_name'     => $first_name,
 				'last_name'      => $last_name,
-				'mobile'         => str_replace( [ '+98', '0098' ], '0', $order->get_billing_phone() ),
+				'mobile'         => str_replace( '+98', '0', $order->get_billing_phone() ),
 				'phone'          => null,
 				'postal_code'    => $postcode,
 				'pay_type'       => $tapin_pay_type,
@@ -560,20 +594,30 @@ class PWS_Status {
 				die();
 			}
 
-			update_post_meta( $order_id, 'tapin_order_uuid', $response->entries->id );
-			update_post_meta( $order_id, 'tapin_order_id', $response->entries->order_id );
-			update_post_meta( $order_id, 'tapin_send_price', $response->entries->send_price );
-			update_post_meta( $order_id, 'tapin_send_price_tax', $response->entries->send_price_tax );
-			update_post_meta( $order_id, 'tapin_send_time', time() );
-			update_post_meta( $order_id, 'tapin_weight', $order_weight );
-			update_post_meta( $order_id, 'tapin_content_type', $tapin_content_type );
-			update_post_meta( $order_id, 'post_barcode', $response->entries->barcode );
+			if ( empty( $response->entries->barcode ) ) {
+				echo json_encode( [
+					'success' => false,
+					'message' => 'بارکد صادر نشد، لطفا مجددا تلاش کنید.',
+				] );
+
+				die();
+			}
+
+			$order->update_meta_data( 'tapin_order_uuid', $response->entries->id );
+			$order->update_meta_data( 'tapin_order_id', $response->entries->order_id );
+			$order->update_meta_data( 'tapin_send_price', $response->entries->send_price );
+			$order->update_meta_data( 'tapin_send_price_tax', $response->entries->send_price_tax );
+			$order->update_meta_data( 'tapin_send_time', time() );
+			$order->update_meta_data( 'tapin_weight', $order_weight );
+			$order->update_meta_data( 'tapin_content_type', $tapin_content_type );
+			$order->update_meta_data( 'post_barcode', $response->entries->barcode );
 
 			$note = "بارکد پستی مرسوله شما: {$response->entries->barcode}
                         می توانید مرسوله خود را از طریق لینک https://radgir.net رهگیری نمایید.";
 
 			$order->set_status( $status, 'تاپین -' );
 			$order->save();
+
 			$order->add_order_note( $note, 1 );
 
 			do_action( 'pws_save_order_post_barcode', $order, $response->entries->barcode );
@@ -597,7 +641,7 @@ class PWS_Status {
 				die();
 			}
 
-			$tapin_order_id = get_post_meta( $order_id, 'tapin_order_id', true );
+			$tapin_order_id = $order->get_meta( 'tapin_order_id' );
 
 			$data = [
 				'shop_id'  => PWS()->get_option( 'tapin.shop_id' ),
@@ -671,35 +715,40 @@ class PWS_Status {
 
 	public static function check_status_callback() {
 
-		$args_query = apply_filters( 'pws_tapin_check_status_orders', [
-			'post_type'      => [ 'shop_order' ],
-			'post_status'    => [
+		$args = apply_filters( 'pws_tapin_check_status_orders', [
+			'type'       => [ 'shop_order' ],
+			'status'     => [
 				'wc-pws-packaged',
 				'wc-pws-ready-to-ship',
 				'wc-pws-shipping',
 				'wc-pws-deleted',
 				'wc-pws-need-review',
 			],
-			'posts_per_page' => 100,
-			'orderby'        => 'rand',
-			'meta_key'       => 'tapin_order_uuid',
+			'limit'      => 100,
+			'orderby'    => 'rand',
+			'meta_query' => [
+				[
+					'key' => 'tapin_order_uuid',
+				],
+			],
 		] );
 
-		$query = new WP_Query( $args_query );
+		$orders = wc_get_orders( $args );
 
-		$posts = array_column( $query->posts, 'ID' );
-
-		$posts = array_map( function ( $post_id ) {
+		$orders = array_map( function ( WC_Order $order ) {
 			return [
-				'id'      => get_post_meta( $post_id, 'tapin_order_uuid', true ),
-				'post_id' => $post_id,
+				'order_uuid' => $order->get_meta( 'tapin_order_uuid' ),
+				'order'      => $order,
 			];
-		}, $posts );
-		$posts = array_filter( $posts, function ( $row ) {
-			return ! empty( $row['id'] );
+		}, $orders );
+		$orders = array_filter( $orders, function ( $row ) {
+			return ! empty( $row['order_uuid'] );
 		} );
 
-		if ( count( $posts ) == 0 ) {
+		/** @var WC_Order[] $orders */
+		$orders = array_column( $orders, 'order', 'order_uuid' );
+
+		if ( count( $orders ) == 0 ) {
 			return false;
 		}
 
@@ -707,31 +756,29 @@ class PWS_Status {
 
 		$statuses = PWS_Tapin::request( 'v2/public/order/post/get-status/bulk', [
 			'shop_id' => PWS()->get_option( 'tapin.shop_id' ),
-			'orders'  => array_values( $posts ),
+			'orders'  => array_map( function ( string $uuid ) {
+				return [ 'id' => $uuid ];
+			}, array_keys( $orders ) ),
 		] );
 
 		if ( is_wp_error( $statuses ) || ! isset( $statuses->entries->list ) || ! is_array( $statuses->entries->list ) ) {
 			return false;
 		}
 
-		$orders = array_column( $statuses->entries->list, null, 'id' );
+		$order_statuses = array_column( $statuses->entries->list, 'status', 'id' );
 
-		foreach ( $posts as $post ) {
+		foreach ( $orders as $order_uuid => $order ) {
 
-			if ( ! isset( $orders[ $post['id'] ] ) ) {
+			if ( ! isset( $order_statuses[ $order_uuid ] ) ) {
 				continue;
 			}
 
-			$status = $orders[ $post['id'] ]->status;
-
+			$status = $order_statuses[ $order_uuid ];
 			$status = self::$status[ $status ] ?? null;
 
 			if ( is_null( $status ) ) {
 				continue;
 			}
-
-			/** @var WC_Order $order */
-			$order = wc_get_order( $post['post_id'] );
 
 			if ( $order->get_status() != $status ) {
 				$order->set_status( $status, 'بروزرسانی خودکار تاپین -' );
@@ -740,7 +787,6 @@ class PWS_Status {
 
 		}
 
-		wp_reset_postdata();
 	}
 
 }

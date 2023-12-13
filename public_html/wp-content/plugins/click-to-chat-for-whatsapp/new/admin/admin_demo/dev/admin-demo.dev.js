@@ -821,7 +821,7 @@
             }
 
 
-            // cta hover effects (todo: only that style..)
+            // cta hover effects (todo:l only that style..)
             $(".ctc_demo_style").hover(function () {
                 $('.ctc_demo_style .ht-ctc-cta-hover').show(120);
             }, function () {

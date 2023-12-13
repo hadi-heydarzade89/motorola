@@ -79,11 +79,18 @@ class HT_CTC_DB {
             'amp' => '1',
         );
 
-        // enable by default for new installs. 
+        // new installs. 
         if ( !isset ( $this->os['version'] ) ) {
-            $values['google_analytics'] = '1';
-            $values['fb_pixel'] = '1';
             $values['show_effect'] = 'From Corner';
+
+            // $values['google_analytics'] = '1';
+            $values['g_an'] = 'ga4';
+            $values['g_an_event_name'] = 'click to chat';
+
+            $values['fb_pixel'] = '1';
+            $values['pixel_event_type'] = 'trackCustom';
+            $values['pixel_custom_event_name'] = 'Click to Chat by HoliThemes';
+            $values['pixel_standard_event_name'] = 'Lead';
         }
 
         $db_values = get_option( 'ht_ctc_othersettings', array() );
@@ -229,6 +236,7 @@ class HT_CTC_DB {
             'v3_19' => $time,
             'v3_23' => $time,
             'v3_28' => $time,
+            'v3_31' => $time,
         );
 
         $db_values = get_option( 'ht_ctc_plugin_details', array() );

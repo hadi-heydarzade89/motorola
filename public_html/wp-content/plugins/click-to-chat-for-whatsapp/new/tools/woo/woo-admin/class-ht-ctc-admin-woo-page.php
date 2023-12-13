@@ -228,16 +228,16 @@ class HT_CTC_Admin_Woo_Page {
                     
                     if (function_exists( 'wc_get_page_id')) {
                         $shop_page_id = wc_get_page_id( 'shop' );
-                        $shop_admin_url = "${admin_url}post.php?post=${shop_page_id}&action=edit";
+                        $shop_admin_url = "{$admin_url}post.php?post={$shop_page_id}&action=edit";
                         
                         $cart_page_id = wc_get_page_id( 'cart' );
-                        $cart_admin_url = "${admin_url}post.php?post=${cart_page_id}&action=edit";
+                        $cart_admin_url = "{$admin_url}post.php?post={$cart_page_id}&action=edit";
                         
                         $checkout_page_id = wc_get_page_id( 'checkout' );
-                        $checkout_admin_url = "${admin_url}post.php?post=${checkout_page_id}&action=edit";
+                        $checkout_admin_url = "{$admin_url}post.php?post={$checkout_page_id}&action=edit";
                         
                         $myaccount_page_id = wc_get_page_id( 'myaccount' );
-                        $myaccount_admin_url = "${admin_url}post.php?post=${myaccount_page_id}&action=edit";
+                        $myaccount_admin_url = "{$admin_url}post.php?post={$myaccount_page_id}&action=edit";
 
                         ?>
                         <p class="description"><a target="_blank" href="<?= $shop_admin_url ?>">Edit Shop Page</a> </p>

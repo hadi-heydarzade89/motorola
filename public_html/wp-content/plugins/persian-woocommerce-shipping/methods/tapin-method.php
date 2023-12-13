@@ -61,7 +61,9 @@ class PWS_Tapin_Method extends PWS_Shipping_Method {
 
 		$weight = PWS_Cart::get_weight();
 
-		if ( $weight > PWS()->get_option( 'tools.post_weight_limit', 30000 ) ) {
+		$post_weight_limit = intval( PWS()->get_option( 'tools.post_weight_limit', 30000 ) );
+
+		if ( $post_weight_limit && $weight > $post_weight_limit ) {
 			return false;
 		}
 
@@ -110,30 +112,23 @@ class PWS_Tapin_Method extends PWS_Shipping_Method {
 
 		$is_cod = $payment_method === 'cod';
 
-		if ( get_woocommerce_currency() == 'IRT' ) {
-			$price *= 10;
-		}
-
-		if ( get_woocommerce_currency() == 'IRHR' ) {
-			$price *= 1000;
-		}
-
-		if ( get_woocommerce_currency() == 'IRHT' ) {
-			$price *= 10000;
-		}
+		$price = PWS()->convert_currency_to_IRR( $price );
 
 		$shop = PWS_Tapin::shop();
 
 		$args = [
 			'gateway'       => PWS()->get_option( 'tapin.gateway', 'tapin' ),
-			'price'         => min( intval( $price ), 300000000 ), // Max insurance: 30MT
+			'price'         => min( $price, 300000000 ), // Max insurance: 30MT
 			'weight'        => ceil( $weight ),
 			'is_cod'        => $is_cod,
 			'to_province'   => intval( $destination['state'] ),
 			'from_province' => intval( $shop->province_code ?? 1 ),
 			'to_city'       => intval( $destination['city'] ),
 			'from_city'     => intval( $shop->city_code ?? 1 ),
+			'content_type'  => PWS()->get_option( 'tapin.content_type', 4 ),
 		];
+
+		$args = apply_filters( 'pws_tapin_calculate_rates_args', $args, $package, $this );
 
 		$shipping_total = $this->calculate_rates( $args ) + ( $shop->total_price ?? 0 );
 
@@ -141,7 +136,7 @@ class PWS_Tapin_Method extends PWS_Shipping_Method {
 			$shipping_total = ceil( $shipping_total / 1000 ) * 1000;
 		}
 
-		$shipping_total = PWS()->convert_currency( $shipping_total );
+		$shipping_total = PWS()->convert_currency_from_IRR( $shipping_total );
 
 		$shipping_total += $this->extra_cost;
 

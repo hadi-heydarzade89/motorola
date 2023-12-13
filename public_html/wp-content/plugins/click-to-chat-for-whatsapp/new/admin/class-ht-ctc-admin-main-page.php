@@ -558,34 +558,44 @@ class HT_CTC_Admin_Main_Page {
         foreach ($input as $key => $value) {
             if( isset( $input[$key] ) ) {
 
-                if ( 'pre_filled' == $key || 'woo_pre_filled' == $key ) {
-                    if ( function_exists('ht_ctc_wp_encode_emoji') ) {
-                        $input[$key] = ht_ctc_wp_encode_emoji( $input[$key] );
-                    }
+
+                if ( is_array( $input[$key] ) ) {
+                    // key: display, r_nums
+                    // $new_input[$key] = array_map( 'sanitize_text_field', $input[$key] );
                     if ( function_exists('sanitize_textarea_field') ) {
-                        $new_input[$key] = sanitize_textarea_field( $input[$key] );
+                        $new_input[$key] = map_deep( $input[$key], 'sanitize_textarea_field' );
+                    } else {
+                        $new_input[$key] = map_deep( $input[$key], 'sanitize_text_field' );
+                    }
+                } else {
+                    if ( 'pre_filled' == $key || 'woo_pre_filled' == $key ) {
+                        if ( function_exists('ht_ctc_wp_encode_emoji') ) {
+                            $input[$key] = ht_ctc_wp_encode_emoji( $input[$key] );
+                        }
+                        if ( function_exists('sanitize_textarea_field') ) {
+                            $new_input[$key] = sanitize_textarea_field( $input[$key] );
+                        } else {
+                            $new_input[$key] = sanitize_text_field( $input[$key] );
+                        }
+                    } elseif ( 'call_to_action' == $key ) {
+                        if ( function_exists('ht_ctc_wp_encode_emoji') ) {
+                            $input[$key] = ht_ctc_wp_encode_emoji( $input[$key] );
+                        }
+                        $new_input[$key] = sanitize_text_field( $input[$key] );
+                    } elseif ( 'side_1_value' == $key || 'side_2_value' == $key || 'mobile_side_1_value' == $key || 'mobile_side_2_value' == $key ) {
+                        $input[$key] = str_replace( ' ', '', $input[$key] );
+                        if ( is_numeric($input[$key]) ) {
+                            $input[$key] = $input[$key] . 'px';
+                        }
+                        if ( '' == $input[$key] ) {
+                            $input[$key] = '0px';
+                        }
+                        $new_input[$key] = sanitize_text_field( $input[$key] );
                     } else {
                         $new_input[$key] = sanitize_text_field( $input[$key] );
                     }
-                } elseif ( 'call_to_action' == $key ) {
-                    if ( function_exists('ht_ctc_wp_encode_emoji') ) {
-                        $input[$key] = ht_ctc_wp_encode_emoji( $input[$key] );
-                    }
-                    $new_input[$key] = sanitize_text_field( $input[$key] );
-                } elseif ( 'side_1_value' == $key || 'side_2_value' == $key || 'mobile_side_1_value' == $key || 'mobile_side_2_value' == $key ) {
-                    $input[$key] = str_replace( ' ', '', $input[$key] );
-                    if ( is_numeric($input[$key]) ) {
-                        $input[$key] = $input[$key] . 'px';
-                    }
-                    if ( '' == $input[$key] ) {
-                        $input[$key] = '0px';
-                    }
-                    $new_input[$key] = sanitize_text_field( $input[$key] );
-                } elseif ( 'display' == $key || 'r_nums' == $key ) {
-                    $new_input[$key] = array_map( 'sanitize_text_field', $input[$key] );
-                } else {
-                    $new_input[$key] = sanitize_text_field( $input[$key] );
                 }
+                
             }
         }
 

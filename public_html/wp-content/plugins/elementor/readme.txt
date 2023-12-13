@@ -4,7 +4,7 @@ Tags: page builder, editor, landing page, drag-and-drop, elementor, visual edito
 Requires at least: 6.0
 Tested up to: 6.4
 Requires PHP: 7.3
-Stable tag: 3.18.1
+Stable tag: 3.18.2
 Beta tag: 3.18.0-beta4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
@@ -245,10 +245,8 @@ You can also add a new language via [translate.wordpress.org](https://go.element
 
 == Changelog ==
 
-= 3.18.1 - 2023-12-06 =
+= 3.18.2 - 2023-12-08 =
 
-* Fix: Improved code security enforcement in File Upload mechanism
-* Fix: Error appears on front when using various 3rd party plugins and Themes
-* Fix: Reverted Elementor Editor is slow when using Safari 17 and Firefox on macOS
+* Security Fix: Addressed security weaknesses in template upload mechanism
 
 [See changelog for all versions.](https://go.elementor.com/full-changelog/)

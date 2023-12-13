@@ -10,13 +10,19 @@ defined( 'ABSPATH' ) || exit;
 class PWS_Install {
 
 	public function __construct() {
-		add_action( 'admin_init', [ $this, 'activated_plugin' ], 20 );
+		add_action( 'admin_init', [ $this, 'activated_plugin' ], 50 );
 	}
 
 	public function activated_plugin() {
 
 		if ( ! file_exists( PWS_DIR . '/.activated' ) ) {
 			return;
+		}
+
+		$installed_version = get_option( PWS_Version::VERSION_KEY );
+
+		if ( empty( $installed_version ) ) {
+			update_option( PWS_Version::VERSION_KEY, PWS_VERSION, 'yes' );
 		}
 
 		if ( 'yes' === get_transient( 'pws_admin_installing' ) ) {
