@@ -3,17 +3,17 @@
  * Plugin Name: فاکتور ووکامرس
  * Plugin URI: https://woocommerce.ir
  * Description: صدور و چاپ فاکتور برای سفارشات ثبت شده در ووکامرس ، امکان صدور فاکتور ویژه پرینترهای نوری و پرینترهای لیزری. کدنویسی و توسعه توسط <a href="https://woocommerce.ir" target="_blank">ووکامرس فارسی</a>
- * Version: 6.0.0
+ * Version: 6.0.2
  * Author: ووکامرس فارسی
  * Author URI: https://woocommerce.ir
  * WC requires at least: 7.0.0
- * WC tested up to: 8.3.1
+ * WC tested up to: 8.4.0
  */
 
 defined( 'ABSPATH' ) || exit;
 
 if ( ! defined( 'WOOI_VERSION' ) ) {
-	define( 'WOOI_VERSION', '6.0.0' );
+	define( 'WOOI_VERSION', '6.0.2' );
 }
 
 if ( ! defined( 'WOOI_PLUGIN_DIR' ) ) {
