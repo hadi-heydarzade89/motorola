@@ -34,32 +34,7 @@ class ssbhesabfaCustomerService
 
         switch ($type) {
             case 'first':
-                $country_name = self::$countries[$customer->get_billing_country()];
-                $state_name = self::$states[$customer->get_billing_country()][$customer->get_billing_state()];
-                $fullAddress = $customer->get_billing_address_1() . '-' . $customer->get_billing_address_2();
-
-                $hesabfaCustomer = array(
-                    'Code' => $code,
-                    'Name' => $name,
-                    'FirstName' => Ssbhesabfa_Validation::contactFirstNameValidation($firstName),
-                    'LastName' => Ssbhesabfa_Validation::contactLastNameValidation($lastName),
-                    'ContactType' => 1,
-                    'NodeFamily' => $nodeFamily,
-                    'NationalCode' => $NationalCode,
-                    'EconomicCode' => $EconomicCode,
-                    'RegistrationNumber' => $RegistrationNumber,
-                    'Website' => $Website,
-                    'Address' => Ssbhesabfa_Validation::contactAddressValidation($fullAddress),
-                    'City' => Ssbhesabfa_Validation::contactCityValidation($customer->get_billing_city()),
-                    'State' => Ssbhesabfa_Validation::contactStateValidation($state_name),
-                    'Country' => Ssbhesabfa_Validation::contactCountryValidation($country_name),
-                    'PostalCode' => Ssbhesabfa_Validation::contactPostalCodeValidation($customer->get_billing_postcode()),
-                    'Phone' => Ssbhesabfa_Validation::contactPhoneValidation($customer->get_billing_phone()),
-                    'Email' => Ssbhesabfa_Validation::contactEmailValidation($customer->get_email()),
-                    'Tag' => json_encode(array('id_customer' => $id_customer)),
-                    'Note' => __('Customer ID in OnlineStore: ', 'ssbhesabfa') . $id_customer,
-                );
-                break;
+                //
             case 'billing':
                 $country_name = self::$countries[$order->get_billing_country()];
                 $state_name = self::$states[$order->get_billing_country()][$order->get_billing_state()];

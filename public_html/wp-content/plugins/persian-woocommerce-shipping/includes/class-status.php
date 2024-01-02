@@ -53,6 +53,7 @@ class PWS_Status {
 		add_filter( 'woocommerce_reports_order_statuses', [ $this, 'reports_statuses' ], 10, 1 );
 		add_filter( 'woocommerce_order_is_paid_statuses', [ $this, 'paid_statuses' ], 10, 1 );
 		add_filter( 'bulk_actions-edit-shop_order', [ $this, 'bulk_actions' ], 20, 1 );
+		add_filter( 'bulk_actions-woocommerce_page_wc-orders', [ $this, 'bulk_actions' ], 20, 1 );
 
 		if ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'persian-woocommerce-shipping-dokan/pws-dokan.php' ) ) {
 			return;
@@ -130,6 +131,10 @@ class PWS_Status {
 	}
 
 	public function reports_statuses( $order_status ) {
+
+		if ( ! is_array( $order_status ) ) {
+			return $order_status;
+		}
 
 		$dont_report = [
 			'wc-pws-returned',
@@ -558,6 +563,7 @@ class PWS_Status {
 			], $order );
 
 			$data['presenter_code'] = 1025;
+			$data['products']       = array_values( $data['products'] );
 
 			PWS_Tapin::set_gateway( PWS()->get_option( 'tapin.gateway' ) );
 

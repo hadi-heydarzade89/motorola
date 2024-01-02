@@ -2,9 +2,9 @@
 Contributors: saeedsb, hamidprime, sepehr-najafi
 Tags: accounting cloud hesabfa
 Requires at least: 5.2
-Tested up to: 6.4.1
+Tested up to: 6.4.2
 Requires PHP: 5.6
-Stable tag: 2.0.90
+Stable tag: 2.0.93
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -396,3 +396,9 @@ by clicking update stock and price button in hesabfa tab in product edit page
 * Log date format fixed
 * Transaction fee percentage added
 * Submit Invoice Receipt Cash in Transit feature added
+
+= 2.0.92 - 28.11.2023 =
+* Hesabfa Webhook Call fixed
+
+= 2.0.93 - 16.12.2023 =
+* GUID for invoice save feature added

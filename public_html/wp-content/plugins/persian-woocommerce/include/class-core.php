@@ -86,12 +86,6 @@ class Persian_Woocommerce_Core {
 				'slug'       => 'persian-wc-plugins',
 				'callback'   => [ $this, 'plugins_page', ],
 			],
-			40 => [
-				'title'      => 'کارتن و ملزومات',
-				'capability' => 'manage_woocommerce',
-				'slug'       => 'https://hits.ir/pwblu',
-				'callback'   => '',
-			],
 			45 => [
 				'title'      => 'ملی پیامک',
 				'capability' => 'manage_woocommerce',
@@ -128,7 +122,6 @@ class Persian_Woocommerce_Core {
 		?>
 		<script type="text/javascript">
             jQuery(document).ready(function ($) {
-                $("ul#adminmenu a[href$='https://hits.ir/pwblu']").attr('target', '_blank');
                 $("ul#adminmenu a[href$='https://yun.ir/pwtm']").attr('target', '_blank');
             });
 		</script>

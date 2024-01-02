@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-12-13 08:32:16+0000\n"
+"PO-Revision-Date: 2023-12-31 20:51:20+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -64,6 +64,11 @@ msgstr "افزودن قالب جدید"
 #: includes/widgets/testimonial.php:286
 msgid "Image Resolution"
 msgstr "رزولوشن تصویر"
+
+#. translators: %1$s Link open tag, %2$s: Link close tag.
+#: core/experiments/manager.php:419
+msgid "Container-based content will be hidden from your site and may not be recoverable in all cases. %1$sLearn more%2$s"
+msgstr "محتوای مبتنی بر کانتینر از سایت شما پنهان می‌شود و ممکن است همه موارد قابل بازیابی نباشد. %1$sبیشتر بیاموزید%2$s"
 
 #: core/admin/admin.php:623
 msgid "AI Prompts Library"
@@ -541,7 +546,7 @@ msgstr "اجازه دادن به نظرات"
 #: core/document-types/page-base.php:216
 #: includes/controls/groups/flex-item.php:89
 msgid "Order"
-msgstr "سفارش"
+msgstr "ترتیب"
 
 #: includes/template-library/sources/local.php:519
 msgid "Invalid template type."
@@ -2902,7 +2907,7 @@ msgstr "برخی از فایل های قالب شما یافت نشد است."
 
 #: core/files/file-types/svg.php:73 core/files/uploads-manager.php:558
 msgid "This file is not allowed for security reasons."
-msgstr "این پرونده به دلایل امنیتی مجاز نیست."
+msgstr "این فایل به دلایل امنیتی مجاز نیست."
 
 #: includes/admin-templates/beta-tester.php:37 assets/js/beta-tester.js:65
 msgid "Sign Up"
@@ -5295,7 +5300,7 @@ msgstr "تنظیمات ویدئو"
 
 #: includes/controls/groups/background.php:488
 msgid "Video Link"
-msgstr "پیوند ویدئو"
+msgstr "پیوند Vimeo"
 
 #: includes/widgets/video.php:115
 msgid "Vimeo"

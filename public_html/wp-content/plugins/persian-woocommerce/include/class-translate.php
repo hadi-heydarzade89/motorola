@@ -15,8 +15,7 @@ class Persian_Woocommerce_Translate extends Persian_Woocommerce_Core {
 		self::$translates = get_option( self::TRANSLATE_OPTION_KEY );
 
 		$this->translates();
-
-		add_filter( 'override_unload_textdomain', [ $this, 'unload_textdomain' ], 9999, 2 );
+        add_filter( 'override_unload_textdomain', [ $this, 'unload_textdomain' ], 9999, 2 );
 		add_filter( 'load_textdomain_mofile', [ $this, 'load_textdomain' ], 10, 2 );
 
 		add_action( 'add_meta_boxes', [ $this, 'add_meta_box' ] );
@@ -24,9 +23,8 @@ class Persian_Woocommerce_Translate extends Persian_Woocommerce_Core {
 
 		add_action( 'wp_ajax_pw_save_translates', [ $this, 'save_translates' ] );
 	}
-
 	public function unload_textdomain( $override, $domain ) {
-		return get_locale() == 'fa_IR' && $domain === 'woocommerce' ? true : $override;
+	    return get_locale() == 'fa_IR' && $domain === 'woocommerce' ? true : $override;
 	}
 
 	public function load_textdomain( $mo_file, $domain ) {
