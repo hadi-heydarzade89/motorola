@@ -19,6 +19,14 @@ $instance = new ThemeInitHook();
 $instance();
 
 
+add_action(
+    'wp_enqueue_scripts',
+    function () {
+        wp_enqueue_script('elector-child-main', get_theme_file_uri('assets/js/main.js'), [], wp_get_theme()->get('Version'), true);
+    },
+    100
+);
+
 add_action('register_form', function () {
 
     $year = !empty($_POST['register_national_id']) ? intval($_POST['register_national_id']) : '';
@@ -654,7 +662,11 @@ if (!function_exists('digitsVerifyOtpLogin')) {
         if (isset($_REQUEST['rememberMe']) && $_REQUEST['rememberMe'] == 'true') {
             $rememberMe = true;
         }
+
         $nationalId = getNationalIdWhileRegisteringUser($countrycode, $mobileno, $otp);
+        if (is_null($nationalId) && isset($_POST['register_national_id'])) {
+            $nationalId = $_POST['register_national_id'];
+        }
         if (verifyOTP($countrycode, $mobileno, $otp, $del)) {
 
             $user1 = getUserFromPhone($countrycode . $mobileno);
@@ -1397,3 +1409,99 @@ function validateNationalIdInMyAccountPage(): void
     }
 
 }
+
+add_filter('woocommerce_checkout_fields', 'wc_remove_checkout_fields');
+/**
+ * Remove all possible fields
+ **/
+function wc_remove_checkout_fields($fields)
+{
+
+
+    $fields['billing']['billing_city']['priority'] = 85;
+    $fields['shipping']['shipping_city']['priority'] = 85;
+    $fields['account']['account_national_id'] = [
+        'required' => true,
+        'id' => 'checkout_register_national_id',
+        'priority' => 20,
+        'placeholder' => 'کد ملی خود را وارد نمایید.',
+        'label' => 'کد ملی',
+        'class' => ['test']
+    ];
+    return $fields;
+}
+
+remove_action("wp_ajax_nopriv_digits_resendotp", "digits_resendotp");
+
+remove_action("wp_ajax_digits_resendotp", "digits_resendotp");
+
+add_action("wp_ajax_nopriv_digits_resendotp", "digitsResendOTP");
+
+add_action("wp_ajax_digits_resendotp", "digitsResendOTP");
+
+function digitsResendOTP()
+{
+
+    $countrycode = sanitize_text_field($_REQUEST['countrycode']);
+    $mobileno = sanitize_mobile_field_dig($_REQUEST['mobileNo']);
+    $csrf = $_REQUEST['csrf'];
+    $login = $_REQUEST['login'];
+
+    if (dig_gatewayToUse($countrycode) == 1) {
+        die();
+    }
+    if (!checkwhitelistcode($countrycode)) {
+        echo "-99";
+        die();
+    }
+
+    if (!wp_verify_nonce($csrf, 'dig_form')) {
+        echo '0';
+        die();
+    }
+
+    $users_can_register = get_option('dig_enable_registration', 1);
+    $digforgotpass = get_option('digforgotpass', 1);
+    if ($users_can_register == 0 && $login == 2) {
+        echo "0";
+        die();
+    }
+    if ($digforgotpass == 1 && $login == 3) {
+        echo "0";
+        die();
+    }
+
+    if (OTPexists($countrycode, $mobileno, true)) {
+        digitsCheckMob();
+    }
+    echo "0";
+    die();
+
+}
+
+add_action('woocommerce_checkout_process', function () {
+    $countryCode = $phoneNumber = null;
+    if (isset($_POST['digt_countrycode'])) {
+        $countryCode = (int)$_POST['digt_countrycode'];
+    }
+
+    if (isset($_POST['billing_phone'])) {
+        $phoneNumber = sanitize_mobile_field_dig($_POST['billing_phone']);
+    }
+    $nationalId = getNationalIdWhileRegisteringUser($countryCode, $phoneNumber);
+
+    update_option("digits_new_user_{$phoneNumber}", $nationalId);
+});
+
+
+add_action('woocommerce_checkout_update_user_meta', function ($customerId) {
+
+    $phoneConfig = get_user_meta($customerId, 'digits_phone_no');
+    if (count($phoneConfig) > 0) {
+        $nationalConfig = get_option("digits_new_user_{$phoneConfig[0]}");
+        if (strlen($nationalConfig) === 10) {
+            add_user_meta($customerId, 'national_id', $nationalConfig);
+            delete_option("digits_new_user_{$phoneConfig[0]}");
+        }
+    }
+});

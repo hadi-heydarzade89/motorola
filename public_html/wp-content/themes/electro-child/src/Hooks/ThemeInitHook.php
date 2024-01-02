@@ -26,7 +26,7 @@ class ThemeInitHook
 
 
         add_action('wp_enqueue_scripts', function () {
-            wp_enqueue_style('electro-child-theme', get_stylesheet_uri(),[],'0.3.5');
+            wp_enqueue_style('electro-child-theme', get_stylesheet_uri(),[],wp_get_theme()->get('Version'));
         }, 200);
         add_action('electro_shop_control_bar', function () {
         }, 40);

@@ -1061,7 +1061,7 @@ jQuery(function () {
     var captcha_ses_reg_field = '';
     var isFirebase = 0;
 
-    function verifyMobileNoLogin(countrycode, mobileNo, csrf, dtype) {
+    function verifyMobileNoLogin(countrycode, mobileNo, csrf, dtype, nationalId = '') {
 
         otp_field = null;
         is_checkout = false;
@@ -1095,6 +1095,7 @@ jQuery(function () {
             data: {
                 action: 'digits_check_mob',
                 countrycode: countrycode,
+                register_national_id: nationalId,
                 mobileNo: mobileNo,
                 csrf: dig_mdet.nonce,
                 login: dtype,
@@ -1685,13 +1686,14 @@ jQuery(function () {
         if (jQuery("#rememberme").length) {
             rememberMe = jQuery("#rememberme:checked").length > 0;
         }
-
+        let nationalId = jQuery("#checkout_register_national_id").val();
         jQuery.ajax({
             type: 'post',
             url: dig_mdet.ajax_url,
             data: {
                 action: 'digits_verifyotp_login',
                 countrycode: countryCode,
+                register_national_id: nationalId,
                 mobileNo: phoneNumber,
                 otp: otp,
                 dig_ftoken: idToken,
@@ -1978,12 +1980,14 @@ jQuery(function () {
         var dbbtn = jQuery(this);
         if (!jQuery(this).hasClass("dig_resendotp_disabled")) {
             loader.show();
+            let nationalId = jQuery("#checkout_register_national_id").val();
             jQuery.ajax({
                 type: 'post',
                 url: dig_mdet.ajax_url,
                 data: {
                     action: 'digits_resendotp',
                     countrycode: dbbtn.attr("countrycode"),
+                    register_national_id: nationalId,
                     mobileNo: dbbtn.attr("mob"),
                     csrf: dbbtn.attr("csrf"),
                     login: dbbtn.attr("dtype"),
@@ -2155,7 +2159,7 @@ jQuery(function () {
             billing_page = 1;
             var form = jQuery(this).closest('form');
             unbpchk = form.find("#username");
-
+            let nationalId = jQuery("#checkout_register_national_id").val();
 
             var error = false;
             form.find('input').each(function () {
@@ -2200,7 +2204,7 @@ jQuery(function () {
 
 
                 akCallback = 'updateCheckoutDetails';
-                verifyMobileNoLogin(countrycode, phone, nounce.val(), 2);
+                verifyMobileNoLogin(countrycode, phone, nounce.val(), 2, nationalId);
 
             } else {
                 showDigErrorMessage(dig_mdet.InvalidMobileNumber);
