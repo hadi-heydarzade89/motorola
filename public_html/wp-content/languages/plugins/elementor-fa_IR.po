@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-12-31 20:51:20+0000\n"
+"PO-Revision-Date: 2024-01-10 14:56:09+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,6 +15,14 @@ msgstr ""
 msgid "Invalid file name."
 msgstr "نام فایل نامعتبر است."
 
+#: modules/promotions/widgets/pro-widget-promotion.php:58
+msgid "This result includes the Elementor Pro %s widget. Upgrade now to unlock it and grow your web creation toolkit."
+msgstr "این نتیجه شامل ابزارک %s المنتور پرو است. اکنون ارتقا دهید تا قفل آن را باز کنید و جعبه ابزار ایجاد وب خود را توسعه دهید."
+
+#: modules/element-manager/ajax.php:113
+msgid "Unexpected elements data."
+msgstr "داده‌های عناصر غیر منتظره."
+
 #: modules/element-manager/ajax.php:107
 msgid "No elements to save."
 msgstr "هیچ عنصری برای ذخیره‌شدن نیست."
@@ -23,6 +31,10 @@ msgstr "هیچ عنصری برای ذخیره‌شدن نیست."
 msgid "WordPress Widgets"
 msgstr "‫ابزارک‌های وردپرس"
 
+#: modules/element-manager/ajax.php:76
+msgid "Invalid nonce."
+msgstr "کلید نامعتبر."
+
 #: modules/element-manager/ajax.php:71
 msgid "You do not have permission to edit these settings."
 msgstr "شما اجازه ویرایش این تنظیمات را ندارید."
@@ -30,6 +42,18 @@ msgstr "شما اجازه ویرایش این تنظیمات را ندارید."
 #: modules/ai/module.php:117
 msgid "Tap into the potential of AI to easily create and customize containers to your specifications, right within Elementor. This feature comes packed with handy AI tools, including generation, variations, and URL references."
 msgstr "از پتانسیل هوش مصنوعی استفاده کنید تا به راحتی کانتینرها را مطابق با مشخصات خود درست در المنتور ایجاد و سفارشی کنید. این ویژگی با ابزارهای مفید هوش مصنوعی، از جمله تولید، تغییرات و مراجع URL همراه است."
+
+#: includes/widgets/image-gallery.php:77 includes/widgets/testimonial.php:78
+msgid "Use interesting masonry layouts and other overlay features with Elementor's Pro Gallery widget."
+msgstr "با ویجت گالری المنتور حرفه ای از طرح‌بندی‌های جالب بنایی و سایر ویژگی‌های پوشش استفاده کنید."
+
+#: includes/widgets/image-carousel.php:78
+msgid "Gain complete freedom to design every slide with Elementor\"s Pro Carousel."
+msgstr "آزادی کامل برای طراحی هر اسلاید را با چرخ فلک المنتور پرو به دست آورید."
+
+#: includes/widgets/heading.php:94
+msgid "Create captivating headings that rotate with the Animated Headline Widget."
+msgstr "عناوین جذابی ایجاد کنید که با ابزارک عنوان متحرک می‌چرخند."
 
 #: includes/template-library/sources/local.php:245
 msgid "Parent Template:"
@@ -65,10 +89,26 @@ msgstr "افزودن قالب جدید"
 msgid "Image Resolution"
 msgstr "رزولوشن تصویر"
 
+#: includes/controls/groups/flex-container.php:187
+msgid "No Wrap"
+msgstr "No Wrap"
+
+#: includes/controls/groups/flex-container.php:183
+#: includes/controls/groups/flex-container.php:191
+msgid "Wrap"
+msgstr "Wrap"
+
 #. translators: %1$s Link open tag, %2$s: Link close tag.
 #: core/experiments/manager.php:419
 msgid "Container-based content will be hidden from your site and may not be recoverable in all cases. %1$sLearn more%2$s"
 msgstr "محتوای مبتنی بر کانتینر از سایت شما پنهان می‌شود و ممکن است همه موارد قابل بازیابی نباشد. %1$sبیشتر بیاموزید%2$s"
+
+#: core/common/modules/finder/categories/settings.php:66
+#: modules/element-manager/admin-menu-app.php:22
+#: modules/element-manager/admin-menu-app.php:26
+#: modules/element-manager/admin-menu-app.php:35
+msgid "Element Manager"
+msgstr "مدیریت عنصر"
 
 #: core/admin/admin.php:623
 msgid "AI Prompts Library"

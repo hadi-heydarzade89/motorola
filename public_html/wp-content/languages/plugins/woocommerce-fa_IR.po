@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-12-31 23:26:42+0000\n"
+"PO-Revision-Date: 2024-01-10 23:41:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -41,6 +41,10 @@ msgctxt "block title"
 msgid "Stock Filter"
 msgstr "فیلتر موجودی"
 
+#: src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:457
+msgid "Add descriptive pieces of information that customers can use to filter and search for this product. <a href=\"https://woo.com/document/managing-product-taxonomies/#product-attributes\" target=\"_blank\" rel=\"noreferrer\">Learn more</a>."
+msgstr "اطلاعات توصیفی را اضافه کنید که مشتریان می توانند از آنها برای فیلتر کردن و جستجوی این محصول استفاده کنند. <a href=\"https://woo.com/document/managing-product-taxonomies/#product-attributes\" target=\"_blank\" rel=\"noreferrer\">بیشتر بیاموزید</a>."
+
 #: src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:300
 msgid "Buy button text"
 msgstr "متن دکمه خرید"
@@ -77,10 +81,6 @@ msgstr "این فایل وجود ندارد."
 msgid "Product content not found."
 msgstr "محتوای محصول یافت نشد"
 
-#: src/Internal/Admin/Notes/WooSubscriptionsNotes.php:202
-msgid "Connect to Woo.com"
-msgstr "به Woo.com متصل شوید"
-
 #: src/Internal/Admin/Logging/PageController.php:406
 msgid "You do not have permission to manage log files."
 msgstr "شما اجازه مدیریت فایل های گزارش را ندارید."
@@ -103,9 +103,9 @@ msgstr[0] "%s فایل گزارش حذف شد."
 msgid "e.g. Local pickup"
 msgstr "به عنوان مثال، دریافت حضوری"
 
-#: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:560
-msgid "Is store connected to Woo.com?"
-msgstr "آیا فروشگاه به Woo.com متصل است؟"
+#: src/Internal/Admin/Notes/WooSubscriptionsNotes.php:202
+msgid "Connect to Woo.com"
+msgstr "اتصال به Woo.com"
 
 #: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:153
 msgid "WooCommerce Store Identifier."
@@ -124,18 +124,22 @@ msgstr "لطفا یک شماره معتبر وارد کنید"
 msgid "e.g. Standard national"
 msgstr "به عنوان مثال، استاندارد ملی"
 
+#: includes/shipping/flat-rate/includes/settings-flat-rate.php:11
+msgid "advanced costs"
+msgstr "هزینه های پیشرفته"
+
 #. translators: %s: URL for link
 #: includes/shipping/flat-rate/includes/settings-flat-rate.php:52
 msgid "These costs can optionally be added based on the <a target=\"_blank\" href=\"%s\">product shipping class</a>. Learn more about <a target=\"_blank\" href=\"https://woo.com/document/flat-rate-shipping/#shipping-classes\">setting shipping class costs</a>."
 msgstr "این هزینه‌ها را می‌توان به‌صورت اختیاری بر اساس <a target=\"_blank\" href=\"%s\">کلاس ارسال محصول</a> اضافه کرد. درباره <a target=\"_blank\" href=\"https://woo.com/document/flat-rate-shipping/#shipping-classes\">تنظیم هزینه های کلاس حمل و نقل</a> بیشتر بیاموزید."
 
-#: includes/shipping/flat-rate/includes/settings-flat-rate.php:11
-msgid "advanced costs"
-msgstr "هزینه های پیشرفته"
+#: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:560
+msgid "Is store connected to Woo.com?"
+msgstr "فروشگاه به Woo.com متصل است؟"
 
 #: includes/admin/views/html-admin-page-status-report.php:741
 msgid "Is your site connected to Woo.com?"
-msgstr "آیا سایت شما به Woo.com متصل است؟"
+msgstr "سایت شما به Woo.com متصل است؟"
 
 #: includes/admin/settings/views/html-admin-page-shipping-classes.php:89
 msgid "e.g. For heavy items requiring higher postage"
@@ -244,6 +248,10 @@ msgstr "اشتراک شما متصل شده است."
 msgid "There was an error activating this theme."
 msgstr "هنگام فعال کردن این پوسته خطایی روی داد."
 
+#. Plugin URI of the plugin
+msgid "https://woo.com/"
+msgstr "https://woo.com/"
+
 #: includes/admin/class-wc-admin-help.php:57
 msgid "Woo.com support"
 msgstr "پشتیبانی Woo.com"
@@ -251,10 +259,6 @@ msgstr "پشتیبانی Woo.com"
 #. Author URI of the plugin
 msgid "https://woo.com"
 msgstr "https://woo.com"
-
-#. Plugin URI of the plugin
-msgid "https://woo.com/"
-msgstr "https://woo.com/"
 
 #. translators: %1$s Coupon codes, %2$s Reason
 #: packages/woocommerce-blocks/src/StoreApi/Utilities/OrderController.php:212
@@ -490,6 +494,11 @@ msgstr "سفارش شما لغو شد."
 msgid "Learn about new products and discounts"
 msgstr "با محصولات جدید و تخفیف ها آشنا شوید"
 
+#. translators: Placeholder is a URL.
+#: includes/admin/settings/class-wc-settings-advanced.php:397
+msgid "⚠️ <b>️The Legacy REST API will be removed in WooCommerce 9.0.</b> A separate WooCommerce extension will soon be available to keep it enabled. <b><a target=\"_blank\" href=\"%s\">Learn more about this change.</a></b>"
+msgstr "⚠️ <b>️API قدیمی REST در ووکامرس 9.0 حذف خواهد شد.</b> یک افزونه جداگانه ووکامرس به زودی برای فعال نگه داشتن آن در دسترس خواهد بود. <b><a target=\"_blank\" href=\"%s\">درباره این تغییر بیشتر بدانید.</a></b>"
+
 #: includes/admin/class-wc-admin-webhooks-table-list.php:211
 msgid "Legacy"
 msgstr "قدیمی"
@@ -504,14 +513,14 @@ msgstr "برگه‌ای که خریداران برای نهایی کردن خر�
 msgid "Page where shoppers review their shopping cart"
 msgstr "برگه‌ای که در آن خریداران سبد خرید خود را بررسی می‌کنند"
 
-#: includes/admin/class-wc-admin-notices.php:165
-msgid "WooCommerce webhooks that use the Legacy REST API will be unsupported soon"
-msgstr "به زودی وب‌هوک‌های ووکامرس که از REST API قدیمی استفاده می‌کنند، پشتیبانی نمی‌شوند"
-
 #. translators: Placeholders are URLs.
 #: includes/admin/class-wc-admin-notices.php:169
 msgid "The WooCommerce Legacy REST API will be removed in WooCommerce 9.0, and this will cause <a href=\"%1$s\">webhooks on this site that are configured to use the Legacy REST API</a> to stop working. A separate WooCommerce extension will be available to allow these webhooks to keep using the Legacy REST API without interruption. You can also edit these webhooks to use the current REST API version to generate the payload instead. <b><a target=\"_blank\" href=\"%2$s\">Learn more about this change.</a></b>"
 msgstr "REST API قدیمی ووکامرس در ووکامرس ۹.۰ حذف خواهد شد و این باعث می‌شود <a href=\"%1$s\">وب‌هوک‌های موجود در این سایت که برای استفاده از REST API قدیمی پیکربندی شده‌اند</a> کارشان متوقف شود. افزودنی ووکامرس جداگانه‌ای در دسترس خواهد بود تا به این وب‌هوک‌ها اجازه دهد بدون وقفه به استفاده از REST API قدیمی ادامه دهند. همچنین می‌توانید این وبک‌هوک‌ها را ویرایش کنید تا بجای آن از نسخه REST API فعلی برای تولید بار استفاده کنید. <b><a target=\"_blank\" href=\"%2$s\">درباره این تغییر بیشتر بیاموزید.</a></b>"
+
+#: includes/admin/class-wc-admin-notices.php:165
+msgid "WooCommerce webhooks that use the Legacy REST API will be unsupported soon"
+msgstr "به زودی وب‌هوک‌های ووکامرس که از REST API قدیمی استفاده می‌کنند، پشتیبانی نمی‌شوند"
 
 #. translators: Placeholders are URLs.
 #: includes/admin/class-wc-admin-notices.php:150
@@ -1200,6 +1209,10 @@ msgstr "⚠ ۱ افزونه ناسازگار شناسایی شد (%s)."
 #: src/Internal/DataStores/Orders/CustomOrdersTableController.php:505
 msgid "Currently syncing orders... %d pending"
 msgstr "در حال همگام‌سازی سفارشات... %d در انتظار"
+
+#: src/Internal/DataStores/Orders/CustomOrdersTableController.php:399
+msgid "High-Performance order storage"
+msgstr "ذخیره‌سازی سفارش با کارایی بالا"
 
 #: src/Internal/Admin/RemoteFreeExtensions/DefaultFreeExtensions.php:171
 #: assets/client/admin/chunks/multichannel-marketing.js:1
@@ -5847,10 +5860,6 @@ msgstr "ای وای! متاسفانه در اتصال به کاتالوگ افز
 msgid "Task is not a subclass of `Task`"
 msgstr "Task زیر کلاس «Task» نیست"
 
-#: includes/class-woocommerce.php:1020
-msgid "You have installed a development version of WooCommerce which requires files to be built and minified. From the plugin directory, run <code>pnpm install</code> and then <code>pnpm run build --filter=woocommerce</code> to build and minify assets."
-msgstr "شما یک نسخه توسعه‌یافته از WooCommerce را نصب کرده‌اید که نیاز به ساخت و کوچک‌سازی فایل‌ها دارد. از فهرست پلاگین، <code>pnpm install</code> را اجرا کنید و سپس <code>pnpm nx build woocommerce-legacy-assets</code> را برای ساخت و کوچک سازی دارایی ها اجرا کنید."
-
 #. translators: a url
 #: includes/admin/class-wc-admin-addons.php:1028
 msgid "To start growing your business, head over to <a href=\"%s\">Woo.com</a>, where you'll find the most popular WooCommerce extensions."
@@ -7182,6 +7191,11 @@ msgstr "مکان فروشگاه خود و اینکه به کجا ارسال می
 #: assets/client/admin/app/index.js:2
 msgid "You're only one step away from getting paid. Verify your business details to start managing transactions with WooPayments."
 msgstr "شما تنها یک قدم با کسب درآمد فاصله دارید. برای شروع مدیریت تراکنش‌ها با WooPayments، جزئیات کسب و کار خود را تأیید کنید."
+
+#: src/Admin/Features/OnboardingTasks/Tasks/AdditionalPayments.php:58
+#: src/Admin/Features/OnboardingTasks/Tasks/Payments.php:49
+msgid "Choose payment providers and enable payment methods at checkout."
+msgstr "ارائه دهندگان پرداخت را انتخاب کرده و روش‌های پرداخت را در هنگام پرداخت فعال کنید."
 
 #: src/Admin/Features/OnboardingTasks/Tasks/Tax.php:85
 msgid "Set your store location and configure tax rate settings."
@@ -11404,7 +11418,7 @@ msgstr "فروشگاه شما برای ارائه محصولات دیجیتال 
 #: src/Admin/API/Plugins.php:507 src/Admin/API/Plugins.php:512
 #: src/Admin/API/Plugins.php:528
 msgid "There was an error connecting to Woo.com. Please try again."
-msgstr "خطایی در هنگام اتصال به Woo.com رخ داد، لطفا مجددا تلاش کنید."
+msgstr "خطایی در هنگام اتصال به Woo.com رخ داد، لطفا دوباره تلاش کنید."
 
 #: src/Internal/Admin/Notes/WooCommercePayments.php:122
 #: assets/client/admin/app/index.js:2
@@ -11953,13 +11967,13 @@ msgstr "محدود کردن پاسخ به اشیاء به استثنای نام�
 msgid "Limit response to objects with specific usernames."
 msgstr "محدود کردن پاسخ به اشیاء با نام‌های کاربری خاص."
 
-#: src/Admin/API/Plugins.php:428 src/Admin/API/Plugins.php:491
-msgid "There was an error loading the Woo.com Helper API."
-msgstr "هنگام بارگیری Woo.com Helper API خطایی روی داد."
-
 #: src/Admin/API/OnboardingProfile.php:427
 msgid "Whether or not the store was connected to Woo.com during the extension flow."
 msgstr "اینکه آیا فروشگاه طی روند افزودنی، به Woo.com متصل بوده است یا خیر."
+
+#: src/Admin/API/Plugins.php:428 src/Admin/API/Plugins.php:491
+msgid "There was an error loading the Woo.com Helper API."
+msgstr "هنگام بارگذاری Woo.com Helper API خطایی روی داد."
 
 #: src/Admin/API/Reports/Customers/Controller.php:238
 msgid "City."
@@ -14954,7 +14968,7 @@ msgstr "سفارش قابل ویرایش نیست"
 
 #: includes/wccom-site/class-wc-wccom-site-installer.php:297
 msgid "Failed to retrieve product info from Woo.com"
-msgstr "بازیابی اطلاعات محصول از Woo.com انجام نشد"
+msgstr "بازیابی اطلاعات محصول از woo.com انجام نشد"
 
 #: includes/admin/views/html-notice-wp-php-minimum-requirements.php:17
 msgid "Learn how to upgrade"
@@ -15630,7 +15644,7 @@ msgstr "سلام %s،"
 
 #: includes/emails/class-wc-email-failed-order.php:142
 msgid "Hopefully they’ll be back. Read more about <a href=\"https://woo.com/document/managing-orders/\">troubleshooting failed payments</a>."
-msgstr "امیدواریم دوباره برگردند. درباره<a href=\"https://woo.com/document/managing-orders/\">عیب‌یابی پرداخت‌های ناموفق</a>بیشتر بخوانید."
+msgstr "امیدواریم دوباره برگردند. درباره <a href=\"https://woo.com/document/managing-orders/\">عیب‌یابی پرداخت‌های ناموفق</a> بیشتر بخوانید."
 
 #: includes/emails/class-wc-email-cancelled-order.php:144
 #: includes/emails/class-wc-email-customer-note.php:160
@@ -15838,10 +15852,6 @@ msgstr " (%s)"
 #: includes/emails/class-wc-email-customer-reset-password.php:82
 msgid "Password Reset Request for {site_title}"
 msgstr "درخواست تغییر رمز برای {site_title}"
-
-#: includes/wc-template-functions.php:1493
-msgid "Sort by latest"
-msgstr "مرتب‌سازی بر اساس آخرین"
 
 #: packages/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostTypeRegistrar.php:32
 msgctxt "Admin menu name"
@@ -16112,6 +16122,10 @@ msgstr[0] "%s ماه"
 msgid "%s year"
 msgid_plural "%s years"
 msgstr[0] "%s سال"
+
+#: includes/wc-template-functions.php:1493
+msgid "Sort by latest"
+msgstr "مرتب‌سازی بر اساس جدیدترین"
 
 #: includes/rest-api/Controllers/Version3/class-wc-rest-reports-controller.php:55
 msgid "Reviews totals."
@@ -37563,11 +37577,6 @@ msgstr "مالیات ووکامرس"
 msgid "If you find a bug within WooCommerce core you can create a ticket via <a href=\"%1$s\">GitHub issues</a>. Ensure you read the <a href=\"%2$s\">contribution guide</a> prior to submitting your report. To help us solve your issue, please be as descriptive as possible and include your <a href=\"%3$s\">system status report</a>."
 msgstr "اگر از هسته ووکامرس باگی پیداکردید،از طریق <a href=\"%1$s\">گت‌هاب </a>تیکتی ایجاد کنید.قبل از آن <a href=\"%2$s\">راهنمای مشارکت کننده</a> را برای ارسال گزارش مطالعه کنید.لطفا برای کمک به ما جهت رفع مشکل توضیحات کامل و <a href=\"%3$s\">گزارش وضعیت سیستم</a> ارسال کنید."
 
-#. translators: %s: stock amount
-#: includes/wc-formatting-functions.php:1259
-msgid "%s in stock"
-msgstr "%s عدد در انبار"
-
 #: includes/abstracts/abstract-wc-product.php:2138
 #: includes/admin/class-wc-admin-reports.php:108
 #: includes/admin/list-tables/class-wc-admin-list-table-products.php:276
@@ -37583,6 +37592,11 @@ msgstr "%s عدد در انبار"
 #: packages/woocommerce-blocks/build/product-stock-indicator.js:2
 msgid "Out of stock"
 msgstr "ناموجود"
+
+#. translators: %s: stock amount
+#: includes/wc-formatting-functions.php:1259
+msgid "%s in stock"
+msgstr "%s عدد در انبار"
 
 #: includes/abstracts/abstract-wc-product.php:2140
 #: includes/abstracts/abstract-wc-product.php:2142
