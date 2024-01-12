@@ -275,7 +275,7 @@ jQuery(function ($) {
     woof_draw_products_top_panel();
     woof_shortcode_observer();
 
-    //tooltip  
+    //tooltip
     woof_init_tooltip();
 
     //mobile filter
@@ -866,6 +866,7 @@ function woof_draw_products_top_panel() {
 
 
                     }
+
                     if (typeof woof_filter_titles[index] != 'undefined') {
 
                         var cont_item = panel.find('ul.woof_products_top_panel_ul li ul[data-container=' + index + ']');
@@ -1094,7 +1095,7 @@ document.addEventListener('click', function (e) {
         close = !target.closest('.woof_sid');
     }
 
-    //this close btn self    
+    //this close btn self
     if (target.classList.contains('woof_show_auto_form')) {
         return true;
     }
@@ -1155,7 +1156,7 @@ function woof_checkboxes_slide() {
                         jQuery(ul).show();
                     }
                     jQuery(ul).parent('li').children('label').after('<a href="javascript:void(0);" class="woof_childs_list_opener" title="' + woof_lang.list_opener + '" ><span class="' + span_class + '"></span></a>');
-                    //++   
+                    //++
                 } else {
                     if (jQuery(ul).find('input[type=checkbox],input[type=radio]').is(':checked')) {
                         jQuery(ul).show();
@@ -1214,6 +1215,8 @@ function woof_init_ion_sliders() {
                 prefix: jQuery(input).data('slider-prefix'),
                 postfix: jQuery(input).data('slider-postfix'),
                 prettify: true,
+                prettify_separator: ',',
+                prettify_enabled: true,
                 hideMinMax: false,
                 hideFromTo: false,
                 grid: true,

@@ -157,22 +157,28 @@ class WPSEO_Premium_Orphaned_Post_Filter extends WPSEO_Abstract_Post_Filter {
 			return '?';
 		}
 
+		// phpcs:disable WordPress.DB.PreparedSQLPlaceholders.UnsupportedPlaceholder -- Reason: Will be supported in the next WPcs version.
 		if ( $count === null ) {
 			$subquery = WPSEO_Premium_Orphaned_Post_Query::get_orphaned_content_query();
 			$count    = $wpdb->get_var(
 				$wpdb->prepare(
 					"SELECT COUNT(ID)
-						FROM `{$wpdb->posts}`
+						FROM %i
 						WHERE ID IN ( $subquery )
-							AND post_status = 'publish'
-							AND post_password = ''
-							AND post_type = %s",
+							AND %i = 'publish'
+							AND %i = ''
+							AND %i = %s",
+					$wpdb->posts,
+					'post_status',
+					'post_password',
+					'post_type',
 					$this->get_current_post_type()
 				)
 			);
 
 			$count = (int) $count;
 		}
+		// phpcs:enable
 
 		return $count;
 	}

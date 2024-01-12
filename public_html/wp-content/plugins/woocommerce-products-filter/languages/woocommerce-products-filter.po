@@ -767,7 +767,7 @@ msgstr ""
 #: ext/by_sku/views/options.php:15 ext/products_messenger/views/options.php:15
 #: ext/meta_filter/classes/woof_type_meta_filter.php:51
 #: ext/meta_filter/views/tabs_content.php:114
-msgid "drag and drope"
+msgid "drag and drop"
 msgstr ""
 
 #: ext/stat/index.php:208

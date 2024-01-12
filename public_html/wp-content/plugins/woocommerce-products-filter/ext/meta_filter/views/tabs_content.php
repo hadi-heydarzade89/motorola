@@ -109,7 +109,7 @@ if (!defined('ABSPATH'))
                 function woof_meta_print_li($m, $meta_types) {
                     ?>
                     <li class="woof_options_li">
-                        <span class="icon-arrow-combo help_tip2 woof_drag_and_drope" data-tip2="<?php esc_html_e("drag and drope", 'woocommerce-products-filter'); ?>"></span>
+                        <span class="icon-arrow-combo help_tip2 woof_drag_and_drope" data-tip2="<?php esc_html_e("drag and drop", 'woocommerce-products-filter'); ?>"></span>
 
                         <div class="woof_options_item">
                             <input type="text" name="woof_settings[meta_filter][<?php echo esc_attr($m['meta_key']) ?>][meta_key]" value="<?php echo esc_attr($m['meta_key']) ?>" readonly="" class="woof_column_li_option" />

@@ -2748,7 +2748,7 @@ msgstr "Den Cache nicht automatisch bereinigen"
 msgid "do not use shortcodes here in turbo mode"
 msgstr "Verwenden Sie hier keine Shortcodes im Turbomodus"
 
-msgid "drag and drope"
+msgid "drag and drop"
 msgstr "Drag & Drop"
 
 msgid "drawing graphs ..."

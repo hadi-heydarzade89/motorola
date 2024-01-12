@@ -463,9 +463,8 @@ class WOOF_URL_PARSER {
     public function get_request_uri() {
         $uri = false;
         if (isset($_SERVER['REQUEST_URI'])) {
-            $uri = WOOF_HELPER::get_server_var('REQUEST_URI');
+            $uri = sanitize_text_field(urldecode($_SERVER['REQUEST_URI']));
         }
-
         return apply_filters('woof_override_seo_request_uri', $uri);
     }
 
@@ -484,12 +483,17 @@ class WOOF_URL_PARSER {
             $data = array();
         }
         $url = $this->get_url_request();
+		
         $request = array();
         if ($url) {
             $request = $this->parse_url_query($url);
         }
+		
         $data = array_merge($data, $request);
-
+		
+		if(isset($data['calculate_price_range'])) {
+			return $data;
+		}
         if (isset($data['min_price'])) {
             $_GET['min_price'] = floatval($data['min_price']);
         }

@@ -61,7 +61,8 @@ if (!function_exists('woof_draw_mselect_childs')) {
                         } else {
                             $count = $term['count'];
                         }
-                        $count_string = '(' . $count . ')';
+						$count_format = apply_filters('woof_term_count_format', '(%d)',  $tax_slug);
+                        $count_string = sprintf($count_format, $count);
                     }
                     //+++
                     if ($hide_dynamic_empty_pos AND $count == 0) {
@@ -143,7 +144,8 @@ $terms = apply_filters('woof_sort_terms_before_out', $terms, 'mselect');
                     } else {
                         $count = $term['count'];
                     }
-                    $count_string = '(' . $count . ')';
+                    $count_format = apply_filters('woof_term_count_format', '(%d)',  $tax_slug);
+                    $count_string = sprintf($count_format, $count);
                 }
                 //+++
                 if ($hide_dynamic_empty_pos AND $count == 0) {

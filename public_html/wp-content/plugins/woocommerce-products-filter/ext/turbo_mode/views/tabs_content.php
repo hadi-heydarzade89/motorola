@@ -1,9 +1,6 @@
 <?php
 if (!defined('ABSPATH'))
     die('No direct access allowed');
-
-
-
 ?>
 
 <section id="tabs-turbo-mode">
@@ -31,9 +28,6 @@ if (!defined('ABSPATH'))
 
 
                 <div class="woof__alert woof__alert-info"><?php esc_html_e('Boost speed of products filtering. This mode allows to avoid generating big MySQL queries while products filtering on the site front what makes less loading to the server and getting filtering results more quick', 'woocommerce-products-filter') ?>.</div>
-
-
-
 
                 <div class="woof-control-section">
 
@@ -140,7 +134,7 @@ if (!defined('ABSPATH'))
                                 'weekly' => esc_html__('weekly', 'woocommerce-products-filter'),
                                 'twicemonthly' => esc_html__('twicemonthly', 'woocommerce-products-filter'),
                                 'month' => esc_html__('monthly', 'woocommerce-products-filter'),
-								'min1' => esc_html__('test', 'woocommerce-products-filter'),
+								'min1' => esc_html__('min1', 'woocommerce-products-filter'),
                                 'no' => esc_html__('without update', 'woocommerce-products-filter'),
                             );
 

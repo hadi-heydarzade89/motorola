@@ -23,7 +23,7 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
         parent::__construct();
         include_once $this->get_ext_path() . 'classes/cache.php';
         $this->cache = new WoofTextCache();
-        $this->use_post__in = apply_filters('woof_husky_query_post__in', true);
+        $this->use_post__in = apply_filters('woof_husky_query_post__in', false);
 
         //default data fields
         $this->options = $this->data_fields();
@@ -725,7 +725,7 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
             }
 
             foreach ($general_search_terms as $terms) {
-                $sub_sql[] = $wpdb->prepare("({$wpdb->posts}.{$terms} $search_type %s)",  $like);
+                $sub_sql[] = $wpdb->prepare("({$wpdb->posts}.{$terms} $search_type %s)", $like);
             }
             if ($tax_search) {
                 $sub_sql[] = $wpdb->prepare("( trm.name $search_type %s)", $word);
@@ -893,6 +893,9 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
             $args['paged'] = (int) $options['page'];
         }
 
+        if (isset($options['post__in']) && !empty($options['post__in'])) {
+            $args['post__in'] = $options['post__in'];
+        }
 
         $args['meta_query'] = woof()->get_meta_query();
         $tax_relations = apply_filters('woof_main_query_tax_relations', array());
@@ -964,6 +967,15 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
 
         $cache_key = null;
         $res = false;
+        $request = woof()->get_request_data();
+        if (isset($request['onsales']) && $request['onsales'] == 'salesonly') {
+
+            $ids = wc_get_product_ids_on_sale();
+            if (empty($ids)) {
+                $ids = array(-1);
+            }
+            $this->options['post__in'] = $ids;
+        }
 
         $query = $this->init_text_search($search_text, $this->options);
         $products = $query->posts;
@@ -1030,7 +1042,7 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
             ]
         ];
 
-        $result['test'] = WOOF_HELPER::sanitize_array($_GET);
+        //$result['test'] = WOOF_HELPER::sanitize_array($_GET);
 
         die(json_encode($result));
     }

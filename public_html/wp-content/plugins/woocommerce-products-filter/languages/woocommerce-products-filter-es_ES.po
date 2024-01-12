@@ -2642,7 +2642,7 @@ msgstr "mover"
 #: ext/products_messenger/views/options.php:15
 #: ext/query_save/views/options.php:15 views/plugin_options.php:2435
 #: views/plugin_options.php:2594
-msgid "drag and drope"
+msgid "drag and drop"
 msgstr "arrastrar y soltar"
 
 #: views/plugin_options.php:99

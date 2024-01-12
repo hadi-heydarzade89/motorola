@@ -67,7 +67,8 @@ if (!function_exists('woof_draw_checkbox_childs')) {
                         } else {
                             $count = $term['count'];
                         }
-                        $count_string = '<span class="woof_checkbox_count">(' . $count . ')</span>';
+						$count_format = apply_filters('woof_term_count_format', '(%d)', $tax_slug);
+                        $count_string = '<span class="woof_checkbox_count">' . sprintf($count_format, $count) . '</span>';
                     }
                     //+++
                     if ($hide_dynamic_empty_pos AND $count == 0) {
@@ -90,7 +91,15 @@ if (!function_exists('woof_draw_checkbox_childs')) {
                 }
                 ?>
                     <li <?php if (woof()->settings['dispay_in_row'][$tax_slug] AND empty($term['childs'])): ?>style="display: inline-block;"<?php endif; ?>>
-                        <input type="checkbox" <?php if (!$count AND!in_array($term['slug'], $current_request) AND $show_count): ?>disabled=""<?php endif; ?> id="<?php echo esc_attr('woof_' . $term['term_id'] . '_' . $inique_id) ?>" class="woof_checkbox_term woof_checkbox_term_<?php echo esc_attr($term['term_id']) ?>" data-tax="<?php echo esc_attr(woof()->check_slug($tax_slug)) ?>" name="<?php echo esc_attr($term['slug']) ?>" data-term-id="<?php echo esc_attr($term['term_id']) ?>" value="<?php echo esc_attr($term['term_id']) ?>" <?php checked(in_array($term['slug'], $current_request)) ?> /><label class="woof_checkbox_label <?php if (in_array($term['slug'], $current_request)): ?>woof_checkbox_label_selected<?php endif; ?>" for="<?php echo esc_attr('woof_' . $term['term_id'] . '_' . $inique_id) ?>"><?php
+                        <input type="checkbox" <?php if (!$count AND!in_array($term['slug'], $current_request) AND $show_count): ?>
+							   disabled=""<?php endif; ?> id="<?php echo esc_attr('woof_' . $term['term_id'] . '_' . $inique_id) ?>" 
+							   class="woof_checkbox_term woof_checkbox_term_<?php echo esc_attr($term['term_id']) ?>" 
+							   data-tax="<?php echo esc_attr(woof()->check_slug($tax_slug)) ?>" 
+							   name="<?php echo esc_attr($term['slug']) ?>" 
+							   data-term-id="<?php echo esc_attr($term['term_id']) ?>" 
+							   value="<?php echo esc_attr($term['term_id']) ?>" <?php checked(in_array($term['slug'], $current_request)) ?> 
+							   />
+						<label <?php do_action('woof_print_label_attributes', $term) ?>   class="woof_checkbox_label <?php if (in_array($term['slug'], $current_request)): ?>woof_checkbox_label_selected<?php endif; ?>" for="<?php echo esc_attr('woof_' . $term['term_id'] . '_' . $inique_id) ?>"><?php
                     if (has_filter('woof_before_term_name'))
                         echo apply_filters('woof_before_term_name', $term, $taxonomy_info);
                     else
@@ -158,7 +167,8 @@ if (!function_exists('woof_draw_checkbox_childs')) {
                     } else {
                         $count = $term['count'];
                     }
-                    $count_string = '<span class="woof_checkbox_count">(' . $count . ')</span>';
+					$count_format = apply_filters('woof_term_count_format', '(%d)',  $tax_slug);
+                    $count_string = '<span class="woof_checkbox_count">' . sprintf($count_format, $count) . '</span>';
                 }
                 //+++
                 if ($hide_dynamic_empty_pos AND $count == 0) {
@@ -188,8 +198,15 @@ if (!function_exists('woof_draw_checkbox_childs')) {
 
 
             <li class="woof_term_<?php echo esc_attr($term['term_id']) ?> <?php if ($hide_next_term_li): ?>woof_hidden_term<?php endif; ?>" <?php if ($this->settings['dispay_in_row'][$tax_slug] AND empty($term['childs'])): ?>style="display: inline-block;"<?php endif; ?>>
-                <input type="checkbox" <?php if (!$count AND!in_array($term['slug'], $current_request) AND $show_count): ?>disabled=""<?php endif; ?> id="<?php echo esc_attr('woof_' . $term['term_id'] . '_' . $inique_id) ?>" class="woof_checkbox_term woof_checkbox_term_<?php echo esc_attr($term['term_id']) ?>" data-tax="<?php echo esc_attr($this->check_slug($tax_slug)) ?>" name="<?php echo esc_attr($term['slug']) ?>" data-term-id="<?php echo esc_attr($term['term_id']) ?>" value="<?php echo esc_attr($term['term_id']) ?>" <?php checked(in_array($term['slug'], $current_request)) ?> />
-                <label class="woof_checkbox_label <?php if (in_array($term['slug'], $current_request)): ?>woof_checkbox_label_selected<?php endif; ?>" for="<?php echo esc_attr('woof_' . $term['term_id'] . '_' . $inique_id) ?>"><?php
+                <input type="checkbox" <?php if (!$count AND!in_array($term['slug'], $current_request) AND $show_count): ?>
+					   disabled=""<?php endif; ?> 
+					   id="<?php echo esc_attr('woof_' . $term['term_id'] . '_' . $inique_id) ?>" 
+					   class="woof_checkbox_term woof_checkbox_term_<?php echo esc_attr($term['term_id']) ?>" 
+					   data-tax="<?php echo esc_attr($this->check_slug($tax_slug)) ?>" 
+					   name="<?php echo esc_attr($term['slug']) ?>" 
+					   data-term-id="<?php echo esc_attr($term['term_id']) ?>" 
+					   value="<?php echo esc_attr($term['term_id']) ?>" <?php checked(in_array($term['slug'], $current_request)) ?> />
+                <label <?php do_action('woof_print_label_attributes', $term) ?>  class="woof_checkbox_label <?php if (in_array($term['slug'], $current_request)): ?>woof_checkbox_label_selected<?php endif; ?>" for="<?php echo esc_attr('woof_' . $term['term_id'] . '_' . $inique_id) ?>"><?php
             if (has_filter('woof_before_term_name'))
                 echo apply_filters('woof_before_term_name', $term, $taxonomy_info);
             else

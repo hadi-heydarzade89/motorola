@@ -135,7 +135,7 @@ class PWS_SMS {
 
 	public static function tags( WC_Order $order, $data ) {
 
-		$replace = [
+		$tags = [
 			'{order}'      => $order->get_id(),
 			'{first_name}' => $order->get_billing_first_name(),
 			'{last_name}'  => $order->get_billing_last_name(),
@@ -143,7 +143,9 @@ class PWS_SMS {
 			'{total}'      => $order->get_total(),
 		];
 
-		return str_replace( array_keys( $replace ), array_values( $replace ), $data );
+		$tags = apply_filters( 'pws_sms_tags', $tags, $order, $data );
+
+		return str_replace( array_keys( $tags ), array_values( $tags ), $data );
 	}
 
 }

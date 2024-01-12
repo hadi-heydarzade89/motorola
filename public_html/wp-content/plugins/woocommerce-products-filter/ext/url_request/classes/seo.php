@@ -55,9 +55,9 @@ class WOOF_SEO {
 	public function get_no_index_search() {
 
         if (isset(woof()->settings['woof_url_request']['page_index'])) {
-            return woof()->settings['woof_url_request']['page_index'];
+            return !woof()->settings['woof_url_request']['page_index'];
         }
-		return false;
+		return true;
 	}
 	
 	public function check_search_rules() {

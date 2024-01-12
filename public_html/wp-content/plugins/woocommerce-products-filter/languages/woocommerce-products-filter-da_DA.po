@@ -550,7 +550,7 @@ msgstr "Færdig!"
 msgid "drag and drop"
 msgstr "træk og slip"
 
-msgid "drag and drope"
+msgid "drag and drop"
 msgstr "træk og slip"
 
 msgid "drawing graphs ..."

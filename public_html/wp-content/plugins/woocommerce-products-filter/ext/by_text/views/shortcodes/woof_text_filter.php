@@ -7,7 +7,7 @@ $search_id = uniqid('woof_txt_search');
 <div data-css-class="woof_text_search_container" class="woof_text_search_container woof_container woof_container_woof_text <?php echo WOOF_HELPER::generate_container_css_classes('by_text') ?>">
     <div class="woof_container_overlay_item"></div>
     <div class="woof_container_inner">
-        <a href="javascript:void(0);"  class="woof_text_search_go"></a>
+        <a href="javascript:void(0);"  class="woof_text_search_go" rel=nofollow ></a>
         <label class="woof_wcga_label_hide" for="<?php echo esc_attr($search_id) ?>"><?php esc_html_e('Text search', 'woocommerce-products-filter') ?></label>
         <?php
         $woof_text = '';

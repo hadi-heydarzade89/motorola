@@ -219,8 +219,10 @@ class WPSEO_Export_Keywords_Post_Presenter implements WPSEO_Export_Keywords_Pres
 		$scores[] = $rank->get_label();
 
 		foreach ( $keywords as $keyword ) {
-			$rank     = new WPSEO_Rank( $keyword['score'] );
-			$scores[] = $rank->get_label();
+			if ( isset( $keyword['score'] ) ) {
+				$rank     = new WPSEO_Rank( $keyword['score'] );
+				$scores[] = $rank->get_label();
+			}
 		}
 
 		return $scores;

@@ -12,6 +12,7 @@ final class WOOF_EXT_URL_REQUEST extends WOOF_EXT {
     public $seo = null;
 
     public function __construct() {
+		
         //return false;//for dev purposes
         parent::__construct();
 
@@ -21,6 +22,7 @@ final class WOOF_EXT_URL_REQUEST extends WOOF_EXT {
 
         include_once $this->get_ext_path() . 'classes/url_parser.php';
         include_once $this->get_ext_path() . 'classes/seo.php';
+		
         if (isset($this->woof_settings['woof_url_request']['enable'])) {
             $this->enable = $this->woof_settings['woof_url_request']['enable'];
 
@@ -36,6 +38,7 @@ final class WOOF_EXT_URL_REQUEST extends WOOF_EXT {
                 }, 5, 3);
             }
         }
+		
         $this->init();
         add_filter('woocommerce_product_query_tax_query', array($this, 'tax_query'), 10, 2);
         add_filter('wpseo_sitemap_index', array($this, 'sitemap_index'), 10);

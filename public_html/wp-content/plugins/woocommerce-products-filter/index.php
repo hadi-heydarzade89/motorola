@@ -3,18 +3,18 @@
   Plugin Name: HUSKY - Products Filter Professional for WooCommerce
   Plugin URI: https://products-filter.com/
   Description: HUSKY - WooCommerce Products Filter Professional. Flexible, easy and robust products filter for WooCommerce store site!
-  Requires at least: WP 4.9.0
+  Requires at least: WP 5.2.0
   Tested up to: WP 6.4
   Author: realmag777
   Author URI: https://pluginus.net/
-  Version: 1.3.4.5
+  Version: 1.3.5
   Requires PHP: 7.3
   Tags: filter,search,woocommerce,woocommerce filter,woocommerce product filter,woocommerce products filter,products filter,product filter,filter of products,filter for products,filter for woocommerce
   Text Domain: woocommerce-products-filter
   Domain Path: /languages
   Forum URI: https://pluginus.net/support/forum/woof-woocommerce-products-filter/
-  WC requires at least: 6.0
-  WC tested up to: 8.2
+  WC requires at least: 5.2.0
+  WC tested up to: 8.5
  */
 
 //update_option('woof_settings', []);//dev: nearly absolute reset of the plugin settings
@@ -56,9 +56,9 @@ define('WOOF_PATH', plugin_dir_path(__FILE__));
 define('WOOF_LINK', plugin_dir_url(__FILE__));
 define('WOOF_PLUGIN_NAME', plugin_basename(__FILE__));
 define('WOOF_EXT_PATH', WOOF_PATH . 'ext/');
-define('WOOF_VERSION', '1.3.4.5');
+define('WOOF_VERSION', '1.3.5');
 //define('WOOF_VERSION', uniqid('woof-')); //for dev only
-define('WOOF_MIN_WOOCOMMERCE_VERSION', '6.0');
+define('WOOF_MIN_WOOCOMMERCE_VERSION', '5.2');
 //classes
 include WOOF_PATH . 'classes/request.php';
 include WOOF_PATH . 'classes/storage.php';
@@ -74,7 +74,7 @@ include WOOF_PATH . 'lib/alert/index.php';
 //***
 include WOOF_PATH . 'installer/first_settings.php';
 
-//26-10-2023
+//11-01-2024
 final class WOOF {
 
     public $settings = array();
@@ -317,14 +317,17 @@ final class WOOF {
 
         //***
 
-        $data = WOOF_HELPER::safe_parse_str(WOOF_REQUEST::get('formdata'));
+        $data = WOOF_HELPER::sanitize_array(json_decode(stripcslashes(WOOF_REQUEST::get('formdata')),true));
 
         if (isset($data['woof_settings'])) {
             if (!isset($data['_wpnonce_woof']) || !wp_verify_nonce($data['_wpnonce_woof'], 'woof_save_option')) {
                 return;
             }
 
-            $_POST = WOOF_HELPER::sanitize_array($data); //for WC_Admin_Settings
+			//WC_Admin_Settings
+			$allowed_keys_post = array_column($this->get_options(), 'id');
+			$post_data = array_intersect_key($data, array_flip($allowed_keys_post));
+            $_POST = WOOF_HELPER::sanitize_array($post_data); //for WC_Admin_Settings
             WC_Admin_Settings::save_fields($this->get_options());
             //+++
             if (class_exists('SitePress') OR class_exists("Polylang")) {
@@ -881,6 +884,7 @@ final class WOOF {
     }
 
     public function wp_head() {
+		
         if (!defined('DOING_AJAX') && !is_page()) {
             global $wp_query;
             $queried_obj = get_queried_object();
@@ -1119,9 +1123,9 @@ final class WOOF {
         echo apply_filters('woof_wp_load_js', '') . ';'; //vars from another exts
 
         $stxt = ob_get_clean();
-        $stxt .= " function woof_js_after_ajax_done() { jQuery(document).trigger('woof_ajax_done'); "
+        $stxt .=  PHP_EOL . " function woof_js_after_ajax_done() { jQuery(document).trigger('woof_ajax_done'); " . PHP_EOL
                 . (isset($this->settings['js_after_ajax_done']) ? stripcslashes(html_entity_decode($this->settings['js_after_ajax_done'])) : '') .
-                "}";
+                PHP_EOL . "}";
 
         if (!isset($this->settings['use_tooltip'])) {
             $show_tooltip = 1;
@@ -1296,12 +1300,12 @@ final class WOOF {
 
     public function get_taxonomies() {
         static $taxonomies = array();
-        if (empty($taxonomies)) {
+        //if (empty($taxonomies)) {
             $taxonomies = get_object_taxonomies('product', 'objects');
             unset($taxonomies['product_shipping_class']);
             unset($taxonomies['product_type']);
             //unset($taxonomies['product_visibility']);
-        }
+       // }
         return $taxonomies;
     }
 
@@ -1960,6 +1964,7 @@ final class WOOF {
     public function get_request_data($apply_filters = true) {
 
         $data = WOOF_HELPER::sanitize_array($_GET);
+		
         // fix for special simbols
         $woof_text_urlencode = apply_filters('woof_text_urlencode', 0);
         if (isset($data['gclid'])) {
@@ -2983,6 +2988,24 @@ final class WOOF {
 
         //if we are on the category products page, or any another product taxonomy page
         public function get_really_current_term() {
+
+			if (wc_current_theme_is_fse_theme()) {
+				if (!defined('DOING_AJAX') && !is_page()) {
+					global $wp_query;
+					$queried_obj = get_queried_object();
+					if (isset($wp_query->query_vars['taxonomy']) and is_object($queried_obj) and get_class(get_queried_object()) == 'WP_Term' and !isset($request_data['really_curr_tax'])) {
+						if (is_object($queried_obj)) {
+							$this->set_really_current_term($queried_obj);
+						}
+					} elseif (isset($request_data['really_curr_tax'])) {
+						$tmp = explode('-', $request_data['really_curr_tax'], 2);
+						$res = get_term($tmp[0], $tmp[1]);
+						$this->set_really_current_term($res);
+					} else {
+						$this->set_really_current_term();
+					}
+				}				
+			}
             $res = NULL;
             $key = $this->session_rct_key;
             $request = $this->get_request_data(FALSE);

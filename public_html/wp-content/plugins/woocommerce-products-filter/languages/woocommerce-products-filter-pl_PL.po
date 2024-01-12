@@ -3134,7 +3134,7 @@ msgstr "nie czyść automatycznie pamięci podręcznej"
 #: woocommerce-products-filter/ext/query_save/views/options.php:15
 #: woocommerce-products-filter/views/plugin_options.php:2523
 #: woocommerce-products-filter/views/plugin_options.php:2688
-msgid "drag and drope"
+msgid "drag and drop"
 msgstr "przeciągnij i upuść"
 
 #. Text in echo

@@ -94,5 +94,12 @@ return [
         'field' => 'sid',
         'value' => 'flat_white woof_auto_1_columns woof_sid_front_builder'
     ],
+    [
+        'title' => esc_html__('Slug alias', 'woocommerce-products-filter'),
+        'description' => esc_html__("To change the slug alias for this shortcode, please navigate to the plugin settings, select the 'Advanced' tab, and then proceed to 'Slug aliases for front builder forms'", 'woocommerce-products-filter'),
+        'element' => 'xxx',
+        'field' => 'xxx',
+        'value' => 0
+    ],
 ];
 

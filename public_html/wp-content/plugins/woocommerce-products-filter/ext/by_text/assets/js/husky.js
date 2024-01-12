@@ -90,6 +90,7 @@ class HuskyText {
     _search(current_page = 1, ekey = null) {
 
         let _this = this;
+
         let search_text = encodeURIComponent(this.searched_value);
 
 
@@ -151,7 +152,8 @@ class HuskyText {
                 if (Object.keys(woof_really_curr_tax).length > 0) {
                     cur_tax = woof_really_curr_tax.term_id + '-' + woof_really_curr_tax.taxonomy;
                 }
-                search_text = this.searched_value;
+                search_text = decodeURIComponent(this.searched_value);
+		console.log(search_text);
                 let request_data = {
                     action: 'woof_text_search',
                     value: search_text,
@@ -418,6 +420,7 @@ class HuskyText {
             a.addEventListener('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
+
                 _this._search(response.pagination.page - 1, 'Paged');
                 return false;
             });
@@ -433,6 +436,7 @@ class HuskyText {
             a.addEventListener('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
+
                 _this._search(response.pagination.page + 1, 'Paged');
                 return false;
             });

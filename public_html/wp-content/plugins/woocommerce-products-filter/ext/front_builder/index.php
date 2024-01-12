@@ -36,6 +36,9 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
             $this->table .= '_demo';
         }
 
+		//add global  option woof_print_option_advanced
+		add_action('woof_print_option_advanced', array($this, 'global_options'));
+		
         $this->init_request();
 
         add_filter('woof_modify_settings_before_action', [$this, 'woof_modify_settings_before_action'], 10, 2);
@@ -93,7 +96,7 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
         if (isset($atts['name']) AND !empty($atts['name'])) {
             $filter_id = 0;
             $name = $atts['name'];
-
+			
             if (isset($atts['filter_id']) AND !empty(intval($atts['filter_id']))) {
                 if (wp_doing_ajax()) {
                     //in non-ajax mode this interfere into query to below shortcode [woof_products]
@@ -272,13 +275,20 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
                     $filter_id = self::$filter_id = intval($atts['filter_id']);
                     add_filter('woof_filter_search_slug', function ($slug)use ($filter_id) {
                         WOOF_REQUEST::set('woof_form_builder_filter_id', $filter_id);
-                        return $slug . $filter_id;
+                        return $this->get_alias_by_id($filter_id);
                     });
                 }
             }
         } else {
             if (!empty($parts)) {
+				
                 foreach ($parts as $value) {
+					
+
+					$value = $this->get_slug_by_alias($value);
+
+					
+					
                     if (substr($value, 0, strlen($slug)) === $slug) {
                         $d = $this->decompose_search_slug($value);
                         $filter_id = intval($d['filter_id']);
@@ -286,7 +296,8 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
                         if ($filter_id > 0 AND $this->db->get_row("SELECT id FROM {$this->table} WHERE id={$filter_id}", ARRAY_A)) {
                             add_filter('woof_filter_search_slug', function ($slug)use ($filter_id) {
                                 WOOF_REQUEST::set('woof_form_builder_filter_id', $filter_id);
-                                return $slug . $filter_id;
+
+                                return $this->get_alias_by_id($filter_id);
                             });
                         }
 
@@ -583,6 +594,8 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
             $data['options']['hide_terms_count'] = 1;
         }
 
+		$data['swoof_slug'] = $this->get_alias_by_id($data['id']);
+		
         return woof()->render_html($this->get_ext_path() . 'views' . DIRECTORY_SEPARATOR . 'shortcodes' . DIRECTORY_SEPARATOR . 'woof_front_builder.php', $data);
     }
 
@@ -747,6 +760,45 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
 
         $this->db->update($this->table, array('selected' => $fields), array('name' => $name));
     }
+	public function get_alias_by_id($id) {
+        $woof_settings = get_option('woof_settings', []);
+        $slug = 'swoof'; //default slug
+        if (isset($woof_settings['swoof_search_slug']) AND !empty(trim($woof_settings['swoof_search_slug']))) {
+            $slug = trim($woof_settings['swoof_search_slug']);
+        }
+		$slug .= $id;
+		if (isset($woof_settings['slug_alias']) && isset($woof_settings['slug_alias'][$id]) && !empty(trim($woof_settings['slug_alias'][$id])) ) {
+			$slug = trim($woof_settings['slug_alias'][$id]);
+		}
+		return $slug;
+	}
+	
+	public function get_slug_by_alias($alias) {
+		if (empty($alias)) {
+			return $alias;
+		}
+        $woof_settings = get_option('woof_settings', []);
+        $slug = $alias; //default slug
+		if (!isset($woof_settings['slug_alias']) || !is_array($woof_settings['slug_alias'])) {
+			$woof_settings['slug_alias'] = array();
+		}
+		if (array_search($alias, $woof_settings['slug_alias']) !== false) {
+			$slug = 'swoof'; //default slug
+			if (isset($woof_settings['swoof_search_slug']) AND !empty(trim($woof_settings['swoof_search_slug']))) {
+				$slug = trim($woof_settings['swoof_search_slug']);
+			}			
+			$slug .= array_search($alias, $woof_settings['slug_alias']);
+		}
+
+		return $slug;
+	}	
+	
+	public function global_options(){
+		$data['ids'] = $this->db->get_results("SELECT id FROM {$this->table}", ARRAY_A);
+		$data['slug'] = woof()->get_swoof_search_slug();
+		
+		woof()->render_html_e($this->get_ext_path() . 'views' . DIRECTORY_SEPARATOR . 'global_options.php', $data);
+	}
 
     private function install() {
         $charset_collate = '';

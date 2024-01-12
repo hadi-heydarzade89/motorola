@@ -61,7 +61,10 @@ if (!function_exists('woof_draw_label_childs')) {
                             } else {
                                 $count = $term['count'];
                             }
-                            $count_string = '<span>(' . $count . ')</span>';
+							
+							$count_format = apply_filters('woof_term_count_format', '(%d)',  $tax_slug);		
+							$count_string = '<span>' . sprintf($count_format, $count). '</span>';								
+							
                         }
                         //+++
                         if ($hide_dynamic_empty_pos AND $count == 0) {

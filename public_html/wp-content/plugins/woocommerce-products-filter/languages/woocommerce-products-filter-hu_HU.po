@@ -561,7 +561,7 @@ msgstr "Kész!"
 msgid "drag and drop"
 msgstr "fogd és vidd"
 
-msgid "drag and drope"
+msgid "drag and drop"
 msgstr "drag and drop"
 
 msgid "drawing graphs ..."

@@ -6,6 +6,7 @@ $selected_list = esc_html__(implode(',', $selected));
 $tax_only = esc_html__(implode(',', $selected_taxonomies));
 $by_only = esc_html__(implode(',', $selected_nontaxonomies));
 
+
 if (empty($by_only)) {
     $by_only = 'none';
 }
@@ -36,7 +37,7 @@ if (!empty($layout_options)) {
     }
 }
 
-$swoof_slug = woof()->get_swoof_search_slug_opt() . $id;
+//$swoof_slug = woof()->get_swoof_search_slug_opt() . $id;
 
 $name = stripslashes(esc_sql($name)); //!!
 $container_id = 'woof-front-builder-' . $shortcode_id;

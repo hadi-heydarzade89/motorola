@@ -5,7 +5,7 @@ Donate link: https://yun.ir/pws-pro?utm_source=donate
 Requires at least: 6.0.0
 Tested up to: 6.4.2
 Requires PHP: 7.4
-Stable tag: 4.0.3
+Stable tag: 4.0.4
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,9 @@ Ask your questions in [Persian Woocommerce Shipping](https://nabik.net/contact/)
 6. Support Tapin dashboard
 
 == Changelog ==
+= 4.0.4 =
+* Tweak: Add register status option for tapin orders
+* Tweak: Add 'pws_sms_tags' filter for SMS tags
 = 4.0.3 =
 * Tweak: Compatibility with woocommerce 8.4.0
 * Fix: Submit COD orders in Tapin

@@ -39,7 +39,7 @@ final class WOOF_HELPER {
     }
 
     public static function get_server_var($var) {
-        return self::escape($_SERVER[$var]);
+        return self::escape(urldecode($_SERVER[$var]));
     }
 
     public static function safe_parse_str($link) {
@@ -51,9 +51,13 @@ final class WOOF_HELPER {
     }
 
     public static function sanitize_array($array) {
+
         $is_html = array('override_no_products');
         $is_textarea = array('init_only_on', 'custom_css_code', 'js_after_ajax_done');
         $is_js = array();
+		
+		$potential_html = array_intersect_key(woof()->settings,array_flip(['result_count_redraw','order_dropdown_redraw', 'per_page_redraw']));
+		$is_html = array_merge($is_html ,array_filter(array_values($potential_html)));
 
         if (is_array($array) && !empty($array)) {
             foreach ($array as $key => $data) {

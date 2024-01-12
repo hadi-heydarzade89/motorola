@@ -48,7 +48,7 @@ abstract class WOOF_ACF_FILTER_TYPE {
             $show = woof()->settings[$this->meta_key]['show'];
         }
         ?>
-            <span class="icon-arrow-combo help_tip woof_drag_and_drope" data-tip="<?php esc_html_e("drag and drope", 'woocommerce-products-filter'); ?>"></span>
+            <span class="icon-arrow-combo help_tip woof_drag_and_drope" data-tip="<?php esc_html_e("drag and drop", 'woocommerce-products-filter'); ?>"></span>
 
             <strong class="woof_fix1"><?php echo esc_html($this->type_options['title']) . " (" . $this->type_options['group_name'] . ")" ?>:</strong>
 

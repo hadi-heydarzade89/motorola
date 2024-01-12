@@ -1700,7 +1700,7 @@
                                     </div>
 
                                 </div><!--/ .woof-control-section-->
-
+								<?php do_action('woof_print_option_advanced'); ?>
                             </section>
 
                             <?php do_action('woof_print_applications_tabs_content_advanced'); ?>
@@ -2951,7 +2951,7 @@
 function woof_print_tax($key, $tax, $woof_settings) {
     ?>
     <li data-key="<?php echo esc_attr($key) ?>" class="woof_options_li">
-        <span class="icon-arrow-combo help_tip woof_drag_and_drope" data-tip="<?php esc_html_e("drag and drope", 'woocommerce-products-filter'); ?>"></span>
+        <span class="icon-arrow-combo help_tip woof_drag_and_drope" data-tip="<?php esc_html_e("drag and drop", 'woocommerce-products-filter'); ?>"></span>
         <?php
         $opt_group = array(
             'standard' => array(
@@ -3182,7 +3182,7 @@ function woof_print_item_by_key($key, $woof_settings) {
                 }
                 ?>
 
-                <span class="icon-arrow-combo help_tip woof_drag_and_drope" data-tip="<?php esc_html_e("drag and drope", 'woocommerce-products-filter'); ?>"></span>
+                <span class="icon-arrow-combo help_tip woof_drag_and_drope" data-tip="<?php esc_html_e("drag and drop", 'woocommerce-products-filter'); ?>"></span>
 
 
                 <strong class="woof_fix1"><?php esc_html_e("Search by Price", 'woocommerce-products-filter'); ?>:</strong>

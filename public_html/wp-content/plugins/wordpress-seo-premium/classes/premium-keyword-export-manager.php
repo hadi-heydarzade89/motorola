@@ -1,4 +1,4 @@
-<?php
+<?php  // phpcs:ignore Yoast.Files.FileName.InvalidClassFileName -- Reason: this is an old premium file.
 /**
  * WPSEO Premium plugin file.
  *
@@ -11,13 +11,6 @@
  * Manages exporting keywords.
  */
 class WPSEO_Premium_Keyword_Export_Manager implements WPSEO_WordPress_Integration {
-
-	/**
-	 * A WordPress database object.
-	 *
-	 * @var wpdb instance
-	 */
-	protected $wpdb;
 
 	/**
 	 * Registers all hooks to WordPress.
@@ -57,7 +50,6 @@ class WPSEO_Premium_Keyword_Export_Manager implements WPSEO_WordPress_Integratio
 	 * Hooks into the request and returns a CSV file if we're on the right page with the right method and the right capabilities.
 	 */
 	public function keywords_csv_export() {
-		global $wpdb;
 
 		if ( ! $this->is_valid_csv_export_request() || ! current_user_can( 'export' ) ) {
 			return;
@@ -65,8 +57,6 @@ class WPSEO_Premium_Keyword_Export_Manager implements WPSEO_WordPress_Integratio
 
 		// Check if we have a valid nonce.
 		check_admin_referer( 'wpseo-export' );
-
-		$this->wpdb = $wpdb;
 
 		// Clean any content that has been already outputted, for example by other plugins or faulty PHP files.
 		if ( ob_get_contents() ) {
@@ -78,6 +68,8 @@ class WPSEO_Premium_Keyword_Export_Manager implements WPSEO_WordPress_Integratio
 
 		// Set CSV headers and content.
 		$this->set_csv_headers();
+
+		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- This is controlled output.
 		echo $this->get_csv_contents();
 
 		// And exit so we don't start appending HTML to our CSV file.
@@ -160,13 +152,13 @@ class WPSEO_Premium_Keyword_Export_Manager implements WPSEO_WordPress_Integratio
 	protected function prepare_export( WPSEO_Export_Keywords_CSV $builder, array $columns ) {
 		$this->feed_to_builder(
 			$builder,
-			new WPSEO_Export_Keywords_Post_Query( $this->wpdb, $columns, 1000 ),
+			new WPSEO_Export_Keywords_Post_Query( $columns, 1000 ),
 			new WPSEO_Export_Keywords_Post_Presenter( $columns )
 		);
 
 		$this->feed_to_builder(
 			$builder,
-			new WPSEO_Export_Keywords_Term_Query( $this->wpdb, $columns, 1000 ),
+			new WPSEO_Export_Keywords_Term_Query( $columns, 1000 ),
 			new WPSEO_Export_Keywords_Term_Presenter( $columns )
 		);
 	}

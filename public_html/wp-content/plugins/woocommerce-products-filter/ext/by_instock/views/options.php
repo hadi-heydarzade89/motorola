@@ -12,7 +12,7 @@ if (!defined('ABSPATH'))
     }
     ?>
 
-    <span class="icon-arrow-combo help_tip woof_drag_and_drope" data-tip="<?php esc_html_e("drag and drope", 'woocommerce-products-filter'); ?>"></span>
+    <span class="icon-arrow-combo help_tip woof_drag_and_drope" data-tip="<?php esc_html_e("drag and drop", 'woocommerce-products-filter'); ?>"></span>
 
     <strong class="woof_fix1"><?php esc_html_e("In stock", 'woocommerce-products-filter'); ?>:</strong>
 

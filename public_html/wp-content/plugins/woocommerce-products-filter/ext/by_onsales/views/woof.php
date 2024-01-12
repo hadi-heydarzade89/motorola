@@ -28,7 +28,8 @@ if (isset(woof()->settings['by_onsales']) AND woof()->settings['by_onsales']['sh
                 $all_ids = wc_get_product_ids_on_sale();
                 $count = count($all_ids);
             }
-            $count_string = '<span>(' . $count . ')</span>';
+			$count_format = apply_filters('woof_term_count_format', '(%d)',  'by_onsales');		
+            $count_string = '<span>' . sprintf($count_format, $count). '</span>';
         }
         //+++
         if ($hide_dynamic_empty_pos AND $count == 0) {

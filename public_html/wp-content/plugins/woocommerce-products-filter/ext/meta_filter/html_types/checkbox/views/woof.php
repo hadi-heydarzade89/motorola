@@ -41,7 +41,10 @@ if (isset(woof()->settings[$meta_key]) AND woof()->settings[$meta_key]['show']) 
             if ($show_count_dynamic) {
                 $count_data = array();
                 $count = woof()->dynamic_count(array(), $type, $additional_tax, $meta_field);
-                $count_string = '(' . $count . ')';
+				
+				$count_format = apply_filters('woof_term_count_format', '(%d)',  $meta_key);
+				$count_string = sprintf($count_format, $count);
+				
                 if ($count == 0) {
                     $disable = "disabled=''";
                 }

@@ -108,6 +108,17 @@ class PWS_Settings_Tapin extends PWS_Settings {
 					],
 				],
 				[
+					'label'   => 'وضعیت ثبت مرسوله',
+					'name'    => 'register_type',
+					'default' => 1,
+					'type'    => 'select',
+					'options' => [
+						1 => 'آماده به پرینت',
+						2 => 'آماده به ارسال',
+					],
+					'desc'    => 'بسته‌ها در کدام وضعیت در تاپین ثبت شوند؟',
+				],
+				[
 					'label'   => 'درگاه پست',
 					'name'    => 'gateway',
 					'default' => 'tapin',

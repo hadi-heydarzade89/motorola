@@ -242,9 +242,14 @@ class PWS_Status {
 			<button type="button" id="pws-tapin-submit" class="button-primary"
 					title="جهت ثبت سفارشات انتخاب شده در پنل تاپین و دریافت بارکد پستی، کلیک کنید.">ثبت در تاپین
 			</button>
-			<button type="button" id="pws-tapin-ship" class="button-primary"
-					title="پس از ثبت سفارش در پنل، جهت اعلام به پست برای جمع آوری بسته اینجا کلیک کنید.">آماده ارسال
-			</button>
+			<?php
+			if ( PWS()->get_option( 'tapin.register_type', 1 ) == 1 ) {
+				?>
+				<button type="button" id="pws-tapin-ship" class="button-primary"
+						title="پس از ثبت سفارش در پنل، جهت اعلام به پست برای جمع آوری بسته اینجا کلیک کنید.">آماده ارسال
+				</button>
+				<?php
+			} ?>
 		</div>
 		<?php
 	}
@@ -329,10 +334,14 @@ class PWS_Status {
 				</select>
 			</p>
 
-			<button type="button" id="pws-tapin-ship" class="button-primary"
-					title="پس از ثبت سفارش در پنل، جهت اعلام به پست برای جمع آوری بسته اینجا کلیک کنید.">آماده ارسال
-			</button>
 			<?php
+			if ( PWS()->get_option( 'tapin.register_type', 1 ) == 1 ) {
+				?>
+				<button type="button" id="pws-tapin-ship" class="button-primary"
+						title="پس از ثبت سفارش در پنل، جهت اعلام به پست برای جمع آوری بسته اینجا کلیک کنید.">آماده ارسال
+				</button>
+				<?php
+			}
 		}
 
 		?>
@@ -541,7 +550,7 @@ class PWS_Status {
 			}
 
 			$data = apply_filters( 'pws_tapin_submit_order', [
-				'register_type'  => 1,
+				'register_type'  => PWS()->get_option( 'tapin.register_type', 1 ),
 				'shop_id'        => PWS()->get_option( 'tapin.shop_id' ),
 				'address'        => $address,
 				'city_code'      => $city_code,

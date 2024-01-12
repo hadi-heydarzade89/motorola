@@ -460,7 +460,7 @@ msgstr "Dokumentacija"
 msgid "done!"
 msgstr "padaryta!"
 
-msgid "drag and drope"
+msgid "drag and drop"
 msgstr "vilkite ir numeskite"
 
 msgid "drawing graphs ..."
