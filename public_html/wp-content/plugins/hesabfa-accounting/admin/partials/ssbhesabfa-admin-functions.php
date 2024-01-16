@@ -6,7 +6,7 @@ include_once(plugin_dir_path(__DIR__) . 'services/HesabfaWpFaService.php');
 
 /**
  * @class      Ssbhesabfa_Admin_Functions
- * @version    2.0.93
+ * @version    2.0.95
  * @since      1.0.0
  * @package    ssbhesabfa
  * @subpackage ssbhesabfa/admin/functions
@@ -1417,11 +1417,18 @@ class Ssbhesabfa_Admin_Functions
 
                 $post_id = ($id_attribute && $id_attribute > 0) ? $id_attribute : $id_product;
 
-                update_post_meta($post_id, '_stock', $new_quantity);
-                wc_update_product_stock_status($post_id, $new_stock_status);
+//                update_post_meta($post_id, '_stock', $new_quantity);
+//                wc_update_product_stock_status($post_id, $new_stock_status);
 
-                HesabfaLogService::log(array("product ID $id_product-$id_attribute quantity changed. Old quantity: $old_quantity. New quantity: $new_quantity"));
-                $result["newQuantity"] = $new_quantity;
+                $product = wc_get_product( $post_id );
+                if ( $product ) {
+
+                    $product->set_stock_quantity( $new_quantity );
+                    $product->set_stock_status( $new_stock_status );
+                    $product->save();
+                    HesabfaLogService::log(array("product ID $id_product-$id_attribute quantity changed. Old quantity: $old_quantity. New quantity: $new_quantity"));
+                    $result["newQuantity"] = $new_quantity;
+                }
             }
 
             return $result;
@@ -1531,6 +1538,20 @@ class Ssbhesabfa_Admin_Functions
         }
 
         return substr(get_option($id_order), 20);
+    }
+//=========================================================================================================================
+    public function getWoocommerceIdBasedOnHesabfaId($hesabfaId) {
+        global $wpdb;
+        $row = $wpdb->get_row("SELECT `id_ps`, `id_ps_attribute` FROM `" . $wpdb->prefix . "ssbhesabfa` WHERE `id_hesabfa` = $hesabfaId AND `obj_type` = 'product'");
+        return $row;
+    }
+//=========================================================================================================================
+    public function deleteFromConnectionTableBasedOnWoocommercePosts() {
+        global $wpdb;
+        $sql = "DELETE FROM `" . $wpdb->prefix . "ssbhesabfa`
+        WHERE `id_ps` NOT IN (SELECT `ID` FROM `" . $wpdb->prefix . "posts`);
+        ";
+        $wpdb->query($sql);
     }
 //=========================================================================================================================
 }

@@ -90,14 +90,16 @@ export default class SD {
                 this.set_panel(index);
                 break;
             case 1:
+		
                 Helper.message(woof_sd.lang.loading + ' ...', 'warning', -1);
                 this.title_container.innerHTML = ' [' + this.selected_row.container.querySelector('data-table-cell:first-child').innerText + ']';
-
+		var nonce = document.getElementById('woof_sd_nonce').value;
                 Helper.ajax('woof_sd_get_options', {
                     type: this.selected_type,
                     template: this.selected_el_template,
                     id: this.selected_row_id,
-                    change_type: change_type ? 1 : 0
+                    change_type: change_type ? 1 : 0,
+		    sd_nonce: nonce
                 }, data => {
                     if (data === -1) {
                         Helper.message(woof_sd.lang.error1, 'error', 7777);
@@ -222,10 +224,12 @@ export default class SD {
                 }
 
                 this.fetch_controller = new AbortController();
+		var nonce = document.getElementById('woof_sd_nonce').value;
                 Helper.ajax('woof_sd_update_option', {
                     key: this.selected_el_prefix + data.id,
                     value: data.value,
-                    id: this.selected_row_id
+                    id: this.selected_row_id,
+		    sd_nonce: nonce
                 }, data => {
                     Helper.message(woof_sd.lang.saved);
                 }, false, null, this.fetch_controller.signal);
@@ -236,10 +240,12 @@ export default class SD {
             if (data.action) {
                 switch (data.action) {
                     case 'woof_sd_change_title':
+			var nonce = document.getElementById('woof_sd_nonce').value;
 
                         Helper.ajax('woof_sd_change_title', {
                             id: data.id,
-                            title: data.value
+                            title: data.value,
+			    sd_nonce: nonce
                         }, data => {
                             Helper.message(woof_sd.lang.saved);
                             this.redraw_html_types_selects(data.html_types);
@@ -252,8 +258,10 @@ export default class SD {
     }
 
     delete(data) {
+	var nonce = document.getElementById('woof_sd_nonce').value;
         Helper.ajax('woof_sd_delete_row', {
-            id: data.id
+            id: data.id,
+	    sd_nonce: nonce
         }, res => false, false);
     }
 
@@ -282,19 +290,23 @@ export default class SD {
 
     change_template(selected_el_template) {
         this.selected_el_template = selected_el_template;
-
+	
+	var nonce = document.getElementById('woof_sd_nonce').value;
         Helper.ajax('woof_sd_change_template', {
             template: this.selected_el_template,
-            id: this.selected_row_id
+            id: this.selected_row_id,
+	    sd_nonce: nonce
         }, data => this.reload_scene());
     }
 
     change_demo_taxonomy(selected_demo_taxonomy) {
         this.selected_demo_taxonomy = selected_demo_taxonomy;
-
+	var nonce = document.getElementById('woof_sd_nonce').value;
+	
         Helper.ajax('woof_sd_change_demo_taxonomy', {
             taxonomy: this.selected_demo_taxonomy,
-            id: this.selected_row_id
+            id: this.selected_row_id,
+	    sd_nonce: nonce
         }, terms => {
             this.demo_taxonomies_terms = terms;
             this.visor.redraw();

@@ -2,7 +2,7 @@
 
 Contributors:      swissspidy, dd32, wordpressdotorg
 Tested up to:      6.4
-Stable tag:        1.0.8
+Stable tag:        1.0.9
 License:           GPL-2.0+
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 Tags:              performance, i18n, translations, localization, internationalization
@@ -84,6 +84,10 @@ To report a security issue, please visit the [WordPress HackerOne](https://hacke
 
 For the plugin's full changelog, please see [the Releases page on GitHub](https://github.com/swissspidy/performant-translations/releases).
 
+= 1.0.9 =
+
+* Enhancement: Improved compatibility with WPML string translation add-on.
+
 = 1.0.8 =
 
 * Fixed: Added workaround for potential file permission issues.
@@ -130,6 +134,10 @@ For the plugin's full changelog, please see [the Releases page on GitHub](https:
 * Initial release.
 
 == Upgrade Notice ==
+
+= 1.0.9 =
+
+Improves compatibility with WPML string translation add-on.
 
 = 1.0.8 =
 

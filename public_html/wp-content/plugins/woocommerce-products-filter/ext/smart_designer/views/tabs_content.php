@@ -41,7 +41,7 @@ if (!defined('ABSPATH'))
                         <div id="sd-visor"></div>
                     </div>
 
-
+				<input type="hidden" id="woof_sd_nonce"  value="<?php echo wp_create_nonce('woof_sd_nonce'); ?>">	
                 </div><!--/ .woof-control-section-->
 
                 <?php if (woof()->show_notes): ?>

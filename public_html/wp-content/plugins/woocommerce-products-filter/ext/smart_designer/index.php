@@ -255,6 +255,10 @@ final class WOOF_SD extends WOOF_EXT {
         self::$includes['js']['woof_sd_html_items'] = $this->get_ext_link() . 'js/front.js';
 
         add_action('wp_ajax_woof_sd_boot', function () {
+			
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}			
             $rows_raw = $this->get_elements();
             $rows = [];
 
@@ -287,6 +291,9 @@ final class WOOF_SD extends WOOF_EXT {
         });
 
         add_action('wp_ajax_woof_sd_get_options', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}			
             $type = esc_html($_REQUEST['type']);
             $id = intval($_REQUEST['id']);
             $data = [];
@@ -341,12 +348,18 @@ final class WOOF_SD extends WOOF_EXT {
         });
 
         add_action('wp_ajax_woof_sd_change_template', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}				
             $template = esc_html($_REQUEST['template']);
             $id = intval($_REQUEST['id']);
             $this->db->update($this->table, array('template' => $template), array('id' => $id));
         });
 
         add_action('wp_ajax_woof_sd_change_demo_taxonomy', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}			
             $taxonomy = esc_html($_REQUEST['taxonomy']);
             $id = intval($_REQUEST['id']);
             $this->db->update($this->table, array('demo_taxonomy' => $taxonomy), array('id' => $id));
@@ -355,11 +368,17 @@ final class WOOF_SD extends WOOF_EXT {
         });
 
         add_action('wp_ajax_woof_sd_create_element', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}			
             echo json_encode($this->create_element(esc_html($_REQUEST['title'])));
             exit;
         });
 
         add_action('wp_ajax_woof_sd_change_title', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}			
             $id = intval($_REQUEST['id']);
             $title = sanitize_text_field($_REQUEST['title']);
 
@@ -375,6 +394,9 @@ final class WOOF_SD extends WOOF_EXT {
         });
 
         add_action('wp_ajax_woof_sd_update_option', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}			
             $id = intval($_REQUEST['id']);
             $key = sanitize_text_field($_REQUEST['key']);
             $value = sanitize_text_field($_REQUEST['value']);
@@ -388,11 +410,17 @@ final class WOOF_SD extends WOOF_EXT {
         });
 
         add_action('wp_ajax_woof_sd_reset', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}				
             $this->db->update($this->table, array('options' => NULL), array('id' => intval($_REQUEST['id'])));
             exit;
         });
 
         add_action('wp_ajax_woof_sd_delete_row', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}			
             $this->db->delete($this->table, array('id' => intval($_REQUEST['id'])));
             exit;
         });

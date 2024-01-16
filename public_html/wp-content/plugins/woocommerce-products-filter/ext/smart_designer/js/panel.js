@@ -29,6 +29,7 @@ export default class Panel {
                         name: 'click',
                         callback: e => {
 
+			    var nonce = document.getElementById('woof_sd_nonce').value;
                             if (lock) {
                                 return false;
                             }
@@ -47,7 +48,8 @@ export default class Panel {
                             button.innerText = woof_sd.lang.creating + ' ...';
 
                             Helper.ajax('woof_sd_create_element', {
-                                title: woof_sd.lang.new_el
+                                title: woof_sd.lang.new_el,
+				sd_nonce: nonce
                             }, data => {
                                 Helper.cast('woof-sd-create-new-row', {id: data.id, title: data.title, html_types: data.html_types});
                                 lock = false;
@@ -144,8 +146,10 @@ export default class Panel {
                             name: 'click',
                             callback: e => {
                                 if (confirm(woof_sd.lang.sure)) {
+				    var nonce = document.getElementById('woof_sd_nonce').value;
                                     Helper.ajax('woof_sd_reset', {
-                                        id: this.sd.selected_row_id
+                                        id: this.sd.selected_row_id,
+					sd_nonce: nonce
                                     }, data => Helper.cast('woof-sd-set-scene', {scene: 1}), false);
                                 }
                             }
