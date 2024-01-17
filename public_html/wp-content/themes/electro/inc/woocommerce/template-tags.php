@@ -467,7 +467,7 @@ if ( ! function_exists( 'electro_wc_handheld_sidebar' ) ) {
 	 */
 	function electro_wc_handheld_sidebar() {
 		if( apply_filters( 'electro_has_handheld_sidebar', true ) ) {
-			$handheld_sidebar_title = apply_filters( 'electro_handheld_sidebar_title', esc_html__( 'Filters', 'electro' ) );
+			$handheld_sidebar_title = apply_filters( 'electro_handheld_sidebar_title', __( 'Filters', 'electro' ) );
 			$handheld_sidebar_icon  = apply_filters( 'electro_handheld_sidebar_icon', 'fas fa-sliders-h' );
 			?><div class="handheld-sidebar-toggle"><button class="btn sidebar-toggler" type="button"><i class="<?php echo esc_attr( $handheld_sidebar_icon ); ?>"></i><span><?php echo esc_html( $handheld_sidebar_title ); ?></span></button></div><?php
 		}
