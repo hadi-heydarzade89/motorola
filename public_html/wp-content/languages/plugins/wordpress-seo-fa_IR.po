@@ -2,57 +2,66 @@
 # This file is distributed under the same license as the Plugins - Yoast SEO - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-10-09 11:26:01+0000\n"
+"PO-Revision-Date: 2024-01-17 08:14:49+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.0-alpha.9\n"
+"X-Generator: GlotPress/4.0.0-alpha.11\n"
 "Language: fa\n"
 "Project-Id-Version: Plugins - Yoast SEO - Stable (latest release)\n"
 
 #. translators: %1$s expands to an opening strong tag, %2$s expands to a
 #. closing strong tag
-#. translators: %1$s and %2$s expand to opening and closing <strong> tags.
-#: src/presenters/admin/sidebar-presenter.php:54 js/dist/elementor.js:111
-#: js/dist/introductions.js:11 js/dist/new-settings.js:11
-#: js/dist/post-edit.js:11 js/dist/support.js:29
-msgid "Be more efficient in creating titles and meta descriptions with the help of AI. %1$sGet 24/7 support%2$s and boost your website’s visibility."
-msgstr "در ایجاد عناوین و توضیحات متا با کمک هوش مصنوعی کارآمدتر باشید. %1$s پشتیبانی 24/7%2$s را دریافت کنید و دید وب سایت خود را افزایش دهید."
+#: src/presenters/admin/sidebar-presenter.php:71
+msgid "%1$s SAVE 30%% %2$s on your 12 month subscription"
+msgstr "%1$s در اشتراک 12 ماهه خود 30%% %2$s پس انداز کنید"
 
-#: admin/views/licenses.php:155
-msgid "Use AI to create high-quality titles and meta descriptions for posts and pages"
-msgstr "از هوش مصنوعی برای ایجاد عناوین با کیفیت بالا و توضیحات متا برای پست ها و صفحات استفاده کنید"
+#: inc/class-wpseo-admin-bar-menu.php:598
+msgid "-30%"
+msgstr "-30%"
 
-#: admin/views/licenses.php:154
-msgid "Be more efficient in creating content"
-msgstr "در تولید محتوا کارآمدتر باشید"
+#. translators: %1$s is a <br> tag.
+#: inc/class-addon-manager.php:409
+msgid "%1$s Now with 30%% Black Friday Discount!"
+msgstr "%1$s اکنون با 30%% تخفیف جمعه سیاه!"
 
-#: admin/views/class-yoast-feature-toggles.php:206 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:288
+#. translators: %s expands to Yoast SEO Premium
+#: admin/class-premium-upsell-admin-block.php:100
+#: src/presenters/admin/sidebar-presenter.php:80 js/dist/elementor.js:110
+#: js/dist/introductions.js:11 js/dist/new-settings.js:17
+#: js/dist/new-settings.js:333 js/dist/post-edit.js:11 js/dist/support.js:21
+msgid "Claim your 30% off now!"
+msgstr "همین حالا 30 درصد تخفیف خود را دریافت کنید!"
+
+#. translators: %1$s expands to opening span, %2$s expands to closing span
+#: admin/views/licenses.php:138
+msgid "%1$sSALE 30%% OFF!%2$s"
+msgstr "%1$sفروش 30%% تخفیف!%2$s"
+
+#: admin/class-premium-upsell-admin-block.php:116
+#: admin/menu/class-base-menu.php:264 js/dist/block-editor.js:69
+#: js/dist/classic-editor.js:69 js/dist/editor-modules.js:69
+#: js/dist/elementor.js:69 js/dist/externals-components.js:220
+#: js/dist/new-settings.js:332
+msgid "30% OFF"
+msgstr "30% تخفیف"
+
+#: admin/class-premium-upsell-admin-block.php:115 js/dist/block-editor.js:69
+#: js/dist/classic-editor.js:69 js/dist/editor-modules.js:69
+#: js/dist/elementor.js:69 js/dist/externals-components.js:220
+#: js/dist/new-settings.js:332
+msgid "BLACK FRIDAY"
+msgstr "جمعه سیاه"
+
+#: admin/views/class-yoast-feature-toggles.php:206 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:303
 msgid "AI title & description generator"
 msgstr "مولد عنوان و توضیحات هوش مصنوعی"
 
-#: admin/views/class-yoast-feature-toggles.php:209 js/dist/new-settings.js:288
+#: admin/views/class-yoast-feature-toggles.php:209
 msgid "Use the power of Yoast AI to automatically generate compelling titles and descriptions for your posts and pages."
 msgstr "از قدرت هوش مصنوعی یواست برای ایجاد خودکار عناوین و توضیحات قانع کننده برای پست ها و صفحات خود استفاده کنید."
-
-#: admin/class-premium-upsell-admin-block.php:59 js/dist/new-settings.js:306
-msgid "Get guided in routine SEO tasks"
-msgstr "در کارهای معمول سئو راهنمایی بگیرید"
-
-#: admin/class-premium-upsell-admin-block.php:59 js/dist/new-settings.js:306
-msgid "SEO Workouts"
-msgstr "تمرینات سئو"
-
-#: admin/class-premium-upsell-admin-block.php:54 js/dist/new-settings.js:306
-msgid "Quickly create titles & meta descriptions"
-msgstr "به سرعت عناوین و توضیحات متا ایجاد کنید"
-
-#: admin/class-premium-upsell-admin-block.php:54 js/dist/elementor.js:539
-#: js/dist/new-settings.js:306 js/dist/post-edit.js:15
-msgid "Use AI"
-msgstr "از هوش مصنوعی استفاده کنید"
 
 #. translators: %s expands to a unit of time (e.g. 1 day).
 #: src/integrations/blocks/structured-data-blocks.php:237
@@ -94,12 +103,12 @@ msgstr "نوع پست جدید نیست"
 msgid "You've added a new type of content. We recommend that you review the corresponding %1$sSearch appearance settings%2$s."
 msgstr "شما نوع جدیدی از محتوا را اضافه کرده اید. توصیه می کنیم %1$sتنظیمات ظاهری جستجو%2$s مربوطه را مرور کنید."
 
-#: src/integrations/support-integration.php:107 js/dist/support.js:1
+#: src/integrations/support-integration.php:108 js/dist/support.js:2
 msgid "Support"
 msgstr "پشتیبانی"
 
 #: src/integrations/admin/crawl-settings-integration.php:157
-#: js/dist/new-settings.js:28 js/dist/new-settings.js:161
+#: js/dist/new-settings.js:33 js/dist/new-settings.js:172
 msgid "Prevent Google AdsBot from crawling"
 msgstr "جلوگیری از خزیدن Google AdsBot"
 
@@ -127,14 +136,22 @@ msgstr "%1$s / %2$s: عبارات کلیدی برتر"
 msgid "The post type %s could not be indexed because it does not meet indexing requirements."
 msgstr "نوع نوشته %s نمی تواند نمایه شود زیرا الزامات نمایه سازی را ندارد."
 
-#: src/integrations/academy-integration.php:111 js/dist/academy.js:3
+#: src/integrations/academy-integration.php:111 js/dist/academy.js:2
 msgid "Academy"
 msgstr "آکادمی"
 
 #. translators: %1$s is the plugin name, %2$s and %3$s are a link.
-#: inc/class-addon-manager.php:406
+#: inc/class-addon-manager.php:417
 msgid "%1$s can't be updated because your product subscription is expired. %2$sRenew your product subscription%3$s to get updates again and use all the features of %1$s."
 msgstr "%1$s را نمی توان به روز کرد زیرا اشتراک محصول شما منقضی شده است. %2$s اشتراک محصول %3$s خود را تمدید کنید تا دوباره به‌روزرسانی‌ها را دریافت کنید و از همه ویژگی‌های %1$s استفاده کنید."
+
+#. translators: %1$s expands to a strong tag, %2$s expands to the product name,
+#. %3$s expands to a closing strong tag, %4$s expands to an a tag. %5$s expands
+#. to MyYoast, %6$s expands to a closing a tag,  %7$s expands to the product
+#. name
+#: inc/class-addon-manager.php:516
+msgid "%1$s %2$s isn't working as expected %3$s and you are not receiving updates or support! Make sure to %4$s activate your product subscription in %5$s%6$s to unlock all the features of %7$s."
+msgstr "%1$s %2$s آنطور که انتظار می‌رفت کار نمی‌کند %3$s و به‌روزرسانی یا پشتیبانی دریافت نمی‌کنید! مطمئن شوید که %4$s اشتراک محصول خود را در %5$s%6$s فعال کنید تا قفل همه ویژگی‌های %7$s باز شود."
 
 #: src/integrations/admin/crawl-settings-integration.php:297
 msgid "This feature is disabled when your site is not using pretty permalinks."
@@ -156,25 +173,21 @@ msgstr "%1$s: پارامتر URL ثبت نشده حذف شد. %2$s را ببین
 msgid "%1$s: redirect utm variables to #"
 msgstr "%1$s: تغییر مسیر متغیرهای utm به #"
 
-#: admin/views/licenses.php:37
+#: admin/views/licenses.php:40
 msgid "Easily add maps, address finders, and opening hours to your content"
 msgstr "به راحتی نقشه ها، آدرس یاب ها و ساعات کار را به محتوای خود اضافه کنید"
 
-#: admin/views/licenses.php:36
+#: admin/views/licenses.php:39
 msgid "Automatically get technical SEO best practices for local businesses"
 msgstr "به طور خودکار بهترین شیوه های SEO فنی را برای مشاغل محلی دریافت کنید"
 
-#: admin/views/licenses.php:35
-msgid "Attract more local customers to your website and physical store"
-msgstr "مشتریان محلی بیشتری را به وب سایت و فروشگاه فیزیکی خود جذب کنید"
-
-#: admin/views/licenses.php:31
-msgid "Maximize your visibility for local searches"
-msgstr "دید خود را برای جستجوهای محلی به حداکثر برسانید"
-
-#: admin/views/licenses.php:38
+#: admin/views/licenses.php:41
 msgid "Optimize your business for multiple locations"
 msgstr "کسب و کار خود را برای چندین مکان بهینه کنید"
+
+#: admin/views/licenses.php:38
+msgid "Attract more customers to your site and physical store"
+msgstr "مشتریان محلی بیشتری را به وب سایت و فروشگاه فیزیکی خود جذب کنید"
 
 #: src/presenters/admin/indexing-notification-presenter.php:93
 msgid "It looks like you've enabled media pages. We recommend that you help us to re-analyze your site by running the SEO data optimization. "
@@ -188,7 +201,8 @@ msgstr "%s خود را تمام کنید"
 
 #: admin/formatter/class-metabox-formatter.php:190 inc/class-wpseo-rank.php:156
 #: inc/class-wpseo-rank.php:240 js/dist/block-editor.js:1
-#: js/dist/editor-modules.js:1 js/dist/externals-components.js:179
+#: js/dist/editor-modules.js:1 js/dist/elementor.js:1
+#: js/dist/externals-components.js:152
 #: js/dist/frontend-inspector-resources.js:1 js/dist/post-edit.js:1
 #: js/dist/term-edit.js:1
 msgid "Potentially non-inclusive"
@@ -196,195 +210,99 @@ msgstr "بالقوه غیر فراگیر"
 
 #. translators: %1$s and %2$s expand to a span wrap to avoid linebreaks. %3$s
 #. expands to "Yoast SEO Premium".
-#: src/presenters/admin/sidebar-presenter.php:48 js/dist/elementor.js:113
-#: js/dist/introductions.js:13 js/dist/new-settings.js:13
-#: js/dist/post-edit.js:13 js/dist/support.js:31
+#: src/presenters/admin/sidebar-presenter.php:58 js/dist/elementor.js:109
+#: js/dist/introductions.js:10 js/dist/new-settings.js:16
+#: js/dist/post-edit.js:10 js/dist/support.js:20
 msgid "%1$sGet%2$s %3$s"
 msgstr "%1$sدریافت%2$s %3$s"
 
-#: inc/class-wpseo-admin-bar-menu.php:513
-#: inc/class-wpseo-admin-bar-menu.php:572
+#: inc/class-wpseo-admin-bar-menu.php:519
+#: inc/class-wpseo-admin-bar-menu.php:578
 msgid "Learn more SEO"
 msgstr "بیشتر بدانید سئو"
 
-#: inc/class-wpseo-admin-bar-menu.php:562
+#: inc/class-wpseo-admin-bar-menu.php:568
 msgid "Yoast Premium support"
 msgstr "پشتیبانی Yoast پریمیوم"
 
-#: inc/class-wpseo-admin-bar-menu.php:557
+#: inc/class-wpseo-admin-bar-menu.php:563
 msgid "Yoast.com help section"
 msgstr "بخش راهنمای Yoast.com"
 
-#: inc/class-wpseo-admin-bar-menu.php:542
+#: inc/class-wpseo-admin-bar-menu.php:548
 msgid "Help"
 msgstr "راهنما"
 
-#: inc/class-wpseo-admin-bar-menu.php:523
+#: inc/class-wpseo-admin-bar-menu.php:529
 msgid "Write better content"
 msgstr "محتوای بهتری بنویسید"
 
-#: inc/class-wpseo-admin-bar-menu.php:518
+#: inc/class-wpseo-admin-bar-menu.php:524
 msgid "Improve your blog post"
 msgstr "کیفیت نوشته های بلاگ خود را ارتقاء دهید"
 
-#: inc/class-wpseo-admin-bar-menu.php:468
+#: inc/class-wpseo-admin-bar-menu.php:474
 msgid "SEO Tools"
 msgstr "ابزارهای سئو"
 
-#: inc/class-wpseo-admin-bar-menu.php:232
+#: inc/class-wpseo-admin-bar-menu.php:236
 msgid "Focus keyphrase: "
 msgstr "کلیدواژه کانونی: "
 
 #. translators: used in phrases such as "More information about all the Yoast
 #. plugins"
 #. translators: used in phrases such as "Buy all the Yoast plugins"
-#: admin/views/licenses.php:102 admin/views/licenses.php:115
+#: admin/views/licenses.php:106 admin/views/licenses.php:119
 msgid "all the Yoast plugins"
 msgstr "تمام افزونه های های Yoast"
 
-#: inc/class-wpseo-admin-bar-menu.php:567
+#: inc/class-wpseo-admin-bar-menu.php:573
 msgid "WordPress.org support forums"
 msgstr "انجمن های پشتیبانی WordPress.org"
 
-#: inc/class-wpseo-admin-bar-menu.php:226
+#: inc/class-wpseo-admin-bar-menu.php:230
 msgid "not set"
 msgstr "تنظیم نشده"
 
-#. translators: 1: expands to Outrank your competitors even further, 2: expands
-#. to Yoast SEO
-#: admin/views/licenses.php:269
-msgid "%1$s with %2$s extensions"
-msgstr "%1$s با %2$s پسوند"
-
-#: admin/views/licenses.php:264
-msgid "Outrank your competitors even further"
-msgstr "از رقبای خود حتی بیشتر از این بالاتر باشید"
-
-#: admin/views/licenses.php:166
-msgid "Improve your internal linking structure"
-msgstr "ساختار پیوند داخلی خود را بهبود دهید"
-
-#: admin/views/licenses.php:254
-msgid "With 30-day money-back guarantee. No questions asked."
-msgstr "با 30 روز ضمانت بازگشت وجه. هیچ سوالی پرسیده نشد."
-
-#: admin/views/licenses.php:179
-msgid "Check what your Facebook or Twitter post will look like before posting them"
-msgstr "قبل از پست کردن پست فیس بوک یا توییتر خود را بررسی کنید"
-
-#: admin/views/licenses.php:178
-msgid "Stand out on social media"
-msgstr "در رسانه های اجتماعی متمایز شوید"
-
-#: admin/views/licenses.php:175
-msgid "Easily create and manage redirects when you move or delete content"
-msgstr "هنگام جابجایی یا حذف محتوا، به راحتی تغییر مسیرها را ایجاد و مدیریت کنید"
-
-#: admin/views/licenses.php:171
-msgid "Save energy by reducing the crawlability of your site without hurting your rankings!"
-msgstr "صرفه جویی در انرژی با کاهش خزیدن سایت خود بدون آسیب رساندن به رتبه شما!"
-
-#: admin/views/licenses.php:170
-msgid "Reduce your site's carbon footprint"
-msgstr "ردپای کربن سایت خود را کاهش دهید"
-
-#: admin/views/licenses.php:167
-msgid "Get tools that tell you where and how to improve internal linking"
-msgstr "ابزارهایی را دریافت کنید که به شما می گویند کجا و چگونه پیوند داخلی را بهبود دهید"
-
-#: admin/views/licenses.php:163
-msgid "The Yoast SEO workouts guide you through important routine SEO tasks"
-msgstr "تمرینات سئوی یواست شما را در انجام وظایف معمول سئو راهنمایی می کند"
-
-#: admin/views/licenses.php:162
-msgid "Save time on doing SEO"
-msgstr "در انجام سئو در زمان صرفه جویی کنید"
-
-#: admin/views/licenses.php:159
-msgid "Optimize a single post for synonyms and related keyphrases and get extra checks with the Premium SEO analysis"
-msgstr "یک پست واحد را برای مترادف ها و عبارات کلیدی مرتبط بهینه کنید و با تجزیه و تحلیل سئو پریمیوم بررسی های اضافی دریافت کنید."
-
-#: admin/views/licenses.php:158
-msgid "Reach bigger audiences"
-msgstr "به مخاطبان بزرگتری دسترسی پیدا کنید"
-
-#. translators: 1: expands to a opening span tag, 2: expands to a closing span
-#. tag, 3: expands to Yoast SEO Premium
-#: admin/views/licenses.php:140
-msgid "%1$sDrive more traffic to your site%2$s with %3$s"
-msgstr "%1$sبا %3$s ترافیک بیشتری را به سایت خود%2$s هدایت کنید"
-
-#: admin/views/licenses.php:109
-msgid "Drive more traffic with your videos"
-msgstr "با ویدیوهای خود ترافیک بیشتری را هدایت کنید"
-
-#: admin/views/licenses.php:108
-msgid "Reach new customers that live near your business"
-msgstr "به مشتریان جدیدی دست پیدا کنید که در نزدیکی کسب و کار شما زندگی می کنند"
-
 #: admin/views/licenses.php:107
-msgid "Get all 5 Yoast plugins for WordPress with a big discount"
-msgstr "تمام 5 افزونه یواست برای وردپرس را با تخفیف بزرگ دریافت کنید"
-
-#: admin/views/licenses.php:103
 msgid "Cover all your SEO bases"
 msgstr "تمام مبانی سئوی خود را پوشش دهید"
 
-#: admin/views/licenses.php:84
+#: admin/views/licenses.php:87
 msgid "Add global identifiers for variable products"
 msgstr "شناسه های جهانی برای محصولات متغیر اضافه کنید"
 
-#: admin/views/licenses.php:83
-msgid "Increase clicks of Google search with rich results"
-msgstr "با نتایج غنی، کلیک های جستجوی گوگل را افزایش دهید"
-
-#: admin/views/licenses.php:174
-msgid "Prevents 404s"
-msgstr "از 404 ها جلوگیری می کند"
-
-#: admin/views/licenses.php:82
-msgid "Write product pages that rank with the enhanced SEO analysis"
-msgstr "صفحات محصولی بنویسید که با تجزیه و تحلیل سئوی پیشرفته رتبه بندی می شوند"
-
-#: admin/views/licenses.php:77 admin/views/licenses.php:111
+#: admin/views/licenses.php:80 admin/views/licenses.php:115
 msgid "Drive more traffic to your online store"
 msgstr "ترافیک بیشتری را به فروشگاه آنلاین خود هدایت کنید"
 
-#: admin/views/licenses.php:66
-msgid "Get XML news sitemaps"
-msgstr "نقشه های سایت خبری XML را دریافت کنید"
-
-#: admin/views/licenses.php:65
+#: admin/views/licenses.php:68
 msgid "Add all necessary schema.org markup"
 msgstr "تمام نشانه گذاری های لازم schema.org را اضافه کنید"
 
-#: admin/views/licenses.php:64
+#: admin/views/licenses.php:67
 msgid "Ping Google on the publication of a new post"
 msgstr "برای انتشار یک پست جدید پینگ گوگل کنید"
 
-#: admin/views/licenses.php:59 admin/views/licenses.php:110
+#: admin/views/licenses.php:62 admin/views/licenses.php:114
 msgid "Rank higher in Google's news carousel"
 msgstr "رتبه بالاتر در چرخ فلک خبری گوگل"
 
-#: admin/views/licenses.php:52
-msgid "Get XML video sitemaps"
-msgstr "نقشه های سایت ویدیویی XML را دریافت کنید"
-
-#: admin/views/licenses.php:51
+#: admin/views/licenses.php:54
 msgid "Make your videos responsive for all screen sizes"
 msgstr "ویدیوهای خود را برای همه اندازه های صفحه نمایش پاسخگو کنید"
 
-#: admin/views/licenses.php:50
-msgid "Load pages faster that include videos"
-msgstr "صفحاتی را که حاوی ویدئو هستند سریعتر بارگیری کنید"
+#: admin/views/licenses.php:111
+msgid "Get all 5 Yoast plugins for WordPress at a big discount"
+msgstr "تمام 5 افزونه یواست برای وردپرس را با تخفیف بزرگ دریافت کنید"
 
-#: admin/views/licenses.php:49
-msgid "Know that Google discovers your videos"
-msgstr "بدانید که گوگل ویدیوهای شما را کشف می کند"
+#: admin/views/licenses.php:112
+msgid "Reach new customers who live near your business"
+msgstr "به مشتریان جدیدی دست پیدا کنید که در نزدیکی کسب و کار شما زندگی می کنند"
 
-#: admin/views/licenses.php:45
-msgid "Drive more traffic to your videos"
-msgstr "ترافیک بیشتری را به ویدیوهای خود هدایت کنید"
+#: admin/views/licenses.php:285
+msgid "With a 30-day money-back guarantee. No questions asked."
+msgstr "با 30 روز ضمانت بازگشت وجه. هیچ سوالی پرسیده نشد."
 
 #: src/presenters/admin/indexing-notification-presenter.php:90
 msgid "We need to re-analyze some of your SEO data because of a change in the visibility of your taxonomies. Please help us do that by running the SEO data optimization. "
@@ -442,7 +360,13 @@ msgid "Cleaned up %1$d record from %2$s."
 msgid_plural "Cleaned up %1$d records from %2$s."
 msgstr[0] "%1$d رکورد از %2$s پاک شد."
 
-#: admin/views/class-yoast-feature-toggles.php:210 js/dist/new-settings.js:288
+#: src/presenters/admin/sidebar-presenter.php:20 js/dist/elementor.js:110
+#: js/dist/introductions.js:11 js/dist/new-settings.js:17
+#: js/dist/post-edit.js:11 js/dist/support.js:21
+msgid "BLACK FRIDAY - 30% OFF"
+msgstr "30% تخفیف - بلک فرایدی"
+
+#: admin/views/class-yoast-feature-toggles.php:210 js/dist/new-settings.js:303
 msgid "Learn more"
 msgstr "بیشتر بدانید"
 
@@ -457,9 +381,9 @@ msgstr "URL های زیبا برای صفحات جستجو را به فرمت خ
 msgid "These are expert features, so make sure you know what you're doing before removing the parameters. %1$sRead more about how your site can be affected%2$s."
 msgstr "اینها ویژگی های تخصصی هستند، بنابراین قبل از حذف پارامترها مطمئن شوید که چه کاری انجام می دهید. %1$sدرباره نحوه تأثیرگذاری بر سایت شما %2$s بیشتر بخوانید."
 
-#: src/presenters/admin/sidebar-presenter.php:69 js/dist/elementor.js:113
-#: js/dist/introductions.js:13 js/dist/new-settings.js:13
-#: js/dist/post-edit.js:13 js/dist/support.js:31
+#: src/presenters/admin/sidebar-presenter.php:93 js/dist/elementor.js:110
+#: js/dist/introductions.js:11 js/dist/new-settings.js:17
+#: js/dist/post-edit.js:11 js/dist/support.js:21
 msgid "Read reviews from real users"
 msgstr "نظرات کاربران واقعی را بخوانید"
 
@@ -478,17 +402,17 @@ msgid "Prevent search engines from crawling /wp-json/"
 msgstr "جلوگیری از خزیدن موتورهای جستجو /wp-json/"
 
 #: src/integrations/admin/crawl-settings-integration.php:194
-#: js/dist/new-settings.js:161
+#: js/dist/new-settings.js:172
 msgid "Remove unused resources"
 msgstr "منابع بلااستفاده را حذف کنید"
 
 #: admin/metabox/class-metabox-section-inclusive-language.php:28
-#: js/dist/externals-components.js:179
+#: js/dist/externals-components.js:152
 msgid "Inclusive language"
 msgstr "زبان فراگیر"
 
-#: admin/views/class-yoast-feature-toggles.php:91 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:288
+#: admin/views/class-yoast-feature-toggles.php:91 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:303
 msgid "Inclusive language analysis"
 msgstr "تحلیل زبان فراگیر"
 
@@ -523,18 +447,18 @@ msgstr "تجزیه و تحلیل زبان فراگیر را غیرفعال کن�
 msgid "A company name and logo need to be set for structured data to work properly. Since you haven’t set these yet, we are using the site name and logo as default values. %1$sLearn more about the importance of structured data.%2$s"
 msgstr "برای اینکه داده های ساختاریافته به درستی کار کنند، باید نام و لوگوی شرکت تنظیم شود. از آنجایی که هنوز این موارد را تنظیم نکرده‌اید، از نام و نشان‌واره سایت به عنوان مقادیر پیش‌فرض استفاده می‌کنیم. %1$sدرباره اهمیت داده های ساخت یافته بیشتر بیاموزید.%2$s"
 
-#: inc/class-wpseo-admin-bar-menu.php:263
+#: inc/class-wpseo-admin-bar-menu.php:269
 msgid "Front-end SEO inspector"
 msgstr "بررسی سئو در ظاهر"
 
-#: admin/class-yoast-form.php:912
+#: admin/class-yoast-form.php:914
 msgid "Unlock with Premium!"
 msgstr "با نسخه پریمیوم در دسترس است!"
 
 #. translators: %s expands to the post type name.
 #. Translators: %s translates to the Post type in singular form
-#: admin/metabox/class-metabox.php:207 js/dist/block-editor.js:444
-#: js/dist/classic-editor.js:440 js/dist/elementor.js:458
+#: admin/metabox/class-metabox.php:207 js/dist/block-editor.js:510
+#: js/dist/classic-editor.js:510 js/dist/elementor.js:505
 msgid "Timestamp this %s"
 msgstr "این %s را برچسب زمان ( تایم استمپ ) بزنید."
 
@@ -560,17 +484,17 @@ msgid "Search cleanup settings"
 msgstr "تنظیمات پاکسازی جستجو"
 
 #: src/integrations/admin/crawl-settings-integration.php:149
-#: js/dist/new-settings.js:28 js/dist/new-settings.js:161
+#: js/dist/new-settings.js:33 js/dist/new-settings.js:173
 msgid "Filter searches with common spam patterns"
 msgstr "جستجوها را با الگوهای رایج هرزنامه فیلتر کنید"
 
 #: src/integrations/admin/crawl-settings-integration.php:148
-#: js/dist/new-settings.js:28 js/dist/new-settings.js:161
+#: js/dist/new-settings.js:33 js/dist/new-settings.js:173
 msgid "Filter searches with emojis and other special characters"
 msgstr "جستجوها را با ایموجی ها و سایر کاراکترهای خاص فیلتر کنید"
 
 #: src/integrations/admin/crawl-settings-integration.php:147
-#: js/dist/new-settings.js:28 js/dist/new-settings.js:161
+#: js/dist/new-settings.js:33 js/dist/new-settings.js:173
 msgid "Filter search terms"
 msgstr "عبارات جستجو را فیلتر کنید"
 
@@ -590,12 +514,12 @@ msgstr "با پشتیبانی Wordproof تماس بگیرید."
 msgid "Find out how IndexNow can help your site."
 msgstr "در مورد فواید IndexNow برای وبسایت‌تان بیشتر بخوانید. "
 
-#: admin/views/class-yoast-feature-toggles.php:198 js/dist/new-settings.js:290
+#: admin/views/class-yoast-feature-toggles.php:198 js/dist/new-settings.js:307
 msgid "Automatically ping search engines like Bing and Yandex whenever you publish, update or delete a post."
 msgstr "بعد از انتشار، به روز رسانی و یا حذف یک پست به صورت اتوماتیک به موتورهای جستجو مانند Bing و Yandex اطلاع داده می‌شود. "
 
-#: admin/views/class-yoast-feature-toggles.php:195 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:290
+#: admin/views/class-yoast-feature-toggles.php:195 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:307
 msgid "IndexNow"
 msgstr "همین حالا ایندکس کنید. "
 
@@ -657,7 +581,7 @@ msgid "Post authors feeds"
 msgstr "نوشته نویسنده خوراک"
 
 #: src/integrations/admin/crawl-settings-integration.php:137
-#: js/dist/new-settings.js:28 js/dist/new-settings.js:161
+#: js/dist/new-settings.js:33 js/dist/new-settings.js:172
 msgid "Pingback HTTP header"
 msgstr "برگشت پینگ HTTP سربرگ"
 
@@ -792,11 +716,8 @@ msgstr "اگر تا به حال تنظیمات AIOSEO را در 'ظاهر جست
 msgid "Postname permalink"
 msgstr "نامک پیوند یکتا"
 
-#. translators: %s expands to Wincher
 #. translators: %s expands to WordProof
-#: src/integrations/third-party/wincher.php:121
-#: src/integrations/third-party/wordproof-integration-toggle.php:129
-#: src/integrations/third-party/wordproof-integration-toggle.php:151
+#: src/deprecated/src/integrations/third-party/wordproof-integration-toggle.php:114
 msgid "Currently, the %s integration is not available for multisites."
 msgstr "در حال حاضر، ادغام %s برای سایت های شبکه در دسترس نیست."
 
@@ -813,14 +734,9 @@ msgstr "بازکردن تنظیمات"
 msgid "Open authentication"
 msgstr "بازکردن تایید هویت"
 
-#: src/integrations/third-party/wordproof-integration-toggle.php:135
+#: src/deprecated/src/integrations/third-party/wordproof-integration-toggle.php:120
 msgid "The WordProof Timestamp plugin needs to be disabled before you can activate this integration."
 msgstr "قبل از متصل کردن این ارتباط باید افزونه WordProof Timestamp را غیرفعال کنید."
-
-#. translators: %s expands to WordProof
-#: src/integrations/third-party/wordproof-integration-toggle.php:81
-msgid "%1$s can be used to timestamp your privacy page."
-msgstr "با %1$s میتوانید timestamp برای صفحه حریم خصوصی خود ثبت کنید."
 
 #: vendor_prefixed/wordproof/wordpress-sdk/app/Controllers/PostEditorTimestampController.php:142
 msgid "Timestamp this post"
@@ -936,35 +852,30 @@ msgstr "نصب موفقیت آمیز بود"
 msgid "Blog Post"
 msgstr "پست وبلاگ"
 
-#. translators: %s: 'Wincher'
-#: src/integrations/third-party/wincher.php:72
-msgid "The %s integration offers the option to track specific keyphrases and gain insights in their positions."
-msgstr "ادغام %s گزینه‌ای را برای ردیابی عبارات کلیدی خاص و به‌دست آوردن بینش در موقعیت آن‌ها ارائه می‌دهد."
-
 #. translators: %s: expands to 'Yoast SEO Premium'.
-#: src/integrations/admin/workouts-integration.php:296
+#: src/integrations/admin/workouts-integration.php:298
 msgid "Renew %s"
 msgstr "تمدید %s"
 
 #. translators: %s: expands to 'Yoast SEO Premium'.
 #. translators: 1: Yoast WooCommerce SEO
-#: src/integrations/admin/workouts-integration.php:309
+#: src/integrations/admin/workouts-integration.php:311
 #: js/dist/integrations-page.js:13
 msgid "Activate %s"
 msgstr "فعال‌سازی %s"
 
 #. translators: %s: expands to 'Yoast SEO Premium'.
-#: src/integrations/admin/workouts-integration.php:303
+#: src/integrations/admin/workouts-integration.php:305
 msgid "Update %s"
 msgstr "به‌روزرسانی %s"
 
-#: src/integrations/admin/workouts-integration.php:238
+#: src/integrations/admin/workouts-integration.php:239
 msgid "Get help activating your subscription"
 msgstr "برای فعال کردن اشتراک، کمک دریافت کنید"
 
 #. translators: 1: expands to 'Yoast SEO Premium', 2: Link start tag to the
 #. page to update Premium, 3: Link closing tag.
-#: src/integrations/admin/workouts-integration.php:232
+#: src/integrations/admin/workouts-integration.php:233
 msgid "It looks like you’re running an outdated and unactivated version of %1$s, please activate your subscription in %2$sMyYoast%3$s and update to the latest version (at least 17.7) to gain access to our updated workouts section."
 msgstr "به نظر می‌رسد نسخه قدیمی و غیرفعال %1$s را اجرا می‌کنید، لطفاً اشتراک خود را در %2$sMyYoast%3$s فعال کنید و به آخرین نسخه (حداقل 17.7) به‌روزرسانی کنید تا به بخش تمرینات جدید ما دسترسی پیدا کنید. ."
 
@@ -973,18 +884,18 @@ msgid "Renew your subscription"
 msgstr "اشتراک خود را تمدید نمایید."
 
 #. translators: %s: expands to 'Yoast SEO Premium'.
-#: src/integrations/admin/workouts-integration.php:216
+#: src/integrations/admin/workouts-integration.php:217
 msgid "Update to the latest version of %s"
 msgstr "به آخرین نسخه %s بروزرسانی نمایید"
 
 #. translators: %s: expands to 'Yoast SEO Premium'.
-#: src/integrations/admin/workouts-integration.php:228
+#: src/integrations/admin/workouts-integration.php:229
 msgid "Activate your subscription of %s"
 msgstr "اشتراک %s خود را فعال کنید"
 
 #. translators: 1: expands to 'Yoast SEO Premium', 2: Link start tag to the
 #. page to update Premium, 3: Link closing tag.
-#: src/integrations/admin/workouts-integration.php:219
+#: src/integrations/admin/workouts-integration.php:220
 msgid "It looks like you're running an outdated version of %1$s, please %2$supdate to the latest version (at least 17.7)%3$s to gain access to our updated workouts section."
 msgstr "به نظر می‌رسد نسخه قدیمی %1$s را اجرا می‌کنید، لطفاً آن را %2$sبه آخرین نسخه (حداقل ۱۷.۷) به‌روزرسانی کنید%3$s تا به بخش تمرینات به‌روز ما دسترسی پیدا کنید."
 
@@ -1110,8 +1021,8 @@ msgstr "در مورد چگونگی پیوند دادن داخلی بیشتر ب�
 msgid "Get relevant internal linking suggestions — while you’re writing! The link suggestions metabox shows a list of posts on your blog with similar content that might be interesting to link to. "
 msgstr " پیشنهادات مربوط به لینک و پیوند کردن داخلی را در هنگام نوشتن ،دریافت کنید!  پیوندهای پیشنهادی متابوکس لیستی از پست های وبلاگ شما را با محتوای مشابه نشان می دهد که پیوند دادن آنها ممکن است جالب باشد."
 
-#: admin/views/class-yoast-feature-toggles.php:125 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:288
+#: admin/views/class-yoast-feature-toggles.php:125 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:303
 msgid "Link suggestions"
 msgstr "پیشنهادات لینک"
 
@@ -1123,10 +1034,10 @@ msgstr "داده های مربوط به محتوای خود را دقیقاً د
 msgid "Find out how Insights can help you improve your content."
 msgstr " توجه داشته باشید که دیدگاه ها می توانند به بهبود متن شما کمک کنند."
 
-#: admin/views/class-yoast-feature-toggles.php:116 js/dist/block-editor.js:504
-#: js/dist/block-editor.js:534 js/dist/classic-editor.js:494
-#: js/dist/elementor.js:543 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:288
+#: admin/views/class-yoast-feature-toggles.php:116 js/dist/block-editor.js:554
+#: js/dist/block-editor.js:584 js/dist/classic-editor.js:553
+#: js/dist/elementor.js:578 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:303
 msgid "Insights"
 msgstr "تحلیل‌ها"
 
@@ -1161,9 +1072,8 @@ msgstr "تنظیمات ظاهر اجتماعی برای صفحه اصلی شما
 
 #: admin/views/redirects.php:22
 #: src/deprecated/src/integrations/admin/social-templates-integration.php:280
-#: js/dist/elementor.js:109 js/dist/integrations-page.js:3
-#: js/dist/integrations-page.js:23 js/dist/introductions.js:9
-#: js/dist/new-settings.js:9 js/dist/post-edit.js:9 js/dist/support.js:27
+#: js/dist/integrations-page.js:4 js/dist/integrations-page.js:7
+#: js/dist/integrations-page.js:21
 msgid "Unlock with Premium"
 msgstr "بازکردن با پرمیوم"
 
@@ -1173,20 +1083,20 @@ msgid "To unlock this feature please update %s to the latest version."
 msgstr "برای بازکردن قفل این ویژگی، خواهشمندیم %s را به آخرین نگارش به‌روزرسانی کنید."
 
 #: src/deprecated/src/integrations/admin/social-templates-integration.php:255
-#: js/dist/new-settings.js:24 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:32 js/dist/new-settings.js:59
-#: js/dist/new-settings.js:68 js/dist/new-settings.js:98
-#: js/dist/new-settings.js:120 js/dist/new-settings.js:181
-#: js/dist/new-settings.js:197 js/dist/new-settings.js:204
+#: js/dist/new-settings.js:28 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:37 js/dist/new-settings.js:62
+#: js/dist/new-settings.js:77 js/dist/new-settings.js:106
+#: js/dist/new-settings.js:135 js/dist/new-settings.js:201
+#: js/dist/new-settings.js:217 js/dist/new-settings.js:224
 msgid "Social description"
 msgstr "توضیح اجتماعی"
 
 #: src/deprecated/src/integrations/admin/social-templates-integration.php:254
-#: js/dist/new-settings.js:24 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:32 js/dist/new-settings.js:59
-#: js/dist/new-settings.js:68 js/dist/new-settings.js:98
-#: js/dist/new-settings.js:120 js/dist/new-settings.js:181
-#: js/dist/new-settings.js:197 js/dist/new-settings.js:204
+#: js/dist/new-settings.js:28 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:37 js/dist/new-settings.js:62
+#: js/dist/new-settings.js:77 js/dist/new-settings.js:106
+#: js/dist/new-settings.js:135 js/dist/new-settings.js:201
+#: js/dist/new-settings.js:217 js/dist/new-settings.js:224
 msgid "Social title"
 msgstr "عنوان اجتماعی"
 
@@ -1250,8 +1160,9 @@ msgstr "بروزرسانی خودکار بر اساس این تنظیمات به
 
 #: src/presenters/admin/badge-presenter.php:80
 #: src/presenters/admin/badge-presenter.php:87
-#: js/dist/externals/componentsNew.js:136 js/dist/integrations-page.js:3
-#: js/dist/integrations-page.js:23 js/dist/new-settings.js:304
+#: js/dist/externals/componentsNew.js:137 js/dist/integrations-page.js:3
+#: js/dist/integrations-page.js:6 js/dist/integrations-page.js:20
+#: js/dist/new-settings.js:332
 msgid "New"
 msgstr "جدید"
 
@@ -1274,7 +1185,7 @@ msgstr "نوشته نمی‌تواند پیدا شود."
 msgid "We notice that you have installed WPML. To make sure your canonical URLs are set correctly, %1$sinstall and activate the Yoast SEO Multilingual add-on%2$s as well!"
 msgstr "متوجه شدیم شما WPML نصب کرده اید. برای اطمینان از صحیح بودن آدرس‌های canonical، %1$s افزودنی سئوی چندزبانه %2$s را نصب و فعال نمایید!"
 
-#: admin/class-yoast-form.php:1044 js/dist/first-time-configuration.js:13
+#: admin/class-yoast-form.php:1049 js/dist/first-time-configuration.js:19
 msgid "This feature has been disabled since subsites never send tracking data."
 msgstr "این ویژگی زمانی که سایت‌های جانبی داده‌های رهگیری شده را ارسال نکنند غیرفعال است."
 
@@ -1282,7 +1193,7 @@ msgstr "این ویژگی زمانی که سایت‌های جانبی داده�
 msgid "Because of a change in your category base setting, some of your SEO data needs to be reprocessed."
 msgstr "به دلیل تغییر در تنظیمت پایه‌ دسته، برخی از داده‌های سئوی شما به پردازش مجدد نیاز دارد."
 
-#: admin/views/class-yoast-feature-toggles.php:189 js/dist/new-settings.js:288
+#: admin/views/class-yoast-feature-toggles.php:189 js/dist/new-settings.js:303
 msgid "This adds an author byline and reading time estimate to the article’s snippet when shared on Slack."
 msgstr "با اضافه کردن برآورد زمان خواندن ، یک خط نویسنده و نویسنده به قطعه مقاله هنگامی که در Slack به اشتراک گذاشته می شود ، اضافه می شود."
 
@@ -1309,7 +1220,7 @@ msgstr "زمان تقریبی برای خواندن"
 msgid "Enhanced Slack sharing"
 msgstr "اشتراک گذاری شل پیشرفته"
 
-#: inc/class-wpseo-admin-bar-menu.php:434
+#: inc/class-wpseo-admin-bar-menu.php:440
 msgid "Google Rich Results Test"
 msgstr "بررسی نشانه‌گذاری گوگل"
 
@@ -1341,7 +1252,7 @@ msgid "Oops, something has gone wrong and we couldn't complete the optimization 
 msgstr "ظاهراً مشکلی پیش آمد و نتوانستیم بهینه سازی داده های سئو شما را به اتمام برسانیم. لطفاً مجدداً روی دکمه کلیک کنید تا روند بهینه سازی از نو شروع شود."
 
 #: src/presenters/admin/indexing-notification-presenter.php:59
-#: js/dist/first-time-configuration.js:4 js/dist/indexation.js:8
+#: js/dist/first-time-configuration.js:9 js/dist/indexation.js:8
 msgid "Start SEO data optimization"
 msgstr "شروع بهینه سازی اطلاعات"
 
@@ -1353,13 +1264,13 @@ msgstr "درباره مزایای بهینه سازی داده ها از نظر 
 msgid "All permalinks were successfully reset"
 msgstr "تمام پیوند های یکتا با موفقیت به تنظیم اولیه بازگشته اند"
 
-#: src/presenters/admin/indexing-list-item-presenter.php:40
-msgid "You can speed up your site and get insight into your internal linking structure by letting us perform a few optimizations to the way SEO data is stored. If you have a lot of content it might take a while, but trust us, it's worth it."
-msgstr "با اجازه دادن به ما برای بهینه سازی، نحوه ذخیره سازی داده های سئو می توانید سرعت سایت خود را افزایش داده و از ساختار پیوند داخلی خود مطلع شوید. اگر مطالب زیادی دارید ممکن است مدتی طول بکشد ، اما به ما اعتماد کنید ، ارزشش را دارد."
-
 #: src/presenters/admin/indexing-notification-presenter.php:96
 msgid "You can speed up your site and get insight into your internal linking structure by letting us perform a few optimizations to the way SEO data is stored. "
 msgstr "با اجازه دادن به ما برای بهینه سازی نحوه ذخیره سازی داده های سئو می توانید سرعت سایت خود را افزایش داده و از ساختار پیوند داخلی خود مطلع شوید."
+
+#: src/presenters/admin/indexing-list-item-presenter.php:40
+msgid "You can speed up your site and get insight into your internal linking structure by letting us perform a few optimizations to the way SEO data is stored. If you have a lot of content it might take a while, but trust us, it's worth it."
+msgstr "با اجازه دادن به ما برای بهینه سازی، نحوه ذخیره سازی داده های سئو می توانید سرعت سایت خود را افزایش داده و از ساختار پیوند داخلی خود مطلع شوید. اگر مطالب زیادی دارید ممکن است مدتی طول بکشد ، اما به ما اعتماد کنید ، ارزشش را دارد."
 
 #: src/presenters/admin/indexing-list-item-presenter.php:37
 msgid "Optimize SEO Data"
@@ -1377,17 +1288,17 @@ msgid "Something has gone wrong and we couldn't complete the optimization of you
 msgstr "مشکلی پیش آمده است و ما نتوانستیم بهینه سازی داده های شما را انجام دهیم.  %1$sلطفا دوباره تلاش نمایید%2$s"
 
 #. translators: %s expands to a mailto support link.
-#: inc/class-addon-manager.php:854
+#: inc/class-addon-manager.php:868
 msgid "If you still need support and have an active subscription for this product, please email %s."
 msgstr "اگر شما یک اشتراک فعال برای این محصول دارید و نیاز به پشتیبانی پیدا کرده اید لطفا برای ما ایمیل ارسال نمایید %s"
 
-#: inc/class-addon-manager.php:848
+#: inc/class-addon-manager.php:862
 msgid "Need support?"
 msgstr "آیا نیاز به پشتیبانی دارید؟"
 
 #. translators: 1: expands to <a> that refers to the help page, 2: </a> closing
 #. tag.
-#: inc/class-addon-manager.php:851
+#: inc/class-addon-manager.php:865
 msgid "You can probably find an answer to your question in our %1$shelp center%2$s."
 msgstr "شما می توانید جواب سوالات خود را در  %1$sمرکز پشتیبانی %2$s پیدا نمایید."
 
@@ -1492,8 +1403,8 @@ msgid "Allow us to track some data about your site to improve our plugin."
 msgstr "به ما اجازه دهید برخی از داده ها را در مورد سایت خود ردیابی کنیم تا افزونه ما بهبود یابد."
 
 #: admin/views/class-yoast-feature-toggles.php:165
-#: admin/views/class-yoast-feature-toggles.php:166 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:284
+#: admin/views/class-yoast-feature-toggles.php:166 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:300
 msgid "Usage tracking"
 msgstr "رهگیری استفاده"
 
@@ -1712,37 +1623,37 @@ msgstr "تنظیمات %1$s شما:"
 
 #. translators: %1$s expands to Yoast SEO academy
 #. translators: %1$s expands to "Yoast SEO academy".
-#: src/presenters/admin/sidebar-presenter.php:105 js/dist/elementor.js:105
-#: js/dist/introductions.js:5 js/dist/new-settings.js:5 js/dist/post-edit.js:5
-#: js/dist/support.js:23
+#: src/presenters/admin/sidebar-presenter.php:129 js/dist/elementor.js:102
+#: js/dist/introductions.js:3 js/dist/new-settings.js:9 js/dist/post-edit.js:3
+#: js/dist/support.js:13
 msgid "Check out %1$s"
 msgstr "پرداخت نهایی %1$s"
 
-#: src/presenters/admin/sidebar-presenter.php:98 js/dist/elementor.js:103
-#: js/dist/introductions.js:3 js/dist/new-settings.js:3 js/dist/post-edit.js:3
-#: js/dist/support.js:21
+#: src/presenters/admin/sidebar-presenter.php:122 js/dist/elementor.js:101
+#: js/dist/introductions.js:2 js/dist/new-settings.js:8 js/dist/post-edit.js:2
+#: js/dist/support.js:12
 msgid "We have both free and premium online courses to learn everything you need to know about SEO."
 msgstr "ما هم دوره رایگان و هم دوره پولی آنلاین برای یادگیری همه چیزهایی که درباره سئو نیاز دارید داریم."
 
 #. translators: %1$s expands to Yoast SEO academy, which is a clickable link.
 #. translators: %1$s expands to "Yoast SEO" academy, which is a clickable link.
-#: src/presenters/admin/sidebar-presenter.php:96 js/dist/elementor.js:103
-#: js/dist/introductions.js:3 js/dist/new-settings.js:3 js/dist/post-edit.js:3
-#: js/dist/support.js:21
+#: src/presenters/admin/sidebar-presenter.php:120 js/dist/elementor.js:101
+#: js/dist/introductions.js:2 js/dist/new-settings.js:8 js/dist/post-edit.js:2
+#: js/dist/support.js:12
 msgid "Want to learn SEO from Team Yoast? Check out our %1$s!"
 msgstr "نیاز دارید درباره سئو از تیم یوست یاد بگیرید؟ این %1$s! را پرداخت کنید!"
 
-#: src/presenters/admin/sidebar-presenter.php:88 js/dist/elementor.js:103
-#: js/dist/introductions.js:3 js/dist/new-settings.js:3 js/dist/post-edit.js:3
-#: js/dist/support.js:21
+#: src/presenters/admin/sidebar-presenter.php:112 js/dist/elementor.js:101
+#: js/dist/introductions.js:2 js/dist/new-settings.js:8 js/dist/post-edit.js:2
+#: js/dist/support.js:12
 msgid "Learn SEO"
 msgstr "یادگیری سئو"
 
-#: admin/metabox/class-metabox.php:433 js/dist/block-editor.js:553
-#: js/dist/elementor.js:547 js/dist/new-settings.js:24
-#: js/dist/new-settings.js:28 js/dist/new-settings.js:32
-#: js/dist/new-settings.js:59 js/dist/new-settings.js:222
-#: js/dist/structured-data-blocks.js:13
+#: admin/metabox/class-metabox.php:433 js/dist/block-editor.js:605
+#: js/dist/elementor.js:582 js/dist/new-settings.js:28
+#: js/dist/new-settings.js:33 js/dist/new-settings.js:37
+#: js/dist/new-settings.js:62 js/dist/new-settings.js:245
+#: js/dist/structured-data-blocks.js:10
 msgid "Schema"
 msgstr "اسکیما"
 
@@ -1820,11 +1731,13 @@ msgstr "کد تائید گوگل می تواند فقط شامل حروف، اع
 msgid "Baidu verification codes can only contain letters, numbers, hyphens, and underscores. %s"
 msgstr "کد تائید بایدو می تواند فقط شامل حروف، اعداد، خطوط و زیر خط‌ها باشد. %s"
 
-#: admin/views/partial-notifications-template.php:45
+#. translators: Hidden accessibility text.
+#: admin/views/partial-notifications-template.php:47
 msgid "Show this item."
 msgstr "نمایش دادن این مورد."
 
-#: admin/views/partial-notifications-template.php:38
+#. translators: Hidden accessibility text.
+#: admin/views/partial-notifications-template.php:39
 msgid "Hide this item."
 msgstr "پنهان کردن این مورد."
 
@@ -1851,12 +1764,12 @@ msgid_plural "The form contains %1$s errors. %2$s"
 msgstr[0] "فرم شامل %1$s خطاست. %2$s"
 
 #. translators: %s expands to the extension title
-#: admin/views/licenses.php:212 admin/views/licenses.php:323
+#: admin/views/licenses.php:250 admin/views/licenses.php:354
 msgid "Activate %s for your site on MyYoast"
 msgstr "فعال سازی %s برای سایت شما در MyYoast"
 
-#: admin/class-customizer.php:109 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:121
+#: admin/class-customizer.php:109 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:137
 msgid "Show blog page in breadcrumbs"
 msgstr "نمایش برگه بلاگ در ریز آدرس"
 
@@ -1919,7 +1832,7 @@ msgstr "گوگل API خطاهای خزیدن را غیرفعال کرده است
 
 #: src/integrations/admin/first-time-configuration-integration.php:476
 #: src/integrations/admin/first-time-configuration-integration.php:489
-#: js/dist/new-settings.js:292
+#: js/dist/new-settings.js:311
 msgid "Organization"
 msgstr "سازمان"
 
@@ -1973,17 +1886,19 @@ msgstr "آدرس پروفایل اینستاگرام"
 msgid "No JSON object was returned."
 msgstr "هیچ شیء JSON بازگردانده نشد."
 
-#: src/integrations/admin/link-count-columns-integration.php:138
+#. translators: Hidden accessibility text.
+#: src/integrations/admin/link-count-columns-integration.php:139
 msgid "Outgoing internal links"
 msgstr "خارجی کردن لینک‌های داخلی"
 
-#: src/integrations/admin/link-count-columns-integration.php:145
+#. translators: Hidden accessibility text.
+#: src/integrations/admin/link-count-columns-integration.php:147
 msgid "Received internal links"
 msgstr "لینک‌های داخلی دریافت شده"
 
-#: admin/class-meta-columns.php:111 js/dist/block-editor.js:396
-#: js/dist/classic-editor.js:392 js/dist/editor-modules.js:124
-#: js/dist/elementor.js:410 js/dist/wincher-dashboard-widget.js:88
+#: admin/class-meta-columns.php:119 js/dist/block-editor.js:465
+#: js/dist/classic-editor.js:465 js/dist/editor-modules.js:232
+#: js/dist/elementor.js:460 js/dist/wincher-dashboard-widget.js:74
 msgid "Keyphrase"
 msgstr "کلیدواژه"
 
@@ -2036,7 +1951,7 @@ msgid "Import of settings is only supported on servers that run PHP 5.3 or highe
 msgstr "ورودی تنظیمات فقط بر روی سرور های دارای ورژن PHP 5.3 و یا بالاتر قابل انجام هست."
 
 #. translators: %s expands to Yoast SEO Premium
-#: admin/watchers/class-slug-change-watcher.php:225
+#: admin/watchers/class-slug-change-watcher.php:226
 msgid "With %s, you can easily create such redirects."
 msgstr "با %s, شما به راحتی می توانید چنین تغییر مسیرها ایجاد کنید."
 
@@ -2046,7 +1961,7 @@ msgstr "هیچ تنظیماتی پیدا نشد."
 
 #. translators: %s expands to Yoast SEO Premium
 #. translators: %s expands to "Yoast SEO" Premium
-#: admin/class-premium-upsell-admin-block.php:86 js/dist/new-settings.js:306
+#: admin/class-premium-upsell-admin-block.php:125 js/dist/new-settings.js:333
 msgid "Upgrade to %s"
 msgstr "ارتقاء به %s"
 
@@ -2095,35 +2010,24 @@ msgstr "حذف کلیدواژه"
 msgid "Keyphrase:"
 msgstr "کلیدواژه:"
 
-#: admin/class-yoast-form.php:1040 js/dist/first-time-configuration.js:13
+#: admin/class-yoast-form.php:1045 js/dist/first-time-configuration.js:19
 msgid "This feature has been disabled by the network admin."
 msgstr "این ویژگی توسط مدیر شبکه غیرفعال شده است."
-
-#: admin/class-premium-upsell-admin-block.php:58 js/dist/new-settings.js:306
-msgid "Multiple keyphrases"
-msgstr "عبارات کلیدی چندگانه"
 
 #: admin/class-yoast-form.php:749 admin/metabox/class-metabox.php:655
 #: admin/taxonomy/class-taxonomy-fields-presenter.php:133
 msgid "Clear Image"
 msgstr "پاک کردن تصویر"
 
-#: admin/class-meta-columns.php:172
+#. translators: Hidden accessibility text.
+#: admin/class-meta-columns.php:182
 msgid "Focus keyphrase not set."
 msgstr "کلیدواژه کانونی تنظیم نشده است."
 
 #. translators: %s expands to Yoast SEO Premium
-#. translators: %s expands to 'Yoast SEO Premium'.
-#. translators: %s expands to "Yoast SEO" Premium
 #: admin/class-premium-popup.php:81
-#: admin/class-premium-upsell-admin-block.php:69
-#: admin/watchers/class-slug-change-watcher.php:229
-#: src/presenters/admin/sidebar-presenter.php:61 js/dist/block-editor.js:424
-#: js/dist/classic-editor.js:420 js/dist/elementor.js:438
-#: js/dist/externals-components.js:17 js/dist/externals-components.js:133
-#: js/dist/externals-components.js:151 js/dist/externals-components.js:153
-#: js/dist/externals-components.js:155 js/dist/externals-components.js:157
-#: js/dist/new-settings.js:308
+#: admin/watchers/class-slug-change-watcher.php:230
+#: src/presenters/admin/sidebar-presenter.php:84
 msgid "Get %s"
 msgstr "گرفتن %s"
 
@@ -2133,7 +2037,7 @@ msgstr "گرفتن %s"
 msgid "Both %1$s and %2$s manage the SEO of your site. Running two SEO plugins at the same time is detrimental."
 msgstr "هر %1$s و %2$s مدیریت سئوی سایت شما است. استفاده از دو افزونه سئو برای سایت مضر است."
 
-#: inc/class-wpseo-admin-bar-menu.php:874
+#: inc/class-wpseo-admin-bar-menu.php:888
 msgid "There is a new notification."
 msgid_plural "There are new notifications."
 msgstr[0] "یک اعلان جدید وجود دارد."
@@ -2144,24 +2048,24 @@ msgstr "دونقطه"
 
 #. translators: %d expands to the number of minute/minutes.
 #: src/integrations/blocks/structured-data-blocks.php:205
-#: js/dist/structured-data-blocks.js:5 js/dist/structured-data-blocks.js:9
+#: js/dist/structured-data-blocks.js:5 js/dist/structured-data-blocks.js:8
 msgid "%d minute"
 msgid_plural "%d minutes"
 msgstr[0] "%d دقیقه"
 
 #. translators: %d expands to the number of hour/hours.
 #: src/integrations/blocks/structured-data-blocks.php:198
-#: js/dist/structured-data-blocks.js:5 js/dist/structured-data-blocks.js:9
+#: js/dist/structured-data-blocks.js:5 js/dist/structured-data-blocks.js:8
 msgid "%d hour"
 msgid_plural "%d hours"
 msgstr[0] "%d ساعت"
 
 #. translators: %d expands to the number of day/days.
 #: src/integrations/blocks/structured-data-blocks.php:191
-#: js/dist/block-editor.js:105 js/dist/classic-editor.js:101
-#: js/dist/editor-modules.js:51 js/dist/elementor.js:119
-#: js/dist/structured-data-blocks.js:5 js/dist/structured-data-blocks.js:9
-#: js/dist/wincher-dashboard-widget.js:1
+#: js/dist/block-editor.js:215 js/dist/classic-editor.js:215
+#: js/dist/editor-modules.js:202 js/dist/elementor.js:210
+#: js/dist/structured-data-blocks.js:5 js/dist/structured-data-blocks.js:8
+#: js/dist/wincher-dashboard-widget.js:42
 msgid "%d day"
 msgid_plural "%d days"
 msgstr[0] "%d روز"
@@ -2172,11 +2076,11 @@ msgid "%1$s Structured Data Blocks"
 msgstr "%1$s بلوک داده ساختار یافته"
 
 #: src/integrations/blocks/structured-data-blocks.php:256
-#: js/dist/structured-data-blocks.js:5 js/dist/structured-data-blocks.js:13
+#: js/dist/structured-data-blocks.js:5 js/dist/structured-data-blocks.js:10
 msgid "Time needed:"
 msgstr "زمان مورد نیاز:"
 
-#: inc/class-wpseo-admin-bar-menu.php:429
+#: inc/class-wpseo-admin-bar-menu.php:435
 msgid "Check links to this URL"
 msgstr "لینک‌های به این آدرس را بررسی کنید"
 
@@ -2219,7 +2123,7 @@ msgstr "تنظیمات شبکه"
 msgid "Restore Site"
 msgstr "بازیابی سایت"
 
-#: inc/class-wpseo-admin-bar-menu.php:505 js/dist/structured-data-blocks.js:13
+#: inc/class-wpseo-admin-bar-menu.php:511 js/dist/structured-data-blocks.js:10
 msgid "How to"
 msgstr "چگونه"
 
@@ -2237,7 +2141,7 @@ msgid "Current year"
 msgstr "سال جاری"
 
 #: inc/class-wpseo-replace-vars.php:1474 js/dist/externals-redux.js:1
-#: js/dist/new-settings.js:28 js/dist/new-settings.js:278
+#: js/dist/new-settings.js:33 js/dist/new-settings.js:297
 msgid "Tagline"
 msgstr "شعار"
 
@@ -2290,7 +2194,7 @@ msgid "Post type (singular)"
 msgstr "نوع نوشته (تکی)"
 
 #: inc/class-wpseo-replace-vars.php:1486 js/dist/externals-redux.js:1
-#: js/dist/new-settings.js:28
+#: js/dist/new-settings.js:33
 msgid "Separator"
 msgstr "جداکننده"
 
@@ -2350,15 +2254,14 @@ msgstr "عنوان والد"
 msgid "Date"
 msgstr "تاریخ"
 
-#: inc/class-wpseo-admin-bar-menu.php:596 js/dist/block-editor.js:473
-#: js/dist/classic-editor.js:469 js/dist/elementor.js:487
+#: inc/class-wpseo-admin-bar-menu.php:609
 msgid "Get Yoast SEO Premium"
 msgstr "خریدن نسخه پولی افزونه"
 
 #. translators: %1$s expands to the translated name of the post type.
 #. translators: %1$s expands to the translated name of the term.
-#: admin/watchers/class-slug-change-watcher.php:88
-#: admin/watchers/class-slug-change-watcher.php:110
+#: admin/watchers/class-slug-change-watcher.php:89
+#: admin/watchers/class-slug-change-watcher.php:112
 msgid "You just deleted a %1$s."
 msgstr "شما فقط حذف کردید %1$s."
 
@@ -2371,24 +2274,30 @@ msgstr "شما فقط به زباله دان فرستادید %1$s."
 msgid "Page"
 msgstr "برگه"
 
-#: admin/watchers/class-slug-change-watcher.php:223
+#: admin/watchers/class-slug-change-watcher.php:224
 msgid "You should create a redirect to ensure your visitors do not get a 404 error when they click on the no longer working URL."
 msgstr "شما باید مسیریابی را ایجاد کنید تا اطمینان حاصل کنید که بازدیدکنندگان شما خطای 404 را هنگام کلیک بر روی URL دیگر کار نمی کنند."
 
-#: admin/watchers/class-slug-change-watcher.php:218
+#: admin/watchers/class-slug-change-watcher.php:220
 msgid "Make sure you don't miss out on traffic!"
 msgstr "اطمینان حاصل کنید که ترافیک وبسایتتان را از دست نمی‌دهید!"
+
+#: admin/watchers/class-slug-change-watcher.php:90
+#: admin/watchers/class-slug-change-watcher.php:113
+msgid "Search engines and other websites can still send traffic to your deleted content."
+msgstr "موتورهای جستجو و سایر وب سایت ها همچنان می توانند ترافیک را به %1$s %2$s شما ارسال کنند."
 
 #. translators: %s is replaced with the plugin's name.
 #: admin/import/plugins/class-abstract-plugin-importer.php:132
 msgid "Cleanup of %s data failed."
 msgstr "پاکسازی داده ها %s انجام نشد."
 
-#: admin/class-bulk-editor-list-table.php:1003
+#: admin/class-bulk-editor-list-table.php:1004
 msgid "Content Type"
 msgstr "نوع محتوا"
 
-#: admin/class-bulk-editor-list-table.php:411
+#. translators: Hidden accessibility text.
+#: admin/class-bulk-editor-list-table.php:412
 msgid "Filter by content type"
 msgstr "فیلتر براساس نوع محتوا"
 
@@ -2483,13 +2392,6 @@ msgstr "این گزینه داده های متای نوشته مانند عنا�
 msgid "%s did not detect any plugin data from plugins it can import from."
 msgstr "%s داده افزونه ای را شناسایی نکرد که بتواند از آن درون‌ریزی کند."
 
-#: admin/class-premium-upsell-admin-block.php:60 js/dist/block-editor.js:420
-#: js/dist/classic-editor.js:416 js/dist/elementor.js:434
-#: js/dist/externals-components.js:13 js/dist/externals-components.js:129
-#: js/dist/new-settings.js:306
-msgid "24/7 email support"
-msgstr "پشتیبانی ایمیلی 24/7"
-
 #. translators: %s expands to "this author's archives".
 #: admin/views/user-profile.php:14
 msgid "Do not allow search engines to show %s in search results."
@@ -2499,22 +2401,22 @@ msgstr "به موتورهای جستجو اجازه نمایش %s را در نت
 msgid "this author's archives"
 msgstr "بایگانی نویسنده"
 
-#: admin/class-yoast-form.php:937 admin/class-yoast-form.php:977
+#: admin/class-yoast-form.php:942 admin/class-yoast-form.php:982
 #: admin/metabox/class-metabox.php:209
 #: admin/views/class-yoast-feature-toggles.php:160
-#: js/dist/externals/componentsNew.js:778
+#: js/dist/externals/componentsNew.js:782
 msgid "Off"
 msgstr "خاموش"
 
-#. translators: %s expands to a feature's name
-#. translators: %s expands to an integration's name
+#. translators: Hidden accessibility text; %s expands to a feature's name.
+#. translators: Hidden accessibility text; %s expands to an integration's name.
 #: admin/views/tabs/network/features.php:62
 #: admin/views/tabs/network/integrations.php:50
 msgid "Help on: %s"
 msgstr "کمک در: %s"
 
-#: admin/class-yoast-form.php:936 admin/class-yoast-form.php:976
-#: admin/metabox/class-metabox.php:210 js/dist/externals/componentsNew.js:778
+#: admin/class-yoast-form.php:941 admin/class-yoast-form.php:981
+#: admin/metabox/class-metabox.php:210 js/dist/externals/componentsNew.js:782
 msgid "On"
 msgstr "روشن"
 
@@ -2561,14 +2463,12 @@ msgstr "تغییر وضعیت %1$s's نقشه سایت"
 
 #. translators: %s expands to an indexable object's name, like a post type or
 #. taxonomy
-#: admin/class-yoast-form.php:947
+#: admin/class-yoast-form.php:952
 msgid "Show %s in search results?"
 msgstr "نمایش %s در نتایج جستجو؟"
 
 #. translators: %s expands to the post type name.
-#. Translators: %s translates to the Post Label in singular form
-#: admin/metabox/class-metabox.php:175 js/dist/block-editor.js:450
-#: js/dist/classic-editor.js:446 js/dist/elementor.js:464
+#: admin/metabox/class-metabox.php:175
 msgid "Allow search engines to show this %s in search results?"
 msgstr "به موتورهای جستجو اجازه نمایش این %s را می دهید؟"
 
@@ -2583,8 +2483,8 @@ msgid "Should search engines follow links on this %1$s?"
 msgstr "موتورهای جستجو باید دنبال کنند پیوندهای موجود در این %1$s؟"
 
 #: admin/views/class-yoast-feature-toggles.php:75
-#: js/dist/externals-components.js:160 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:288
+#: js/dist/externals-components.js:132 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:303
 msgid "SEO analysis"
 msgstr "آنلایز سئو"
 
@@ -2593,8 +2493,8 @@ msgid "The text link counter helps you improve your site structure."
 msgstr "شمارنده پیوند متن به شما برای بهبود ساختار سایت کمک می کند."
 
 #: admin/formatter/class-metabox-formatter.php:239
-#: js/dist/editor-modules.js:154 js/dist/externals-components.js:17
-#: js/dist/externals/analysisReport.js:35
+#: js/dist/editor-modules.js:262 js/dist/externals-components.js:5
+#: js/dist/externals/analysisReport.js:36
 msgid "Good results"
 msgstr "نتایج خوب"
 
@@ -2602,7 +2502,7 @@ msgstr "نتایج خوب"
 msgid "The SEO analysis offers suggestions to improve the SEO of your text."
 msgstr "آنلایز سئو پیشنهاداتی برای بهبود سئوی متن شماست."
 
-#: admin/views/class-yoast-feature-toggles.php:85 js/dist/new-settings.js:288
+#: admin/views/class-yoast-feature-toggles.php:85 js/dist/new-settings.js:303
 msgid "The readability analysis offers suggestions to improve the structure and style of your text."
 msgstr "تجزیه و تحلیل خواندن پیشنهاداتی برای بهبود ساختار و سبک ارائه می دهد."
 
@@ -2612,19 +2512,10 @@ msgstr "بفهمید چگونه شمارنده پیوند متن می تواند
 
 #. translators: %s: 'Semrush'
 #. translators: %s: Algolia.
-#. translators: %s: 'Wincher'
-#. translators: %s expands to WordProof
 #: admin/views/class-yoast-integration-toggles.php:67
 #: admin/views/class-yoast-integration-toggles.php:78
-#: src/integrations/third-party/wincher.php:68
-#: src/integrations/third-party/wordproof-integration-toggle.php:77
 msgid "%s integration"
 msgstr "ادغام %s"
-
-#. translators: %s expands to WordProof
-#: src/integrations/third-party/wordproof-integration-toggle.php:85
-msgid "Read more about how %s works."
-msgstr "اطلاعات بیشتذ درباره چگونگی کارکرد %s."
 
 #: admin/views/class-yoast-feature-toggles.php:102
 msgid "The cornerstone content feature lets you to mark and filter cornerstone content on your website."
@@ -2656,7 +2547,7 @@ msgid "Latest blog posts on %1$s"
 msgstr "نوشته های اخیر در %1$s"
 
 #: admin/formatter/class-metabox-formatter.php:241
-#: js/dist/externals/analysisReport.js:17
+#: js/dist/externals/analysisReport.js:18
 msgid "Remove highlight from the text"
 msgstr "حذف برجسته کردن از متن"
 
@@ -2665,19 +2556,19 @@ msgid "First-time SEO configuration"
 msgstr "پیکربندی سئو برای اولین بار"
 
 #: admin/formatter/class-metabox-formatter.php:240
-#: js/dist/externals/analysisReport.js:17
+#: js/dist/externals/analysisReport.js:18
 msgid "Highlight this result in the text"
 msgstr "این نتیجه را در متن برجسته کنید"
 
 #: admin/formatter/class-metabox-formatter.php:238
-#: js/dist/editor-modules.js:154 js/dist/externals-components.js:17
-#: js/dist/externals/analysisReport.js:35
+#: js/dist/editor-modules.js:262 js/dist/externals-components.js:5
+#: js/dist/externals/analysisReport.js:36
 msgid "Considerations"
 msgstr "ملاحظات"
 
 #: admin/formatter/class-metabox-formatter.php:235
-#: js/dist/editor-modules.js:154 js/dist/externals-components.js:17
-#: js/dist/externals/analysisReport.js:35
+#: js/dist/editor-modules.js:262 js/dist/externals-components.js:5
+#: js/dist/externals/analysisReport.js:36
 msgid "Errors"
 msgstr "خطاها"
 
@@ -2719,7 +2610,7 @@ msgstr "ذخیره تنظیمات به %s"
 msgid "%s file"
 msgstr "پرونده %s"
 
-#. translators: %1$s expands to the dependency name.
+#. translators: Hidden accessibility text; %1$s expands to the dependency name
 #: admin/class-suggested-plugins.php:136
 msgid "More information about %1$s"
 msgstr "اطلاعات بیشتر درباره %1$s"
@@ -2728,19 +2619,27 @@ msgstr "اطلاعات بیشتر درباره %1$s"
 msgid "Old Configuration Wizard"
 msgstr "برنامه پیکربندی قدیمی"
 
-#: admin/class-admin-utils.php:78 admin/class-premium-popup.php:82
-#: admin/class-premium-upsell-admin-block.php:70 admin/class-yoast-form.php:912
-#: admin/formatter/class-metabox-formatter.php:243 admin/views/licenses.php:125
-#: admin/watchers/class-slug-change-watcher.php:230
-#: src/integrations/admin/workouts-integration.php:210
-#: src/integrations/admin/workouts-integration.php:239
-#: src/presenters/admin/help-link-presenter.php:75 js/dist/academy.js:6
-#: js/dist/block-editor.js:553 js/dist/elementor.js:109
-#: js/dist/externals/componentsNew.js:136 js/dist/externals/helpers.js:18
-#: js/dist/integrations-page.js:3 js/dist/integrations-page.js:15
-#: js/dist/integrations-page.js:23 js/dist/introductions.js:9
-#: js/dist/new-settings.js:9 js/dist/post-edit.js:9 js/dist/support.js:1
-#: js/dist/support.js:27
+#. translators: Hidden accessibility text.
+#: admin/class-admin-utils.php:79 admin/class-premium-popup.php:83
+#: admin/class-premium-upsell-admin-block.php:102
+#: admin/class-yoast-form.php:916
+#: admin/formatter/class-metabox-formatter.php:244 admin/views/licenses.php:130
+#: admin/watchers/class-slug-change-watcher.php:232
+#: src/integrations/admin/workouts-integration.php:211
+#: src/integrations/admin/workouts-integration.php:241
+#: src/presenters/admin/help-link-presenter.php:76 js/dist/academy.js:9
+#: js/dist/block-editor.js:604 js/dist/block-editor.js:605
+#: js/dist/elementor.js:105 js/dist/elementor.js:108
+#: js/dist/externals-components.js:71 js/dist/externals/componentsNew.js:137
+#: js/dist/externals/helpers.js:19 js/dist/integrations-page.js:3
+#: js/dist/integrations-page.js:4 js/dist/integrations-page.js:5
+#: js/dist/integrations-page.js:6 js/dist/integrations-page.js:7
+#: js/dist/integrations-page.js:8 js/dist/integrations-page.js:15
+#: js/dist/integrations-page.js:20 js/dist/integrations-page.js:21
+#: js/dist/integrations-page.js:22 js/dist/introductions.js:6
+#: js/dist/introductions.js:9 js/dist/new-settings.js:12
+#: js/dist/new-settings.js:15 js/dist/post-edit.js:6 js/dist/post-edit.js:9
+#: js/dist/support.js:2 js/dist/support.js:16 js/dist/support.js:19
 msgid "(Opens in a new browser tab)"
 msgstr "(در یک برگه جدید مرورگر باز میکند)"
 
@@ -2751,7 +2650,7 @@ msgid "Mark the most important %1$s as 'cornerstone content' to improve your sit
 msgstr "علامتگذاری مهمترین %1$s به عنوان 'محتوای شاخص (cornerstone content)' جهت بهبود ساختار سایت تان. %2$sدر مورد محتوای شاخص یا cornerstone content بیشتر بیاموزید%3$s."
 
 #. translators: %s expands to the extension title
-#: admin/views/licenses.php:199 admin/views/licenses.php:309
+#: admin/views/licenses.php:237 admin/views/licenses.php:340
 msgid "Manage your %s subscription on MyYoast"
 msgstr "مدیریت %s اشتراک شما در MyYoast"
 
@@ -2773,24 +2672,25 @@ msgstr "نوشته‌ها %1$sبدون%2$s کلمه کلیدی اصلی"
 msgid "Read more like this on our SEO blog"
 msgstr "ادامه مطلب مثل این در بلاگ سئوی ما"
 
-#: admin/views/licenses.php:207 admin/views/licenses.php:318
+#: admin/views/licenses.php:245 admin/views/licenses.php:349
 msgid "Not activated"
 msgstr "فعال نشد"
 
-#: admin/views/licenses.php:194 admin/views/licenses.php:304
+#: admin/views/licenses.php:232 admin/views/licenses.php:335
 msgid "Activated"
 msgstr "فعال شد"
 
-#: admin/class-meta-columns.php:273
+#: admin/class-meta-columns.php:285
 msgid "All Readability Scores"
 msgstr "تمام امتیاز خوانایی"
 
-#: admin/class-meta-columns.php:269
+#. translators: Hidden accessibility text.
+#: admin/class-meta-columns.php:281
 msgid "Filter by Readability Score"
 msgstr "مرتب‌سازی براساس امتیاز خوانایی"
 
 #. translators: %1$s expands to Yoast
-#: src/presenters/admin/sidebar-presenter.php:28
+#: src/presenters/admin/sidebar-presenter.php:31
 msgid "%1$s recommendations for you"
 msgstr "%1$s توصیه شده برای شما"
 
@@ -2805,12 +2705,12 @@ msgstr "خوانایی: %s"
 msgid "Request method %1$s is not valid."
 msgstr "روش درخواست %1$s معتبر نیست."
 
-#: admin/views/class-yoast-feature-toggles.php:108 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:288
+#: admin/views/class-yoast-feature-toggles.php:108 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:303
 msgid "Text link counter"
 msgstr "شمارنده پیوند متن"
 
-#: src/integrations/admin/link-count-columns-integration.php:144
+#: src/integrations/admin/link-count-columns-integration.php:145
 msgid "Number of internal links linking to this post. See \"Yoast Columns\" text in the help tab for more info."
 msgstr "تعداد پیوندهای داخلی به این نوشته. ببینید \"ستون‌های Yoast\" در زبانه کمک برای اطلاعات بیشتر."
 
@@ -2823,29 +2723,23 @@ msgstr "تعداد پیوندهای داخلی در این نوشته. ببین�
 msgid "%s Columns"
 msgstr "%s ستون‌ها"
 
-#: admin/class-meta-columns.php:104
-#: admin/taxonomy/class-taxonomy-columns.php:91
+#: admin/class-meta-columns.php:109 admin/class-meta-columns.php:111
+#: admin/taxonomy/class-taxonomy-columns.php:92
+#: admin/taxonomy/class-taxonomy-columns.php:93
 msgid "Readability score"
 msgstr "نمره خوانایی"
 
 #: admin/filters/class-cornerstone-filter.php:87
 #: admin/views/class-yoast-feature-toggles.php:100
-#: js/dist/externals-components.js:20 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:288
+#: js/dist/externals-components.js:70 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:303
 msgid "Cornerstone content"
 msgstr "محتوای شاخص"
 
 #: admin/class-yoast-form.php:141 admin/class-yoast-form.php:146
-#: js/dist/first-time-configuration.js:4 js/dist/new-settings.js:15
+#: js/dist/first-time-configuration.js:9 js/dist/new-settings.js:18
 msgid "Save changes"
 msgstr "ذخیره تغییرات"
-
-#: admin/class-premium-upsell-admin-block.php:56 js/dist/block-editor.js:418
-#: js/dist/classic-editor.js:414 js/dist/elementor.js:432
-#: js/dist/externals-components.js:11 js/dist/externals-components.js:127
-#: js/dist/new-settings.js:306
-msgid "Superfast internal linking suggestions"
-msgstr "پیشنهادات پیوند‌دهی داخلی فوق العاده سریع"
 
 #. translators: %2$s expands to 'RS Head Cleaner' plugin name of possibly
 #. conflicting plugin with regard to differentiating output between search
@@ -2854,36 +2748,15 @@ msgstr "پیشنهادات پیوند‌دهی داخلی فوق العاده س
 msgid "The plugin %2$s changes your site's output and in doing that differentiates between search engines and normal users, a process that's called cloaking. We highly recommend that you disable it."
 msgstr "پلاگین %2$s خروجی سایت شما را تغییر داده و در انجام این تفاوت بین موتورهای جستجو و کاربران عادی، فرایندی است که به نام پنهان سازی می شود. ما به شدت توصیه می کنیم که آن را غیر فعال کنید."
 
-#: admin/class-premium-popup.php:88 js/dist/block-editor.js:424
-#: js/dist/classic-editor.js:420 js/dist/elementor.js:438
-#: js/dist/externals-components.js:17 js/dist/externals-components.js:133
+#: admin/class-premium-popup.php:89 js/dist/block-editor.js:440
+#: js/dist/block-editor.js:506 js/dist/classic-editor.js:440
+#: js/dist/classic-editor.js:506 js/dist/elementor.js:435
+#: js/dist/elementor.js:501 js/dist/externals-components.js:5
+#: js/dist/externals-components.js:113
 msgid "1 year free support and updates included!"
 msgstr "شامل 1 سال بروز رسانی و ارتقاء رایگان!"
 
-#: admin/class-premium-upsell-admin-block.php:58 js/dist/new-settings.js:306
-msgid "Increase your SEO reach"
-msgstr "افزایش رتبه سئوی شما"
-
-#: admin/class-premium-upsell-admin-block.php:55 js/dist/new-settings.js:306
-msgid "No more dead links"
-msgstr "بدون پیوندهای شکسته (Dead Links)"
-
-#: admin/class-premium-upsell-admin-block.php:55 js/dist/new-settings.js:306
-msgid "Easy redirect manager"
-msgstr "مدیریت تغییر مسیر (Redirect) آسان"
-
-#: admin/class-premium-upsell-admin-block.php:57 js/dist/new-settings.js:306
-msgid "Social media preview"
-msgstr "پیش‌نمایش رسانه‌های اجتماعی"
-
-#: admin/class-premium-upsell-admin-block.php:57 js/dist/new-settings.js:306
-msgid "Facebook & Twitter"
-msgstr "فیسبوک و توییتر"
-
-#: admin/class-premium-upsell-admin-block.php:61 js/dist/block-editor.js:420
-#: js/dist/classic-editor.js:416 js/dist/elementor.js:434
-#: js/dist/externals-components.js:13 js/dist/externals-components.js:129
-#: js/dist/new-settings.js:306
+#: admin/class-premium-upsell-admin-block.php:92
 msgid "No ads!"
 msgstr "بدون تبلیغات!"
 
@@ -2895,11 +2768,11 @@ msgstr "برای دیدن محتوای جدول پیمایش (اسکرول) نم
 msgid "No new notifications."
 msgstr "اعلان جدیدی وجود ندارد."
 
-#: admin/class-bulk-editor-list-table.php:892
+#: admin/class-bulk-editor-list-table.php:893
 msgid "Save all"
 msgstr "ذخیره همه"
 
-#: admin/class-bulk-editor-list-table.php:891
+#: admin/class-bulk-editor-list-table.php:892
 msgid "Save"
 msgstr "ذخیره"
 
@@ -2909,11 +2782,11 @@ msgid "%1$s, Author at %2$s"
 msgstr "%1$s, نویسنده در %2$s"
 
 #: admin/formatter/class-metabox-formatter.php:242
-#: js/dist/externals/analysis.js:332 js/dist/externals/analysisReport.js:17
+#: js/dist/externals/analysis.js:283 js/dist/externals/analysisReport.js:18
 msgid "Marks are disabled in current view"
 msgstr "علائم در نمای جاری غیرفعال هستند"
 
-#: inc/class-wpseo-replace-vars.php:1515 js/dist/first-time-configuration.js:6
+#: inc/class-wpseo-replace-vars.php:1515 js/dist/first-time-configuration.js:13
 msgid "Name"
 msgstr "نام"
 
@@ -2944,7 +2817,7 @@ msgstr "لطفا این پیام را دیگر نشان نده"
 msgid "Warning: the variable %1$s cannot be used in this template. See the %2$s for more info."
 msgstr "توجه: متغیر %1$s نمی تواند در این پوسته استفاده شود. برای اطلاعات بیشتر به بخش  %2$s  راهنما مراجعه کنید."
 
-#: admin/class-bulk-editor-list-table.php:799
+#: admin/class-bulk-editor-list-table.php:800
 msgid "(no title)"
 msgstr "(بدون عنوان)"
 
@@ -2959,31 +2832,27 @@ msgstr "به هرحال، آیا می دانید ما یک نسخه %1$s پول�
 msgid "The %1$s admin bar menu contains useful links to third-party tools for analyzing pages and makes it easy to see if you have new notifications."
 msgstr "نوار %1$s منوی مدیریت شامل لینک‌های مفیدی از ابزارها برای آنالیز برگه‌ها و دیدن اطلاعیه‌های جدید است."
 
-#: admin/views/class-yoast-feature-toggles.php:147 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:288 js/dist/new-settings.js:289
+#: admin/views/class-yoast-feature-toggles.php:147 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:303 js/dist/new-settings.js:305
 msgid "Admin bar menu"
 msgstr "نوار منوی مدیریت"
 
-#: admin/metabox/class-metabox.php:171 js/dist/externals/analysis.js:118
-#: js/dist/externals/analysis.js:240 js/dist/externals/analysis.js:332
-#: js/dist/externals/replacementVariableEditor.js:83
-#: js/dist/externals/searchMetadataPreviews.js:270 js/dist/new-settings.js:23
-#: js/dist/new-settings.js:25 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:32 js/dist/new-settings.js:55
-#: js/dist/new-settings.js:66 js/dist/new-settings.js:94
-#: js/dist/new-settings.js:117 js/dist/new-settings.js:179
-#: js/dist/new-settings.js:193 js/dist/new-settings.js:203
-#: js/dist/new-settings.js:222
+#: admin/metabox/class-metabox.php:171 js/dist/externals/analysis.js:103
+#: js/dist/externals/analysis.js:206 js/dist/externals/analysis.js:283
+#: js/dist/externals/replacementVariableEditor.js:85
+#: js/dist/externals/searchMetadataPreviews.js:273 js/dist/new-settings.js:26
+#: js/dist/new-settings.js:30 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:37 js/dist/new-settings.js:59
+#: js/dist/new-settings.js:73 js/dist/new-settings.js:103
+#: js/dist/new-settings.js:132 js/dist/new-settings.js:197
+#: js/dist/new-settings.js:214 js/dist/new-settings.js:223
+#: js/dist/new-settings.js:245
 msgid "SEO title"
 msgstr "عنوان سئو"
 
 #: admin/pages/network.php:19 admin/views/tabs/network/features.php:22
 msgid "Features"
 msgstr "امکانات"
-
-#: admin/views/licenses.php:183
-msgid "Gain access to our 24/7 support team"
-msgstr "دسترسی کامل 24/7 به پشتیبانی ما."
 
 #: inc/options/class-wpseo-option-titles.php:1016
 msgid "Greater than sign"
@@ -3038,36 +2907,24 @@ msgid "Dash"
 msgstr "خط تیره"
 
 #: admin/metabox/class-metabox.php:182 admin/metabox/class-metabox.php:187
-#: js/dist/block-editor.js:444 js/dist/classic-editor.js:440
-#: js/dist/elementor.js:458
+#: js/dist/block-editor.js:510 js/dist/classic-editor.js:510
+#: js/dist/elementor.js:505
 msgid "No"
 msgstr "خیر"
 
 #: admin/metabox/class-metabox.php:181 admin/metabox/class-metabox.php:186
-#: js/dist/block-editor.js:444 js/dist/classic-editor.js:440
-#: js/dist/elementor.js:458
+#: js/dist/block-editor.js:510 js/dist/classic-editor.js:510
+#: js/dist/elementor.js:505
 msgid "Yes"
 msgstr "بله"
 
-#: admin/views/licenses.php:63
+#: admin/views/licenses.php:66
 msgid "Optimize your site for Google News"
 msgstr "بهینه کردن سایت برای اخبار گوگل"
 
-#: admin/views/licenses.php:182
-msgid "Premium support"
-msgstr "پشتیبانی ویژه"
-
-#: admin/views/licenses.php:188 admin/views/licenses.php:298
+#: admin/views/licenses.php:226 admin/views/licenses.php:329
 msgid "Installed"
 msgstr "نصب شده است"
-
-#. translators: Text between 1: and 2: will only be shown to screen readers. 3:
-#. expands to the product name.
-#. translators: Text between 1: and 2: will only be shown to screen readers. 3:
-#. expands to the product name, e.g. "News SEO" or "all the Yoast Plugins"
-#: admin/views/licenses.php:241 admin/views/licenses.php:351
-msgid "More information %1$sabout %3$s%2$s"
-msgstr "اطلاعات بیشتر%1$s درباره %3$s%2$s"
 
 #: admin/views/tool-bulk-editor.php:61
 msgid "Filter posts list"
@@ -3082,17 +2939,17 @@ msgid "Posts list"
 msgstr "لیست نوشته‌ها"
 
 #. translators: %1$s expands to Yoast SEO, %2$s expands to WooCommerce
-#: admin/views/licenses.php:86
+#: admin/views/licenses.php:89
 msgid "Seamless integration between %1$s and %2$s"
 msgstr "ادغام یکپارچه بین %1$s و %2$s"
 
-#: admin/menu/class-base-menu.php:258
-#: src/integrations/admin/menu-badge-integration.php:35 js/dist/academy.js:6
+#: admin/menu/class-base-menu.php:260 admin/menu/class-base-menu.php:264
+#: src/integrations/admin/menu-badge-integration.php:35 js/dist/academy.js:8
 msgid "Premium"
 msgstr "نسخه پولی"
 
-#. translators: %s: post title
-#: admin/class-bulk-editor-list-table.php:813
+#. translators: Hidden accessibility text; %s: post title.
+#: admin/class-bulk-editor-list-table.php:814
 msgid "Edit &#8220;%s&#8221;"
 msgstr "ویرایش &#8220;%s&#8221;"
 
@@ -3105,7 +2962,7 @@ msgid "Disable SEO analysis"
 msgstr "غیر فعال کردن تجزیه و تحلیل سئو"
 
 #: admin/views/partial-notifications-warnings.php:20
-#: inc/class-wpseo-admin-bar-menu.php:390
+#: inc/class-wpseo-admin-bar-menu.php:396
 msgid "Notifications"
 msgstr "اطلاعیه‌ها"
 
@@ -3117,8 +2974,8 @@ msgstr "حذف تب کلمه کلیدی از متاباکس و غیرفعال ک
 msgid "Make primary"
 msgstr "تغییر به اصلی"
 
-#. translators: %s: number of notifications
-#: admin/menu/class-admin-menu.php:118 inc/class-wpseo-admin-bar-menu.php:854
+#. translators: Hidden accessibility text; %s: number of notifications.
+#: admin/menu/class-admin-menu.php:118 inc/class-wpseo-admin-bar-menu.php:868
 msgid "%s notification"
 msgid_plural "%s notifications"
 msgstr[0] "%s اطلاعیه"
@@ -3128,8 +2985,8 @@ msgid "Disable readability analysis"
 msgstr "غیر فعال کردن تجزیه و تحلیل خوانایی"
 
 #: admin/views/class-yoast-feature-toggles.php:83
-#: js/dist/externals-components.js:98 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:288
+#: js/dist/externals-components.js:89 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:303
 msgid "Readability analysis"
 msgstr "تجزیه و تحلیل خوانایی"
 
@@ -3139,8 +2996,8 @@ msgstr "تجزیه و تحلیل خوانایی"
 #: admin/statistics/class-statistics-service.php:217
 #: inc/class-wpseo-rank.php:140 inc/class-wpseo-rank.php:176
 #: inc/class-wpseo-rank.php:208 inc/class-wpseo-rank.php:235
-#: js/dist/block-editor.js:1 js/dist/editor-modules.js:1
-#: js/dist/externals-components.js:179 js/dist/externals/analysis.js:332
+#: js/dist/block-editor.js:1 js/dist/editor-modules.js:1 js/dist/elementor.js:1
+#: js/dist/externals-components.js:152 js/dist/externals/analysis.js:283
 #: js/dist/frontend-inspector-resources.js:1 js/dist/post-edit.js:1
 #: js/dist/term-edit.js:1
 msgid "Needs improvement"
@@ -3148,7 +3005,7 @@ msgstr "به بهبود نیاز دارد"
 
 #: admin/formatter/class-metabox-formatter.php:70
 #: admin/metabox/class-metabox-section-readability.php:28
-#: inc/class-wpseo-admin-bar-menu.php:251
+#: inc/class-wpseo-admin-bar-menu.php:256
 msgid "Readability"
 msgstr "خوانایی"
 
@@ -3158,8 +3015,8 @@ msgstr "حذف برگه \"خوانایی\" از متاباکس و غیرفعال
 
 #: admin/formatter/class-metabox-formatter.php:236
 #: admin/views/partial-notifications-errors.php:20
-#: js/dist/editor-modules.js:154 js/dist/externals-components.js:17
-#: js/dist/externals/analysisReport.js:35
+#: js/dist/editor-modules.js:262 js/dist/externals-components.js:5
+#: js/dist/externals/analysisReport.js:36
 msgid "Problems"
 msgstr "مشکلات"
 
@@ -3168,8 +3025,8 @@ msgid "Analysis"
 msgstr "تحلیل و بررسی"
 
 #: admin/formatter/class-metabox-formatter.php:237
-#: js/dist/editor-modules.js:154 js/dist/externals-components.js:17
-#: js/dist/externals/analysisReport.js:35
+#: js/dist/editor-modules.js:262 js/dist/externals-components.js:5
+#: js/dist/externals/analysisReport.js:36
 msgid "Improvements"
 msgstr "بهبودها"
 
@@ -3187,7 +3044,8 @@ msgstr "ما موارد زیر که در سئوی سایت شما تاثیرگذ
 msgid "Not available"
 msgstr "در دسترس نمی باشد"
 
-#: admin/class-meta-columns.php:241
+#. translators: Hidden accessibility text.
+#: admin/class-meta-columns.php:252
 msgid "Filter by SEO Score"
 msgstr "فیلتر براساس امتیاز سئو"
 
@@ -3201,7 +3059,8 @@ msgstr "می توانید این مورد را در %1$sصفحه تنظیمات 
 msgid "Good job! We could detect no serious SEO problems."
 msgstr "آفرین! ما مشکلات سئوی جدی تشخیص ندادیم."
 
-#: admin/class-meta-columns.php:157
+#. translators: Hidden accessibility text.
+#: admin/class-meta-columns.php:166
 msgid "Meta description not set."
 msgstr "توضیحات متا تنظیم نشده‌اند."
 
@@ -3218,8 +3077,8 @@ msgstr "عنوان %1$s موجود"
 #. translators: %s expands to the product name, e.g. "News SEO" or "all the
 #. Yoast Plugins"
 #. translators: 1: Yoast WooCommerce SEO
-#: admin/views/licenses.php:228 admin/views/licenses.php:337
-#: js/dist/integrations-page.js:15
+#: admin/views/licenses.php:266 admin/views/licenses.php:368
+#: js/dist/integrations-page.js:14
 msgid "Buy %s"
 msgstr "خرید %s"
 
@@ -3251,11 +3110,11 @@ msgstr "نگه داری"
 
 #: admin/pages/network.php:20 admin/views/tabs/network/integrations.php:22
 #: src/integrations/admin/integrations-page.php:80
-#: js/dist/integrations-page.js:65
+#: js/dist/integrations-page.js:43
 msgid "Integrations"
 msgstr "یکپارچگی"
 
-#: admin/taxonomy/class-taxonomy-columns.php:172
+#: admin/taxonomy/class-taxonomy-columns.php:174
 msgid "Term is set to noindex."
 msgstr "به حالت noindex تنظیم شد."
 
@@ -3268,8 +3127,8 @@ msgstr "%s اصلی"
 msgid "Primary"
 msgstr "اصلی"
 
-#. translators: accessibility text. %1$s expands to the term title, %2$s to the
-#. taxonomy title.
+#. translators: Hidden accessibility text; %1$s expands to the term title, %2$s
+#. to the taxonomy title.
 #: admin/views/js-templates-primary-term.php:18
 msgid "Make %1$s primary %2$s"
 msgstr "درنظرگرفتن %1$s به عنوان %2$s اصلی"
@@ -3293,9 +3152,10 @@ msgstr "عامل جدا کننده تعریف شده در تگ %s قالب شم�
 msgid "No index"
 msgstr "بدون فهرست (index)"
 
-#: admin/class-meta-columns.php:100
+#: admin/class-meta-columns.php:101 admin/class-meta-columns.php:103
 #: admin/taxonomy/class-taxonomy-columns.php:87
-#: inc/class-wpseo-admin-bar-menu.php:240
+#: admin/taxonomy/class-taxonomy-columns.php:88
+#: inc/class-wpseo-admin-bar-menu.php:244
 msgid "SEO score"
 msgstr "نمره سئو"
 
@@ -3315,7 +3175,7 @@ msgstr "نصب %1$s افزونه کامل نشد. به %2$sنحوه نصب%3$s �
 msgid "%s Archive"
 msgstr "بایگانی %s"
 
-#: inc/class-wpseo-admin-bar-menu.php:420
+#: inc/class-wpseo-admin-bar-menu.php:426
 msgid "Analyze this page"
 msgstr "تجزیه و تحلیل این برگه"
 
@@ -3337,20 +3197,20 @@ msgstr "فعال‌سازی ناموفق شد:"
 msgid "The filter extension seem to be unavailable. Please ask your web host to enable it."
 msgstr "به نظر می‌رسد افزونۀ فیلتر (filter extension) موجود نباشد. لطفاً از میزبان سایت خود درخواست کنید آن را فعال کند."
 
-#: inc/class-wpseo-admin-bar-menu.php:623
-#: inc/class-wpseo-admin-bar-menu.php:671
+#: inc/class-wpseo-admin-bar-menu.php:637
+#: inc/class-wpseo-admin-bar-menu.php:685
 msgid "SEO Settings"
 msgstr "تنظیمات سئو"
 
-#: inc/class-wpseo-admin-bar-menu.php:449
+#: inc/class-wpseo-admin-bar-menu.php:455
 msgid "Mobile-Friendly Test"
 msgstr "آزمون بهینه‌بودن برای موبایل"
 
-#: inc/class-wpseo-admin-bar-menu.php:444
+#: inc/class-wpseo-admin-bar-menu.php:450
 msgid "Google Page Speed Test"
 msgstr "ابزار گوگل جهت تست سرعت صفحات"
 
-#: inc/class-wpseo-admin-bar-menu.php:439
+#: inc/class-wpseo-admin-bar-menu.php:445
 msgid "Facebook Debugger"
 msgstr "اشکال‌زدای فیس بوک"
 
@@ -3409,8 +3269,8 @@ msgstr "خطای 404: صفحه پیدا نشد"
 #: admin/statistics/class-statistics-service.php:227
 #: inc/class-wpseo-rank.php:142 inc/class-wpseo-rank.php:186
 #: inc/class-wpseo-rank.php:218 inc/class-wpseo-rank.php:245
-#: js/dist/block-editor.js:1 js/dist/editor-modules.js:1
-#: js/dist/externals-components.js:179 js/dist/externals/analysis.js:332
+#: js/dist/block-editor.js:1 js/dist/editor-modules.js:1 js/dist/elementor.js:1
+#: js/dist/externals-components.js:152 js/dist/externals/analysis.js:283
 #: js/dist/frontend-inspector-resources.js:1 js/dist/post-edit.js:1
 #: js/dist/term-edit.js:1
 msgid "Good"
@@ -3418,7 +3278,7 @@ msgstr "خوب"
 
 #. Plugin Name of the plugin
 #: admin/capabilities/class-capability-manager-integration.php:72
-#: src/presenters/meta-description-presenter.php:36 js/dist/block-editor.js:553
+#: src/presenters/meta-description-presenter.php:36 js/dist/block-editor.js:607
 msgid "Yoast SEO"
 msgstr "سئو Yoast"
 
@@ -3638,7 +3498,7 @@ msgstr "ویرایشگر گروهی"
 msgid "Default settings"
 msgstr "تنظیمات پیشفرض"
 
-#: admin/views/tool-bulk-editor.php:111 js/dist/new-settings.js:224
+#: admin/views/tool-bulk-editor.php:111 js/dist/new-settings.js:247
 msgid "Description"
 msgstr "توضیح"
 
@@ -3726,7 +3586,7 @@ msgid "To be able to create a redirect and fix this issue, you need %1$s. You ca
 msgstr "برای حل این مشکل شما نیاز به %1$s دارید. می توانید افزونه را بخرید، بعلاوه یک سال پشتیبانی و بروزرسانی در %2$s."
 
 #. translators: %1$s expands to Yoast SEO
-#: admin/class-plugin-availability.php:38 admin/views/licenses.php:22
+#: admin/class-plugin-availability.php:38 admin/views/licenses.php:24
 msgid "The premium version of %1$s with more features & support."
 msgstr "%1$s نسخه پولی با امکانات بیشتر و پشتیبانی کامل."
 
@@ -3795,16 +3655,16 @@ msgid "Take note:"
 msgstr "یادداشت بردارید:"
 
 #. translators: %1$s expands to Yoast SEO.
-#: admin/views/licenses.php:122
+#: admin/views/licenses.php:126
 msgid "%1$s Extensions"
 msgstr "افزونه‌های %1$s"
 
-#: admin/class-plugin-availability.php:50 admin/views/licenses.php:46
+#: admin/class-plugin-availability.php:50 admin/views/licenses.php:49
 msgid "Optimize your videos to show them off in search results and get more clicks!"
 msgstr "ویدئوهای خود را بهینه نمایید تا با نمایش در نتایج جستجو کلیک‌های بیشتری دریافت کنند!"
 
 #: src/integrations/admin/first-time-configuration-integration.php:481
-#: js/dist/new-settings.js:292
+#: js/dist/new-settings.js:311
 msgid "Person"
 msgstr "شخص"
 
@@ -3826,16 +3686,16 @@ msgstr "%1$sشناسه سایت%2$s وارد کنید برای اینکه تنظ
 msgid "Creating redirects is a %s feature"
 msgstr "ساخت تغییر مسیرها یک ویژگی %s است"
 
-#: admin/class-plugin-availability.php:70 admin/views/licenses.php:32
+#: admin/class-plugin-availability.php:70 admin/views/licenses.php:35
 msgid "Rank better locally and in Google Maps, without breaking a sweat!"
 msgstr "بهترین رتبه منطقه ای در نقشه سایت گوگل!"
 
 #. translators: %1$s expands to Yoast SEO
-#: admin/class-plugin-availability.php:82 admin/views/licenses.php:79
+#: admin/class-plugin-availability.php:82 admin/views/licenses.php:82
 msgid "Seamlessly integrate WooCommerce with %1$s and get extra features!"
 msgstr "ادغام یکپارچه ووکامرس با %1$s و گرفتن امکانت بیشتر!"
 
-#: admin/class-plugin-availability.php:60 admin/views/licenses.php:60
+#: admin/class-plugin-availability.php:60 admin/views/licenses.php:63
 msgid "Are you in Google News? Increase your traffic from Google News by optimizing for it!"
 msgstr "آیا در بخش خبری گوگل هستید؟ افزایش ترافیک از بخش خبری گوگل با بهینه سازی برای آن!"
 
@@ -3858,14 +3718,14 @@ msgid "The %1$s plugin might cause issues when used in conjunction with %2$s."
 msgstr "ممکن است افزونه %1$s زمانی که همزمان با افزونه %2$s فعال می شود مشکلاتی را بوجود آورد."
 
 #: admin/google_search_console/views/gsc-redirect-nopremium.php:27
-#: js/dist/elementor.js:109 js/dist/externals-components.js:144
-#: js/dist/externals/componentsNew.js:136 js/dist/introductions.js:9
-#: js/dist/new-settings.js:9 js/dist/new-settings.js:15
-#: js/dist/new-settings.js:36 js/dist/post-edit.js:9 js/dist/support.js:27
+#: js/dist/elementor.js:105 js/dist/externals-components.js:124
+#: js/dist/externals/componentsNew.js:136 js/dist/introductions.js:6
+#: js/dist/new-settings.js:12 js/dist/new-settings.js:18
+#: js/dist/new-settings.js:40 js/dist/post-edit.js:6 js/dist/support.js:16
 msgid "Close"
 msgstr "بستن"
 
-#: admin/metabox/class-metabox.php:951
+#: admin/metabox/class-metabox.php:949
 #: src/integrations/third-party/elementor.php:482
 msgid "SEO issue: The featured image should be at least 200 by 200 pixels to be picked up by Facebook and other social media sites."
 msgstr "تصویر شاخص باید حداقل 200x200 پیکسل باشد تا توسط فیسبوک و دیگر شبکه های اجتماعی مورد استفاده قرار گیرد."
@@ -3890,17 +3750,18 @@ msgstr "%s بررسی اجمالی نوشته ها"
 #: admin/statistics/class-statistics-service.php:222
 #: inc/class-wpseo-rank.php:141 inc/class-wpseo-rank.php:181
 #: inc/class-wpseo-rank.php:213 js/dist/block-editor.js:1
-#: js/dist/editor-modules.js:1 js/dist/externals-components.js:179
-#: js/dist/externals/analysis.js:332 js/dist/frontend-inspector-resources.js:1
-#: js/dist/post-edit.js:1 js/dist/term-edit.js:1
+#: js/dist/editor-modules.js:1 js/dist/elementor.js:1
+#: js/dist/externals-components.js:152 js/dist/externals/analysis.js:283
+#: js/dist/frontend-inspector-resources.js:1 js/dist/post-edit.js:1
+#: js/dist/term-edit.js:1
 msgid "OK"
 msgstr "تایید"
 
-#: admin/class-meta-columns.php:108
+#: admin/class-meta-columns.php:116
 msgid "Meta Desc."
 msgstr "توضیح متا."
 
-#: admin/class-meta-columns.php:245
+#: admin/class-meta-columns.php:256
 msgid "All SEO Scores"
 msgstr "همه امتیازهای سئو"
 
@@ -3927,7 +3788,7 @@ msgstr "هر دوی %1$s و %2$s خروجی OpenGraph می سازند، که م�
 msgid "%1$s detected you are using version %2$s of %3$s, please update to the latest version to prevent compatibility issues."
 msgstr "%1$s شما استفاده می کنید از%2$s نسخه %3$s برای هماهنگی کامل بروزسانی کنید به جدیدترین نسخه."
 
-#: admin/class-meta-columns.php:107
+#: admin/class-meta-columns.php:115
 msgid "SEO Title"
 msgstr "عنوان سئو"
 
@@ -3940,7 +3801,7 @@ msgstr "آدرس های canonical که در این صفحه هستند باید 
 msgid "Focus keyword"
 msgstr "کلیدواژه‌ کانونی"
 
-#: admin/class-meta-columns.php:738
+#: admin/class-meta-columns.php:750
 msgid "Post is set to noindex."
 msgstr "پست به حالت noindex تنظیم شد."
 
@@ -3952,29 +3813,29 @@ msgstr "نشانی اینترنتی که این صفحه باید به آن ار
 msgid "301 Redirect"
 msgstr "تغییر مسیر 301"
 
-#: admin/metabox/class-metabox.php:198 js/dist/block-editor.js:452
-#: js/dist/classic-editor.js:448 js/dist/elementor.js:466
+#: admin/metabox/class-metabox.php:198 js/dist/block-editor.js:516
+#: js/dist/classic-editor.js:516 js/dist/elementor.js:511
 msgid "Canonical URL"
 msgstr "نشانی قانونی (Canonical)"
 
-#: admin/metabox/class-metabox.php:193 js/dist/block-editor.js:452
-#: js/dist/classic-editor.js:448 js/dist/elementor.js:466
+#: admin/metabox/class-metabox.php:193 js/dist/block-editor.js:514
+#: js/dist/classic-editor.js:514 js/dist/elementor.js:509
 msgid "No Snippet"
 msgstr "بدون سربرگ"
 
-#: admin/metabox/class-metabox.php:192 js/dist/block-editor.js:452
-#: js/dist/classic-editor.js:448 js/dist/elementor.js:466
+#: admin/metabox/class-metabox.php:192 js/dist/block-editor.js:514
+#: js/dist/classic-editor.js:514 js/dist/elementor.js:509
 msgid "No Archive"
 msgstr "بدون بایگانی"
 
 #: admin/class-yoast-network-admin.php:43 src/config/schema-types.php:163
-#: src/integrations/settings-integration.php:546 js/dist/new-settings.js:15
-#: js/dist/new-settings.js:308
+#: src/integrations/settings-integration.php:556 js/dist/new-settings.js:18
+#: js/dist/new-settings.js:336
 msgid "None"
 msgstr "هیچ کدام"
 
-#: admin/metabox/class-metabox.php:189 js/dist/block-editor.js:452
-#: js/dist/classic-editor.js:448 js/dist/elementor.js:466
+#: admin/metabox/class-metabox.php:189 js/dist/block-editor.js:514
+#: js/dist/classic-editor.js:514 js/dist/elementor.js:509
 msgid "Meta robots advanced"
 msgstr "متا روبات های پیشرفته"
 
@@ -3982,15 +3843,15 @@ msgstr "متا روبات های پیشرفته"
 msgid "Warning: even though you can set the meta robots setting here, the entire site is set to noindex in the sitewide privacy settings, so these settings won't have an effect."
 msgstr "اخطار: حتی اگر شما تنظیمات متای ربات ها را می توانید تغییر دهید،کل سایت می تواند به noindex تنظیم شود در بخش تنظیمات کل سایت،پس این تنظیمات اثری ندارد."
 
-#: admin/metabox/class-metabox.php:172 js/dist/externals/analysis.js:332
-#: js/dist/externals/replacementVariableEditor.js:83
-#: js/dist/externals/searchMetadataPreviews.js:270 js/dist/new-settings.js:23
-#: js/dist/new-settings.js:25 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:32 js/dist/new-settings.js:55
-#: js/dist/new-settings.js:66 js/dist/new-settings.js:94
-#: js/dist/new-settings.js:117 js/dist/new-settings.js:179
-#: js/dist/new-settings.js:193 js/dist/new-settings.js:203
-#: js/dist/new-settings.js:222
+#: admin/metabox/class-metabox.php:172 js/dist/externals/analysis.js:283
+#: js/dist/externals/replacementVariableEditor.js:85
+#: js/dist/externals/searchMetadataPreviews.js:273 js/dist/new-settings.js:26
+#: js/dist/new-settings.js:30 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:37 js/dist/new-settings.js:59
+#: js/dist/new-settings.js:73 js/dist/new-settings.js:103
+#: js/dist/new-settings.js:132 js/dist/new-settings.js:197
+#: js/dist/new-settings.js:214 js/dist/new-settings.js:223
+#: js/dist/new-settings.js:245
 msgid "Meta description"
 msgstr "توضیح متا"
 
@@ -4014,60 +3875,59 @@ msgstr "پیشوند برای صفحه‌های بایگانی:"
 msgid "Anchor text for the homepage:"
 msgstr "متن لنگر برای صفحۀ خانگی:"
 
-#: admin/class-config.php:107 admin/metabox/class-metabox.php:919
-#: admin/taxonomy/class-taxonomy.php:177
+#: admin/class-config.php:108 admin/metabox/class-metabox.php:918
+#: admin/taxonomy/class-taxonomy.php:180
 #: src/integrations/third-party/elementor.php:456
 msgid "Use Image"
 msgstr "استفاده از تصویر"
 
-#: admin/class-bulk-editor-list-table.php:1011
+#: admin/class-bulk-editor-list-table.php:1012
 msgid "Action"
 msgstr "عمل"
 
-#: admin/class-bulk-editor-list-table.php:1006
+#: admin/class-bulk-editor-list-table.php:1007
 msgid "Page URL/Slug"
 msgstr "نامک/نشانی صفحه"
 
-#: admin/class-bulk-editor-list-table.php:1005
+#: admin/class-bulk-editor-list-table.php:1006
 msgid "Publication date"
 msgstr "تاریخ انتشار"
 
-#: admin/class-bulk-editor-list-table.php:1004
+#: admin/class-bulk-editor-list-table.php:1005
 msgid "Post Status"
 msgstr "وضعیت نوشته"
 
-#: admin/class-bulk-editor-list-table.php:1002
+#: admin/class-bulk-editor-list-table.php:1003
 msgid "WP Page Title"
 msgstr "عنوان صفحۀ وردپرس"
 
-#: admin/class-bulk-editor-list-table.php:836 js/dist/block-editor.js:105
-#: js/dist/classic-editor.js:101 js/dist/editor-modules.js:51
-#: js/dist/elementor.js:119 js/dist/wincher-dashboard-widget.js:1
-#: js/dist/wincher-dashboard-widget.js:76
+#: admin/class-bulk-editor-list-table.php:837 js/dist/block-editor.js:215
+#: js/dist/classic-editor.js:215 js/dist/editor-modules.js:202
+#: js/dist/elementor.js:210 js/dist/wincher-dashboard-widget.js:42
+#: js/dist/wincher-dashboard-widget.js:68
 msgid "View"
 msgstr "نمایش"
 
-#. translators: %s: post title
-#: admin/class-bulk-editor-list-table.php:835
+#. translators: Hidden accessibility text; %s: post title.
+#: admin/class-bulk-editor-list-table.php:836
 msgid "View &#8220;%s&#8221;"
 msgstr "نمایش &#8220;%s&#8221;"
 
-#: admin/class-bulk-editor-list-table.php:826
+#: admin/class-bulk-editor-list-table.php:827
 msgid "Preview"
 msgstr "پیش‌نمایش"
 
-#. translators: %s: post title
-#: admin/class-bulk-editor-list-table.php:825
+#. translators: Hidden accessibility text; %s: post title.
+#: admin/class-bulk-editor-list-table.php:826
 msgid "Preview &#8220;%s&#8221;"
 msgstr "پیش‌نمایش &#8220;%s&#8221;"
 
-#: admin/class-bulk-editor-list-table.php:814
-#: js/dist/first-time-configuration.js:18
-#: js/dist/first-time-configuration.js:20 js/dist/installation-success.js:13
+#: admin/class-bulk-editor-list-table.php:815
+#: js/dist/first-time-configuration.js:9 js/dist/first-time-configuration.js:22
 msgid "Edit"
 msgstr "ویرایش"
 
-#: admin/class-bulk-editor-list-table.php:420 admin/views/redirects.php:141
+#: admin/class-bulk-editor-list-table.php:421 admin/views/redirects.php:141
 msgid "Filter"
 msgstr "صافی"
 
@@ -4097,14 +3957,14 @@ msgstr "آدرس نمایه‌ی فیس‌بوک"
 msgid "Twitter username (without @)"
 msgstr "نام کاربری تویتر (بدون @)"
 
-#: admin/class-admin.php:231 js/dist/structured-data-blocks.js:13
+#: admin/class-admin.php:231 js/dist/structured-data-blocks.js:10
 msgid "FAQ"
 msgstr "سوالات متداول"
 
 #: admin/class-admin.php:226 admin/views/redirects.php:42
-#: src/integrations/settings-integration.php:312
+#: src/integrations/settings-integration.php:317
 #: src/presenters/meta-description-presenter.php:37
-#: js/dist/structured-data-blocks.js:9
+#: js/dist/structured-data-blocks.js:8
 msgid "Settings"
 msgstr "تنظیمات"
 
@@ -4122,7 +3982,7 @@ msgstr "ویرایش فایل ها"
 
 #: admin/menu/class-admin-menu.php:89
 #: admin/menu/class-network-admin-menu.php:56 admin/pages/network.php:18
-#: js/dist/new-settings.js:304
+#: js/dist/new-settings.js:332
 msgid "General"
 msgstr "عمومی"
 
@@ -4130,20 +3990,20 @@ msgstr "عمومی"
 msgid "Search Console"
 msgstr "میزفرمان جستجو"
 
-#: admin/menu/class-admin-menu.php:95 js/dist/new-settings.js:288
+#: admin/menu/class-admin-menu.php:95 js/dist/new-settings.js:303
 msgid "Tools"
 msgstr "ابزارها"
 
 #: admin/metabox/class-metabox.php:441
-#: admin/taxonomy/class-taxonomy-metabox.php:158 js/dist/new-settings.js:32
+#: admin/taxonomy/class-taxonomy-metabox.php:158 js/dist/new-settings.js:37
 msgid "Social"
 msgstr "اجتماعی"
 
 #: admin/metabox/class-metabox.php:416
 #: admin/taxonomy/class-taxonomy-metabox.php:140
-#: inc/class-wpseo-admin-bar-menu.php:702
+#: inc/class-wpseo-admin-bar-menu.php:716
 #: src/services/health-check/report-builder.php:168
-#: js/dist/structured-data-blocks.js:13
+#: js/dist/structured-data-blocks.js:10
 msgid "SEO"
 msgstr "سئو"
 
@@ -4169,13 +4029,13 @@ msgstr "شما نمی‌توانید %s را ویرایش کنید."
 msgid "Post doesn't exist."
 msgstr "نوشته موجود نیست."
 
-#: admin/metabox/class-metabox.php:191 js/dist/block-editor.js:452
-#: js/dist/classic-editor.js:448 js/dist/elementor.js:466
+#: admin/metabox/class-metabox.php:191 js/dist/block-editor.js:514
+#: js/dist/classic-editor.js:514 js/dist/elementor.js:509
 msgid "No Image Index"
 msgstr "بدون ایندکس تصویر"
 
-#: admin/views/class-yoast-feature-toggles.php:136 js/dist/new-settings.js:28
-#: js/dist/new-settings.js:289 js/dist/new-settings.js:290
+#: admin/views/class-yoast-feature-toggles.php:136 js/dist/new-settings.js:33
+#: js/dist/new-settings.js:305 js/dist/new-settings.js:307
 msgid "XML sitemaps"
 msgstr "نقشه های XML سایت"
 
@@ -4192,8 +4052,8 @@ msgstr "نوشته دارای نوع نوشتۀ نامعتبر است: %s."
 msgid "Title to use for this page in breadcrumb paths"
 msgstr "عنوان برای استفاده در این برگه در مسیر راهنما"
 
-#: admin/metabox/class-metabox.php:195 js/dist/block-editor.js:452
-#: js/dist/classic-editor.js:448 js/dist/elementor.js:466
+#: admin/metabox/class-metabox.php:195 js/dist/block-editor.js:515
+#: js/dist/classic-editor.js:515 js/dist/elementor.js:510
 msgid "Breadcrumbs Title"
 msgstr "عنوان مسیر راهنما"
 
@@ -4218,8 +4078,8 @@ msgstr "مسیر راهنما %s"
 msgid "Extensions"
 msgstr "توسعه"
 
-#: admin/metabox/class-metabox.php:889 admin/taxonomy/class-taxonomy.php:162
-#: admin/taxonomy/class-taxonomy.php:292
+#: admin/metabox/class-metabox.php:888 admin/taxonomy/class-taxonomy.php:161
+#: admin/taxonomy/class-taxonomy.php:295
 #: src/integrations/third-party/elementor.php:429
 msgid "(no parent)"
 msgstr "(بدون موضوعات مهم)"
