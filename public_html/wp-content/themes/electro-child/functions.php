@@ -1505,3 +1505,17 @@ add_action('woocommerce_checkout_update_user_meta', function ($customerId) {
         }
     }
 });
+
+if (!function_exists('woocommerce_mini_cart')) {
+    function woocommerce_mini_cart($args = array())
+    {
+
+        $defaults = array(
+            'list_class' => '',
+        );
+
+        $args = wp_parse_args($args, $defaults);
+
+        get_template_part('templates/cart/mini', 'cart', $args);
+    }
+}

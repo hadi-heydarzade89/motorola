@@ -3,7 +3,7 @@ Theme Name:         Electro Child
 Theme URI:          https://themeforest.net/item/electro-electronics-store-woocommerce-theme/15720624
 Author:             Hadi Heydarzade
 Template:           electro
-Version:            0.3.6
+Version:            0.3.7
 Text Domain:        electrochild
 */
 
@@ -253,10 +253,78 @@ ul[data-view="grid-extended"] .product-short-description {
 .products .product:hover a.button {
     color: #fff !important;
 }
-.blockUI.blockMsg.blockElement{
+
+.blockUI.blockMsg.blockElement {
     display: none !important;
 }
 
+.elementor-menu-cart__footer-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.woocommerce-cart-form__cart-item.cart_item {
+    display: flex;
+}
+
+.widget_shopping_cart_content {
+    padding: 0px 10px;
+}
+
+.elementor-menu-cart__footer-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.elementor-menu-cart__footer-buttons a {
+    font-size: 14px !important;
+}
+
+.elementor-menu-cart__subtotal {
+    margin: 13px 0;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, .28);
+    padding: 7.5px;
+    border-radius: 4px;
+}
+
+.elementor-menu-cart__product-image {
+    width: 132px;
+}
+
+.elementor-menu-cart__product-name {
+    width: 268px;
+}
+
+.woocommerce-mini-cart-item .quantity {
+    margin-top: 10px;
+}
+
+.dropdown-menu-mini-cart {
+    width: 400px;
+}
+
+.woocommerce-mini-cart-item .mini-cart-thumbnail {
+    width: 50%;
+}
+
+.woocommerce-mini-cart-item .mini-cart-thumbnail img {
+    width: unset;
+    height: unset;
+}
+
+.woocommerce-mini-cart-item {
+    display: flex;
+    align-items: center;
+}
+
+.woocommerce-mini-cart-item .remove {
+    margin-left: 10px;
+    font-size: 20px;
+    color: #000 !important;
+}
+.mini-cart-product-container .quantity {
+    margin-right: unset;
+}
 
 @media (max-width: 576px) {
     .product .price-add-to-cart {
