@@ -3,7 +3,7 @@
  * Plugin Name: افزونه حمل و نقل ووکامرس - حرفه‌ای
  * Plugin URI: https://Nabik.Net
  * Description: مکمل و توسعه‌دهنده افزونه حمل و نقل ووکامرس - نرخ ثابت حرفه‌ای، لیست‌شهرها در صفحه حساب کاربری و...
- * Version: 2.0.2
+ * Version: 2.1.1
  * Author: نابیک [Nabik.Net]
  * Author URI: https://Nabik.Net
  * WC requires at least: 7.0.0
@@ -13,7 +13,7 @@
 defined( 'ABSPATH' ) || exit;
 
 if ( ! defined( 'PWS_PRO_VERSION' ) ) {
-	define( 'PWS_PRO_VERSION', '2.0.2' );
+	define( 'PWS_PRO_VERSION', '2.1.1' );
 }
 
 if ( ! defined( 'PWS_PRO_DIR' ) ) {
@@ -85,6 +85,14 @@ add_action( 'woocommerce_loaded', function () {
 	include 'includes/class-order.php';
 
 }, 30 );
+
+register_activation_hook( PWS_PRO_FILE, function () {
+
+	if ( file_exists( PWS_PRO_DIR . '/assets/js/cities.js' ) ) {
+		unlink( PWS_PRO_DIR . '/assets/js/cities.js' );
+	}
+
+} );
 
 add_action( 'before_woocommerce_init', function() {
 	if ( class_exists( \Automattic\WooCommerce\Utilities\FeaturesUtil::class ) ) {
