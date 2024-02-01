@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-01-17 12:54:39+0000\n"
+"PO-Revision-Date: 2024-01-28 19:00:38+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.0-alpha.11\n"
+"X-Generator: GlotPress/4.0.0-beta.2\n"
 "Language: fa\n"
 "Project-Id-Version: Plugins - WooCommerce - Stable (latest release)\n"
 
@@ -224,6 +224,11 @@ msgid "%s expired log file was deleted."
 msgid_plural "%s expired log files were deleted."
 msgstr[0] "%s فایل گزارش منقضی شده حذف شد."
 
+#. translators: %d is an order ID.
+#: src/Internal/DataStores/Orders/LegacyDataHandler.php:145
+msgid "%d is not a valid order ID."
+msgstr "%d شناسه سفارش معتبری نیست."
+
 #: src/Internal/Admin/Logging/FileV2/SearchListTable.php:142
 msgid "Matched Line"
 msgstr "خط هم خوانی"
@@ -236,6 +241,17 @@ msgstr "%s ارجاع"
 #: src/Internal/Features/FeaturesController.php:218
 msgid "Order Attribution"
 msgstr "تخصیص سفارش"
+
+#. translators: %s is a number.
+#: src/Internal/Admin/Logging/PageController.php:680
+msgid "⚠️ Only %s files can be searched at one time. Try filtering the file list before searching."
+msgstr "⚠️ فقط %s فایل را می‌توان در یک زمان جستجو کرد. قبل از جستجو، لیست فایل‌ها را فیلتر کنید."
+
+#. translators: %s is a number of days.
+#: src/Internal/Admin/Logging/LogHandlerFileV2.php:212
+msgid "The retention period for log files is %s day."
+msgid_plural "The retention period for log files is %s days."
+msgstr[0] "مدت زمان نگهداری فایل‌های گزارش %s روز است."
 
 #. translators: %s is field key.
 #: src/Blocks/Domain/Services/CheckoutFields.php:506
@@ -447,6 +463,11 @@ msgstr "به عنوان مثال، ارسال رایگان"
 msgid "Please enter a valid number"
 msgstr "لطفا یک شماره معتبر وارد کنید"
 
+#. translators: %s: URL for link
+#: includes/shipping/flat-rate/includes/settings-flat-rate.php:52
+msgid "These costs can optionally be added based on the <a target=\"_blank\" href=\"%s\">product shipping class</a>. Learn more about <a target=\"_blank\" href=\"https://woo.com/document/flat-rate-shipping/#shipping-classes\">setting shipping class costs</a>."
+msgstr "این هزینه‌ها را می‌توان به‌صورت اختیاری بر اساس <a target=\"_blank\" href=\"%s\">کلاس ارسال محصول</a> اضافه کرد. درباره <a target=\"_blank\" href=\"https://woo.com/document/flat-rate-shipping/#shipping-classes\">تنظیم هزینه های کلاس حمل و نقل</a> بیشتر بیاموزید."
+
 #: includes/shipping/flat-rate/includes/settings-flat-rate.php:19
 msgid "e.g. Standard national"
 msgstr "به عنوان مثال، استاندارد ملی"
@@ -454,11 +475,6 @@ msgstr "به عنوان مثال، استاندارد ملی"
 #: includes/shipping/flat-rate/includes/settings-flat-rate.php:11
 msgid "advanced costs"
 msgstr "هزینه های پیشرفته"
-
-#. translators: %s: URL for link
-#: includes/shipping/flat-rate/includes/settings-flat-rate.php:52
-msgid "These costs can optionally be added based on the <a target=\"_blank\" href=\"%s\">product shipping class</a>. Learn more about <a target=\"_blank\" href=\"https://woo.com/document/flat-rate-shipping/#shipping-classes\">setting shipping class costs</a>."
-msgstr "این هزینه‌ها را می‌توان به‌صورت اختیاری بر اساس <a target=\"_blank\" href=\"%s\">کلاس ارسال محصول</a> اضافه کرد. درباره <a target=\"_blank\" href=\"https://woo.com/document/flat-rate-shipping/#shipping-classes\">تنظیم هزینه های کلاس حمل و نقل</a> بیشتر بیاموزید."
 
 #: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:560
 msgid "Is store connected to Woo.com?"
@@ -819,14 +835,14 @@ msgstr "برگه‌ای که خریداران برای نهایی کردن خر�
 msgid "Page where shoppers review their shopping cart"
 msgstr "برگه‌ای که در آن خریداران سبد خرید خود را بررسی می‌کنند"
 
+#: includes/admin/class-wc-admin-notices.php:165
+msgid "WooCommerce webhooks that use the Legacy REST API will be unsupported soon"
+msgstr "به زودی وب‌هوک‌های ووکامرس که از REST API قدیمی استفاده می‌کنند، پشتیبانی نمی‌شوند"
+
 #. translators: Placeholders are URLs.
 #: includes/admin/class-wc-admin-notices.php:169
 msgid "The WooCommerce Legacy REST API will be removed in WooCommerce 9.0, and this will cause <a href=\"%1$s\">webhooks on this site that are configured to use the Legacy REST API</a> to stop working. A separate WooCommerce extension will be available to allow these webhooks to keep using the Legacy REST API without interruption. You can also edit these webhooks to use the current REST API version to generate the payload instead. <b><a target=\"_blank\" href=\"%2$s\">Learn more about this change.</a></b>"
 msgstr "REST API قدیمی ووکامرس در ووکامرس ۹.۰ حذف خواهد شد و این باعث می‌شود <a href=\"%1$s\">وب‌هوک‌های موجود در این سایت که برای استفاده از REST API قدیمی پیکربندی شده‌اند</a> کارشان متوقف شود. افزودنی ووکامرس جداگانه‌ای در دسترس خواهد بود تا به این وب‌هوک‌ها اجازه دهد بدون وقفه به استفاده از REST API قدیمی ادامه دهند. همچنین می‌توانید این وبک‌هوک‌ها را ویرایش کنید تا بجای آن از نسخه REST API فعلی برای تولید بار استفاده کنید. <b><a target=\"_blank\" href=\"%2$s\">درباره این تغییر بیشتر بیاموزید.</a></b>"
-
-#: includes/admin/class-wc-admin-notices.php:165
-msgid "WooCommerce webhooks that use the Legacy REST API will be unsupported soon"
-msgstr "به زودی وب‌هوک‌های ووکامرس که از REST API قدیمی استفاده می‌کنند، پشتیبانی نمی‌شوند"
 
 #. translators: Placeholders are URLs.
 #: includes/admin/class-wc-admin-notices.php:150
@@ -986,6 +1002,10 @@ msgstr[0] "%d سفارش در انتظار همگام‌سازی است. می‌
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:741
 msgid "Orders table does not exist. Creating..."
 msgstr "جدول سفارشات وجود ندارد. در حال ایجاد..."
+
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:724
+msgid "[Failed] This is not a new shop, but --for-new-shop flag was passed."
+msgstr "[ناموفق بود] این یک فروشگاه جدید نیست، اما پرچم ‎--for-new-shop تنظیم شده است."
 
 #: src/Admin/Features/OnboardingTasks/Tasks/Appearance.php:40
 msgid "Choose your theme"
@@ -1408,6 +1428,11 @@ msgstr "خرید همه"
 #: packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:945
 msgid "Unable to claim actions. Database error: %s."
 msgstr "قادر به مطالبه اقدامات نیست. خطای پایگاه داده: %s."
+
+#. translators: 1: action ID 2: exception message.
+#: packages/action-scheduler/classes/ActionScheduler_ListTable.php:513
+msgid "Action Scheduler was unable to delete action %1$d. Reason: %2$s"
+msgstr "برنامه زمان‌بندی اقدام نتوانست اقدام %1$d را حذف کند. دلیل: %2$s"
 
 #: assets/client/blocks/customer-account/block.json
 msgctxt "block keyword"
@@ -3447,6 +3472,11 @@ msgstr "آدرس دریافت حضوری"
 #: assets/client/blocks/wc-shipping-method-pickup-location.js:237
 msgid "Pickup location"
 msgstr "موقعیت دریافت حضوری"
+
+#: src/Blocks/Shipping/ShippingController.php:223
+#: assets/client/blocks/wc-shipping-method-pickup-location.js:83
+msgid "If a cost is defined, this controls if taxes are applied to that cost."
+msgstr "اگر قیمتی تعریف شده باشد، این فیلد اعمال مالیات بر آن قیمت را کنترل می‌کند."
 
 #: includes/class-wc-countries.php:454
 msgctxt "shipping country prefix"
@@ -5545,6 +5575,12 @@ msgstr "فایل قابل دانلود %s نمی تواند استفاده شو�
 msgid "Headers already sent when generating download error message."
 msgstr "Headers already sent when generating download error message."
 
+#. translators: %1$s and %3$s are HTML (opening link tags). %2$s is also HTML
+#. (closing link tag).
+#: includes/admin/views/html-notice-download-dir-sync-complete.php:20
+msgid "The %1$sApproved Product Download Directories list%2$s has been updated. To protect your site, please review the list and make any changes that might be required. For more information, please refer to %3$sthis guide%2$s."
+msgstr "فهرست %1$s فهرست راهنماهای دانلود محصول تأییدشده%2$s به‌روزرسانی شده است. برای محافظت از سایت خود، لطفاً فهرست را مرور کنید و هر گونه تغییری که ممکن است لازم باشد را انجام دهید. برای اطلاعات بیشتر، لطفاً به %3$sاین راهنما%2$s مراجعه کنید."
+
 #: includes/admin/views/html-admin-page-status-report.php:746
 msgid "Is your site enforcing the use of Approved Product Download Directories?"
 msgstr "آیا سایت شما از دایرکتوری های دانلود محصول تایید شده استفاده می کند؟"
@@ -5552,12 +5588,6 @@ msgstr "آیا سایت شما از دایرکتوری های دانلود مح�
 #: includes/admin/views/html-admin-page-status-report.php:745
 msgid "Enforce Approved Product Download Directories"
 msgstr "دایرکتوری های دانلود محصول تایید شده را اجرا کنید"
-
-#. translators: %1$s and %3$s are HTML (opening link tags). %2$s is also HTML
-#. (closing link tag).
-#: includes/admin/views/html-notice-download-dir-sync-complete.php:20
-msgid "The %1$sApproved Product Download Directories list%2$s has been updated. To protect your site, please review the list and make any changes that might be required. For more information, please refer to %3$sthis guide%2$s."
-msgstr "فهرست %1$s فهرست راهنماهای دانلود محصول تأییدشده%2$s به‌روزرسانی شده است. برای محافظت از سایت خود، لطفاً فهرست را مرور کنید و هر گونه تغییری که ممکن است لازم باشد را انجام دهید. برای اطلاعات بیشتر، لطفاً به %3$sاین راهنما%2$s مراجعه کنید."
 
 #. translators: Error code
 #: includes/admin/class-wc-admin-addons.php:225
@@ -5948,14 +5978,14 @@ msgstr "ای وای! متاسفانه در اتصال به کاتالوگ افز
 msgid "Task is not a subclass of `Task`"
 msgstr "Task زیر کلاس «Task» نیست"
 
-#: includes/class-woocommerce.php:1033
-msgid "You have installed a development version of WooCommerce which requires files to be built and minified. From the plugin directory, run <code>pnpm install</code> and then <code>pnpm --filter='@woocommerce/plugin-woocommerce' build</code> to build and minify assets."
-msgstr "شما یک نسخه توسعه‌یافته از ووکامرس را نصب کرده‌اید که نیاز به ساخت و کوچک‌سازی فایل‌ها دارد. از فهرست پلاگین، <code>pnpm install</code> را اجرا کنید و سپس <code>pnpm --filter='@woocommerce/plugin-woocommerce' build</code> را برای ساخت و کوچک سازی دارایی‌ها اجرا کنید."
-
 #. translators: a url
 #: includes/admin/class-wc-admin-addons.php:1028
 msgid "To start growing your business, head over to <a href=\"%s\">Woo.com</a>, where you'll find the most popular WooCommerce extensions."
 msgstr "برای شروع رشد کسب و کارتان، به <a href=\"%s\">Woo.com</a> سر بزنید، جایی که معروفترین افزودنی‌های ووکامرس را خواهید یافت."
+
+#: includes/class-woocommerce.php:1033
+msgid "You have installed a development version of WooCommerce which requires files to be built and minified. From the plugin directory, run <code>pnpm install</code> and then <code>pnpm --filter='@woocommerce/plugin-woocommerce' build</code> to build and minify assets."
+msgstr "شما یک نسخه توسعه‌یافته از ووکامرس را نصب کرده‌اید که نیاز به ساخت و کوچک‌سازی فایل‌ها دارد. از فهرست پلاگین، <code>pnpm install</code> را اجرا کنید و سپس <code>pnpm --filter='@woocommerce/plugin-woocommerce' build</code> را برای ساخت و کوچک سازی دارایی‌ها اجرا کنید."
 
 #: i18n/states.php:2104
 msgid "La Guaira (Vargas)"
@@ -24591,6 +24621,14 @@ msgstr "نوع نمایش بایگانی دسته."
 msgid "HTML description of the resource."
 msgstr "کد HTML توضیحات منابع."
 
+#: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:523
+msgid "Enable/Disable attribute archives."
+msgstr "فعال/غیرفعال کردن بایگتنی ویژگی"
+
+#: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:509
+msgid "Type of attribute."
+msgstr "انواع ویژگی"
+
 #: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1964
 #: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2423
 #: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:820
@@ -24612,14 +24650,6 @@ msgstr "اگر نبار را مدیریت می کنید،این کنترل‌ه�
 #: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1292
 msgid "Image URL."
 msgstr "آدرس URL تصویر"
-
-#: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:523
-msgid "Enable/Disable attribute archives."
-msgstr "فعال/غیرفعال کردن بایگتنی ویژگی"
-
-#: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:509
-msgid "Type of attribute."
-msgstr "انواع ویژگی"
 
 #: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:493
 #: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2210
@@ -25952,6 +25982,21 @@ msgstr "نتیجه محدود به تنظیم منابع با قانون خاص.
 msgid "Limit result set to resources with a specific email."
 msgstr "نتیجه محدود به تنظیم منابع با ایمیل خاص."
 
+#: includes/rest-api/Controllers/Version1/class-wc-rest-order-refunds-v1-controller.php:374
+#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1269
+#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1403
+#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1455
+#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1515
+#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1586
+#: includes/rest-api/Controllers/Version2/class-wc-rest-order-refunds-v2-controller.php:435
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1424
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1586
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1664
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1755
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1853
+msgid "Item ID."
+msgstr "شناسه مورد"
+
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:476
 msgid "Invalid resource id for reassignment."
 msgstr "شناسه منبع نامعتبر برای تغییر دوباره."
@@ -25971,21 +26016,6 @@ msgstr "نتیجه محدود به منابع با کد خاص."
 #: includes/legacy/api/v3/class-wc-api-authentication.php:390
 msgid "The API key provided does not have write permissions."
 msgstr "کلید API ارائه شده مجوز نوشتن ندارد"
-
-#: includes/rest-api/Controllers/Version1/class-wc-rest-order-refunds-v1-controller.php:374
-#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1269
-#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1403
-#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1455
-#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1515
-#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1586
-#: includes/rest-api/Controllers/Version2/class-wc-rest-order-refunds-v2-controller.php:435
-#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1424
-#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1586
-#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1664
-#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1755
-#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1853
-msgid "Item ID."
-msgstr "شناسه مورد"
 
 #: includes/class-wc-rest-authentication.php:563
 #: includes/legacy/api/v1/class-wc-api-authentication.php:377
@@ -27089,6 +27119,15 @@ msgstr "%s حذف شده است."
 msgid "The %s does not support trashing."
 msgstr "%s حذف شده‌ها را پشتیبانی نمی‌کند."
 
+#. translators: %s: post type
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1658
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:514
+#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1574
+#: includes/rest-api/Controllers/Version3/class-wc-rest-crud-controller.php:464
+#: includes/rest-api/Controllers/Version3/class-wc-rest-posts-controller.php:438
+msgid "Sorry, you are not allowed to delete %s."
+msgstr "متاسفانه شما اجازه ندارید %s حذف کنید."
+
 #: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:714
 #: includes/rest-api/Controllers/Version3/class-wc-rest-crud-controller.php:582
 #: includes/rest-api/Controllers/Version3/class-wc-rest-posts-controller.php:624
@@ -27103,15 +27142,6 @@ msgstr "%s حذف شده‌ها را پشتیبانی نمی‌کند."
 #: src/Admin/API/Reports/Variations/Controller.php:266
 msgid "Limit response to resources published after a given ISO8601 compliant date."
 msgstr "محدود کردن پاسخ به منابع پس از انتشار ISO8601 تاریخ سازگار."
-
-#. translators: %s: post type
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1658
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:514
-#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:1574
-#: includes/rest-api/Controllers/Version3/class-wc-rest-crud-controller.php:464
-#: includes/rest-api/Controllers/Version3/class-wc-rest-posts-controller.php:438
-msgid "Sorry, you are not allowed to delete %s."
-msgstr "متاسفانه شما اجازه ندارید %s حذف کنید."
 
 #: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:354
 #: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:871
@@ -27278,17 +27308,6 @@ msgstr "درگاه آفلاین ساده که به شما اجازه قبول پ
 msgid "Accept payments via PayPal using account balance or credit card."
 msgstr "پرداخت از طریق پی پال با استفاده از مانده حساب یا کارت اعتباری."
 
-#: includes/admin/class-wc-admin-setup-wizard.php:1593
-#: includes/gateways/cheque/class-wc-gateway-cheque.php:38
-#: includes/gateways/cheque/class-wc-gateway-cheque.php:74
-msgctxt "Check payment method"
-msgid "Check payments"
-msgstr "پرداخت با چک"
-
-#: includes/admin/class-wc-admin-help.php:57
-msgid "Community forum"
-msgstr "فروم پشتیبانی"
-
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:215
 #: includes/rest-api/Controllers/Version1/class-wc-rest-product-attributes-v1-controller.php:230
 #: includes/rest-api/Controllers/Version1/class-wc-rest-taxes-v1-controller.php:198
@@ -27299,6 +27318,17 @@ msgstr "فروم پشتیبانی"
 #: includes/rest-api/Controllers/Version3/class-wc-rest-terms-controller.php:237
 msgid "Sorry, you are not allowed to batch manipulate this resource."
 msgstr "متاسفیم! شما برای دستکاری در این منابع اجازه ندارید."
+
+#: includes/admin/class-wc-admin-setup-wizard.php:1593
+#: includes/gateways/cheque/class-wc-gateway-cheque.php:38
+#: includes/gateways/cheque/class-wc-gateway-cheque.php:74
+msgctxt "Check payment method"
+msgid "Check payments"
+msgstr "پرداخت با چک"
+
+#: includes/admin/class-wc-admin-help.php:57
+msgid "Community forum"
+msgstr "فروم پشتیبانی"
 
 #: includes/admin/class-wc-admin-setup-wizard.php:1599
 msgid "Bank transfer (BACS) payments"
@@ -28536,10 +28566,6 @@ msgstr "گذرواژه خود را فراموش کرده اید؟"
 msgid "No products were found matching your selection."
 msgstr "هیچ محصولی یافت نشد."
 
-#: templates/loop/result-count.php:28
-msgid "Showing the single result"
-msgstr "نمایش یک نتیجه"
-
 #: includes/admin/class-wc-admin-profile.php:90
 #: includes/admin/class-wc-admin-setup-wizard.php:2242
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:92
@@ -29174,12 +29200,6 @@ msgstr "توضیحات تکمیلی"
 msgid "Sale!"
 msgstr "تخفیف!"
 
-#. translators: %d: total results
-#: templates/loop/result-count.php:31
-msgid "Showing all %d result"
-msgid_plural "Showing all %d results"
-msgstr[0] "نمایش دادن همه %d نتیجه"
-
 #: templates/cart/cart-totals.php:30 templates/cart/cart-totals.php:31
 #: templates/cart/cart.php:33 templates/cart/cart.php:144
 #: templates/checkout/review-order.php:24
@@ -29207,6 +29227,16 @@ msgstr "استان / شهرستان"
 #: templates/checkout/payment.php:34
 msgid "Sorry, it seems that there are no available payment methods. Please contact us if you require assistance or wish to make alternate arrangements."
 msgstr "با عرض پوزش، به نظر می‌رسد هیچ روش پرداختی موجود نیست. اگر به کمک نیاز دارید یا می‌خواهید ترتیبات دیگری را انجام دهید، لطفا با ما تماس بگیرید."
+
+#. translators: %d: total results
+#: templates/loop/result-count.php:31
+msgid "Showing all %d result"
+msgid_plural "Showing all %d results"
+msgstr[0] "در حال نمایش %d نتیجه"
+
+#: templates/loop/result-count.php:28
+msgid "Showing the single result"
+msgstr "در حال نمایش یک نتیجه"
 
 #. translators: %s: order number
 #. translators: %s: order ID
