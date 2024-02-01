@@ -6,7 +6,7 @@
  */
 
 /**
- * Class WPSEO_Export_Keywords_Query
+ * Class WPSEO_Export_Keywords_Post_Query
  *
  * Creates an SQL query to gather all post data for a keywords export.
  */
@@ -85,7 +85,6 @@ class WPSEO_Export_Keywords_Post_Query implements WPSEO_Export_Keywords_Query {
 		// Pages have a starting index of 1, we need to convert to a 0 based offset.
 		$offset_multiplier = max( 0, ( $page - 1 ) );
 
-
 		$replacements   = [];
 		$replacements[] = $wpdb->posts;
 		$replacements[] = 'post_status';
@@ -94,7 +93,7 @@ class WPSEO_Export_Keywords_Post_Query implements WPSEO_Export_Keywords_Query {
 		$replacements[] = $this->page_size;
 		$replacements[] = ( $offset_multiplier * $this->page_size );
 
-		// phpcs:disable WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.PreparedSQLPlaceholders.UnsupportedPlaceholder, WordPress.DB.PreparedSQLPlaceholders.ReplacementsWrongNumber, WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Already prepared, and no cache applicable.
+		// phpcs:disable WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.PreparedSQLPlaceholders.UnsupportedPlaceholder,WordPress.DB.PreparedSQLPlaceholders.ReplacementsWrongNumber,WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching -- Already prepared, and no cache applicable.
 		return $wpdb->get_results(
 			$wpdb->prepare(
 				'SELECT ' . implode( ', ', $this->selects )
@@ -114,6 +113,8 @@ class WPSEO_Export_Keywords_Post_Query implements WPSEO_Export_Keywords_Query {
 	 * Prepares the necessary selects and joins to get all data in a single query.
 	 *
 	 * @param array $columns The columns we want our query to return.
+	 *
+	 * @return void
 	 */
 	public function set_columns( array $columns ) {
 		$this->columns = $columns;
@@ -166,6 +167,8 @@ class WPSEO_Export_Keywords_Post_Query implements WPSEO_Export_Keywords_Query {
 	 *
 	 * @param string $alias The alias to use in our query output.
 	 * @param string $key   The meta_key to select.
+	 *
+	 * @return void
 	 */
 	protected function add_meta_join( $alias, $key ) {
 		global $wpdb;

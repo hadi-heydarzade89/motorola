@@ -13,14 +13,14 @@ use Yoast\WP\SEO\Repositories\Indexable_Repository;
 class WPSEO_Premium_Orphaned_Post_Query {
 
 	/**
+	 * Returns the total number of orphaned items for the given post types.
+	 *
+	 * @deprecated 21.7
+	 * @codeCoverageIgnore
 	 *
 	 * @param array $post_types The post types to get the counts for.
 	 *
 	 * @return int[] The counts for all post types.
-	 * @deprecated 21.7
-	 * @codeCoverageIgnore
-	 *
-	 * Returns the total number of orphaned items for the given post types.
 	 */
 	public static function get_counts( array $post_types ) {
 		_deprecated_function( __METHOD__, 'Yoast SEO 21.7', 'WPSEO_Premium_Orphaned_Post_Filter::get_post_total' );

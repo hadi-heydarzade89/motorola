@@ -14,6 +14,8 @@ class WPSEO_Premium_Keyword_Export_Manager implements WPSEO_WordPress_Integratio
 
 	/**
 	 * Registers all hooks to WordPress.
+	 *
+	 * @return void
 	 */
 	public function register_hooks() {
 		// Hook into the request in case of CSV download and return our generated CSV instead.
@@ -26,6 +28,8 @@ class WPSEO_Premium_Keyword_Export_Manager implements WPSEO_WordPress_Integratio
 
 	/**
 	 * Outputs a tab header for the CSV export block.
+	 *
+	 * @return void
 	 */
 	public function keywords_export_tab_header() {
 		if ( current_user_can( 'export' ) ) {
@@ -37,6 +41,8 @@ class WPSEO_Premium_Keyword_Export_Manager implements WPSEO_WordPress_Integratio
 
 	/**
 	 * Adds the export block for CSV. Makes it able to export redirects to CSV.
+	 *
+	 * @return void
 	 */
 	public function add_keyword_export_tab_block() {
 		// Display the forms.
@@ -48,6 +54,8 @@ class WPSEO_Premium_Keyword_Export_Manager implements WPSEO_WordPress_Integratio
 
 	/**
 	 * Hooks into the request and returns a CSV file if we're on the right page with the right method and the right capabilities.
+	 *
+	 * @return void
 	 */
 	public function keywords_csv_export() {
 
@@ -93,6 +101,8 @@ class WPSEO_Premium_Keyword_Export_Manager implements WPSEO_WordPress_Integratio
 
 	/**
 	 * Sets the headers to trigger a CSV download in the browser.
+	 *
+	 * @return void
 	 */
 	protected function set_csv_headers() {
 		header( 'Content-type: text/csv' );

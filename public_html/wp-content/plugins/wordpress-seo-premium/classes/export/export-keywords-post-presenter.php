@@ -6,7 +6,7 @@
  */
 
 /**
- * Class WPSEO_Export_Keywords_Presenter
+ * Class WPSEO_Export_Keywords_Post_Presenter
  *
  * Readies data as returned by WPSEO_Export_Keywords_Post_Query for exporting.
  */

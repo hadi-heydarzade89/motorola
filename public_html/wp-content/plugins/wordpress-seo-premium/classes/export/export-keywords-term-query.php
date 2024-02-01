@@ -97,7 +97,7 @@ class WPSEO_Export_Keywords_Term_Query implements WPSEO_Export_Keywords_Query {
 		$replacements[] = $this->page_size;
 		$replacements[] = ( $offset_multiplier * $this->page_size );
 
-		// phpcs:disable WordPress.DB.PreparedSQL.NotPrepared, WordPress.DB.PreparedSQLPlaceholders.UnsupportedPlaceholder, WordPress.DB.PreparedSQLPlaceholders.ReplacementsWrongNumber,WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching -- Already prepared, and no cache applicable.
+		// phpcs:disable WordPress.DB.PreparedSQL.NotPrepared,WordPress.DB.PreparedSQLPlaceholders.UnsupportedPlaceholder,WordPress.DB.PreparedSQLPlaceholders.ReplacementsWrongNumber,WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching -- Already prepared, and no cache applicable.
 		return $wpdb->get_results(
 			$wpdb->prepare(
 				'SELECT ' . implode( ', ', $this->selects )
@@ -117,6 +117,8 @@ class WPSEO_Export_Keywords_Term_Query implements WPSEO_Export_Keywords_Query {
 	 * Prepares the necessary selects and joins to get all data in a single query.
 	 *
 	 * @param array $columns The columns we want our query to return.
+	 *
+	 * @return void
 	 */
 	public function set_columns( array $columns ) {
 		$this->columns = $columns;

@@ -33,7 +33,7 @@ class WPSEO_Redirect_Redirection_Loader extends WPSEO_Redirect_Abstract_Loader {
 	 */
 	public function load() {
 		// Get redirects.
-		// phpcs:disable WordPress.DB.PreparedSQLPlaceholders.UnsupportedPlaceholder, WordPress.DB.PreparedSQLPlaceholders.ReplacementsWrongNumber, WordPress.DB.PreparedSQL.NotPrepared
+		// phpcs:disable WordPress.DB.PreparedSQLPlaceholders.UnsupportedPlaceholder,WordPress.DB.PreparedSQLPlaceholders.ReplacementsWrongNumber,WordPress.DB.PreparedSQL.NotPrepared
 		$items = $this->wpdb->get_results(
 			$this->wpdb->prepare(
 				"SELECT `url`, `action_data`, `regex`, `action_code`

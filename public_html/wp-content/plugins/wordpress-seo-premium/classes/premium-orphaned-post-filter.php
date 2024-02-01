@@ -23,6 +23,8 @@ class WPSEO_Premium_Orphaned_Post_Filter extends WPSEO_Abstract_Post_Filter {
 
 	/**
 	 * Registers the hooks when the link feature is enabled.
+	 *
+	 * @return void
 	 */
 	public function register_hooks() {
 		if ( ! YoastSEO()->classes->get( Migration_Status::class )->is_version( 'free', WPSEO_VERSION ) ) {
@@ -157,7 +159,6 @@ class WPSEO_Premium_Orphaned_Post_Filter extends WPSEO_Abstract_Post_Filter {
 			return '?';
 		}
 
-		// phpcs:disable WordPress.DB.PreparedSQLPlaceholders.UnsupportedPlaceholder -- Reason: Will be supported in the next WPcs version.
 		if ( $count === null ) {
 			$subquery = WPSEO_Premium_Orphaned_Post_Query::get_orphaned_content_query();
 			$count    = $wpdb->get_var(
@@ -178,7 +179,6 @@ class WPSEO_Premium_Orphaned_Post_Filter extends WPSEO_Abstract_Post_Filter {
 
 			$count = (int) $count;
 		}
-		// phpcs:enable
 
 		return $count;
 	}
