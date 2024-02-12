@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.4.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-01-05 21:16:24+0000\n"
+"PO-Revision-Date: 2024-02-10 12:39:44+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,7 +18,7 @@ msgstr ""
 #, gp-priority: high
 msgctxt "Google Font Name and Variants"
 msgid "Noto Serif:400,400i,700,700i"
-msgstr "Noto Serif:400,400i,700,700i"
+msgstr "Vazirmatn:400,700"
 
 #. translators: If comment number in your language requires declension,
 #. translate this to 'on'. Do not translate into your own language.
@@ -340,7 +340,7 @@ msgstr "دسته‌بندی‌های الگو"
 
 #: wp-includes/script-loader.php:3382
 msgid "Function wp_remove_surrounding_empty_script_tags() used incorrectly in PHP."
-msgstr "تابع wp_remove_surrounding_empty_script_tags() به اشتباه در PHP استفاده شده است."
+msgstr "Function wp_remove_surrounding_empty_script_tags() used incorrectly in PHP."
 
 #: wp-includes/script-loader.php:3380
 msgid "Expected string to start with script tag (without attributes) and end with script tag, with optional whitespace."
@@ -445,7 +445,7 @@ msgstr "کلیدهای متا نمی‌توانند پشتیبانی از رون
 
 #: wp-includes/meta.php:1469
 msgid "Meta keys cannot enable revisions support unless the object type supports revisions."
-msgstr "کلیدهای متا نمی‌توانند پشتیبانی از رونوشت‌ها را فعال کنند مگر اینکه نوع شیء از رونوشت‌ها پشتیبانی نماید."
+msgstr "Meta keys cannot enable revisions support unless the object type supports revisions."
 
 #: wp-includes/media-template.php:561
 msgid "View media file"
@@ -453,21 +453,21 @@ msgstr "مشاهده پرونده رسانه"
 
 #: wp-includes/html-api/class-wp-html-processor.php:401
 msgid "Cannot visit tag closers in HTML Processor."
-msgstr "نمی‌توان پایان‌دهنده‌های تگ را در پردازنده HTML مشاهده کرد."
+msgstr "Cannot visit tag closers in HTML Processor."
 
 #: wp-includes/html-api/class-wp-html-processor.php:382
 msgid "Please pass a query array to this function."
-msgstr "لطفا یک آرایه کوئری را به این تابع ارسال کنید."
+msgstr "Please pass a query array to this function."
 
 #. translators: %s: WP_HTML_Processor::create_fragment().
 #: wp-includes/html-api/class-wp-html-processor.php:296
 msgid "Call %s to create an HTML Processor instead of calling the constructor directly."
-msgstr "برای ایجاد یک پردازنده HTML، به جای فراخوانی مستقیم سازنده، %s را فراخوانی کنید."
+msgstr "Call %s to create an HTML Processor instead of calling the constructor directly."
 
 #. translators: %s: The "type" key.
 #: wp-includes/functions.php:8811
 msgid "The %s key must be a string without spaces."
-msgstr "کلید %s باید یک عبارت بدون فاصله باشد."
+msgstr "The %s key must be a string without spaces."
 
 #. translators: 1: PHP class name, 2: Version number.
 #: wp-includes/functions.php:5641
@@ -482,19 +482,19 @@ msgstr "کلاس %1$s از نگارش %2$s! <strong>منسوخ</strong> شده �
 
 #: wp-includes/fonts/class-wp-font-face.php:201
 msgid "Font font-weight must be a properly formatted string or integer."
-msgstr "وزن فونت باید یک عبارت یا عدد صحیح با قالب مناسب باشد."
+msgstr "Font font-weight must be a properly formatted string or integer."
 
 #: wp-includes/fonts/class-wp-font-face.php:189
 msgid "Each font src must be a non-empty string."
-msgstr "هر src فونت باید یک عبارت غیر خالی باشد."
+msgstr "Each font src must be a non-empty string."
 
 #: wp-includes/fonts/class-wp-font-face.php:177
 msgid "Font src must be a non-empty string or an array of strings."
-msgstr "آدرس (src) فونت باید یک عبارت غیر خالی یا آرایه‌ای از رشته‌ها باشد."
+msgstr "Font src must be a non-empty string or an array of strings."
 
 #: wp-includes/fonts/class-wp-font-face.php:166
 msgid "Font font-family must be a non-empty string."
-msgstr "نوع فونت باید یک عبارت غیر خالی باشد."
+msgstr "Font font-family must be a non-empty string."
 
 #: wp-includes/blocks/search.php:176
 msgid "Submit Search"
@@ -539,12 +539,12 @@ msgstr "رفتن به مرجع پاورقی %1$d"
 
 #: wp-includes/blocks.php:519
 msgid "Cannot hook block to itself."
-msgstr "یک بلوک نمی‌تواند به خودش قلاب (hook) شود."
+msgstr "Cannot hook block to itself."
 
 #. translators: %s: file name.
 #: wp-includes/block-patterns.php:371
 msgid "Could not register file \"%s\" as a block pattern as the file does not exist."
-msgstr "ثبت پرونده \"%s\" به عنوان الگوی بلوک ممکن نیست زیرا پرونده وجود ندارد."
+msgstr "Could not register file \"%s\" as a block pattern as the file does not exist."
 
 #: wp-includes/admin-bar.php:202
 msgid "Learn WordPress"
@@ -795,7 +795,7 @@ msgstr "الگوها"
 
 #: wp-includes/media.php:2061 wp-includes/media.php:5739
 msgid "An image should not be lazy-loaded and marked as high priority at the same time."
-msgstr "یک تصویر نمی‌تواند همزمان بارگزاری تنبل و به عنوان اولویت بالا باشد."
+msgstr "An image should not be lazy-loaded and marked as high priority at the same time."
 
 #: wp-includes/media-template.php:379
 msgid "The Edit Media screen is deprecated as of WordPress 6.3. Please use the Media Library instead."
@@ -804,17 +804,17 @@ msgstr "صفحه ویرایش رسانه از وردپرس ۶.۳ منسوخ شد
 #. translators: %s: The type of the given object ID.
 #: wp-includes/functions.php:7202
 msgid "Object ID must be an integer, %s given."
-msgstr "شناسه شیء باید یک عدد صحیح باشد، %s داده شده است."
+msgstr "Object ID must be an integer, %s given."
 
 #. translators: 1: $strategy, 2: $handle
 #: wp-includes/class-wp-scripts.php:853
 msgid "Cannot supply a strategy `%1$s` for script `%2$s` because it is an alias (it lacks a `src` value)."
-msgstr "نمی‌توان استراتژی `%1$s` را برای اسکریپت `%2$s` ارائه کرد، زیرا یک نام مستعار است (فاقد مقدار `src` است)."
+msgstr "Cannot supply a strategy `%1$s` for script `%2$s` because it is an alias (it lacks a `src` value)."
 
 #. translators: 1: $strategy, 2: $handle
 #: wp-includes/class-wp-scripts.php:841
 msgid "Invalid strategy `%1$s` defined for `%2$s` during script registration."
-msgstr "استراتژی نامعتبر `%1$s` برای `%2$s` در طول نام‌نویسی اسکریپت تعریف شده است."
+msgstr "Invalid strategy `%1$s` defined for `%2$s` during script registration."
 
 #: wp-includes/class-wp-post-type.php:991
 msgid "Page trashed."
@@ -840,12 +840,12 @@ msgstr "هیچ فهرست کلاسیکی یافت نشد."
 #. translators: %s: duotone filter ID
 #: wp-includes/class-wp-duotone.php:904
 msgid "The duotone id \"%s\" is not registered in theme.json settings"
-msgstr "شناسۀ دو رنگی «%s» در تنظیمات theme.json ثبت نشده است"
+msgstr "The duotone id \"%s\" is not registered in theme.json settings"
 
 #. translators: %s: duotone colors
 #: wp-includes/class-wp-duotone.php:677
 msgid "\"%s\" in theme.json settings.color.duotone is not a hex or rgb string."
-msgstr "«%s» در theme.json settings.color.duotone یک رشتۀ hex یا rgb نیست."
+msgstr "\"%s\" in theme.json settings.color.duotone is not a hex or rgb string."
 
 #: wp-includes/class-wp-classic-to-block-menu-converter.php:32
 msgid "The menu provided is not a valid menu."
@@ -1111,33 +1111,33 @@ msgstr "لطفا بررسی نمایید که افزودنی php %s نصب و ف
 #. translators: 1: CUSTOM_TAGS, 2: Global variable names.
 #: wp-includes/kses.php:714
 msgid "When using the %1$s constant, make sure to set these globals to an array: %2$s."
-msgstr "هنگام استفاده از ثابت %1$s، مطمئن شوید که این کلیات را روی یک آرایه تنظیم نمایید: %2$s."
+msgstr "When using the %1$s constant, make sure to set these globals to an array: %2$s."
 
 #: wp-includes/html-api/class-wp-html-tag-processor.php:2376
 msgid "The query argument must be an array or a tag name."
-msgstr "آرگومان کوئری باید یک آرایه یا یک نام برچسب باشد."
+msgstr "The query argument must be an array or a tag name."
 
 #: wp-includes/html-api/class-wp-html-tag-processor.php:2055
 msgid "Invalid attribute name."
-msgstr "نام ویژگی نامعتبر است."
+msgstr "Invalid attribute name."
 
 #: wp-includes/html-api/class-wp-html-tag-processor.php:1708
 msgid "Too many calls to seek() - this can lead to performance issues."
-msgstr "درخواست‌های بیش‌ازحد برای seek() - این می‌تواند منجر به مشکلات عملکردی شود."
+msgstr "Too many calls to seek() - this can lead to performance issues."
 
 #: wp-includes/html-api/class-wp-html-tag-processor.php:1699
 msgid "Unknown bookmark name."
-msgstr "نام نشانک ناشناس."
+msgstr "Unknown bookmark name."
 
 #: wp-includes/html-api/class-wp-html-tag-processor.php:805
 msgid "Too many bookmarks: cannot create any more."
-msgstr "نشانک‌های بسیار زیاد: دیگر نمی‌توان ایجاد کرد."
+msgstr "Too many bookmarks: cannot create any more."
 
 #. translators: 1: The function name, 2: The argument number, 3: The argument
 #. name, 4: The expected type, 5: The provided type.
 #: wp-includes/formatting.php:5539
 msgid "Warning: %1$s expects parameter %2$s (%3$s) to be a %4$s, %5$s given."
-msgstr "هشدار: %1$s انتظار دارد پارامتر %2$s (%3$s) یک %4$s باشد، %5$s داده‌شده."
+msgstr "Warning: %1$s expects parameter %2$s (%3$s) to be a %4$s, %5$s given."
 
 #: wp-includes/customize/class-wp-customize-nav-menu-locations-control.php:53
 msgid "https://wordpress.org/documentation/article/manage-wordpress-widgets/"
@@ -1150,12 +1150,12 @@ msgstr "با عرض پوزش، پاسخ دادن به دیدگاه‌های تا
 #. translators: %s: A list of placeholders found to be a problem.
 #: wp-includes/class-wpdb.php:1662
 msgid "Arguments cannot be prepared as both an Identifier and Value. Found the following conflicts: %s"
-msgstr "آرگومان‌ها را نمی‌توان هم به عنوان یک مشخص‌کننده و هم به عنوان مقدار آماده کرد. تداخل‌های زیر پیدا شد: %s"
+msgstr "Arguments cannot be prepared as both an Identifier and Value. Found the following conflicts: %s"
 
 #: wp-includes/class-wp-list-util.php:174
 #: wp-includes/class-wp-list-util.php:205
 msgid "Values for the input array must be either objects or arrays."
-msgstr "مقادیر برای آرایه ورودی باید یا شی یا آرایه باشد."
+msgstr "Values for the input array must be either objects or arrays."
 
 #: wp-includes/class-wp-image-editor-imagick.php:570
 msgid "The image already has the requested size."
@@ -1281,12 +1281,12 @@ msgstr "https://wordpress.org/documentation/"
 #. translators: %s: plugins_loaded
 #: wp-includes/class-wp-user-query.php:788
 msgid "User queries should not be run before the %s hook."
-msgstr "درخواست‌های کاربر نباید قبل از هوک %s اجرا شوند."
+msgstr "User queries should not be run before the %s hook."
 
 #. translators: %s: The '$value' argument.
 #: wp-includes/class-wp-block-type.php:388
 msgid "The %s argument must be a string or a string array."
-msgstr "آرگومان %s باید یک رشته یا یک آرایهٔ رشته‌ای باشد."
+msgstr "The %s argument must be a string or a string array."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-terms-controller.php:215
 msgid "Sorry, you are not allowed to view terms for this post."
@@ -1294,7 +1294,7 @@ msgstr "با عرض پوزش، شما اجازهٔ مشاهدهٔ موارد ا�
 
 #: wp-includes/block-supports/typography.php:330
 msgid "Raw size value must be a string, integer, or float."
-msgstr "مقدار اندازهٔ خام باید یک رشته، عدد صحیح یا شناور باشد."
+msgstr "Raw size value must be a string, integer, or float."
 
 #: wp-includes/blocks/list-item/block.json
 msgctxt "block description"
@@ -1368,15 +1368,15 @@ msgstr "تاریخ و زمان اولویت‌ها به‌روزرسانی شد.
 
 #: wp-includes/theme.php:4104
 msgid "Whether the theme disables generated layout styles."
-msgstr "آیا پوسته، سبک‌های طرح‌بندی ایجاد شده را غیرفعال می‌نماید."
+msgstr "آیا پوسته، سبک‌های طرح‌بندی ایجاد شده را غیرفعال می‌کند."
 
 #: wp-includes/theme.php:3914
 msgid "Whether a theme uses block-based template parts."
-msgstr "آیا یک پوسته از بخش‌هایی از قالب بر پایهٔ بلوک استفاده می‌نماید."
+msgstr "آیا یک پوسته از بخش‌هایی از قالب بر پایهٔ بلوک استفاده می‌کند."
 
 #: wp-includes/style-engine/class-wp-style-engine-processor.php:46
 msgid "$store must be an instance of WP_Style_Engine_CSS_Rules_Store"
-msgstr "$store باید نمونه‌ای از WP_Style_Engine_CSS_Rules_Store باشد"
+msgstr "$store must be an instance of WP_Style_Engine_CSS_Rules_Store"
 
 #: wp-includes/revision.php:718
 msgid "Revisions not enabled."
@@ -1384,7 +1384,7 @@ msgstr "رونوشت‌ها فعال نشدند."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:89
 msgid "The template prefix for the created template. This is used to extract the main template type, e.g. in `taxonomy-books` extracts the `taxonomy`"
-msgstr "پیشوند قالب برای قالب ایجاد شده. این مورد برای استخراج نوع قالب اصلی استفاده می‌شود، برای نمونه در `taxonomy-books` کلمه `taxonomy` را استخراج می‌نماید."
+msgstr "پیشوند قالب برای قالب ایجاد شده. این مورد برای استخراج نوع قالب اصلی استفاده شده است، برای نمونه در `taxonomy-books` کلمه `taxonomy` را استخراج می‌کند."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:85
 msgid "Indicates if a template is custom or part of the template hierarchy"
@@ -1429,7 +1429,7 @@ msgstr "آرایه‌ای از انواع پست که الگو برای استف
 #. translators: 1: $args, 2: The REST API route being registered.
 #: wp-includes/rest-api.php:113
 msgid "REST API %1$s should be an array of arrays. Non-array value detected for %2$s."
-msgstr "REST API %1$s باید آرایه‌ای از آرایه‌ها باشد. مقدار غیر آرایه برای %2$s شناسایی شد."
+msgstr "REST API %1$s should be an array of arrays. Non-array value detected for %2$s."
 
 #: wp-includes/ms-load.php:479
 msgid "If you are the owner of this network please check that your host&#8217;s database server is running properly and all tables are error free."
@@ -1468,7 +1468,7 @@ msgstr "برخی از مقادیر theme.json settings.spacing.spacingScale نا
 #. name.
 #: wp-includes/class-wp-theme-json.php:2054
 msgid "Your %1$s file uses a dynamic value (%2$s) for the path at %3$s. However, the value at %3$s is also a dynamic value (pointing to %4$s) and pointing to another dynamic value is not supported. Please update %3$s to point directly to %4$s."
-msgstr "پروندهٔ %1$s شما از یک مقدار پویا (%2$s) برای مسیر %3$s استفاده می‌نماید. با این حال، مقدار %3$s نیز یک مقدار پویاست (اشاره به %4$s) و اشاره به مقدار پویای دیگری پشتیبانی نمی‌شود. لطفاً %3$s را به‌روزرسانی نمایید تا مستقیماً به %4$s اشاره نماید."
+msgstr "Your %1$s file uses a dynamic value (%2$s) for the path at %3$s. However, the value at %3$s is also a dynamic value (pointing to %4$s) and pointing to another dynamic value is not supported. Please update %3$s to point directly to %4$s."
 
 #. translators: This string should only be translated if wp-config-sample.php
 #. is localized. You can check the localized release package or
@@ -1482,7 +1482,7 @@ msgstr "عبارت یکتای خود را اینجا قرار دهید"
 #. translators: %s: The type of the given cache key.
 #: wp-includes/class-wp-object-cache.php:159
 msgid "Cache key must be an integer or a non-empty string, %s given."
-msgstr "کلید حافظهٔ پنهان باید یک رشته عدد صحیح یا غیر خالی باشد، %s باشد."
+msgstr "Cache key must be an integer or a non-empty string, %s given."
 
 #: wp-includes/class-wp-object-cache.php:157
 msgid "Cache key must not be an empty string."
@@ -1495,38 +1495,38 @@ msgstr "یک خطای مهم در این وب‌سایت وجود دارد. لط
 #. translators: %s: Capability name.
 #: wp-includes/capabilities.php:441
 msgid "When checking for the %s capability, you must always check it against a specific user."
-msgstr "هنگام بررسی قابلیت %s، همیشه باید آن را در مقابل یک کاربر خاص بررسی نمایید."
+msgstr "When checking for the %s capability, you must always check it against a specific user."
 
 #. translators: %s: Capability name.
 #: wp-includes/capabilities.php:438 wp-includes/capabilities.php:707
 msgid "When checking for the %s capability, you must always check it against a specific term."
-msgstr "هنگام بررسی قابلیت %s، همیشه باید آن را با یک مورد خاص بررسی نمایید."
+msgstr "When checking for the %s capability, you must always check it against a specific term."
 
 #. translators: %s: Capability name.
 #: wp-includes/capabilities.php:435 wp-includes/capabilities.php:551
 msgid "When checking for the %s capability, you must always check it against a specific comment."
-msgstr "هنگام بررسی قابلیت %s، همیشه باید آن را در مقابل یک دیدگاه خاص بررسی نمایید."
+msgstr "When checking for the %s capability, you must always check it against a specific comment."
 
 #. translators: %s: Capability name.
 #: wp-includes/capabilities.php:82 wp-includes/capabilities.php:187
 #: wp-includes/capabilities.php:286
 msgid "When checking for the %s capability, you must always check it against a specific page."
-msgstr "هنگام بررسی قابلیت %s، همیشه باید آن را در برگهٔ خاص بررسی نمایید."
+msgstr "When checking for the %s capability, you must always check it against a specific page."
 
 #. translators: %s: Capability name.
 #: wp-includes/capabilities.php:79 wp-includes/capabilities.php:184
 #: wp-includes/capabilities.php:283 wp-includes/capabilities.php:376
 #: wp-includes/capabilities.php:432
 msgid "When checking for the %s capability, you must always check it against a specific post."
-msgstr "هنگام بررسی قابلیت %s، همیشه باید آن را در نوشتهٔ خاص بررسی نمایید."
+msgstr "When checking for the %s capability, you must always check it against a specific post."
 
 #: wp-includes/cache-compat.php:176
 msgid "Your object cache implementation does not support flushing individual groups."
-msgstr "پیاده‌سازی آبجکت‌کش شما از flushing گروه‌های فردی پشتیبانی نمی‌نماید."
+msgstr "Your object cache implementation does not support flushing individual groups."
 
 #: wp-includes/cache-compat.php:144
 msgid "Your object cache implementation does not support flushing the in-memory runtime cache."
-msgstr "آبجکت‌کش شما از flushing in-memory runtime cache پشتیبانی نمی‌نماید."
+msgstr "Your object cache implementation does not support flushing the in-memory runtime cache."
 
 #. translators: Custom template title in the Site Editor, referencing a deleted
 #. author. %s: Author nicename.
@@ -1845,7 +1845,7 @@ msgstr "نشانی اینترنتی کاربر نمی‌تواند طولانی�
 #: wp-includes/user.php:1355 wp-includes/user.php:1379
 #: wp-includes/user.php:1412 wp-includes/user.php:1460
 msgid "Unable to pass %s if not using multisite."
-msgstr "اگر از چندسایته استفاده نشود نمی‌تواند از %s عبور نماید."
+msgstr "Unable to pass %s if not using multisite."
 
 #: wp-includes/deprecated.php:5577
 msgid "Webfont font weight must be a properly formatted string or integer."
@@ -1857,7 +1857,7 @@ msgstr "هر src وب‌فونت باید یک عبارت غیر خالی باش
 
 #: wp-includes/deprecated.php:5561
 msgid "Webfont src must be a non-empty string or an array of strings."
-msgstr "src وب‌فونت باید یک عبارت غیر خالی یا آرایه‌ای از رشته‌ها باشد."
+msgstr "Webfont src must be a non-empty string or an array of strings."
 
 #: wp-includes/deprecated.php:5554
 msgid "Webfont font family must be a non-empty string."
@@ -1979,7 +1979,7 @@ msgstr "فایل وجود ندارد؟"
 
 #: wp-includes/blocks/rss.php:17
 msgid "Adding an RSS feed to this site’s homepage is not supported, as it could lead to a loop that slows down your site. Try using another block, like the <strong>Latest Posts</strong> block, to list posts from the site."
-msgstr "افزودن خوراک RSS به صفحهٔ اصلی این سایت پشتیبانی نمی‌شود، زیرا می‌تواند منجر به چرخه‌ای شود که سرعت سایت شما را کند می‌نماید. از بلوک دیگری مانند بلوک <strong>تازه‌ترین نوشته‌ها</strong> برای فهرست کردن نوشته‌های سایت استفاده نمایید."
+msgstr "افزودن خوراک RSS به صفحهٔ اصلی این سایت پشتیبانی نمی‌شود، زیرا می‌تواند منجر به حلقه‌ای شود که سرعت سایت شما را کند می‌کند. از بلوک دیگری مانند بلوک <strong>تازه‌ترین نوشته‌ها</strong>، برای فهرست کردن نوشته‌های سایت استفاده نمایید."
 
 #: wp-includes/blocks/comments-title.php:74
 #: wp-includes/js/dist/block-library.js:10932
@@ -2026,17 +2026,17 @@ msgstr "%s نیم‌رخ"
 #. translators: 1: file name.
 #: wp-includes/class-wp-theme.php:1917
 msgid "Could not register file \"%s\" as a block pattern (\"Title\" field missing)"
-msgstr "پروندهٔ \"%s\" به عنوان الگوی بلوک ثبت نشد (زمینهٔ «عنوان» وجود ندارد)"
+msgstr "Could not register file \"%s\" as a block pattern (\"Title\" field missing)"
 
 #. translators: 1: file name; 2: slug value found.
 #: wp-includes/class-wp-theme.php:1903
 msgid "Could not register file \"%1$s\" as a block pattern (invalid slug \"%2$s\")"
-msgstr "پروندهٔ \"%1$s\" به عنوان الگوی بلوک ثبت نشد (نامک \"%2$s\" نامعتبر است)"
+msgstr "Could not register file \"%1$s\" as a block pattern (invalid slug \"%2$s\")"
 
 #. translators: 1: file name.
 #: wp-includes/class-wp-theme.php:1890
 msgid "Could not register file \"%s\" as a block pattern (\"Slug\" field missing)"
-msgstr "پروندهٔ \"%s\" به عنوان الگوی بلوک ثبت نشد (زمینهٔ «نامک» وجود ندارد)"
+msgstr "Could not register file \"%s\" as a block pattern (\"Slug\" field missing)"
 
 #: wp-includes/block-patterns.php:71
 msgctxt "Block pattern category"
@@ -2051,7 +2051,7 @@ msgstr "استفاده از ویرایشگر سایت"
 #. button.
 #: wp-includes/script-loader.php:1346
 msgid "Hurray! Your theme supports site editing with blocks. <a href=\"%1$s\">Tell me more</a>. %2$s"
-msgstr "هورا! پوستهٔ شما از ویرایش سایت با بلوک‌ها پشتیبانی می‌نماید. <a href=\"%1$s\">بیشتر بدانید</a>. %2$s"
+msgstr "آفرین! پوستهٔ شما از ویرایش سایت با بلوک‌ها پشتیبانی می‌کند. <a href=\"%1$s\">اطلاعات بیشتری بگو</a>. %2$s"
 
 #: wp-includes/blocks/site-logo.php:90
 msgid "Site icon."
@@ -2221,13 +2221,13 @@ msgstr "خطای پایگاه داده وردپرس: درخواست انجام �
 #. 'wp-customize-widgets'.
 #: wp-includes/widgets.php:2102
 msgid "\"%1$s\" style should not be enqueued together with the new widgets editor (%2$s or %3$s)."
-msgstr "شبوه‌نامه \"%1$s\" نباید با ویرایشگر ابزارک جدید (%2$s یا %3$s) در صف قرار گیرد."
+msgstr "\"%1$s\" style should not be enqueued together with the new widgets editor (%2$s or %3$s)."
 
 #. translators: 1: 'wp-editor', 2: 'wp-edit-widgets', 3:
 #. 'wp-customize-widgets'.
 #: wp-includes/widgets.php:2089
 msgid "\"%1$s\" script should not be enqueued together with the new widgets editor (%2$s or %3$s)."
-msgstr "اسکریپت \"%1$s\" نباید با ویرایشگر ابزارک جدید (%2$s یا %3$s) در صف قرار گیرد."
+msgstr "\"%1$s\" script should not be enqueued together with the new widgets editor (%2$s or %3$s)."
 
 #: wp-includes/class-wp-taxonomy.php:610
 msgid "The description is not prominent by default; however, some themes may show it."
@@ -2239,7 +2239,7 @@ msgstr "برای ایجاد یک سلسله مراتب یک عبارت والد 
 
 #: wp-includes/class-wp-taxonomy.php:608
 msgid "The &#8220;slug&#8221; is the URL-friendly version of the name. It is usually all lowercase and contains only letters, numbers, and hyphens."
-msgstr "&#8220;نام اینترنتی&#8221; یک نسخه از نام است که برای نشانی وب مناسب می‌باشد. معمولا با حروف کوچک بوده و تنها شامل حروف،‌ ارقام و خط تیره می‌شود."
+msgstr "&#8220;نام اینترنتی&#8221; یک نسخه از نام است که برای نشانی وب مناسب است. معمولا با حروف کوچک بوده و تنها شامل حروف،‌ ارقام و خط تیره است."
 
 #: wp-includes/class-wp-taxonomy.php:607
 msgid "The name is how it appears on your site."
@@ -2796,7 +2796,7 @@ msgstr "<strong>خطا:</strong> لطفاً زمینه‌های ضروری را 
 
 #: wp-includes/class-wp-block-styles-registry.php:85
 msgid "Block style name must not contain any spaces."
-msgstr "نام شیوه‌نامه بلوک نباید دارای فاصله باشد."
+msgstr "Block style name must not contain any spaces."
 
 #. translators: %s: Template part slug.
 #. translators: %s: Template part slug
@@ -3380,7 +3380,7 @@ msgstr "به یک گفتاورد از متن خود تأکید ویژه داشت
 #: wp-includes/blocks/preformatted/block.json
 msgctxt "block description"
 msgid "Add text that respects your spacing and tabs, and also allows styling."
-msgstr "متنی را اضافه نمایید که از فاصله‌گذاری‌های، و طرح‌بندی شما پیروی می‌نماید."
+msgstr "متنی را اضافه نمایید که طبق فاصله‌بندی‌ها و تب‌های شما است و امکان استایل‌دهی را نیز فراهم می‌کند."
 
 #: wp-includes/blocks/post-title/block.json
 msgctxt "block description"
@@ -3703,7 +3703,7 @@ msgstr "یک ستون تنها در داخل یک بلوک ستون."
 #: wp-includes/blocks/code/block.json
 msgctxt "block description"
 msgid "Display code snippets that respect your spacing and tabs."
-msgstr "تکه کدهایی را نمایش دهید که از فاصله‌گذاری‌های شما پیروی می‌نمایند."
+msgstr "تکه کدهایی را نمایش دهید که از فاصله‌گذاری‌های شما پیروی می‌کند."
 
 #: wp-includes/blocks/categories/block.json
 msgctxt "block description"
@@ -4401,7 +4401,7 @@ msgstr "(پیوند خانه، بازکردن در زبانه تازه)"
 #. lineHeight, etc. 3: block.json, 4: Old metadata key, 5: New metadata key.
 #: wp-includes/blocks.php:1660
 msgid "Block \"%1$s\" is declaring %2$s support in %3$s file under %4$s. %2$s support is now declared under %5$s."
-msgstr "بلوک \"%1$s\" پشتیبانی %2$s را در پرونده %3$s تحت %4$s اعلام می‌کند. پشتیبانی %2$s هم‌اکنون تحت %5$s اعلام شده‌است."
+msgstr "Block \"%1$s\" is declaring %2$s support in %3$s file under %4$s. %2$s support is now declared under %5$s."
 
 #: wp-includes/block-template.php:223
 msgid "No matching template found"
@@ -4510,7 +4510,7 @@ msgstr "درخواست HTTPS ناموفق بود."
 #. translators: 1: $l10n, 2: wp_add_inline_script()
 #: wp-includes/class-wp-scripts.php:601
 msgid "The %1$s parameter must be an array. To pass arbitrary data to scripts, use the %2$s function instead."
-msgstr "پارامتر %1$s باید یک آرایه باشد. جهت پاس‌دادن دلخواه داده به اسکریپت، از تابع %2$s استفاده کنید."
+msgstr "The %1$s parameter must be an array. To pass arbitrary data to scripts, use the %2$s function instead."
 
 #: wp-includes/blocks/social-link/block.json
 msgctxt "block title"
@@ -4778,11 +4778,11 @@ msgstr "یک افزونه از پاکسازی هوک جلوگیری می‌کن�
 
 #: wp-includes/cron.php:499
 msgid "A plugin prevented the event from being unscheduled."
-msgstr "یک افزونه از زمان‌بندی نکردن یک رویداد جلوگیری می‌نماید."
+msgstr "یک افزونه از زمان‌بندی نکردن یک رویداد جلوگیری کرد."
 
 #: wp-includes/cron.php:408
 msgid "A plugin prevented the event from being rescheduled."
-msgstr "یک افزونه از زمان‌بندی کردن دوبارهٔ یک رویداد جلوگیری می‌نماید."
+msgstr "یک افزونه از زمان‌بندی شدن دوبارهٔ رویداد جلوگیری کرد."
 
 #: wp-includes/cron.php:253 wp-includes/cron.php:424
 msgid "Event schedule does not exist."
@@ -4798,7 +4798,7 @@ msgstr "درحال حاضر رویداد تکراری موجود است."
 
 #: wp-includes/cron.php:97 wp-includes/cron.php:275
 msgid "A plugin prevented the event from being scheduled."
-msgstr "یک افزونه از زمان‌بندی کردن یک رویداد جلوگیری می‌نماید."
+msgstr "یک افزونه از زمان‌بندی شدن رویداد جلوگیری کرد."
 
 #: wp-includes/cron.php:45 wp-includes/cron.php:240 wp-includes/cron.php:346
 #: wp-includes/cron.php:468
@@ -4875,7 +4875,7 @@ msgstr "آرایه‌‌ای از ویرایش‌های تصویر."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-application-passwords-controller.php:522
 msgid "Cannot introspect application password."
-msgstr "نمی‌توان رمز عبور برنامه را مرور کرد."
+msgstr "نمی‌توان به تفسیر رمز عبور برنامه پرداخت."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-application-passwords-controller.php:494
 msgid "The authenticated application password can only be introspected for the current user."
@@ -5204,7 +5204,7 @@ msgstr "کنترل کننده مسیر نامعتبر است."
 
 #: wp-includes/theme.php:2680
 msgid "You need to pass an array of post formats."
-msgstr "شما نیاز به ردکردن آرایه از ساختارهای پست دارید."
+msgstr "You need to pass an array of post formats."
 
 #. translators: %s: IP address of password reset requester.
 #: wp-includes/user.php:3189
@@ -5328,7 +5328,7 @@ msgstr "این پوسته با نگارش PHP و وردپرس شما کار نم
 #. translators: %s: register_rest_field
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2623
 msgid "Please use %s to add new schema properties."
-msgstr "لطفاً برای افزودن ویژگی طرحوارهٔ تازه از %s استفاده نمایید."
+msgstr "Please use %s to add new schema properties."
 
 #. translators: %s: prepare_callback
 #: wp-includes/theme.php:3315
@@ -5354,7 +5354,7 @@ msgstr "با عرض پوزش، شما اجازهٔ مدیریت افزونه‌�
 #. 3: The suggested function name.
 #: wp-includes/rest-api.php:98
 msgid "The REST API route definition for %1$s is missing the required %2$s argument. For REST API routes that are intended to be public, use %3$s as the permission callback."
-msgstr "تعریف مسیر REST API برای %1$s فاقد آرگومان ضروری %2$s است. برای مسیر REST API که برای عمومی بودن در نظر گرفته شده‌اند، از %3$s به عنوان فراخوان دسترسی استفاده کنید."
+msgstr "The REST API route definition for %1$s is missing the required %2$s argument. For REST API routes that are intended to be public, use %3$s as the permission callback."
 
 #: wp-includes/post.php:4481
 msgid "Could not update attachment in the database."
@@ -5363,7 +5363,7 @@ msgstr "عدم توانایی در به‌روزرسانی پیوست در پا�
 #: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:708
 #: wp-admin/plugins.php:48 wp-admin/plugins.php:176
 msgid "Sorry, you are not allowed to activate this plugin."
-msgstr "با عرض پوزش، شما مجاز به فعال‌سازی این افزونه نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به فعال‌سازی این افزونه نیستید."
 
 #. translators: byline. %s: current author.
 #. translators: %s: the author.
@@ -5408,11 +5408,11 @@ msgstr "مقاله <a href=\"%s\" target=\"_blank\">اشکال‌زدایی یک
 #. translators: %s: Block pattern name.
 #: wp-includes/class-wp-block-pattern-categories-registry.php:92
 msgid "Block pattern category \"%s\" not found."
-msgstr "دسته الگو بلوک \"%s\" پیدا نشد."
+msgstr "Block pattern category \"%s\" not found."
 
 #: wp-includes/class-wp-block-pattern-categories-registry.php:56
 msgid "Block pattern category name must be a string."
-msgstr "نام دسته الگو بلوک باید یک رشته باشد."
+msgstr "Block pattern category name must be a string."
 
 #: wp-includes/block-patterns.php:57
 msgctxt "Block pattern category"
@@ -5442,7 +5442,7 @@ msgstr "دکمه‌ها"
 #. translators: 1: WP_REST_Response, 2: WP_Error
 #: wp-includes/functions.php:4447
 msgid "Return a %1$s or %2$s object from your callback when using the REST API."
-msgstr "شی %1$s یا %2$s را از تابع بازگشتی در هنگام استفاده از  REST API بازگشت می‌دهد."
+msgstr "Return a %1$s or %2$s object from your callback when using the REST API."
 
 #. translators: Unit symbol for byte.
 #: wp-includes/functions.php:482 wp-includes/functions.php:487
@@ -5529,7 +5529,7 @@ msgstr "دسته:"
 #. translators: 1: Asset file location, 2: Field name, 3: Block name.
 #: wp-includes/blocks.php:170
 msgid "The asset file (%1$s) for the \"%2$s\" defined in \"%3$s\" block definition is missing."
-msgstr "تعریف پرونده (%1$s) برای \"%2$s\" تعریف شده در بلوک \"%3$s\" وجود ندارد."
+msgstr "The asset file (%1$s) for the \"%2$s\" defined in \"%3$s\" block definition is missing."
 
 #: wp-includes/ms-deprecated.php:415
 msgid "<strong>Error:</strong> There was a problem creating site entry."
@@ -5542,11 +5542,11 @@ msgstr "<strong>خطا:</strong> نشانی URL سایتی که وارد کرد�
 #. translators: %s: Pattern name.
 #: wp-includes/class-wp-block-patterns-registry.php:143
 msgid "Pattern \"%s\" not found."
-msgstr "الگوی \"%s\" یافت نشد."
+msgstr "Pattern \"%s\" not found."
 
 #: wp-includes/class-wp-block-patterns-registry.php:107
 msgid "Pattern content must be a string."
-msgstr "محتوا الگو باید یک رشته باشد."
+msgstr "Pattern content must be a string."
 
 #: wp-includes/class-wp-block-patterns-registry.php:98
 msgid "Pattern title must be a string."
@@ -5554,7 +5554,7 @@ msgstr "عنوان الگو باید یک رشته باشد."
 
 #: wp-includes/class-wp-block-patterns-registry.php:89
 msgid "Pattern name must be a string."
-msgstr "نام الگو باید یک رشته باشد."
+msgstr "Pattern name must be a string."
 
 #: wp-includes/media.php:4814
 msgid "Attachment details"
@@ -5630,21 +5630,21 @@ msgstr[0] "%1$s باید حاوی حداقل %2$s مورد باشد."
 #. translators: 1: Parameter, 2: The list of allowed types.
 #: wp-includes/rest-api.php:2168 wp-includes/rest-api.php:2765
 msgid "The \"type\" schema keyword for %1$s can only be one of the built-in types: %2$l."
-msgstr "کلیدواژه الگوی \"نوع\" برای %1$s فقط یکی از انواع داخلی می‌تواند باشد: %2$l."
+msgstr "The \"type\" schema keyword for %1$s can only be one of the built-in types: %2$l."
 
 #. translators: %s: Parameter.
 #: wp-includes/rest-api.php:2146 wp-includes/rest-api.php:2748
 msgid "The \"type\" schema keyword for %s is required."
-msgstr "کلیدواژه الگو \"نوع\" برای %s لازم است."
+msgstr "The \"type\" schema keyword for %s is required."
 
 #: wp-includes/rest-api.php:1727
 msgid "Cannot stabilize objects. Convert the object to an array first."
-msgstr "تثبیت اشیاء امکان پذیر نیست. ابتدا شیء را به آرایه تبدیل کنید."
+msgstr "Cannot stabilize objects. Convert the object to an array first."
 
 #. translators: 1: Parameter, 2: List of allowed types.
 #: wp-includes/rest-api.php:1665
 msgid "The \"type\" schema keyword for %1$s can only contain the built-in types: %2$l."
-msgstr "کلیدواژه الگوی \"نوع\" برای %1$s فقط می‌تواند حاوی انواع داخلی باشد: %2$l."
+msgstr "The \"type\" schema keyword for %1$s can only contain the built-in types: %2$l."
 
 #. translators: Custom template title in the Site Editor. 1: Template title, 2:
 #. Post type slug.
@@ -5678,7 +5678,7 @@ msgstr "%1$s (%2$s)"
 #. translators: %s: Name of the script or stylesheet.
 #: wp-includes/functions.wp-scripts.php:59
 msgid "This notice was triggered by the %s handle."
-msgstr "این اخطار توسط %s ایجاد شده است."
+msgstr "This notice was triggered by the %s handle."
 
 #: wp-includes/comment.php:1325 wp-admin/options.php:223
 msgid "Please consider writing more inclusive code."
@@ -6042,7 +6042,7 @@ msgstr "دامنهٔ متنی عمومی."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:625
 msgid "Contains the handle that defines the block style."
-msgstr "شامل دسته‌ای است که شیوه‌نامه بلوک را تعریف می‌نماید."
+msgstr "شامل دسته‌‌ای است که شیوه‌نامه بلوک را تعریف می‌کند."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-types-controller.php:621
 msgid "Inline CSS code that registers the CSS class required for the style."
@@ -6126,7 +6126,7 @@ msgstr "نام بلوک."
 
 #: wp-includes/meta.php:1513
 msgid "When registering a default meta value the data must match the type provided."
-msgstr "هنگام ثبت یک مقدار متا پیش‌فرض، داده‌ها باید با نوع ارائه شده مط‌ابقت داشته باشند."
+msgstr "When registering a default meta value the data must match the type provided."
 
 #: wp-includes/widgets/class-wp-widget-rss.php:129
 msgid "RSS Feed"
@@ -6230,12 +6230,12 @@ msgstr "به دلیل وجود نداشتن افزودنی %s نقشهٔ سای�
 #. translators: %s: List of element names.
 #: wp-includes/sitemaps/class-wp-sitemaps-renderer.php:234
 msgid "Fields other than %s are not currently supported for sitemaps."
-msgstr "درحال‌حاضر زمینه‌های غیر از %s برای نقشه‌سایت پشتیبانی نمی‌شوند."
+msgstr "Fields other than %s are not currently supported for sitemaps."
 
 #. translators: %s: List of element names.
 #: wp-includes/sitemaps/class-wp-sitemaps-renderer.php:170
 msgid "Fields other than %s are not currently supported for the sitemap index."
-msgstr "درحال‌حاضر زمینه‌های غیر از %s برای ایندکس نقشه‌سایت پشتیبانی نمی‌شوند."
+msgstr "Fields other than %s are not currently supported for the sitemap index."
 
 #: wp-login.php:1231
 msgid "Check your email"
@@ -6259,7 +6259,7 @@ msgstr "محافظت‌شده با رمز عبور"
 
 #: wp-includes/rest-api.php:51
 msgid "Namespace must not start or end with a slash."
-msgstr "فضای نام نباید با یک اسلش شروع یا پایان یابد."
+msgstr "Namespace must not start or end with a slash."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3452
 #: wp-includes/class-wp-xmlrpc-server.php:3455
@@ -6313,7 +6313,7 @@ msgstr "کوچک"
 #. translators: 1: Post status, 2: Capability name.
 #: wp-includes/capabilities.php:344
 msgid "The post status %1$s is not registered, so it may not be reliable to check the capability %2$s against a post with that status."
-msgstr "وضعیت انتشار %1$s ثبت نشده است، بنابراین نمی‌توانیم از بررسی قابلیت \"%2$s\" در برابر یک نوشته با آن وضعیت مطمئن باشیم."
+msgstr "The post status %1$s is not registered, so it may not be reliable to check the capability %2$s against a post with that status."
 
 #. translators: %s: Comment link.
 #: wp-includes/comment-template.php:1034 wp-admin/comment.php:218
@@ -6327,7 +6327,7 @@ msgstr "ماه‌های قبلی و بعدی"
 
 #: wp-includes/option.php:2721
 msgid "When registering an \"array\" setting to show in the REST API, you must specify the schema for each array item in \"show_in_rest.schema.items\"."
-msgstr "هنگام ثبت یک نوع متای \"آرایه\" برای نمایش در REST API، شما باید الگو (schema) را برای هر مورد آرایه در \"show_in_rest.schema.items\" تنظیم نمایید."
+msgstr "When registering an \"array\" setting to show in the REST API, you must specify the schema for each array item in \"show_in_rest.schema.items\"."
 
 #: wp-includes/user.php:3996
 msgid "User&#8217;s Session Tokens data."
@@ -6380,7 +6380,7 @@ msgstr "شهر"
 #. translators: %s: wp_privacy_additional_user_profile_data
 #: wp-includes/user.php:3916
 msgid "Filter %s returned items with reserved names."
-msgstr "صافی %s مواردی با نام‌های دخیره شده را بازگشت داد."
+msgstr "Filter %s returned items with reserved names."
 
 #: wp-includes/media-template.php:478 wp-includes/media-template.php:720
 #: wp-admin/includes/media.php:3491
@@ -6410,7 +6410,7 @@ msgstr "نتیجه را بر پایهٔ رابطهٔ میان طبقه‌بند�
 #. or 'name', 3: The conflicting value.
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2569
 msgid "The \"%1$s\" taxonomy \"%2$s\" property (%3$s) conflicts with an existing property on the REST API Posts Controller. Specify a custom \"rest_base\" when registering the taxonomy to avoid this error."
-msgstr "\"%1$s\" طبقه‌بندی \"%2$s\" ویژگی (%3$s) با ویژگی موجود در  REST API Posts Controller ناسازگار است. برای جلوگیری از این خطا در هنگام ثبت طبقه‌بندی از یک \"rest_base\" سفارشی استفاده نمایید."
+msgstr "The \"%1$s\" taxonomy \"%2$s\" property (%3$s) conflicts with an existing property on the REST API Posts Controller. Specify a custom \"rest_base\" when registering the taxonomy to avoid this error."
 
 #: wp-includes/theme.php:4268
 msgid "Whether theme opts in to default WordPress block styles for viewing."
@@ -6567,7 +6567,7 @@ msgstr "نسخه پشتیبان این نوشته در مرورگر شما با 
 
 #: wp-includes/nav-menu.php:97
 msgid "Nav menu locations must be strings."
-msgstr "جایگاه‌های فهرست ناوبری باید رشته باشند."
+msgstr "Nav menu locations must be strings."
 
 #. translators: %s: The currently used PHP version.
 #: wp-includes/class-wp-recovery-mode-email-service.php:374
@@ -6618,15 +6618,15 @@ msgstr "منطقهٔ زمانی شما روی %1$s (%2$s) تنظیم شده اس
 #. translators: 1: Block name, 2: Block style name.
 #: wp-includes/class-wp-block-styles-registry.php:115
 msgid "Block \"%1$s\" does not contain a style named \"%2$s\"."
-msgstr "بلوک \"%1$s\" حاوی شیوه‌ای به نام \"%2$s\" نیست."
+msgstr "Block \"%1$s\" does not contain a style named \"%2$s\"."
 
 #: wp-includes/class-wp-block-styles-registry.php:76
 msgid "Block style name must be a string."
-msgstr "نام شیوه‌نامه بلوک باید یک رشته باشد."
+msgstr "Block style name must be a string."
 
 #: wp-includes/class-wp-block-styles-registry.php:67
 msgid "Block name must be a string."
-msgstr "نام بلوک باید یک رشته باشد."
+msgstr "Block name must be a string."
 
 #. translators: Documentation explaining debugging in WordPress.
 #: wp-includes/functions.php:5947
@@ -6749,7 +6749,7 @@ msgstr "مقدار متای %s در پایگاه‌داده نمی‌تواند 
 
 #: wp-includes/meta.php:1460
 msgid "When registering an \"array\" meta type to show in the REST API, you must specify the schema for each array item in \"show_in_rest.schema.items\"."
-msgstr "هنگام ثبت یک نوع متای \"آرایه\" برای نمایش در REST API، شما باید الگو (schema) را برای هر مورد آرایه در \"show_in_rest.schema.items\" تعیین نمایید."
+msgstr "When registering an \"array\" meta type to show in the REST API, you must specify the schema for each array item in \"show_in_rest.schema.items\"."
 
 #: wp-includes/widgets/class-wp-widget-meta.php:75
 msgid "Comments feed"
@@ -6937,7 +6937,7 @@ msgid ""
 msgstr ""
 "درود،\n"
 "\n"
-"وردپرس یک ویژگی داخلی دارد که تشخیص می‌دهد چه زمانی یک افزونه یا پوسته باعث خطای مرگبار در سایت شما می‌شود و با این ایمیل خودکار شما را مطلع می‌نماید.\n"
+"وردپرس یک ویژگی داخلی دارد که تشخیص می‌دهد چه زمانی یک افزونه یا پوسته باعث خطای مرگبار در سایت شما می‌شود و با این ایمیل خودکار شما را مطلع می‌کند.\n"
 "###CAUSE###\n"
 "اول، سایت خود (###SITEURL###) را ببینید و برای هر خطای قابل رویتی بررسی نمایید.\n"
 " سپس، برگه‌ای که خطا در ان رخ داد را ببینید (###PAGEURL###) و برای هر خطای قابل رویتی بررسی نمایید.\n"
@@ -7245,7 +7245,7 @@ msgstr "بازیابی داده‌های سایت ممکن نیست."
 #. translators: %s: rest_api_init
 #: wp-includes/rest-api.php:59
 msgid "REST API routes must be registered on the %s action."
-msgstr "مسیرهای REST API باید در عمل %s ثبت نام شوند."
+msgstr "REST API routes must be registered on the %s action."
 
 #. translators: Used to join last two items in a list with more than 2 times.
 #: wp-includes/formatting.php:5352
@@ -7267,7 +7267,7 @@ msgstr "دیدگاه شما منتظر بررسی است. این یک پیش‌�
 #. translators: %s: Database table name.
 #: wp-includes/ms-site.php:1322
 msgid "The %s table is not installed. Please run the network database upgrade."
-msgstr "جدول %s نصب نشده است. لطفاً به‌روزرسانی پایگاه‌دادهٔ شبکه را اجرا نمایید."
+msgstr "The %s table is not installed. Please run the network database upgrade."
 
 #: wp-includes/ms-site.php:801
 msgid "The site appears to be already uninitialized."
@@ -7418,7 +7418,7 @@ msgstr "میانبرهای تخته‌کلید بلوک کلاسیک"
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-autosaves-controller.php:170
 msgid "Sorry, you are not allowed to view autosaves of this post."
-msgstr "با عرض پوزش، شما مجاز به مشاهدهٔ ذخیره خودکار این نوشته نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به مشاهدهٔ ذخیره خودکار این نوشته نیستید."
 
 #: wp-includes/js/dist/edit-site.js:20166
 #: wp-includes/js/dist/edit-site.js:28746
@@ -7584,11 +7584,11 @@ msgstr "بلوک نامعتبر."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php:132
 msgid "Sorry, you are not allowed to read blocks as this user."
-msgstr "با عرض پوزش، شما مجاز به خواندن بلوک‌ها توسط این کاربر نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به خواندن بلوک‌ها توسط این کاربر نیستید."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php:122
 msgid "Sorry, you are not allowed to read blocks of this post."
-msgstr "با عرض پوزش، شما مجاز به خواندن بلوک‌های این نوشته نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به خواندن بلوک‌های این نوشته نیستید."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-block-renderer-controller.php:91
 msgid "ID of the post context."
@@ -7654,7 +7654,7 @@ msgstr "خطای رسیدگی کننده جستجوی داخلی."
 #. translators: %s: PHP class name.
 #: wp-includes/rest-api/endpoints/class-wp-rest-search-controller.php:74
 msgid "REST search handlers must extend the %s class."
-msgstr "رسیدگی کنندگان جستجوی REST باید کلاس %s را گسترش دهند."
+msgstr "REST search handlers must extend the %s class."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2667
 msgid "The current user can post unfiltered HTML markup and JavaScript."
@@ -7725,24 +7725,24 @@ msgstr "نوشته منتشر شد."
 #. translators: %s: Block name.
 #: wp-includes/class-wp-block-type-registry.php:120
 msgid "Block type \"%s\" is not registered."
-msgstr "نوع بلوک \"%s\" ثبت نشده است."
+msgstr "Block type \"%s\" is not registered."
 
 #. translators: %s: Block name.
 #: wp-includes/class-wp-block-type-registry.php:87
 msgid "Block type \"%s\" is already registered."
-msgstr "نوع بلوک \"%s\" هم‌اکنون ثبت شده است."
+msgstr "Block type \"%s\" is already registered."
 
 #: wp-includes/class-wp-block-type-registry.php:77
 msgid "Block type names must contain a namespace prefix. Example: my-plugin/my-custom-block-type"
-msgstr "نام‌های نوع بلوک باید فاصله بین کلمه داشته باشند. مانند: my-plugin/my-custom-block-type"
+msgstr "Block type names must contain a namespace prefix. Example: my-plugin/my-custom-block-type"
 
 #: wp-includes/class-wp-block-type-registry.php:67
 msgid "Block type names must not contain uppercase characters."
-msgstr "نام‌های نوع بلوک نباید حروف بزرگ داشته باشند."
+msgstr "Block type names must not contain uppercase characters."
 
 #: wp-includes/class-wp-block-type-registry.php:58
 msgid "Block type names must be strings."
-msgstr "نام‌های نوع بلوک باید رشته باشند."
+msgstr "Block type names must be strings."
 
 #: wp-includes/blocks/latest-comments.php:142
 msgid "No comments to show."
@@ -8205,7 +8205,7 @@ msgstr "در هر صورت به‌روزرسانی شود، حتی اگر منج
 
 #: wp-includes/class-wpdb.php:1682
 msgid "The query only expected one placeholder, but an array of multiple placeholders was sent."
-msgstr "پرس‌وجو (query) فقط انتظار یک دارنده مکانی (placeholder) را داشت، اما یک آرایه از چند دارنده مکانی ارسال شده بود."
+msgstr "The query only expected one placeholder, but an array of multiple placeholders was sent."
 
 #: wp-includes/script-loader.php:1289
 msgctxt "customizer changeset status"
@@ -8304,7 +8304,7 @@ msgstr "در حال حاضر %s این سایت را سفارشی می‌کند.
 
 #: wp-includes/class-wp-customize-manager.php:3409
 msgid "Sorry, you are not allowed to take over."
-msgstr "با عرض پوزش، شما مجاز به دردست گرفتن نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به دردست گرفتن نیستید."
 
 #: wp-includes/class-wp-customize-manager.php:3400
 msgid "No changeset found to take over"
@@ -8338,7 +8338,7 @@ msgstr "کجا می‌خواهید این فهرست ظاهر شود؟"
 
 #: wp-includes/class-wp-customize-nav-menus.php:1126
 msgid "You&#8217;ll create a menu, assign it a location, and add menu items like links to pages and categories. If your theme has multiple menu areas, you might need to create more than one."
-msgstr "شما یک فهرست ایجاد می‌کنید، آن را به یک مکان انتساب می‌دهید، و آیتم‌های فهرست مانند پیوند به برگه‌ها و دسته‌ها را اضافه می‌نمایید. در صورتی که پوسته شما چند ناحیه فهرست دارد، ممکن است نیاز به ایجاد بیش از یک مورد داشته باشید."
+msgstr "شما یک فهرست ایجاد می‌کنید، آن را به یک مکان انتساب می‌دهید، و آیتم‌های فهرست مانند پیوند به برگه‌ها و دسته‌ها را اضافه می‌کنید. در صورتی که پوسته شما چند ناحیه فهرست دارد، ممکن است نیاز به ایجاد بیش از یک مورد داشته باشید."
 
 #: wp-includes/class-wp-customize-nav-menus.php:1123
 msgid "It does not look like your site has any menus yet. Want to build one? Click the button to start."
@@ -8393,12 +8393,12 @@ msgstr "پرس‌وجو (query) حاوی تعداد صحیحی از دارنده
 #. translators: %s: Value type.
 #: wp-includes/class-wpdb.php:1742
 msgid "Unsupported value type (%s)."
-msgstr "نوع مقدار پشتیبانی نمی‌شود (%s)."
+msgstr "Unsupported value type (%s)."
 
 #. translators: %s: register_widget()
 #: wp-includes/widgets.php:1218
 msgid "Widgets need to be registered using %s, before they can be displayed."
-msgstr "ابزارک‌ها، قبل از اینکه بتوانند نمایش داده شوند، نیاز به ثبت توسط %s دارند."
+msgstr "Widgets need to be registered using %s, before they can be displayed."
 
 #: wp-includes/widgets/class-wp-widget-media-image.php:358
 msgid "Link to:"
@@ -8459,7 +8459,7 @@ msgstr ""
 "در صورتی که صحیح است، لطفا جهت تغییر آن، بر روی پیوند زیر کلیک نمایید:\n"
 "###ADMIN_URL###\n"
 "\n"
-"در صورتی که مایل به انجام این عمل نمی‌باشید، می‌توانید این ایمیل را به صورت امن،\n"
+"در صورتی که مایل به انجام این عمل نیستید، می‌توانید این ایمیل را به صورت امن،\n"
 "نادیده گرفته و حذف نمایید.\n"
 "\n"
 "این ایمیل به ###EMAIL### ارسال شده است\n"
@@ -8774,7 +8774,7 @@ msgstr "شما از مرورگری استفاده می‌کنید که روی آ
 #. translators: %s: register_routes()
 #: wp-includes/rest-api/endpoints/class-wp-rest-controller.php:53
 msgid "Method '%s' must be overridden."
-msgstr "روش '%s' باید رونویسی شود."
+msgstr "Method '%s' must be overridden."
 
 #: wp-includes/post.php:250
 msgid "oEmbed Response"
@@ -8907,7 +8907,7 @@ msgstr ""
 
 #: wp-includes/functions.php:7804
 msgid "Only UUID V4 is supported at this time."
-msgstr "در حال حاضر تنها از UUID V4 پشتیبانی می‌شود."
+msgstr "Only UUID V4 is supported at this time."
 
 #: wp-includes/deprecated.php:3950 wp-includes/deprecated.php:3967
 #: wp-admin/press-this.php:74
@@ -8969,7 +8969,7 @@ msgstr "صدا را انتخاب کنید"
 #. translators: %s: Header height in pixels.
 #: wp-includes/customize/class-wp-customize-header-image-control.php:231
 msgid "Click &#8220;Add New Image&#8221; to upload an image file from your computer. Your theme works best with an image with a header height of %s pixels &#8212; you&#8217;ll be able to crop your image once you upload it for a perfect fit."
-msgstr "برای بارگذاری یک پروندهٔ تصویر از رایانهٔ خود، &#8220;افزودن تصویر تازه&#8221; را کلیک نمایید. پوستهٔ شما با یک تصویر، با ارتفاع سرصفحه %s پیکسل، بهتر کار می‌نماید&#8212; شما قادر هستید تا تصویرتان را، پس از بارگذاری، جهت اندازه‌بندی مناسب برش بزنید."
+msgstr "برای بارگذاری یک پروندهٔ تصویر از رایانهٔ خود، &#8220;افزودن تصویر تازه&#8221; را کلیک کنید. پوستهٔ شما با یک تصویر، با ارتفاع سرصفحه %s پیکسل، بهتر کار می‌کند&#8212; شما قادرید تا تصویرتان را، پس از بارگذاری، جهت اندازه‌بندی مناسب برش بزنید."
 
 #. translators: %s: Header width in pixels.
 #: wp-includes/customize/class-wp-customize-header-image-control.php:225
@@ -8983,7 +8983,7 @@ msgstr "برای بارگذاری یک پروندهٔ تصویر، از رایا
 
 #: wp-includes/customize/class-wp-customize-header-image-control.php:215
 msgid "Click &#8220;Add New Image&#8221; to upload an image file from your computer. Your theme works best with an image that matches the size of your video &#8212; you&#8217;ll be able to crop your image once you upload it for a perfect fit."
-msgstr "برای بارگذاری یک پروندهٔ تصویر، از رایانه خود، &#8220;افزودن تصویر جدید&#8221; را کلیک نمایید. پوستهٔ شما با یک تصویر، که با اندازهٔ ویدئوی شما همخوانی دارد، بهتر کار می‌نماید&#8212; شما قادر هستید تا تصویرتان را، پس از بارگذاری، جهت اندازه‌بندی مناسب، برش بزنید."
+msgstr "برای بارگذاری یک پروندهٔ تصویر، از رایانه خود، &#8220;افزودن تصویر جدید&#8221; را کلیک نمایید. پوستهٔ شما با یک تصویر، که با اندازهٔ ویدئوی شما همخوانی دارد، بهتر کار می‌کند&#8212; شما قادر هستید تا تصویرتان را، پس از بارگذاری، جهت اندازه‌بندی مناسب، برش بزنید."
 
 #. translators: 1: Month number (01, 02, etc.), 2: Month abbreviation.
 #: wp-includes/customize/class-wp-customize-date-time-control.php:234
@@ -9139,7 +9139,7 @@ msgstr "نمادک سایت، باید مربعی باشد و دست کم %s پ�
 
 #: wp-includes/class-wp-customize-manager.php:5200
 msgid "Site Icons are what you see in browser tabs, bookmark bars, and within the WordPress mobile apps. Upload one here!"
-msgstr "نمادک‌های سایت چیزهایی هستند که در برگه‌های مرورگر (tab)، نوارهای نشان‌گذاری (bookmark)، و برنامه‌های موبایل وردپرس مشاهده می‌نمایید. یکی از آنها را در اینجا بارگذاری نمایید!"
+msgstr "نمادک‌های سایت چیزهایی هستند که در برگه‌های مرورگر (tab)، نوارهای نشان‌گذاری (bookmark)، و برنامه‌های موبایل وردپرس مشاهده می‌کنید. یکی از آنها را در اینجا بارگذاری نمایید!"
 
 #: wp-includes/class-wp-customize-manager.php:5096
 msgid "WordPress.org themes"
@@ -9834,7 +9834,7 @@ msgstr "اصطلاح نمی‌تواند حذف شود."
 #: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:110
 #: wp-includes/rest-api/endpoints/class-wp-rest-themes-controller.php:137
 msgid "Sorry, you are not allowed to view themes."
-msgstr "با عرض پوزش، شما مجاز به مشاهده پوسته‌ها نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به مشاهده پوسته‌ها نیستید."
 
 #: wp-includes/class-wp-xmlrpc-server.php:2234
 #: wp-includes/rest-api/endpoints/class-wp-rest-menus-controller.php:201
@@ -10050,12 +10050,12 @@ msgstr "با عرض پوزش، شما اجازه مشاهده موارد فهر�
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:189
 msgid "Sorry, you are not allowed to view revisions of this post."
-msgstr "با عرض پوزش، شما مجاز به مشاهده رونوشت‌های این نوشته نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به مشاهده رونوشت‌های این نوشته نیستید."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:528
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:536
 msgid "Sorry, you are not allowed to create a comment on this post."
-msgstr "با عرض پوزش، شما مجاز به افزودن دیدگاه به این نوشته نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به افزودن دیدگاه به این نوشته نیستید."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:510
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:520
@@ -10067,7 +10067,7 @@ msgstr "با عرض پوزش، شما بدون یک نوشته مجاز به ا�
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:492
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:502
 msgid "Sorry, you are not allowed to edit '%s' for comments."
-msgstr "با عرض پوزش، شما مجاز به ویرایش '%s' برای دیدگاه‌ها نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به ویرایش '%s' برای دیدگاه‌ها نیستید."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:134
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:408
@@ -10483,7 +10483,7 @@ msgstr "شناسه کاربر برای تخصیص مجدد نامعتبر است
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:855
 msgid "Sorry, you are not allowed to delete this user."
-msgstr "با عرض پوزش، شما مجاز به حذف این کاربر نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به حذف این کاربر نیستید."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:741
 msgid "Username is not editable."
@@ -10491,7 +10491,7 @@ msgstr "نام‌ کاربری قابل ویرایش نیست."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:682
 msgid "Sorry, you are not allowed to edit roles of this user."
-msgstr "با عرض پوزش، شما مجاز به ویرایش نقش‌های این کاربر نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به ویرایش نقش‌های این کاربر نیستید."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-revisions-controller.php:444
 #: wp-includes/rest-api/endpoints/class-wp-rest-template-revisions-controller.php:244
@@ -10621,7 +10621,7 @@ msgstr "محدود نمودن تتیجه به پست‌ها با یک مقدار
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2797
 msgid "Ensure result set excludes posts assigned to specific authors."
-msgstr "مطمئن شوید که نتیجه نوشته‌های تخصیص یافته به نویسدنه‌های خاص را محدود می‌نماید."
+msgstr "مطمئن شوید که نتیجه نوشته‌های تخصیص یافته به نویسدنه‌های خاص را محدود می‌کند."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:2789
 msgid "Limit result set to posts assigned to specific authors."
@@ -10769,7 +10769,7 @@ msgstr "نوشته پیش از این حذف‌شده است."
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:390
 #: wp-admin/edit-comments.php:14
 msgid "Sorry, you are not allowed to edit comments."
-msgstr "با عرض پوزش، شما مجاز به ویرایش دیدگاه‌ها نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به ویرایش دیدگاه‌ها نیستید."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-plugins-controller.php:228
 msgid "Sorry, you are not allowed to manage this plugin."
@@ -10783,7 +10783,7 @@ msgstr "نمی‌توانید نوشته موجود ایجاد نمایید."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-users-controller.php:518
 msgid "Sorry, you are not allowed to create new users."
-msgstr "با عرض پوزش، شما مجاز به ایجاد کاربر تازه نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به ایجاد کاربر تازه نیستید."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:499
 msgid "Incorrect post password."
@@ -10889,7 +10889,7 @@ msgstr "محدود نمودن نتیجه به دیدگاه‌های تخصیص �
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1648
 msgid "Ensure result set excludes specific parent IDs."
-msgstr "مطمئن شوید نتیجه شناسه‌های والد خاص را محدود می‌نماید."
+msgstr "اطمینان حاصل کنید که مجموعه نتایج، شناسه‌های والد بخصوصی را مستثنی می‌کند."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1639
 msgid "Limit result set to comments of specific parent IDs."
@@ -10938,7 +10938,7 @@ msgstr "محدود نمودن نتیجه به ایمیل نویسنده خاص. 
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1569
 msgid "Ensure result set excludes comments assigned to specific user IDs. Requires authorization."
-msgstr "مطمئن شوید نتیجه دیدگاه‌های تخصیص یافته به شناسه‌های کاربری خاص را محدود می‌نماید. نیاز به مجوز دارد."
+msgstr "اطمینان حاصل کنید که مجموعه نتایج، نظرات مرتبط با شناسه‌های کاربر بخصوصی را مستثنی می‌کند. نیاز به اجازه دسترسی است."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-comments-controller.php:1561
 msgid "Limit result set to comments assigned to specific user IDs. Requires authorization."
@@ -11121,7 +11121,7 @@ msgstr "نوع مادر نامعتبر است."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:133
 msgid "Sorry, you are not allowed to upload media to this post."
-msgstr "با عرض پوزش، شما مجاز به بارگذاری رسانه در این نوشته نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به بارگذاری رسانه در این نوشته نیستید."
 
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:124
 #: wp-includes/rest-api/endpoints/class-wp-rest-attachments-controller.php:416
@@ -11811,7 +11811,7 @@ msgstr "با عرض پوزش، شما اجازهٔ سفارشی‌سازی ای�
 #: wp-includes/functions.wp-scripts.php:138
 #: wp-includes/functions.wp-styles.php:95
 msgid "Do not pass %1$s tags to %2$s."
-msgstr "تگ‌های %1$s را به %2$s نفرستید."
+msgstr "Do not pass %1$s tags to %2$s."
 
 #: wp-includes/class-wp-editor.php:1394
 msgid "Link options"
@@ -11860,7 +11860,7 @@ msgstr "ثابت %1$s <strong>منسوخ شده است</strong>. برای فعا
 #. reference.
 #: wp-includes/class-wp-customize-manager.php:3932
 msgid "Removing %1$s manually will cause PHP warnings. Use the %2$s filter instead."
-msgstr "حذف دستی %1$s منجر به هشدارهای php خواهد شد. به جای آن از صافی%2$s استفاده نمایید."
+msgstr "Removing %1$s manually will cause PHP warnings. Use the %2$s filter instead."
 
 #: wp-includes/class-wp-editor.php:1423
 msgid "The next group of formatting shortcuts are applied as you type or when you insert them around plain text in the same paragraph. Press Escape or the Undo button to undo."
@@ -11896,11 +11896,11 @@ msgstr "(بدون عنوان)"
 
 #: wp-includes/rest-api.php:44
 msgid "Route must be specified."
-msgstr "مسیر باید مشخص شده باشد."
+msgstr "Route must be specified."
 
 #: wp-includes/rest-api.php:41
 msgid "Routes must be namespaced with plugin or theme name and version."
-msgstr "مسیرها باید از طریق نام افزونه یا پوسته و نگارش آن نامگذاری شوند."
+msgstr "Routes must be namespaced with plugin or theme name and version."
 
 #: wp-includes/post.php:1789
 msgid "Unregistering a built-in post type is not allowed"
@@ -11987,7 +11987,7 @@ msgstr "%s ممنوع است"
 
 #: wp-includes/customize/class-wp-customize-partial.php:226
 msgid "Partial render must echo the content or return the content string (or array), but not both."
-msgstr "رندر جزئی باید محتوا را نمایش دهد یا رشته محتوا (یا آرایه) را بازگرداند، اما نه هردو."
+msgstr "Partial render must echo the content or return the content string (or array), but not both."
 
 #: wp-includes/comment.php:1287
 msgid "<strong>Error:</strong> Your comment is too long."
@@ -12091,7 +12091,7 @@ msgstr "(درحال‌حاضر تنظیم‌شده روی : %s)"
 #. translators: %s: Documentation URL.
 #: wp-includes/functions.php:5946
 msgid "Please see <a href=\"%s\">Debugging in WordPress</a> for more information."
-msgstr "لطفاً برای اطلاعات بیشتر، <a href=\"%s\">اشکال زدایی در وردپرس</a> را مشاهده کنید."
+msgstr "Please see <a href=\"%s\">Debugging in WordPress</a> for more information."
 
 #. translators: 1: $table_prefix, 2: wp-config.php
 #: wp-includes/load.php:750
@@ -12360,7 +12360,7 @@ msgstr "نام shortcode نامعتبر: %1$s. از فاصله یا حروف ب�
 
 #: wp-includes/shortcodes.php:69
 msgid "Invalid shortcode name: Empty name given."
-msgstr "نام shortcode نامعتبر است: هیچ نامی داده نشده."
+msgstr "Invalid shortcode name: Empty name given."
 
 #. translators: 1: Function name, 2: WordPress version number, 3: Error
 #. message.
@@ -12412,7 +12412,7 @@ msgstr "پارامتر(های) گمشده: %s"
 #. is_main_query(), 4: Documentation URL.
 #: wp-includes/query.php:915
 msgid "In %1$s, use the %2$s method, not the %3$s function. See %4$s."
-msgstr "در %1$s، از متد %2$s به جای تابع %3$s  استفاده نمایید. %4$s را ببینید"
+msgstr "In %1$s, use the %2$s method, not the %3$s function. See %4$s."
 
 #: wp-includes/class-wp-post-type.php:987
 msgid "Pages list"
@@ -12690,7 +12690,7 @@ msgstr "%1$s تاریخ‌گذشته است. به جای آن از %2$s استف
 #: wp-includes/capabilities.php:114 wp-includes/capabilities.php:217
 #: wp-includes/capabilities.php:316 wp-includes/capabilities.php:397
 msgid "The post type %1$s is not registered, so it may not be reliable to check the capability %2$s against a post of that type."
-msgstr "نوع نوشتهٔ %1$s ثبت نشده است، در نتیجه نمی‌توان نسبت به صحت نتیجهٔ عمل بررسی میزان %2$s بر اساس نوع نوشته موردنظر اتکا کرد."
+msgstr "The post type %1$s is not registered, so it may not be reliable to check the capability %2$s against a post of that type."
 
 #. translators: Hidden accessibility text.
 #: wp-includes/class-wp-customize-nav-menus.php:1185
@@ -12962,7 +12962,7 @@ msgstr "بدون برچسب"
 #. translators: %s: Shortcode tag.
 #: wp-includes/shortcodes.php:407
 msgid "Attempting to parse a shortcode without a valid callback: %s"
-msgstr "در حال تلاش برای تفسیر یک shortcode بدون فراخوان معتبر: %s"
+msgstr "Attempting to parse a shortcode without a valid callback: %s"
 
 #: wp-includes/script-loader.php:790
 msgid "Close code tag"
@@ -13333,7 +13333,7 @@ msgstr "پیشخوان کاربر: %s"
 #. value.
 #: wp-includes/widgets.php:299
 msgid "No %1$s was set in the arguments array for the \"%2$s\" sidebar. Defaulting to \"%3$s\". Manually set the %1$s to \"%3$s\" to silence this notice and keep existing sidebar content."
-msgstr "هیچ %1$s در آرگومان‌های آرایه برای نوار کناری \"%2$s\" تنظیم نشده است. پیش‌فرض به \"%3$s\" شد. %1$s را به‌صورت دستی به \"%3$s\" تنظیم نمایید تا این اخطار خاموش شود و محتوای فعلی نوار کناری حفظ شود."
+msgstr "No %1$s was set in the arguments array for the \"%2$s\" sidebar. Defaulting to \"%3$s\". Manually set the %1$s to \"%3$s\" to silence this notice and keep existing sidebar content."
 
 #: wp-includes/customize/class-wp-customize-themes-panel.php:49
 msgctxt "theme"
@@ -13358,7 +13358,7 @@ msgstr "Could not split shared term."
 
 #: wp-includes/taxonomy.php:510 wp-includes/taxonomy.php:511
 msgid "Taxonomy names must be between 1 and 32 characters in length."
-msgstr "نام رده‌ها باید بین ۱ تا ۳۲ حرف باشد."
+msgstr "Taxonomy names must be between 1 and 32 characters in length."
 
 #: wp-includes/script-loader.php:1302
 msgid "Site Preview"
@@ -13366,7 +13366,7 @@ msgstr "پیش‌نمایش سایت"
 
 #: wp-includes/post.php:1721 wp-includes/post.php:1722
 msgid "Post type names must be between 1 and 20 characters in length."
-msgstr "نامِ نوعِ نوشته باید بین ۱ تا ۲۰ حرف باشد."
+msgstr "Post type names must be between 1 and 20 characters in length."
 
 #. translators: Revision date format, see
 #. https://www.php.net/manual/datetime.format.php
@@ -13560,7 +13560,7 @@ msgstr "حالتِ نوشتنِ بدون مزاحم"
 #. translators: 1: title-tag, 2: wp_loaded
 #: wp-includes/theme.php:2885
 msgid "Theme support for %1$s should be registered before the %2$s hook."
-msgstr "پشتیبانی پوسته از %1$s باید قبل از هوک %2$s به ثبت‌ رسیده باشد."
+msgstr "Theme support for %1$s should be registered before the %2$s hook."
 
 #: wp-includes/class-wp-customize-widgets.php:807
 msgid "Widget moved down"
@@ -13597,17 +13597,17 @@ msgstr "محدودهٔ متنِ حالت‌دار. دکمه‌های Alt-Shift-H
 #. translators: 1: Month, 2: Day of month.
 #: wp-includes/class-wp-date-query.php:450
 msgid "The following values do not describe a valid date: month %1$s, day %2$s."
-msgstr "مقادیر وارد شده، یک تاریخ معتبر نیستند: ماه %1$s، روز %2$s."
+msgstr "The following values do not describe a valid date: month %1$s, day %2$s."
 
 #. translators: %s: Database access abstraction class, usually wpdb or a class
 #. extending wpdb.
 #: wp-includes/class-wpdb.php:1289
 msgid "%s must set a database connection for use with escaping."
-msgstr "%s برای استفاده همراه با escaping باید یک اتصال پایگاه‌داده برقرار کند."
+msgstr "%s must set a database connection for use with escaping."
 
 #: wp-includes/theme.php:2692
 msgid "You need to pass an array of types."
-msgstr "شما باید آرایه‌ای از نوع دیدگاه‌ها را پاس دهید."
+msgstr "You need to pass an array of types."
 
 #: wp-includes/taxonomy.php:2522
 msgid "A term with the name provided already exists in this taxonomy."
@@ -13735,13 +13735,13 @@ msgstr "نویسنده: %s"
 #. translators: 1: Year, 2: Month, 3: Day of month.
 #: wp-includes/class-wp-date-query.php:434
 msgid "The following values do not describe a valid date: year %1$s, month %2$s, day %3$s."
-msgstr "مقادیر واردشده یک مقدار معتبر برای تاریخ نیستند: سال %1$s، ماه %2$s، روز %3$s."
+msgstr "The following values do not describe a valid date: year %1$s, month %2$s, day %3$s."
 
 #. translators: Date query invalid date message. 1: Invalid value, 2: Type of
 #. value, 3: Minimum valid value, 4: Maximum valid value.
 #: wp-includes/class-wp-date-query.php:404
 msgid "Invalid value %1$s for %2$s. Expected value should be between %3$s and %4$s."
-msgstr "مقدار %1$s برای %2$s نامعتبر است. مقدار معتبر باید بین %3$s و %4$s باشد."
+msgstr "Invalid value %1$s for %2$s. Expected value should be between %3$s and %4$s."
 
 #. translators: Comment reply button text. %s: Comment author name.
 #: wp-includes/comment-template.php:1750
@@ -14423,7 +14423,7 @@ msgstr "راهنمایی: رمز باید دستکم ۷ حرف باشد. برا�
 #. translators: %s: wpdb::prepare()
 #: wp-includes/class-wpdb.php:1475
 msgid "The query argument of %s must have a placeholder."
-msgstr "آرگومان کوئری %s باید دارای نگهدارندهٔ مکان (placeholder) باشد."
+msgstr "The query argument of %s must have a placeholder."
 
 #: wp-includes/nav-menu.php:433
 msgid "Invalid menu ID."
@@ -15232,7 +15232,7 @@ msgstr "برچسبی پیدا نشد."
 #. translators: 1: Script name, 2: wp_enqueue_scripts
 #: wp-includes/functions.wp-scripts.php:324
 msgid "Do not deregister the %1$s script in the administration area. To target the front-end theme, use the %2$s hook."
-msgstr "اسکریپت %1$s را در ناحیه مدیریت غیرفعال نکنید. برای استفاده در پوسته، از قلاب %2$s استفاده نمایید."
+msgstr "Do not deregister the %1$s script in the administration area. To target the front-end theme, use the %2$s hook."
 
 #: wp-includes/class-wp-xmlrpc-server.php:539 wp-admin/options-general.php:118
 #: wp-admin/network/site-info.php:169 wp-admin/network/site-info.php:177
@@ -16242,7 +16242,7 @@ msgstr "&#8211;"
 
 #: wp-includes/class-wp-admin-bar.php:139
 msgid "The menu ID should not be empty."
-msgstr "شناسه فهرست نباید خالی باشد."
+msgstr "The menu ID should not be empty."
 
 #. translators: Hidden accessibility text.
 #: wp-includes/admin-bar.php:139 wp-includes/admin-bar.php:159
@@ -16317,7 +16317,7 @@ msgstr "برچسب‌ها"
 #. login_enqueue_scripts
 #: wp-includes/functions.wp-scripts.php:50
 msgid "Scripts and styles should not be registered or enqueued until the %1$s, %2$s, or %3$s hooks."
-msgstr "اسکریپت‌ها و شیوه‌نامه‌ها نباید پیش از %1$s، %2$s و %3$s ثبت یا فراخوانی شوند."
+msgstr "Scripts and styles should not be registered or enqueued until the %1$s, %2$s, or %3$s hooks."
 
 #. translators: 1: Home URL, 2: Admin URL.
 #: wp-includes/ms-functions.php:2202
@@ -16365,7 +16365,7 @@ msgstr "دیدن برچسب"
 
 #: wp-includes/pluggable.php:1274 wp-includes/pluggable.php:1319
 msgid "You should specify an action to be verified by using the first parameter."
-msgstr "شما باید برای تأیید و شناسایی توسط متغیر اول یک عمل فوری مشخص کنید."
+msgstr "You should specify an action to be verified by using the first parameter."
 
 #. translators: 1: Login URL, 2: Network home URL.
 #: wp-activate.php:204
@@ -16461,7 +16461,7 @@ msgstr "نشانی مقصد را وارد نمایید"
 #: wp-includes/query.php:862 wp-includes/query.php:882
 #: wp-includes/query.php:906
 msgid "Conditional query tags do not work before the query is run. Before then, they always return false."
-msgstr "دستورات شرطی قبل از اجرای کوئری اصلی کار نمی‌کنند و همیشه مقدار false را برمی‌گردانند."
+msgstr "Conditional query tags do not work before the query is run. Before then, they always return false."
 
 #: wp-includes/ms-functions.php:1173
 msgid "The user is already active."
@@ -16471,7 +16471,7 @@ msgstr "این کاربر از پیش فعال است."
 #. Explanatory message, 3: WordPress version number.
 #: wp-includes/functions.php:5952
 msgid "Function %1$s was called <strong>incorrectly</strong>. %2$s %3$s"
-msgstr "تابع %1$s به طور<strong>نادرست</strong> فراخوانی شد. %2$s %3$s"
+msgstr "Function %1$s was called <strong>incorrectly</strong>. %2$s %3$s"
 
 #. translators: %s: Version number.
 #: wp-includes/functions.php:5941
@@ -16513,7 +16513,7 @@ msgstr "معیاری برای جستجو مشخص نشده است. نمایش د
 
 #: wp-includes/plugin.php:925
 msgid "Only a static class method or function can be used in an uninstall hook."
-msgstr "فقط یک متد کلاس ایستا یا تابع می‌تواند در قلاب حذف استفاده شود."
+msgstr "Only a static class method or function can be used in an uninstall hook."
 
 #: wp-includes/post.php:3978
 msgid "Passing an integer number of posts is deprecated. Pass an array of arguments instead."
@@ -16668,7 +16668,7 @@ msgstr "نیم‌رخ وبلاگ"
 #. translators: %s: Taxonomy name.
 #: wp-includes/post.php:4570
 msgid "Invalid taxonomy: %s."
-msgstr "رده نامعتبر: %s."
+msgstr "Invalid taxonomy: %s."
 
 #: wp-includes/taxonomy.php:150
 msgid "New Link Category Name"
@@ -16927,7 +16927,7 @@ msgstr "با عرض پوزش، شما مجاز نیستید در این سایت
 #: wp-includes/class-wp-xmlrpc-server.php:4218
 #: wp-includes/class-wp-xmlrpc-server.php:4488
 msgid "Sorry, you are not allowed to access details about this site."
-msgstr "با عرض پوزش، شما مجاز به دستیابی به جزئیات درباره این سایت نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به دستیابی به جزئیات درباره این سایت نیستید."
 
 #: wp-includes/class-wp-xmlrpc-server.php:3358
 msgid "Sorry, you must be able to edit posts on this site in order to view tags."
@@ -17359,7 +17359,7 @@ msgstr "یا نوشته‌ای پیدا نشد یا مشکلی به وجود آ�
 
 #: wp-includes/class-wp-xmlrpc-server.php:4319
 msgid "Sorry, you are not allowed to update options."
-msgstr "با عرض پوزش، شما مجاز به به‌روزرسانی تنظیمات نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به به‌روزرسانی تنظیمات نیستید."
 
 #: wp-includes/class-wp-xmlrpc-server.php:4106
 msgid "Sorry, you are not allowed to access details of this post."
@@ -18006,7 +18006,7 @@ msgstr "با عرض پوزش، نام کاربری حتما باید شامل ح
 
 #: wp-includes/ms-functions.php:495
 msgid "You cannot use that email address to signup. There are problems with them blocking some emails from WordPress. Please use another email provider."
-msgstr "نمی‌توانید با این ایمیل نام‌نویسی نمایید. بعضی از ارائه دهندگان خدمات ایمیل، ایمیل‌های ارسالی ما را مسدود می‌نماید. لطفاً با ایمیلی از دیگر ارائه دهندگان خدمات ایمیل اقدام نمایید."
+msgstr "نمی‌توانید با این ایمیل نام‌نویسی نمایید. بعضی از ارائه دهندگان خدمات ایمیل، ایمیل‌های ارسالی ما را مسدود می‌کند. لطفاً با ایمیلی از دیگر ارائه دهندگان خدمات ایمیل اقدام نمایید."
 
 #: wp-includes/ms-functions.php:273
 msgid "That user does not exist."

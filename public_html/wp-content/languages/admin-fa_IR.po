@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.4.x - Development - Administration package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2023-11-05 09:00:22+0000\n"
+"PO-Revision-Date: 2024-02-10 10:17:17+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,6 +36,10 @@ msgstr "6"
 msgctxt "default GMT offset or timezone string"
 msgid "0"
 msgstr "+3.5"
+
+#: wp-admin/update.php:158 wp-admin/update.php:310
+msgid "Only .zip archives may be uploaded."
+msgstr "فقط فایل‌های فشرده zip. می‌توانند ارسال شوند."
 
 #. translators: %s: Link to activate the Classic Widgets plugin.
 #: wp-admin/widgets-form-blocks.php:87
@@ -830,7 +834,7 @@ msgstr "دریافت &#8220;%s&#8221;"
 #. translators: %s: The "$dir" argument.
 #: wp-admin/includes/class-wp-automatic-updater.php:83
 msgid "The \"%s\" argument must be a non-empty string."
-msgstr "آرگومان \"%s\" باید یک رشته غیر خالی باشد."
+msgstr "The \"%s\" argument must be a non-empty string."
 
 #: wp-admin/edit-form-advanced.php:319
 msgid "<a href=\"https://wordpress.org/documentation/article/write-posts-classic-editor/\">Documentation on Writing and Editing Posts</a>"
@@ -1166,12 +1170,12 @@ msgstr "ثابت %1$s به عنوان %2$s تعریف شده است"
 #: wp-admin/includes/class-wp-list-table.php:448
 #: wp-admin/includes/class-wp-list-table.php:463
 msgid "The %1$s argument must be a non-empty string for %2$s."
-msgstr "آرگومان %1$s باید یک رشتهٔ غیر خالی برای %2$s باشد."
+msgstr "The %1$s argument must be a non-empty string for %2$s."
 
 #. translators: %s: The $link_data argument.
 #: wp-admin/includes/class-wp-list-table.php:431
 msgid "The %s argument must be an array."
-msgstr "آرگومان %s باید یک آرایه باشد."
+msgstr "The %s argument must be an array."
 
 #. translators: 1: Plugin name, 2: Version number, 3: Plugin URL.
 #: wp-admin/includes/class-wp-automatic-updater.php:1188
@@ -1686,7 +1690,7 @@ msgstr "رمزگذاری داده‌های شخصی برای برون‌بری �
 #. translators: %s: Post meta key.
 #: wp-admin/includes/privacy-tools.php:404
 msgid "The %s post meta must be an array."
-msgstr "%s متای نوشته باید یک آرایه باشد."
+msgstr "The %s post meta must be an array."
 
 #: wp-admin/includes/dashboard.php:2022
 msgid "Your site&#8217;s health is looking good, but there is still one thing you can do to improve its performance and security."
@@ -2281,7 +2285,7 @@ msgstr "آخرین استفاده"
 #: wp-admin/includes/ajax-actions.php:5401
 #: wp-admin/includes/ajax-actions.php:5451
 msgid "The Site Health check for %1$s has been replaced with %2$s."
-msgstr "بررسی سلامت سایت برای %1$s با %2$s جایگزین شده است."
+msgstr "The Site Health check for %1$s has been replaced with %2$s."
 
 #: wp-admin/includes/class-wp-privacy-data-removal-requests-list-table.php:139
 msgid "Erase personal data"
@@ -3381,7 +3385,7 @@ msgstr "منطقه زمانی پیشفرض PHP معتبر است."
 #. translators: %s: add_submenu_page()
 #: wp-admin/includes/plugin.php:1337 wp-admin/includes/plugin.php:1441
 msgid "The seventh parameter passed to %s should be numeric representing menu position."
-msgstr "پارامتر هفتم برای %s باید عدد صحیحی باشد که موقعیت فهرست را نشان دهد."
+msgstr "The seventh parameter passed to %s should be numeric representing menu position."
 
 #. translators: 1: WordPress version number, 2: The PHP extension name needed.
 #: wp-admin/includes/update-core.php:1228
@@ -4388,7 +4392,7 @@ msgstr "به‎روزرسانی‌های پس‌زمینه شاید به شکل�
 #. translators: Hidden accessibility text.
 #: wp-admin/includes/class-wp-site-health.php:1854
 msgid "Passed"
-msgstr "قبول‌شد"
+msgstr "قبول شد"
 
 #: wp-admin/includes/class-wp-site-health.php:1833
 msgid "Background updates ensure that WordPress can auto-update if a security update is released for the version you are currently using."
@@ -5168,7 +5172,7 @@ msgstr "سلامت سایت"
 msgctxt "requests"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] "همه <span class=\"count\">(%d)</span>"
+msgstr[0] "همه <span class=\"count\">(%s)</span>"
 
 #: wp-admin/options-discussion.php:104
 msgid "Show comments cookies opt-in checkbox, allowing comment author cookies to be set"
@@ -5208,7 +5212,7 @@ msgstr[0] "این افزونه %d حرف از <strong>خروجی غیرمنتظ�
 
 #: wp-admin/plugins.php:448
 msgid "Sorry, you are not allowed to resume this plugin."
-msgstr "با عرض پوزش، شما مجاز به از سر گیری این افزونه نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به از سر گیری این افزونه نیستید."
 
 #. translators: %s: WordPress Planet URL.
 #: wp-admin/index.php:97
@@ -5558,12 +5562,12 @@ msgstr "برگه حریم خصوصی با موفقیت به‌روزرسانی �
 #. translators: %s: admin_init
 #: wp-admin/includes/plugin.php:2364
 msgid "The suggested privacy policy content should be added by using the %s (or later) action. Please see the inline documentation."
-msgstr "محتوای پیشنهادی سیاست حریم خصوصی، باید با استفاده از عمل %s (یا در زمان دیگری) اضافه شود. لطفاً مستندات درون‌خطی را ببینید."
+msgstr "The suggested privacy policy content should be added by using the %s (or later) action. Please see the inline documentation."
 
 #. translators: %s: admin_init
 #: wp-admin/includes/plugin.php:2353
 msgid "The suggested privacy policy content should be added only in wp-admin by using the %s (or later) action."
-msgstr "محتوای پیشنهادی سیاست حریم خصوصی باید تنها در wp-admin و با استفاده از عمل %s (یا در زمان دیگری) اضافه شود."
+msgstr "The suggested privacy policy content should be added only in wp-admin by using the %s (or later) action."
 
 #. translators: %s: Privacy Policy Guide URL.
 #: wp-admin/includes/class-wp-privacy-policy-content.php:143
@@ -6062,7 +6066,7 @@ msgstr "برگه جدید شامل راهنما و پیشنهادهایی برا
 
 #: wp-admin/options-privacy.php:194
 msgid "If you already have a Privacy Policy page, please select it below. If not, please create one."
-msgstr "در صورتی که درحال حاضر یک برگه حریم خصوصی دارید، لطفا آن را در زیر انتخاب نمایید. در غیر این صورت، لطفا یکی ایجاد نمایید."
+msgstr "در صورتی که درحال حاضر یک برگه حریم خصوصی دارید، لطفا آن را در زیر انتخاب کنید. در غیر این صورت، لطفا یکی ایجاد کنید."
 
 #. translators: %s: URL to Pages Trash.
 #: wp-admin/options-privacy.php:136
@@ -6376,7 +6380,7 @@ msgstr "درحال دریافت به‌روزرسانی از %s&#8230;"
 #. add_meta_boxes
 #: wp-admin/includes/template.php:2681
 msgid "Likely direct inclusion of %1$s in order to use %2$s. This is very wrong. Hook the %2$s call into the %3$s action instead."
-msgstr "احتمال ورود مستقیم %1$s به منظور استفاده %2$s. این خیلی اشتباه است. به‌جای آن %2$s را به %3$s قلاب کنید."
+msgstr "Likely direct inclusion of %1$s in order to use %2$s. This is very wrong. Hook the %2$s call into the %3$s action instead."
 
 #: wp-admin/includes/template.php:2304
 msgid "Customization Draft"
@@ -6989,7 +6993,7 @@ msgstr "با عرض پوزش، شما مجاز به به‌روزرسانی پو
 #: wp-admin/update-core.php:1184 wp-admin/update-core.php:1225
 #: wp-admin/update-core.php:1266 wp-admin/update-core.php:1295
 msgid "Sorry, you are not allowed to update this site."
-msgstr "با عرض پوزش، شما مجاز به به‌روزرسانی این سایت نمی‌باشید."
+msgstr "با عرض پوزش، شما مجاز به به‌روزرسانی این سایت نیستید."
 
 #: wp-admin/themes.php:449 wp-admin/themes.php:826
 msgid "New version available. <button class=\"button-link\" type=\"button\">Update now</button>"
