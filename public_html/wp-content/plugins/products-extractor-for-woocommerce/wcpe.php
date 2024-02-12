@@ -197,8 +197,8 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
             }
 
             $temp_product->page_unique = $product->get_id();
-            $temp_product->current_price = $this->getPriceIncludingTax($product->get_price());
-            $temp_product->old_price = $this->getPriceIncludingTax($product->get_regular_price());
+            $temp_product->current_price = $this->getPriceIncludingTax($product, $product->get_price());
+            $temp_product->old_price = $this->getPriceIncludingTax($product, $product->get_regular_price());
             $temp_product->availability = $product->get_stock_status();
             $temp_product->category_name = get_term_by('id', end($cat_ids), 'product_cat', 'ARRAY_A')['name'];
             $temp_product->image_links = [];
@@ -235,12 +235,12 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
                     $variation_id = $this->find_matching_variation($product, $product->get_default_attributes());
                     if ($variation_id != 0) {
                         $variation = wc_get_product($variation_id);
-                        $temp_product->current_price = $this->getPriceIncludingTax($variation->get_price());
-                        $temp_product->old_price = $this->getPriceIncludingTax($variation->get_regular_price());
+                        $temp_product->current_price = $this->getPriceIncludingTax($variation, $variation->get_price());
+                        $temp_product->old_price = $this->getPriceIncludingTax($variation, $variation->get_regular_price());
                         $temp_product->availability = $variation->get_stock_status();
                     } else {
-                        $temp_product->current_price = $this->getPriceIncludingTax($product->get_variation_price('max'));
-                        $temp_product->old_price = $this->getPriceIncludingTax($product->get_variation_regular_price('max'));
+                        $temp_product->current_price = $this->getPriceIncludingTax($product, $product->get_variation_price('max'));
+                        $temp_product->old_price = $this->getPriceIncludingTax($product, $product->get_variation_regular_price('max'));
                     }
 
                     // Extract default attributes
@@ -519,16 +519,31 @@ if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_
             return new WP_REST_Response($data, $response_code);
         }
 
-        private function getPriceIncludingTax($price): string
+        private function getPriceIncludingTax($product, $price, $qty = 1): string
         {
-            $taxRate = WC_Tax::get_rates();
-            $taxMultiplier = (reset($taxRate)['rate'] / 100) + 1;
+            $tax_display = get_option('woocommerce_tax_display_shop');
 
-            return !empty($price) ? number_format(($price * $taxMultiplier), 0, '.', '') : $price;
+            $finalPrice = 'incl' === $tax_display ?
+                wc_get_price_including_tax(
+                    $product,
+                    [
+                        'qty' => $qty,
+                        'price' => $price,
+                    ]
+                ) :
+                wc_get_price_excluding_tax(
+                    $product,
+                    [
+                        'qty' => $qty,
+                        'price' => $price,
+                    ]
+                );
+
+
+            return !empty($price) ? number_format($finalPrice, 0, '.', '') : $price;
 
         }
     }
 
     $WC_Products_Extractor = new WC_Products_Extractor;
 }
-

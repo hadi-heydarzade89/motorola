@@ -325,6 +325,9 @@ ul[data-view="grid-extended"] .product-short-description {
 .mini-cart-product-container .quantity {
     margin-right: unset;
 }
+.home .entry-header{
+  display: none;
+}
 
 @media (max-width: 576px) {
     .product .price-add-to-cart {
