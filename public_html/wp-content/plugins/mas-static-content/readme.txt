@@ -1,10 +1,10 @@
 === MAS Static Content ===
 Contributors: madrasthemes, farookibrahim, yousufansa, ibndawood, nilofer07
 Tags: custom post types, cpt, cms, post, types, post type, custom, content types
-Requires at least: 6.4
+Requires at least: 6.3
 Tested up to: 6.4
 Requires PHP: 7.4
-Stable tag: 1.0.6
+Stable tag: 1.0.8
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -42,6 +42,9 @@ Automatic updates should work like a charm; as always though, ensure you backup 
 
 Yes; MAS Static Content will work with any theme.
 
+= How can I use ACF field shortcode inside static content? =
+Here is how you use the ACF field shortcode from the calling post inside the static content: [acf field="author" post_id="inherit"]
+
 = Where can I report bugs or contribute to the project? =
 
 Bugs can be reported either in our support forum or preferably on the [MAS Static Content GitHub repository](https://github.com/madrasthemes/mas-static-content/issues).
@@ -55,6 +58,9 @@ Yes you can! Join in on our [GitHub repository](https://github.com/madrasthemes/
 1. Static Contents admin.
 
 == Changelog ==
+
+= 1.0.7 - 2024-02-05 =
+* Feature - Support for ACF shortcodes
 
 = 1.0.6 - 2024-01-25 =
 * Compatible with WordPress 6.4.x

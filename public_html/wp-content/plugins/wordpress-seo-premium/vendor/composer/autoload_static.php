@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitd76c64729ba457880d24b9944dd02564
+class ComposerStaticInit528786059f0259c2041ce8c878a7e3c0
 {
     public static $prefixLengthsPsr4 = array (
         'C' => 
@@ -213,6 +213,7 @@ class ComposerStaticInitd76c64729ba457880d24b9944dd02564
         'Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_PostType_Archive' => __DIR__ . '/../..' . '/src/integrations/opengraph-posttype-archive.php',
         'Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_Post_Type' => __DIR__ . '/../..' . '/src/integrations/opengraph-post-type.php',
         'Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_Term_Archive' => __DIR__ . '/../..' . '/src/integrations/opengraph-term-archive.php',
+        'Yoast\\WP\\SEO\\Premium\\Integrations\\Organization_Schema_Integration' => __DIR__ . '/../..' . '/src/integrations/organization-schema-integration.php',
         'Yoast\\WP\\SEO\\Premium\\Integrations\\Publishing_Principles_Schema_Integration' => __DIR__ . '/../..' . '/src/integrations/publishing-principles-schema-integration.php',
         'Yoast\\WP\\SEO\\Premium\\Integrations\\Routes\\AI_Generator_Route' => __DIR__ . '/../..' . '/src/integrations/routes/ai-generator-route.php',
         'Yoast\\WP\\SEO\\Premium\\Integrations\\Routes\\Workouts_Routes_Integration' => __DIR__ . '/../..' . '/src/integrations/routes/workouts-routes-integration.php',
@@ -253,9 +254,9 @@ class ComposerStaticInitd76c64729ba457880d24b9944dd02564
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitd76c64729ba457880d24b9944dd02564::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitd76c64729ba457880d24b9944dd02564::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitd76c64729ba457880d24b9944dd02564::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit528786059f0259c2041ce8c878a7e3c0::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit528786059f0259c2041ce8c878a7e3c0::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit528786059f0259c2041ce8c878a7e3c0::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -129,6 +129,7 @@ class Cached_Container extends Container
             'yoast\\wp\\seo\\premium\\integrations\\opengraph_post_type' => 'Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_Post_Type',
             'yoast\\wp\\seo\\premium\\integrations\\opengraph_posttype_archive' => 'Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_PostType_Archive',
             'yoast\\wp\\seo\\premium\\integrations\\opengraph_term_archive' => 'Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_Term_Archive',
+            'yoast\\wp\\seo\\premium\\integrations\\organization_schema_integration' => 'Yoast\\WP\\SEO\\Premium\\Integrations\\Organization_Schema_Integration',
             'yoast\\wp\\seo\\premium\\integrations\\publishing_principles_schema_integration' => 'Yoast\\WP\\SEO\\Premium\\Integrations\\Publishing_Principles_Schema_Integration',
             'yoast\\wp\\seo\\premium\\integrations\\routes\\ai_generator_route' => 'Yoast\\WP\\SEO\\Premium\\Integrations\\Routes\\AI_Generator_Route',
             'yoast\\wp\\seo\\premium\\integrations\\routes\\workouts_routes_integration' => 'Yoast\\WP\\SEO\\Premium\\Integrations\\Routes\\Workouts_Routes_Integration',
@@ -263,6 +264,7 @@ class Cached_Container extends Container
             'Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_PostType_Archive' => 'getOpenGraphPostTypeArchiveService',
             'Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_Post_Type' => 'getOpenGraphPostTypeService',
             'Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_Term_Archive' => 'getOpenGraphTermArchiveService',
+            'Yoast\\WP\\SEO\\Premium\\Integrations\\Organization_Schema_Integration' => 'getOrganizationSchemaIntegrationService',
             'Yoast\\WP\\SEO\\Premium\\Integrations\\Publishing_Principles_Schema_Integration' => 'getPublishingPrinciplesSchemaIntegrationService',
             'Yoast\\WP\\SEO\\Premium\\Integrations\\Routes\\AI_Generator_Route' => 'getAIGeneratorRouteService',
             'Yoast\\WP\\SEO\\Premium\\Integrations\\Routes\\Workouts_Routes_Integration' => 'getWorkoutsRoutesIntegrationService',
@@ -827,6 +829,7 @@ class Cached_Container extends Container
         $instance->register_integration('Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_Post_Type');
         $instance->register_integration('Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_PostType_Archive');
         $instance->register_integration('Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_Term_Archive');
+        $instance->register_integration('Yoast\\WP\\SEO\\Premium\\Integrations\\Organization_Schema_Integration');
         $instance->register_integration('Yoast\\WP\\SEO\\Premium\\Integrations\\Publishing_Principles_Schema_Integration');
         $instance->register_route('Yoast\\WP\\SEO\\Premium\\Integrations\\Routes\\AI_Generator_Route');
         $instance->register_integration('Yoast\\WP\\SEO\\Premium\\Integrations\\Routes\\Workouts_Routes_Integration');
@@ -1427,6 +1430,16 @@ class Cached_Container extends Container
     protected function getOpenGraphTermArchiveService()
     {
         return $this->services['Yoast\\WP\\SEO\\Premium\\Integrations\\OpenGraph_Term_Archive'] = new \Yoast\WP\SEO\Premium\Integrations\OpenGraph_Term_Archive(${($_ = isset($this->services['Yoast\\WP\\SEO\\Helpers\\Options_Helper']) ? $this->services['Yoast\\WP\\SEO\\Helpers\\Options_Helper'] : $this->getOptionsHelperService()) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'Yoast\WP\SEO\Premium\Integrations\Organization_Schema_Integration' shared autowired service.
+     *
+     * @return \Yoast\WP\SEO\Premium\Integrations\Organization_Schema_Integration
+     */
+    protected function getOrganizationSchemaIntegrationService()
+    {
+        return $this->services['Yoast\\WP\\SEO\\Premium\\Integrations\\Organization_Schema_Integration'] = new \Yoast\WP\SEO\Premium\Integrations\Organization_Schema_Integration(${($_ = isset($this->services['Yoast\\WP\\SEO\\Helpers\\Options_Helper']) ? $this->services['Yoast\\WP\\SEO\\Helpers\\Options_Helper'] : $this->getOptionsHelperService()) && false ?: '_'});
     }
 
     /**

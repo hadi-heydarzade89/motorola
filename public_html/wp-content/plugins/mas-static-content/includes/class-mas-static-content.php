@@ -22,7 +22,7 @@ if ( ! class_exists( 'Mas_Static_Content' ) ) {
 		 *
 		 * @var string
 		 */
-		public $version = '1.0.6';
+		public $version = '1.0.8';
 
 		/**
 		 * The single instance of the class.
@@ -104,13 +104,21 @@ if ( ! class_exists( 'Mas_Static_Content' ) ) {
 		 * Init Mas_Static_Content when WordPress Initialises.
 		 */
 		public function init() {
-			// Before init action.
+			/**
+			 * Before init action.
+			 *
+			 * @since 1.0.0
+			 */
 			do_action( 'before_mas_static_content_init' );
 
 			// Set up localisation.
 			$this->load_plugin_textdomain();
 
-			// Init action.
+			/**
+			 * Init action.
+			 *
+			 * @since 1.0.0
+			 */
 			do_action( 'mas_static_content_init' );
 		}
 
