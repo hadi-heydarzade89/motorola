@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-02-05 18:43:24+0000\n"
+"PO-Revision-Date: 2024-02-18 16:56:03+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -10,6 +10,18 @@ msgstr ""
 "X-Generator: GlotPress/4.0.0-beta.2\n"
 "Language: fa\n"
 "Project-Id-Version: Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release)\n"
+
+#: includes/managers/controls.php:1290 assets/js/editor.js:50871
+msgid "Sticky"
+msgstr "چسبنده"
+
+#: includes/managers/controls.php:1281 assets/js/editor.js:50856
+msgid "Mouse Effects"
+msgstr "جلوه های ماوس"
+
+#: includes/managers/controls.php:1272 assets/js/editor.js:50841
+msgid "Scrolling Effects"
+msgstr "جلوه های اسکرول"
 
 #: includes/controls/gallery.php:127 includes/controls/media.php:276
 msgid "Install Plugin"
@@ -6432,6 +6444,10 @@ msgstr "خیر"
 #: assets/js/app.js:9671
 msgid "Yes"
 msgstr "بله"
+
+#: includes/controls/gallery.php:127 includes/controls/media.php:276
+msgid "Activate Plugin"
+msgstr "فعال‌کردن افزونه"
 
 #: core/role-manager/role-manager.php:73
 msgid "Exclude Roles"
