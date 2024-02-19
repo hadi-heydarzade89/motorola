@@ -185,16 +185,6 @@ if( class_exists( 'EFS' ) ) {
           'text_width' => 70
         ),
 	array(
-          'id'    => 'efa-dynamicconditions',
-          'type'  => 'switcher',
-          'title' => 'Dynamic Conditions',
-          'text_on'    => 'فعال',
-          'text_off'   => 'غیرفعال',
-          'subtitle'   => 'فعال/غیر فعال کردن ترجمه فارسی افزونه Dynamic Conditions',
-          'default'    => false ,
-          'text_width' => 70
-        ),
-	array(
           'id'    => 'efa-woolentor',
           'type'  => 'switcher',
           'title' => 'Woolentor',
@@ -244,27 +234,6 @@ if( class_exists( 'EFS' ) ) {
       )
     ) );
 
-    EFS::createSection( $prefix, array(
-      'title'  => 'قالب های آماده ایرانی',
-      'icon'   => 'far fa-object-group',
-      'fields' => array(
-        array(
-          'type'    => 'content',
-          'content' => '<p>با غیر فعال کردن این گزینه، قالب های آماده ایرانی از کتابخانه المنتور حذف خواهد شد.</p>' ,
-        ),  
-        array(
-          'id'    => 'efa-templates-kits',
-          'type'  => 'switcher',
-          'title' => 'قالب های آماده',
-          'text_on'    => 'فعال',
-          'text_off'   => 'غیرفعال',
-          'subtitle'   => 'فعال/غیر فعال کردن قالب های آماده ایرانی',
-          'default'    => true ,
-          'text_width' => 70
-        ),
-  
-      )
-    ) );
 
     EFS::createSection( $prefix, array(
       'title'  => 'آیکون های ایرانی',

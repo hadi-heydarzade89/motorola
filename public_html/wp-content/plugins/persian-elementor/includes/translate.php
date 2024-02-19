@@ -52,16 +52,6 @@ $text_domain = 'essential-addons-for-elementor-lite';
 	load_textdomain($text_domain, $persian_elementor_lang );
 }
 }
-if ( $options['efa-dynamicconditions']) {
-if (get_locale() == 'fa_IR' ) {
-// Dynamic Conditions
-$text_domain = 'dynamicconditions';
-	$persian_elementor_lang = PERSIAN_ELEMENTOR . "/languages/$text_domain/$text_domain-fa_IR.mo";
-	$wordpress_lang = "wp-content/languages/plugins/$text_domain-fa_IR.mo";
-	unload_textdomain($text_domain);
-	load_textdomain($text_domain, $persian_elementor_lang );
-}
-}
 if ( $options['efa-woolentor']) {
 if (get_locale() == 'fa_IR' ) {
 // Woolentor

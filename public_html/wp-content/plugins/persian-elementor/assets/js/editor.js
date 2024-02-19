@@ -125,14 +125,7 @@ var Templates = function Templates() {
 
 
       $e.components.get('library').addTab('templates/persian', {
-        title: 'المنتور فارسی',
-        filter: {
-          source: function source() {
-            elementor.channels.templates.reply('filter:source', 'remote');
-            return 'persiantemplate';
-          },
-          type: 'block'
-        }
+        title: '<a href="https://temply.ir/" target="_blank" style="color: #0c0d0e; padding:17px 25px">قالب های فارسی</a>',
       }, 10);
     });
     prependBadge();

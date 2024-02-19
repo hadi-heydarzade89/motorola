@@ -3,7 +3,7 @@
  * Plugin Name: المنتور فارسی
  * Plugin URI: 
  * Description: بسته فارسی ساز افزونه المنتور پرو به همراه اضافه شدن 13 فونت فارسی، تقویم شمسی برای المنتور، قالب های آماده فارسی در کتابخانه المنتور و آیکون های ایرانی
- * Version: 2.6.8
+ * Version: 2.6.9
  * Author: المنتور فارسی
  * Author URI: 
  * Text Domain: persian-elementor
@@ -31,7 +31,7 @@ add_action( 'plugins_loaded', 'persian_elementor_init' );
 function persian_elementor_init() {
 
     define( 'PERSIAN_ELEMENTOR', plugin_dir_path(__FILE__));
-    define( 'PERSIAN_ELEMENTOR_VERSION', '2.6.8' );
+    define( 'PERSIAN_ELEMENTOR_VERSION', '2.6.9' );
 }
  
 final class Persian_Elementor {
@@ -42,7 +42,7 @@ final class Persian_Elementor {
 	 * @since 2.3.10
 	 * @var string The plugin version.
 	 */
-	const VERSION = '2.6.8';
+	const VERSION = '2.6.9';
 
 	/**
 	 * Minimum Elementor Version
@@ -132,7 +132,6 @@ final class Persian_Elementor {
         require_once('includes/admin/options.php');
         require_once('includes/library/fonts.php'); 
         require_once('includes/library/icon.php');
-        //require_once('includes/template/module.php');
 	}
 
 	/**

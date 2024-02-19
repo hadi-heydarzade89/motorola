@@ -5,7 +5,7 @@ Tags: elementor,persian,parsi,farsi,iran,iranian,rtl,fa_IR,المنتور
 Requires at least: 5.0
 Tested up to: 6.4.1
 Requires PHP: 7.0
-Stable tag: 2.6.8
+Stable tag: 2.6.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +121,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.6.9 =
+اضافه شدن تب قالب های فارسی به کتابخانه به صورت لینک
+
 = 2.6.8 =
 بهبود ترجمه برای المنتور و المنتور پرو نسخه 3.19
 

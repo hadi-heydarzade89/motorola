@@ -84,10 +84,10 @@ class PersianElementorCore {
 	}
 	
 		// Enqueue Template Editor
-		// public function persian_elementor_template()
-	// {
-		// wp_enqueue_script( 'persian-elementor-template',plugins_url( 'assets/js/editor.js', __FILE__ ) );
-	// }
+		 public function persian_elementor_template()
+	 {
+		wp_enqueue_script( 'persian-elementor-template',plugins_url( 'assets/js/editor.js', __FILE__ ) );
+	 }
 		// Enqueue Preview Icon
 		public function persian_elementor_editor_icon()
 	{
@@ -139,10 +139,8 @@ class PersianElementorCore {
         add_action('elementor/frontend/before_enqueue_styles', [ $this,	'persian_elementor_flatpickr_mobile']);
 		}
 		
-		// if ( $options['efa-templates-kits']) {
 		// Register template
-        // add_action('elementor/editor/before_enqueue_scripts', [ $this,	'persian_elementor_template']);
-        // }
+        add_action('elementor/editor/before_enqueue_scripts', [ $this,	'persian_elementor_template']);
         
         if ( $options['efa-iranian-icon']) {
         // Register Editor Icon
