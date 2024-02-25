@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-02-18 16:52:24+0000\n"
+"PO-Revision-Date: 2024-02-23 20:29:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -299,7 +299,7 @@ msgstr "تبلت"
 msgid "Mobile"
 msgstr "موبایل"
 
-#: src/Internal/Admin/Orders/Edit.php:267
+#: src/Internal/Admin/Orders/Edit.php:272
 msgid "Customer history"
 msgstr "سابقه مشتری"
 
@@ -360,7 +360,7 @@ msgid "Matched Line"
 msgstr "خط هم خوانی"
 
 #. Translators: %s order type name.
-#: src/Internal/Admin/Orders/Edit.php:241
+#: src/Internal/Admin/Orders/Edit.php:242
 msgid "%s attribution"
 msgstr "%s ارجاع"
 
@@ -657,6 +657,10 @@ msgstr "به عنوان مثال، بسته‌های-سنگین"
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:29
 msgid "Give your zone a name! E.g. Local, or Worldwide."
 msgstr "به منطقه خود یک نام بدهید! به عنوان مثال. محلی، یا جهانی."
+
+#: includes/admin/settings/views/html-admin-page-shipping-classes.php:80
+msgid "Slug (unique identifier) can be left blank and auto-generated, or you can enter one"
+msgstr "نامک (شناسه منحصر بفرد) را می‌توان خالی گذاشت و به طور خودکار تولید کرد یا می‌توانید یکی وارد کنید"
 
 #: includes/admin/settings/class-wc-settings-advanced.php:330
 msgid "Woo.com Usage Tracking Documentation"
@@ -1584,11 +1588,6 @@ msgctxt "block keyword"
 msgid "My Account"
 msgstr "حساب کاربری من"
 
-#: assets/client/blocks/product-filter/block.json
-msgctxt "block title"
-msgid "Product Filter"
-msgstr "فیلتر محصول"
-
 #: assets/client/blocks/product-gallery/block.json
 msgctxt "block description"
 msgid "Showcase your products relevant images and media."
@@ -1625,6 +1624,11 @@ msgstr "ستاره‌های امتیاز محصولات"
 msgctxt "block title"
 msgid "Product variations fields"
 msgstr "زمینه‌های تنوع‌های محصول"
+
+#: assets/client/blocks/product-filter/block.json
+msgctxt "block title"
+msgid "Product Filter"
+msgstr "فیلتر محصول"
 
 #. translators: %1$s opening link tag %2$s closing link tag.
 #: src/Utilities/PluginUtil.php:224
@@ -4441,7 +4445,7 @@ msgstr "افزودن زمینهٔ سفارشی تازه:"
 msgid "https://wordpress.org/support/article/custom-fields/"
 msgstr "https://wordpress.org/support/article/custom-fields/"
 
-#: src/Internal/Admin/Orders/Edit.php:194
+#: src/Internal/Admin/Orders/Edit.php:195
 msgid "Custom Fields"
 msgstr "زمینه‌های سفارشی"
 
@@ -8127,7 +8131,7 @@ msgid "Sorry, we do not ship orders to the provided country (%s)"
 msgstr "متأسفیم، ما سفارشات را به کشور مشخص نشده ارسال نمی کنیم (%s)"
 
 #. translators: %s file handle name.
-#: src/Blocks/Assets/Api.php:246
+#: src/Blocks/Assets/Api.php:257
 msgid "Script with handle %s had a dependency on itself which has been removed. This is an indicator that your JS code has a circular dependency that can cause bugs."
 msgstr "اسکریپت با دسته %s یک وابستگی به خودش داشت که حذف شد. این نشانگر این است که کد JS شما وابستگی دایره ای دارد که می تواند باعث ایجاد اشکال شود."
 
@@ -27476,7 +27480,7 @@ msgid "Invalid ID."
 msgstr "شناسه نامعتبر."
 
 #: includes/abstracts/abstract-wc-shipping-method.php:347
-#: src/Internal/Admin/Orders/Edit.php:78
+#: src/Internal/Admin/Orders/Edit.php:79
 msgid "Items"
 msgstr "آیتم‌ها"
 
@@ -36447,7 +36451,7 @@ msgstr[0] "کدتخفیف %s به‌روز شد."
 #: includes/admin/reports/class-wc-report-downloads.php:87
 #: includes/admin/reports/class-wc-report-downloads.php:221
 #: includes/gateways/paypal/includes/class-wc-gateway-paypal-request.php:310
-#: includes/wc-account-functions.php:202 src/Internal/Admin/Orders/Edit.php:153
+#: includes/wc-account-functions.php:202 src/Internal/Admin/Orders/Edit.php:154
 #: src/Internal/Admin/Orders/ListTable.php:858
 #: templates/myaccount/my-orders.php:14
 #: assets/client/admin/chunks/analytics-report-categories.js:1
@@ -37167,16 +37171,16 @@ msgid "Custom base"
 msgstr "پایگاه سفارشی"
 
 #. Translators: %s order type name.
-#: src/Internal/Admin/Orders/Edit.php:83
+#: src/Internal/Admin/Orders/Edit.php:84
 msgid "%s actions"
 msgstr "%s اعمال"
 
-#: src/Internal/Admin/Orders/Edit.php:81
+#: src/Internal/Admin/Orders/Edit.php:82
 msgid "Downloadable product permissions"
 msgstr "دسترسی محصولات دانلودشدنی"
 
 #. Translators: %s order type name.
-#: src/Internal/Admin/Orders/Edit.php:77
+#: src/Internal/Admin/Orders/Edit.php:78
 msgid "%s data"
 msgstr "%s داده"
 
@@ -37324,7 +37328,7 @@ msgstr "روش پرداخت: "
 msgid "Discount:"
 msgstr "تخفیف:"
 
-#: src/Internal/Admin/Orders/Edit.php:81
+#: src/Internal/Admin/Orders/Edit.php:82
 msgid "Note: Permissions for order items will automatically be granted when the order status changes to processing/completed."
 msgstr "توضیح: دسترسی برای محصولات، زمانی که وضعیت سفارش به «درحال انجام» یا «تکمیل شده»  تغییر پیدا کند به صورت خودکار داده می شود."
 
@@ -37349,7 +37353,7 @@ msgid "Sales reports"
 msgstr "گزارش فروش‌ها"
 
 #. Translators: %s order type name.
-#: src/Internal/Admin/Orders/Edit.php:80
+#: src/Internal/Admin/Orders/Edit.php:81
 msgid "%s notes"
 msgstr "یادداشت‌های %s"
 
