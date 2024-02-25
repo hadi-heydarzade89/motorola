@@ -6,6 +6,7 @@ use RuntimeException;
 use WP_Error;
 use WP_User;
 use WPSEO_Utils;
+use Yoast\WP\SEO\Helpers\Date_Helper;
 use Yoast\WP\SEO\Helpers\Options_Helper;
 use Yoast\WP\SEO\Helpers\User_Helper;
 use Yoast\WP\SEO\Premium\Exceptions\Remote_Request\Bad_Request_Exception;
@@ -24,6 +25,8 @@ use Yoast\WP\SEO\Premium\Exceptions\Remote_Request\Unauthorized_Exception;
  * @package Yoast\WP\SEO\Helpers
  */
 class AI_Generator_Helper {
+
+	private const CODE_VERIFIER_VALIDITY_IN_MINUTES = 5;
 
 	/**
 	 * The API base URL.
@@ -47,16 +50,25 @@ class AI_Generator_Helper {
 	protected $user_helper;
 
 	/**
+	 * The date helper.
+	 *
+	 * @var Date_Helper
+	 */
+	private $date_helper;
+
+	/**
 	 * AI_Generator_Helper constructor.
 	 *
 	 * @codeCoverageIgnore It only sets dependencies.
 	 *
 	 * @param Options_Helper $options     The options helper.
 	 * @param User_Helper    $user_helper The User helper.
+	 * @param Date_Helper    $date_helper The date helper.
 	 */
-	public function __construct( Options_Helper $options, User_Helper $user_helper ) {
+	public function __construct( Options_Helper $options, User_Helper $user_helper, Date_Helper $date_helper ) {
 		$this->options_helper = $options;
 		$this->user_helper    = $user_helper;
+		$this->date_helper    = $date_helper;
 	}
 
 	/**
@@ -85,8 +97,14 @@ class AI_Generator_Helper {
 	 * @return void
 	 */
 	public function set_code_verifier( int $user_id, string $code_verifier ): void {
-		$user_id_string = (string) $user_id;
-		\set_transient( "yoast_wpseo_ai_generator_code_verifier_$user_id_string", $code_verifier, ( \MINUTE_IN_SECONDS * 5 ) );
+		$this->user_helper->update_meta(
+			$user_id,
+			'yoast_wpseo_ai_generator_code_verifier_for_blog_' . \get_current_blog_id(),
+			[
+				'code'       => $code_verifier,
+				'created_at' => $this->date_helper->current_time(),
+			]
+		);
 	}
 
 	/**
@@ -96,16 +114,20 @@ class AI_Generator_Helper {
 	 *
 	 * @return string The code verifier.
 	 *
-	 * @throws RuntimeException Unable to retrieve the code verifier.
+	 * @throws RuntimeException No valid code verifier could be found.
 	 */
 	public function get_code_verifier( int $user_id ): string {
-		$user_id_string = (string) $user_id;
-		$code_verifier  = \get_transient( "yoast_wpseo_ai_generator_code_verifier_$user_id_string" );
-		if ( ! \is_string( $code_verifier ) || $code_verifier === '' ) {
+		$code_verifier = $this->user_helper->get_meta( $user_id, 'yoast_wpseo_ai_generator_code_verifier_for_blog_' . \get_current_blog_id(), true );
+		if ( ! \is_array( $code_verifier ) || ! isset( $code_verifier['code'] ) || $code_verifier['code'] === '' ) {
 			throw new RuntimeException( 'Unable to retrieve the code verifier.' );
 		}
 
-		return $code_verifier;
+		if ( ! isset( $code_verifier['created_at'] ) || $code_verifier['created_at'] < ( $this->date_helper->current_time() - self::CODE_VERIFIER_VALIDITY_IN_MINUTES * \MINUTE_IN_SECONDS ) ) {
+			$this->delete_code_verifier( $user_id );
+			throw new RuntimeException( 'Code verifier has expired.' );
+		}
+
+		return (string) $code_verifier['code'];
 	}
 
 	/**
@@ -116,8 +138,7 @@ class AI_Generator_Helper {
 	 * @return void
 	 */
 	public function delete_code_verifier( int $user_id ): void {
-		$user_id_string = (string) $user_id;
-		\delete_transient( "yoast_wpseo_ai_generator_code_verifier_$user_id_string" );
+		$this->user_helper->delete_meta( $user_id, 'yoast_wpseo_ai_generator_code_verifier_for_blog_' . \get_current_blog_id() );
 	}
 
 	/**
@@ -132,7 +153,7 @@ class AI_Generator_Helper {
 	/**
 	 * Gets the callback URL to be used by the API to send back the access token, refresh token and code challenge.
 	 *
-	 * @return array The callbacks URLs.
+	 * @return string The callbacks URL.
 	 */
 	public function get_callback_url() {
 		return \get_rest_url( null, 'yoast/v1/ai_generator/callback' );
@@ -141,7 +162,7 @@ class AI_Generator_Helper {
 	/**
 	 * Gets the callback URL to be used by the API to send back the refreshed JWTs once they expire.
 	 *
-	 * @return array The callbacks URLs.
+	 * @return string The callbacks URL.
 	 */
 	public function get_refresh_callback_url() {
 		return \get_rest_url( null, 'yoast/v1/ai_generator/refresh_callback' );
@@ -150,9 +171,9 @@ class AI_Generator_Helper {
 	/**
 	 * Performs the request using WordPress internals.
 	 *
-	 * @param string $action_path     The path to the desired action.
-	 * @param array  $request_body    The request body.
-	 * @param array  $request_headers The request headers.
+	 * @param string   $action_path     The path to the desired action.
+	 * @param array    $request_body    The request body.
+	 * @param string[] $request_headers The request headers.
 	 *
 	 * @return object The response object.
 	 *
@@ -191,33 +212,36 @@ class AI_Generator_Helper {
 		$response = \wp_remote_post( $api_url . $action_path, $request_arguments );
 
 		if ( \is_wp_error( $response ) ) {
+			// phpcs:ignore WordPress.Security.EscapeOutput.ExceptionNotEscaped -- false positive.
 			throw new Bad_Request_Exception( $response->get_error_message(), $response->get_error_code() );
 		}
 
-		[ $response_code, $response_message, $missing_licenses ] = $this->parse_response( $response );
+		[ $response_code, $response_message, $error_code, $missing_licenses ] = $this->parse_response( $response );
 
+		// phpcs:disable WordPress.Security.EscapeOutput.ExceptionNotEscaped -- false positive.
 		switch ( $response_code ) {
 			case 200:
 				return (object) $response;
 			case 401:
-				throw new Unauthorized_Exception( $response_message, $response_code );
+				throw new Unauthorized_Exception( $response_message, $response_code, $error_code );
 			case 402:
-				throw new Payment_Required_Exception( $response_message, $response_code, null, $missing_licenses );
+				throw new Payment_Required_Exception( $response_message, $response_code, $error_code, null, $missing_licenses );
 			case 403:
-				throw new Forbidden_Exception( $response_message, $response_code );
+				throw new Forbidden_Exception( $response_message, $response_code, $error_code );
 			case 404:
-				throw new Not_Found_Exception( $response_message, $response_code );
+				throw new Not_Found_Exception( $response_message, $response_code, $error_code );
 			case 408:
-				throw new Request_Timeout_Exception( $response_message, $response_code );
+				throw new Request_Timeout_Exception( $response_message, $response_code, $error_code );
 			case 429:
-				throw new Too_Many_Requests_Exception( $response_message, $response_code );
+				throw new Too_Many_Requests_Exception( $response_message, $response_code, $error_code );
 			case 500:
-				throw new Internal_Server_Error_Exception( $response_message, $response_code );
+				throw new Internal_Server_Error_Exception( $response_message, $response_code, $error_code );
 			case 503:
-				throw new Service_Unavailable_Exception( $response_message, $response_code );
+				throw new Service_Unavailable_Exception( $response_message, $response_code, $error_code );
 			default:
-				throw new Bad_Request_Exception( $response_message, $response_code );
+				throw new Bad_Request_Exception( $response_message, $response_code, $error_code );
 		}
+		// phpcs:enable
 	}
 
 	/**
@@ -225,7 +249,7 @@ class AI_Generator_Helper {
 	 *
 	 * @param object $response The response from the API.
 	 *
-	 * @return array The array of suggestions.
+	 * @return string[] The array of suggestions.
 	 */
 	public function build_suggestions_array( $response ): array {
 		$suggestions = [];
@@ -245,24 +269,26 @@ class AI_Generator_Helper {
 	 *
 	 * @param array|WP_Error $response The response from the API.
 	 *
-	 * @return array The response code and message.
+	 * @return (string|int)[] The response code and message.
 	 */
 	public function parse_response( $response ) {
 		$response_code    = ( \wp_remote_retrieve_response_code( $response ) !== '' ) ? \wp_remote_retrieve_response_code( $response ) : 0;
 		$response_message = \esc_html( \wp_remote_retrieve_response_message( $response ) );
+		$error_code       = '';
 		$missing_licenses = [];
 
 		if ( $response_code !== 200 && $response_code !== 0 ) {
 			$json_body = \json_decode( \wp_remote_retrieve_body( $response ) );
 			if ( $json_body !== null ) {
-				$response_message = ( $json_body->error_code ?? $this->map_message_to_code( $json_body->message ) );
+				$response_message = ( $json_body->message ?? $response_message );
+				$error_code       = ( $json_body->error_code ?? $this->map_message_to_code( $json_body->message ) );
 				if ( $response_code === 402 ) {
 					$missing_licenses = isset( $json_body->missing_licenses ) ? (array) $json_body->missing_licenses : [];
 				}
 			}
 		}
 
-		return [ $response_code, $response_message, $missing_licenses ];
+		return [ $response_code, $response_message, $error_code, $missing_licenses ];
 	}
 
 	/**
@@ -352,6 +378,6 @@ class AI_Generator_Helper {
 			return 'SERVER_TIMEOUT';
 		}
 
-		return $message;
+		return 'UNKNOWN';
 	}
 }

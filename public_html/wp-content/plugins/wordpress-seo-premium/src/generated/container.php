@@ -141,6 +141,7 @@ class Cached_Container extends Container
             'yoast\\wp\\seo\\premium\\integrations\\upgrade_integration' => 'Yoast\\WP\\SEO\\Premium\\Integrations\\Upgrade_Integration',
             'yoast\\wp\\seo\\premium\\integrations\\user_profile_integration' => 'Yoast\\WP\\SEO\\Premium\\Integrations\\User_Profile_Integration',
             'yoast\\wp\\seo\\premium\\integrations\\watchers\\prominent_words_watcher' => 'Yoast\\WP\\SEO\\Premium\\Integrations\\Watchers\\Prominent_Words_Watcher',
+            'yoast\\wp\\seo\\premium\\integrations\\watchers\\stale_cornerstone_content_watcher' => 'Yoast\\WP\\SEO\\Premium\\Integrations\\Watchers\\Stale_Cornerstone_Content_Watcher',
             'yoast\\wp\\seo\\premium\\introductions\\application\\ai_generate_titles_and_descriptions_introduction' => 'Yoast\\WP\\SEO\\Premium\\Introductions\\Application\\Ai_Generate_Titles_And_Descriptions_Introduction',
             'yoast\\wp\\seo\\premium\\main' => 'Yoast\\WP\\SEO\\Premium\\Main',
             'yoast\\wp\\seo\\premium\\repositories\\prominent_words_repository' => 'Yoast\\WP\\SEO\\Premium\\Repositories\\Prominent_Words_Repository',
@@ -276,6 +277,7 @@ class Cached_Container extends Container
             'Yoast\\WP\\SEO\\Premium\\Integrations\\Upgrade_Integration' => 'getUpgradeIntegrationService',
             'Yoast\\WP\\SEO\\Premium\\Integrations\\User_Profile_Integration' => 'getUserProfileIntegration2Service',
             'Yoast\\WP\\SEO\\Premium\\Integrations\\Watchers\\Prominent_Words_Watcher' => 'getProminentWordsWatcherService',
+            'Yoast\\WP\\SEO\\Premium\\Integrations\\Watchers\\Stale_Cornerstone_Content_Watcher' => 'getStaleCornerstoneContentWatcherService',
             'Yoast\\WP\\SEO\\Premium\\Introductions\\Application\\Ai_Generate_Titles_And_Descriptions_Introduction' => 'getAiGenerateTitlesAndDescriptionsIntroductionService',
             'Yoast\\WP\\SEO\\Premium\\Main' => 'getMainService',
             'Yoast\\WP\\SEO\\Premium\\Repositories\\Prominent_Words_Repository' => 'getProminentWordsRepositoryService',
@@ -843,6 +845,7 @@ class Cached_Container extends Container
         $instance->register_integration('Yoast\\WP\\SEO\\Premium\\Integrations\\Upgrade_Integration');
         $instance->register_integration('Yoast\\WP\\SEO\\Premium\\Integrations\\User_Profile_Integration');
         $instance->register_integration('Yoast\\WP\\SEO\\Premium\\Integrations\\Watchers\\Prominent_Words_Watcher');
+        $instance->register_integration('Yoast\\WP\\SEO\\Premium\\Integrations\\Watchers\\Stale_Cornerstone_Content_Watcher');
         $instance->register_route('Yoast\\WP\\SEO\\Premium\\Routes\\Link_Suggestions_Route');
         $instance->register_route('Yoast\\WP\\SEO\\Premium\\Routes\\Prominent_Words_Route');
         $instance->register_route('Yoast\\WP\\SEO\\Premium\\Routes\\Workouts_Route');
@@ -1017,7 +1020,7 @@ class Cached_Container extends Container
      */
     protected function getAIGeneratorHelperService()
     {
-        return $this->services['Yoast\\WP\\SEO\\Premium\\Helpers\\AI_Generator_Helper'] = new \Yoast\WP\SEO\Premium\Helpers\AI_Generator_Helper(${($_ = isset($this->services['Yoast\\WP\\SEO\\Helpers\\Options_Helper']) ? $this->services['Yoast\\WP\\SEO\\Helpers\\Options_Helper'] : $this->getOptionsHelperService()) && false ?: '_'}, ${($_ = isset($this->services['Yoast\\WP\\SEO\\Helpers\\User_Helper']) ? $this->services['Yoast\\WP\\SEO\\Helpers\\User_Helper'] : $this->getUserHelperService()) && false ?: '_'});
+        return $this->services['Yoast\\WP\\SEO\\Premium\\Helpers\\AI_Generator_Helper'] = new \Yoast\WP\SEO\Premium\Helpers\AI_Generator_Helper(${($_ = isset($this->services['Yoast\\WP\\SEO\\Helpers\\Options_Helper']) ? $this->services['Yoast\\WP\\SEO\\Helpers\\Options_Helper'] : $this->getOptionsHelperService()) && false ?: '_'}, ${($_ = isset($this->services['Yoast\\WP\\SEO\\Helpers\\User_Helper']) ? $this->services['Yoast\\WP\\SEO\\Helpers\\User_Helper'] : $this->getUserHelperService()) && false ?: '_'}, ${($_ = isset($this->services['Yoast\\WP\\SEO\\Helpers\\Date_Helper']) ? $this->services['Yoast\\WP\\SEO\\Helpers\\Date_Helper'] : $this->getDateHelperService()) && false ?: '_'});
     }
 
     /**
@@ -1550,6 +1553,16 @@ class Cached_Container extends Container
     protected function getProminentWordsWatcherService()
     {
         return $this->services['Yoast\\WP\\SEO\\Premium\\Integrations\\Watchers\\Prominent_Words_Watcher'] = new \Yoast\WP\SEO\Premium\Integrations\Watchers\Prominent_Words_Watcher(${($_ = isset($this->services['Yoast\\WP\\SEO\\Premium\\Repositories\\Prominent_Words_Repository']) ? $this->services['Yoast\\WP\\SEO\\Premium\\Repositories\\Prominent_Words_Repository'] : ($this->services['Yoast\\WP\\SEO\\Premium\\Repositories\\Prominent_Words_Repository'] = new \Yoast\WP\SEO\Premium\Repositories\Prominent_Words_Repository())) && false ?: '_'});
+    }
+
+    /**
+     * Gets the public 'Yoast\WP\SEO\Premium\Integrations\Watchers\Stale_Cornerstone_Content_Watcher' shared autowired service.
+     *
+     * @return \Yoast\WP\SEO\Premium\Integrations\Watchers\Stale_Cornerstone_Content_Watcher
+     */
+    protected function getStaleCornerstoneContentWatcherService()
+    {
+        return $this->services['Yoast\\WP\\SEO\\Premium\\Integrations\\Watchers\\Stale_Cornerstone_Content_Watcher'] = new \Yoast\WP\SEO\Premium\Integrations\Watchers\Stale_Cornerstone_Content_Watcher();
     }
 
     /**

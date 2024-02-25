@@ -214,6 +214,7 @@ return array(
     'Yoast\\WP\\SEO\\Premium\\Integrations\\User_Profile_Integration' => $baseDir . '/src/integrations/user-profile-integration.php',
     'Yoast\\WP\\SEO\\Premium\\Integrations\\Watchers\\Premium_Option_Wpseo_Watcher' => $baseDir . '/src/deprecated/integrations/watchers/premium-option-wpseo-watcher.php',
     'Yoast\\WP\\SEO\\Premium\\Integrations\\Watchers\\Prominent_Words_Watcher' => $baseDir . '/src/integrations/watchers/prominent-words-watcher.php',
+    'Yoast\\WP\\SEO\\Premium\\Integrations\\Watchers\\Stale_Cornerstone_Content_Watcher' => $baseDir . '/src/integrations/watchers/stale-cornerstone-content-watcher.php',
     'Yoast\\WP\\SEO\\Premium\\Integrations\\Watchers\\Zapier_APIKey_Reset_Watcher' => $baseDir . '/src/deprecated/integrations/watchers/zapier-apikey-reset-watcher.php',
     'Yoast\\WP\\SEO\\Premium\\Introductions\\Application\\Ai_Generate_Titles_And_Descriptions_Introduction' => $baseDir . '/src/introductions/application/ai-generate-titles-and-descriptions-introduction.php',
     'Yoast\\WP\\SEO\\Premium\\Main' => $baseDir . '/src/main.php',
