@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-02-23 20:29:50+0000\n"
+"PO-Revision-Date: 2024-02-27 15:27:55+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15534,10 +15534,6 @@ msgstr "ما پیشنهادات متنی را برای برنامه های اف�
 msgid "To opt out, leave this box unticked. Your store remains untracked, and no data will be collected. Read about what usage data is tracked at: %s."
 msgstr "برای امتناع، این جعبه را بدون استفاده رها کنید. فروشگاه شما بدون کنترل باقی می ماند و هیچ داده ای جمع آوری نمی شود. در مورد آنچه داده استفاده در ردیابی می شود بخوانید: %s."
 
-#: includes/admin/settings/class-wc-settings-advanced.php:342
-msgid "Allow usage of WooCommerce to be tracked"
-msgstr "اجازه استفاده از WooCommerce را ردیابی کنید"
-
 #: includes/admin/settings/class-wc-settings-advanced.php:338
 msgid "Gathering usage data allows us to make WooCommerce better — your store will be considered as we evaluate new features, judge the quality of an update, or determine if an improvement makes sense."
 msgstr "جمع آوری داده های استفاده به ما این امکان را می دهد تا WooCommerce را بهتر کنیم - فروشگاه شما هنگامی ارزیابی می شود که ویژگی های جدید را ارزیابی می کنیم، در مورد کیفیت به روزرسانی قضاوت می کنیم، یا اینکه آیا پیشرفت آن معقول است یا خیر."
@@ -15561,6 +15557,10 @@ msgstr "کدتخفیفی برای اعمال را وارد کنید. قبل از
 #: includes/admin/settings/class-wc-settings-accounts.php:127
 msgid "Adds an option to the orders screen for removing personal data in bulk. Note that removing personal data cannot be undone."
 msgstr "گزینه‌ای را برای حذف بخش عمده داده شخصی از صفحه نمایش سفارشات اضافه می کند. توجه داشته باشید که حذف داده‌های شخصی قابل بازگشت نیست."
+
+#: includes/admin/settings/class-wc-settings-advanced.php:342
+msgid "Allow usage of WooCommerce to be tracked"
+msgstr "اجازه استفاده از WooCommerce برای ردیابی"
 
 #: includes/admin/class-wc-admin-assets.php:552
 #: includes/admin/marketplace-suggestions/templates/html-product-data-extensions.php:27
