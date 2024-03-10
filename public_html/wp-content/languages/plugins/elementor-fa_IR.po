@@ -2,14 +2,18 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-02-27 15:25:45+0000\n"
+"PO-Revision-Date: 2024-03-02 15:52:14+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.0-beta.2\n"
+"X-Generator: GlotPress/4.0.0-beta.3\n"
 "Language: fa\n"
 "Project-Id-Version: Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release)\n"
+
+#: includes/editor-templates/panel-elements.php:31
+msgid "Access all Pro widgets. "
+msgstr "دسترسی به تمام ابزارک‌های حرفه‌ای. "
 
 #: includes/editor-templates/navigator.php:19
 msgid "Access all Pro widgets"
@@ -26,6 +30,14 @@ msgstr "بهینه ساز تصویر را فعال کنید!"
 #: includes/controls/gallery.php:131 includes/controls/media.php:283
 msgid "Don’t let unoptimized images be the downfall of your site’s performance."
 msgstr "اجازه ندهید تصاویر بهینه نشده باعث کاهش عملکرد سایت شما شوند."
+
+#: includes/controls/gallery.php:123 includes/controls/media.php:275
+msgid "This image is large and may slow things down. %1$sInstall Image Optimizer%2$s to reduce size without losing quality."
+msgstr "این تصویر بزرگ است و ممکن است سرعت کار را کاهش دهد. %1$s برای کاهش اندازه بدون از دست دادن کیفیت، بهینه ساز تصویر %2$s را نصب کنید."
+
+#: includes/controls/gallery.php:117 includes/controls/media.php:269
+msgid "This image is large and may slow things down. %1$sActivate Image Optimizer%2$s to reduce size without losing quality."
+msgstr "این تصویر بزرگ است و ممکن است سرعت کار را کاهش دهد. %1$s برای کاهش اندازه بدون از دست دادن کیفیت، بهینه ساز تصویر %2$s را فعال کنید."
 
 #: core/utils/hints.php:133 core/utils/hints.php:135
 #: includes/controls/notice.php:83 includes/controls/notice.php:85
