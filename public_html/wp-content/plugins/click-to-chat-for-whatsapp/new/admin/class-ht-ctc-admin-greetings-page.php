@@ -88,7 +88,10 @@ class HT_CTC_Admin_Greetings {
      *      pr_greetings_template (for template select)
      *      ctc_greetings_settings 
      *      greetings-1
+     * 
+     * todo:l g_init - add new option: default. greetings dialog open on desktop and close on mobile
      *
+     * know issue: greetings with bounce animation not working properly on mobile.
      */
     public function settings_values() {
 
@@ -140,6 +143,14 @@ class HT_CTC_Admin_Greetings {
                         'link_title' => 'more info',
                         'parent_style' => "margin-bottom: 30px;",
                         'parent_class' => 'pr_header_content ctc_greetings_settings ctc_g_1 ctc_wp_editor',
+                    ],
+                    'g_header_image' => [
+                        // 'title' => __( 'Header Image', 'click-to-chat-for-whatsapp'),
+                        // 'db' => 'g_header_image',
+                        'template' => 'g_header_image',
+                        // 'label' => 'Header Image',
+                        // 'description' => 'Header Image',
+                        'parent_class' => 'pr_g_header_image ctc_greetings_settings ctc_g_1',
                     ],
                     'main_content' => [
                         'title' => __( 'Main Content', 'click-to-chat-for-whatsapp'),

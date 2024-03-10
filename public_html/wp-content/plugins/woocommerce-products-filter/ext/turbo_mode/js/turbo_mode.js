@@ -136,7 +136,7 @@ var WoofTurboMode_obj = function (data) {
                                 var res = {};
                                 if (!item.current) {
                                     var recount=false;
-                                    if(typeof _this.possible_terms.taxonomies[item.key.replace('rev_','')] !='undefined' && _this.possible_terms.taxonomies[item.key.replace('rev_','')]=="NOT IN"){                                            
+                                    if( typeof item.key != 'undefined' && typeof _this.possible_terms.taxonomies[item.key.replace('rev_','')] !='undefined' && _this.possible_terms.taxonomies[item.key.replace('rev_','')]=="NOT IN"){                                            
                                         recount=true;
                                     }                                     
                                     res = _this.search(item.query,recount);
@@ -1605,7 +1605,8 @@ var WoofTurboMode_obj = function (data) {
                 turbo_mode_ids: res,
                 page: woof_ajax_page_num,
                 shortcode: shortcode,
-                woof_shortcode: jQuery('div.woof').data('shortcode')
+                woof_shortcode: jQuery('div.woof').data('shortcode'),
+		nonce_filter: woof_front_nonce
             };
 
             jQuery.post(woof_ajaxurl, data, function (content) {
@@ -1703,7 +1704,7 @@ var WoofTurboMode_obj = function (data) {
                                     
                                     if (!item.current) {
                                         var recount=false;
-                                        if(typeof WoofTurboMode.possible_terms.taxonomies[item.key.replace('rev_','')] !='undefined' && WoofTurboMode.possible_terms.taxonomies[item.key.replace('rev_','')]=="NOT IN"){                                            
+                                        if(typeof item.key != 'undefined' && typeof WoofTurboMode.possible_terms.taxonomies[item.key.replace('rev_','')] !='undefined' && WoofTurboMode.possible_terms.taxonomies[item.key.replace('rev_','')]=="NOT IN"){                                            
                                             recount=true;
                                         }                                        
                                         res = WoofTurboMode.search(item.query,recount);  
@@ -1729,9 +1730,11 @@ var WoofTurboMode_obj = function (data) {
                         });
                         //stat collection
                         if (woof_current_values.hasOwnProperty(swoof_search_slug)) {
+			    var nonce = woof_front_nonce;
                             var data = {
                                 action: "woof_write_stat",
-                                woof_current_values: woof_current_values
+                                woof_current_values: woof_current_values,
+				nonce_filter: nonce
                             };
                             jQuery.post(woof_ajaxurl, data, function () {
                                 //***
@@ -1767,7 +1770,7 @@ var WoofTurboMode_obj = function (data) {
                                     var res = {};
                                     if (!item.current) {
                                         var recount=false;
-                                        if(typeof WoofTurboMode.possible_terms.taxonomies[item.key.replace('rev_','')] !='undefined' && WoofTurboMode.possible_terms.taxonomies[item.key.replace('rev_','')]=="NOT IN"){                                            
+                                        if(typeof item.key != 'undefined' && typeof WoofTurboMode.possible_terms.taxonomies[item.key.replace('rev_','')] !='undefined' && WoofTurboMode.possible_terms.taxonomies[item.key.replace('rev_','')]=="NOT IN"){                                            
                                             recount=true;
                                         }                                        
                                         res = WoofTurboMode.search(item.query,recount);
@@ -1799,9 +1802,12 @@ var WoofTurboMode_obj = function (data) {
 
                         //stat collection
                         if (woof_current_values.hasOwnProperty(swoof_search_slug)) {
+			    var nonce = woof_front_nonce;
+
                             var data = {
                                 action: "woof_write_stat",
-                                woof_current_values: woof_current_values
+                                woof_current_values: woof_current_values,
+				nonce_filter: nonce
                             };
                             jQuery.post(woof_ajaxurl, data, function () {
                                 //***

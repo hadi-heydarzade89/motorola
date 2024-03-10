@@ -6,13 +6,18 @@ function woof_init_products_messenger() {
     }
     woof_messenger_init++;
     jQuery('#woof_add_subscr').attr('data-href', location.href);
+     let _nonce = ''; 
 
+    if (document.querySelector('.woof_product_messenger_nonce')) {
+	_nonce = document.querySelector('.woof_product_messenger_nonce').value;
+    }   
     jQuery('body').on('click', '#woof_add_subscr', function () {
         var data = {
             action: "woof_messenger_add_subscr",
             user_id: jQuery(this).attr('data-user'),
             get_var: woof_current_values,
-            link: location.href
+            link: location.href,
+	    woof_product_messenger_nonce: _nonce
         };
         jQuery.post(woof_ajaxurl, data, function (content) {
 
@@ -32,7 +37,8 @@ function woof_init_products_messenger() {
         var data = {
             action: "woof_messenger_remove_subscr",
             user_id: jQuery(this).attr('data-user'),
-            key: jQuery(this).attr('data-key')
+            key: jQuery(this).attr('data-key'),
+	    woof_product_messenger_nonce: _nonce
         };
 
         jQuery.post(woof_ajaxurl, data, function (content) {

@@ -81,7 +81,7 @@ export default class List {
         if (!this.builder.data[tax_key].is_taxonomy) {
             return;
         }
-
+	let _nonce = document.querySelector('.woof_front_builder_nonce').value
         let select = Helper.create_element('select');
         select.className = 'woof-front-builder-type-selector';
         this.viewtypes = JSON.parse(this.builder.container.dataset.viewtypes);
@@ -110,11 +110,13 @@ export default class List {
         li.appendChild(select);
 
         select.addEventListener('change', e => {
+	    
             e.stopPropagation();
             Helper.ajax('woof_form_builder_update_viewtype', {
                 key: tax_key,
                 value: select.value,
-                name: this.builder.name
+                name: this.builder.name,
+		woof_front_builder_nonce: _nonce
             }, data => {
                 this.builder.data[tax_key].viewtype = select.value;
                 li.dataset.viewtype = select.value;
@@ -216,7 +218,7 @@ export default class List {
                         name: 'click',
                         callback: e => {
                             e.preventDefault();
-
+			    
                             if (this.is_sd(li)) {
                                 this.init_sd_iframe(key, li);
                             } else {
@@ -232,11 +234,13 @@ export default class List {
                                             return false;
                                         }
                                     }
-
+				    let _nonce = document.querySelector('.woof_front_builder_nonce').value
+				   
                                     this.builder.popup.set_title(woof_lang_front_builder_creating + ' ...');
                                     Helper.ajax('woof_form_builder_set_sd', {
                                         key: key,
-                                        name: this.builder.name
+                                        name: this.builder.name,
+					woof_front_builder_nonce: _nonce
                                     }, responce => {
                                         this.viewtypes[`woof_sd_${responce.sd_id}`] = responce.title;
                                         this.builder.container.dataset.viewtypes = JSON.stringify(this.viewtypes);

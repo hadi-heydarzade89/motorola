@@ -250,6 +250,13 @@ final class WOOF_SLIDEOUT extends WOOF_EXT {
     }
 
     public function generate_shortcode_ajax() {
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_slideout_nonce'), 'slideout_nonce')) {
+			return false;
+		}		
+		
+		if (!current_user_can('manage_woocommerce') ) {
+            return;
+        }		
         $shortcode = $this->generate_shortcode(wc_clean($_POST));
         die($shortcode);
     }

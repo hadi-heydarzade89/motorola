@@ -30,7 +30,9 @@ final class WOOF_FRONT_BUILDER_ADDITIONAL {
     }
 
     public function update() {
-
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_front_builder_nonce'), 'front_builder_nonce')) {
+            return false;
+        }
         if (!$this->is_admin) {
             return false;
         }

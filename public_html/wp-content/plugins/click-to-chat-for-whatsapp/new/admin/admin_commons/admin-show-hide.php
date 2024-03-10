@@ -277,11 +277,12 @@ if ( !defined('HT_CTC_PRO_VERSION') && isset($type) && 'chat' == $type ) {
         <p class="description ht_ctc_content_point"><?php _e( 'Display After User Scroll', 'click-to-chat-for-whatsapp' ); ?></p>
     </div>
 
-    <div style="margin-bottom: 25px;">
+    <div style="margin-bottom: 25px;" id="ht_ctc_bh">
         <p class="description ht_ctc_subtitle"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/business-hours-online-offline/"><?php _e( 'Business Hours', 'click-to-chat-for-whatsapp' ); ?> (<?php _e( 'online/offline', 'click-to-chat-for-whatsapp' ); ?>)</a></p>
         <p class="description ht_ctc_content_point"><?php _e( 'Hide When offline', 'click-to-chat-for-whatsapp' ); ?> (or)</p>
         <p class="description ht_ctc_content_point"><?php _e( 'Change WhatsApp Number When Offline', 'click-to-chat-for-whatsapp' ); ?></p>
         <p class="description ht_ctc_content_point"><?php _e( 'Change Call to Action When Offline', 'click-to-chat-for-whatsapp' ); ?></p>
+        <p class="description ht_ctc_content_point">Online status badge at greetings header image during business hours</p>
     </div>
 
     <?php

@@ -521,7 +521,7 @@ if (!function_exists('woof_print_item_by_key')) {
             }
             ?>
 
-            <div data-slug="<?php echo (isset($swoof_slug) ? $swoof_slug : '') ?>" class="woof <?php if (!empty($sid)): ?>woof_sid woof_sid_<?php echo esc_attr($sid) ?><?php endif; ?> <?php echo esc_attr($woof_class) ?>" <?php if (!empty($sid)): ?>data-sid="<?php echo esc_attr($sid); ?>"<?php endif; ?> data-shortcode="<?php echo esc_html(WOOF_REQUEST::isset('woof_shortcode_txt') ? WOOF_REQUEST::get('woof_shortcode_txt') : 'woof') ?>" data-redirect="<?php echo esc_attr($redirect) ?>" data-autosubmit="<?php echo esc_attr($autosubmit) ?>" data-ajax-redraw="<?php echo esc_attr($ajax_redraw) ?>">
+            <div data-slug="<?php echo esc_attr(isset($swoof_slug) ? $swoof_slug : '') ?>" class="woof <?php if (!empty($sid)): ?>woof_sid woof_sid_<?php echo esc_attr($sid) ?><?php endif; ?> <?php echo esc_attr($woof_class) ?>" <?php if (!empty($sid)): ?>data-sid="<?php echo esc_attr($sid); ?>"<?php endif; ?> data-shortcode="<?php echo esc_html(WOOF_REQUEST::isset('woof_shortcode_txt') ? WOOF_REQUEST::get('woof_shortcode_txt') : 'woof') ?>" data-redirect="<?php echo esc_attr($redirect) ?>" data-autosubmit="<?php echo esc_attr($autosubmit) ?>" data-ajax-redraw="<?php echo esc_attr($ajax_redraw) ?>">
                 <?php
                 if (wp_is_mobile() && (isset($mobile_mode) && $mobile_mode) && isset($sid)) {
                     $image_mb_open = (isset($this->settings['image_mobile_behavior_open'])) ? $this->settings['image_mobile_behavior_open'] : '';
@@ -661,6 +661,7 @@ if (!function_exists('woof_print_item_by_key')) {
                             }
 
                             foreach ($items_order as $key) {
+								
                                 do_action('woof_before_draw_filter', $key, $shortcode_atts);
 
                                 if (in_array($key, $this->items_keys)) {
@@ -689,8 +690,6 @@ if (!function_exists('woof_print_item_by_key')) {
                         ?>
 
                     <?php endif; ?>
-
-
 
                 </div>
 

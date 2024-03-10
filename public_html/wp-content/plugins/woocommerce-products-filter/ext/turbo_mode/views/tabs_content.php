@@ -169,7 +169,7 @@ if (!defined('ABSPATH'))
                     <div class="woof-control-container">
                         <div class="woof-control">
                             <a id="woof_turbo_mode_update" class="button"><span class="icon-up"></span><?php esc_html_e('Update now!', 'woocommerce-products-filter') ?></a>
-                            <input type="hidden" id="woof_turbo_mode_update_nonce"  value="<?php echo wp_create_nonce('woof-turbo-mode-nonce'); ?>">
+
                             <span class="woof_turbo_mode_product_load"><img src="<?php echo esc_url(WOOF_LINK) ?>ext\turbo_mode\img\load.gif"></span>
                             <div class="woof_turbo_mode_product_succes">
                                 <img src="<?php echo esc_url(WOOF_LINK) ?>ext\turbo_mode\img\succes.png"> 

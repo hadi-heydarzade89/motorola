@@ -21,6 +21,28 @@
     overflow-y: auto;
 }
 
+
+.greetings_header_image img {
+    object-fit: cover;
+}
+
+.greetings_header_image {
+    position: relative;
+    display: inline-block;
+}
+
+.g_header_badge_online {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    z-index: 1;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    /* background-color: #06e376;
+    border: 2px solid #075e54; */
+}
+
 /* Desktop like: above 420 */
 @media only screen and (min-width: 420px) {}
 
@@ -80,7 +102,7 @@
     .ht_ctc_animation:has(.ht_ctc_greetings) {
         animation-fill-mode: none !important;
     }
-
+    
 }
 
 /* above 900 */

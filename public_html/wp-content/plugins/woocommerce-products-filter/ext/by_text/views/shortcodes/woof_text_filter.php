@@ -13,8 +13,9 @@ $search_id = uniqid('woof_txt_search');
         $woof_text = '';
         $request = woof()->get_request_data();
 
-        if (isset($request['woof_text'])) {
+        if (isset($request['woof_text'])) {			
             $woof_text = stripslashes($request['woof_text']);
+			$woof_text = str_replace('&amp;', '&', $woof_text);
         }
         ?>
         <input type="search" class="woof_husky_txt-input" id="<?php echo esc_attr($search_id) ?>"
@@ -33,5 +34,6 @@ $search_id = uniqid('woof_txt_search');
         <?php if (isset($data['notes_for_customer']) AND!empty($data['notes_for_customer'])): ?>
             <span class="woof_text_notes_for_customer"><?php echo stripcslashes(wp_kses_post(wp_unslash($data['notes_for_customer']))); ?></span>
         <?php endif; ?>   		
-    </div>
+		<input type="hidden" class="woof_text_search_nonce" value="<?php echo wp_create_nonce('text_search_nonce')?>">
+	</div>
 </div>

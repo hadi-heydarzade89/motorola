@@ -454,7 +454,7 @@ class HT_CTC_Admin_Customize_Styles {
 
 
 
-    // style-3 - ht_ctc_s3 - whatsapp andriod style icon
+    // style-3 - ht_ctc_s3 - whatsapp android style icon
     function ht_ctc_s3_cb() {
 
         $options = get_option('ht_ctc_s3');

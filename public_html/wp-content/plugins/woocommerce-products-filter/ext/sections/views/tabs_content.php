@@ -154,4 +154,5 @@ $woof_settings = woof()->settings;
         </div>
 
     </div>
+	<input type="hidden" id="woof_sections_nonce"  value="<?php echo wp_create_nonce('sections_nonce'); ?>">
 </section>

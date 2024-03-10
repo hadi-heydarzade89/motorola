@@ -6,7 +6,12 @@ function woof_init_save_query() {
     }
     woof_save_query_init++;
     jQuery('.woof_add_query_save').attr('data-href', location.href);
-
+    let _nonce = ''; 
+    
+    if (document.querySelector('.woof_query_save_nonce')) {
+	_nonce = document.querySelector('.woof_query_save_nonce').value;
+    }
+	    
     jQuery('body').on('click', '.woof_add_query_save', function () {
         var title = jQuery('.woof_save_query_title').val();
 
@@ -19,7 +24,8 @@ function woof_init_save_query() {
             query_title: title,
             user_id: jQuery(this).attr('data-user'),
             get_var: woof_current_values,
-            link: location.href
+            link: location.href,
+	    woof_query_save_nonce: _nonce
         };
 
         jQuery.post(woof_ajaxurl, data, function (content) {
@@ -46,7 +52,8 @@ function woof_init_save_query() {
         var data = {
             action: "woof_save_query_remove_query",
             user_id: jQuery(this).attr('data-user'),
-            key: jQuery(this).attr('data-key')
+            key: jQuery(this).attr('data-key'),
+	    woof_query_save_nonce: _nonce
         };
 
         jQuery.post(woof_ajaxurl, data, function (content) {
@@ -98,8 +105,12 @@ jQuery(document).ready(function () {
 
     var notice_wraper = jQuery(".woof_query_save_notice");
     var notice_wraper_prodoct = jQuery(".woof_query_save_notice_product");
-
+    let _nonce = ''; 
     if (notice_wraper.length) {
+	
+	if (document.querySelector('.woof_query_save_nonce')) {
+	    _nonce = document.querySelector('.woof_query_save_nonce').value;
+	}	
         var data_ids = [];
         jQuery.each(jQuery(notice_wraper), function (i, item) {
             data_ids.push(jQuery(item).data("id"));
@@ -109,7 +120,8 @@ jQuery(document).ready(function () {
         var data = {
             action: "woof_save_query_check_query",
             product_ids: data_ids,
-            type: 'woof'
+            type: 'woof',
+	    woof_query_save_nonce: _nonce
         };
 
         jQuery.post(woof_ajaxurl, data, function (content) {
@@ -125,7 +137,9 @@ jQuery(document).ready(function () {
 
     }
     if (notice_wraper_prodoct.length) {
-
+	if (document.querySelector('.woof_query_save_notice_nonce')) {
+	    _nonce = document.querySelector('.woof_query_save_notice_nonce').value;
+	}
         var data_ids = [];
         jQuery.each(jQuery(notice_wraper_prodoct), function (i, item) {
             data_ids.push(jQuery(item).data("id"));
@@ -135,7 +149,8 @@ jQuery(document).ready(function () {
         var data = {
             action: "woof_save_query_check_query",
             product_ids: data_ids,
-            type: 'product'
+            type: 'product',
+	    woof_query_save_nonce: _nonce
         };
         jQuery.post(woof_ajaxurl, data, function (content) {
             var result = JSON.parse(content);

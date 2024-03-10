@@ -240,6 +240,10 @@ final class WOOF_EXT_PRODS_MESSENGER extends WOOF_EXT {
     }
 
     public function woof_add_subscr() {
+		
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_product_messenger_nonce'), 'product_messenger_nonce')) {
+			return false;
+		}		
         global $WOOF, $wpdb, $wp_query;
 
         if (!isset($_POST['link']) OR !isset($_POST['user_id'])) {
@@ -308,6 +312,10 @@ final class WOOF_EXT_PRODS_MESSENGER extends WOOF_EXT {
     }
 
     public function woof_remove_subscr() {
+		
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_product_messenger_nonce'), 'product_messenger_nonce')) {
+			return false;
+		}		
         if (!isset($_POST['key']) OR !isset($_POST['user_id'])) {
             die('No data!');
         }

@@ -2110,6 +2110,13 @@ div.wc_error_tip {
 
 #woof-head{
     fill: #2f55d4;
+    position: relative;
+}
+
+#woof-head > img{
+    position: absolute;
+    margin-top: -19px;
+    margin-left: 0;
 }
 
 #woof-head svg{

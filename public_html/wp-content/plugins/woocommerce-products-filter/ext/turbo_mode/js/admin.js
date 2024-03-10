@@ -12,12 +12,15 @@ woof_turbo_mode_creator.generate = function () {
         jQuery.ajax({
             type: 'POST',
             url: woof_turbo_mode_creator.url,
-            data: {"action": "woof_turbo_mode_update_file", "nonce": woof_turbo_mode_creator.nonce, "turbo_mode_start": woof_turbo_mode_creator.turbo_mode_offset},
+            data: {"action": "woof_turbo_mode_update_file", "turbo_nonce": woof_turbo_nonce, "turbo_mode_start": woof_turbo_mode_creator.turbo_mode_offset},
             complete: function () {
                 woof_turbo_mode_creator.generating = false;
             },
             success: function (date) {
                 date = JSON.parse(date);
+		if (typeof date.turbo_nonce !== 'undefined') {
+		    woof_turbo_nonce = date.turbo_nonce;
+		}
 
                 if (typeof date.total !== 'undefined') {
 
@@ -37,11 +40,10 @@ woof_turbo_mode_creator.generate = function () {
     }
 };
 
-function woof_turbo_mode_create_search_file(nonce, url) {
+function woof_turbo_mode_create_search_file(url) {
     if (!woof_turbo_mode_creator.running) {
         woof_turbo_mode_creator.running = true;
         woof_turbo_mode_creator.url = url;
-        woof_turbo_mode_creator.nonce = nonce;
         woof_turbo_mode_creator.exec();
         jQuery(".woof_turbo_mode_product_load img").show();
         jQuery('#woof_turbo_mode_update').next('span.woof_turbo_mode_messange').html('<p class="woof_turbo_mode_succes">' + woof_turbo_creating + ' ...</p>');
@@ -99,7 +101,6 @@ jQuery('#woof_show_count_turbo_mode').change(function () {
 });
 jQuery(document).ready(function () {
     jQuery('#woof_turbo_mode_update').on('click', function () {
-        var turbo_mode_nonce = jQuery('#woof_turbo_mode_update_nonce').val();
-        woof_turbo_mode_create_search_file(turbo_mode_nonce, ajaxurl);
+        woof_turbo_mode_create_search_file(ajaxurl);
     });
 });

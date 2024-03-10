@@ -56,8 +56,10 @@ $container_id = 'woof-front-builder-' . $shortcode_id;
         if (!empty($selected)) {
             echo do_shortcode("[woof id='{$shortcode_id}' filter_id={$id} name='{$name}' swoof_slug='{$swoof_slug}' {$attributes_string} viewtypes='{$viewtypes}' tax_only='{$tax_only}' by_only='{$by_only}']");
         }
-        ?>   
+        ?> 
+		
     </div>
+	<input type="hidden" class="woof_front_builder_nonce" value="<?php echo wp_create_nonce('front_builder_nonce')?>">
     <style type="text/css" id="<?php echo $shortcode_id ?>-styles">
         /* styles for the current HUSKY products filter form */
         <?php

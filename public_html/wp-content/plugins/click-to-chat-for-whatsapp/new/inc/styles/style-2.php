@@ -2,7 +2,7 @@
 /**
  * Style - 2
  * 
- * Andriod like - WhatsApp icon
+ * Android like - WhatsApp icon
  * 
  * 
  * @included from

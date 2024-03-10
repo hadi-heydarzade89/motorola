@@ -81,7 +81,8 @@ class WOOF_RATE_ALERT {
                         jQuery('#woof_rate_alert').hide(333);
                         jQuery.post(ajaxurl, {
                             action: "woof_manage_alert",
-                            value: value
+                            value: value,
+							sec: <?php echo wp_create_nonce('woof_dissmiss_alert') ?>				
                         }, function (data) {
                             console.log(data);
                         });
@@ -94,7 +95,12 @@ class WOOF_RATE_ALERT {
     }
 
     public function manage_alert() {
-
+		if (!current_user_can('manage_woocommerce') OR !current_user_can('activate_plugins')) {
+            return;
+        }
+		if (!wp_verify_nonce(WOOF_REQUEST::get('sec'), 'woof_dissmiss_alert')) {
+            die('Stop!');
+        }
         if (intval($_REQUEST['value'])) {
             update_option($this->meta_key, -2);
         } else {

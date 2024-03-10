@@ -7,14 +7,16 @@ export default class Options {
         this.builder = builder;
         this.unformatted_data = null;
         this.call_id = Helper.generate_key('op-');//to get events for current object only
-
+	let _nonce = document.querySelector('.woof_front_builder_nonce').value
         //load current shortcode options
         Helper.ajax('woof_form_builder_get_options', {
-            name: this.builder.name
+            name: this.builder.name,
+	    woof_front_builder_nonce: _nonce 
         }, data => this.unformatted_data = data);
 
         Helper.ajax('woof_form_builder_get_layout_options', {
-            name: this.builder.name
+            name: this.builder.name,
+	    woof_front_builder_nonce: _nonce 
         }, data => this.unformatted_layout_data = data);
 
         //+++
@@ -30,7 +32,8 @@ export default class Options {
                 Helper.ajax('woof_form_builder_save_options', {
                     name: this.builder.name,
                     field: e.detail.field,
-                    value: e.detail.value
+                    value: e.detail.value,
+		    woof_front_builder_nonce: _nonce
                 }, data => this.builder.redraw_filter());
             }
         });
@@ -56,7 +59,8 @@ export default class Options {
                 Helper.ajax('woof_form_builder_save_layout_options', {
                     name: this.builder.name,
                     field: e.detail.field,
-                    value: this.format_layout_val(e.detail.value, e.detail.field)
+                    value: this.format_layout_val(e.detail.value, e.detail.field),
+		    woof_front_builder_nonce: _nonce
                 }, data => {
                     //fix for icheck
                     if (e.detail.field === 'icheck_skin' || e.detail.field === '--woof-fb-section-height') {

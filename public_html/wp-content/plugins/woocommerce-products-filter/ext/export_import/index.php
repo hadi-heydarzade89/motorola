@@ -69,6 +69,9 @@ final class WOOF_EXP_IMP extends WOOF_EXT {
     }
 
     public function get_export_data() {
+		if (!current_user_can('manage_woocommerce') ) {
+            return;
+        }		
         if (!wp_verify_nonce($_REQUEST['_nonce'], 'woof_export_settings')) {
             die(json_encode(array()));
         }
@@ -77,7 +80,9 @@ final class WOOF_EXP_IMP extends WOOF_EXT {
     }
 
     public function do_import_data() {
-
+		if (!current_user_can('manage_woocommerce') ) {
+            return;
+        }	
         if (!isset($_POST['import_value'])) {
             die(esc_html__("Error! No data", 'woocommerce-products-filter'));
         }

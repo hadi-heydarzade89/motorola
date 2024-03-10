@@ -11,8 +11,14 @@ final class WOOF_SD_COLOR {
 
     public function __construct() {
         add_action('wp_ajax_woof_sd_load_color_terms', function () {
-            $term_id = 0;
-
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}
+            if (!current_user_can('manage_woocommerce')) {
+                die('0');
+            }			
+			$term_id = 0;
+		
             if (isset($_REQUEST['term_id'])) {
                 $term_id = intval($_REQUEST['term_id']);
             }
@@ -22,11 +28,23 @@ final class WOOF_SD_COLOR {
         });
 
         add_action('wp_ajax_woof_sd_change_term_color', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}
+            if (!current_user_can('manage_woocommerce')) {
+                die('0');
+            }			
             $this->set(intval($_REQUEST['term_id']), esc_html($_REQUEST['value']));
             die(json_encode([]));
         });
 
         add_action('wp_ajax_woof_sd_change_term_color_image', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}
+            if (!current_user_can('manage_woocommerce')) {
+                die('0');
+            }				
             $this->set_image(intval($_REQUEST['term_id']), esc_html($_REQUEST['value']));
             die(json_encode([]));
         });

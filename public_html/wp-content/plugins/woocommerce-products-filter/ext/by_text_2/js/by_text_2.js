@@ -66,6 +66,7 @@ function woof_text_process_value(value, _this, e) {
         //***
         //http://easyautocomplete.com/examples
         var input_id = jQuery(_this).attr('id');
+	var nonce = jQuery('.woof_text_search_nonce').val();
         var options = {
             url: function (phrase) {
                 return woof_ajaxurl;
@@ -81,7 +82,8 @@ function woof_text_process_value(value, _this, e) {
                 method: "POST",
                 data: {
                     action: "woof_text_autocomplete",
-                    dataType: "json"
+                    dataType: "json",
+		    woof_text_search_nonce: nonce
                 }
             },
             preparePostData: function (data) {

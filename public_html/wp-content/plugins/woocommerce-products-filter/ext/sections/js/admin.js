@@ -1,9 +1,12 @@
 "use strict";
 jQuery(document).ready(function () {
 
+    let _nonce = document.querySelector('#woof_sections_nonce').value;
+
     jQuery(".woof_add_sections").on('click', function () {
         var data = {
-            action: "woof_get_section_html"
+            action: "woof_get_section_html",
+	    woof_sections_nonce: _nonce 
         };
         jQuery.post(ajaxurl, data, function (section) {
 

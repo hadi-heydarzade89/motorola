@@ -292,11 +292,12 @@
             if ('yes' == ctc.schedule) {
                 console.log('scheduled');
                 document.dispatchEvent(
-                    new CustomEvent("ht_ctc_event_display", { detail: { ctc, display_chat, ht_ctc_chat } })
+                    new CustomEvent("ht_ctc_event_display", { detail: { ctc, display_chat, ht_ctc_chat, online_content } })
                 );
             } else {
                 console.log('display directly');
                 display_chat(ht_ctc_chat);
+                online_content();
             }
 
         }
@@ -340,6 +341,24 @@
             display_notifications();
 
             ht_ctc_things(p);
+        }
+
+        /**
+         * online content
+         * 
+         * @since 3.34
+         */
+        function online_content() {
+
+            console.log('online_content');
+
+            if ($('.for_greetings_header_image_badge').length) {
+                $('.for_greetings_header_image_badge').addClass('g_header_badge_online');
+                // $('.for_greetings_header_image_badge').show(500);
+                $('.for_greetings_header_image_badge').show();
+            }
+
+
         }
 
 

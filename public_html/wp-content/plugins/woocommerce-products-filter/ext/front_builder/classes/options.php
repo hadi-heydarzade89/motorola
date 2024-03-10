@@ -23,12 +23,18 @@ final class WOOF_FRONT_BUILDER_OPTIONS {
 
     public function init() {
         add_action('wp_ajax_woof_form_builder_get_options', function () {
+			if (!wp_verify_nonce(WOOF_REQUEST::get('woof_front_builder_nonce'), 'front_builder_nonce')) {
+				return false;
+			}			
             die(json_encode($this->get_options(esc_html($_REQUEST['name']))));
         });
         add_action('wp_ajax_woof_form_builder_save_options', array($this, 'save_options'));
 
         if ($this->demo) {
             add_action('wp_ajax_nopriv_woof_form_builder_get_options', function () {
+				if (!wp_verify_nonce(WOOF_REQUEST::get('woof_front_builder_nonce'), 'front_builder_nonce')) {
+					return false;
+				}				
                 die(json_encode($this->get_options(esc_html($_REQUEST['name']))));
             });
             add_action('wp_ajax_nopriv_woof_form_builder_save_options', array($this, 'save_options'));
@@ -40,7 +46,9 @@ final class WOOF_FRONT_BUILDER_OPTIONS {
         if (!$this->is_admin) {
             return false;
         }
-
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_front_builder_nonce'), 'front_builder_nonce')) {
+			return false;
+		}
         $name = esc_html($_REQUEST['name']);
         $field = esc_html($_REQUEST['field']);
         $value = esc_html($_REQUEST['value']);

@@ -6,13 +6,13 @@
         if (document.querySelector('.pr_greetings_template')) {
             try {
                 greetings_template();
-            } catch (e) {}
+            } catch (e) { }
         }
 
         if (document.querySelector('.ctc-admin-greetings-page') || document.querySelector('.ctc-admin-woo-page')) {
             try {
                 editor();
-            } catch (e) {}
+            } catch (e) { }
         }
 
         /**
@@ -27,7 +27,7 @@
             } else {
                 $('.g_content_collapsible').show();
             }
-            
+
             // greetings-1
             if (greetings_template == 'greetings-1') {
                 $('.ctc_greetings_settings.ctc_g_1').show();
@@ -56,7 +56,7 @@
                     $(" .ctc_greetings_settings").hide();
                 } else {
                     // $(" ." + greetings_template).show(100);
-                    
+
                     $('.g_content_collapsible').show();
 
                     // if not no - then first hide all and again display required fields..
@@ -98,6 +98,92 @@
             });
 
         }
+
+
+        /**
+         * greetings header image
+         * 
+         * @since 3.34
+         */
+        function greetings_header_image() {
+
+            var mediaUploader;
+            $('.ctc_add_image_wp').on('click', function (e) {
+                e.preventDefault();
+                if (mediaUploader) {
+                    mediaUploader.open();
+                    return;
+                }
+                mediaUploader = wp.media.frames.file_frame = wp.media({
+                    title: 'Select Header Image',
+                    button: {
+                        text: 'Select'
+                    },
+                    multiple: false
+                });
+                mediaUploader.on('select', function () {
+
+                    attachment = mediaUploader.state().get('selection').first().toJSON();
+                    console.log(attachment);
+
+                    // if closed with out selecting image
+                    if (typeof attachment == 'undefined') return true;
+
+                    image_url = attachment.url;
+                    $('.g_header_image').val(image_url);
+                    $('.g_header_image_preview').attr('src', image_url);
+                    $('.g_header_image_preview').show();
+                    $('.ctc_remove_image_wp').show();
+                    header_image_badge();
+                });
+                mediaUploader.open();
+            });
+
+            $('.ctc_remove_image_wp').on('click', function (e) {
+                e.preventDefault();
+                $('.g_header_image').val('');
+                $('.g_header_image_preview').hide();
+                $('.ctc_remove_image_wp').hide();
+                header_image_badge();
+                return;
+            });
+
+            function header_image_badge() {
+
+                // pr_g_header_online_badge display only if header image is set
+                console.log($('.g_header_image').val());
+                if ($('.g_header_image').val() == '') {
+                    $('.row_g_header_online_status').hide();
+                    $('.row_g_header_online_status_color').hide();
+                    console.log('hide');
+                } else {
+                    $('.row_g_header_online_status').show();
+                    // if g_header_online_status is checked.
+                    if ($('.g_header_online_status').is(':checked')) {
+                        $('.row_g_header_online_status_color').show();
+                    } else {
+                        $('.row_g_header_online_status_color').hide();
+                    }
+                    console.log('show');
+                }
+            }
+            header_image_badge();
+
+            // on change g_header_online_status
+            $('.g_header_online_status').on('change', function () {
+                console.log('on change g_header_online_status');
+                if ($('.g_header_online_status').is(':checked')) {
+                    console.log('g_header_online_status checked');
+                    $('.row_g_header_online_status_color').show();
+                } else {
+                    console.log('g_header_online_status unchecked');
+                    $('.row_g_header_online_status_color').hide();
+                }
+            });
+
+
+        }
+        greetings_header_image();
 
 
 

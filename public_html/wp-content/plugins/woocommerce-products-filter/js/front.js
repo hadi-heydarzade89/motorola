@@ -195,7 +195,8 @@ jQuery(function ($) {
             action: "woof_draw_products",
             page: 1,
             shortcode: 'woof_nothing', //we do not need get any products, seacrh form data only
-            woof_shortcode: shortcode
+            woof_shortcode: shortcode,
+	    nonce_filter: woof_front_nonce
         };
 
         jQuery.post(woof_ajaxurl, data, function (content) {
@@ -479,7 +480,8 @@ function woof_submit_link(link, ajax_redraw) {
             link: link,
             page: woof_ajax_page_num,
             shortcode: jQuery('#woof_results_by_ajax').data('shortcode'),
-            woof_shortcode: jQuery('div.woof').data('shortcode')
+            woof_shortcode: jQuery('div.woof').data('shortcode'),
+	    nonce_filter: woof_front_nonce
         };
 
         jQuery.post(woof_ajaxurl, data, function (content) {
@@ -570,7 +572,8 @@ function woof_submit_link(link, ajax_redraw) {
                 link: link,
                 page: 1,
                 shortcode: 'woof_nothing', //we do not need get any products, seacrh form data only
-                woof_shortcode: jQuery('div.woof').eq(0).data('shortcode')
+                woof_shortcode: jQuery('div.woof').eq(0).data('shortcode'),
+		nonce_filter: woof_front_nonce
             };
             jQuery.post(woof_ajaxurl, data, function (content) {
 

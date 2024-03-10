@@ -12,10 +12,16 @@ add_action('init', function() {
     $slug = 'woof';
 
     add_action("wp_ajax_{$slug}_dismiss_rate_alert", function() use($slug) {
+        if (!isset($_REQUEST['woof_alert_nonce']) || !wp_verify_nonce($_REQUEST['woof_alert_nonce'], 'alert_nonce')) {
+            die('0');
+        }		
         update_option("{$slug}_dismiss_rate_alert", 2);
     });
 
     add_action("wp_ajax_{$slug}_later_rate_alert", function() use($slug) {
+        if (!isset($_REQUEST['woof_alert_nonce']) || !wp_verify_nonce($_REQUEST['woof_alert_nonce'], 'alert_nonce')) {
+            die('0');
+        }		
         update_option("{$slug}_later_rate_alert", time() + 4 * 7 * 24 * 60 * 60); //4 weeks
     });
 
@@ -75,7 +81,7 @@ add_action('init', function() {
                     |&nbsp;<a href="javascript: pn_<?php echo esc_attr($slug) ?>_dismiss_review(2); void(0);"><?php esc_html_e('No thanks', 'woocommerce-products-filter'); ?></a>
                 </p>
             </div>
-
+			<input type="hidden" class="woof_alert_nonce" value="<?php echo wp_create_nonce('alert_nonce')?>">
         </div>
         <?php
     });

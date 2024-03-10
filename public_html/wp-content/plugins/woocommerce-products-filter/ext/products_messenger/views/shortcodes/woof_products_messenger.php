@@ -65,6 +65,7 @@ if (is_user_logged_in() AND isset(woof()->settings['products_messenger'])) {
             <?php if (isset($this->settings['products_messenger']['notes_for_customer']) AND!empty($this->settings['products_messenger']['notes_for_customer'])): ?>
                 <span class="woof_products_messenger_notes_for_customer"><?php echo stripcslashes(wp_kses_post(wp_unslash(do_shortcode($this->settings['products_messenger']['notes_for_customer'])))); ?></span>
             <?php endif; ?>
+			<input type="hidden" class="woof_product_messenger_nonce" value="<?php echo wp_create_nonce('product_messenger_nonce')?>">
         </div>
     </div>
     <?php

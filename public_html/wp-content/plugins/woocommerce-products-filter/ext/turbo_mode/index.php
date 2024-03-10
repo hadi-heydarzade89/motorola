@@ -94,8 +94,8 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
         }
 
         //ajax
-        add_action('wp_ajax_woof_turbo_mode_update_file', array($this, 'create_data_search_files'));
-        add_action('wp_ajax_nopriv_woof_turbo_mode_update_file', array($this, 'create_data_search_files'));
+        add_action('wp_ajax_woof_turbo_mode_update_file', array($this, 'ajax_create_data_search_files'));
+        add_action('wp_ajax_nopriv_woof_turbo_mode_update_file', array($this, 'ajax_create_data_search_files'));
     }
 
     public function create_data_search_files_when_init() {
@@ -169,7 +169,8 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
         ob_start();
         ?>
         var woof_turbo_creating = "<?php esc_html_e('Creating', 'woocommerce-products-filter') ?>";
-        var woof_turbo_products = "<?php esc_html_e('Products and Variants', 'woocommerce-products-filter') ?>";		
+        var woof_turbo_products = "<?php esc_html_e('Products and Variants', 'woocommerce-products-filter') ?>";
+		var woof_turbo_nonce = "<?php echo wp_create_nonce( 'woof_turbo_nonce' ); ?>";		
         <?php
         $txt_js = ob_get_clean();
         wp_enqueue_script('woof_turbo_mode_admin_', $this->get_ext_link() . 'js/admin.js', array(), WOOF_VERSION);
@@ -183,7 +184,12 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
 
         woof()->render_html_e($this->get_ext_path() . 'views/tabs_content.php', $data);
     }
-
+	public function ajax_create_data_search_files() {
+        if (!isset($_REQUEST['turbo_nonce']) || !wp_verify_nonce($_REQUEST['turbo_nonce'], 'woof_turbo_nonce')) {
+            die('0');
+        }	
+		$this->create_data_search_files();
+	}
     public function create_data_search_files() {
 
         $tax_query = array();
@@ -244,9 +250,12 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
         } else {
             $start = -1;
         }
-        $result = array('total' => $start);
+        $result = array(
+					'total' => $start,
+					'turbo_nonce' => wp_create_nonce('woof_turbo_nonce')
+				);
 
-        exit(json_encode($result));
+		exit(json_encode($result));
     }
 
     public function push_products_data($product_ids, $id) {

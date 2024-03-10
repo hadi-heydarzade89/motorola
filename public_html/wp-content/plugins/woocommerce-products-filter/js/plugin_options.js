@@ -425,8 +425,10 @@ var woof_sort_order = [];
         $('.js_cache_count_data_clear').on('click', function () {
             $(this).next('span').html('clearing ...');
             var _this = this;
+	    const _nonce = document.querySelector('input[name="_wpnonce_woof"]').value
             var data = {
-                action: "woof_cache_count_data_clear"
+                action: "woof_cache_count_data_clear",
+		_wpnonce_woof: _nonce
             };
             $.post(ajaxurl, data, function () {
                 $(_this).next('span').html('cleared!');
@@ -437,10 +439,12 @@ var woof_sort_order = [];
 
 
         $('.js_cache_terms_clear').on('click', function () {
+	    const _nonce = document.querySelector('input[name="_wpnonce_woof"]').value
             $(this).next('span').html('clearing ...');
             var _this = this;
             var data = {
-                action: "woof_cache_terms_clear"
+                action: "woof_cache_terms_clear",
+		_wpnonce_woof: _nonce
             };
             $.post(ajaxurl, data, function () {
                 $(_this).next('span').html('cleared!');
@@ -451,9 +455,11 @@ var woof_sort_order = [];
 
         $('.js_price_transient_clear').on('click', function () {
             $(this).next('span').html('clearing ...');
+	    const _nonce = document.querySelector('input[name="_wpnonce_woof"]').value
             var _this = this;
             var data = {
-                action: "woof_price_transient_clear"
+                action: "woof_price_transient_clear",
+		_wpnonce_woof: _nonce
             };
             $.post(ajaxurl, data, function () {
                 $(_this).next('span').html('cleared!');
@@ -590,10 +596,12 @@ var woof_sort_order = [];
             $('.woof_select_term').find('option.woof_select_term_item').remove();
             let option = $(this).val();
             jQuery('.woof_select_term_wrapper').css('opacity', '0.2');
+	    const _nonce = document.querySelector('input[name="_wpnonce_woof"]').value
             if (option && option != -1) {
                 var data = {
                     action: "woof_get_taxonomy_terms",
-                    taxonomy: option
+                    taxonomy: option,
+		    _wpnonce_woof:_nonce 
                 };
                 $.post(ajaxurl, data, function (terms) {
                     $.each(terms, function (index, value) {

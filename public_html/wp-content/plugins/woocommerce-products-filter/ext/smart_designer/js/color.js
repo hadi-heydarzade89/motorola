@@ -38,16 +38,19 @@ export default class Color {
         }
 
         this.fetch_controller = new AbortController();
+	var nonce = document.getElementById('woof_sd_nonce').value;
 
         this.fetch_timer_flag = setTimeout(() => {
             Helper.ajax(action, {
                 term_id: parseInt(term_id),
-                value: value
+                value: value,
+		sd_nonce: nonce
             }, data => this.redraw_visor_terms(), false, null, this.fetch_controller.signal);
         }, 777);
     }
 
     reload(term_id) {
+
         if (this.terms[term_id]?.title?.value) {
             this.navigation.selected_term = {
                 title: this.terms[term_id]?.title?.value.value,
@@ -56,16 +59,20 @@ export default class Color {
         }
 
         this.popup.set_content(woof_sd.lang.loading + ' ...');
-
+	var nonce = document.getElementById('woof_sd_nonce').value;
         Helper.ajax('woof_sd_load_color_terms', {
             term_id: term_id,
-            taxonomy: this.panel.sd.selected_demo_taxonomy
+            taxonomy: this.panel.sd.selected_demo_taxonomy,
+	    sd_nonce: nonce
         }, data => this.draw_table(data));
     }
 
     load() {
+
+	var nonce = document.getElementById('woof_sd_nonce').value;
         Helper.ajax('woof_sd_load_color_terms', {
-            taxonomy: this.panel.sd.selected_demo_taxonomy
+            taxonomy: this.panel.sd.selected_demo_taxonomy,
+	    sd_nonce: nonce
         }, data => this.draw_table(data));
     }
 

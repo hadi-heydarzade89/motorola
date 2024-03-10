@@ -3,7 +3,7 @@ Requires at least: 4.6
 Tested up to: 6.4.3
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 3.33
+Stable tag: 3.34
 Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, whatsapp support, whatsapp group, click to chat for whatsapp, WhatsApp WooCommerce, whatsapp wordpress, whatsapp floating button, chat, holithemes
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -554,6 +554,12 @@ or
 After Activating the plugin, add a WhatsApp Number in the plugin settings.
 
 == Changelog ==
+
+= 3.34 =
+* NEW: Profile picture at the Greetings Dialog header 
+* NEW: online/offline status badge at Greetings Header Image
+* PRO: online/offline status badge color based on business hours
+* Enhancement: Select style interface updated
 
 = 3.33 =
 * Fix: Greetings Dialog with animations not showing properly

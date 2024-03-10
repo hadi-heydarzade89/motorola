@@ -17,10 +17,12 @@
     color: #ddd;
     margin-left: auto;
 }
+
 .rtl .collapsible-header .dashicons {
     margin-right: auto;
     margin-left: unset;
 }
+
 .active:not(.have-sub-collapsible) .collapsible-header .dashicons {
     transform: rotate(180deg);
 }
@@ -72,14 +74,14 @@
     font-size: 1.2em;
 }
 
-.ht_ctc_show_hide_settings :checked ~ .dashicons-visibility,
-.ht_ctc_show_hide_settings :checked ~ span .dashicons-visibility,
+.ht_ctc_show_hide_settings :checked~.dashicons-visibility,
+.ht_ctc_show_hide_settings :checked~span .dashicons-visibility,
 .ht_ctc_show_hide_settings .show_settings .dashicons-visibility {
     color: green !important;
 }
 
-.ht_ctc_show_hide_settings :checked ~ .dashicons-hidden,
-.ht_ctc_show_hide_settings :checked ~ span .dashicons-hidden,
+.ht_ctc_show_hide_settings :checked~.dashicons-hidden,
+.ht_ctc_show_hide_settings :checked~span .dashicons-hidden,
 .ht_ctc_show_hide_settings .hide_settings .dashicons-hidden {
     color: red !important;
 }
@@ -104,6 +106,12 @@
     letter-spacing: 0.4px;
     padding: 2px 11px;
 }
+
+.select_style_selected {
+    background-color: #c5c5c5 !important;
+}
+
+
 
 /* Editior */
 .click-to-chat_page_click-to-chat-greetings .link-target #wp-link-target {
@@ -221,13 +229,13 @@
     .ht-ctc-admin-sidebar::-webkit-scrollbar-thumb {
         background: #888;
     }
-    
+
     .ht-ctc-admin-sidebar::-webkit-scrollbar-thumb:hover {
         background: #555;
     }
 
 
 
-    
+
 
 }

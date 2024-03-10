@@ -16,7 +16,8 @@ $greetings_settings = get_option('ht_ctc_greetings_settings');
 $ht_ctc_greetings['main_content'] = do_shortcode( $ht_ctc_greetings['main_content'] );
 
 // css
-$header_css = 'padding: 12px 25px 12px 25px; line-height:1.4;';
+$header_css = 'padding: 12px 25px 12px 25px;';
+
 $main_css = '';
 
 $message_box_css = 'margin: 8px 5px;';
@@ -72,8 +73,13 @@ $cta_style = ( isset($g1_options['cta_style']) ) ? esc_attr( $g1_options['cta_st
 $g_cta_path = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/greetings/greetings_styles/g-cta-' . $cta_style. '.php';
 $g_optin_path = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/greetings/greetings_styles/opt-in.php';
 
+$g_header_image = ( isset($greetings['g_header_image']) ) ? esc_attr( $greetings['g_header_image'] ) : '';
 
-$g_header_image = '';
+if ('' !== $g_header_image) {
+    $header_css .= "line-height:1.1;";
+} else {
+    $header_css .= "line-height:1.3;";
+}
 
 ?>
 <style>
@@ -143,7 +149,21 @@ if ( '' !== $ht_ctc_greetings['header_content'] ) {
         ?>
         <div class="ctc_g_heading" style="<?= $header_css ?>">
             <div style="display: flex; align-items: center;">
-                <img style="border-radius:50%; margin-right:9px;" src="" alt="">
+
+                <div class="greetings_header_image" style="border-radius:50%;height:50px; width:50px; margin-right:9px;">
+                    <img style="display:inline-block; border-radius:50%; height:50px; width:50px;" src="<?= $g_header_image ?>" alt="">
+                    <?php
+                    if ( isset($greetings['g_header_online_status']) ) {
+                        $g_header_online_status_color = ( isset($greetings['g_header_online_status_color']) ) ? esc_attr( $greetings['g_header_online_status_color'] ) : '';
+                        if ('' == $g_header_online_status_color) {
+                            $g_header_online_status_color = '#06e376';
+                        }
+                        ?>
+                        <span class="for_greetings_header_image_badge" style="display:none; border: 2px solid <?= $header_bg_color ?>; background-color: <?= $g_header_online_status_color ?>;"></span>
+                        <?php
+                    }
+                    ?>
+                </div>
                 <div>
                     <?= wpautop($ht_ctc_greetings['header_content']) ?>
                 </div>

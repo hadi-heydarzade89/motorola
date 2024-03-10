@@ -35,6 +35,8 @@ class HT_CTC_Defaults_Greetings {
             'main_content' => '<span style="font-size:14px;">Any questions related to {title}?</span>',
             'bottom_content' => '<p style="text-align: center;"><span style="font-size: 12px;">&#128994; Online | Privacy policy</span></p>',
             'call_to_action' => 'WhatsApp Us',
+            'g_header_online_status_color' => '#06e376',
+            'g_header_online_status' => '1',
             'g_device' => 'all',
             'g_init' => 'open',
         );

@@ -14,8 +14,8 @@
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 // style
-$style_desktop = ( isset( $options['style_desktop']) ) ? esc_attr( $options['style_desktop'] ) : '';
-$style_mobile = ( isset( $options['style_mobile']) ) ? esc_attr( $options['style_mobile'] ) : '';
+$style_desktop = ( isset( $options['style_desktop']) ) ? esc_attr( $options['style_desktop'] ) : '2';
+$style_mobile = ( isset( $options['style_mobile']) ) ? esc_attr( $options['style_mobile'] ) : '2';
 
 
 // desktop position
@@ -53,25 +53,31 @@ $position_type_values = apply_filters( 'ht_ctc_fh_position_type_values', $positi
 <!-- style -->
 <p class="description ht_ctc_admin_desktop ht_ctc_subtitle"><?php _e( 'Select Style', 'click-to-chat-for-whatsapp' ); ?><span class="not_samesettings"><?php _e( ' (Desktop)', 'click-to-chat-for-whatsapp' ); ?></span>:</p>
 <div class="row ht_ctc_admin_desktop" id="row_styles">
-    <div class="input-field col s12 m12">
-        <select name="<?= $dbrow; ?>[style_desktop]" class="chat_select_style select_style_desktop ctc_ad_main_page_on_change_style">
-            <option value="1" <?= $style_desktop == 1 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-1', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="2" <?= $style_desktop == 2 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-2', 'click-to-chat-for-whatsapp' ); ?></option>
-            <!-- <optgroup label="Style 3"> -->
-            <option value="3" <?= $style_desktop == 3 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-3', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="3_1" <?= $style_desktop == '3_1' ? 'SELECTED' : ''; ?> >&emsp;<?php _e( 'Style-3 Extend', 'click-to-chat-for-whatsapp' ); ?></option>
-            <!-- </optgroup> -->
-            <option value="4" <?= $style_desktop == 4 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-4', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="5" <?= $style_desktop == 5 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-5', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="6" <?= $style_desktop == 6 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-6', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="7" <?= $style_desktop == 7 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-7', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="7_1" <?= $style_desktop == '7_1' ? 'SELECTED' : ''; ?> >&emsp;<?php _e( 'Style-7 Extend', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="8" <?= $style_desktop == 8 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-8', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="99" <?= $style_desktop == 99 ? 'SELECTED' : ''; ?> ><?php _e( 'Add your own image / GIF (Style-99)', 'click-to-chat-for-whatsapp' ); ?></option>
-        </select>
-        <p class="description"><a style="background-color: #26a69a; color: #fff; padding: 5px;" target="_blank" href="https://holithemes.com/plugins/click-to-chat/list-of-styles/"><?php _e( 'List of Styles', 'click-to-chat-for-whatsapp' ); ?></a> &emsp; | &emsp; <span><?php _e( 'Customize the styles', 'click-to-chat-for-whatsapp' ); ?>  <a target="_blank" class="customize_styles_link" href="<?= admin_url( 'admin.php?page=click-to-chat-customize-styles' ); ?>">( Click to Chat -> Customize )</a></span> </p>
+    <input name="<?= $dbrow; ?>[style_desktop]" value="<?= $style_desktop ?>" type="text" style="display:none;" class="chat_select_style select_style_desktop ctc_ad_main_page_on_change_style">
+
+    <div class="row ht_ctc_admin_desktop ctc_select_style ctc_style_desktop">
+        <div class="collection select_style_container" data-style="<?= $style_desktop ?>">
+            <span class="collection-item select_style_item"  data-style="1"><span class="badge">Theme Button</span>Style-1</span>
+            <span class="collection-item select_style_item"  data-style="2"><span class="badge">Green Square Icon</span>Style-2</span>
+            <span class="collection-item select_style_item"  data-style="3"><span class="badge">Icon</span>Style-3</span>
+            <span class="collection-item select_style_item"  data-style="3_1"><span class="badge">Large Icon</span>Style-3 Extend</span>
+            <span class="collection-item select_style_item"  data-style="4"><span class="badge">Chip (cylindrical)</span>Style-4</span>
+            <span class="collection-item select_style_item"  data-style="5"><span class="badge">Image on hover Content Box</span>Style-5</span>
+            <span class="collection-item select_style_item"  data-style="6"><span class="badge">Plain text</span>Style-6</span>
+            <span class="collection-item select_style_item"  data-style="7"><span class="badge">Icon with padding</span>Style-7</span>
+            <span class="collection-item select_style_item"  data-style="7_1"><span class="badge">Icon on hover extend</span>Style-7 Extend</span>
+            <span class="collection-item select_style_item"  data-style="8"><span class="badge">Button</span>Style-8</span>
+            <span class="collection-item select_style_item"  data-style="99"><span class="badge">Own Image</span>Style-99</span>
+        </div>
     </div>
+
+    <p class="description"><a style="" target="_blank" href="https://holithemes.com/plugins/click-to-chat/list-of-styles/"><?php _e( 'List of Styles', 'click-to-chat-for-whatsapp' ); ?></a> | 
+    <span><?php _e( 'Customize the styles', 'click-to-chat-for-whatsapp' ); ?>  <a target="_blank" class="customize_styles_link" href="<?= admin_url( 'admin.php?page=click-to-chat-customize-styles' ); ?>">( Click to Chat -> Customize )</a></span> | 
+    <span><?php _e( 'Add Greetings Dialog', 'click-to-chat-for-whatsapp' ); ?>  <a target="_blank" class="greetings_page_link" href="<?= admin_url( 'admin.php?page=click-to-chat-greetings' ); ?>">( Click to Chat -> Greetings )</a></span>
+    </p>
+
 </div>
+
 
 <!-- position type -->
 <p class="description ht_ctc_admin_desktop ht_ctc_subtitle"><?php _e( 'Position Type', 'click-to-chat-for-whatsapp' ); ?><span class="not_samesettings"><?php _e( ' (Desktop)', 'click-to-chat-for-whatsapp' ); ?></span>:</p>
@@ -162,26 +168,31 @@ if ( isset( $options['same_settings'] ) ) {
 
 <blockquote class="not_samesettings " style="margin-bottom: 25px;"><?php _e( 'Mobile', 'click-to-chat-for-whatsapp' ); ?>:</blockquote>
 
-<!-- style -->
+<!-- mobile style -->
 <p class="description ht_ctc_admin_mobile ht_ctc_subtitle not_samesettings"><?php _e( 'Select Style (Mobile)', 'click-to-chat-for-whatsapp' ); ?>:</p>
 <div class="row ht_ctc_admin_mobile not_samesettings">
-    <div class="input-field col s12 m12">
-        <select name="<?= $dbrow; ?>[style_mobile]" class="chat_select_style select_style_mobile ctc_no_demo">
-            <option value="1" <?= $style_mobile == 1 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-1', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="2" <?= $style_mobile == 2 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-2', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="3" <?= $style_mobile == 3 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-3', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="3_1" <?= $style_mobile == '3_1' ? 'SELECTED' : ''; ?> >&emsp;<?php _e( 'Style-3 Extend', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="4" <?= $style_mobile == 4 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-4', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="5" <?= $style_mobile == 5 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-5', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="6" <?= $style_mobile == 6 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-6', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="7" <?= $style_mobile == 7 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-7', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="7_1" <?= $style_mobile == '7_1' ? 'SELECTED' : ''; ?> >&emsp;<?php _e( 'Style-7 Extend', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="8" <?= $style_mobile == 8 ? 'SELECTED' : ''; ?> ><?php _e( 'Style-8', 'click-to-chat-for-whatsapp' ); ?></option>
-            <option value="99" <?= $style_mobile == 99 ? 'SELECTED' : ''; ?> ><?php _e( 'Add your own image / GIF (Style-99)', 'click-to-chat-for-whatsapp' ); ?></option>
-        </select>
-        <p class="description"><a style="background-color: #26a69a; color: #fff; padding: 5px;" target="_blank" href="https://holithemes.com/plugins/click-to-chat/list-of-styles/"><?php _e( 'List of Styles', 'click-to-chat-for-whatsapp' ); ?></a> &emsp; | &emsp; <span><?php _e( 'Customize the styles', 'click-to-chat-for-whatsapp' ); ?>  <a target="_blank" class="customize_styles_link" href="<?= admin_url( 'admin.php?page=click-to-chat-customize-styles' ); ?>">( Click to Chat -> Customize )</a></span> </p>
+    <input name="<?= $dbrow; ?>[style_mobile]" value="<?= $style_mobile ?>" type="text" style="display:none;" class="chat_select_style select_style_mobile ctc_ad_main_page_on_change_style">
+
+    <div class="row ht_ctc_admin_mobile ctc_select_style ctc_style_mobile">
+        <div class="collection m_select_style_container" data-style="<?= $style_mobile ?>">
+            <span class="collection-item m_select_style_item"  data-style="1"><span class="badge">Theme Button</span>Style-1</span>
+            <span class="collection-item m_select_style_item"  data-style="2"><span class="badge">Green Square Icon</span>Style-2</span>
+            <span class="collection-item m_select_style_item"  data-style="3"><span class="badge">Icon</span>Style-3</span>
+            <span class="collection-item m_select_style_item"  data-style="3_1"><span class="badge">Large Icon</span>Style-3 Extend</span>
+            <span class="collection-item m_select_style_item"  data-style="4"><span class="badge">Chip (cylindrical)</span>Style-4</span>
+            <span class="collection-item m_select_style_item"  data-style="5"><span class="badge">Image on hover Content Box</span>Style-5</span>
+            <span class="collection-item m_select_style_item"  data-style="6"><span class="badge">Plain text</span>Style-6</span>
+            <span class="collection-item m_select_style_item"  data-style="7"><span class="badge">Icon with padding</span>Style-7</span>
+            <span class="collection-item m_select_style_item"  data-style="7_1"><span class="badge">Icon on hover extend</span>Style-7 Extend</span>
+            <span class="collection-item m_select_style_item"  data-style="8"><span class="badge">Button</span>Style-8</span>
+            <span class="collection-item m_select_style_item"  data-style="99"><span class="badge">Own Image</span>Style-99</span>
+        </div>
     </div>
+
+
 </div>
+
+
 
 <!-- position type - mobile -->
 <p class="description ht_ctc_admin_mobile ht_ctc_subtitle not_samesettings"><?php _e( 'Position Type', 'click-to-chat-for-whatsapp' ); ?>:</p>

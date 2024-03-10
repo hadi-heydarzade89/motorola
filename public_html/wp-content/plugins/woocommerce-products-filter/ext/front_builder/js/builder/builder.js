@@ -64,12 +64,14 @@ export default class Builder {
                     }
 
                     this.fetch_controller = new AbortController();
-
+		    let _nonce = document.querySelector('.woof_front_builder_nonce').value
                     this.fetch_timer_flag = setTimeout(() => {
+
                         Helper.ajax('woof_front_builder_update_additional', {
                             name: this.name,
                             popup_width: e.detail.width,
-                            popup_height: e.detail.height
+                            popup_height: e.detail.height,
+			    woof_front_builder_nonce: _nonce
                         }, content => {
                             //+++
                         }, true, null, this.fetch_controller.signal);
@@ -85,8 +87,11 @@ export default class Builder {
 
     fill_popup() {
         if (!this.data) {
+	   
+	    let _nonce = document.querySelector('.woof_front_builder_nonce').value
             Helper.ajax('woof_form_builder_get_items', {
-                name: this.name
+                name: this.name,
+		woof_front_builder_nonce: _nonce
             }, data => {
                 this.data = data;
                 this._init(true);
@@ -173,7 +178,8 @@ export default class Builder {
             page: 1,
             shortcode: 'woof_nothing', //we do not need get any products, search form data only
             woof_shortcode: shortcode,
-            woof_form_builder: 1
+            woof_form_builder: 1,
+	    nonce_filter: woof_front_nonce
         };
 
         this.popup.set_flash_title(`${woof_lang_front_builder_filter_redrawing} ...`);
@@ -216,11 +222,12 @@ export default class Builder {
             }, true, null, this.fetch_controller.signal);
 
             //+++
-
+	    let _nonce = document.querySelector('.woof_front_builder_nonce').value
             //save selected fields into DB
             Helper.ajax('woof_front_builder_save', {
                 name: this.name,
-                fields: ordered_items
+                fields: ordered_items,
+		woof_front_builder_nonce: _nonce
             }, null, true, null, this.fetch_controller.signal);
 
         }, 777);

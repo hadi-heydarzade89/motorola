@@ -69,6 +69,13 @@ class WOOF_ADV {
     }
 
     public function woof_dismiss_alert() {
+		if (!current_user_can('manage_woocommerce') OR !current_user_can('activate_plugins')) {
+            return;
+        }
+		if (!wp_verify_nonce(WOOF_REQUEST::get('sec'), 'woof_dissmiss_alert')) {
+            die('Stop!');
+        }
+		
         $alert = (array) get_option('woof_alert', array());
         $alert[sanitize_key($_POST['alert'])] = 1;
 
@@ -106,7 +113,7 @@ class WOOF_ADV {
                 alert_w.on('click', '.notice-dismiss', function (e) {
                     $.post(ajaxurl, {action: 'woof_dismiss_alert',
                         alert: 'woocommerce_currency_switcher',
-                        sec: <?php echo json_encode(wp_create_nonce('woof_dissmiss_alert')) ?>
+                        sec: <?php echo wp_create_nonce('woof_dissmiss_alert') ?>
                     });
                 });
 
@@ -151,7 +158,7 @@ class WOOF_ADV {
                     $.post(ajaxurl, {
                         action: 'woof_dismiss_alert',
                         alert: 'woocommerce_bulk_editor',
-                        sec: <?php echo json_encode(wp_create_nonce('woof_dissmiss_alert')) ?>
+                        sec: <?php echo wp_create_nonce('woof_dissmiss_alert') ?>
                     });
                 });
 
@@ -196,7 +203,7 @@ class WOOF_ADV {
                     $.post(ajaxurl, {
                         action: 'woof_dismiss_alert',
                         alert: 'woot_products_tables',
-                        sec: <?php echo json_encode(wp_create_nonce('woof_dissmiss_alert')) ?>
+                        sec: <?php echo wp_create_nonce('woof_dissmiss_alert') ?>
                     });
                 });
 

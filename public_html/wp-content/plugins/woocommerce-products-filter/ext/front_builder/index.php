@@ -538,7 +538,7 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
         if (!isset($atts['name'])) {
             return esc_html__('Unique name should be set for shortcode [woof_front_builder]', 'woocommerce-products-filter');
         }
-
+        $atts = wc_clean($atts);       
         $name = esc_html($atts['name']);
         if ($this->demo) {
             $name .= ' ' . str_replace(':', '', str_replace('.', '', filter_var(WOOF_HELPER::get_server_var('REMOTE_ADDR'), FILTER_VALIDATE_IP)));
@@ -600,7 +600,8 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
     }
 
     private function get_data($name) {
-        $data = $this->db->get_row("SELECT * FROM {$this->table} WHERE name='{$name}'", ARRAY_A);
+		$sql = $this->db->prepare("SELECT * FROM {$this->table} WHERE name=%s ", $name);
+        $data = $this->db->get_row($sql, ARRAY_A);
         if (empty($data)) {
             //create if not exists
             $data = $this->create($name);
@@ -624,10 +625,10 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
 
         return $data;
     }
-
+	
     private function create($name) {
         $data = [
-            'name' => esc_html($name),
+            'name' => esc_sql($name),
             'selected' => 'by_text,by_instock,by_onsales,by_price',
             'sections_options' => '{"by_price":{"show_text_input":"0"}}',
             'sections_layout_options' => '{"by_text":{"width":"100%"},"by_price":{"width":"100%"}}'
@@ -641,7 +642,10 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
 
     //ajax
     public function get_items() {
-
+		
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_front_builder_nonce'), 'front_builder_nonce')) {
+			return false;
+		}
         if (!$this->is_admin()) {
             return false;
         }
@@ -728,6 +732,9 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
 
     //ajax
     public function set_sd() {
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_front_builder_nonce'), 'front_builder_nonce')) {
+			return false;
+		}		
         $key = esc_html($_REQUEST['key']);
         $sd = WOOF_EXT::$includes['applications']['sd'];
         $title = sprintf(esc_html__('by Front Builder for: %s', 'woocommerce-products-filter'), $key);
@@ -750,7 +757,9 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
     }
 
     public function save_items() {
-
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_front_builder_nonce'), 'front_builder_nonce')) {
+			return false;
+		}
         if (!$this->is_admin()) {
             return false;
         }
@@ -758,7 +767,7 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
         $name = esc_html($_REQUEST['name']);
         $fields = esc_html($_REQUEST['fields']);
 
-        $this->db->update($this->table, array('selected' => $fields), array('name' => $name));
+        $this->db->update($this->table, array('selected' => $fields), array('name' => esc_sql($name) ));
     }
 	public function get_alias_by_id($id) {
         $woof_settings = get_option('woof_settings', []);

@@ -286,9 +286,65 @@ document.addEventListener('DOMContentLoaded', function () {
         // styles
         function styles() {
 
-            // on change - styles
-            $(".chat_select_style").on("change", function (e) {
+
+            // get data-style attribute from select_style_container and add class to select_style_item as selected
+            var style = $('.select_style_container').attr('data-style');
+            console.log(style);
+            if (style) {
+                $('.select_style_item[data-style="' + style + '"]').addClass('select_style_selected');
+            }
+
+            // on click select style item
+            $(".select_style_item").on("click", function (e) {
+
+                // select effects
+                $(".select_style_item").removeClass('select_style_selected');
+                $(this).addClass('select_style_selected');
+
+                // update chat_select_style value
+                var style = $(this).attr('data-style');
+                console.log(style);
+                $(".select_style_desktop").val(style);
+
                 $(".customize_styles_link").animate({ fontSize: '1.2em' }, "slow");
+
+            });
+
+
+            // get data-style attribute from select_style_container and add class to select_style_item as selected
+            var style = $('.m_select_style_container').attr('data-style');
+            console.log(style);
+            if (style) {
+                $('.m_select_style_item[data-style="' + style + '"]').addClass('select_style_selected');
+            }
+
+            // on click select style item
+            $(".m_select_style_item").on("click", function (e) {
+
+                // select effects
+                $(".m_select_style_item").removeClass('select_style_selected');
+                $(this).addClass('select_style_selected');
+
+                // update chat_select_style value
+                var style = $(this).attr('data-style');
+                console.log(style);
+                $(".select_style_mobile").val(style);
+            });
+
+            // If Styles for desktop, mobile not selected as expected
+            if ($('#select_styles_issue').is(':checked')) {
+                $(".select_styles_issue_checkbox").show();
+            }
+            $('.select_styles_issue_description').on('click', function (e) {
+                $('.select_styles_issue_checkbox').toggle(500);
+            });
+
+
+            // customize styles page: 
+            
+            // dispaly all style - ask to save changes on change
+            $("#display_allstyles").on("change", function (e) {
+                $(".display_allstyles_description").show(200);
             });
 
             // style-1 - add icon
@@ -305,11 +361,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     $(".s1_icon_settings").hide(200);
                 }
             });
-
-            // dispaly all style - ask to save changes on change
-            $("#display_allstyles").on("change", function (e) {
-                $(".display_allstyles_description").show(200);
-            });
+            
 
         }
 
@@ -609,16 +661,7 @@ document.addEventListener('DOMContentLoaded', function () {
             var text = $('#ctc_save_changes_hover_text').text();
             $("#submit").attr('title', text);
 
-            // select styles issue
-
-            if ($('#select_styles_issue').is(':checked')) {
-                $(".select_styles_issue_checkbox").show();
-            }
-            $('.select_styles_issue_description').on('click', function (e) {
-                $('.select_styles_issue_checkbox').toggle(500);
-            });
-
-
+            
             // s3e - shadow on hover
             if (!$('#s3_box_shadow').is(':checked')) {
                 $(".s3_box_shadow_hover").show();

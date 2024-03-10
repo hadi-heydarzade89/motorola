@@ -101,6 +101,7 @@ if (is_user_logged_in() AND isset(woof()->settings['query_save'])) {
             <?php if (isset($this->settings['query_save']['notes_for_customer']) AND !empty($this->settings['query_save']['notes_for_customer'])): ?>
                 <span class="woof_query_save_notes_for_customer"><?php echo do_shortcode(wp_kses_post(wp_unslash($this->settings['query_save']['notes_for_customer']))) ?></span>
             <?php endif; ?>
+		<input type="hidden" class="woof_query_save_nonce" value="<?php echo wp_create_nonce('query_save_nonce')?>">		
         </div>
     </div>
     <?php

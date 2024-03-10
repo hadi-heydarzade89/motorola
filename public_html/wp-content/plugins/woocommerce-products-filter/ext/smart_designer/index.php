@@ -184,6 +184,9 @@ final class WOOF_SD extends WOOF_EXT {
                     if (isset($this->outer_templates[$type])) {
                         $args['sd_data'] = $this->outer_templates[$type]['data'];
                     } else {
+						if(!isset($this->types[$type])){
+							$type = "checkbox";
+						}
                         $file = $self->get_ext_path() . "data/{$type}.php";
                         if (is_file($file)) {
                             $args['sd_data'] = include $file;

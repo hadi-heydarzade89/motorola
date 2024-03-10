@@ -635,7 +635,9 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
     }
 
     public function posts_where($where, $wp_query) {
-
+		if (!isset($wp_query->query_vars['post_type']) || 'product' != $wp_query->query_vars['post_type']) {
+			return $where;
+		}
         if (!isset($wp_query->query_vars['woof_text_filter']) && !isset($wp_query->query_vars['woof_text_filter'])) {
             return $where;
         }
@@ -882,7 +884,7 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
 
         $args = array(
             'fields' => 'ids',
-            'post_type' => array('product'),
+            'post_type' => 'product',
             'post_status' => 'publish',
             'tax_query' => $tax_query,
             'posts_per_page' => -1
@@ -936,6 +938,9 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
 
     //ajax
     public function ajax_search() {
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_text_search_nonce'), 'text_search_nonce')) {
+            die('Stop!');
+        }			
         if (WOOF_REQUEST::isset('link')) {
             $link = parse_url(WOOF_REQUEST::get('link'), PHP_URL_QUERY);
             $query_array = WOOF_HELPER::safe_parse_str($link);

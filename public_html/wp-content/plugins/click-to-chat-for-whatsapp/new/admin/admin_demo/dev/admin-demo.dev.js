@@ -17,6 +17,8 @@
         var demo_var = (window.ht_ctc_admin_demo_var) ? window.ht_ctc_admin_demo_var : {};
         console.log(demo_var);
 
+        var demo_style = '2';
+
         function display_styles() {
 
             // var style = $('.chat_select_style').val();
@@ -131,17 +133,28 @@
 
                 var collapse = '';
 
-                // on change - style..
-                $('.ctc_ad_main_page_on_change_style').on('change', function () {
-                    // console.log('change');
-                    main_page_update();
 
-                    setInterval(() => {
-                        $('.ctc_ad_links .ctc_cs_link').css({
-                            'text-decoration': 'underline',
-                            'font-weight': 'bold',
-                        });
-                    }, 4000);
+                
+                // on change - style..
+                $('.select_style_item').on('click', function () {
+                
+                    // styles
+                    demo_style = $('.select_style_desktop').val();
+                    // demo_style = $(this).attr('data-style');
+                    console.log(demo_style);
+                    
+                    main_page_update();
+                });
+
+                // on change - mobile style..
+                $('.m_select_style_item').on('click', function () {
+                    // console.log('change');
+
+                    // styles
+                    demo_style = $('.select_style_mobile').val();
+                    console.log(demo_style);
+                    
+                    main_page_update();
                 });
 
                 // on change, input (some filed to update on change only and some on input, ..)
@@ -181,13 +194,12 @@
                     // console.log(cta);
                     $('.ctc_demo_style .ctc_cta').text(cta);
 
-                    // styles
-                    var style = $('.chat_select_style').val();
-                    // console.log(style);
+                    
+
                     // hide all styles
                     $('.ctc_demo_style').hide();
                     // display that style
-                    $('.ctc_demo_style_' + style + '').show();
+                    $('.ctc_demo_style_' + demo_style + '').show();
 
                     
                     if ('close' !== collapse) {

@@ -38,7 +38,8 @@
 
             <?php if (isset(woof()->settings['by_text_2']['notes_for_customer']) AND!empty(woof()->settings['by_text_2']['notes_for_customer'])): ?>
                 <span class="woof_text_notes_for_customer"><?php echo stripcslashes(wp_kses_post(wp_unslash(woof()->settings['by_text_2']['notes_for_customer']))); ?></span>
-            <?php endif; ?>        
+            <?php endif; ?>  
+			<input type="hidden" class="woof_text_search_nonce" value="<?php echo wp_create_nonce('text_search_nonce')?>">
         </div>
 
 

@@ -469,6 +469,9 @@ final class WOOF_EXT_BY_TEXT_2 extends WOOF_EXT {
 
     //ajax
     public function woof_text_autocomplete() {
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_text_search_nonce'), 'text_search_nonce')) {
+            die('Stop!');
+        }		
         $results = array();
         $args = array(
             'nopaging' => true,

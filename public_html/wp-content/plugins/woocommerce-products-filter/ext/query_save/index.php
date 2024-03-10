@@ -83,6 +83,9 @@ final class WOOF_EXT_QUERY_SAVE extends WOOF_EXT {
     }
 
     public function woof_add_query() {
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_query_save_nonce'), 'query_save_nonce')) {
+			return false;
+		}		
         global $WOOF, $wpdb, $wp_query;
 
         if (!isset($_POST['link']) OR!isset($_POST['user_id'])) {
@@ -140,12 +143,17 @@ final class WOOF_EXT_QUERY_SAVE extends WOOF_EXT {
         update_user_meta($data['user_id'], $this->user_meta_key, $saved_q);
         //for Ajax redraw
         $data['ext_link']= $this->get_ext_link();
+		$data['counter'] = count($saved_q);
+				
         $cont = woof()->render_html($this->get_ext_path() . 'views' . DIRECTORY_SEPARATOR . 'item_list_query.php', $data);
 
         die($cont);
     }
 
     public function woof_remove_query() {
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_query_save_nonce'), 'query_save_nonce')) {
+			return false;
+		}	       		
         if (!isset($_POST['key']) OR!isset($_POST['user_id'])) {
             die('No data!');
         }
@@ -283,13 +291,16 @@ final class WOOF_EXT_QUERY_SAVE extends WOOF_EXT {
             if ($id) {
                 ?>
                 <div class="woof_query_save_notice_product woof_query_save_notice_product_<?php echo esc_attr($id) ?>" data-id="<?php echo esc_attr($id) ?>" ></div>
-                <?php
+                <input type="hidden" class="woof_query_save_notice_nonce" value="<?php echo wp_create_nonce('query_save_nonce')?>">
+			<?php
             }
         }
     }
 
     public function check_query() {
-
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_query_save_nonce'), 'query_save_nonce')) {
+			return false;
+		}
         if (!isset($_POST['product_ids'])) {
             die();
         }

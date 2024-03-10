@@ -4,17 +4,17 @@
   Plugin URI: https://products-filter.com/
   Description: HUSKY - WooCommerce Products Filter Professional. Flexible, easy and robust products filter for WooCommerce store site!
   Requires at least: WP 5.2.0
-  Tested up to: WP 6.4
+  Tested up to: WP 6.5
   Author: realmag777
   Author URI: https://pluginus.net/
-  Version: 1.3.5.1
+  Version: 1.3.5.2
   Requires PHP: 7.3
   Tags: filter,search,woocommerce,woocommerce filter,woocommerce product filter,woocommerce products filter,products filter,product filter,filter of products,filter for products,filter for woocommerce
   Text Domain: woocommerce-products-filter
   Domain Path: /languages
   Forum URI: https://pluginus.net/support/forum/woof-woocommerce-products-filter/
   WC requires at least: 5.2.0
-  WC tested up to: 8.5
+  WC tested up to: 8.6
  */
 
 //update_option('woof_settings', []);//dev: nearly absolute reset of the plugin settings
@@ -56,7 +56,7 @@ define('WOOF_PATH', plugin_dir_path(__FILE__));
 define('WOOF_LINK', plugin_dir_url(__FILE__));
 define('WOOF_PLUGIN_NAME', plugin_basename(__FILE__));
 define('WOOF_EXT_PATH', WOOF_PATH . 'ext/');
-define('WOOF_VERSION', '1.3.5.1');
+define('WOOF_VERSION', '1.3.5.2');
 //define('WOOF_VERSION', uniqid('woof-')); //for dev only
 define('WOOF_MIN_WOOCOMMERCE_VERSION', '5.2');
 //classes
@@ -74,7 +74,7 @@ include WOOF_PATH . 'lib/alert/index.php';
 //***
 include WOOF_PATH . 'installer/first_settings.php';
 
-//16-01-2024
+//05-03-2024
 final class WOOF {
 
     public $settings = array();
@@ -228,9 +228,9 @@ final class WOOF {
         add_shortcode('woof_found_count', array($this, 'woof_found_count'));
 
         //add_filter('woocommerce_pagination_args', array($this, 'woocommerce_pagination_args'));
-        add_action('wp_ajax_woof_cache_count_data_clear', array($this, 'cache_count_data_clear'));
+        add_action('wp_ajax_woof_cache_count_data_clear', array($this, 'ajax_cache_count_data_clear'));
         add_action('wp_ajax_woof_cache_terms_clear', array($this, 'woof_cache_terms_clear'));
-        add_action('wp_ajax_woof_price_transient_clear', array($this, 'woof_price_transient_clear'));
+        add_action('wp_ajax_woof_price_transient_clear', array($this, 'ajax_woof_price_transient_clear'));
 
         //***
         add_action('wp_ajax_woof_remove_ext', array($this, 'woof_remove_ext'));
@@ -914,6 +914,7 @@ final class WOOF {
         ob_start();
         /* dynamic js assemble vars */
         ?>
+		const woof_front_nonce = "<?php echo wp_create_nonce('woof_front_nonce'); ?>";
         var woof_is_permalink =<?php echo intval((bool) $this->is_permalink_activated()) ?>;
         var woof_shop_page = "";
         <?php if (!$this->is_permalink_activated()): ?>
@@ -2628,6 +2629,11 @@ final class WOOF {
 
         //shortcode, works when ajax mode only for shop/category page
         public function woof_draw_products() {
+			
+			if (!isset($_REQUEST['nonce_filter']) || !wp_verify_nonce($_REQUEST['nonce_filter'], 'woof_front_nonce')) {
+				die('nonce error');
+			}
+			
             if (WOOF_REQUEST::isset('link')) {
                 $link = parse_url(WOOF_REQUEST::get('link'), PHP_URL_QUERY);
                 $query_array = WOOF_HELPER::safe_parse_str($link);
@@ -2693,7 +2699,7 @@ final class WOOF {
         public function woof_shortcode($atts) {
             $args = array();
             //this for synhronizating shortcode woof_products if its has attribute taxonomies
-
+			$atts = wc_clean($atts);
             if (isset($atts['taxonomies'])) {
                 $args['additional_taxes'] = apply_filters('woof_set_shortcode_taxonomyattr_behaviour', $atts['taxonomies']);
             } else {
@@ -2976,6 +2982,11 @@ final class WOOF {
 
         //redraw search form
         public function woof_redraw_woof() {
+			
+			if (!isset($_REQUEST['nonce_filter']) || !wp_verify_nonce($_REQUEST['nonce_filter'], 'woof_front_nonce')) {
+				die('nonce error');
+			}
+			
             $shortcode = sanitize_text_field(WOOF_REQUEST::get('shortcode'));
             WOOF_REQUEST::set('woof_shortcode_txt', $shortcode);
             $shortcode_str = $this->check_shortcode("woof", "[" . $shortcode . "]");
@@ -3055,8 +3066,18 @@ final class WOOF {
 
             return $queried_obj;
         }
+		
 
         //ajax + wp_cron
+        public function ajax_cache_count_data_clear() {
+            if (!isset($_REQUEST['_wpnonce_woof']) || !wp_verify_nonce(WOOF_REQUEST::get('_wpnonce_woof'), 'woof_save_option')) {
+                return;
+            }
+            if (!current_user_can('manage_woocommerce') OR !current_user_can('activate_plugins')) {
+                return;
+            }			
+			$this->cache_count_data_clear();
+        }		
         public function cache_count_data_clear() {
             global $wpdb;
             $wpdb->query("TRUNCATE TABLE " . self::$query_cache_table);
@@ -3064,6 +3085,13 @@ final class WOOF {
 
         //ajax only
         public function woof_cache_terms_clear() {
+			
+            if (!isset($_REQUEST['_wpnonce_woof']) || !wp_verify_nonce(WOOF_REQUEST::get('_wpnonce_woof'), 'woof_save_option')) {
+                return;
+            }
+            if (!current_user_can('manage_woocommerce') OR !current_user_can('activate_plugins')) {
+                return;
+            }				
             global $wpdb;
             $res = $wpdb->get_results("SELECT * FROM {$wpdb->options} WHERE option_name LIKE '_transient_woof_terms_cache_%'");
 
@@ -3075,7 +3103,16 @@ final class WOOF {
 
             //wp_die('done');
         }
+        public function ajax_woof_price_transient_clear() {
+            if (!isset($_REQUEST['_wpnonce_woof']) || !wp_verify_nonce(WOOF_REQUEST::get('_wpnonce_woof'), 'woof_save_option')) {
+                return;
+            }
+            if (!current_user_can('manage_woocommerce') OR !current_user_can('activate_plugins')) {
+                return;
+            }			
 
+			$this->woof_price_transient_clear();
+        }
         public function woof_price_transient_clear() {
             delete_transient('woof_min_max_prices');
         }
@@ -3259,6 +3296,12 @@ final class WOOF {
         }
 
         function generator_get_taxonomy_terms() {
+            if (!isset($_REQUEST['_wpnonce_woof']) || !wp_verify_nonce(WOOF_REQUEST::get('_wpnonce_woof'), 'woof_save_option')) {
+                return;
+            }
+            if (!current_user_can('manage_woocommerce') OR !current_user_can('activate_plugins')) {
+                return;
+            }			
             if (WOOF_REQUEST::get('taxonomy') == null || WOOF_REQUEST::get('taxonomy') == -1 || !WOOF_REQUEST::get('taxonomy')) {
                 wp_send_json(array());
             }

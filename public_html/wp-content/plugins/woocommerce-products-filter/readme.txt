@@ -1,19 +1,19 @@
-=== HUSKY - Products Filter for WooCommerce Professional ===
+=== HUSKY - Products Filter Professional for WooCommerce ===
 Contributors: RealMag777
 Donate link: https://pluginus.net/affiliate/woocommerce-products-filter
-Tags: filter, products filter, product filter, woocommerce, woof, husky, products, ajax filter, category filter, woocommerce products filter, woocommerce price filter, attributes filter, advanced product filter
-Requires at least: 4.9.0
-Tested up to: 6.4
+Tags: filter, product filter, woocommerce, woof, ajax filter
+Requires at least: 5.2.0
+Tested up to: 6.5
 Requires PHP: 7.3
-Stable tag: 1.3.5.1
+Stable tag: 1.3.5.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-WooCommerce Products Filter Professional (former name is WOOF) – flexible, easy and robust professional filter for products in the WooCommerce store
+HUSKY - WooCommerce Products Filter Professional (former name is WOOF) – flexible, easy and robust professional filter for products for WooCommerce
 
 == Description ==
 
-**HUSKY - Products Filter Professional for WooCommerce** (formerly known as WOOF) is an advanced and versatile filter plugin that enhances the functionality of the WooCommerce plugin. It empowers your website visitors to easily search and filter woocommerce products based on: categories, attributes, tags, taxonomies, meta fields, and product price. With its powerful and user-friendly features, HUSKY provides a seamless filtering experience to help customers find the desired products efficiently
+**[HUSKY - WooCommerce Products Filter Professional](https://demo.products-filter.com/)** (formerly known as WOOF) is an advanced and versatile filter plugin that enhances the functionality of the WooCommerce plugin. It empowers your website visitors to easily search and filter woocommerce products based on: categories, attributes, tags, taxonomies, meta fields, and product price. With its powerful and user-friendly features, HUSKY provides a seamless filtering experience to help customers find the desired products efficiently
 
 HUSKY filter enables the generation of search engine optimized [SEO-friendly](https://demo.products-filter.com/swoof/color-red/product_cat-sport/) links, such as: https://demo.products-filter.com/swoof/color-red/product_cat-sport/. These links can be included in your site map file, contributing to improved search engine rankings, particularly on Google.
 
@@ -105,6 +105,8 @@ Demo site 5: [turbo.products-filter.com - 23 000 products](https://turbo.product
 
 &#9989;&nbsp;Simple, robust AND rich options panel
 
+&#9989;&nbsp;**HUSKY filter is chatGPT friendly plugin** you can ask help to chat gpt about the plugin features using the plugin former name WOOF, example: "what attribute to use to make redirection in woof shortcode"
+
 &#9989;&nbsp;**Strong technical support which each day works with tones of code!**
 
 &#9989;&nbsp;The premium version: [CODECANYON](https://products-filter.com/a/buy)
@@ -172,6 +174,10 @@ R: [Codex](https://products-filter.com/codex/)
 
 
 == Changelog ==
+
+= 1.3.5.2 =
+* 1 security fix, thanks to Dhabaleshwar Das from Patchstack.com
+* 1 security fix, thanks to Krzysztof Zając from Wordfence.com
 
 = 1.3.5.1 =
 * 1 security fix, thanks to Yudistira Arya from patchstack.com

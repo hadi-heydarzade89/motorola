@@ -106,6 +106,12 @@ final class WOOF_EXT_URL_REQUEST extends WOOF_EXT {
     }
 
     public function get_seo_rule_html() {
+        if (!isset($_REQUEST['url_request_nonce']) || !wp_verify_nonce($_REQUEST['url_request_nonce'], 'woof_url_request_nonce')) {
+            die('0');
+        }
+		if (!current_user_can('manage_woocommerce') ) {
+            return;
+        }		
         ob_start();
         $url = '/{any}/';
         if (WOOF_REQUEST::get('url')) {

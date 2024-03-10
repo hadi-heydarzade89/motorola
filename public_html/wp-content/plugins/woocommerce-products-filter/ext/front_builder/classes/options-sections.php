@@ -23,12 +23,18 @@ final class WOOF_FRONT_BUILDER_OPTIONS_SECTIONS {
 
     public function init() {
         add_action('wp_ajax_woof_form_builder_get_section_options', function () {
+			if (!wp_verify_nonce(WOOF_REQUEST::get('woof_front_builder_nonce'), 'front_builder_nonce')) {
+				return false;
+			}			
             die(json_encode($this->get_options(esc_html($_REQUEST['name']), esc_html($_REQUEST['section_key']))));
         });
         add_action('wp_ajax_woof_front_builder_save_section_option', array($this, 'save_options'));
 
         if ($this->demo) {
             add_action('wp_ajax_nopriv_woof_form_builder_get_section_options', function () {
+				if (!wp_verify_nonce(WOOF_REQUEST::get('woof_front_builder_nonce'), 'front_builder_nonce')) {
+					return false;
+				}				
                 die(json_encode($this->get_options(esc_html($_REQUEST['name']), esc_html($_REQUEST['section_key']))));
             });
             add_action('wp_ajax_nopriv_woof_front_builder_save_section_option', array($this, 'save_options'));
@@ -52,7 +58,9 @@ final class WOOF_FRONT_BUILDER_OPTIONS_SECTIONS {
         if (!$this->is_admin) {
             return false;
         }
-
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_front_builder_nonce'), 'front_builder_nonce')) {
+			return false;
+		}
         $name = esc_html($_REQUEST['name']);
         $section_key = esc_html($_REQUEST['section_key']);
         $field = esc_html($_REQUEST['field']);

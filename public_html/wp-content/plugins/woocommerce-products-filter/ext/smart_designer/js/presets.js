@@ -48,9 +48,10 @@ export default class Presets {
         this.draw_loader(woof_sd.lang.loading + ' ...');
 
         //+++
-
+	var nonce = document.getElementById('woof_sd_nonce').value;
         Helper.ajax('woof_sd_load_presets', {
-            type: this.panel.sd.selected_type
+            type: this.panel.sd.selected_type,
+	    sd_nonce: nonce
         }, data => {
             if (data) {
 
@@ -131,10 +132,12 @@ export default class Presets {
     create(title) {
         if (title.length > 0) {
             this.draw_loader(title);
+	    var nonce = document.getElementById('woof_sd_nonce').value;
             Helper.ajax('woof_sd_create_preset', {
                 title,
                 type: this.panel.sd.selected_type,
-                element_id: this.panel.sd.selected_row_id
+                element_id: this.panel.sd.selected_row_id,
+		sd_nonce: nonce
             }, id => {
                 this.remove_loader();
                 this.draw(id, title);
@@ -145,9 +148,11 @@ export default class Presets {
     apply(option_id) {
         if (confirm(woof_sd.lang.sure_apply_preset)) {
             Helper.message(woof_sd.lang.loading + ' ...');
+	    var nonce = document.getElementById('woof_sd_nonce').value;
             Helper.ajax('woof_sd_apply_preset', {
                 option_id,
-                element_id: this.panel.sd.selected_row_id
+                element_id: this.panel.sd.selected_row_id,
+		sd_nonce: nonce
             }, options => {
                 Helper.message(woof_sd.lang.loaded);
                 this.popup.close();
@@ -159,7 +164,8 @@ export default class Presets {
     delete(option_id, li) {
         if (confirm(woof_sd.lang.sure_delete_preset)) {
             li.remove();
-            Helper.ajax('woof_sd_delete_preset', {option_id});
+	    var nonce = document.getElementById('woof_sd_nonce').value;
+            Helper.ajax('woof_sd_delete_preset', {option_id, sd_nonce: nonce});
         }
     }
 
@@ -167,9 +173,10 @@ export default class Presets {
         Helper.message(woof_sd.lang.loading + ' ...', 'warning');
         let popup = new Popup23({right: 15, left: 15, top: 20, bottom: 20, title: woof_sd.lang.preset_code}, null, false);
         popup.set_content(woof_sd.lang.loading + ' ...');
-
+	var nonce = document.getElementById('woof_sd_nonce').value; 
         Helper.ajax('woof_sd_get_preset', {
-            option_id
+            option_id,
+	    sd_nonce: nonce
         }, code => {
             Helper.message(woof_sd.lang.loaded);
             popup.set_content('');
@@ -183,7 +190,7 @@ export default class Presets {
         let popup = new Popup23({right: 15, left: 15, top: 20, bottom: 40, title: woof_sd.lang.preset_import}, null, false);
         let textarea = Helper.create_element('textarea', {rows: 7, style:'margin-bottom: 9px;'});
         popup.append_content(textarea);
-
+	var nonce = document.getElementById('woof_sd_nonce').value;
         let button = Helper.create_element('a', {href: '#', class: 'button woof-button-outline-secondary'}, woof_sd.lang.import, {
             name: 'click',
             callback: e => {
@@ -191,7 +198,8 @@ export default class Presets {
                 Helper.message(woof_sd.lang.saving + ' ...');
                 Helper.ajax('woof_sd_import_preset', {
                     option_id,
-                    value: textarea.value
+                    value: textarea.value,
+		    sd_nonce: nonce
                 }, data => Helper.message(woof_sd.lang.saved));
             }
         });

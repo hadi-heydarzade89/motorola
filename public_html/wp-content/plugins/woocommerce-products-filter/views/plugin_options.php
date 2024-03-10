@@ -21,7 +21,7 @@
 
         <div class="woof-header">
             <div>
-                <h3 class="woof_plugin_name"><?php esc_html_e('HUSKY - Products Filter Professional for WooCommerce', 'woocommerce-products-filter') ?>&nbsp;<span class="woof__text-success">v.<?php echo esc_attr(WOOF_VERSION) ?></span>&nbsp;<span id="woof-head"><svg><use xlink:href="#svg-woof"></use></svg></span></h3>
+                <h3 class="woof_plugin_name"><?php esc_html_e('HUSKY - Products Filter Professional for WooCommerce', 'woocommerce-products-filter') ?>&nbsp;<span class="woof__text-success">v.<?php echo esc_attr(WOOF_VERSION) ?></span>&nbsp;<span id="woof-head"><img src="<?php echo esc_url(WOOF_LINK) ?>/img/husky.png" width="80" alt=""></span></h3>
                 <i><?php printf(esc_html__('Actualized for WooCommerce v.%s.x', 'woocommerce-products-filter'), WOOCOMMERCE_VERSION) ?></i><br />
             </div>
             <div>
@@ -1195,7 +1195,8 @@
                                         0 => esc_html__("No", 'woocommerce-products-filter'),
                                         1 => esc_html__("Yes", 'woocommerce-products-filter')
                                     );
-                                    if (!isset($woof_settings['show_images_by_attr_show']) OR $woof_settings['show_images_by_attr_show']) {
+									
+                                    if (!isset($woof_settings['show_images_by_attr_show'])OR empty($woof_settings['show_images_by_attr_show'])) {
                                         $woof_settings['show_images_by_attr_show'] = 0;
                                     }
                                     ?>

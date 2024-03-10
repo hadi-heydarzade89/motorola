@@ -329,6 +329,10 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
     //ajax
     public function woof_write_stat() {
 
+        if (!isset($_REQUEST['nonce_filter']) || !wp_verify_nonce($_REQUEST['nonce_filter'], 'woof_front_nonce')) {
+            die('0');
+        }
+		
         WOOF_REQUEST::set('woof_products_doing', 1);
         $_GET = WOOF_REQUEST::get('woof_products_doing');
         if ($this->is_enabled AND !is_null($this->pdo)) {

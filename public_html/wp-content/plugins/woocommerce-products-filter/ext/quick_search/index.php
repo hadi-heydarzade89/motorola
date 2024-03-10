@@ -75,8 +75,8 @@ final class WOOF_EXT_QUICK_TEXT extends WOOF_EXT {
         self::$includes['css']['woof_' . $this->folder_name . '_html_items'] = $this->get_ext_link() . 'css/' . $this->folder_name . '.css';
         add_action('wp_footer', array($this, 'wp_footer'), 12);
         //ajax
-        add_action('wp_ajax_woof_qt_update_file', array($this, 'create_data_search_files'));
-        add_action('wp_ajax_nopriv_woof_qt_update_file', array($this, 'create_data_search_files'));
+        add_action('wp_ajax_woof_qt_update_file', array($this, 'ajax_create_data_search_files'));
+        add_action('wp_ajax_nopriv_woof_qt_update_file', array($this, 'ajax_create_data_search_files'));
     }
 
     public function quick_search($atts) {
@@ -223,7 +223,16 @@ final class WOOF_EXT_QUICK_TEXT extends WOOF_EXT {
 
         return $schedules;
     }
-
+    public function ajax_create_data_search_files() {
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_quick_search_nonce'), 'woof-qs-nonce')) {
+			return false;
+		}		
+		
+		if (!current_user_can('manage_woocommerce') ) {
+            return;
+        }		
+		$this->create_data_search_files();
+	}
     public function create_data_search_files() {
         
         $tax_query = array();

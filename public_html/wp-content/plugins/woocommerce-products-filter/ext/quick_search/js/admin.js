@@ -17,7 +17,7 @@ woof_qs_cretor.generate = function () {
         jQuery.ajax({
             type: 'POST',
             url: woof_qs_cretor.url,
-            data: {"action": "woof_qt_update_file", "nonce": woof_qs_cretor.nonce, "qs_start": woof_qs_cretor.qs_offset},
+            data: {"action": "woof_qt_update_file", "woof_quick_search_nonce": woof_qs_cretor.nonce, "qs_start": woof_qs_cretor.qs_offset},
             complete: function () {
                 woof_qs_cretor.generating = false;
             },

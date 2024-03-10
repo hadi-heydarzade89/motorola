@@ -8,7 +8,7 @@ export default class SectionOptions {
         this.section_key = section_key;
         this.call_id = Helper.generate_key('op-');//to get events for current object only
         this.draw();
-
+	let _nonce = document.querySelector('.woof_front_builder_nonce').value
         //+++
 
         //tab 1
@@ -18,7 +18,8 @@ export default class SectionOptions {
                     name: this.builder.name,
                     section_key: this.section_key,
                     field: e.detail.field,
-                    value: e.detail.value
+                    value: e.detail.value,
+		    woof_front_builder_nonce: _nonce
                 }, data => this.builder.redraw_filter());
             }
         });
@@ -26,6 +27,7 @@ export default class SectionOptions {
         //tab 2
         document.addEventListener('woof_front_builder_save_section_layout_option', e => {
             if (e.detail.call_id === this.call_id) {
+
                 let value = e.detail.value;
                 let field = e.detail.field;
                 let styles = document.getElementById(`${this.builder.button.id}-styles`);
@@ -56,7 +58,8 @@ export default class SectionOptions {
                     name: this.builder.name,
                     section_key: this.section_key,
                     field: field,
-                    value: value
+                    value: value,
+		    woof_front_builder_nonce: _nonce
                 }, data => this.builder.redraw_filter());
 
             }
@@ -85,9 +88,11 @@ export default class SectionOptions {
 
     //tab 1
     draw_tab_options() {
+	let _nonce = document.querySelector('.woof_front_builder_nonce').value
         Helper.ajax('woof_form_builder_get_section_options', {
             name: this.builder.name,
-            section_key: this.section_key
+            section_key: this.section_key,
+	    woof_front_builder_nonce: _nonce
         }, data => {
             let formated_data = {
                 header: [
@@ -151,9 +156,11 @@ export default class SectionOptions {
 
     //tab 2
     draw_tab_layout_options() {
+	let _nonce = document.querySelector('.woof_front_builder_nonce').value
         Helper.ajax('woof_form_builder_get_section_layout_options', {
             name: this.builder.name,
-            section_key: this.section_key
+            section_key: this.section_key,
+	    woof_front_builder_nonce: _nonce
         }, data => {
             this.layout_data = data;
             let formated_data = {

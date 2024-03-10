@@ -17,15 +17,33 @@ final class WOOF_SD_PRESETS {
         $this->table_main = $this->db->prefix . 'woof_sd';
 
         add_action('wp_ajax_woof_sd_load_presets', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}
+            if (!current_user_can('manage_woocommerce')) {
+                die('0');
+            }				
             echo json_encode($this->gets(esc_html($_REQUEST['type'])));
             exit;
         });
 
         add_action('wp_ajax_woof_sd_create_preset', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}
+            if (!current_user_can('manage_woocommerce')) {
+                die('0');
+            }				
             die(strval($this->create(esc_html($_REQUEST['title']), esc_html($_REQUEST['type']), intval($_REQUEST['element_id']))));
         });
 
         add_action('wp_ajax_woof_sd_apply_preset', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}
+            if (!current_user_can('manage_woocommerce')) {
+                die('0');
+            }				
             $element_id = intval($_REQUEST['element_id']);
             $preset = $this->get(intval($_REQUEST['option_id']));
             $this->db->update($this->table_main, array('options' => $preset), array('id' => $element_id));
@@ -33,16 +51,34 @@ final class WOOF_SD_PRESETS {
         });
 
         add_action('wp_ajax_woof_sd_get_preset', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}
+            if (!current_user_can('manage_woocommerce')) {
+                die('0');
+            }				
             $preset = $this->get(intval($_REQUEST['option_id']));
             die(strval($preset));
         });
 
         add_action('wp_ajax_woof_sd_import_preset', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}
+            if (!current_user_can('manage_woocommerce')) {
+                die('0');
+            }				
             $this->update(intval($_REQUEST['option_id']), stripcslashes($_REQUEST['value']));
             die('1');
         });
 
         add_action('wp_ajax_woof_sd_delete_preset', function () {
+			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
+				die('0');
+			}
+            if (!current_user_can('manage_woocommerce')) {
+                die('0');
+            }				
             $this->delete(intval($_REQUEST['option_id']));
             die('1');
         });

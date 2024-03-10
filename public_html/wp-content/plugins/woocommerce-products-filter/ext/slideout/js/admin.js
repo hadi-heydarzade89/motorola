@@ -4,6 +4,7 @@ jQuery(document).ready(function(){
     jQuery("#woow_slideout_generate").on('click', function () {
         var data = {};
         data.action = 'woof_slideout_shortcode_gen';
+	data['woof_slideout_nonce'] = document.querySelector('#woof_slideout_nonce').value;
         var values = jQuery(".slideout_value");
         jQuery.each(values, function (i, item) {
             var key = jQuery(item).data("name");

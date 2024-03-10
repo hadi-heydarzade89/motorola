@@ -65,6 +65,9 @@ final class WOOF_EXT_SECTIONS extends WOOF_EXT {
     }
 
     public function get_section_html() {
+		if (!wp_verify_nonce(WOOF_REQUEST::get('woof_sections_nonce'), 'sections_nonce')) {
+			return false;
+		}		
         ob_start();
         $this->woof_draw_sctions_item();
         $section = ob_get_clean();

@@ -13,12 +13,22 @@ class HuskyText {
 
         this.fetch_timer = null;
         this.fetch_controller = null;
-
+	
+	
+	
+	
         document.addEventListener('click', ev => {
             if (ev.target !== this.input) {
                 this._show(false);
             }
         });
+	
+	if (typeof woof_current_values['woof_text'] != 'undefined') {
+	    let txt = woof_current_values['woof_text'];
+	    txt = txt.replace(/&amp;/,"%26");
+	    txt = txt.replace(/&/,"%26");
+	    woof_current_values['woof_text'] = txt;
+	}
     }
 
     init_input() {
@@ -45,7 +55,7 @@ class HuskyText {
                 e.stopPropagation();
                 e.preventDefault();
                 let search_text = _this.input.value;
-                woof_current_values['woof_text'] = search_text;
+                woof_current_values['woof_text'] = search_text.replace(/&/,"%26");
                 woof_ajax_page_num = 1;
                 woof_submit_link(woof_get_submit_link(), 0);
 
@@ -60,7 +70,7 @@ class HuskyText {
                 let search_text = _this.input.value;
                 let min_symbols = (typeof _this.data.min_symbols) ? _this.data.min_symbols : 3;
                 if (search_text.length >= min_symbols) {
-                    woof_current_values['woof_text'] = search_text;
+                    woof_current_values['woof_text'] = search_text.replace(/&/,"%26");
                     woof_ajax_page_num = 1;
                     // woof_text_do_submit = false;
                     woof_submit_link(woof_get_submit_link(), 0);
@@ -112,7 +122,7 @@ class HuskyText {
         woof_current_values['woof_text'] = search_text;
         if (ekey === 'Enter') {
             this._loader();
-            woof_current_values['woof_text'] = this.searched_value;
+            woof_current_values['woof_text'] = this.searched_value.replace(/&/,"%26");
             woof_ajax_page_num = 1;
             woof_submit_link(woof_get_submit_link(), 0);
             this._loader(false);
@@ -146,6 +156,7 @@ class HuskyText {
                 this._reset();
             }
             this._loader();
+	    
             if (do_fetch) {
                 //check current tax
                 let cur_tax = false;
@@ -153,13 +164,15 @@ class HuskyText {
                     cur_tax = woof_really_curr_tax.term_id + '-' + woof_really_curr_tax.taxonomy;
                 }
                 search_text = decodeURIComponent(this.searched_value);
-		console.log(search_text);
+	
+		var nonce = jQuery('.woof_text_search_nonce').val();
                 let request_data = {
                     action: 'woof_text_search',
                     value: search_text,
                     link: woof_get_submit_link(),
                     cur_tax: cur_tax,
                     page: current_page - 1,
+		    woof_text_search_nonce: nonce,
                     ...this.data
                 };
 
@@ -194,7 +207,6 @@ class HuskyText {
                     this.answer = answer;
                     this.answer.className = 'woof_husky_txt-container';
                     this.container.appendChild(answer);
-
                     if (response.options.length > 0) {
                         response.options.forEach(function (row) {
                             let option = document.createElement('div');

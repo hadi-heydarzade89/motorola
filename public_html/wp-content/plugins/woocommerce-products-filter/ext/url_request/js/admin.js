@@ -14,11 +14,13 @@ jQuery(document).ready(function () {
 
         var url = jQuery('.woof_seo_rule_url_add').val();
         var lang = jQuery('.woof_seo_current_lang').val();
+	const nonce = document.querySelector('#woof_url_request_nonce').value;
 
         var data = {
             action: "woof_get_seo_rule_html",
             url: url,
-            lang: lang
+            lang: lang,
+	    url_request_nonce: nonce
         };
 
         if (jQuery('#woof_seo_rules_list li').length >= 2 && woof_show_notes) {

@@ -389,5 +389,6 @@ $slideout_mobile = array(
         </div>
 
     </div>
+	<input type="hidden" id="woof_slideout_nonce"  value="<?php echo wp_create_nonce('slideout_nonce'); ?>">
 </section>
 
