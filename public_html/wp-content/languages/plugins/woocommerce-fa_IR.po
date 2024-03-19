@@ -2,12 +2,12 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-03-09 13:41:39+0000\n"
+"PO-Revision-Date: 2024-03-17 17:37:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.0-rc.1\n"
+"X-Generator: GlotPress/4.0.0\n"
 "Language: fa\n"
 "Project-Id-Version: Plugins - WooCommerce - Stable (latest release)\n"
 
@@ -129,6 +129,18 @@ msgstr "پاک‌سازی پرونده‌های گذرای منقضی شده ر�
 msgid "Schedule the action to delete expired transient files for running immediately. Subsequent actions will run once every 24h."
 msgstr "زمان‌بندی اقدام برای حذف فایل‌های گذرای منقضی شده برای اجرای فوری. اقدامات بعدی هر ۲۴ ساعت یک بار اجرا می‌شود."
 
+#: src/Internal/TransientFiles/TransientFilesEngine.php:361
+msgid "Remove the currently scheduled action to delete expired transient files, then schedule it again for running immediately. Subsequent actions will run once every 24h."
+msgstr "اقدام زمان‌بندی شده فعلی برای حذف فایل‌های گذرای منقضی شده را حذف کنید، سپس مجددا آن را برای اجرای بلافاصله، زمان‌بندی کنید. اقدامات بعدی هر ۲۴ ساعت یک بار اجرا می‌شوند."
+
+#: src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:1203
+msgid "Tip: By suggesting complementary products in the cart using cross-sells, you can significantly increase the average order value."
+msgstr "نکته: با پیشنهاد دادن محصولات مکمل در سبد خرید با استفاده از فروش‌های متقابل، می‌توانید به طور قابل توجهی میانگین ارزش سفارش را افزایش دهید."
+
+#: src/Internal/TransientFiles/TransientFilesEngine.php:373
+msgid "Remove the currently scheduled action to delete expired transient files. Expired files won't be automatically deleted until the 'Schedule expired transient files cleanup' tool is run again."
+msgstr "اقدام زمان‌بندی شده‌ی فعلی برای حذف فایل‌های گذرای منقضی شده را لغو کنید. تا زمان اجرای مجدد ابزار «پاکسازی خودکار فایل‌های گذرای منقضی شده»، فایل‌های منقضی شده به صورت خودکار حذف نخواهند شد."
+
 #: src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:480
 msgid "Include downloads"
 msgstr "شامل دانلودها"
@@ -153,6 +165,24 @@ msgstr "محصولات مرتبط"
 msgid "⚠️ This directory does not appear to be writable."
 msgstr "⚠️ به نظر نمی‌رسد که این دایرکتوری قابل نوشتن باشد."
 
+#: src/Internal/Admin/Logging/Settings.php:320
+msgid "You do not have permission to manage logging settings."
+msgstr "شما مجوز مدیریت تنظیمات گزارش گیری را ندارید."
+
+#. translators: %s is a location in the filesystem.
+#: src/Internal/Admin/Logging/Settings.php:285
+msgid "Log entries are stored in this database table: %s"
+msgstr "ورودی‌های گزارش در این جدول پایگاه‌داده ذخیره می‌شوند: %s"
+
+#: src/Internal/DataStores/Orders/CustomOrdersTableController.php:335
+msgid "Unable to start synchronization. The link you followed may have expired."
+msgstr "شروع همگام‌سازی ممکن نیست. ممکن است پیوند دنبال‌شده منقضی شده باشد."
+
+#. translators: %s is a location in the filesystem.
+#: src/Internal/Admin/Logging/Settings.php:238
+msgid "Log files are stored in this directory: %s"
+msgstr "فایل‌های گزارش در این پوشه ذخیره می‌شوند: %s"
+
 #: src/Internal/Admin/Logging/Settings.php:99
 msgid "File system (default)"
 msgstr "فایل سیستم (پیش‌فرض)"
@@ -166,6 +196,149 @@ msgstr "هیچ تفاوتی پیدا نشد."
 msgid "Differences found for order %d:"
 msgstr "تفاوت‌های پیدا شده برای سفارش %d:"
 
+#: src/Blocks/BlockTypes/ProductFilterRating.php:232
+#: assets/client/blocks/product-filter-rating.js:3
+msgid "Select a rating"
+msgstr "یک امتیاز را انتخاب کنید"
+
+#: src/Blocks/BlockTypes/ProductFilterStockStatus.php:156
+#: assets/client/blocks/product-filter-stock-status.js:2
+msgid "Select stock statuses"
+msgstr "وضعیت‌های انبار را انتخاب کنید"
+
+#: src/Internal/Admin/Logging/Settings.php:213
+msgid "Level threshold"
+msgstr "سطح آستانه"
+
+#: src/Internal/Admin/Logging/Settings.php:214
+msgid "This sets the minimum severity level of logs that will be stored. Lower severity levels will be ignored. \"None\" means all logs will be stored."
+msgstr "این تنظیم حداقل سطح آستانه گزارش‌هایی که ذخیره می‌شوند را تعیین می‌کند. سطوح اهمیت پایین‌تر نادیده گرفته می‌شوند. \"هیچ\" به این معناست که تمامی گزارش‌ها ذخیره خواهند شد."
+
+#: src/Internal/Admin/Logging/Settings.php:131
+msgid "Log storage"
+msgstr "ذخیره‌سازی گزارش"
+
+#: src/Internal/Admin/Logging/Settings.php:169
+msgid "Retention period"
+msgstr "دوره نگهداری"
+
+#: src/Internal/Admin/Logging/Settings.php:170
+msgid "This sets how many days log entries will be kept before being auto-deleted."
+msgstr "این تنظیم مشخص می‌کند گزارش‌ها تا چند روز نگهداری و سپس به صورت خودکار حذف می‌شوند."
+
+#: src/Internal/Admin/Logging/Settings.php:132
+msgid "This determines where log entries are saved."
+msgstr "این تعیین می‌کند که ورودی‌های گزارش در کجا ذخیره شوند."
+
+#. translators: %s is the name of a filter hook.
+#: src/Internal/Admin/Logging/Settings.php:163
+msgid "This setting cannot be changed here because it is being set by a filter on the %s hook."
+msgstr "اینجا امکان تغییر این تنظیم وجود ندارد زیرا توسط یک فیلتر روی قلاب \"%s\" تنظیم می‌شود."
+
+#. translators: %1$s is the name of a code variable. %2$s is the name of a
+#. file.
+#: src/Internal/Admin/Logging/Settings.php:198
+msgid "This setting cannot be changed here because it is defined in the %1$s constant, probably in your %2$s file."
+msgstr "اینجا امکان تغییر این تنظیم وجود ندارد زیرا در ثابت %1$s تعریف شده است، احتمالا در فایل %2$s شما."
+
+#: src/Internal/Admin/Logging/Settings.php:54
+msgid "Logs settings"
+msgstr "تنظیمات گزارش‌ها"
+
+#: src/Internal/Admin/Logging/Settings.php:100
+msgid "Database (not recommended on live sites)"
+msgstr "پایگاه‌داده (در سایت‌های فعال توصیه نمی‌شود)"
+
+#. translators: %s is a URL to another admin screen.
+#: src/Internal/Admin/Logging/PageController.php:114
+msgid "Logging is disabled. It can be enabled in <a href=\"%s\">Logs Settings</a>."
+msgstr "گذارش‌گیری غیرفعال است. می‌توان آن را در <a href=\"%s\">تنظیمات گزارش‌ها</a> فعال کرد."
+
+#. translators: %1$s is a number of log files, %2$s is a slug-style name for a
+#. file.
+#: src/Internal/Admin/Logging/LogHandlerFileV2.php:193
+msgid "%1$s log file from source %2$s was deleted."
+msgid_plural "%1$s log files from source %2$s were deleted."
+msgstr[0] "%1$s فایل گزارش از منبع %2$s حذف شد."
+
+#. translators: %1$d is an order ID, %2$s is an error message.
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:1030
+msgid "An error occurred while computing a diff for order %1$d: %2$s"
+msgstr "هنگام محاسبه تفاوت برای سفارش %1$d خطایی روی داد: %2$s"
+
+#. translators: %d is an order count.
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:983
+msgid "Orders subject to cleanup: %d"
+msgstr "سفارشات مشمول پاکسازی: %d"
+
+#. translators: %d is an order count.
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:978
+msgid "Unsynced orders: %d"
+msgstr "سفارشات همگام‌سازی نشده: %d"
+
+#. translators: %s is either 'yes' or 'no'.
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:975
+msgid "Compatibility mode enabled?: %s"
+msgstr "حالت سازگاری فعال است؟: %s"
+
+#. translators: %s is either 'yes' or 'no'.
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:972
+msgid "HPOS enabled?: %s"
+msgstr "HPOS فعال است؟: %s"
+
+#: src/Internal/Admin/Logging/Settings.php:119
+msgid "Note that if this setting is changed, any log entries that have already been recorded will remain stored in their current location, but will not migrate."
+msgstr "توجه داشته باشید که اگر این تنظیم تغییر کند، هر ورودی گزارشی که قبلا ثبت شده است در مکان فعلی خود خواهد ماند، اما انتقال نمی‌یابد."
+
+#. translators: %s is the name of a code variable.
+#: src/Internal/Admin/Logging/Settings.php:125
+msgid "This setting cannot be changed here because it is defined in the %s constant."
+msgstr "این تنظیم را نمی‌توان در اینجا تغییر داد زیرا در ثابت %s تعریف شده است."
+
+#: src/Admin/Features/ProductBlockEditor/Init.php:245
+msgid "A single physical or virtual product, e.g. a t-shirt or an eBook."
+msgstr "یک محصول فیزیکی یا مجازی، به عنوان مثال. یک تی‌شرت یا یک کتاب الکترونیکی."
+
+#: src/Admin/Features/PaymentGatewaySuggestions/DefaultPaymentGateways.php:100
+msgid "Airwallex Payments"
+msgstr "پرداخت‌های Airwallex"
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:264
+msgid "Integrate your WooCommerce store with 5000+ cloud apps and services today. Trusted by 11,000+ users."
+msgstr "امروز فروشگاه ووکامرس خود را با بیش از ۵۰۰۰ برنامه و سرویس ابری ادغام کنید. مورد اعتماد بیش از ۱۱۰۰۰ کاربر."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:198
+msgid "Delight customers and boost organic sales with a special WooCommerce birthday email (and coupon!) on their special day."
+msgstr "مشتریان خود را با یک ایمیل تولد ویژه ووکامرس (و کوپن!) در روز خاصشان خوشحال کنید و فروش طبیعی را افزایش دهید."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:352
+msgid "Give away a free item to any customer with the coupon code."
+msgstr "به هر مشتری با کد کوپن یک کالای رایگان هدیه دهید."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:338
+msgid "Create \"store credit\" coupons for customers which are redeemable at checkout."
+msgstr "کوپن‌های «اعتبار فروشگاه» برای مشتریان ایجاد کنید که در هنگام پرداخت قابل استفاده هستند."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:324
+msgid "Create a unique URL that applies a discount and optionally adds one or more products to the customer's cart."
+msgstr "یک URL منحصر به فرد ایجاد کنید که تخفیف اعمال می‌کند و به صورت اختیاری یک یا چند محصول را به سبد خرید مشتری اضافه می‌کند."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:296
+msgid "Generate dynamic personalized coupons for your customers that increase purchase rates."
+msgstr "کوپن‌های شخصی‌سازی شده پویا را برای مشتریان خود ایجاد کنید که نرخ خرید را افزایش می‌دهد."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:280
+msgid "Sync your website's data like contacts, products, and orders over Salesforce CRM with Salesforce Integration for WooCommerce."
+msgstr "داده‌های وب‌سایت خود مانند مخاطبین، محصولات و سفارشات را از طریق Salesforce CRM با Salesforce Integration for WooCommerce همگام سازی کنید."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:232
+msgid "Turn your product images into stunning videos that engage and convert audiences - no video experience required."
+msgstr "تصاویر محصول خود را به ویدیوهای خیره کننده‌ای تبدیل کنید که مخاطبان را جذب و تبدیل می‌کند - بدون نیاز به تجربه ویدیویی."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:216
+msgid "Collect and showcase verified reviews that consumers trust."
+msgstr "نظرات تایید شده‌ای را که مصرف کنندگان به آنها اعتماد دارند جمع‌آوری کرده و به نمایش بگذارید."
+
 #: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:32
 msgid "Sales channels"
 msgstr "کانال‌های فروش"
@@ -173,6 +346,54 @@ msgstr "کانال‌های فروش"
 #: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:44
 msgid "Conversion"
 msgstr "تبدیل"
+
+#: src/Admin/API/OnboardingProducts.php:80
+msgid "Sorry, you cannot create dummy products."
+msgstr "متاسفیم، شما نمی‌توانید محصولات ساختگی ایجاد کنید."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:180
+msgid "Boost your organic sales by adding a customer referral program to your WooCommerce store."
+msgstr "با افزودن یک برنامه ارجاع مشتری به فروشگاه ووکامرس، فروش طبیعی خود را افزایش دهید."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:162
+msgid "Convert and retain customers with automated marketing that does the hard work for you."
+msgstr "با بازاریابی خودکار که کار سختی را برای شما انجام می‌دهد، مشتریان را تبدیل و حفظ کنید."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:130
+msgid "Send targeted campaigns, recover abandoned carts and more with Mailchimp."
+msgstr "با Mailchimp، کمپین‌های هدفمند ارسال کنید، سبدهای خرید رها شده را بازیابی کنید و کارهای بیشتری انجام دهید."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:96
+msgid "Create advertising campaigns and reach one billion global users with TikTok for WooCommerce."
+msgstr "با TikTok for WooCommerce کمپین‌های تبلیغاتی ایجاد کنید و به یک میلیارد کاربر جهانی دسترسی پیدا کنید."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:48
+msgid "CRM"
+msgstr "CRM"
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:40
+msgid "Automations"
+msgstr "اتوماسیون‌ها"
+
+#: src/Admin/API/MarketingCampaigns.php:226
+msgid "Sales of the marketing campaign."
+msgstr "فروش‌های کمپین بازاریابی."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:78
+msgid "Grow your business on Pinterest! Use this official plugin to allow shoppers to Pin products while browsing your store, track conversions, and advertise on Pinterest."
+msgstr "کسب و کار خود را در پینترست توسعه دهید! از این افزونه رسمی استفاده کنید تا به خریداران اجازه دهید هنگام مرور فروشگاه شما، محصولات را پین کنند، تبدیل‌ها را پیگیری کنید و در پینترست تبلیغ کنید."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1554
+msgid "Limit result set to specific amount of suggested products."
+msgstr "مجموعه نتایج را به مقدار خاصی از محصولات پیشنهادی محدود کنید."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1532
+msgid "Limit result set to specific product categorie ids."
+msgstr "مجموعه نتایج را به شناسه‌های دسته‌بندی محصول خاص محدود کنید."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1543
+msgid "Limit result set to specific product tag ids."
+msgstr "مجموعه نتایج را به شناسه‌های برچسب محصول خاص محدود کنید."
 
 #: includes/admin/helper/class-wc-helper-orders-api.php:98
 msgid "Could not start the installation process. Reason: "
@@ -1563,6 +1784,14 @@ msgstr "جدول سفارشات وجود ندارد. در حال ایجاد..."
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:722
 msgid "[Failed] This is not a new shop, but --for-new-shop flag was passed."
 msgstr "[ناموفق بود] این یک فروشگاه جدید نیست، اما پرچم ‎--for-new-shop تنظیم شده است."
+
+#: src/Internal/DataStores/Orders/CustomOrdersTableController.php:454
+msgid "Order data storage"
+msgstr "ذخیره‌سازی داده‌های سفارش"
+
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:729
+msgid "[Failed] Some installed plugins are incompatible. Please review the plugins by going to WooCommerce > Settings > Advanced > Features and see the \"Order data storage\" section."
+msgstr "[ناموفق] برخی از افزونه‌های نصب شده ناسازگار هستند. لطفا افزونه‌ها را با رفتن به ووکامرس > پیکربندی > پیشرفته > امکانات مرور کنید و بخش «ذخیره‌سازی داده‌های سفارش» را ببینید."
 
 #: src/Admin/Features/OnboardingTasks/Tasks/Appearance.php:40
 msgid "Choose your theme"
@@ -20612,10 +20841,6 @@ msgstr "فعالسازی نقد محصول"
 msgid "The URL of your %s page (along with the Page ID)."
 msgstr "آدرس برگه %s (به همراه شناسه برگه )."
 
-#: includes/admin/views/html-admin-page-product-export.php:34
-msgid "Export all columns"
-msgstr "صدور همه ستون‌ها"
-
 #: includes/admin/views/html-admin-page-product-export.php:24
 msgid "This tool allows you to generate and download a CSV file containing a list of all products."
 msgstr "این ابزار به شما اجازه می دهد که فایلی با فرمت CSV حاوی لیست همه محصولات را ایجاد و دانلود کنید."
@@ -20653,22 +20878,9 @@ msgstr "آدرس URL برگه نخست سایت شما."
 msgid "Generate CSV"
 msgstr "تولید CSV"
 
-#: includes/admin/views/html-admin-page-product-export.php:50
-msgid "Export all products"
-msgstr "صدور همه محصولات"
-
 #: includes/admin/views/html-admin-page-product-export.php:47
 msgid "Which product types should be exported?"
 msgstr "کدام یک از انواع محصول باید صادر شود؟"
-
-#: includes/admin/views/html-admin-page-product-export.php:23
-msgid "Export products to a CSV file"
-msgstr "صدور محصولات در یک فایل CSV"
-
-#: includes/admin/views/html-admin-page-product-export.php:17
-#: includes/react-admin/connect-existing-pages.php:248
-msgid "Export Products"
-msgstr "صدور محصولات"
 
 #: includes/admin/settings/views/html-webhooks-edit.php:83
 msgid "Product restored"
@@ -20685,6 +20897,23 @@ msgstr "تنظیم وضعیت - اتمام موجودی انبار"
 #: includes/admin/meta-boxes/views/html-product-data-variations.php:99
 msgid "Set Status - In stock"
 msgstr "تنظیم وضعیت - موجود در انبار"
+
+#: includes/admin/views/html-admin-page-product-export.php:34
+msgid "Export all columns"
+msgstr "برون‌بری همه ستون‌ها"
+
+#: includes/admin/views/html-admin-page-product-export.php:50
+msgid "Export all products"
+msgstr "برون‌بری همه محصولات"
+
+#: includes/admin/views/html-admin-page-product-export.php:17
+#: includes/react-admin/connect-existing-pages.php:248
+msgid "Export Products"
+msgstr "برون‌بری محصولات"
+
+#: includes/admin/views/html-admin-page-product-export.php:23
+msgid "Export products to a CSV file"
+msgstr "برون‌بری محصولات در یک فایل CSV"
 
 #: includes/admin/importers/class-wc-product-csv-importer-controller.php:696
 msgctxt "Quantity in stock"
@@ -34188,17 +34417,6 @@ msgstr "سال"
 msgid "Show"
 msgstr "نمایش"
 
-#: includes/admin/reports/class-wc-report-coupon-usage.php:369
-#: includes/admin/reports/class-wc-report-customers.php:241
-#: includes/admin/reports/class-wc-report-sales-by-category.php:275
-#: includes/admin/reports/class-wc-report-sales-by-date.php:622
-#: includes/admin/reports/class-wc-report-sales-by-product.php:414
-#: includes/admin/reports/class-wc-report-taxes-by-code.php:42
-#: includes/admin/reports/class-wc-report-taxes-by-date.php:39
-#: includes/admin/settings/views/html-settings-tax.php:48
-msgid "Export CSV"
-msgstr "صدور CSV"
-
 #: includes/admin/reports/class-wc-report-coupon-usage.php:484
 msgid "Discount amount"
 msgstr "میزان تخفیف"
@@ -34324,6 +34542,40 @@ msgstr "%s خرید برای موارد انتخاب شده"
 msgid "Showing reports for:"
 msgstr "نمایش گزارش برای:"
 
+#. translators: Reset button text for filters.
+#: includes/admin/reports/class-wc-report-sales-by-product.php:208
+#: assets/client/admin/components/index.js:2
+#: assets/client/admin/product-editor/index.js:2
+#: assets/client/blocks/attribute-filter-frontend.js:4
+#: assets/client/blocks/attribute-filter-wrapper-frontend.js:10
+#: assets/client/blocks/attribute-filter.js:10
+#: assets/client/blocks/cart-blocks/cart-order-summary-frontend.js:4
+#: assets/client/blocks/cart-blocks/order-summary-coupon-form-frontend.js:4
+#: assets/client/blocks/cart-blocks/order-summary-discount-frontend.js:4
+#: assets/client/blocks/cart-blocks/order-summary-shipping-frontend.js:4
+#: assets/client/blocks/checkout-blocks/additional-information-frontend.js:4
+#: assets/client/blocks/checkout-blocks/billing-address-frontend.js:4
+#: assets/client/blocks/checkout-blocks/contact-information-frontend.js:4
+#: assets/client/blocks/checkout-blocks/order-summary-coupon-form-frontend.js:4
+#: assets/client/blocks/checkout-blocks/order-summary-discount-frontend.js:4
+#: assets/client/blocks/checkout-blocks/order-summary-frontend.js:4
+#: assets/client/blocks/checkout-blocks/order-summary-shipping-frontend.js:4
+#: assets/client/blocks/checkout-blocks/shipping-address-frontend.js:4
+#: assets/client/blocks/featured-category.js:1
+#: assets/client/blocks/featured-product.js:1
+#: assets/client/blocks/price-filter-frontend.js:5
+#: assets/client/blocks/price-filter-wrapper-frontend.js:3
+#: assets/client/blocks/price-filter.js:5
+#: assets/client/blocks/rating-filter-frontend.js:7
+#: assets/client/blocks/rating-filter-wrapper-frontend.js:9
+#: assets/client/blocks/rating-filter.js:7
+#: assets/client/blocks/stock-filter-frontend.js:5
+#: assets/client/blocks/stock-filter-wrapper-frontend.js:10
+#: assets/client/blocks/stock-filter.js:5
+#: assets/client/blocks/wc-blocks-vendors.js:4
+msgid "Reset"
+msgstr "بازگردانی"
+
 #: includes/admin/reports/class-wc-report-sales-by-product.php:274
 #: includes/admin/reports/class-wc-report-sales-by-product.php:326
 #: includes/admin/reports/class-wc-report-sales-by-product.php:371
@@ -34361,40 +34613,6 @@ msgstr "دوره"
 #: templates/auth/form-grant-access.php:52
 msgid "Logout"
 msgstr "خروج از سیستم"
-
-#. translators: Reset button text for filters.
-#: includes/admin/reports/class-wc-report-sales-by-product.php:208
-#: assets/client/admin/components/index.js:2
-#: assets/client/admin/product-editor/index.js:2
-#: assets/client/blocks/attribute-filter-frontend.js:4
-#: assets/client/blocks/attribute-filter-wrapper-frontend.js:10
-#: assets/client/blocks/attribute-filter.js:10
-#: assets/client/blocks/cart-blocks/cart-order-summary-frontend.js:4
-#: assets/client/blocks/cart-blocks/order-summary-coupon-form-frontend.js:4
-#: assets/client/blocks/cart-blocks/order-summary-discount-frontend.js:4
-#: assets/client/blocks/cart-blocks/order-summary-shipping-frontend.js:4
-#: assets/client/blocks/checkout-blocks/additional-information-frontend.js:4
-#: assets/client/blocks/checkout-blocks/billing-address-frontend.js:4
-#: assets/client/blocks/checkout-blocks/contact-information-frontend.js:4
-#: assets/client/blocks/checkout-blocks/order-summary-coupon-form-frontend.js:4
-#: assets/client/blocks/checkout-blocks/order-summary-discount-frontend.js:4
-#: assets/client/blocks/checkout-blocks/order-summary-frontend.js:4
-#: assets/client/blocks/checkout-blocks/order-summary-shipping-frontend.js:4
-#: assets/client/blocks/checkout-blocks/shipping-address-frontend.js:4
-#: assets/client/blocks/featured-category.js:1
-#: assets/client/blocks/featured-product.js:1
-#: assets/client/blocks/price-filter-frontend.js:5
-#: assets/client/blocks/price-filter-wrapper-frontend.js:3
-#: assets/client/blocks/price-filter.js:5
-#: assets/client/blocks/rating-filter-frontend.js:7
-#: assets/client/blocks/rating-filter-wrapper-frontend.js:9
-#: assets/client/blocks/rating-filter.js:7
-#: assets/client/blocks/stock-filter-frontend.js:5
-#: assets/client/blocks/stock-filter-wrapper-frontend.js:10
-#: assets/client/blocks/stock-filter.js:5
-#: assets/client/blocks/wc-blocks-vendors.js:4
-msgid "Reset"
-msgstr "بازگردانی"
 
 #: includes/admin/meta-boxes/views/html-product-data-variations.php:137
 #: includes/admin/meta-boxes/views/html-product-data-variations.php:187
@@ -35108,6 +35326,17 @@ msgstr "پاک کردن تصویر"
 #: assets/client/blocks/wc-shipping-method-pickup-location.js:232
 msgid "Learn more"
 msgstr "بیشتر بدانید"
+
+#: includes/admin/reports/class-wc-report-coupon-usage.php:369
+#: includes/admin/reports/class-wc-report-customers.php:241
+#: includes/admin/reports/class-wc-report-sales-by-category.php:275
+#: includes/admin/reports/class-wc-report-sales-by-date.php:622
+#: includes/admin/reports/class-wc-report-sales-by-product.php:414
+#: includes/admin/reports/class-wc-report-taxes-by-code.php:42
+#: includes/admin/reports/class-wc-report-taxes-by-date.php:39
+#: includes/admin/settings/views/html-settings-tax.php:48
+msgid "Export CSV"
+msgstr "برون‌بری CSV"
 
 #: includes/admin/class-wc-admin-setup-wizard.php:1800
 msgid "Offline Payments"
@@ -35850,10 +36079,6 @@ msgstr "انتقال به زباله‌دان"
 msgid "Coupon code already exists - customers will use the latest coupon with this code."
 msgstr "کدتخفیف وجود دارد - مشتریان از این کدتخفیف استفاده خواهند کرد."
 
-#: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:330
-msgid "How many times this coupon can be used by an individual user. Uses billing email for guests, and user ID for logged in users."
-msgstr "چند بار این کدتخفیف می تواند توسط یک کاربر خاص استفاده شود. با استفاده از ایمیل در صدور صورت حساب برای مهمانان، و شناسه کاربر برای کاربران وارد شده."
-
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:312
 msgid "The maximum number of individual items this coupon can apply to when using product discounts. Leave blank to apply to all qualifying items in cart."
 msgstr "حداکثر تعداد آیتم‌های منحصر به فرد این کدتخفیف می تواند به هنگام استفاده از تخفیف محصول اعمال می شود. در صورت خالی گذاشتن برای تمامی محصولات موجود در سبد خرید اعمال می گردد."
@@ -36102,6 +36327,10 @@ msgstr "اجازه پیش‌‌فروش محصول؟"
 #: src/Admin/Features/ProductBlockEditor/Init.php:244
 msgid "Standard product"
 msgstr "محصول استاندارد"
+
+#: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:330
+msgid "How many times this coupon can be used by an individual user. Uses billing email for guests, and user ID for logged in users."
+msgstr "این کوپن چند بار می‌تواند توسط یک کاربر استفاده شود. از ایمیل صورت‌حساب برای مهمانان و شناسه کاربری برای کاربران وارد شده استفاده می‌کند."
 
 #: includes/admin/class-wc-admin-post-types.php:127
 #: includes/admin/class-wc-admin-post-types.php:151
@@ -37901,6 +38130,10 @@ msgstr "خواندن"
 msgid "Shipping settings"
 msgstr "تنظیمات حمل و نقل"
 
+#: includes/admin/class-wc-admin-meta-boxes.php:144
+msgid "Coupon data"
+msgstr "اطلاعات کدتخفیف"
+
 #: includes/class-wc-post-types.php:457
 #: includes/react-admin/connect-existing-pages.php:177
 #: src/Admin/API/Reports/Revenue/Stats/Controller.php:297
@@ -37923,10 +38156,6 @@ msgstr "تنظیمات حمل و نقل"
 #: assets/client/blocks/checkout.js:7
 msgid "Coupons"
 msgstr "کدهای تخفیف"
-
-#: includes/admin/class-wc-admin-meta-boxes.php:144
-msgid "Coupon data"
-msgstr "اطلاعات کدتخفیف"
 
 #: src/Internal/Admin/RemoteFreeExtensions/DefaultFreeExtensions.php:462
 #: assets/client/admin/app/index.js:2
@@ -38413,6 +38642,23 @@ msgstr "آیا میخواهید این ویژگی را پاک کنید؟"
 msgid "Backordered"
 msgstr "پیش‌خرید شده"
 
+#: includes/abstracts/abstract-wc-order.php:2193
+#: includes/class-wc-cart.php:1615 includes/class-wc-product-grouped.php:120
+msgid "Free!"
+msgstr "رایگان !"
+
+#: includes/admin/meta-boxes/views/html-order-fee.php:18
+#: includes/class-wc-cart-fees.php:74 includes/class-wc-order-item-fee.php:216
+#: assets/client/blocks/blocks-checkout.js:1
+#: assets/client/blocks/blocks-components.js:6
+#: assets/client/blocks/cart-frontend.js:2 assets/client/blocks/cart.js:2
+#: assets/client/blocks/checkout-frontend.js:2
+#: assets/client/blocks/checkout.js:2
+#: assets/client/blocks/mini-cart-contents.js:1
+#: assets/client/blocks/wc-blocks-data.js:7
+msgid "Fee"
+msgstr "هزینه نگهداری"
+
 #: includes/admin/class-wc-admin-menus.php:123
 #: includes/admin/views/html-admin-page-status-report.php:674
 #: includes/class-wc-install.php:1964
@@ -38432,23 +38678,6 @@ msgstr "پیش‌خرید شده"
 #: assets/client/blocks/product-filter-price.js:1
 msgid "Settings"
 msgstr "پیکربندی"
-
-#: includes/abstracts/abstract-wc-order.php:2193
-#: includes/class-wc-cart.php:1615 includes/class-wc-product-grouped.php:120
-msgid "Free!"
-msgstr "رایگان !"
-
-#: includes/admin/meta-boxes/views/html-order-fee.php:18
-#: includes/class-wc-cart-fees.php:74 includes/class-wc-order-item-fee.php:216
-#: assets/client/blocks/blocks-checkout.js:1
-#: assets/client/blocks/blocks-components.js:6
-#: assets/client/blocks/cart-frontend.js:2 assets/client/blocks/cart.js:2
-#: assets/client/blocks/checkout-frontend.js:2
-#: assets/client/blocks/checkout.js:2
-#: assets/client/blocks/mini-cart-contents.js:1
-#: assets/client/blocks/wc-blocks-data.js:7
-msgid "Fee"
-msgstr "هزینه نگهداری"
 
 #. translators: %s: average rating
 #. translators: %s: rating
