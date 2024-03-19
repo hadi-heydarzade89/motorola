@@ -296,8 +296,9 @@ final class WOOF_SD extends WOOF_EXT {
         add_action('wp_ajax_woof_sd_get_options', function () {
 			if (!isset($_REQUEST['sd_nonce']) || !wp_verify_nonce($_REQUEST['sd_nonce'], 'woof_sd_nonce')) {
 				die('0');
-			}			
-            $type = esc_html($_REQUEST['type']);
+			}
+			
+            $type = sanitize_key($_REQUEST['type']);
             $id = intval($_REQUEST['id']);
             $data = [];
 
@@ -455,7 +456,8 @@ final class WOOF_SD extends WOOF_EXT {
     }
 
     public function get_elements() {
-        $elements = $this->db->get_results("SELECT * FROM {$this->table} ORDER BY title asc", ARRAY_A);
+		$sql = $this->db->prepare("SELECT * FROM %i ORDER BY title asc", $this->table);
+        $elements = $this->db->get_results($sql, ARRAY_A);
 
         if (function_exists('woof') && woof() && woof()->show_notes) {
             if (!empty($elements)) {
@@ -467,19 +469,23 @@ final class WOOF_SD extends WOOF_EXT {
     }
 
     private function get_element_type($id) {
-        return $this->db->get_var("SELECT type FROM {$this->table} WHERE id={$id}");
+		$sql = $this->db->prepare("SELECT type FROM %i WHERE id=%d", $this->table, $id);
+        return $this->db->get_var($sql);
     }
 
     private function get_element_template_num($id) {
-        return intval($this->db->get_var("SELECT template FROM {$this->table} WHERE id={$id}"));
+		$sql = $this->db->prepare("SELECT template FROM %i WHERE id=%d", $this->table, $id);
+        return intval($this->db->get_var($sql));
     }
 
     private function get_selected_demo_taxonomy($id) {
-        return $this->db->get_var("SELECT demo_taxonomy FROM {$this->table} WHERE id={$id}");
+		$sql = $this->db->prepare("SELECT demo_taxonomy FROM %i WHERE id=%d", $this->table, $id);
+        return $this->db->get_var($sql);
     }
 
     private function get_element_options($id, $prefix = '') {
-        $row = $this->db->get_row("SELECT options FROM {$this->table} WHERE id={$id}", ARRAY_A);
+		$sql = $this->db->prepare("SELECT options FROM %i WHERE id=%d", $this->table, $id);
+        $row = $this->db->get_row($sql, ARRAY_A);
         $options = [];
 
         if ($row) {

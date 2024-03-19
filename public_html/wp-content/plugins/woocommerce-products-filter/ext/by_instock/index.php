@@ -166,8 +166,8 @@ final class WOOF_EXT_BY_INSTOCK extends WOOF_EXT {
 							$attr_sql = array();
 							$attr_sql2 = array();
 							foreach ($attr_in_search as $tax=>$ids) {
-								$attr_sql[] = "(a.taxonomy = '".$tax."' AND a.term_id IN (".implode(', ',$ids)."))";
-								$attr_sql2[] = "(a.taxonomy = '".$tax."' AND a.term_id IN (".implode(', ',$ids).") AND a.in_stock=1) ";
+								$attr_sql[] = "(a.taxonomy = '".esc_sql($tax)."' AND a.term_id IN (".esc_sql(implode(', ',$ids))."))";
+								$attr_sql2[] = "(a.taxonomy = '".esc_sql($tax)."' AND a.term_id IN (".esc_sql(implode(', ',$ids)).") AND a.in_stock=1) ";
 							}
 
 							$parent_ids = $wpdb->get_col("SELECT a.product_or_parent_id "
@@ -198,7 +198,7 @@ final class WOOF_EXT_BY_INSTOCK extends WOOF_EXT {
 								return $where;
 							}
 
-							$where .= " AND $wpdb->posts.ID NOT IN(". implode(', ', $parent_ids).")";								
+							$where .= " AND $wpdb->posts.ID NOT IN(". esc_sql(implode(', ', $parent_ids)).")";								
 						} else {
 							$meta_query = array('relation' => 'AND');
 							$meta_query[] = array(
@@ -215,7 +215,8 @@ final class WOOF_EXT_BY_INSTOCK extends WOOF_EXT {
 									if (isset($term_in_cycle[$terms[$i]])) {
 										$t_name = $term_in_cycle[$terms[$i]];
 									} else {
-										$t_name = $term_in_cycle[$terms[$i]] = $wpdb->get_var("SELECT name FROM $wpdb->terms WHERE slug = '{$terms[$i]}'");
+										$prepared_sql = $wpdb->prepare("SELECT name FROM $wpdb->terms WHERE slug =%s", $terms[$i]);
+										$t_name = $term_in_cycle[$terms[$i]] = $wpdb->get_var($prepared_sql);
 									}
 									$sub_meta_query[] = array(
 										'key' => 'attribute_' . $attr_slug,

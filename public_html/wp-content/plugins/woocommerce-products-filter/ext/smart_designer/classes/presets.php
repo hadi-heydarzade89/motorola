@@ -124,7 +124,8 @@ final class WOOF_SD_PRESETS {
     }
 
     private function get($option_id) {
-        return $this->db->get_var("SELECT options FROM {$this->table} WHERE id={$option_id}");
+		$prepared_sql = $this->db->prepare("SELECT options FROM %i WHERE id=%d", $this->table, $option_id);
+        return $this->db->get_var($prepared_sql);
     }
 
     private function update($option_id, $preset) {
@@ -132,11 +133,13 @@ final class WOOF_SD_PRESETS {
     }
 
     private function get_element_options($element_id) {
-        return $this->db->get_var("SELECT options FROM {$this->table_main} WHERE id={$element_id}");
+		$prepared_sql = $this->db->prepare("SELECT options FROM %i WHERE id=%d", $this->table_main, $element_id);
+        return $this->db->get_var($prepared_sql);
     }
 
     private function gets($type) {
-        return $this->db->get_results("SELECT * FROM {$this->table} WHERE type='{$type}' ORDER BY id desc", ARRAY_A);
+		$prepared_sql = $this->db->prepare("SELECT * FROM %i WHERE type=%s ORDER BY id desc", $this->table, $type);
+        return $this->db->get_results($prepared_sql, ARRAY_A);
     }
 
     private function delete($id) {

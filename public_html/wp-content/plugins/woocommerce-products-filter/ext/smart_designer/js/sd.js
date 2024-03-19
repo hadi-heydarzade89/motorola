@@ -90,7 +90,6 @@ export default class SD {
                 this.set_panel(index);
                 break;
             case 1:
-		
                 Helper.message(woof_sd.lang.loading + ' ...', 'warning', -1);
                 this.title_container.innerHTML = ' [' + this.selected_row.container.querySelector('data-table-cell:first-child').innerText + ']';
 		var nonce = document.getElementById('woof_sd_nonce').value;

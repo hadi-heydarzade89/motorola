@@ -94,7 +94,7 @@
                     <li>
                         <a href="#tabs-7">
                             <span class="icon-info"></span>
-                            <span><?php esc_html_e("Info", 'woocommerce-products-filter') ?></span>
+                            <span><?php esc_html_e("Help", 'woocommerce-products-filter') ?></span>
                         </a>
                     </li>
                 </ul>

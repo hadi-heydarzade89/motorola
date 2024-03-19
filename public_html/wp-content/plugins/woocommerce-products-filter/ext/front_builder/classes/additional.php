@@ -55,7 +55,8 @@ final class WOOF_FRONT_BUILDER_ADDITIONAL {
         static $cache = [];
 
         if (!isset($cache[$name])) {
-            $cache[$name] = $this->db->get_row("SELECT additional FROM {$this->table} WHERE name='{$name}'")->additional;
+			$prepared_sql = $this->db->prepare("SELECT additional FROM %i WHERE name=%s", $this->table, $name);
+            $cache[$name] = $this->db->get_row($prepared_sql)->additional;
             if (!$cache[$name]) {
                 $cache[$name] = '{}';
             }

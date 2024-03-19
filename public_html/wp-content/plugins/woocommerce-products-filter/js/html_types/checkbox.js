@@ -20,7 +20,7 @@ function woof_init_checkboxes() {
         jQuery('.woof_checkbox_term').off('ifChecked');
         jQuery('.woof_checkbox_term').on('ifChecked', function (event) {
             jQuery(this).attr("checked", true);
-            jQuery(".woof_select_radio_check input").attr('disabled', 'disabled');
+	//jQuery(".woof_select_radio_check input").attr('disabled', 'disabled');
             woof_checkbox_process_data(this, true);
         });
 

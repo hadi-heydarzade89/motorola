@@ -5,7 +5,7 @@ Tags: filter, product filter, woocommerce, woof, ajax filter
 Requires at least: 5.2.0
 Tested up to: 6.5
 Requires PHP: 7.3
-Stable tag: 1.3.5.2
+Stable tag: 1.3.5.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -174,6 +174,10 @@ R: [Codex](https://products-filter.com/codex/)
 
 
 == Changelog ==
+
+= 1.3.5.3 =
+* 2 security fixes, thanks to Wordfence.com
+* 1 security fix, thanks to Patchstack.com
 
 = 1.3.5.2 =
 * 1 security fix, thanks to Dhabaleshwar Das from Patchstack.com

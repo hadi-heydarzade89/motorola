@@ -64,7 +64,8 @@ final class WOOF_FRONT_BUILDER_OPTIONS_LAYOUT {
         static $cache = [];
 
         if (!isset($cache[$name])) {
-            $cache[$name] = $this->db->get_row("SELECT layout_options FROM {$this->table} WHERE name='{$name}'")->layout_options;
+			$prepared_sql = $this->db->prepare("SELECT layout_options FROM %i WHERE name=%s", $this->table, $name);
+            $cache[$name] = $this->db->get_row($prepared_sql)->layout_options;
             if (!$cache[$name]) {
                 $cache[$name] = '{}';
             }

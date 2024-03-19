@@ -202,7 +202,8 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
         }
 
         if (!isset($cache[$filter_id])) {
-            $cache[$filter_id] = $this->db->get_row("SELECT name FROM {$this->table} WHERE id={$filter_id}")->name;
+			$sql = $this->db->prepare("SELECT name FROM %i WHERE id=%d ", $this->table, $filter_id);
+            $cache[$filter_id] = $this->db->get_row($sql)->name;
         }
 
         return $cache[$filter_id];
@@ -212,7 +213,8 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
         static $cache = [];
 
         if (!isset($cache[$filter_id])) {
-            $cache[$filter_id] = $this->db->get_row("SELECT selected FROM {$this->table} WHERE id={$filter_id}")->selected;
+			$sql = $this->db->prepare("SELECT selected FROM %i WHERE id=%d ", $this->table, $filter_id);
+            $cache[$filter_id] = $this->db->get_row($sql)->selected;
         }
 
         return $cache[$filter_id];
@@ -222,7 +224,8 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
         static $cache = [];
 
         if (!isset($cache[$name])) {
-            $cache[$name] = $this->db->get_row("SELECT selected FROM {$this->table} WHERE name='{$name}'")->selected;
+			$sql = $this->db->prepare("SELECT selected FROM %i WHERE name=%s ", $this->table, $name);
+            $cache[$name] = $this->db->get_row($sql)->selected;
         }
 
         return $cache[$name];
@@ -292,8 +295,8 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
                     if (substr($value, 0, strlen($slug)) === $slug) {
                         $d = $this->decompose_search_slug($value);
                         $filter_id = intval($d['filter_id']);
-
-                        if ($filter_id > 0 AND $this->db->get_row("SELECT id FROM {$this->table} WHERE id={$filter_id}", ARRAY_A)) {
+						$sql = $this->db->prepare("SELECT id FROM %i WHERE id=%d", $this->table, $filter_id);
+                        if ($filter_id > 0 AND $this->db->get_row($sql, ARRAY_A)) {
                             add_filter('woof_filter_search_slug', function ($slug)use ($filter_id) {
                                 WOOF_REQUEST::set('woof_form_builder_filter_id', $filter_id);
 
@@ -600,7 +603,7 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
     }
 
     private function get_data($name) {
-		$sql = $this->db->prepare("SELECT * FROM {$this->table} WHERE name=%s ", $name);
+		$sql = $this->db->prepare("SELECT * FROM %i WHERE name=%s ", $this->table, $name);
         $data = $this->db->get_row($sql, ARRAY_A);
         if (empty($data)) {
             //create if not exists
@@ -767,7 +770,7 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
         $name = esc_html($_REQUEST['name']);
         $fields = esc_html($_REQUEST['fields']);
 
-        $this->db->update($this->table, array('selected' => $fields), array('name' => esc_sql($name) ));
+        $this->db->update($this->table, array('selected' => esc_sql($fields)), array('name' => esc_sql($name) ));
     }
 	public function get_alias_by_id($id) {
         $woof_settings = get_option('woof_settings', []);
@@ -803,7 +806,8 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
 	}	
 	
 	public function global_options(){
-		$data['ids'] = $this->db->get_results("SELECT id FROM {$this->table}", ARRAY_A);
+		$sql = $this->db->prepare("SELECT id FROM %i", $this->table);
+		$data['ids'] = $this->db->get_results($sql, ARRAY_A);
 		$data['slug'] = woof()->get_swoof_search_slug();
 		
 		woof()->render_html_e($this->get_ext_path() . 'views' . DIRECTORY_SEPARATOR . 'global_options.php', $data);

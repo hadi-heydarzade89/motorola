@@ -64,7 +64,8 @@ final class WOOF_FRONT_BUILDER_OPTIONS {
         static $cache = [];
 
         if (!isset($cache[$name])) {
-            $cache[$name] = $this->db->get_row("SELECT options FROM {$this->table} WHERE name='{$name}'")->options;
+			$prepared_sql = $this->db->prepare("SELECT options FROM %i WHERE name=%s", $this->table, $name);
+            $cache[$name] = $this->db->get_row($prepared_sql)->options;
             if (!$cache[$name]) {
                 $cache[$name] = '{}';
             }

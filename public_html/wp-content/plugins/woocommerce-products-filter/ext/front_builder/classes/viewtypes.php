@@ -51,7 +51,8 @@ final class WOOF_FRONT_BUILDER_VIEWTYPES {
         static $cache = [];
 
         if (!isset($cache[$name])) {
-            $cache[$name] = $this->db->get_row("SELECT viewtypes FROM {$this->table} WHERE name='{$name}'")->viewtypes;
+			$prepared_sql = $this->db->prepare("SELECT viewtypes FROM %i WHERE name=%s", $this->table, $name);
+            $cache[$name] = $this->db->get_row($prepared_sql)->viewtypes;
             if (!$cache[$name]) {
                 $cache[$name] = '{}';
             }

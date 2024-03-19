@@ -136,10 +136,10 @@ if (!function_exists('woof_print_tax')) {
         //***
 
 
-        $args['taxonomy_info'] = $taxonomies_info[$tax_slug];
+        $args['taxonomy_info'] = $taxonomies_info[$tax_slug] ?? '';
         $args['tax_slug'] = $tax_slug;
         $args['terms'] = $terms;
-        $args['all_terms_hierarchy'] = $taxonomies[$tax_slug];
+        $args['all_terms_hierarchy'] = $taxonomies[$tax_slug] ?? [];
         $args['additional_taxes'] = $additional_taxes;
 
         //***
@@ -151,7 +151,7 @@ if (!function_exists('woof_print_tax')) {
         }
         //***
         //https://wordpress.org/support/topic/adding-classes-woof_container-div
-        $primax_class = sanitize_key(WOOF_HELPER::wpml_translate($taxonomies_info[$tax_slug]));
+        $primax_class = sanitize_key(WOOF_HELPER::wpml_translate($taxonomies_info[$tax_slug] ?? ''));
         ?>
         <div data-css-class="woof_container_<?php echo esc_attr($tax_slug) ?>" class="woof_container woof_container_<?php echo esc_attr(isset($woof_settings['tax_type'][$tax_slug]) ? $woof_settings['tax_type'][$tax_slug] : '') ?> woof_container_<?php echo esc_attr($tax_slug) ?> woof_container_<?php echo esc_attr($counter) ?> woof_container_<?php echo esc_attr($primax_class) ?> <?php echo WOOF_HELPER::generate_container_css_classes($tax_slug) ?>">
             <div class="woof_container_overlay_item"></div>
@@ -252,7 +252,7 @@ if (!function_exists('woof_print_tax')) {
 
                         default:
                             if (woof()->settings['show_title_label'][$tax_slug]) {
-                                $title = WOOF_HELPER::wpml_translate($taxonomies_info[$tax_slug]);
+                                $title = WOOF_HELPER::wpml_translate($taxonomies_info[$tax_slug] ?? '');
                                 $title = explode('^', $title); //for hierarchy drop-down and any future manipulations
                                 if (isset($title[1])) {
                                     $title = $title[1];
@@ -318,8 +318,9 @@ if (!function_exists('woof_print_tax')) {
                 }
                 ?>
 
-                <input type="hidden" name="woof_t_<?php echo esc_attr($tax_slug) ?>" value="<?php echo esc_html($taxonomies_info[$tax_slug]->labels->name) ?>" /><!-- for red button search nav panel -->
-
+                <?php if ($taxonomies_info[$tax_slug]): ?>
+                    <input type="hidden" name="woof_t_<?php echo esc_attr($tax_slug) ?>" value="<?php echo esc_html($taxonomies_info[$tax_slug]->labels->name) ?>" /><!-- for red button search nav panel -->
+                <?php endif; ?>
             </div>
         </div>
         <?php
@@ -661,7 +662,7 @@ if (!function_exists('woof_print_item_by_key')) {
                             }
 
                             foreach ($items_order as $key) {
-								
+
                                 do_action('woof_before_draw_filter', $key, $shortcode_atts);
 
                                 if (in_array($key, $this->items_keys)) {
@@ -671,7 +672,7 @@ if (!function_exists('woof_print_item_by_key')) {
                                         continue;
                                     }
 
-                                    if ($key) {
+                                    if ($key && isset($taxonomies[$key])) {
                                         woof_print_tax($taxonomies, $key, $taxonomies[$key], $exclude_tax_key, $taxonomies_info, $additional_taxes, $woof_settings, $args, $counter);
                                     }
                                 }
