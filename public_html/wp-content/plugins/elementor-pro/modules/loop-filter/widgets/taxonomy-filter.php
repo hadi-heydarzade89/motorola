@@ -804,7 +804,9 @@ class Taxonomy_Filter extends Base_Widget {
 			'hide_empty' => 'yes' !== $settings['show_empty_items'],
 		];
 
-		if ( 'yes' !== $settings['show_child_taxonomy'] ) {
+		$avoid_reset_parent = ! empty( $settings['avoid_reset_parent'] );
+
+		if ( 'yes' !== $settings['show_child_taxonomy'] && ! $avoid_reset_parent ) {
 			$args['parent'] = 0;
 		}
 

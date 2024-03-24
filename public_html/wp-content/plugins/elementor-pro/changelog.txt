@@ -1,5 +1,10 @@
 # Elementor Pro - by Elementor.com
 
+#### 3.20.1 - 2024-03-20
+
+* Fix: Strengthened code integrity in deprecated Woo Single Element widget
+* Fix: PHP error notice appears when using Loop Grid with the Taxonomy Filter widgets
+
 #### 3.20.0 - 2024-03-11
 
 * Tweak: Implemented OR logic in the Display Conditions feature
