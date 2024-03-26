@@ -2,14 +2,30 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-03-11 13:54:29+0000\n"
+"PO-Revision-Date: 2024-03-20 16:40:26+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.0-rc.1\n"
+"X-Generator: GlotPress/4.0.0\n"
 "Language: fa\n"
 "Project-Id-Version: Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release)\n"
+
+#: core/admin/admin.php:972
+msgid "to reduce size without losing quality."
+msgstr "برای کاهش سایز بدون از دست دادن کیفیت."
+
+#: core/admin/admin.php:971 core/admin/admin.php:977
+msgid "Image Optimizer"
+msgstr "بهینه‌ساز تصویر"
+
+#: core/admin/admin.php:971 core/admin/admin.php:977
+msgid "Install"
+msgstr "نصب"
+
+#: core/admin/admin.php:969
+msgid "This image is large and may slow things down."
+msgstr "این تصویر بزرگ است و ممکن است سرعت کار را کاهش دهد."
 
 #: modules/site-navigation/rest-fields/page-user-can.php:28
 msgid "Whether the current user can edit or delete this post"
@@ -159,7 +175,8 @@ msgstr "بهینه ساز تصویر را نصب کنید!"
 msgid "Activate Image Optimizer!"
 msgstr "بهینه ساز تصویر را فعال کنید!"
 
-#: includes/controls/gallery.php:131 includes/controls/media.php:283
+#: core/admin/admin.php:975 includes/controls/gallery.php:131
+#: includes/controls/media.php:283
 msgid "Don’t let unoptimized images be the downfall of your site’s performance."
 msgstr "اجازه ندهید تصاویر بهینه نشده باعث کاهش عملکرد سایت شما شوند."
 
@@ -171,7 +188,7 @@ msgstr "این تصویر بزرگ است و ممکن است سرعت کار ر�
 msgid "This image is large and may slow things down. %1$sActivate Image Optimizer%2$s to reduce size without losing quality."
 msgstr "این تصویر بزرگ است و ممکن است سرعت کار را کاهش دهد. %1$s برای کاهش اندازه بدون از دست دادن کیفیت، بهینه ساز تصویر %2$s را فعال کنید."
 
-#: core/utils/hints.php:133 core/utils/hints.php:135
+#: core/utils/hints.php:143 core/utils/hints.php:145
 #: includes/controls/notice.php:83 includes/controls/notice.php:85
 msgid "Don’t show again."
 msgstr "دیگر نشان داده نشود."
@@ -282,11 +299,11 @@ msgstr "مراقب باشید"
 msgid "Enable the option to upload JSON files"
 msgstr "گزینه آپلود فایل‌های JSON را فعال کنید"
 
-#: core/files/uploads-manager.php:622
+#: core/files/uploads-manager.php:570
 msgid "You don't have permission to upload JSON files. Contact the administrator."
 msgstr "شما اجازه آپلود فایل‌های JSON را ندارید. با مدیر سایت تماس بگیرید."
 
-#: core/files/uploads-manager.php:331
+#: core/files/uploads-manager.php:288
 msgid "Invalid file name."
 msgstr "نام فایل نامعتبر است."
 
@@ -384,7 +401,7 @@ msgstr "محتوای مبتنی بر کانتینر از سایت شما پنه�
 msgid "Element Manager"
 msgstr "مدیریت عنصر"
 
-#: core/admin/admin.php:623
+#: core/admin/admin.php:626
 msgid "AI Prompts Library"
 msgstr "کتابخانه پرامپت‌های هوش مصنوعی"
 
@@ -664,7 +681,7 @@ msgid "Collapse"
 msgstr "بسته"
 
 #: modules/nested-accordion/widgets/nested-accordion.php:218
-#: assets/js/ai-layout.js:5581
+#: assets/js/ai-layout.js:5602
 msgid "Expand"
 msgstr "باز"
 
@@ -710,7 +727,7 @@ msgstr "جعبه"
 msgid "Changes will be reflected only after %1$s saving %3$s and %2$s reloading %3$s preview."
 msgstr "تغییرات فقط پس از %1$s ذخیره %3$s و %2$s بارگیری مجدد %3$s پیش‌نمایش منعکس می‌شوند."
 
-#: core/admin/admin.php:628
+#: core/admin/admin.php:631
 msgid "Build Smart with AI"
 msgstr "با هوش مصنوعی هوشمند بسازید"
 
@@ -844,12 +861,12 @@ msgstr "نوع قالب نامعتبر است."
 msgid "You do not have permissions to install plugins on this site."
 msgstr "شما اجازه نصب افزونه در این سایت را ندارید."
 
-#: core/admin/admin.php:345
+#: core/admin/admin.php:348
 msgid "Get Elementor Pro"
 msgstr "دریافت المنتور پیشرفته"
 
 #: modules/ai/connect/ai.php:24 assets/js/ai-admin.js:427
-#: assets/js/ai-layout.js:1102 assets/js/ai-layout.js:3836 assets/js/ai.js:555
+#: assets/js/ai-layout.js:1102 assets/js/ai-layout.js:3857 assets/js/ai.js:555
 msgid "AI"
 msgstr "AI"
 
@@ -975,7 +992,7 @@ msgstr "حالت افقی تبلت"
 msgid "Tablet Portrait"
 msgstr "حالت عمودی تبلت"
 
-#: core/admin/admin-notices.php:455
+#: core/admin/admin-notices.php:455 core/admin/admin.php:989
 msgid "Dismiss this notice."
 msgstr "این اطلاعیه را رد کنید."
 
@@ -1126,6 +1143,10 @@ msgstr "بارگذاری تنبل تصاویر پس‌زمینه"
 #: includes/elements/container.php:1807
 msgid "Note: Avoid applying transform properties on sticky containers. Doing so might cause unexpected results."
 msgstr "توجه: از اعمال خواص تبدیل روی ظروف چسبناک خودداری کنید. انجام این کار ممکن است باعث نتایج غیرمنتظره شود."
+
+#: core/admin/admin.php:971 core/admin/admin.php:977 assets/js/admin.js:805
+msgid "Activate"
+msgstr "فعال"
 
 #: includes/elements/container.php:612
 msgid "(link)"
@@ -1337,7 +1358,7 @@ msgstr "یادداشت‌ها"
 msgid "Upgrade Now"
 msgstr "هم اکنون ارتقا دهید"
 
-#: core/admin/admin.php:634 core/role-manager/role-manager.php:253
+#: core/admin/admin.php:637 core/role-manager/role-manager.php:253
 #: includes/editor-templates/panel-elements.php:38
 #: includes/editor-templates/panel-elements.php:44
 #: includes/editor-templates/panel-elements.php:59
@@ -1346,13 +1367,12 @@ msgstr "هم اکنون ارتقا دهید"
 #: includes/widgets/image-carousel.php:90 includes/widgets/image-gallery.php:89
 #: includes/widgets/testimonial.php:90 includes/widgets/video.php:105
 #: modules/promotions/admin-menu-items/go-pro-promotion-item.php:29
-#: assets/js/ai-admin.js:831 assets/js/ai-admin.js:839
-#: assets/js/ai-admin.js:2742 assets/js/ai-admin.js:2892
-#: assets/js/ai-admin.js:2994 assets/js/ai-layout.js:1369
-#: assets/js/ai-layout.js:1377 assets/js/ai-layout.js:1568 assets/js/ai.js:959
-#: assets/js/ai.js:967 assets/js/ai.js:2870 assets/js/ai.js:3020
-#: assets/js/ai.js:3122 assets/js/app-packages.js:5856 assets/js/editor.js:6606
-#: assets/js/notes.js:153
+#: assets/js/ai-admin.js:801 assets/js/ai-admin.js:858
+#: assets/js/ai-admin.js:2755 assets/js/ai-admin.js:2885
+#: assets/js/ai-layout.js:1339 assets/js/ai-layout.js:1396
+#: assets/js/ai-layout.js:1589 assets/js/ai.js:929 assets/js/ai.js:986
+#: assets/js/ai.js:2883 assets/js/ai.js:3013 assets/js/app-packages.js:5856
+#: assets/js/editor.js:6606 assets/js/notes.js:153
 #: assets/js/onboarding.f2f8af9f7327abc100f1.bundle.js:763
 #: assets/js/styleguide.js:196
 msgid "Upgrade"
@@ -1555,14 +1575,14 @@ msgid "Text Stroke"
 msgstr "مرز متن"
 
 #: includes/admin-templates/beta-tester.php:53 assets/js/ai-admin.js:5201
-#: assets/js/ai-admin.js:10420 assets/js/ai-layout.js:3005
-#: assets/js/ai-layout.js:5911 assets/js/ai.js:5463 assets/js/ai.js:10682
+#: assets/js/ai-admin.js:10420 assets/js/ai-layout.js:3026
+#: assets/js/ai-layout.js:5932 assets/js/ai.js:5463 assets/js/ai.js:10682
 msgid "Privacy Policy"
 msgstr "سیاست حفظ حریم خصوصی"
 
 #: includes/admin-templates/beta-tester.php:48 assets/js/ai-admin.js:5197
-#: assets/js/ai-admin.js:10416 assets/js/ai-layout.js:3001
-#: assets/js/ai-layout.js:5907 assets/js/ai.js:5459 assets/js/ai.js:10678
+#: assets/js/ai-admin.js:10416 assets/js/ai-layout.js:3022
+#: assets/js/ai-layout.js:5928 assets/js/ai.js:5459 assets/js/ai.js:10678
 msgid "Terms of Service"
 msgstr "شرایط استفاده از خدمات"
 
@@ -2346,7 +2366,7 @@ msgid "Release Candidate"
 msgstr "نامزد انتشار"
 
 #: core/experiments/manager.php:484 assets/js/ai-admin.js:428
-#: assets/js/ai-layout.js:1103 assets/js/ai-layout.js:3837 assets/js/ai.js:556
+#: assets/js/ai-layout.js:1103 assets/js/ai-layout.js:3858 assets/js/ai.js:556
 msgid "Beta"
 msgstr "بتا"
 
@@ -2526,11 +2546,11 @@ msgid "Panel Width"
 msgstr "عرض پنل"
 
 #. translators: %1$s Link open tag, %2$s: Link close tag.
-#: core/admin/admin.php:810
+#: core/admin/admin.php:813
 msgid "The latest update includes some substantial changes across different areas of the plugin. We highly recommend you %1$sbackup your site before upgrading%2$s, and make sure you first update in a staging environment"
 msgstr "آخرین بروزرسانی شامل برخی تغییرات اساسی در مناطق مختلف افزونه است. اکیداً توصیه می‌کنیم %1$sاز سایت خود قبل از ارتقا نسخه پشتیبان تهیه کنید%2$s و مطمئن شوید که ابتدا در یک محیط استیجینگ بروزرسانی می‌کنید."
 
-#: core/admin/admin.php:804
+#: core/admin/admin.php:807
 msgid "Heads up, Please backup before upgrade!"
 msgstr "حواست باشه، قبل از ارتقا نسخه پشتیبان تهیه کنید!"
 
@@ -3178,8 +3198,7 @@ msgstr "ظاهرا فایل htaccess سایت شما از دست رفته است
 msgid "Some of your theme files are missing."
 msgstr "برخی از فایل های قالب شما یافت نشد است."
 
-#: core/files/file-types/svg.php:73 core/files/uploads-manager.php:595
-#: core/files/uploads-manager.php:623
+#: core/files/file-types/svg.php:73 core/files/uploads-manager.php:571
 msgid "This file is not allowed for security reasons."
 msgstr "این فایل به دلایل امنیتی مجاز نیست."
 
@@ -3577,8 +3596,8 @@ msgstr "با موفقیت متصل شد."
 #: core/common/modules/connect/apps/connect.php:11
 #: core/common/modules/connect/connect-menu-item.php:24
 #: core/common/modules/connect/connect-menu-item.php:28
-#: assets/js/ai-admin.js:823 assets/js/ai-admin.js:5211
-#: assets/js/ai-layout.js:1361 assets/js/ai-layout.js:3015 assets/js/ai.js:951
+#: assets/js/ai-admin.js:849 assets/js/ai-admin.js:5211
+#: assets/js/ai-layout.js:1387 assets/js/ai-layout.js:3036 assets/js/ai.js:977
 #: assets/js/ai.js:5473
 msgid "Connect"
 msgstr "اتصال"
@@ -3765,7 +3784,7 @@ msgstr "سایت"
 
 #: includes/managers/elements.php:289
 #: modules/promotions/widgets/pro-widget-promotion.php:53
-#: assets/js/ai-layout.js:4055
+#: assets/js/ai-layout.js:4076
 msgid "Pro"
 msgstr "پرو"
 
@@ -3830,7 +3849,7 @@ msgstr "من لایسنس اصلی افزونه را دارم"
 msgid "Elementor Debugger"
 msgstr "دیباگرِ المنتور"
 
-#: core/admin/admin.php:217 assets/js/admin.js:1981 assets/js/gutenberg.js:122
+#: core/admin/admin.php:220 assets/js/admin.js:1981 assets/js/gutenberg.js:122
 msgid "Back to WordPress Editor"
 msgstr "بازگشت به ویرایشگر وردپرس"
 
@@ -3879,7 +3898,7 @@ msgid "New Template"
 msgstr "قالب جدید"
 
 #. translators: 1: Elementor, 2: Link to plugin review
-#: core/admin/admin.php:401
+#: core/admin/admin.php:404
 msgid "Enjoyed %1$s? Please leave us a %2$s rating. We really appreciate your support!"
 msgstr "لذت بردید%1$s?لطفا به ما امتیاز a %2$s دهید.از پشتیبانی شما سپاسگذاریم!"
 
@@ -4058,7 +4077,7 @@ msgstr "مشخص کنید چه تعداد اسلاید در هر چرخش اسک
 msgid "Note: Attachment Fixed works only on desktop."
 msgstr "توجه: حالت های ضمیمه و ثابت فقط در نسخه دسکتاپ به کار می روند."
 
-#: core/admin/admin.php:470
+#: core/admin/admin.php:473
 msgid "Create New Post"
 msgstr "ایجاد نوشته جدید"
 
@@ -4216,7 +4235,7 @@ msgstr "درون‌ریزی قالب"
 #: includes/controls/media.php:218 includes/controls/media.php:311
 #: includes/controls/media.php:313 includes/editor-templates/repeater.php:27
 #: modules/promotions/widgets/pro-widget-promotion.php:64
-#: assets/js/ai-admin.js:2065 assets/js/ai-layout.js:3497 assets/js/ai.js:2193
+#: assets/js/ai-admin.js:2086 assets/js/ai-layout.js:3518 assets/js/ai.js:2214
 #: assets/js/kit-library.ac1a4cd5deae5526ce49.bundle.js:919
 msgid "Remove"
 msgstr "حذف"
@@ -4305,32 +4324,32 @@ msgstr "دکوراسیون"
 msgid "Unlinked values"
 msgstr "عدم اتصال مقادیر"
 
-#: core/admin/admin.php:610
+#: core/admin/admin.php:613
 msgid "Blog"
 msgstr "بلاگ"
 
-#: core/admin/admin.php:590
+#: core/admin/admin.php:593
 msgid "(opens in a new window)"
 msgstr "(باز کردن در پنجره جدید)"
 
-#: core/admin/admin.php:558
+#: core/admin/admin.php:561
 msgid "News & Updates"
 msgstr "اخبار و بروزرسانی‌ها"
 
-#: core/admin/admin.php:525
+#: core/admin/admin.php:528
 msgctxt "Dashboard Overview Widget Recently Date"
 msgid "M jS"
 msgstr "M jS"
 
-#: core/admin/admin.php:517
+#: core/admin/admin.php:520
 msgid "Recently Edited"
 msgstr "به تازگی ویرایش شده"
 
-#: core/admin/admin.php:467
+#: core/admin/admin.php:470
 msgid "Create New Page"
 msgstr "ایجاد برگه جدید"
 
-#: core/admin/admin.php:421
+#: core/admin/admin.php:424
 msgid "Elementor Overview"
 msgstr "نمای کلی المنتور"
 
@@ -4440,8 +4459,8 @@ msgstr "عملیات"
 
 #: includes/editor-templates/hotkeys.php:143
 #: includes/editor-templates/panel.php:97
-#: includes/editor-templates/panel.php:99 assets/js/ai-admin.js:1810
-#: assets/js/ai.js:1938 assets/js/editor.js:49918
+#: includes/editor-templates/panel.php:99 assets/js/ai-admin.js:1831
+#: assets/js/ai.js:1959 assets/js/editor.js:49918
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:10
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:9
 msgid "History"
@@ -4915,19 +4934,19 @@ msgstr "با علامت زدن این گزینه، فونت های پیشفرض 
 msgid "Checking this box will disable Elementor's Default Colors, and make Elementor inherit the colors from your theme."
 msgstr "با علامت زدن این گزینه، رنگ های پیشفرض المنتور غیرفعال می شوند و المنتور رنگ های خود را از پوسته شما می گیرد."
 
-#: core/admin/admin.php:371
+#: core/admin/admin.php:374
 msgid "Video Tutorials"
 msgstr "آموزش‌های تصویری"
 
-#: core/admin/admin.php:371
+#: core/admin/admin.php:374
 msgid "View Elementor Video Tutorials"
 msgstr "مشاهده آموزش های ویدیویی المنتور"
 
-#: core/admin/admin.php:370
+#: core/admin/admin.php:373
 msgid "Docs & FAQs"
 msgstr "مستندات و سوالات متداول"
 
-#: core/admin/admin.php:370
+#: core/admin/admin.php:373
 msgid "View Elementor Documentation"
 msgstr "مشاهده مستندات المنتور"
 
@@ -5016,7 +5035,7 @@ msgid "Meet Our Global Widget"
 msgstr "مشاهده ابزارک های عمومی ما"
 
 #: modules/promotions/widgets/pro-widget-promotion.php:65
-#: assets/js/ai-layout.js:3986 assets/js/ai-layout.js:4142
+#: assets/js/ai-layout.js:4007 assets/js/ai-layout.js:4163
 msgid "Go Pro"
 msgstr "تغییر به نسخه حرفه ای"
 
@@ -5639,7 +5658,7 @@ msgstr "فرم"
 msgid "Elements"
 msgstr "المان‌ها"
 
-#: core/admin/admin.php:341 core/admin/menu/main.php:75
+#: core/admin/admin.php:344 core/admin/menu/main.php:75
 #: core/common/modules/finder/categories/settings.php:29
 #: core/dynamic-tags/base-tag.php:171 includes/editor-templates/panel.php:81
 #: includes/editor-templates/responsive-bar.php:64
@@ -6272,8 +6291,8 @@ msgid "Button"
 msgstr "دکمه"
 
 #: core/common/modules/finder/categories/edit.php:30
-#: includes/controls/popover-toggle.php:68 assets/js/ai-admin.js:2088
-#: assets/js/ai-admin.js:5996 assets/js/ai-admin.js:6003 assets/js/ai.js:2216
+#: includes/controls/popover-toggle.php:68 assets/js/ai-admin.js:2109
+#: assets/js/ai-admin.js:5996 assets/js/ai-admin.js:6003 assets/js/ai.js:2237
 #: assets/js/ai.js:6258 assets/js/ai.js:6265
 #: assets/js/element-manager-admin.js:2512
 #: assets/js/element-manager-admin.js:2569
@@ -6898,7 +6917,7 @@ msgstr "تنظیم مجدد"
 
 #: core/editor/loader/v1/templates/editor-body-v1.view.php:31
 #: core/editor/loader/v2/templates/editor-body-v2.view.php:33
-#: includes/editor-templates/templates.php:174 assets/js/ai-layout.js:3588
+#: includes/editor-templates/templates.php:174 assets/js/ai-layout.js:3609
 #: assets/js/editor.js:27672
 msgid "Preview"
 msgstr "پیش‌نمایش"
@@ -6913,7 +6932,7 @@ msgstr "پیش‌نمایش"
 msgid "Save"
 msgstr "ذخیره"
 
-#: core/admin/admin.php:614 core/admin/menu/main.php:41
+#: core/admin/admin.php:617 core/admin/menu/main.php:41
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:10
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:2
 msgid "Help"
@@ -6968,11 +6987,11 @@ msgstr "جستجوی ابزارک..."
 msgid "Add New Section"
 msgstr "افزودن بخش جدید"
 
-#: core/admin/admin.php:240
+#: core/admin/admin.php:243
 #: core/editor/loader/v1/templates/editor-body-v1.view.php:23
 #: core/editor/loader/v2/templates/editor-body-v2.view.php:23
 #: includes/editor-templates/templates.php:52 modules/gutenberg/module.php:123
-#: assets/js/ai-admin.js:1481 assets/js/ai.js:1609
+#: assets/js/ai-admin.js:1502 assets/js/ai.js:1630
 #: assets/js/app-packages.js:5312
 #: assets/js/kit-library.ac1a4cd5deae5526ce49.bundle.js:236
 #: assets/js/onboarding.f2f8af9f7327abc100f1.bundle.js:46
@@ -6980,8 +6999,8 @@ msgid "Loading"
 msgstr "در حال بارگذاری"
 
 #. Plugin Name of the plugin
-#: elementor.php app/view.php:23 core/admin/admin.php:290
-#: core/admin/admin.php:402 core/admin/admin.php:480
+#: elementor.php app/view.php:23 core/admin/admin.php:293
+#: core/admin/admin.php:405 core/admin/admin.php:483
 #: core/admin/menu/main.php:17 core/admin/menu/main.php:18
 #: core/documents-manager.php:381 core/upgrade/custom-tasks-manager.php:29
 #: core/upgrade/manager.php:43 includes/editor-templates/navigator.php:109
@@ -7280,7 +7299,7 @@ msgstr "بالا"
 msgid "Default"
 msgstr "پیش‌ فرض"
 
-#: core/admin/admin.php:221 core/admin/admin.php:229 core/base/document.php:636
+#: core/admin/admin.php:224 core/admin/admin.php:232 core/base/document.php:636
 #: modules/admin-bar/module.php:123 modules/gutenberg/module.php:101
 #: modules/gutenberg/module.php:112
 msgid "Edit with Elementor"
