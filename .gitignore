@@ -4,6 +4,7 @@
 /public_html/wp-content/ssbhesabfa*
 /public_html/error_log
 /public_html/wp-admin/error_log
+public_html/.idea/
 
 # Log files
 *.log
