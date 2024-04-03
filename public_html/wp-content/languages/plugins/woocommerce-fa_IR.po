@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-03-23 00:46:18+0000\n"
+"PO-Revision-Date: 2024-04-03 08:05:55+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -200,6 +200,10 @@ msgstr "پیش‌نمایش خانواده فونت الزامی است."
 msgid "The font family name is required."
 msgstr "نام خانواده فونت الزامی است."
 
+#: src/Internal/Font/FontFace.php:229
+msgid "The font face src is required."
+msgstr "src برای font face الزامی است."
+
 #: src/Internal/Font/FontFace.php:221
 msgid "The font face weight is required."
 msgstr "وزن font face الزامی است."
@@ -207,6 +211,10 @@ msgstr "وزن font face الزامی است."
 #: src/Internal/Font/FontFace.php:213
 msgid "The font face font style is required."
 msgstr "استایل font face الزامی است."
+
+#: src/Internal/Font/FontFace.php:205
+msgid "The font face family name is required."
+msgstr "نام خانواده font face الزامی است."
 
 #. translators: %s: Font face slug.
 #: src/Internal/Font/FontFace.php:159
@@ -238,6 +246,10 @@ msgstr "پاکسازی داده‌های قدیمی سفارش لغو شد."
 msgid "Clearing data..."
 msgstr "در حال پاکسازی داده..."
 
+#: src/Internal/DataStores/Orders/LegacyDataCleanup.php:234
+msgid "Only available when HPOS is authoritative and compatibility mode is disabled."
+msgstr "فقط زمانی در دسترس است که HPOS معتبر باشد و حالت سازگاری غیرفعال باشد."
+
 #: src/Internal/DataStores/Orders/LegacyDataCleanup.php:225
 msgid "Clear data"
 msgstr "پاکسازی داده"
@@ -250,10 +262,25 @@ msgstr "این ابزار، داده‌ها را از جداول قدیمی سف
 msgid "Clean up order data from legacy tables"
 msgstr "پاکسازی داده‌های سفارش از جداول قدیمی"
 
+#. translators: %1$d is an order ID, %2$s is an error message.
+#: src/Internal/DataStores/Orders/LegacyDataCleanup.php:146
+msgid "Order %1$d legacy data could not be cleaned up during batch process. Error: %2$s"
+msgstr "داده قدیمی سفارش %1$d در طول فرآیند دسته‌ای پاک نمی‌شود. خطا: %2$s"
+
+#. translators: %s: error message
+#: src/Internal/Admin/Onboarding/OnboardingFonts.php:210
+msgid "Font Face installation error: %s"
+msgstr "خطای نصب Font Face: %s"
+
 #. translators: %s is an amount of computer disk space, e.g. 5 KB.
 #: src/Internal/Admin/Logging/Settings.php:269
 msgid "Directory size: %s"
 msgstr "حجم پوشه: %s"
+
+#. translators: %s is the name of a filter hook.
+#: src/Internal/Admin/Logging/Settings.php:174
+msgid "The %s hook has a filter set, so some log files may have different retention settings."
+msgstr "هوک %s دارای یک مجموعه فیلتر است، بنابراین برخی از فایل‌های گزارش ممکن است تنظیمات نگهداری متفاوتی داشته باشند."
 
 #. translators: %1$d is an order ID, %2$s and %3$s are datastore names, %4$s is
 #. an error message.
@@ -282,6 +309,10 @@ msgstr "عکس بعدی"
 msgid "Previous image"
 msgstr "تصویر قبلی"
 
+#: src/Blocks/BlockTypes/ProductGallery.php:98
+msgid "Close Product Gallery dialog"
+msgstr "بستن کادر گالری محصول"
+
 #: src/Blocks/BlockTypes/ProductCollection.php:118
 msgid "Page Loaded."
 msgstr "برگه بارگذاری شد."
@@ -289,6 +320,11 @@ msgstr "برگه بارگذاری شد."
 #: src/Blocks/BlockTypes/ProductCollection.php:117
 msgid "Loading page, please wait."
 msgstr "در حال بارگذاری برگه، لطفا صبر کنید."
+
+#. translators: %s is a generated error message.
+#: src/Blocks/AIContent/UpdateProducts.php:493
+msgid "The image upload failed: \"%s\", creating the product without image"
+msgstr "آپلود تصویر ناموفق بود: \"%s\"، محصول بدون تصویر ایجاد شد"
 
 #: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:667
 msgid "The size of the log directory."
@@ -326,6 +362,10 @@ msgstr "حداقل سطح آستانه گزارش‌هایی که ذخیره م�
 msgid "How many days log entries will be kept before being auto-deleted."
 msgstr "چند روز قبل از حذف خودکار، ورودی‌های گزارش نگهداری می‌شوند."
 
+#: includes/admin/views/html-admin-page-status-report.php:775
+msgid "How log entries are being stored."
+msgstr "نحوه ذخیره ورودی‌های گزارش"
+
 #: includes/admin/views/html-admin-page-status-report.php:770
 #: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:643
 msgid "Is logging enabled?"
@@ -351,6 +391,10 @@ msgstr "یوسفیه"
 msgid "Tan-Tan"
 msgstr "طانطان"
 
+#: i18n/states.php:1221
+msgid "Tangier-Assilah"
+msgstr "طنجه-اصیله"
+
 #: i18n/states.php:1220
 msgid "Tiznit"
 msgstr "تزنیت"
@@ -366,6 +410,10 @@ msgstr "تطوان"
 #: i18n/states.php:1217
 msgid "Taza"
 msgstr "تازه"
+
+#: i18n/states.php:1216
+msgid "Tata"
+msgstr "طاطا"
 
 #: i18n/states.php:1215
 msgid "Taroudant"
@@ -681,6 +729,10 @@ msgstr "لغو زمان‌بندی"
 msgid "Remove the currently scheduled action to delete expired transient files. Expired files won't be automatically deleted until the 'Schedule expired transient files cleanup' tool is run again."
 msgstr "اقدام زمان‌بندی شده‌ی فعلی برای حذف فایل‌های گذرای منقضی شده را لغو کنید. تا زمان اجرای مجدد ابزار «پاکسازی خودکار فایل‌های گذرای منقضی شده»، فایل‌های منقضی شده به صورت خودکار حذف نخواهند شد."
 
+#: src/Internal/TransientFiles/TransientFilesEngine.php:403
+msgid "Un-schedule expired transient files cleanup"
+msgstr "پاک‌سازی پرونده‌های گذرای منقضی شده را از زمان‌بندی خارج کنید"
+
 #: src/Internal/TransientFiles/TransientFilesEngine.php:395
 msgid "Re-schedule"
 msgstr "زمان‌بندی دوباره"
@@ -858,8 +910,17 @@ msgstr "وضعیت‌های انبار را انتخاب کنید"
 
 #: src/Blocks/BlockTypes/ProductFilterRating.php:240
 #: assets/client/blocks/product-filter-rating.js:3
+msgid "Select ratings"
+msgstr "انتخاب امتیازبندی"
+
+#: src/Blocks/BlockTypes/ProductFilterRating.php:240
+#: assets/client/blocks/product-filter-rating.js:3
 msgid "Select a rating"
 msgstr "یک امتیاز را انتخاب کنید"
+
+#: src/Blocks/BlockTypes/ProductDetails.php:36
+msgid "Minimal"
+msgstr "حداقل"
 
 #: src/Admin/Features/ProductBlockEditor/Init.php:245
 msgid "A single physical or virtual product, e.g. a t-shirt or an eBook."
@@ -892,6 +953,10 @@ msgstr "داده‌های وب‌سایت خود مانند مخاطبین، م�
 #: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:264
 msgid "Integrate your WooCommerce store with 5000+ cloud apps and services today. Trusted by 11,000+ users."
 msgstr "امروز فروشگاه ووکامرس خود را با بیش از ۵۰۰۰ برنامه و سرویس ابری ادغام کنید. مورد اعتماد بیش از ۱۱۰۰۰ کاربر."
+
+#: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:248
+msgid "Harness data from WooCommerce to grow your business. Manage leads, customers, and segments, through automation, quotes, invoicing, billing, and email marketing. Power up your store with CRM."
+msgstr "برای رشد کسب و کار خود از داده‌های ووکامرس استفاده کنید. از طریق اتوماسیون، قیمت‌ها، صورت‌حساب، فاکتور و بازاریابی ایمیلی، سرنخ‌ها، مشتریان و بخش‌ها را مدیریت کنید. فروشگاه خود را با CRM تقویت کنید."
 
 #: src/Admin/Features/MarketingRecommendations/DefaultMarketingRecommendations.php:232
 msgid "Turn your product images into stunning videos that engage and convert audiences - no video experience required."
@@ -941,6 +1006,10 @@ msgstr "اتوماسیون‌ها"
 msgid "Sales channels"
 msgstr "کانال‌های فروش"
 
+#: src/Admin/API/Reports/Revenue/Stats/Controller.php:273
+msgid "Override the \"woocommerce_date_type\" option that is used for the database date field considered for revenue reports."
+msgstr "گزینه \"woocommerce_date_type\" را که برای فیلد تاریخ پایگاه داده در نظر گرفته شده برای گزارش‌های درآمد استفاده می‌شود، لغو کنید."
+
 #: src/Admin/API/OnboardingProducts.php:80
 msgid "Sorry, you cannot create dummy products."
 msgstr "متاسفیم، شما نمی‌توانید محصولات ساختگی ایجاد کنید."
@@ -960,6 +1029,14 @@ msgstr "مجموعه نتایج را به شناسه‌های برچسب محص�
 #: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1532
 msgid "Limit result set to specific product categorie ids."
 msgstr "مجموعه نتایج را به شناسه‌های دسته‌بندی محصول خاص محدود کنید."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-layout-templates-controller.php:123
+msgid "Invalid layout template ID."
+msgstr "شناسه طرح‌بندی قالب نامعتبر است."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-layout-templates-controller.php:47
+msgid "Area to get templates for."
+msgstr "محیطی برای دریافت قالب‌ها."
 
 #: includes/admin/settings/class-wc-settings-advanced.php:364
 msgid "Leave this box unchecked if you do not want to pull suggested extensions from Woo.com. You will see a static list of extensions instead."
@@ -1383,6 +1460,10 @@ msgstr ""
 msgid "⚠️ <b>️The Legacy REST API will be removed in WooCommerce 9.0.</b> <a target=\"_blank\" href=\"%1$s\">A separate WooCommerce extension is available</a> to keep it enabled. You can check Legacy REST API usages in <b><a target=\"_blank\" href=\"%2$s\">the WooCommerce log files</a></b> (file names start with <code>legacy_rest_api_usages</code>). <b><a target=\"_blank\" href=\"%3$s\">Learn more about this change.</a></b>"
 msgstr "⚠️ <b>️Legacy REST API در ووکامرس ۹.۰ حذف خواهد شد.</b> <a target=\"_blank\" href=\"%1$s\">افزونه جداگانه ووکامرس برای فعال نگه داشتن آن موجود است</a>. می‌توانید استفاده‌های Legacy REST API را در <b><a target=\"_blank\" href=\"%2$s\">فایل‌های گزارش ووکامرس</a></b> بررسی کنید (نام فایل‌ها با <code>legacy_rest_api_usages</code>) شروع می‌شوند). <b><a target=\"_blank\" href=\"%3$s\">درباره این تغییر بیشتر بدانید.</a></b>"
 
+#: includes/admin/helper/class-wc-helper-subscriptions-api.php:308
+msgid "There was an error getting the install URL for this product."
+msgstr "در دریافت URL نصب این محصول خطایی روی داد."
+
 #: includes/admin/helper/class-wc-helper-subscriptions-api.php:298
 msgid "This product is already installed."
 msgstr "این محصول قبلا نصب شده است."
@@ -1492,6 +1573,12 @@ msgstr "این محصول دارای گزینه هایی مانند اندازه
 msgid "This variation will not trigger your customer's shipping calculator in cart or at checkout. This product also won't require your customers to enter their shipping details at checkout. <a href=\"https://woo.com/document/managing-products/#adding-a-virtual-product\" target=\"_blank\" rel=\"noreferrer\">Read more about virtual products</a>."
 msgstr "این تغییر، ماشین حساب حمل و نقل مشتری شما را در سبد خرید یا هنگام تسویه حساب فعال نمی کند. این محصول همچنین مشتریان شما را ملزم نمی کند که جزئیات حمل و نقل خود را در هنگام تسویه حساب وارد کنند. <a href=\"https://woo.com/document/managing-products/#adding-a-virtual-product\" target=\"_blank\" rel=\"noreferrer\">درباره محصولات مجازی بیشتر بخوانید</a>."
 
+#. translators: %d: number of pending orders.
+#: src/Internal/DataStores/Orders/CustomOrdersTableController.php:509
+msgid "There's %d order pending sync. <b>Switching data storage while sync is incomplete is dangerous and can lead to order data corruption or loss!</b>"
+msgid_plural "There are %d orders pending sync. <b>Switching data storage while sync is incomplete is dangerous and can lead to order data corruption or loss!</b>"
+msgstr[0] "%d سفارش در انتظار همگام‌سازی وجود دارد. <b>تغییر فضای ذخیره‌سازی داده در حالی که همگام‌سازی ناقص است خطرناک است و می‌تواند منجر به خراب شدن یا از دست رفتن داده‌ها شود!</b>"
+
 #: src/Internal/Admin/Notes/WooSubscriptionsNotes.php:202
 msgid "Connect to Woo.com"
 msgstr "اتصال به Woo.com"
@@ -1530,6 +1617,11 @@ msgstr "بازگشت به لیست فایل."
 #: src/Internal/Admin/Logging/PageController.php:257
 msgid "Browse log files"
 msgstr "فایل های گزارش را مرور کنید"
+
+#. translators: 1. a date, 2. a slug-style name for a file.
+#: src/Internal/Admin/Logging/FileV2/FileListTable.php:244
+msgid "Select the %1$s log file for %2$s"
+msgstr "فایل گزارش %1$s را برای %2$s انتخاب کنید"
 
 #: src/Internal/Admin/Logging/FileV2/FileListTable.php:201
 msgid "File size"
@@ -1684,6 +1776,10 @@ msgstr "راه اندازی %s"
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:66
 msgid "Add the shipping methods you'd like to make available to customers in this zone."
 msgstr "روش‌های حمل و نقلی را که می‌خواهید برای مشتریان در این منطقه در دسترس قرار دهید، اضافه کنید."
+
+#: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:42
+msgid "List the regions you'd like to include in your shipping zone. Customers will be matched against these regions."
+msgstr "مناطقی را که می خواهید در منطقه حمل و نقل خود بگنجانید فهرست کنید. مشتریان با این مناطق همسان خواهند شد."
 
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:29
 msgid "Give your zone a name! E.g. Local, or Worldwide."
@@ -1855,6 +1951,11 @@ msgctxt "block title"
 msgid "Shipping Address Section"
 msgstr "بخش آدرس حمل و نقل"
 
+#: assets/client/blocks/order-confirmation-shipping-address/block.json
+msgctxt "block description"
+msgid "Display the order confirmation shipping address."
+msgstr "نشانی ارسال تاییدیه سفارش را نمایش دهید."
+
 #: assets/client/blocks/order-confirmation-downloads/block.json
 msgctxt "block description"
 msgid "Display links to purchased downloads."
@@ -1889,6 +1990,11 @@ msgstr "بخش آدرس صورتحساب"
 msgctxt "block description"
 msgid "Display the order confirmation billing address."
 msgstr "نشانی صورتحساب تایید سفارش را نمایش دهید."
+
+#: assets/client/blocks/order-confirmation-additional-information/block.json
+msgctxt "block description"
+msgid "Displays additional information provided by third-party extensions for the current order."
+msgstr "اطلاعات اضافی ارائه شده توسط افزودنی‌های شخص ثالث را برای سفارش فعلی نمایش می‌دهد."
 
 #: assets/client/blocks/order-confirmation-additional-information/block.json
 msgctxt "block title"
@@ -2007,6 +2113,10 @@ msgstr "ویژگی های مورد استفاده برای گزینه های م�
 msgid "This product requires shipping or pickup"
 msgstr "این محصول نیاز به ارسال یا تحویل دارد"
 
+#: src/Internal/Features/ProductBlockEditor/ProductTemplates/ProductVariationTemplate.php:467
+msgid "This variation requires shipping or pickup"
+msgstr "این تنوع نیاز به ارسال یا دریافت حضوری دارد"
+
 #: src/Internal/Features/ProductBlockEditor/ProductTemplates/ProductVariationTemplate.php:302
 msgid "Same as main product"
 msgstr "همانند محصول اصلی"
@@ -2015,6 +2125,17 @@ msgstr "همانند محصول اصلی"
 msgid "Variation details"
 msgstr "جزییات تنوع"
 
+#: src/Internal/Features/ProductBlockEditor/ProductTemplates/ProductVariationTemplate.php:118
+#: src/Internal/Features/ProductBlockEditor/ProductTemplates/ProductVariationTemplate.php:205
+#: src/Internal/Features/ProductBlockEditor/ProductTemplates/ProductVariationTemplate.php:334
+#: src/Internal/Features/ProductBlockEditor/ProductTemplates/ProductVariationTemplate.php:444
+msgid "<strong>You’re editing details specific to this variation.</strong> Some information, like description and images, will be inherited from the main product, <noticeLink><parentProductName/></noticeLink>."
+msgstr "<strong>شما در حال ویرایش جزئیات خاص این تنوع هستید.</strong> برخی از اطلاعات، مانند توضیحات و تصاویر، از محصول اصلی، <noticeLink><parentProductName/></noticeLink> به ارث می‌رسد."
+
+#: src/Internal/Features/ProductBlockEditor/ProductTemplates/ProductVariationTemplate.php:62
+msgid "Template for the product variation form"
+msgstr "قالب فرم تنوع محصول"
+
 #: src/Internal/Features/ProductBlockEditor/ProductTemplates/ProductVariationTemplate.php:55
 msgid "Product Variation Template"
 msgstr "قالب تنوع محصول"
@@ -2022,6 +2143,10 @@ msgstr "قالب تنوع محصول"
 #: src/Admin/Features/OnboardingTasks/Tasks/Tax.php:81
 msgid "Good news! WooCommerce Tax can automate your sales tax calculations for you."
 msgstr "خبر خوب! مالیات ووکامرس می تواند محاسبات مالیات فروش شما را برای شما خودکار کند."
+
+#: src/Blocks/Utils/BlockTemplateUtils.php:391
+msgid "The Order Confirmation template serves as a receipt and confirmation of a successful purchase. It includes a summary of the ordered items, shipping, billing, and totals."
+msgstr "قالب تایید سفارش به عنوان رسید و تایید یک خرید موفق عمل می‌کند. این شامل خلاصه‌ای از اقلام سفارش داده شده، حمل و نقل، صورتحساب و مجموع است."
 
 #: src/Blocks/Utils/BlockTemplateUtils.php:382
 msgctxt "Template name"
@@ -2075,6 +2200,10 @@ msgstr "تنظیم تصاویر الگو ناموفق بود."
 msgid "The patterns dictionary is missing."
 msgstr "واژه نامه الگوها وجود ندارد."
 
+#: src/Blocks/Images/Pexels.php:127 src/Blocks/Images/Pexels.php:131
+msgid "The search term definition failed."
+msgstr "تعیین عبارت جستجو ناموفق بود."
+
 #: src/Blocks/Domain/Services/OnboardingTasks/ReviewCheckoutTask.php:53
 msgid "Make sure cart and checkout flows are configured correctly for your shoppers."
 msgstr "مطمئن شوید که جریان سبد خرید و پرداخت به درستی برای خریداران شما پیکربندی شده است."
@@ -2115,13 +2244,27 @@ msgstr "لطفا ایمیل خود را برای تایید سفارش، برر�
 msgid "Try again"
 msgstr "تلاش دوباره"
 
+#: src/Blocks/BlockTypes/OrderConfirmation/Status.php:108
+msgid "Your order cannot be processed as the originating bank/merchant has declined your transaction. Please attempt your purchase again."
+msgstr "سفارش شما قابل پردازش نیست زیرا بانک/مرچنت، مبدا تراکنش شما را رد کرده است. لطفا دوباره اقدام به خرید کنید."
+
 #: src/Blocks/BlockTypes/OrderConfirmation/Status.php:101
 msgid "Thank you. Your order has been fulfilled."
 msgstr "متشکرم. سفارش شما انجام شد."
 
+#. translators: %s: date and time of the order refund.
+#: src/Blocks/BlockTypes/OrderConfirmation/Status.php:89
+msgid "Your order was refunded %s."
+msgstr "سفارش شما در %s بازگردانده شد."
+
 #: src/Blocks/BlockTypes/OrderConfirmation/Status.php:77
 msgid "Your order has been cancelled."
 msgstr "سفارش شما لغو شد."
+
+#: src/Blocks/BlockPatterns.php:346 src/StoreApi/Routes/V1/AI/Middleware.php:38
+#: src/StoreApi/Routes/V1/AI/Products.php:85
+msgid "AI content generation is not allowed on this store. Update your store settings if you wish to enable this feature."
+msgstr "تولید محتوای هوش مصنوعی در این فروشگاه مجاز نیست. اگر می خواهید این ویژگی را فعال کنید، تنظیمات فروشگاه خود را به روز کنید."
 
 #: src/Blocks/AI/Connection.php:156
 msgid "Failed to retrieve the JWT token: Try again later."
@@ -2130,6 +2273,26 @@ msgstr "بازیابی توکن JWT ناموفق بود: بعدا دوباره �
 #: src/Blocks/AI/Connection.php:152
 msgid "Failed to generate the JWT token"
 msgstr "تولید توکن JWT ناموفق بود"
+
+#: src/Blocks/AI/Connection.php:122
+msgid "Failed to fetch the site ID: The site is not registered."
+msgstr "شناسه سایت واکشی نشد: سایت ثبت نشده است."
+
+#: src/Blocks/AI/Connection.php:116
+msgid "Failed to fetch the site ID: try again later."
+msgstr "شناسه سایت واکشی نشد: بعداً دوباره امتحان کنید."
+
+#: src/Blocks/AI/Connection.php:51 src/Blocks/AI/Connection.php:100
+msgid "Failed to connect with the AI endpoint: try again later."
+msgstr "اتصال با نقطه پایانی هوش مصنوعی انجام نشد: بعداً دوباره امتحان کنید."
+
+#: patterns/store-info-alt-image-and-text.php:113
+msgid "Placeholder image used in the right column."
+msgstr "نگهدارنده مکان تصویر، در ستون سمت راست استفاده شده."
+
+#: patterns/store-info-alt-image-and-text.php:37
+msgid "Placeholder image used in the left column."
+msgstr "نگهدارنده مکان تصویر، در ستون سمت چپ استفاده شده."
 
 #: patterns/social-follow-us-in-social-media.php:76
 msgid "Placeholder image used to represent products being showcased under the social media icons. 4 out of 4."
@@ -2166,6 +2329,14 @@ msgstr "تصویر نمایشی برای نشان دادن محصولی که د�
 #: patterns/featured-products-fresh-and-tasty.php:32
 msgid "Placeholder image used to represent a product being showcased in the featured products pattern. 1 out of 4."
 msgstr "تصویر نمایشی برای نشان دادن محصولی که در الگوی محصولات ویژه نمایش داده می‌شود. ۱ از ۴."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:1047
+msgid "Limit result set to products with specified attributes."
+msgstr "مجموعه نتایج را به محصولات با ویژگی‌های مشخص محدود کنید."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:52
+msgid "Default values for generated variations."
+msgstr "مقادیر پیش‌فرض برای تنوع‌های تولید شده."
 
 #. Translators: %s Page contents.
 #: includes/admin/settings/class-wc-settings-advanced.php:86
@@ -2373,6 +2544,18 @@ msgstr "اجرای بررسی‌های پیش‌از فعال‌سازی..."
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:326
 msgid "Orders table does not exist."
 msgstr "جدول سفارشات وجود ندارد."
+
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:162
+msgid "Custom order tables could not be created."
+msgstr "جدول‌های سفارش مخصوص نمی‌تواند ایجاد شود."
+
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:160
+msgid "Custom order tables were created successfully."
+msgstr "جدول‌های سفارش مخصوص با موفقیت ایجاد شد."
+
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:157
+msgid "Custom order tables does not exist, creating..."
+msgstr "جدول‌های سفارش مخصوص وجود ندارند؛ در حال ایجاد..."
 
 #. translators: %1$s: Learn more link opening tag. %2$s: Learn more link
 #. closing tag.
@@ -2977,6 +3160,12 @@ msgstr "جدیدترین محصولات"
 msgctxt "block description"
 msgid "Display a collection of products from your store."
 msgstr "مجموعه ای از محصولات فروشگاه خود را نمایش دهید."
+
+#: assets/client/admin/product-editor/blocks/generic/product-subsection/block.json
+#: assets/client/admin/product-editor/blocks/generic/subsection/block.json
+msgctxt "block title"
+msgid "Product subsection"
+msgstr "زیربخش محصول"
 
 #: assets/client/blocks/product-rating/block.json
 msgctxt "block description"
@@ -4820,6 +5009,10 @@ msgstr "به مشتریان اجازه دهید در حین تسویه‌حسا�
 msgid "My Account"
 msgstr "حساب کاربری من"
 
+#: packages/action-scheduler/classes/data-stores/ActionScheduler_DBStore.php:1042
+msgid "Unable to release actions from claim id %d."
+msgstr "حذف اقدامات از شناسه مطالبه شده %d ممکن نیست."
+
 #: packages/action-scheduler/classes/ActionScheduler_ListTable.php:471
 msgid "async"
 msgstr "غیر همزمان"
@@ -5478,6 +5671,10 @@ msgstr "سفارش %1$d از زباله‌دان قابل بازیابی نیس�
 msgid "Get the free WooCommerce mobile app"
 msgstr "اپلیکیشن موبایل ووکامرس را رایگان دریافت کنید"
 
+#: src/Admin/API/Notes.php:823
+msgid "Registers whether the note is read or not"
+msgstr "ثبت می‌کند که آیا یادداشت خوانده شده است یا خیر"
+
 #: src/Admin/API/MobileAppMagicLink.php:96
 msgid "Jetpack is not connected."
 msgstr "چت‌پک متصل نشده است."
@@ -5489,6 +5686,11 @@ msgstr "ایمیل‌های «حساب کاربری جدید» زمانی ارس
 #: src/Blocks/BlockTypes/MiniCart.php:590
 msgid "Empty Mini-Cart Message"
 msgstr "پیام سبد خرید کوچک خالی"
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:2058
+#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2404
+msgid "Ensure meta_data excludes specific keys."
+msgstr "اطمینان حاصل کنید که meta_data کلیدهای خاصی را حذف نمی‌کند."
 
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:2049
 #: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2395
@@ -5805,6 +6007,11 @@ msgstr "با DHL و USPS به نرخ‌های حمل و نقل با تخفیف �
 #: assets/client/admin/chunks/8570.js:1
 msgid "Discounted rates"
 msgstr "نرخ‌های تخفیف‌دار"
+
+#: src/Admin/Features/ShippingPartnerSuggestions/DefaultShippingPartners.php:276
+#: assets/client/admin/chunks/8570.js:1
+msgid "Pick up an order, then just pay, print, package and post."
+msgstr "یک سفارش را بردار، بعد فقط پرداخت کن، چاپ کن، بسته‌بندی کن و پستش کن."
 
 #: src/Admin/Features/ShippingPartnerSuggestions/DefaultShippingPartners.php:275
 #: assets/client/admin/chunks/8570.js:1
@@ -6341,6 +6548,12 @@ msgstr "نتیجه را به مواردی با شناسه های کاربری م
 msgid "Force retrieval of fresh data instead of from the cache."
 msgstr "بازیابی اجباری داده های تازه به جای کش."
 
+#. translators: %1$s is the name of the hook to be cancelled, %2$s is the
+#. exception message.
+#: packages/action-scheduler/functions.php:287
+msgid "Caught exception while cancelling action \"%1$s\": %2$s"
+msgstr "در حین لغو اقدام، استثنا گرفت: \"%1$s\": %2$s"
+
 #. translators: %s refers to the schema name
 #: packages/action-scheduler/classes/WP_CLI/ActionScheduler_WPCLI_Scheduler_command.php:30
 msgid "Registered schema for %s"
@@ -6382,6 +6595,10 @@ msgstr "چند یادداشت در پایگاه‌داده است؟"
 #: src/Internal/ReceiptRendering/ReceiptRenderingEngine.php:269
 msgid "Notes"
 msgstr "یادداشت‌ها"
+
+#: src/Internal/Admin/SystemStatusReport.php:158
+msgid "Not all expected"
+msgstr "همه‌ی چیزی که مورد انتظار بود نیست"
 
 #: src/Internal/Admin/SystemStatusReport.php:152
 msgid "Do the important options return expected values?"
@@ -6474,6 +6691,11 @@ msgstr "هیچ دستوری برای تأیید وجود ندارد، لغو م�
 msgid "%1$d order was synced in %2$d seconds."
 msgid_plural "%1$d orders were synced in %2$d seconds."
 msgstr[0] "%1$d سفارش در %2$d ثانیه همگام سازی شد."
+
+#. Translators: %1$d is the batch number, %2$d is time taken to process batch.
+#: src/Database/Migrations/CustomOrderTable/CLIRunner.php:463
+msgid "Batch %1$d (%2$d orders) completed in %3$d seconds."
+msgstr "دسته %1$d (%2$d سفارش) در %3$d ثانیه تکمیل شد."
 
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:170
 msgid "There are no orders to sync, aborting."
@@ -15672,11 +15894,11 @@ msgstr "آرم Jetpack"
 
 #: includes/admin/class-wc-admin-setup-wizard.php:639
 msgid "Enable usage tracking and help improve WooCommerce"
-msgstr "ردیابی استفاده را فعال کنید و به بهبود WooCommerce کمک کنید"
+msgstr "ردیابی استفاده را فعال کنید و به بهبود ووکامرس کمک کنید"
 
 #: includes/admin/class-wc-admin-setup-wizard.php:617
 msgid "Help improve WooCommerce with usage tracking"
-msgstr "با ردیابی استفاده، به بهبود WooCommerce کمک کنید"
+msgstr "با ردیابی استفاده، به بهبود ووکامرس کمک کنید"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:121
 msgid "The coupon will expire at 00:00:00 of this date."
@@ -15791,7 +16013,7 @@ msgstr "نصب شما از WooCommerce ناقص است. اگر WooCommerce را 
 #. Translators: %s package name.
 #: src/Packages.php:168 src/Packages.php:183
 msgid "Missing the WooCommerce %s package"
-msgstr "بسته WooCommerce %s"
+msgstr "فاقد بسته ووکامرس %s"
 
 #. translators: 1: first result 2: last result 3: total results
 #: templates/loop/result-count.php:36
@@ -16672,7 +16894,7 @@ msgstr "WooCommerce داده های محصول را در پس زمینه به ر
 #: includes/admin/notes/class-wc-notes-run-db-update.php:192
 #: includes/admin/views/html-notice-updating.php:21
 msgid "WooCommerce is updating the database in the background. The database update process may take a little while, so please be patient."
-msgstr "WooCommerce در حال به روزرسانی بانک اطلاعاتی در پس زمینه است. روند به روزرسانی پایگاه داده ممکن است کمی طول بکشد، بنابراین لطفا صبور باشید."
+msgstr "ووکامرس در حال به‌روزرسانی بانک اطلاعاتی در پس زمینه است. روند به روزرسانی پایگاه داده ممکن است کمی طول بکشد، بنابراین لطفا صبور باشید."
 
 #: includes/admin/views/html-admin-page-status-report.php:632
 msgid "Must Use Plugins"
@@ -17988,7 +18210,7 @@ msgstr "لیست استان‌های این کشور."
 
 #: includes/rest-api/Controllers/Version3/class-wc-rest-data-continents-controller.php:313
 msgid "Number of decimal points shown in displayed prices for this country."
-msgstr "تعداد نقاط اعشاری نشان داده شده در قیمت‌های نمایش داده شده برای این کشور"
+msgstr "تعداد نقاط اعشاری‌ که در قیمت‌های نمایش داده شده برای این کشور، نشان داده می‌شود."
 
 #: includes/rest-api/Controllers/Version3/class-wc-rest-data-continents-controller.php:307
 #: includes/rest-api/Controllers/Version3/class-wc-rest-data-countries-controller.php:210
@@ -18412,7 +18634,7 @@ msgstr "%s صفحه"
 
 #: includes/customizer/class-wc-shop-customizer.php:790
 msgid "No page set"
-msgstr "هیچ پیجی تنظیم نشده "
+msgstr "برگه‌ای تنظیم نشده"
 
 #: includes/customizer/class-wc-shop-customizer.php:758
 msgid "Highlight required fields with an asterisk"
@@ -18431,11 +18653,11 @@ msgstr "الزامی"
 #. Translators: %s field name.
 #: includes/customizer/class-wc-shop-customizer.php:705
 msgid "%s field"
-msgstr "%s فیلد"
+msgstr "فیلد %s"
 
 #: includes/customizer/class-wc-shop-customizer.php:681
 msgid "These options let you change the appearance of the WooCommerce checkout."
-msgstr "این گزینه به شما اجازه می دهد ظاهر Checkout WooCommerce را تغییر دهید."
+msgstr "این گزینه به شما اجازه می‌دهد ظاهر تسویه حساب ووکامرس را تغییر دهید."
 
 #: includes/class-wc-privacy.php:127
 msgid "Please see the <a href=\"https://www.paypal.com/us/webapps/mpp/ua/privacy-full\">PayPal Privacy Policy</a> for more details."
@@ -19849,7 +20071,7 @@ msgstr "در هر صفحه چند ردیف از محصولات نمایش داد
 #: includes/customizer/class-wc-shop-customizer.php:506
 #: assets/client/admin/components/index.js:2
 msgid "Rows per page"
-msgstr "ردیف‌ها در هربرگه"
+msgstr "ردیف‌ها در هر برگه"
 
 #: includes/customizer/class-wc-shop-customizer.php:477
 msgid "How many products should be shown per row?"
@@ -20217,7 +20439,7 @@ msgstr "بازبینی بازگردانی شد."
 #. translators: %s: Home URL
 #: includes/admin/class-wc-admin-permalink-settings.php:101
 msgid "If you like, you may enter custom structures for your product URLs here. For example, using <code>shop</code> would make your product links like <code>%sshop/sample-product/</code>. This setting affects product URLs only, not things such as product categories."
-msgstr "اگر دوس دارید می توانید ساختاری دلخواه برای آدرس محصول بسازید. برای مثال، استفاده از <code>shop</code> لینک محصول شما را به شکل <code>%sshop/sample-product/</code>تغییر میدهد.این تنظیم تنها بر آدرس محصول تاثیر می گذارد،روی دسته محصولات تاثیری ندارد."
+msgstr "اگر دوست دارید می‌توانید ساختاری دلخواه برای آدرس محصول بسازید. برای مثال، استفاده از <code>shop</code> لینک محصول شما را به شکل <code>%sshop/sample-product/</code> تغییر می‌دهد. این تنظیم تنها روی نشانی محصول تاثیر می‌گذارد و روی چیزهای دیگر مانند دسته محصولات تاثیری ندارد."
 
 #. translators: %s: post title
 #: includes/admin/class-wc-admin-duplicate-product.php:59
@@ -22434,7 +22656,7 @@ msgstr "روش حمل و نقل"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:565
 msgid "Customer provided note:"
-msgstr "یادداشت ارائه شده به مشتری:"
+msgstr "یادداشت ارائه شده مشتری:"
 
 #: includes/admin/settings/class-wc-settings-general.php:275
 #: includes/admin/views/html-admin-page-status-report.php:697
@@ -22460,6 +22682,12 @@ msgstr "محل واحد پولی"
 #: woocommerce.php
 msgid "Automattic"
 msgstr "اتوماتیک"
+
+#. translators: 1: reviews count 2: product name
+#: templates/single-product-reviews.php:34
+msgid "%1$s review for %2$s"
+msgid_plural "%1$s reviews for %2$s"
+msgstr[0] "%1$s دیدگاه برای %2$s"
 
 #: templates/single-product/product-image.php:46
 msgid "Awaiting product image"
@@ -27176,7 +27404,7 @@ msgstr "موجودی محصول الزامی است."
 #: includes/legacy/api/v2/class-wc-api-orders.php:905
 #: includes/legacy/api/v3/class-wc-api-orders.php:949
 msgid "Product quantity must be a positive float."
-msgstr "تعداد محصول باید یک مقدار مثبت اعشاری باشد"
+msgstr "تعداد محصول باید یک مقدار اعشاری مثبت باشد."
 
 #: includes/legacy/api/v2/class-wc-api-orders.php:900
 #: includes/legacy/api/v3/class-wc-api-orders.php:944
@@ -29649,6 +29877,12 @@ msgstr "شماره سفارش."
 msgid "Recent orders"
 msgstr "سفارش‌های اخیر"
 
+#. translators: %s product name
+#: templates/myaccount/my-downloads.php:39
+msgid "%s download remaining"
+msgid_plural "%s downloads remaining"
+msgstr[0] "%s از دانلود باقی مانده"
+
 #: templates/myaccount/my-downloads.php:29
 msgid "Available downloads"
 msgstr "دانلودهای در دسترس"
@@ -31508,6 +31742,14 @@ msgstr "سفارش #%s"
 msgid "Select options"
 msgstr "انتخاب گزینه‌ها"
 
+#. translators: %s: number of orders
+#. translators: %s: count
+#: includes/class-wc-post-types.php:625
+#: packages/action-scheduler/classes/data-stores/ActionScheduler_wpPostStore_PostStatusRegistrar.php:38
+msgid "Failed <span class=\"count\">(%s)</span>"
+msgid_plural "Failed <span class=\"count\">(%s)</span>"
+msgstr[0] "ناموفق <span class=\"count\">(%s)</span>"
+
 #: includes/class-wc-post-types.php:619 includes/wc-order-functions.php:104
 msgctxt "Order status"
 msgid "Failed"
@@ -31545,6 +31787,12 @@ msgstr[0] "تکمیل شده <span class=\"count\">(%s)</span>"
 msgctxt "Order status"
 msgid "Completed"
 msgstr "تکمیل شده"
+
+#. translators: %s: number of orders
+#: includes/class-wc-post-types.php:589
+msgid "On hold <span class=\"count\">(%s)</span>"
+msgid_plural "On hold <span class=\"count\">(%s)</span>"
+msgstr[0] "در انتظار بررسی <span class=\"count\">(%s)</span>"
 
 #: includes/class-wc-post-types.php:583 includes/wc-order-functions.php:100
 msgctxt "Order status"
@@ -33482,7 +33730,7 @@ msgstr "سبد خرید"
 #: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:1379
 msgctxt "Page setting"
 msgid "Shop base"
-msgstr "پایگاه فروشگاه"
+msgstr "فروشگاه‌محور"
 
 #: includes/admin/settings/views/html-webhooks-edit.php:134
 msgid "API Version"
@@ -33498,11 +33746,11 @@ msgstr "API فعال شد"
 
 #: includes/admin/views/html-admin-page-status-report.php:698
 msgid "The number of decimal points shown in displayed prices."
-msgstr "تعداد نقطه‌های اعشاری نشان داده شده، در قیمت‌ها نمایش داده شود."
+msgstr "تعداد نقاط اعشاری در قیمت‌های نمایش داده شده."
 
 #: includes/admin/views/html-admin-page-status-report.php:693
 msgid "The decimal separator of displayed prices."
-msgstr "سواکننده اعشاری قیمت‌ها نمایش داده شود."
+msgstr "جداکننده اعشاری قیمت‌های نمایش داده شده."
 
 #: includes/admin/views/html-admin-page-status-report.php:688
 msgid "The thousand separator of displayed prices."
@@ -36270,7 +36518,7 @@ msgstr "یادداشت مشتری در باره سفارش"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:617
 msgid "Customer provided note"
-msgstr "یادداشت ارائه شده به مشتری"
+msgstr "یادداشت ارائه شده مشتری"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:531
 msgid "No shipping address set."
@@ -37442,6 +37690,13 @@ msgstr[0] "به اضافه %d یادداشت دیگر"
 msgid "Y/m/d"
 msgstr "Y/m/d"
 
+#: includes/admin/reports/class-wc-report-stock.php:142
+#: includes/admin/views/html-admin-page-status-logs.php:40
+#: includes/wc-account-functions.php:289
+#: assets/client/admin/product-editor/index.js:2
+msgid "View"
+msgstr "مشاهده"
+
 #: src/Internal/Admin/Orders/ListTable.php:973
 #: assets/client/admin/product-editor/index.js:2
 msgid "Preview"
@@ -37966,15 +38221,15 @@ msgstr "برای استفاده به یک پایگاه سفارشی وارد ش�
 
 #: includes/admin/class-wc-admin-permalink-settings.php:131
 msgid "Custom base"
-msgstr "پایگاه سفارشی"
+msgstr "سفارشی‌محور"
 
 #: includes/admin/class-wc-admin-permalink-settings.php:125
 msgid "Shop base with category"
-msgstr "پایگاه فروشگاه بر اساس دسته‌بندی"
+msgstr "فروشگاه‌محور با دسته‌بندی"
 
 #: includes/admin/class-wc-admin-permalink-settings.php:121
 msgid "Shop base"
-msgstr "پایگاه فروشگاه"
+msgstr "فروشگاه‌محور"
 
 #: includes/admin/importers/views/html-csv-import-done.php:77
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:259
@@ -38782,7 +39037,7 @@ msgstr "خواهشمندیم کد کشور خود را با دو حرف بزرگ
 #. translators: %s: price decimal separator
 #: includes/admin/class-wc-admin-assets.php:217
 msgid "Please enter a value with one monetary decimal point (%s) without thousand separators and currency symbols."
-msgstr "لطفاً مقداری با یک نقطه اعشاری پولی (%s) بدون هزار جدا کننده و نمادهای ارزی وارد کنید."
+msgstr "لطفاً مقداری با یک نقطه اعشاری پولی (%s) بدون جدا‌کننده‌ی هزارگان و نمادهای ارزی وارد کنید."
 
 #: includes/admin/class-wc-admin-assets.php:170
 #: includes/class-wc-frontend-scripts.php:607
