@@ -7,16 +7,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.0-beta.2\n"
+"X-Generator: GlotPress/4.0.0\n"
 "Language: fa\n"
 "Project-Id-Version: Themes - Twenty Twenty-Two\n"
 
 #. Description of the theme
+#: style.css
 #, gp-priority: high
 msgid "Built on a solidly designed foundation, Twenty Twenty-Two embraces the idea that everyone deserves a truly unique website. The theme’s subtle styles are inspired by the diversity and versatility of birds: its typography is lightweight yet strong, its color palette is drawn from nature, and its layout elements sit gently on the page. The true richness of Twenty Twenty-Two lies in its opportunity for customization. The theme is built to take advantage of the Site Editor features introduced in WordPress 5.9, which means that colors, typography, and the layout of every single page on your site can be customized to suit your vision. It also includes dozens of block patterns, opening the door to a wide range of professionally designed layouts in just a few clicks. Whether you’re building a single-page website, a blog, a business website, or a portfolio, Twenty Twenty-Two will help you create a site that is uniquely yours."
 msgstr "با استفاده از پایه‌های قدرتمند طراحی، دو هزار و بیست و دو اندیشه ارائه وب‌سایت خاص برای همه افراد را ترویج می‌دهد. سبک‌های ظریف پوسته از تنوع و تطبیق‌پذیری پرندگان الهام گرفته شده است: اصول نگراش پویا و قدرتمند، طیف رنگ‌های الهام گرفته شده از طبیعت و چیدمان اصولی صفحات. قدرت اصلی دو هزار و بیست و دو در شخصی‌سازی قدرتمند آن نهفته است. این پوسته برای بهره‌مندی از امکانات ویرایشگر سایت که از وردپرس 5.9 معرفی شده، طراحی شده است. این بدین معنی است که رنگ‌ها، اصول نگارش و چیدمان همه بخش‌های پوسته قابل شخصی‌سازی است. همچنین می‌توانید از ده‌ها الگوی بلوک بهره بگیرید تا به سادگی امکان طراحی پیشرفته وب‌سایتتان را داشته باشید. دو هزار و بیست و دو به شما کمک خواهد کرد تا وب‌سایتی مطابق با سلیقه خود طراحی کنید."
 
 #. Theme Name of the theme
+#: style.css
 #, gp-priority: high
 msgid "Twenty Twenty-Two"
 msgstr "دو هزار و بیست و دو"
@@ -180,27 +182,27 @@ msgctxt "Gradient name"
 msgid "Vertical secondary to tertiary"
 msgstr "عمودی ثانویه به ثالثیه"
 
-#: theme.json styles/blue.json styles/pink.json styles/swiss.json
+#: styles/blue.json styles/pink.json styles/swiss.json theme.json
 msgctxt "Color name"
 msgid "Tertiary"
 msgstr "ثالثیه"
 
-#: theme.json styles/blue.json styles/pink.json styles/swiss.json
+#: styles/blue.json styles/pink.json styles/swiss.json theme.json
 msgctxt "Color name"
 msgid "Secondary"
 msgstr "ثانویه"
 
-#: theme.json styles/blue.json styles/pink.json styles/swiss.json
+#: styles/blue.json styles/pink.json styles/swiss.json theme.json
 msgctxt "Color name"
 msgid "Primary"
 msgstr "اولیه"
 
-#: theme.json styles/blue.json styles/pink.json styles/swiss.json
+#: styles/blue.json styles/pink.json styles/swiss.json theme.json
 msgctxt "Color name"
 msgid "Background"
 msgstr "پس‌زمینه"
 
-#: theme.json styles/blue.json styles/pink.json styles/swiss.json
+#: styles/blue.json styles/pink.json styles/swiss.json theme.json
 msgctxt "Color name"
 msgid "Foreground"
 msgstr "پیش‌زمینه"
@@ -924,16 +926,19 @@ msgid "Featured"
 msgstr "ویژه"
 
 #. Theme URI of the theme
+#: style.css
 #, gp-priority: low
 msgid "https://wordpress.org/themes/twentytwentytwo/"
 msgstr "https://wordpress.org/themes/twentytwentytwo/"
 
 #. Author URI of the theme
+#: style.css
 #, gp-priority: low
 msgid "https://wordpress.org/"
 msgstr "https://wordpress.org/"
 
 #. Author of the theme
+#: style.css
 #, gp-priority: low
 msgid "the WordPress team"
 msgstr "تیم وردپرس"
