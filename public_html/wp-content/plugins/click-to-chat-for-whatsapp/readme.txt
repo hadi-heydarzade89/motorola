@@ -1,9 +1,9 @@
 === Click to Chat - HoliThemes ===
 Requires at least: 4.6
-Tested up to: 6.4.3
+Tested up to: 6.5
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 3.34
+Stable tag: 3.35
 Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, whatsapp support, whatsapp group, click to chat for whatsapp, WhatsApp WooCommerce, whatsapp wordpress, whatsapp floating button, chat, holithemes
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -555,55 +555,15 @@ After Activating the plugin, add a WhatsApp Number in the plugin settings.
 
 == Changelog ==
 
+= 3.35 =
+* Enhancement: Greetings Dialog Close button now with in the content box.
+* New: Preset option for Greetings dialog inital stage. opens by default on desktop and closes on mobile.
+* Fix: Greetings header online status badge for RTL Pages.
+
 = 3.34 =
 * NEW: Profile picture at the Greetings Dialog header 
 * NEW: online/offline status badge at Greetings Header Image
 * PRO: online/offline status badge color based on business hours
 * Enhancement: Select style interface updated
-
-= 3.33 =
-* Fix: Greetings Dialog with animations not showing properly
-
-= 3.32 =
-* Enhancement: Admin demo preview
-* Fix: Demo Notification badge border color not updating
-
-= 3.31.1 =
-* Enhancement: Analytics Section
-
-= 3.31 =
-* New: Settings to update event name and parameters for Google Analytics and Meta Pixel.
-
-= 3.30.1 =
-* Enhancement: Admin Live Preview
-
-= 3.30 =
-* Admin live preview on changes of number, call to action, styles, customization of styles, animations, notification badge.
-
-= 3.29.4 =
-* Fix: Greetings Dialog position, if mobile and desktop have different positions
-
-= 3.29.3 =
-* Fix: undefined function santize_textarea_field
-
-= 3.29.2 = 
-* Improvement: Performance - click to chat admin pages  
-
-= 3.29.1 =
-* Fix: Admin settings page number not saving
-
-= 3.29 =
-* Increased Greetings Dialogs max height. If it overflows, the main content alone will scroll
-* Enhancement: Admin interface
-
-= 3.28 =
-* Greetings dialogs size - settings to set full width for mobile devices
-* Enhancement: Admin interface
-
-= 3.27.2 =
-* Fix: Call to Action not showing properly.
-
-= 3.27.1 =
-* Fix: Greetings dialogs blur at border
 
 [changelog](https://holithemes.com/plugins/click-to-chat/changelog/)

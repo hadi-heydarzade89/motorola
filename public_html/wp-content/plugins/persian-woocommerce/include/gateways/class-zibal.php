@@ -14,7 +14,7 @@ function PW_Load_Zibal_Gateway() {
 		$plugin = "zibal-payment-gateway-for-woocommerce/index.php";
 
 		if ( is_plugin_active( $plugin ) ) {
-			deactivate_plugins( $plugin );
+			// @todo add notice
 		}
 
 		return;

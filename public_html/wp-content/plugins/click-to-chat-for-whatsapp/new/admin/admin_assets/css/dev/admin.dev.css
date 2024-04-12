@@ -112,6 +112,10 @@
 }
 
 
+summary {
+    cursor: pointer;
+}
+
 
 /* Editior */
 .click-to-chat_page_click-to-chat-greetings .link-target #wp-link-target {

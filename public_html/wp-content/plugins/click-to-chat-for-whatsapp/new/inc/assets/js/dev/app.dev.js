@@ -176,6 +176,11 @@
                     document.dispatchEvent(
                         new CustomEvent("ht_ctc_event_greetings")
                     );
+
+                    // close greetings dialog
+                    setTimeout(() => {
+                        greetings_close('chat_clicked');
+                    }, 500);
                 });
 
                 // optin - checkbox on change
@@ -222,6 +227,7 @@
         }
 
         function greetings_display() {
+            console.log('greetings_display');
 
             if ($('.ht_ctc_chat_greetings_box').length) {
 
@@ -242,8 +248,17 @@
                     new CustomEvent("ht_ctc_event_after_chat_displayed", { detail: { ctc, greetings_open, greetings_close } })
                 );
 
-                if (ctc.g_init && 'open' == ctc.g_init && 'user_closed' !== ctc_getItem('g_user_action')) {
-                    greetings_open('init');
+                if (ctc.g_init && 'user_closed' !== ctc_getItem('g_user_action')) {
+                    console.log('g_init');
+                    // initial stage - default(preset): open on desktop, closes on mobile. open: open on all devices.
+                    if ('default' == ctc.g_init) {
+                        // if desktop then open
+                        if (is_mobile !== 'yes') {
+                            greetings_open('init');
+                        }
+                    } else if('open' == ctc.g_init) {
+                        greetings_open('init');
+                    }
                 }
 
 
@@ -263,12 +278,21 @@
          * 
          */
         function greetings_open(message = 'open') {
-            console.log('open');
+            console.log('Greetings open: ' + message);
 
             stop_notification_badge();
 
             $('.ctc_cta_stick').remove();
-            $('.ht_ctc_chat_greetings_box').show(70);
+
+
+            // todo:l enhance entry animations effects.. 
+            if ('init' == message) {
+                $('.ht_ctc_chat_greetings_box').show(70);
+            } else {
+                $('.ht_ctc_chat_greetings_box').show(400);
+            }
+
+
             $('.ht_ctc_chat_greetings_box').addClass('ctc_greetings_opened').removeClass('ctc_greetings_closed');
             ctc_setItem('g_action', message);
             if ('user_opened' == message) {
@@ -277,8 +301,14 @@
         }
 
         function greetings_close(message = 'close') {
-            console.log('close');
-            $('.ht_ctc_chat_greetings_box').hide(70);
+            console.log('Greetings close: ' + message);
+            
+            if ('element' == message) {
+                $('.ht_ctc_chat_greetings_box').hide(70);
+            } else {
+                $('.ht_ctc_chat_greetings_box').hide(400);
+            }
+
             $('.ht_ctc_chat_greetings_box').addClass('ctc_greetings_closed').removeClass('ctc_greetings_opened');
             ctc_setItem('g_action', message);
             if ('user_closed' == message) {

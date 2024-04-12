@@ -31,6 +31,7 @@
     display: inline-block;
 }
 
+/* rtl left: 0px; added with in php page. */
 .g_header_badge_online {
     position: absolute;
     bottom: 0px;

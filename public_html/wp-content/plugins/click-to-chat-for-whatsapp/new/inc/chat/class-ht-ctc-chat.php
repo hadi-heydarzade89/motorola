@@ -459,10 +459,8 @@ class HT_CTC_Chat {
 
 
         // Greetings - init display ..
-        $g_init = isset($greetings_settings['g_init']) ? esc_attr( $greetings_settings['g_init'] ) : '';
-        if ('open' == $g_init) {
-            $ctc['g_init'] = $g_init;
-        }
+        $g_init = isset($greetings_settings['g_init']) ? esc_attr( $greetings_settings['g_init'] ) : 'default';
+        $ctc['g_init'] = $g_init;
 
         // Greetings - display device based (if not all then add value)
         $g_device = isset($greetings_settings['g_device']) ? esc_attr( $greetings_settings['g_device'] ) : 'all';

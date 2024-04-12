@@ -133,6 +133,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         try {
+            // @parm: class name
             intl_input('intl_number');
         } catch (e) {
             console.log(e);

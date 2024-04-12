@@ -78,9 +78,6 @@ class HT_CTC_Admin_Greetings {
      * 
      * Settings
      * 
-     * 
-     * 
-     * 
      * class names
      *  pr_: parent element class name
      *  table class names - pr_ht_ctc_greetings_options, 
@@ -223,6 +220,10 @@ class HT_CTC_Admin_Greetings {
                         'parent_class' => 'pr_g1_message_box_bg_color',
                     ],
                     [
+                        'title' => 'Background image, Call to Action - button type',
+                        'template' => 'element_details_start',
+                    ],
+                    [
                         'title' => __( 'Background image', 'click-to-chat-for-whatsapp'),
                         'db' => 'main_bg_image',
                         'template' => 'checkbox',
@@ -239,6 +240,10 @@ class HT_CTC_Admin_Greetings {
                             '7_1' => __( 'Button with WhatsApp Icon (style-7 Extend)', 'click-to-chat-for-whatsapp'),
                         ],
                         'parent_class' => 'pr_g1_cta_style',
+                    ],
+                    [
+                        'template' => 'element_details_end',
+                        'description' => "<a href='https://holithemes.com/plugins/click-to-chat/greetings-1/' target='_blank'>Greetings-1</a>",
                     ],
                     [
                         'template' => 'collapsible_end',
@@ -341,8 +346,9 @@ class HT_CTC_Admin_Greetings {
                         'title' => __( 'Initial stage', 'click-to-chat-for-whatsapp'),
                         'db' => 'g_init',
                         'template' => 'select',
-                        'description' => "Open: Displays by default until the user closes the greetings for the first time <br>(Once user closes the Greetings Dialog on any page, the greetings dialog won't display until user clicks to open it again or used Greetings Actions) <br> Close: Hidden by default and displays when user clicks - <a target='_blank' href='https://holithemes.com/plugins/click-to-chat/greetings-initial-stage'>more info</a>",
+                        'description' => "Preset: automatically opens on desktops and stays closed on mobile devices.. <br> Open: Initially visible. If the user closes the dialog, it stays closed until the user reopens it or triggers greeting actions <br> Close: hidden until the user initiates chat or triggers greeting actions - <a target='_blank' href='https://holithemes.com/plugins/click-to-chat/greetings-initial-stage'>more info</a>",
                         'list' => [
+                            'default' => 'Preset',
                             'open' => 'Open',
                             'close' => 'Close',
                         ],
@@ -550,7 +556,7 @@ class HT_CTC_Admin_Greetings {
                 <a href='https://holithemes.com/plugins/click-to-chat/greetings/' target='_blank'>Greetings</a>: <a href='https://holithemes.com/plugins/click-to-chat/greetings-1/' target='_blank'>Greetings-1</a>, <a href='https://holithemes.com/plugins/click-to-chat/greetings-2/' target='_blank'>Greetings-2</a>, <a href='https://holithemes.com/plugins/click-to-chat/greetings-form/' target='_blank'>Form Filling</a>, <a href='https://holithemes.com/plugins/click-to-chat/multi-agent/' target='_blank'>Multi Agent</a>
             </p>
             <p class="description">
-                <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/greetings-actions/">Actions</a>: Displays Greetings based on <br>
+                <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/greetings-actions/">Greetings Actions</a>: Displays Greetings based on <br>
                 &emsp;<strong>Click</strong>: Clicked on any element with Class name: 'ctc_greetings' <br>
                 &emsp;<strong>Viewport</strong>: an element is in/reached viewport(25% margin) with Class name: 'ctc_greetings_now' [PRO]
             </p>
@@ -565,7 +571,7 @@ class HT_CTC_Admin_Greetings {
                 <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/multi-agent/">Multi Agent</a>: Display Multiple agent with different time ranges</p>
                 <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/greetings-page-level-settings/">Greetings Page level settings</a>: Change Greetings content for any post</p>
                 <br>
-                <p class="description"><a href="https://holithemes.com/plugins/click-to-chat/pricing/">PRO Version</a></p>
+                <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/pricing/">PRO Version</a></p>
                 <?php
             }
             ?>

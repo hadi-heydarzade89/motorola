@@ -1097,13 +1097,13 @@
 }
 
 .yith-plugin-fw__modal--allow-wp-menu .yith-plugin-fw__modal__wrap {
-  z-index: 99;
+  z-index: 1500;
   padding-left: 160px;
   padding-top: 32px;
 }
 
 .yith-plugin-fw__modal--allow-wp-menu #adminmenuback {
-  z-index: 100;
+  z-index: 1501;
 }
 
 @media only screen and (max-width: 960px) {
@@ -1124,7 +1124,7 @@
     padding-top: 0;
   }
   .auto-fold .yith-plugin-fw__modal--allow-wp-menu-in-mobile .yith-plugin-fw__modal__wrap {
-    z-index: 99;
+    z-index: 1500;
     padding-top: 46px;
   }
   .auto-fold .yith-plugin-fw__modal--allow-wp-menu-in-mobile.wp-responsive-open .yith-plugin-fw__modal__wrap {

@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: YITH WCWL\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
 "wishlist\n"
-"POT-Creation-Date: 2024-02-20 12:03:37+00:00\n"
+"POT-Creation-Date: 2024-04-09 09:26:49+00:00\n"
 "PO-Revision-Date: 2020-10-16 14:04+0200\n"
 "Last-Translator: Morten Ruus <altombasketball@gmail.com>\n"
 "Language-Team: Your Inspiration Themes <support@yithemes.com>\n"
@@ -322,15 +322,15 @@ msgstr ""
 msgid "Free!"
 msgstr "Gratis!"
 
-#: includes/class-yith-wcwl.php:233
+#: includes/class-yith-wcwl.php:268
 msgid "The item cannot be added to this wishlist"
 msgstr ""
 
-#: includes/class-yith-wcwl.php:237 includes/class-yith-wcwl.php:243
+#: includes/class-yith-wcwl.php:272 includes/class-yith-wcwl.php:278
 msgid "An error occurred while adding the products to the wishlist."
 msgstr ""
 
-#: includes/class-yith-wcwl.php:340 includes/class-yith-wcwl.php:366
+#: includes/class-yith-wcwl.php:375 includes/class-yith-wcwl.php:401
 msgid "Error. Unable to remove the product from the wishlist."
 msgstr ""
 

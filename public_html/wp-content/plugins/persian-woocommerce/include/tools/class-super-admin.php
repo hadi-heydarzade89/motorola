@@ -11,7 +11,7 @@ class PW_Super_Admin {
 	public function __construct() {
 
 		if ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'super-admin/super-admin.php' ) ) {
-			deactivate_plugins( 'super-admin/super-admin.php' );
+			return;
 		}
 
 		// Woocommerce.com - Not working and useful in IRAN

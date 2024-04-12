@@ -7,7 +7,7 @@ Tags: ووکامرس,ووکامرس فارسی,persian woocommerce,woocommerce,i
 Requires at least: 6.0.0
 Tested up to: 6.4.2
 Requires PHP: 7.4
-Stable tag: 7.1.3
+Stable tag: 7.1.4
 
 بسته ووکامرس پارسی به راحتی سیستم فروشگاه ساز ووکامرس را فارسی می کند و امکانات جدید متناسب با ایران را به ووکامرس اضافه میکند.
 

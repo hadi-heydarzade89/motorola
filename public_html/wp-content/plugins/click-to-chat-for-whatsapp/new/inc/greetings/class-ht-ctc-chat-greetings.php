@@ -142,6 +142,17 @@ class HT_CTC_Chat_Greetings {
 
         $g_m_position_r_l = ( isset( $chat['mobile_side_2']) ) ? esc_attr( $chat['mobile_side_2'] ) : 'right';
 
+        // is rtl page
+        $rtl_page = "";
+        if ( function_exists('is_rtl') && is_rtl() ) {
+            $rtl_page = "yes";
+        }
+
+        // close button position
+        $g_close_button_position = ('yes' == $rtl_page) ? 'left' : 'right';
+
+        $g_close_button_styles = "position:absolute; top:0; $g_close_button_position:0; cursor:pointer; padding:5px; margin:1px; border-radius:50%; background-color: unset !important; z-index: 9999; line-height: 1;";
+
         // if desktop and mobile not same settings and not same position side
         if ( !isset( $chat['same_settings']) && $g_position_r_l !== $g_m_position_r_l ) {
             // $g_box_classes .= ('left' == $g_position_r_l) ? ' ctc_d_p_left ' : ' ctc_d_p_right ';
@@ -202,6 +213,11 @@ class HT_CTC_Chat_Greetings {
             $box_layout_bg_color = 'background-color: #ffffff;';
         }
 
+
+        /**
+         * 
+         * for inside close button - to the close button, ctc_greetings_close_btn added background-color: unset !important; border-radius:50%; for backword compatibility i.e. user changed by adding css.. 
+         */
         if ( is_file( $ht_ctc_greetings['path'] ) ) {
 
             $template = $ht_ctc_greetings['greetings_template'];
@@ -213,19 +229,27 @@ class HT_CTC_Chat_Greetings {
                 <style>.ht_ctc_chat_greetings_box :not(ul):not(ol){padding:0;margin:0}.ht_ctc_chat_greetings_box ul,.ht_ctc_chat_greetings_box ol{margin-top:0;margin-bottom:0}</style>
                 <?php
             }
+
+            // styles specific to rtl pages.. 
+            if ('yes' == $rtl_page) {
+                ?>
+                <style id="ht_ctc_rtl">.g_header_badge_online {left: 0;right: unset;}</style>
+                <?php
+            }
             ?>
             
             <div style="position: relative; bottom: 18px; cursor: auto;" class="ht_ctc_greetings <?= $ctc_m_full_width ?>">
 
                 <div class="ht_ctc_chat_greetings_box <?= $g_box_classes ?>" style="display: none; position: absolute; bottom: 0px; <?= $g_position_r_l ?>: 0px; min-width: <?= $min_width ?>; max-width: 420px; ">
 
-                    <span style=" cursor:pointer; float:<?= $g_position_r_l ?>;" class="ctc_greetings_close_btn">
-                        <svg style="color:#ffffff; background-color:lightgray; border-radius:50%;" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
-                            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
-                        </svg>
-                    </span>
-                    <br>
                     <div class="ht_ctc_chat_greetings_box_layout" style="max-height: 84vh; overflow-y:auto; <?= $box_layout_bg_color ?> box-shadow: <?= $box_shadow ?>; border-radius:8px;clear:both;">
+
+                        <span style="<?= $g_close_button_styles ?>" class="ctc_greetings_close_btn">
+                            <svg style="color:lightgray; background-color: unset !important; border-radius:50%;" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-x" viewBox="0 0 16 16">
+                                <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                            </svg>
+                        </span>
+
                         <div class="ctc_greetings_template">
                             <?php include $ht_ctc_greetings['path']; ?>
                         </div>

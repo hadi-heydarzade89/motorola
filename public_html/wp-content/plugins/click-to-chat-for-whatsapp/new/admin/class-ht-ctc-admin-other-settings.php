@@ -1229,8 +1229,7 @@ class HT_CTC_Admin_Other_Settings {
 
                 <li>Basic Troubleshoot
                     <ol>
-                        <ul>Clear Cache from cache plugins</ul>
-                        <ul>Clear Server side cache if exists</ul>
+                        <ul>Clear Cache: Cache plugins, Server side, CDN cache (if available)</ul>
                         <ul>Check display settings</ul>
                     </ol>
                 </li>
