@@ -85,188 +85,6 @@ remove_action("wp_ajax_", "digits_check_mob");
 add_action("wp_ajax_nopriv_digits_check_mob", "digitsCheckMob", 10);
 add_action("wp_ajax_", "digitsCheckMob", 10);
 
-if (!function_exists('dig_is_phone_no_allowed')) {
-    function dig_is_phone_no_allowed($phone)
-    {
-        $deny_list = get_option('dig_phonenumberdenylist');
-        if (!empty($deny_list)) {
-            $phone = dig_sanitize_phone_number($phone);
-            if (in_array($phone, $deny_list)) {
-                return false;
-            }
-        }
-        return true;
-    }
-}
-
-if (!function_exists('digits_get_ip')) {
-    function digits_get_ip()
-    {
-        if (isset($_SERVER['HTTP_X_REAL_IP'])) {
-            return sanitize_text_field(wp_unslash($_SERVER['HTTP_X_REAL_IP']));
-        } elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-            // Proxy servers can send through this header like this: X-Forwarded-For: client1, proxy1, proxy2
-            // Make sure we always only send through the first IP in the list which should always be the client IP.
-            return (string)rest_is_ip_address(trim(current(preg_split('/,/', sanitize_text_field(wp_unslash($_SERVER['HTTP_X_FORWARDED_FOR']))))));
-        } elseif (isset($_SERVER['REMOTE_ADDR'])) {
-            return sanitize_text_field(wp_unslash($_SERVER['REMOTE_ADDR']));
-        }
-        return '';
-    }
-}
-
-if (!function_exists('digits_check_request')) {
-    function digits_check_request($phone)
-    {
-
-        $ip = digits_get_ip();
-
-        $brute_force_allowed_ip = get_option("dig_brute_force_allowed_ip");
-        if (is_array($brute_force_allowed_ip) && in_array($ip, $brute_force_allowed_ip)) {
-            return true;
-        }
-
-        $requests = digits_count_req_in_time('phone', $phone, 12, 'hour', false);
-        $total_requests = sizeof($requests);
-        if ($total_requests > 3) {
-            /*count -> minute*/
-            $gap_required = array(
-                4 => 1,
-                5 => 4,
-                6 => 8,
-                7 => 20,
-                8 => 40,
-                9 => 60,
-                10 => 180,
-                11 => 360
-            );
-            $last_request = reset($requests);
-            $last_request_time = strtotime($last_request->time);
-            $time_difference = (time() - $last_request_time) / 60;
-
-            $block = true;
-            if (isset($gap_required[$total_requests])) {
-                $required_gap = $gap_required[$total_requests];
-                if ($required_gap < $time_difference) {
-                    $block = false;
-                }
-
-            }
-            if ($block) {
-                return new WP_Error('limit_exceed', __('OTP limit has exceeded since you made too many attempts, Please try again after some time!', 'digits'));
-            }
-        }
-
-
-        $limits = array(
-            array(
-                'duration_type' => 'day',
-                'duration' => 1,
-                'max' => 18,
-                'type' => 'phone'
-            ),
-            array(
-                'duration_type' => 'day',
-                'duration' => 30,
-                'max' => 50,
-                'type' => 'phone'
-            ),
-            array(
-                'duration_type' => 'day',
-                'duration' => 365,
-                'max' => 365,
-                'type' => 'phone'
-            ),
-            array(
-                'duration_type' => 'minute',
-                'duration' => 10,
-                'max' => 6,
-                'type' => 'ip'
-            ),
-            array(
-                'duration_type' => 'hour',
-                'duration' => 1,
-                'max' => 20,
-                'type' => 'ip'
-            ),
-            array(
-                'duration_type' => 'day',
-                'duration' => 1,
-                'max' => 90,
-                'type' => 'ip'
-            ),
-            array(
-                'duration_type' => 'day',
-                'duration' => 30,
-                'max' => 300,
-                'type' => 'ip'
-            ),
-            array(
-                'duration_type' => 'day',
-                'duration' => 365,
-                'max' => 1000,
-                'type' => 'ip'
-            ),
-        );
-
-        foreach ($limits as $limit) {
-            $duration_type = $limit['duration_type'];
-            $duration = $limit['duration'];
-            $type = $limit['type'];
-            $max = $limit['max'];
-
-            if ($type == 'ip') {
-                $key = 'ip';
-                $value = $ip;
-            } else {
-                $key = 'phone';
-                $value = $phone;
-            }
-            $count = digits_count_req_in_time($key, $value, $duration, $duration_type, true);
-
-            if ($count > $max) {
-                return new WP_Error('limit_exceed', __('OTP limit has exceeded since you made too many attempts, Please try again after some time!', 'digits'));
-            }
-        }
-        return true;
-    }
-}
-
-if (!function_exists('digits_count_req_in_time')) {
-    function digits_count_req_in_time($key, $value, $days, $duration_type, $count = true)
-    {
-
-        global $wpdb;
-        $table = $wpdb->prefix . 'digits_request_logs';
-        $days = absint($days);
-
-        if (empty($days)) {
-            return 0;
-        }
-
-        $key = filter_var($key, FILTER_SANITIZE_STRING);
-
-        if ($duration_type == 'hour') {
-            $diff = 'TIMESTAMPDIFF(HOUR, time, CURDATE())';
-        } elseif ($duration_type == 'minute') {
-            $diff = 'TIMESTAMPDIFF(MINUTE, time, CURDATE())';
-        } else {
-            $diff = 'DATEDIFF(CURDATE(), time)';
-        }
-
-        $select = "count(*)";
-        if (!$count) {
-            $select = "*";
-        }
-        $query = $wpdb->prepare("select " . $select . " from " . $table . " where " . $key . "='%s' AND " . $diff . " <= " . $days . " ORDER BY time DESC", $value);
-        if ($count) {
-            $results = $wpdb->get_var($query);
-        } else {
-            $results = $wpdb->get_results($query);
-        }
-        return $results;
-    }
-}
 
 if (!function_exists('digitsCheckMob')) {
 
@@ -516,21 +334,6 @@ if (!function_exists('digitsCheckMob')) {
         digit_send_json_status(array('code' => 0));
         die();
 
-    }
-}
-
-if (!function_exists('digits_add_request_log')) {
-    function digits_add_request_log($phone, $mode)
-    {
-        global $wpdb;
-        $table = $wpdb->prefix . 'digits_request_logs';
-        $data = array();
-        $data['ip'] = digits_get_ip();
-        $data['phone'] = $phone;
-        $data['mode'] = $mode;
-        $data['user_agent'] = $_SERVER['HTTP_USER_AGENT'];
-
-        return $wpdb->insert($table, $data);
     }
 }
 
@@ -1510,12 +1313,64 @@ if (!function_exists('woocommerce_mini_cart')) {
     function woocommerce_mini_cart($args = array())
     {
 
-        $defaults = array(
+        $defaults = [
             'list_class' => '',
-        );
+        ];
 
         $args = wp_parse_args($args, $defaults);
 
         get_template_part('templates/cart/mini', 'cart', $args);
     }
 }
+
+add_action('add_meta_boxes', 'addShippingTrackingCodeMetaBox');
+function addShippingTrackingCodeMetaBox(): void
+{
+
+
+    add_meta_box('shipping_tracking_code', 'کد پیگیری پست',
+
+        'shippingTrackingCodeInput'
+        , [
+            'shop_order',
+            wc_get_page_screen_id('shop-order'),
+        ], 'side', 'high');
+
+
+}
+
+function shippingTrackingCodeInput($post): void
+{
+    $value = get_post_meta($post->ID, 'shipping_tracking_code', true);
+    ?>
+    <label for="tracking_code">کد رهگیری</label>
+    <input type="text" name="tracking_code" id="tracking_code" class="postbox" value="<?= $value ?? '' ?>">
+
+    <?php
+}
+
+function saveShippingTrackingCode($post_id): void
+{
+    if (array_key_exists('tracking_code', $_POST)) {
+        update_post_meta(
+            $post_id,
+            'shipping_tracking_code',
+            $_POST['tracking_code']
+        );
+    }
+}
+
+add_action('save_post', 'saveShippingTrackingCode');
+
+
+add_filter('pwoosms_shortcodes_list', function () {
+    return "<strong>مقادیر سفارشی : </strong><br>"
+        . "<code>{tracking_code}</code> = شماره پیگیری مرسوله پست   ،";
+});
+
+add_filter('pwoosms_order_sms_body_after_replace', function ($content, $orderId, $order, $allProductIds, $vendorProductIds) {
+    if (strpos($content, '{tracking_code}')) {
+        $content = str_replace('{tracking_code}', get_post_meta($orderId, 'shipping_tracking_code', true), $content);
+        return $content;
+    }
+}, 10, 5);
