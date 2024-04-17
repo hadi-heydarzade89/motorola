@@ -1372,5 +1372,7 @@ add_filter('pwoosms_order_sms_body_after_replace', function ($content, $orderId,
     if (strpos($content, '{tracking_code}')) {
         $content = str_replace('{tracking_code}', get_post_meta($orderId, 'shipping_tracking_code', true), $content);
         return $content;
+    } else {
+        return $content;
     }
 }, 10, 5);
