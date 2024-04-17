@@ -180,6 +180,7 @@ class HT_CTC_Chat_Shortcode {
         $return_type = "chat";
 
         $style = esc_attr($a["style"]);
+        $style = sanitize_file_name( $style );
 
         // call to action
         $call_to_action   = esc_attr($a["call_to_action"]);

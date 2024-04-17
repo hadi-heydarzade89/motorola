@@ -165,22 +165,24 @@
                         //     $('#ctc_opt').prop('checked', true);
                         // }
                         if ($('#ctc_opt').is(':checked') || ctc_getItem('g_optin')) {
+                            console.log('optin');
                             ht_ctc_link(ht_ctc_chat);
+                            // close greetings dialog
+                            greetings_close_500();
                         } else {
+                            console.log('animate option checkbox');
                             $('.ctc_opt_in').show(400).fadeOut('1').fadeIn('1');
                         }
                     } else {
                         ht_ctc_link(ht_ctc_chat);
+                        // close greetings dialog
+                        greetings_close_500();
                     }
 
                     document.dispatchEvent(
                         new CustomEvent("ht_ctc_event_greetings")
                     );
 
-                    // close greetings dialog
-                    setTimeout(() => {
-                        greetings_close('chat_clicked');
-                    }, 500);
                 });
 
                 // optin - checkbox on change
@@ -191,6 +193,7 @@
                             ctc_setItem('g_optin', 'y');
                             setTimeout(() => {
                                 ht_ctc_link(ht_ctc_chat);
+                                greetings_close_500();
                             }, 500);
                         }
                     });
@@ -298,6 +301,12 @@
             if ('user_opened' == message) {
                 ctc_setItem('g_user_action', message);
             }
+        }
+
+        function greetings_close_500() {
+            setTimeout(() => {
+                greetings_close('chat_clicked');
+            }, 500);
         }
 
         function greetings_close(message = 'close') {
@@ -510,14 +519,19 @@
 
             /**
              * if installed using GTM then gtag may not work. so user can create event using dataLayer object.
+             * if google anlatyics installed using gtm (from GTM user can create event using gtm datalayer object, ...)
              * 
              * if google analytics installed directly. then gtag works. 
-             */
-
-
-            /**
+             * 
              * analytics - event names added to ht_ctc_chat_var (its loads most cases with out issue) and event params added to ht_ctc_variables.
              */
+
+
+            var ga_parms = {};
+            var ga_category = 'Click to Chat for WhatsApp';
+            var ga_action = 'chat: ' + id;
+            var ga_label = post_title + ', ' + url;
+
 
             // if ga_enabled
             if (ctc.ga) {
@@ -526,12 +540,6 @@
                 var g_event_name = (ctc.g_an_event_name && '' !== ctc.g_an_event_name) ? ctc.g_an_event_name : 'click to chat';
                 console.log('Event Name: ' + g_event_name);
                 g_event_name = apply_variables(g_event_name, id);
-
-                var ga_parms = {};
-                var ga_category = 'Click to Chat for WhatsApp';
-                var ga_action = 'chat: ' + id;
-                var ga_label = post_title + ', ' + url;
-
 
                 // if ht_ctc_variables is not loaded to front end, then use default values.
                 // since 3.31. with user defined event name, params
@@ -557,16 +565,84 @@
                 }
                 console.log(ga_parms);
 
-                if (typeof gtag !== "undefined") {
-                    // gtag may not work if google anlatyics installed using gtm (from GTM user can create event usind gtm datalayer object, ...)
+                var gtag_count = 0;
+
+                // is gtag created by this script
+                var ctc_gtag_created = 'no';
+
+                // if gtag not defined. then create gtag function
+                if (typeof dataLayer !== "undefined") {
+
                     console.log('gtag');
+
+                    try {
+
+                        if (typeof gtag == "undefined") {
+                            console.log('gtag not defined');
+                            window.gtag = function () {
+                                dataLayer.push(arguments);
+                            };
+                            ctc_gtag_created = 'yes';
+                        }
+
+                        var tags_list = [];
+
+                        function call_gtag(tag_id) {
+
+                            tag_id = tag_id.toUpperCase();
+                            console.log(tag_id);
+
+                            if (tags_list.includes(tag_id)) {
+                                return;
+                            }
+
+                            // if starts with g- or gt-
+                            if (tag_id.startsWith('G-') || tag_id.startsWith('GT-')) {
+                                tags_list.push(tag_id);
+                                console.log(tags_list);
+
+                                console.log('calling gtag - send_to: ' + tag_id);
+
+                                ga_parms['send_to'] = tag_id;
+                                console.log(ga_parms);
+
+                                gtag('event', g_event_name, ga_parms);
+                                gtag_count++;
+                            }
+                        }
+
+                        if (window.google_tag_data && window.google_tag_data.tidr && window.google_tag_data.tidr.destination) {
+                            console.log('google_tag_data');
+                            console.log(window.google_tag_data.tidr.destination);
+
+                            // for each tag_id
+                            for (var tag_id in window.google_tag_data.tidr.destination) {
+                                console.log(tag_id);
+                                call_gtag(tag_id);
+                            }
+                        }
+
+                        dataLayer.forEach(function (i) {
+                            if (i[0] == 'config' && i[1]) {
+                                tag_id = i[1];
+                                console.log(tag_id);
+                                call_gtag(tag_id);
+                            }
+                        });
+
+                    } catch (e) {}
+                }
+
+                // if no tags found(safe).. then call default gtag
+                if ( 0 == gtag_count && 'no' == ctc_gtag_created && typeof gtag !== "undefined" ) {
+                    console.log('calling gtag - default. gtag_count: ' + gtag_count);
                     gtag('event', g_event_name, ga_parms);
                 } else if (typeof ga !== "undefined" && typeof ga.getAll !== "undefined") {
-                    console.log('ga');
-                    var tracker = ga.getAll();
-                    tracker[0].send("event", ga_category, ga_action, ga_label);
-                    // ga('send', 'event', 'check ga_category', 'ga_action', 'ga_label');
-                    // ga.getAll()[0].send("event", 'check ga_category', 'ga_action', 'ga_label');
+                console.log('ga');
+                var tracker = ga.getAll();
+                tracker[0].send("event", ga_category, ga_action, ga_label);
+                // ga('send', 'event', 'check ga_category', 'ga_action', 'ga_label');
+                // ga.getAll()[0].send("event", 'check ga_category', 'ga_action', 'ga_label');
                 } else if (typeof __gaTracker !== "undefined") {
                     console.log('__gaTracker');
                     __gaTracker('send', 'event', ga_category, ga_action, ga_label);
@@ -574,7 +650,7 @@
 
             }
 
-            // dataLayer
+            // dataLayer (for GTM)
             if (typeof dataLayer !== "undefined") {
                 console.log('dataLayer');
                 dataLayer.push({

@@ -175,6 +175,37 @@ class HT_CTC_Admin_Others {
         // add_action('admin_notices', array( $this, 'pro_notice') );
         // add_action('admin_footer', array( $this, 'admin_pro_notice_scripts') );
 
+
+        /**
+         * plugin update notice
+         * 
+         * useful is there is an important release
+         */
+        // _site_transient_update_plugins
+        // $update_plugins = get_site_transient( 'update_plugins' );
+        // if ( isset($update_plugins->response) ) {
+        //     if ( isset($update_plugins->response['click-to-chat/click-to-chat.php']) ) {
+        //         add_action('admin_notices', array( $this, 'plugin_update_notice') );
+        //     }
+        // }
+
+        // $update_plugins = get_site_transient( 'update_plugins' );
+        // if ( isset($update_plugins->response) ) {
+        //     if ( isset($update_plugins->response['click-to-chat-pro/click-to-chat-pro.php']) ) {
+        //         add_action('admin_notices', array( $this, 'plugin_update_notice') );
+        //     }
+        // }
+
+
+    }
+
+    
+    function plugin_update_notice() {
+        ?>
+        <div class="notice notice-warning is-dismissible">
+            <p>Click to Chat plugin has an update available.</p>
+        </div>
+        <?php
     }
 
     function ifnumberblank() {

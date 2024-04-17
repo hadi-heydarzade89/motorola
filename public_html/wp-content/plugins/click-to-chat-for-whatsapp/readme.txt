@@ -3,16 +3,16 @@ Requires at least: 4.6
 Tested up to: 6.5
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 3.35
-Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, whatsapp support, whatsapp group, click to chat for whatsapp, WhatsApp WooCommerce, whatsapp wordpress, whatsapp floating button, chat, holithemes
+Stable tag: 4.0
+Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, WhatsApp WooCommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-WhatsApp Chat🔥. Let's make your Web page visitors contact you through 'WhatsApp', 'WhatsApp Business'. Customize the chat widget to match the website design✅.
+WhatsApp Chat🔥. Let's make your Web page visitors contact you through 'WhatsApp', 'WhatsApp Business'. Chat widget that matches your website design✅.
 
 == Description ==
 
-WhatsApp Chat. Let's make your Web page visitors contact you through "WhatsApp" or "WhatsApp Business" with a single click (WhatsApp Chat, Group, Share)
+WhatsApp Chat. Let's make your Web page visitors contact you through "WhatsApp" or "WhatsApp Business" with a single click (WhatsApp Chat, Group).
 
 [Demo](https://holithemes.com/plugins/click-to-chat/list-of-styles/)  |  [Documentation](https://holithemes.com/plugins/click-to-chat/)  |  [Support](https://holithemes.com/plugins/click-to-chat/support/)  |  [PRO](https://holithemes.com/plugins/click-to-chat/pricing/)
 
@@ -554,6 +554,12 @@ or
 After Activating the plugin, add a WhatsApp Number in the plugin settings.
 
 == Changelog ==
+
+= 4.0 =
+* Enhancement: Greeting Chat window auto closes after user click to chat.
+* Fix: sanitize shortcode attribute values.
+* Fix: Opt-in message not able to consent for the first click.
+* Enhancement: Greeting dialog close button margin increases for better visibility.
 
 = 3.35 =
 * Enhancement: Greetings Dialog Close button now with in the content box.

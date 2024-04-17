@@ -689,6 +689,7 @@ class HT_CTC_Admin_Other_Settings {
         <div class="collapsible-body">
         
         <p class="description" style="margin-bottom: 40px;"><?php _e( 'Integrate, Automation', 'click-to-chat-for-whatsapp' ); ?> <?php _e( 'using', 'click-to-chat-for-whatsapp' ); ?> <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/webhooks/"><?php _e( 'Webhooks', 'click-to-chat-for-whatsapp' ); ?></a></p>
+       <p class="description" style="margin-top:10px;">To get the greetings form data, use the <a href="https://holithemes.com/plugins/click-to-chat/greetings-form#webhooks" target="_blank">Greetings Form webhook</a> feature.</p>
 
         <!-- Webhook URL -->
         <div class="row">
@@ -758,7 +759,6 @@ class HT_CTC_Admin_Other_Settings {
         }
         ?>
        
-       <p class="description" style="margin-top:10px;">If Click to Chat Form is added to your website, use the <a href="https://holithemes.com/plugins/click-to-chat/greetings-form/webhooks" target="_blank">Greetings Form webhook</a> feature to get form details.</p>
 
         </div>
         </li>

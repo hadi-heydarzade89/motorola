@@ -151,7 +151,7 @@ class HT_CTC_Chat_Greetings {
         // close button position
         $g_close_button_position = ('yes' == $rtl_page) ? 'left' : 'right';
 
-        $g_close_button_styles = "position:absolute; top:0; $g_close_button_position:0; cursor:pointer; padding:5px; margin:1px; border-radius:50%; background-color: unset !important; z-index: 9999; line-height: 1;";
+        $g_close_button_styles = "position:absolute; top:0; $g_close_button_position:0; cursor:pointer; padding:5px; margin:4px; border-radius:50%; background-color: unset !important; z-index: 9999; line-height: 1;";
 
         // if desktop and mobile not same settings and not same position side
         if ( !isset( $chat['same_settings']) && $g_position_r_l !== $g_m_position_r_l ) {

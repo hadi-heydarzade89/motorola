@@ -277,6 +277,8 @@ class HT_CTC_Admin_Demo {
                 </span>
                 <?php
             }
+            // no need to santize_file_name. its not user input
+            $style = sanitize_file_name( $style );
             $path = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/styles/style-' . $style. '.php';
             include $path;
             ?>
