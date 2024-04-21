@@ -350,9 +350,12 @@ class Miniorange_API_Authentication_Admin {
 	/**
 	 * Initialize flow.
 	 *
-	 * @return void
+	 * @return mixed
 	 */
 	public function mo_api_auth_initialize_api_flow() {
+		if ( isset( $_SERVER['REQUEST_METHOD'] ) && 'OPTIONS' === $_SERVER['REQUEST_METHOD'] ) {
+			return true;
+		}
 		mo_api_auth_restrict_rest_api_for_invalid_users();
 	}
 

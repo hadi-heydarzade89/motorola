@@ -726,8 +726,6 @@ class Mo_API_Authentication_License {
 				<h4 class="mo-oauth-h2" style="text-align: center;">LICENSING POLICY</h4>
 					<!--  <hr style="background-color:#17a2b8; width: 10%;height: 3px;border-width: 3px;"> -->
 
-						<p style="font-size: 0.9em;"><span style="color: red;">*</span>Cost applicable for one instance only. Licenses are perpetual and the Support Plan includes 12 months of maintenance (support and version updates). You can renew maintenance after 12 months at 50% of the current license cost.<br></p>
-
 						<p style="font-size: 0.9em;"><span style="color: red;">*</span>We provide deep discounts on bulk license purchases and pre-production environment licenses. As the no. of licenses increases, the discount percentage also increases. Contact us at <a href="mailto:apisupport@xecurify.com?subject=WP REST API Authentication Plugin - Enquiry">apisupport@xecurify.com</a> for more information.</p>
 
 						<p style="font-size: 0.9em;"><span style="color: red;">*</span><strong>MultiSite Network Support : </strong>
