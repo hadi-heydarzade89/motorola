@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-15 17:22:12+0000\n"
+"PO-Revision-Date: 2024-04-20 17:33:44+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -788,8 +788,8 @@ msgstr "تغییرات فقط پس از %1$s ذخیره %3$s و %2$s بارگی�
 msgid "Build Smart with AI"
 msgstr "با هوش مصنوعی هوشمند بسازید"
 
-#: includes/controls/groups/background.php:99 assets/js/ai-admin.js:7087
-#: assets/js/ai.js:7885
+#: includes/controls/groups/background.php:99 assets/js/ai-admin.js:7102
+#: assets/js/ai.js:7900
 msgid "Gradient"
 msgstr "گرادیان"
 
@@ -1620,15 +1620,15 @@ msgstr "رنگ حاشیه"
 msgid "Text Stroke"
 msgstr "مرز متن"
 
-#: includes/admin-templates/beta-tester.php:53 assets/js/ai-admin.js:5225
-#: assets/js/ai-admin.js:10444 assets/js/ai-layout.js:3099
-#: assets/js/ai-layout.js:6007 assets/js/ai.js:6023 assets/js/ai.js:11242
+#: includes/admin-templates/beta-tester.php:53 assets/js/ai-admin.js:5239
+#: assets/js/ai-admin.js:10459 assets/js/ai-layout.js:3099
+#: assets/js/ai-layout.js:6007 assets/js/ai.js:6037 assets/js/ai.js:11257
 msgid "Privacy Policy"
 msgstr "سیاست حفظ حریم خصوصی"
 
-#: includes/admin-templates/beta-tester.php:48 assets/js/ai-admin.js:5221
-#: assets/js/ai-admin.js:10440 assets/js/ai-layout.js:3095
-#: assets/js/ai-layout.js:6003 assets/js/ai.js:6019 assets/js/ai.js:11238
+#: includes/admin-templates/beta-tester.php:48 assets/js/ai-admin.js:5235
+#: assets/js/ai-admin.js:10455 assets/js/ai-layout.js:3095
+#: assets/js/ai-layout.js:6003 assets/js/ai.js:6033 assets/js/ai.js:11253
 msgid "Terms of Service"
 msgstr "شرایط استفاده از خدمات"
 
@@ -2814,7 +2814,7 @@ msgid "%s Widget"
 msgstr "%s ویجت"
 
 #: core/experiments/manager.php:142 includes/editor-templates/global.php:29
-#: assets/js/ai-admin.js:5626 assets/js/ai.js:6424 assets/js/app.js:7894
+#: assets/js/ai-admin.js:5640 assets/js/ai.js:6438 assets/js/app.js:7894
 #: assets/js/editor.js:46869
 msgid "Back"
 msgstr "قبلی"
@@ -3583,13 +3583,13 @@ msgstr "نمایش / مخفی کردن پنل"
 msgid "Go To"
 msgstr "برو به"
 
-#: includes/editor-templates/hotkeys.php:32 assets/js/ai-admin.js:8888
-#: assets/js/ai.js:9686
+#: includes/editor-templates/hotkeys.php:32 assets/js/ai-admin.js:8903
+#: assets/js/ai.js:9701
 msgid "Redo"
 msgstr "مجدداً"
 
-#: includes/editor-templates/hotkeys.php:24 assets/js/ai-admin.js:8877
-#: assets/js/ai.js:9675 assets/js/kit-elements-defaults-editor.js:236
+#: includes/editor-templates/hotkeys.php:24 assets/js/ai-admin.js:8892
+#: assets/js/ai.js:9690 assets/js/kit-elements-defaults-editor.js:236
 msgid "Undo"
 msgstr "واگرد"
 
@@ -3642,9 +3642,9 @@ msgstr "با موفقیت متصل شد."
 #: core/common/modules/connect/apps/connect.php:11
 #: core/common/modules/connect/connect-menu-item.php:24
 #: core/common/modules/connect/connect-menu-item.php:28
-#: assets/js/ai-admin.js:849 assets/js/ai-admin.js:5235
+#: assets/js/ai-admin.js:849 assets/js/ai-admin.js:5249
 #: assets/js/ai-layout.js:1442 assets/js/ai-layout.js:3109 assets/js/ai.js:1382
-#: assets/js/ai.js:6033
+#: assets/js/ai.js:6047
 msgid "Connect"
 msgstr "اتصال"
 
@@ -3765,8 +3765,8 @@ msgid "Congrats!"
 msgstr "تبریک میگم!"
 
 #: core/kits/documents/tabs/settings-lightbox.php:76 includes/frontend.php:1368
-#: includes/widgets/google-maps.php:152 assets/js/ai-admin.js:6047
-#: assets/js/ai-admin.js:6050 assets/js/ai.js:6845 assets/js/ai.js:6848
+#: includes/widgets/google-maps.php:152 assets/js/ai-admin.js:6061
+#: assets/js/ai-admin.js:6064 assets/js/ai.js:6859 assets/js/ai.js:6862
 msgid "Zoom"
 msgstr "بزرگنمایی"
 
@@ -5266,8 +5266,8 @@ msgstr "بازگشت به کتابخانه"
 
 #: includes/editor-templates/templates.php:178
 #: includes/editor-templates/templates.php:202
-#: includes/editor-templates/templates.php:216 assets/js/ai-admin.js:5306
-#: assets/js/ai.js:6104 assets/js/editor.js:8572
+#: includes/editor-templates/templates.php:216 assets/js/ai-admin.js:5320
+#: assets/js/ai.js:6118 assets/js/editor.js:8572
 msgid "Insert"
 msgstr "درج"
 
@@ -5522,7 +5522,7 @@ msgstr "پیست"
 #: includes/elements/section.php:529 includes/widgets/accordion.php:304
 #: includes/widgets/accordion.php:475 includes/widgets/common.php:676
 #: includes/widgets/toggle.php:336 includes/widgets/toggle.php:499
-#: assets/js/ai-admin.js:7083 assets/js/ai.js:7881
+#: assets/js/ai-admin.js:7098 assets/js/ai.js:7896
 msgid "Background"
 msgstr "پس زمینه"
 
@@ -5964,8 +5964,8 @@ msgid "Primary Color"
 msgstr "رنگ اولیه"
 
 #: includes/widgets/icon-box.php:130 includes/widgets/icon.php:142
-#: includes/widgets/social-icons.php:263 assets/js/ai-admin.js:7137
-#: assets/js/ai.js:7935
+#: includes/widgets/social-icons.php:263 assets/js/ai-admin.js:7152
+#: assets/js/ai.js:7950
 msgid "Square"
 msgstr "مربعی"
 
@@ -6344,8 +6344,8 @@ msgstr "دکمه"
 
 #: core/common/modules/finder/categories/edit.php:30
 #: includes/controls/popover-toggle.php:68 assets/js/ai-admin.js:2127
-#: assets/js/ai-admin.js:6020 assets/js/ai-admin.js:6027 assets/js/ai.js:2660
-#: assets/js/ai.js:6818 assets/js/ai.js:6825
+#: assets/js/ai-admin.js:6034 assets/js/ai-admin.js:6041 assets/js/ai.js:2660
+#: assets/js/ai.js:6832 assets/js/ai.js:6839
 #: assets/js/element-manager-admin.js:2513
 #: assets/js/element-manager-admin.js:2570
 msgid "Edit"
@@ -6928,8 +6928,8 @@ msgid "Advanced"
 msgstr "پیشرفته"
 
 #: includes/managers/controls.php:330 includes/widgets/divider.php:363
-#: includes/widgets/icon-list.php:275 assets/js/ai-admin.js:6380
-#: assets/js/ai.js:7178 assets/js/editor.js:9609 assets/js/editor.js:36696
+#: includes/widgets/icon-list.php:275 assets/js/ai-admin.js:6394
+#: assets/js/ai.js:7192 assets/js/editor.js:9609 assets/js/editor.js:36696
 msgid "Style"
 msgstr "استایل"
 
@@ -7200,12 +7200,12 @@ msgstr "یکپارچه"
 #: includes/widgets/image-gallery.php:152
 #: includes/widgets/image-gallery.php:170 includes/widgets/image.php:139
 #: includes/widgets/image.php:174 includes/widgets/video.php:585
-#: modules/nested-tabs/widgets/nested-tabs.php:384 assets/js/ai-admin.js:7069
-#: assets/js/ai-admin.js:7075 assets/js/ai-admin.js:7085
-#: assets/js/ai-admin.js:7096 assets/js/ai-admin.js:7107
-#: assets/js/ai-admin.js:7123 assets/js/ai.js:7867 assets/js/ai.js:7873
-#: assets/js/ai.js:7883 assets/js/ai.js:7894 assets/js/ai.js:7905
-#: assets/js/ai.js:7921
+#: modules/nested-tabs/widgets/nested-tabs.php:384 assets/js/ai-admin.js:7084
+#: assets/js/ai-admin.js:7090 assets/js/ai-admin.js:7100
+#: assets/js/ai-admin.js:7111 assets/js/ai-admin.js:7122
+#: assets/js/ai-admin.js:7138 assets/js/ai.js:7882 assets/js/ai.js:7888
+#: assets/js/ai.js:7898 assets/js/ai.js:7909 assets/js/ai.js:7920
+#: assets/js/ai.js:7936
 msgid "None"
 msgstr "هیچ"
 
