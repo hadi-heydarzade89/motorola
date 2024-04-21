@@ -1,6 +1,6 @@
 <?php
 /* ======================================================
- # Login as User for WordPress - v1.4.8 (free version)
+ # Login as User for WordPress - v1.4.9 (free version)
  # -------------------------------------------------------
  # For WordPress
  # Author: Web357
@@ -9,10 +9,9 @@
  # Website: https:/www.web357.com
  # Demo: https://demo.web357.com/wordpress/login-as-user/wp-admin/
  # Support: support@web357.com
- # Last modified: Monday 23 October 2023, 12:29:41 AM
+ # Last modified: Thursday 18 April 2024, 03:29:07 AM
  ========================================================= */
- 
-class w357LoginAsUser
+ class w357LoginAsUser
 {
 	/**
 	 * Sets up all the filters and actions.
@@ -35,6 +34,8 @@ class w357LoginAsUser
 		add_filter('manage_edit-shop_order_columns', array($this, 'loginasuser_col'), 1000);
 		add_filter('manage_edit-shop_subscription_columns', array($this, 'loginasuser_col'), 1000);
 		add_action('manage_shop_order_posts_custom_column', array($this, 'loginasuser_woo_col_content'));
+		add_filter('woocommerce_shop_order_list_table_columns', array($this, 'loginasuser_col'), 1000); 
+		add_action('woocommerce_shop_order_list_table_custom_column', array($this, 'loginasuser_woo_col_content_hpos'), 10, 2);
 		add_action('manage_shop_subscription_posts_custom_column', array($this, 'loginasuser_woo_col_content'));
 		add_action('add_meta_boxes', array($this, 'add_login_as_user_metabox'));
 		add_filter('usin_user_db_data', array($this, 'usin_user_db_loginasuser'), 1000);
@@ -109,9 +110,7 @@ class w357LoginAsUser
 					$redirect_to = self::get_redirect($user, $current_user);
 
 					// Redirect to the dashboard or the home URL depending on capabilities:
-					$args = array(
-						'logged_in_as_user' => 'true',
-					);
+					$args = [];
 
 					if ($redirect_to) 
 					{
@@ -131,8 +130,18 @@ class w357LoginAsUser
 					} 
 					else 
 					{
-						$options = (object) get_option( 'login_as_user_options' );
-						$redirect_to = (!empty($options->redirect_to)) ? home_url('/') . $options->redirect_to : home_url('/');
+						// Modify the redirect logic to check for the redirect_to value from the shortcode
+						$shortcode_redirect = isset($_COOKIE['login_as_user_redirect']) ? $_COOKIE['login_as_user_redirect'] : '';
+						
+						// When determining the redirect_to URL, prioritize the shortcode redirect if available
+						if (!empty($shortcode_redirect)) {
+							$redirect_to = home_url('/') . ltrim($shortcode_redirect, '/');
+						} else {
+							// Fallback to the default plugin redirect_to logic
+							$options = (object) get_option('login_as_user_options');
+							$redirect_to = (!empty($options->redirect_to)) ? home_url('/') . $options->redirect_to : home_url('/');
+						}
+
 						wp_safe_redirect(add_query_arg($args, $redirect_to), 302, 'Login as User - WordPress Plugin');
 					}
 					exit;
@@ -167,9 +176,7 @@ class w357LoginAsUser
 					}
 
 					$redirect_to = self::get_redirect($old_user, $current_user);
-					$args        = array(
-						'logged_in_as_user' => 'true',
-					);
+					$args = [];
 
 					if ($redirect_to) {
 						wp_safe_redirect(add_query_arg($args, $redirect_to), 302, 'Login as User - WordPress Plugin');
@@ -445,7 +452,11 @@ CSS;
 	 */
 	public static function loginasuser_url(WP_User $user)
 	{
-		$current_url = urlencode(wp_unslash(site_url($_SERVER['REQUEST_URI'])));
+		// Check if HTTPS or HTTP
+		$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443 ? 'https://' : 'http://';
+
+		// Build the current URL with the correct protocol
+		$current_url = urlencode($protocol . $_SERVER['HTTP_HOST'] . wp_unslash($_SERVER['REQUEST_URI']));
 
 		if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], 'admin-ajax.php') !== false)
 		{
@@ -614,7 +625,8 @@ CSS;
 	// Add a custom metabox only for shop_order and shop_subscription post types
 	public function add_login_as_user_metabox()
 	{
-		add_meta_box( 'login_as_user_metabox', __( 'Login as User' ), array($this, 'login_as_user_metabox'), array('shop_order', 'shop_subscription'), 'side', 'low');
+		add_meta_box( 'login_as_user_metabox', __( 'Login as User' ), array($this, 'login_as_user_metabox'), 'shop_order', 'side', 'core');	
+		add_meta_box( 'login_as_user_metabox',  __( 'Login as User' ), array($this, 'login_as_user_metabox'), 'woocommerce_page_wc-orders', 'side', 'core' );
 	}
 
 	// Get the string type for the Login as ... button.
@@ -667,7 +679,7 @@ CSS;
 		return $login_as_type;
 	}
 
-	public function login_as_user_metabox()
+	public function login_as_user_metabox($post)
 	{
 		
 
@@ -698,7 +710,6 @@ CSS;
 
 	public function loginasuser_col_content($val, $column_name, $user_id)
 	{
-		global $wpdb;
 		switch ($column_name) {
 			case 'loginasuser_col':
 				$user = new WP_User($user_id);
@@ -726,6 +737,18 @@ CSS;
 			default:
 		}
 		return $val;
+	}
+
+	public function loginasuser_woo_col_content_hpos($column, $order)
+	{
+		if ('loginasuser_col' === $column) 
+		{
+			
+
+			
+			echo $this->onlyInProTextLink();
+			
+		}
 	}
 
 	public function loginasuser_woo_col_content($column)
@@ -1073,7 +1096,7 @@ CSS;
 		return $fields;
 	}
 
-	// Usage: [login_as_user user_id="1"]
+	// Usage: [login_as_user user_id="1" redirect_to="/my-account"]
 	function loginasuserShortcode($atts)
 	{
 		

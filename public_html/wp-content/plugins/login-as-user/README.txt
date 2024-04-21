@@ -3,9 +3,9 @@ Contributors: yiannistaos, johnbillion
 Tags: user, login, admin, login as user, web357
 Donate link: https://www.paypal.me/web357
 Requires at least: 5.3
-Tested up to: 6.3
+Tested up to: 6.5
 Requires PHP: 7.3
-Stable tag: 1.4.8
+Stable tag: 1.4.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,15 @@ This plugin is helpful if you are an admin and you want to sign in as any user, 
 5. Settings.
 
 == Changelog ==
+= 18-Apr-2024 : v1.4.9 =
+* Fully compatible with WordPress v6.5.x and WooCommerce v8.8.x
+* CSS Bug fixed: The "Login as User" button is currently overflowing its column within the table. [Thank you, Anthony Grullon]
+* Bug fixed: After clicking the button “go back to admin as..” a 404 error occurred. It does not give the correct URL. It mostly happens when the WordPress is in a subdirectory [Many thanks to @kja4u)]
+* Introduced a new attribute for the [login_as_user] shortcode, enabling administrators to redirect users to a specific page after logging in. Example usage: [login_as_user user_id="1" redirect_to="/my-account"].
+* Now supports WooCommerce High-Performance Order Storage (HPOS) [Thank you, Rein Ridder]
+* Ensured functionality remains intact when WordPress is given its own directory, following the guidelines provided https://wordpress.org/documentation/article/giving-wordpress-its-own-directory/ [Thanks, James]
+* Implemented minor fixes and improvements for a smoother user experience.
+
 = 23-Oct-2023 : v1.4.8 =
 * Fully compatible with WordPress v6.3.x and WooCommerce v8.2.x
 * Minor fixes and improvements
