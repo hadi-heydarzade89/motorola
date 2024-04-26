@@ -321,7 +321,7 @@
 		// Check the value of that cookie and show/hide the notice accordingly
 
 		if (typeof Cookies != 'undefined') {
-			var matchedCookieNames = Object.keys(Cookies.getJSON()).filter(function (name) { return name.indexOf("store_notice") === 0 });
+			var matchedCookieNames = Object.keys(Cookies.withConverter({ read: (value) => JSON.parse(value) })).filter(function (name) { return name.indexOf("store_notice") === 0 });
 			if (matchedCookieNames.length > 0 && 'hidden' === Cookies.get(matchedCookieNames[0])) {
 				$('body').addClass('woocommerce-store-notice-dismissed');
 			} else {
