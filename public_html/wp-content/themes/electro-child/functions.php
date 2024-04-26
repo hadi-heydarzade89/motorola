@@ -309,7 +309,7 @@ if (!function_exists('digitsCheckMob')) {
                     $nationalId = $_POST['register_national_id'];
                 } else {
                     $nationalId = get_user_meta($user1->ID, 'national_id');
-                    if (count($nationalId) > 0) {
+                    if (is_array($nationalId) && count($nationalId) > 0) {
                         $nationalId = $nationalId[0];
                     } else {
                         $nationalId = 0;

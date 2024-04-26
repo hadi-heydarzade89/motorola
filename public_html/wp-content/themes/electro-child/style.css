@@ -3,7 +3,7 @@ Theme Name:         Electro Child
 Theme URI:          https://themeforest.net/item/electro-electronics-store-woocommerce-theme/15720624
 Author:             Hadi Heydarzade
 Template:           electro
-Version:            0.3.9
+Version:            0.4.0
 Text Domain:        electrochild
 */
 
@@ -14,6 +14,14 @@ Text Domain:        electrochild
     font-weight: normal;
     src: url('assets/fonts/IRANYekanXFaNum-Regular.woff') format('woff'),
     url('assets/fonts/IRANYekanXFaNum-Regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: IRANYekanEnglishNumber;
+    font-style: normal;
+    font-weight: normal;
+    src: url('assets/fonts/IRANYekanX-Regular.woff') format('woff'),
+    url('assets/fonts/IRANYekanX-Regular.woff2') format('woff2');
 }
 
 body {
@@ -261,10 +269,6 @@ ul[data-view="grid-extended"] .product-short-description {
 .elementor-menu-cart__footer-buttons {
     display: flex;
     justify-content: space-between;
-}
-
-.woocommerce-cart-form__cart-item.cart_item {
-    display: flex;
 }
 
 .widget_shopping_cart_content {
