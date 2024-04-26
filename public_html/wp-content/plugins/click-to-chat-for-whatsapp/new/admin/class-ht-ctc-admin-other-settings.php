@@ -985,7 +985,7 @@ class HT_CTC_Admin_Other_Settings {
             if ( ('' !== $greetings_template || 'no' !== $greetings_template) && 'open' == $g_init) {
                 $greetings_page_url = admin_url( 'admin.php?page=click-to-chat-greetings' );
                 ?>
-                <p class="description" style="color:#ff4c4c;">If the <a href="<?= $greetings_page_url . '#g_init:~:text=initial%20stage' ?>" target="_blank">Greetings dialog initial stage is open</a>, the notification badge maynot be displayed.</p>
+                <p class="description" style="color:#ff4c4c;">If the <a href="<?= $greetings_page_url . '#g_init:~:text=initial%20stage' ?>" target="_blank">Greetings dialog initial stage is open</a>, the notification badge cannot be displayed.</p>
                 <?php
             }
             ?>

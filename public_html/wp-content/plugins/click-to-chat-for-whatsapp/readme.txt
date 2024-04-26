@@ -1,14 +1,14 @@
 === Click to Chat - HoliThemes ===
 Requires at least: 4.6
-Tested up to: 6.5
+Tested up to: 6.5.2
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 4.0
+Stable tag: 4.1
 Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, WhatsApp WooCommerce
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-WhatsApp Chat🔥. Let's make your Web page visitors contact you through 'WhatsApp', 'WhatsApp Business'. Chat widget that matches your website design✅.
+WhatsApp Chat🔥. Let's make your Web page visitors contact you through 'WhatsApp', 'WhatsApp Business'. Website matching Widget✅
 
 == Description ==
 
@@ -367,12 +367,12 @@ country code +1
 number: 6123456789
 ** WhatsApp number: 16123456789 **
 
-[https://holithemes.com/plugins/click-to-chat/whatsapp-number/](WhatsApp Number)
+(WhatsApp Number)[https://holithemes.com/plugins/click-to-chat/whatsapp-number/]
 
 
 = Pre-filled Message =
 
-Makes the users start the conversation easily.
+Text that appears in the WhatsApp chat window when the user clicks on the WhatsApp.
 
 Add variables to change values dynamically  
 `
@@ -384,16 +384,17 @@ Add variables to change values dynamically
 E.g.
 
     Hi {site}!!
-    Name: 
     I like to know more information about this {title}, {url}.
 
-Additional variables for WooCommerce single product pages  
-```
+Variables for WooCommerce single product pages  
+
+
+`
 {product} -> Product Name
 {price} -> Product Price (current price might be the sale price/regular price)
 {regular_price} -> Regular product price (with out any sale)
 {sku} ->Stock keeping unit
-```
+`
 
 E.g.
 
@@ -404,28 +405,16 @@ E.g.
 
 With this prefilled text, we can know from which page the user started the conversation, the purpose of the contact, and their details
 
-= Call to Action =
-
-Text that appears along with the icon/button.
-
-E.g.
-
-`WhatsApp us`
-
-For WooCommerce single product pages
-E.g.
-
-`Chat to buy, only {sku} stock left`
+[Pre-filled Message](https://holithemes.com/plugins/click-to-chat/pre-filled-message/)
+[Pre-filled Message for WooCommerce](https://holithemes.com/plugins/click-to-chat/woocommerce-single-product-pages/)
 
 = Select Styles =
 
-Select styles based on Device.
-* Style for Desktop
-* Style for Mobile
-
-**For selecting styles: plugin detects the device(mobile, desktop) based on HTTP User Agent (using wp_is_mobile)**
-
-Styles are customizable according to website theme.
+Select Styles/widget that matches the design
+* customize the style to match the website design.
+* Add your own Image/GIF
+* Custom Element/Design (convert any element to a WhatsApp Chat element)
+* Select differnt Styles for mobile, desktop to match the website design.
 
 = Position to place the styles =
 
@@ -451,35 +440,9 @@ Plugin supports all CSS units as the suffix. (px, %, rem,...)
 
 [position to place](https://holithemes.com/plugins/click-to-chat/position-to-place/)
 
-= Localization - WPML, Polylang =
-
-From WPML, Polylang Settings -> 'String Translations' and filter strings to 'Click to chat for WhatsApp' and change value based on language.
-
-* User Input (Plugin Settings values): - 'Click to chat for WhatsApp'  
-* Admin strings (Plugin Settings) - text domain: 'click-to-chat-for-whatsapp'
-
-> Help plugin by [Translating Setting page, Readme text](https://translate.wordpress.org/projects/wp-plugins/click-to-chat-for-whatsapp/)
-
-= Shortcodes Attributes =
-
-Shortcodes by default get values from the plugin settings page. Overwrite these values using attributes.
-
-- number
-- call_to_action
-- pre_filled
-- style
-
-E.g.
-
-    [ht-ctc-chat number=915123456789]
-
-[Shortcodes for Chat](https://holithemes.com/plugins/click-to-chat/shortcodes-chat/)
-
 = GDPR = 
 
 "Click to Chat" don't collect any of the user data and don't use cookies.
-
-= Opt-in =
 
 User consent before starting the chat.
 
@@ -492,6 +455,19 @@ User consent before starting the chat.
 [Hide only on selected pages](https://holithemes.com/plugins/click-to-chat/hide-only-on-selected-pages/)
 
 [Show/Hide on Mobile/Desktop](https://holithemes.com/plugins/click-to-chat/show-hide-on-mobile-desktop/)
+
+= Localization: Change number, content for each language / page =
+
+We can change values for each language if using WPML, Polylang for translation.
+
+[Multilingual](https://holithemes.com/plugins/click-to-chat/multilingual/)
+
+From WPML / Polylang Settings -> 'String Translations' and filter strings to 'Click to chat for WhatsApp' and change value based on language.
+
+* User Input (Plugin Settings values): - 'Click to chat for WhatsApp'  
+* Admin strings (Plugin Settings) - text domain: 'click-to-chat-for-whatsapp'
+
+[Page-level settings](https://holithemes.com/plugins/click-to-chat/change-values-at-page-level/)
 
 = WhatsApp Group Invite/chat = 
 
@@ -554,6 +530,10 @@ or
 After Activating the plugin, add a WhatsApp Number in the plugin settings.
 
 == Changelog ==
+
+= 4.1 =
+* Enhancement: Admin settings WhatsApp number input filed with country code search option.
+* Enchancement: Google Analytics event tracking.
 
 = 4.0 =
 * Enhancement: Greeting Chat window auto closes after user click to chat.

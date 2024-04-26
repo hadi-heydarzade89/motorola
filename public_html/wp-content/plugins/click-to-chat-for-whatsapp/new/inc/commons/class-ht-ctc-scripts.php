@@ -49,7 +49,6 @@ class HT_CTC_Scripts {
         // js
         $css = 'main.css';
         $js = 'app.js';
-        // $js = '332.app.js';
         $woo_js = 'woo.js';
         $group_js = 'group.js';
         $share_js = 'share.js';

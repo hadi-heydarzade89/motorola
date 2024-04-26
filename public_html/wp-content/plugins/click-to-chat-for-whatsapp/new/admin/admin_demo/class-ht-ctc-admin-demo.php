@@ -301,7 +301,6 @@ class HT_CTC_Admin_Demo {
                 <a target="_blank" href="<?= $cs_link ?>" class="ctc_cs_link">Customize Styles</a> | <a target="_blank" href="<?= $os_link ?>">Animations, Notification badge</a>
             </p>
             <a href="https://holithemes.com/plugins/click-to-chat/admin-live-preview-messages/#no-live-preview/" target="_blank" class="description ctc_no_demo_notice ctc_init_display_none">No live demo for this feature</a>
-            <!-- todo:l finish how the demo messages will work.. -->
             <a href="https://holithemes.com/plugins/click-to-chat/admin-live-preview-messages/" target="_blank" class="description ctc_demo_messages ctc_init_display_none"></a>
         </div>
         <?php

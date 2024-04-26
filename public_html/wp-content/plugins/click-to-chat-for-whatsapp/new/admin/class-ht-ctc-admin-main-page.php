@@ -198,6 +198,10 @@ class HT_CTC_Admin_Main_Page {
                     <p class="description"><?php _e( "WhatsApp or WhatsApp business number", 'click-to-chat-for-whatsapp' ); ?></p>
                 </div>
             </div>
+
+            <div class="intl_error" style="display:none;">
+                <p class="description ht_ctc_error_message">If the WhatsApp number field is not working, <a href="<?= admin_url( 'admin.php?page=click-to-chat&number-field=1' ); ?>">click here</a> to load the plain input field instead of the INTL library.</p>
+            </div>
             <?php
         } else {
             /**
@@ -251,7 +255,8 @@ class HT_CTC_Admin_Main_Page {
 
         if ( ! defined( 'HT_CTC_PRO_VERSION' ) ) {
             ?>
-            <p class="description">PRO: <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/multi-agent/">Multi Agent</a> | <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/random-number/">Random Number</a></p>
+            <p class="description greetings_links">Greetings dialog(message window) at <a href="<?= admin_url( 'admin.php?page=click-to-chat-greetings' ); ?>" target="_blank">Greetings</a> page</p>
+            <p class="description greetings_links">PRO: <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/multi-agent/">Multi Agent</a> | <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/random-number/">Random Number</a></p>
             <?php
         }
 

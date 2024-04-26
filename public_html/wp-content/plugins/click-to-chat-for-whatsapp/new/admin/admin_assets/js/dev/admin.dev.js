@@ -132,12 +132,16 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('cache: md tabs');
         }
 
+        // intl
         try {
             // @parm: class name
             intl_input('intl_number');
+            $('.intl_error').remove();
         } catch (e) {
             console.log(e);
             console.log('cache: intl_input');
+            $('.greetings_links').hide();
+            $('.intl_error').show();
         }
 
 
@@ -776,8 +780,13 @@ document.addEventListener('DOMContentLoaded', function () {
             var pre_countries = [];
             var country_code_date = new Date().toDateString();
             var country_code = (ctc_getItem('country_code_date') == country_code_date) ? ctc_getItem('country_code') : '';
+            console.log('country_code: ' + country_code);
 
             if ('' == country_code) {
+                console.log('getting country code..');
+                // fall back..
+                country_code = 'us';
+                
                 $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
                     country_code = (resp && resp.country) ? resp.country : "us";
                     ctc_setItem('country_code', country_code);
@@ -801,11 +810,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     },
                     dropdownContainer: document.body,
                     // formatOnDisplay: true,
-                    hiddenInput: hidden_input,
+                    hiddenInput: function () {
+                        // return hidden_input;
+                        return { phone: hidden_input, country: 'ht_ctc_chat_options[intl_country]' };
+                    },
                     nationalMode: false,
                     autoPlaceholder: "polite",
+
                     preferredCountries: pre_countries,
-                    separateDialCode: true,
+
+                    // separateDialCode: true,
+                    // autoInsertDialCode: true,
+
+                    showSelectedDialCode: true,
+                    // countrySearch : false,
+                    containerClass: 'intl_tel_input_container',
+
                     utilsScript: ht_ctc_admin_var.utils
                 });
             }
@@ -816,6 +836,8 @@ document.addEventListener('DOMContentLoaded', function () {
         /**
          * intl tel input 
          * intlTelInput - from intl js.. 
+         * 
+         * class name - intl_number, multi agent class names
          */
         function intl_input(className) {
 
@@ -888,7 +910,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             console.log('add_prefer_countrys(): ' + country_code);
 
-            country_code = country_code.toUpperCase();
+            country_code = ('' !== country_code) ? country_code.toUpperCase() : 'US';
+
             var pre_countries = (ctc_getItem('pre_countries')) ? ctc_getItem('pre_countries') : [];
             console.log(pre_countries);
 

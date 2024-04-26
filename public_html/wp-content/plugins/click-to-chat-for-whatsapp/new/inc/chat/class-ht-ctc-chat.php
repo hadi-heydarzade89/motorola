@@ -198,11 +198,6 @@ class HT_CTC_Chat {
             $ht_ctc_chat['intl'] = '1';
         }
 
-        // need to run the updater backup
-        if ( !isset($options['display_mobile']) ) {
-            include_once HT_CTC_PLUGIN_DIR . '/new/admin/db/class-ht-ctc-update-db-backup.php';
-        }
-
         $ht_ctc_chat['display_mobile'] = (isset($options['display_mobile'])) ? esc_attr($options['display_mobile']) : 'show';
         $ht_ctc_chat['display_desktop'] = (isset($options['display_desktop'])) ? esc_attr($options['display_desktop']) : 'show';
 

@@ -1,15 +1,15 @@
 <?php
 /* ======================================================
- # Login as User for WordPress - v1.4.9 (free version)
+ # Login as User for WordPress - v1.5.0 (free version)
  # -------------------------------------------------------
  # For WordPress
  # Author: Web357
- # Copyright @ 2014-2023 Web357. All rights reserved.
+ # Copyright @ 2014-2024 Web357. All rights reserved.
  # License: GNU/GPLv3, http://www.gnu.org/licenses/gpl-3.0.html
  # Website: https:/www.web357.com
  # Demo: https://demo.web357.com/wordpress/login-as-user/wp-admin/
  # Support: support@web357.com
- # Last modified: Thursday 18 April 2024, 03:29:07 AM
+ # Last modified: Friday 26 April 2024, 03:25:02 AM
  ========================================================= */
  class w357LoginAsUser
 {
@@ -131,7 +131,7 @@
 					else 
 					{
 						// Modify the redirect logic to check for the redirect_to value from the shortcode
-						$shortcode_redirect = isset($_COOKIE['login_as_user_redirect']) ? $_COOKIE['login_as_user_redirect'] : '';
+						$shortcode_redirect = isset($_GET['redirect_to']) ? $_GET['redirect_to'] : '';
 						
 						// When determining the redirect_to URL, prioritize the shortcode redirect if available
 						if (!empty($shortcode_redirect)) {

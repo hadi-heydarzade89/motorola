@@ -86,9 +86,6 @@ class HT_CTC_Admin_Greetings {
      *      ctc_greetings_settings 
      *      greetings-1
      * 
-     * todo:l g_init - add new option: default. greetings dialog open on desktop and close on mobile
-     *
-     * know issue: greetings with bounce animation not working properly on mobile.
      */
     public function settings_values() {
 

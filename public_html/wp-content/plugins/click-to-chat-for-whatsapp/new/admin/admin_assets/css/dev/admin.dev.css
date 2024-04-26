@@ -147,6 +147,13 @@ summary {
     margin: 5px 0;
 }
 
+/* error message */
+.description.ht_ctc_error_message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
 /* .ht_ctc_pro_subtitle_2 {
     text-decoration: underline;
     text-decoration-color: darkseagreen;

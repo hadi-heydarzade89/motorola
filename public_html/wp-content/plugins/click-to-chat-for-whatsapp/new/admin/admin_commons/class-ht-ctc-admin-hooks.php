@@ -75,12 +75,6 @@ class HT_CTC_Admin_Others {
             include_once HT_CTC_PLUGIN_DIR . '/new/admin/db/class-ht-ctc-db2.php';
         }
 
-        // if need to run the updater backup
-        $chat = get_option('ht_ctc_chat_options');
-        if ( !isset($chat['display_mobile']) ) {
-            include_once HT_CTC_PLUGIN_DIR . '/new/admin/db/class-ht-ctc-update-db-backup.php';
-        }
-
     }
 
     /**

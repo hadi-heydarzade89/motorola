@@ -567,22 +567,22 @@
 
                 var gtag_count = 0;
 
-                // is gtag created by this script
-                var ctc_gtag_created = 'no';
+                // is gtag function added by plugin
+                var is_ctc_add_gtag = 'no';
 
-                // if gtag not defined. then create gtag function
                 if (typeof dataLayer !== "undefined") {
 
-                    console.log('gtag');
+                    console.log('event with gtag id..');
 
                     try {
 
+                        // if gtag not defined. then create gtag function
                         if (typeof gtag == "undefined") {
                             console.log('gtag not defined');
                             window.gtag = function () {
                                 dataLayer.push(arguments);
                             };
-                            ctc_gtag_created = 'yes';
+                            is_ctc_add_gtag = 'yes';
                         }
 
                         var tags_list = [];
@@ -590,42 +590,51 @@
                         function call_gtag(tag_id) {
 
                             tag_id = tag_id.toUpperCase();
-                            console.log(tag_id);
+                            console.log('fn: call_gtag(): ' + tag_id);
+
+                            
+                            console.log(tags_list);
 
                             if (tags_list.includes(tag_id)) {
+                                console.log('tag_id already included');
                                 return;
                             }
 
+                            tags_list.push(tag_id);
+                            console.log(tags_list);
+
                             // if starts with g- or gt-
                             if (tag_id.startsWith('G-') || tag_id.startsWith('GT-')) {
-                                tags_list.push(tag_id);
-                                console.log(tags_list);
-
-                                console.log('calling gtag - send_to: ' + tag_id);
 
                                 ga_parms['send_to'] = tag_id;
                                 console.log(ga_parms);
 
+                                console.log('gtag event - send_to: ' + tag_id);
+
                                 gtag('event', g_event_name, ga_parms);
+
                                 gtag_count++;
+
                             }
                         }
 
                         if (window.google_tag_data && window.google_tag_data.tidr && window.google_tag_data.tidr.destination) {
-                            console.log('google_tag_data');
+                            console.log('google_tag_data tidr destination');
                             console.log(window.google_tag_data.tidr.destination);
 
                             // for each tag_id
                             for (var tag_id in window.google_tag_data.tidr.destination) {
-                                console.log(tag_id);
+                                console.log('google_tag_data destination - loop: ' + tag_id);
                                 call_gtag(tag_id);
                             }
                         }
 
                         dataLayer.forEach(function (i) {
+                            console.log('datalayer - loop');
+                            console.log(i);
                             if (i[0] == 'config' && i[1]) {
                                 tag_id = i[1];
-                                console.log(tag_id);
+                                console.log('datalayer - loop - tag_id: ' + tag_id);
                                 call_gtag(tag_id);
                             }
                         });
@@ -633,19 +642,21 @@
                     } catch (e) {}
                 }
 
-                // if no tags found(safe).. then call default gtag
-                if ( 0 == gtag_count && 'no' == ctc_gtag_created && typeof gtag !== "undefined" ) {
-                    console.log('calling gtag - default. gtag_count: ' + gtag_count);
-                    gtag('event', g_event_name, ga_parms);
-                } else if (typeof ga !== "undefined" && typeof ga.getAll !== "undefined") {
-                console.log('ga');
-                var tracker = ga.getAll();
-                tracker[0].send("event", ga_category, ga_action, ga_label);
-                // ga('send', 'event', 'check ga_category', 'ga_action', 'ga_label');
-                // ga.getAll()[0].send("event", 'check ga_category', 'ga_action', 'ga_label');
-                } else if (typeof __gaTracker !== "undefined") {
-                    console.log('__gaTracker');
-                    __gaTracker('send', 'event', ga_category, ga_action, ga_label);
+                // if above method sending event with tag_id is not worked. and if gtag is already defined. then call default gtag (safe side)
+                if (0 == gtag_count && 'no' == is_ctc_add_gtag) {
+                    if (typeof gtag !== "undefined") {
+                        console.log('calling gtag - default');
+                        gtag('event', g_event_name, ga_parms);
+                    } else if (typeof ga !== "undefined" && typeof ga.getAll !== "undefined") {
+                        console.log('ga');
+                        var tracker = ga.getAll();
+                        tracker[0].send("event", ga_category, ga_action, ga_label);
+                        // ga('send', 'event', 'check ga_category', 'ga_action', 'ga_label');
+                        // ga.getAll()[0].send("event", 'check ga_category', 'ga_action', 'ga_label');
+                    } else if (typeof __gaTracker !== "undefined") {
+                        console.log('__gaTracker');
+                        __gaTracker('send', 'event', ga_category, ga_action, ga_label);
+                    }
                 }
 
             }
