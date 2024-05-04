@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-17 17:26:52+0000\n"
+"PO-Revision-Date: 2024-04-22 10:16:46+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -159,6 +159,10 @@ msgstr "روش‌های پرداخت خود را تنظیم کنید و کارت
 #: src/Admin/Features/ProductBlockEditor/Init.php:408
 msgid "The metaboxhidden_product meta from the user metas."
 msgstr "متای metaboxhidden_product از متای کاربر."
+
+#: src/Blocks/Assets/AssetDataRegistry.php:412
+msgid "Key for the data being registered must be a string"
+msgstr "کلید داده‌های ثبت شده باید یک رشته باشد"
 
 #: src/Admin/Features/PaymentGatewaySuggestions/DefaultPaymentGateways.php:721
 msgid "Mercado Pago"
