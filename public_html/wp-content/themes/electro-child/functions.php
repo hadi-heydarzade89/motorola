@@ -4,6 +4,20 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use ElectroApp\Hooks\ThemeInitHook;
 
+if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
+    add_filter('posts_clauses', 'orderByStockStatus', 10);
+}
+function orderByStockStatus($posts_clauses) {
+    global $wpdb;
+
+    if (is_woocommerce() && (is_shop() || is_product_category() || is_product_tag())) {
+        $posts_clauses['join'] .= " INNER JOIN $wpdb->postmeta istockstatus ON ($wpdb->posts.ID = istockstatus.post_id) ";
+        $posts_clauses['orderby'] = " istockstatus.meta_value ASC, " . $posts_clauses['orderby'];
+        $posts_clauses['where'] = " AND istockstatus.meta_key = '_stock_status' AND istockstatus.meta_value <> '' " . $posts_clauses['where'];
+    }
+
+    return $posts_clauses;
+}
 if (!\function_exists('getElectroThemeImageUrl')) {
     function getElectroThemeImageUrl(string $imageName): string
     {
