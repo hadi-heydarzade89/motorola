@@ -218,6 +218,7 @@ ul[data-view="grid-extended"] .product-short-description {
 .product-card .card-body {
     flex: unset;
     max-width: unset;
+    width: 100%;
 }
 
 .product-card.product .price-add-to-cart {
