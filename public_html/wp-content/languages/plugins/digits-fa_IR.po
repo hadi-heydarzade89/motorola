@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: DIGITS: Wordpress Mobile Number Signup and Login\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-12-04 02:18+0530\n"
-"PO-Revision-Date: 2024-05-06 00:42+0330\n"
+"PO-Revision-Date: 2024-05-06 01:25+0330\n"
 "Last-Translator: رحیم وزیری <rahim.vaziri@gmail.com>\n"
 "Language-Team: فارسی\n"
 "Language: fa_IR\n"
@@ -153,8 +153,6 @@ msgid "TEST GATEWAY SETTINGS"
 msgstr ""
 
 #: admin/includes/api_settings.php:110
-#, fuzzy
-#| msgid "Mobile Number"
 msgid "Your Mobile Number"
 msgstr "شماره موبایل"
 
@@ -279,8 +277,6 @@ msgid "API Key"
 msgstr ""
 
 #: admin/includes/api_settings.php:170
-#, fuzzy
-#| msgid "Gateway Settings"
 msgid "WhatsApp app name"
 msgstr "تنطیمات Gateway"
 
@@ -469,21 +465,15 @@ msgid "Enter Parameters separated by \",\" and values by \":\""
 msgstr ""
 
 #: admin/includes/api_settings.php:512 admin/includes/gateway_functions.php:65
-#, fuzzy
-#| msgid "Gateway Settings"
 msgid "Custom Gateway"
 msgstr "تنطیمات Gateway"
 
 #: admin/includes/api_settings.php:513 admin/includes/gateway_functions.php:66
 #: digbuilder/includes/widget/element_form_widget.php:437
-#, fuzzy
-#| msgid "Custom Fields"
 msgid "Custom"
 msgstr "موضوعات سفارشی"
 
 #: admin/includes/api_settings.php:515 admin/includes/gateway_functions.php:68
-#, fuzzy
-#| msgid "Gateway Settings"
 msgid "SMS Gateway URL"
 msgstr "تنطیمات Gateway"
 
@@ -545,32 +535,22 @@ msgid "No"
 msgstr "خیر"
 
 #: admin/includes/api_settings.php:520 admin/includes/gateway_functions.php:73
-#, fuzzy
-#| msgid "Invalid Country Code!"
 msgid "Convert To Unicode"
 msgstr "پیش شماره کشور نامعتبر"
 
 #: admin/includes/api_settings.php:521 admin/includes/gateway_functions.php:74
-#, fuzzy
-#| msgid "Add new user"
 msgid "Phone Number"
 msgstr "اضافه کردن کاربر جدید"
 
 #: admin/includes/api_settings.php:521 admin/includes/gateway_functions.php:74
-#, fuzzy
-#| msgid "Invalid country code!"
 msgid "with + and country code"
 msgstr "پیش شماره کشور نامعتبر"
 
 #: admin/includes/api_settings.php:521 admin/includes/gateway_functions.php:74
-#, fuzzy
-#| msgid "Invalid country code!"
 msgid "with only country code"
 msgstr "پیش شماره کشور نامعتبر"
 
 #: admin/includes/api_settings.php:521 admin/includes/gateway_functions.php:74
-#, fuzzy
-#| msgid "Invalid country code!"
 msgid "without country code"
 msgstr "پیش شماره کشور نامعتبر"
 
@@ -672,8 +652,6 @@ msgid "WhatsApp Message Template"
 msgstr ""
 
 #: admin/includes/api_settings.php:807
-#, fuzzy
-#| msgid "Gateway Settings"
 msgid "WhatsApp Gateway"
 msgstr "تنطیمات Gateway"
 
@@ -705,15 +683,11 @@ msgstr "نام خانوادگی"
 #: digbuilder/includes/widget/element_form_widget.php:443
 #: digbuilder/includes/widget/element_form_widget.php:492
 #: digbuilder/includes/widget/element_form_widget.php:713
-#, fuzzy
-#| msgid "Username"
 msgid "User Role"
 msgstr "نام کاربری"
 
 #: admin/includes/custom_fields.php:31
 #: digbuilder/includes/widget/element_form_widget.php:442
-#, fuzzy
-#| msgid "First Name"
 msgid "Display Name"
 msgstr "نام"
 
@@ -763,8 +737,6 @@ msgstr ""
 
 #: admin/includes/custom_fields.php:124
 #: digbuilder/includes/widget/element_form_widget.php:460
-#, fuzzy
-#| msgid "Mobile Number"
 msgid "Number"
 msgstr "شماره موبایل"
 
@@ -786,8 +758,6 @@ msgstr ""
 
 #: admin/includes/custom_fields.php:152
 #: digbuilder/includes/widget/element_form_widget.php:464
-#, fuzzy
-#| msgid "Please select a valid option!"
 msgid "Terms & Conditions"
 msgstr "لطفا یک گزینه معتبر را انتخاب کنید"
 
@@ -808,8 +778,6 @@ msgid "Enable Registration"
 msgstr ""
 
 #: admin/includes/custom_fields.php:204
-#, fuzzy
-#| msgid "This is a required field"
 msgid "Show asterisk (*) on required fields"
 msgstr "پر کردن این فرم اجباریست"
 
@@ -947,8 +915,6 @@ msgid "Unexpected error occured while getting addons"
 msgstr ""
 
 #: admin/includes/functions.php:746
-#, fuzzy
-#| msgid "Activation"
 msgid "Available Addons"
 msgstr "فعال سازی"
 
@@ -957,8 +923,6 @@ msgid "New Addons"
 msgstr ""
 
 #: admin/includes/functions.php:901
-#, fuzzy
-#| msgid "Activate"
 msgid "Activate Digits"
 msgstr "فعال"
 
@@ -1031,14 +995,10 @@ msgid "CUSTOM"
 msgstr ""
 
 #: admin/includes/functions.php:1199
-#, fuzzy
-#| msgid "Presets"
 msgid "Preset"
 msgstr "پیش تنظیم شده ها"
 
 #: admin/includes/functions.php:1206
-#, fuzzy
-#| msgid "Select"
 msgid "Select Preset"
 msgstr "انتخاب تصویر"
 
@@ -1082,8 +1042,6 @@ msgid "Login Page Left Background Color"
 msgstr ""
 
 #: admin/includes/functions.php:1378
-#, fuzzy
-#| msgid "Login Page"
 msgid "Login Page Left Image"
 msgstr "صفحه لاگین"
 
@@ -1096,8 +1054,6 @@ msgid "Login Page Left Background Position"
 msgstr ""
 
 #: admin/includes/functions.php:1459
-#, fuzzy
-#| msgid "Login Page"
 msgid "Login Page Footer"
 msgstr "صفحه لاگین"
 
@@ -1222,8 +1178,6 @@ msgid "Login Box Left Background Color"
 msgstr ""
 
 #: admin/includes/functions.php:1835
-#, fuzzy
-#| msgid "Login Page"
 msgid "Login Box Left Image"
 msgstr "صفحه لاگین"
 
@@ -1260,8 +1214,6 @@ msgid "Username Generation"
 msgstr ""
 
 #: admin/includes/functions.php:2142
-#, fuzzy
-#| msgid "Email"
 msgid "From Email"
 msgstr "آدرس ایمیل"
 
@@ -1270,20 +1222,14 @@ msgid "Random Numbers"
 msgstr ""
 
 #: admin/includes/functions.php:2148
-#, fuzzy
-#| msgid "Mobile Number"
 msgid "From Mobile Number"
 msgstr "شماره موبایل"
 
 #: admin/includes/functions.php:2151
-#, fuzzy
-#| msgid "First Name"
 msgid "From Name"
 msgstr "نام"
 
 #: admin/includes/functions.php:2158
-#, fuzzy
-#| msgid "Mobile Number and Email"
 msgid "Mobile Number Formatting"
 msgstr "شماره موبایل و آدرس ایمیل"
 
@@ -1309,8 +1255,6 @@ msgid "Enable Forgot Password"
 msgstr ""
 
 #: admin/includes/functions.php:2195
-#, fuzzy
-#| msgid "Forgot Password"
 msgid "Overwrite Forgot Password Link"
 msgstr "رمز عبور را فراموش کرده اید"
 
@@ -1327,8 +1271,6 @@ msgid "The default role which will be assigned to new user created."
 msgstr ""
 
 #: admin/includes/functions.php:2238
-#, fuzzy
-#| msgid "Registration is disabled"
 msgid "Login/Registration Success Message"
 msgstr "ثبت نام غیر فعال شده است"
 
@@ -1341,8 +1283,6 @@ msgid "Default Country Code"
 msgstr ""
 
 #: admin/includes/functions.php:2288
-#, fuzzy
-#| msgid "Invalid Country Code!"
 msgid "Country Codes Allowlist"
 msgstr "پیش شماره کشور نامعتبر"
 
@@ -1351,8 +1291,6 @@ msgid "Sign In/Sign Up will be allowed for phone numbers with these country code
 msgstr ""
 
 #: admin/includes/functions.php:2314
-#, fuzzy
-#| msgid "Invalid Country Code!"
 msgid "Country Codes Denylist"
 msgstr "پیش شماره کشور نامعتبر"
 
@@ -1361,8 +1299,6 @@ msgid "Sign In/Sign Up will be not allowed for phone numbers with these country 
 msgstr ""
 
 #: admin/includes/functions.php:2358
-#, fuzzy
-#| msgid "Invalid Country Code!"
 msgid "Hide Country Code"
 msgstr "پیش شماره کشور نامعتبر"
 
@@ -1371,8 +1307,6 @@ msgid "OTP size"
 msgstr ""
 
 #: admin/includes/functions.php:2399
-#, fuzzy
-#| msgid "Resend OTP"
 msgid "OTP Resend Time"
 msgstr "ارسال مجدد رمز عبور یکبار مصرف"
 
@@ -3876,14 +3810,10 @@ msgid "SIGN UP WITH OTP"
 msgstr "ثبت نام با رمز عبور یکبار مصرف"
 
 #: includes/core/enqueue/enqueue_scripts.php:167
-#, fuzzy
-#| msgid "Mobile Number"
 msgid "Verify Mobile Number"
 msgstr "شماره موبایل"
 
 #: includes/core/enqueue/enqueue_scripts.php:168
-#, fuzzy
-#| msgid "SIGN UP WITH OTP"
 msgid "SIGN UP"
 msgstr "ثبت نام با رمز عبور یکبار مصرف"
 
@@ -4212,8 +4142,6 @@ msgid "Finland"
 msgstr ""
 
 #: includes/core/functions.php:343
-#, fuzzy
-#| msgid "Cancel"
 msgid "France"
 msgstr "انصراف"
 
@@ -4730,8 +4658,6 @@ msgid "Sudan"
 msgstr ""
 
 #: includes/core/functions.php:472
-#, fuzzy
-#| msgid "Username"
 msgid "Suriname"
 msgstr "نام کاربری"
 
@@ -4880,8 +4806,6 @@ msgid "Zimbabwe"
 msgstr ""
 
 #: includes/core/phandler.php:45
-#, fuzzy
-#| msgid "Please enter a valid Captcha!"
 msgid "Please enter a valid purchase code"
 msgstr "لطفا مقدار صحیح را وارد کنید!"
 
@@ -4890,8 +4814,6 @@ msgid "Sorry, you are not allowed to install plugins on this site."
 msgstr ""
 
 #: includes/core/phandler.php:67
-#, fuzzy
-#| msgid "Error while generating username!"
 msgid "Error while verifying your addon license."
 msgstr "خطا هنگام ایجاد شناسه کاربری"
 
@@ -4904,8 +4826,6 @@ msgid "Update"
 msgstr ""
 
 #: includes/edit_number.php:43
-#, fuzzy
-#| msgid "Resend OTP"
 msgid "Resend"
 msgstr "ارسال مجدد رمز عبور یکبار مصرف"
 
@@ -4914,8 +4834,6 @@ msgid "Don't have an account?"
 msgstr "حساب کاربری ندارید؟"
 
 #: includes/forms.php:318 includes/woocommerce-registration.php:1075
-#, fuzzy
-#| msgid "Login With OTP"
 msgid "Login With WhatsApp"
 msgstr "ورود با رمز عبور یکبار مصرف"
 
@@ -4924,20 +4842,14 @@ msgid "Reset Password"
 msgstr "بازیابی رمز عبور"
 
 #: includes/login.php:278
-#, fuzzy
-#| msgid "Please enter country code!"
 msgid "Please enter a valid country code!"
 msgstr "لطفا پیش شماره کشور را وارد کنید!"
 
 #: includes/login.php:328
-#, fuzzy
-#| msgid "Registration is disabled"
 msgid "Registration is disabled!"
 msgstr "ثبت نام غیر فعال شده است"
 
 #: includes/login.php:334
-#, fuzzy
-#| msgid "Forgot Password is disabled"
 msgid "Forgot Password is disabled!"
 msgstr "فراموشی رمز عبور غیر فعال شده است"
 
@@ -4957,14 +4869,10 @@ msgid "(required)"
 msgstr "(الزامی)"
 
 #: includes/plugins/ihu.php:30 includes/wp.php:261
-#, fuzzy
-#| msgid "Mobile number verification failed!"
 msgid "Mobile Number verification failed"
 msgstr "احراز هویت شماره موبایل موفق نبود!"
 
 #: includes/plugins/ihu.php:62 includes/wcs.php:447 includes/wp.php:293
-#, fuzzy
-#| msgid "Please enter a valid Email!"
 msgid "Please enter a valid OTP"
 msgstr "لطفا یک ایمیل معتبر وارد کنید!"
 
@@ -4980,8 +4888,6 @@ msgid "Unable to verify Mobile number"
 msgstr "امکان تائید شماره موبایل وجود ندارد"
 
 #: includes/plugins/um.php:207
-#, fuzzy
-#| msgid "Invalid Email or Mobile Number"
 msgid "Invalid Email/Mobile Number"
 msgstr "شماره موبایل یا ایمیل نامعتبر!"
 
@@ -5005,8 +4911,6 @@ msgid "Please enter a valid Mobile Number!"
 msgstr "لطفا یک شماره موبایل معتبر وارد کنید!"
 
 #: includes/process_user.php:149 includes/process_user.php:158
-#, fuzzy
-#| msgid "Please enter a valid Email!"
 msgid "Please enter a valid OTP!"
 msgstr "لطفا یک ایمیل معتبر وارد کنید!"
 
@@ -5032,8 +4936,6 @@ msgid "Error while generating username!"
 msgstr "خطا هنگام ایجاد شناسه کاربری"
 
 #: includes/process_user.php:550
-#, fuzzy
-#| msgid "Please enter a valid Captcha!"
 msgid "Please enter a valid password"
 msgstr "لطفا مقدار صحیح را وارد کنید!"
 
@@ -5042,8 +4944,6 @@ msgid "Invalid Credentials!"
 msgstr "اعتبارنامه نامعتبر!"
 
 #: includes/process_user.php:632 includes/register.php:246
-#, fuzzy
-#| msgid "Please enter a valid Captcha!"
 msgid "Please enter a valid captcha"
 msgstr "لطفا مقدار صحیح را وارد کنید!"
 
@@ -5052,8 +4952,6 @@ msgid "A password reset email has been sent to the email address, but may take s
 msgstr "ایمیل بازیابی رمز عبور برای شما ارسال شده است اما ممکن است نمایش آن در inbox ایمیل شما کمی زمان ببرد. لطفا تا تلاش بعدی 10 دقیقه صبر کنید."
 
 #: includes/process_user.php:809
-#, fuzzy
-#| msgid "Please enter a valid Captcha!"
 msgid "Please enter a valid Password"
 msgstr "لطفا مقدار صحیح را وارد کنید!"
 
@@ -5066,8 +4964,6 @@ msgid "Your password reset link appears to be invalid. Please request a new link
 msgstr ""
 
 #: includes/process_user.php:851 includes/process_user.php:900
-#, fuzzy
-#| msgid "Please enter a stronger password."
 msgid "Please use a stronger password!"
 msgstr "لطفا رمز عبور قوی تری وارد کنید"
 
@@ -5076,14 +4972,10 @@ msgid "Error! User not found."
 msgstr "خطا! کاربر یافت نشد"
 
 #: includes/process_user.php:1012
-#, fuzzy
-#| msgid "Password changed successfully."
 msgid "Password changed successfully, Redirecting.."
 msgstr "رمز عبور با موفقیت تغییر کرد"
 
 #: includes/register.php:102
-#, fuzzy
-#| msgid "First Name"
 msgid "Display name"
 msgstr "نام"
 
@@ -5138,8 +5030,6 @@ msgid "Invalid password"
 msgstr "رمز عبور نامعتبر!"
 
 #: includes/register.php:674
-#, fuzzy
-#| msgid "Error"
 msgid "Error:"
 msgstr "خطا"
 
@@ -5167,8 +5057,6 @@ msgstr "شخصی درخواست بازیابی رمز عبور برای حساب
 
 #. translators: %s: Site name.
 #: includes/wcs.php:153
-#, fuzzy, php-format
-#| msgid "Username: %s"
 msgid "Site Name: %s"
 msgstr "نام کاربری: %s"
 
@@ -5193,8 +5081,6 @@ msgid "[%s] Password Reset"
 msgstr "[%s] بازیابی رمز عبور"
 
 #: includes/wcs.php:169
-#, fuzzy
-#| msgid "The email could not be sent."
 msgid "The email could not be sent. Please contact site owner"
 msgstr "امکان ارسال ایمیل وجود ندارد"
 
@@ -5215,20 +5101,14 @@ msgid "Digits Menu Items"
 msgstr ""
 
 #: includes/wcs.php:347
-#, fuzzy
-#| msgid "Signup"
 msgid "Signup Page"
 msgstr "ثبت نام"
 
 #: includes/wcs.php:348
-#, fuzzy
-#| msgid "Signup"
 msgid "Signup Modal"
 msgstr "ثبت نام"
 
 #: includes/wcs.php:386
-#, fuzzy
-#| msgid "Select a logo"
 msgid "Select all"
 msgstr "انتخاب لوگو"
 
@@ -5237,8 +5117,6 @@ msgid "Add to menu"
 msgstr ""
 
 #: includes/wcs.php:443
-#, fuzzy
-#| msgid "Mobile number is already in use!"
 msgid "Mobile Number is already in use"
 msgstr "این شماره موبایل قبلا ثبت شده است!"
 
@@ -5247,14 +5125,10 @@ msgid "Extra Profile Information"
 msgstr ""
 
 #: includes/woocommerce-registration.php:90
-#, fuzzy
-#| msgid "Please enter Mobile Number."
 msgid "Please enter your Mobile Number."
 msgstr "لطفا شماره موبایل را وارد کنید"
 
 #: includes/woocommerce-registration.php:201
-#, fuzzy
-#| msgid "Please enter Mobile Number."
 msgid "Please enter your email or Mobile Number!"
 msgstr "لطفا شماره موبایل را وارد کنید"
 
@@ -5268,20 +5142,10 @@ msgstr "شماره موبایل"
 
 #: includes/woocommerce-registration.php:337
 #: includes/woocommerce-registration.php:1611
-#, fuzzy
-#| msgid "An account is already registered with your email address. Please login."
 msgid "An account is already registered with your email address. Please log in."
 msgstr "یک حساب کاربری با ایمیل شما قبلا ایجاد شده است. لطفا وارد شوید"
 
-#: includes/woocommerce-registration.php:441
-#, fuzzy
-#| msgid "Please signup before logging in."
-msgid "Please signup before placing order!"
-msgstr "لطفا قبل از ورود ثبت نام کنید"
-
 #: includes/woocommerce-registration.php:443
-#, fuzzy
-#| msgid "Please verify your Mobile Number!"
 msgid "Please verify your mobile number!"
 msgstr "لطفا شماره موبایل خود را تایید کنید"
 
@@ -5336,8 +5200,6 @@ msgid "*"
 msgstr "*"
 
 #: includes/woocommerce-registration.php:1255
-#, fuzzy
-#| msgid "Don't have an account?"
 msgid "Create an account"
 msgstr "حساب کاربری ندارید؟"
 
@@ -5346,14 +5208,10 @@ msgid "Register with OTP"
 msgstr "ثبت نام با رمز عبور یکبار مصرف"
 
 #: includes/woocommerce-registration.php:1334
-#, fuzzy
-#| msgid "Register with OTP"
 msgid "Register with WhatsApp"
 msgstr "ثبت نام با رمز عبور یکبار مصرف"
 
 #: includes/woocommerce-registration.php:1357
-#, fuzzy
-#| msgid "Password"
 msgid "New Password"
 msgstr "رمز عبور"
 
@@ -5371,44 +5229,30 @@ msgstr ""
 
 #: includes/woocommerce-registration.php:1526
 #: includes/woocommerce-registration.php:1539
-#, fuzzy
-#| msgid "Remove"
 msgid "Removed"
 msgstr "حذف تصویر"
 
 #: includes/woocommerce-registration.php:1621
-#, fuzzy
-#| msgid "Please enter a valid Email!"
 msgid "Please enter a valid account username."
 msgstr "لطفا یک ایمیل معتبر وارد کنید!"
 
 #: includes/woocommerce-registration.php:1625
-#, fuzzy
-#| msgid "An account is already registered with your email address. Please login."
 msgid "An account is already registered with that username. Please choose another."
 msgstr "یک حساب کاربری با ایمیل شما قبلا ایجاد شده است. لطفا وارد شوید"
 
 #: includes/woocommerce-registration.php:1636
-#, fuzzy
-#| msgid "Please enter your current password."
 msgid "Please enter an account password."
 msgstr "لطفا رمز عبور فعلی خود را وارد کنید"
 
 #: includes/wp.php:313
-#, fuzzy
-#| msgid "Mobile number is already in use!"
 msgid "Mobile Number is already in use!"
 msgstr "این شماره موبایل قبلا ثبت شده است!"
 
 #: includes/wp.php:374
-#, fuzzy
-#| msgid "Please enter Mobile Number!"
 msgid "Please use mobile number to login!"
 msgstr "لطفا شماره موبایل را وارد کنید!"
 
 #: includes/wp.php:398
-#, fuzzy
-#| msgid "Invalid details!"
 msgid "Invalid Details!"
 msgstr "جزئیات نامعتبر!"
 
@@ -5435,100 +5279,5 @@ msgstr ""
 msgid "OTP limit has exceeded since you made too many attempts, Please try again after some time!"
 msgstr "تاساعاتی دیگر کد OTP برای شما ارسال نخواهد شد. ساعاتی دیگر دوباره امتحان نمایید."
 
-#~ msgid "Please enter Mobile Number."
-#~ msgstr "لطفا شماره موبایل را وارد کنید"
-
-#, fuzzy
-#~| msgid "Mobile Number"
-#~ msgid "Merge Mobile Number"
-#~ msgstr "شماره موبایل"
-
-#~ msgid "Free"
-#~ msgstr "رایگان"
-
-#~ msgid "Forgot your password?"
-#~ msgstr "رمز عبور خود را فراموش کرده اید؟"
-
-#, fuzzy
-#~| msgid "Invalid Country Code!"
-#~ msgid "Country of Users"
-#~ msgstr "پیش شماره کشور نامعتبر"
-
-#~ msgid "Invalid e-mail!"
-#~ msgstr "ایمیل نامعتبر!"
-
-#~ msgid "Please enter as valid Mobile Number!"
-#~ msgstr "لطفا یک شماره موبایل معتبر وارد کنید!"
-
-#~ msgid "Please check the Pop-up."
-#~ msgstr "لطفا پاپ آپ را بررسی کنید"
-
-#~ msgid "Powered by <span>Digits</span>"
-#~ msgstr "قدرت گرفته از Digits"
-
-#~ msgid "Mobile/Email is already in use!"
-#~ msgstr "این شماره موبایل یا ایمیل قبلا ثبت شده است!"
-
-#, fuzzy
-#~| msgid "Please provide a valid email address."
-#~ msgid "Enter a username or email address."
-#~ msgstr "لطفا یک ایمیل معتبر وارد کنید"
-
-#, fuzzy
-#~| msgid "Invalid Mobile Number or email"
-#~ msgid "Invalid username or email."
-#~ msgstr "شماره موبایل یا ایمیل نامعتبر"
-
-#~ msgid "Please enter OTP!"
-#~ msgstr "لطفا رمز عبور یکبار مصرف را وارد کنید"
-
-#~ msgid "Invalid Email or Mobile number"
-#~ msgstr "شماره موبایل یا ایمیل نامعتبر!"
-
-#~ msgid "This is a required field"
-#~ msgstr "پر کردن این فرم اجباریست"
-
-#~ msgid "Choose a Password"
-#~ msgstr "رمز عبور را انخاب کنید"
-
-#~ msgid "Sign Up With OTP"
-#~ msgstr "ثبت نام با رمز عبور یکبار مصرف"
-
-#~ msgid "Sign Up With Password"
-#~ msgstr "ثبت نام با رمز عبور"
-
-#~ msgid "Name field can only contain letters"
-#~ msgstr "لطفا تنها از حروف الفبا استفاده کنید"
-
-#~ msgid "Error, Please try again later!"
-#~ msgstr "خطا! لطفا مجدد تلاش کنید"
-
-#~ msgid "Mobile number is already in use!"
-#~ msgstr "این شماره موبایل قبلا ثبت شده است!"
-
-#~ msgid "Knowledgebase"
-#~ msgstr "دانش محور"
-
-#~ msgid "Having issues while setting up this plugin. Get help from our extensive knowledgebase."
-#~ msgstr "مشکلات در هنگام تنظیم این افزونه؟ دریافت کمک از پایگاه اطلاعاتی گسترده ما."
-
-#~ msgid "Get Help"
-#~ msgstr "کمک"
-
-#~ msgid "Any Questions?"
-#~ msgstr "سوالی دارید؟"
-
-#~ msgid "Submit your query. Our team will be more than happy to help you out with that."
-#~ msgstr "درخواست خود را ارسال کنید. تیم ما بسیار خوشحال میشود به شما کمک کند."
-
-#~ msgid "Open Ticket"
-#~ msgstr "ارسال درخواست"
-
-#~ msgid "Open Simple Wizard"
-#~ msgstr "نصب ساده"
-
-#~ msgid "Configure"
-#~ msgstr "پیکربندی"
-
-#~ msgid "Password do not match!"
-#~ msgstr "رمز عبور هماهنگی ندارد!"
+msgid "Please signup before placing order!"
+msgstr "لطفا قبل از ورود ثبت نام کنید"
