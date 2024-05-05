@@ -3,7 +3,7 @@ Theme Name:         Electro Child
 Theme URI:          https://themeforest.net/item/electro-electronics-store-woocommerce-theme/15720624
 Author:             Hadi Heydarzade
 Template:           electro
-Version:            0.4.0
+Version:            0.4.1
 Text Domain:        electrochild
 */
 
@@ -332,6 +332,10 @@ ul[data-view="grid-extended"] .product-short-description {
 }
 .home .entry-header{
   display: none;
+}
+
+.product:hover .hover-area {
+    display: none !important;
 }
 
 @media (max-width: 576px) {
