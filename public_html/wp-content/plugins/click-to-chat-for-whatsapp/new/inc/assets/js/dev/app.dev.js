@@ -14,19 +14,30 @@
 
         var ht_ctc_storage = {};
 
-        if (localStorage.getItem('ht_ctc_storage')) {
-            ht_ctc_storage = localStorage.getItem('ht_ctc_storage');
-            ht_ctc_storage = JSON.parse(ht_ctc_storage);
+        function getStorageData() {
+            console.log('app.js - getStorageData');
+            if (localStorage.getItem('ht_ctc_storage')) {
+                ht_ctc_storage = localStorage.getItem('ht_ctc_storage');
+                ht_ctc_storage = JSON.parse(ht_ctc_storage);
+                console.log(ht_ctc_storage);
+            }
         }
+        getStorageData();
 
         // get items from ht_ctc_storage
         function ctc_getItem(item) {
+            console.log('app.js - ctc_getItem');
             return (ht_ctc_storage[item]) ? ht_ctc_storage[item] : false;
         }
 
         // set items to ht_ctc_storage storage
         function ctc_setItem(name, value) {
+            console.log(ht_ctc_storage);
+            getStorageData();
+            console.log(ht_ctc_storage);
+            console.log('app.js - ctc_setItem: name: ' + name + ' value: ' + value);
             ht_ctc_storage[name] = value;
+            console.log(ht_ctc_storage);
             var newValues = JSON.stringify(ht_ctc_storage);
             localStorage.setItem('ht_ctc_storage', newValues);
         }

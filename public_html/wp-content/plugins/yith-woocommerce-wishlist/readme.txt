@@ -4,13 +4,13 @@ Contributors: yithemes
 Tags: woocommerce wishlist, yith woocommerce wishlist, yith wishlist, woocommerce add to wishlist, wishlist for woocommerce
 Requires at least: 6.3
 Tested up to: 6.5
-Stable tag: 3.32.0
+Stable tag: 3.33.0
 Requires PHP: 7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 YITH WooCommerce Wishlist add all Wishlist features to your website. Needs WooCommerce to work.
-WooCommerce 8.8.x compatible.
+WooCommerce 8.9.x compatible.
 
 == Description ==
 
@@ -98,6 +98,9 @@ This might depend on the fact that your theme overrides plugin templates. Check 
 = I am currently using Wishlist plugin with Catalog Mode enabled in my site. Prices for products should disappear, yet they still appear in the wishlist page. Can I remove them? =
 Yes, of course you can. To avoid Wishlist page to show product prices, you can hide price column from wishlist table. Go to YITH -> Wishlist -> Wishlist Page Options and disable option "Product price".
 
+= How can I report security bugs? =
+You can report security bugs through the Patchstack Vulnerability Disclosure Program. The Patchstack team help validate, triage and handle any security vulnerabilities. [Report a security vulnerability.](https://patchstack.com/database/vdp/yith-woocommerce-wishlist)
+
 == Screenshots ==
 
 1. The page with "Add to wishlist" button
@@ -113,6 +116,12 @@ Yes, of course you can. To avoid Wishlist page to show product prices, you can h
 
 
 == Changelog ==
+
+= 3.33.0 - Released on 6 May 2024 =
+
+* New: support for WooCommerce 8.9
+* Tweak: avoid including custom CSS when 'DISALLOW_UNFILTERED_HTML' constant is set to true
+* Update: YITH plugin framework
 
 = 3.32.0 - Released on 9 April 2024 =
 

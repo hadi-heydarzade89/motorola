@@ -33,7 +33,7 @@ if ( ! class_exists( 'YITH_WCWL_Frontend' ) ) {
 		 * @var string
 		 * @since 1.0.0
 		 */
-		public $version = '3.32.0';
+		public $version = '3.33.0';
 
 		/**
 		 * Plugin database version
@@ -1712,7 +1712,7 @@ if ( ! class_exists( 'YITH_WCWL_Frontend' ) ) {
 				$generated_code .= $rules_code;
 			}
 
-			$custom_css = get_option( 'yith_wcwl_custom_css' );
+			$custom_css = defined( 'DISALLOW_UNFILTERED_HTML' ) && DISALLOW_UNFILTERED_HTML ? '' : get_option( 'yith_wcwl_custom_css' );
 
 			if ( $custom_css ) {
 				$generated_code .= $custom_css;

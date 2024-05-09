@@ -53,7 +53,7 @@ class HT_CTC_Scripts {
         $group_js = 'group.js';
         $share_js = 'share.js';
 
-        if ( isset($os['debug_mode']) ) {
+        if ( defined('HT_CTC_DEBUG_MODE') ) {
             $css = 'dev/main.dev.css';
             $js = 'dev/app.dev.js';
             $woo_js = 'dev/woo.dev.js';

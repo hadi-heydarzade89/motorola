@@ -1207,16 +1207,16 @@ class HT_CTC_Admin_Other_Settings {
             <?php
         }
 
+        // enable debug mode checkbox
         $debug_mode = ( isset( $options['debug_mode']) ) ? esc_attr( $options['debug_mode'] ) : '';
         $chat_load_hook = ( isset( $options['chat_load_hook']) ) ? esc_attr( $options['chat_load_hook'] ) : '';
 
-        // debug mode 
         if ( isset( $options['debug_mode'] ) || (isset($_GET) && isset($_GET['debug'])) ) {
             ?>
             <p>
                 <label>
                     <input name="ht_ctc_othersettings[debug_mode]" type="checkbox" value="1" <?php checked( $debug_mode, 1 ); ?> id="debug_mode"   />
-                    <span><?php _e( 'Debug mode', 'click-to-chat-for-whatsapp' ); ?></span>
+                    <span><?php _e( 'Debug/Dev mode', 'click-to-chat-for-whatsapp' ); ?></span>
                 </label>
             </p>
             <?php
@@ -1226,7 +1226,6 @@ class HT_CTC_Admin_Other_Settings {
 
         <p class="description">
             <ol style="list-style-type: disc;">
-
                 <li>Basic Troubleshoot
                     <ol>
                         <ul>Clear Cache: Cache plugins, Server side, CDN cache (if available)</ul>
@@ -1237,11 +1236,6 @@ class HT_CTC_Admin_Other_Settings {
                 <li>
                     <ul><p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/faq"><?php _e( 'FAQ', 'click-to-chat-for-whatsapp' ); ?> (<?php _e( 'Frequently Asked Questions', 'click-to-chat-for-whatsapp' ); ?>)</a></p></ul>
                 </li>
-            
-                <!-- <li><?php _e( 'If any issue? Please, contact us', 'click-to-chat-for-whatsapp' ); ?> 
-                    <ul><?php _e( 'Chat', 'click-to-chat-for-whatsapp' ); ?>: <a target="_blank" href="https://api.whatsapp.com/send?phone=919494429789&text=Hi%20HoliThemes,%20I%20have%20a%20question"><?php _e( 'WhatsApp', 'click-to-chat-for-whatsapp' ); ?></a></ul>
-                    <ul><?php _e( 'Mail', 'click-to-chat-for-whatsapp' ); ?>: <a href="mailto:ctc@holithemes.com">ctc@holithemes.com</a> </ul>
-                </li> -->
             </ol>
         </p>
         <!-- <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/link/">Basic Troubleshooting</a></p> -->

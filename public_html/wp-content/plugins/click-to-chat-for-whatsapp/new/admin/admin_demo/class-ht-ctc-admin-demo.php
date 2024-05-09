@@ -135,7 +135,7 @@ class HT_CTC_Admin_Demo {
         $js = 'admin-demo.js';
         
         
-        if ( isset($os['debug_mode']) || (isset($_GET) && isset($_GET['debug'])) ) {
+        if ( defined('HT_CTC_DEBUG_MODE') ) {
             $js = 'dev/admin-demo.dev.js';
         }
         
@@ -164,7 +164,7 @@ class HT_CTC_Admin_Demo {
         $css = 'admin-demo.css';
         $animation_css = 'admin-demo-animations.css';
 
-        if ( isset($os['debug_mode']) || (isset($_GET) && isset($_GET['debug'])) ) {
+        if ( defined('HT_CTC_DEBUG_MODE') ) {
             $css = 'dev/admin-demo.dev.css';
             $animation_css = 'dev/admin-demo-animations.dev.css';
         }

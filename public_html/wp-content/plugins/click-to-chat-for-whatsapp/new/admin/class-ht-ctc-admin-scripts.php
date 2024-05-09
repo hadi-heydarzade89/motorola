@@ -26,7 +26,6 @@ class HT_CTC_Admin_Scripts {
     // Register css styles, javascript files only on 'click-to-chat' page
     function register_scripts_admin($hook) {
 
-        $os = get_option('ht_ctc_othersettings');
 
         // true/false
         $load_js_bottom = apply_filters( 'ht_ctc_fh_load_admin_js_bottom', true );
@@ -37,7 +36,7 @@ class HT_CTC_Admin_Scripts {
 
         $css = 'admin.css';
         
-        if ( isset($os['debug_mode']) || (isset($_GET) && isset($_GET['debug'])) ) {
+        if ( defined('HT_CTC_DEBUG_MODE') ) {
             $js = 'dev/admin.dev.js';
             $greetings_js = 'dev/greetings.dev.js';
             

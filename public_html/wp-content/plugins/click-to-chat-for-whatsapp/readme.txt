@@ -1,14 +1,14 @@
 === Click to Chat - HoliThemes ===
 Requires at least: 4.6
-Tested up to: 6.5.2
+Tested up to: 6.5.3
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 4.1
-Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, WhatsApp WooCommerce
+Stable tag: 4.2
+Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, WooCommerce WhatsApp
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-WhatsApp Chat🔥. Let's make your Web page visitors contact you through 'WhatsApp', 'WhatsApp Business'. Website matching Widget✅
+WhatsApp Chat🔥. Let's make your Web page visitors contact you through 'WhatsApp', 'WhatsApp Business'. Add matching Widget✅
 
 == Description ==
 
@@ -530,6 +530,9 @@ or
 After Activating the plugin, add a WhatsApp Number in the plugin settings.
 
 == Changelog ==
+
+= 4.2 = 
+* Fix: Different widgets for mobile and desktop cache issue.
 
 = 4.1 =
 * Enhancement: Admin settings WhatsApp number input filed with country code search option.

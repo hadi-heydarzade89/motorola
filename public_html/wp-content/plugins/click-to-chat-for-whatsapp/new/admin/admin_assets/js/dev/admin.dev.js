@@ -311,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log(style);
                 $(".select_style_desktop").val(style);
 
-                $(".customize_styles_link").animate({ fontSize: '1.2em' }, "slow");
+                $(".customize_styles_link").fadeOut(100).fadeIn(100);
 
             });
 
@@ -337,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             // If Styles for desktop, mobile not selected as expected
-            if ($('#select_styles_issue').is(':checked')) {
+            if ($('#select_styles_issue').is(':checked') && !$('.same_settings').is(':checked') ) {
                 $(".select_styles_issue_checkbox").show();
             }
             $('.select_styles_issue_description').on('click', function (e) {
@@ -855,6 +855,12 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log('calling intl_onchange() from intl_input()');
                 intl_onchange();
             }
+
+            // setTimeout(() => {
+            //     // add browser-default class name to .iti__search-input - for better ui
+            //     $('.iti__search-input').addClass('browser-default');
+            // }, 2000);
+
         }
 
         function intl_onchange() {

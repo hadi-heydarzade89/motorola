@@ -59,7 +59,7 @@ if ( ! class_exists( 'YITH_WCWL' ) ) {
 		 *
 		 * @var array
 		 */
-		protected $emails = array();
+		public $emails = array();
 
 		/**
 		 * Last operation token
