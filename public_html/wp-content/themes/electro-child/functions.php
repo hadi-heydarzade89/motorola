@@ -1390,3 +1390,12 @@ add_filter('pwoosms_order_sms_body_after_replace', function ($content, $orderId,
         return $content;
     }
 }, 10, 5);
+
+add_action('woocommerce_checkout_create_order', function () {
+    global $wp_object_cache;
+    try {
+        $wp_object_cache->redis_instance()->del('wp:orders:order-count-shop_order');
+    } catch (Throwable $e) {
+
+    }
+}, 20, 2);
