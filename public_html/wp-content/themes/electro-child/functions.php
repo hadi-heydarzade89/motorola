@@ -7,7 +7,8 @@ use ElectroApp\Hooks\ThemeInitHook;
 if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
     add_filter('posts_clauses', 'orderByStockStatus', 10);
 }
-function orderByStockStatus($posts_clauses) {
+function orderByStockStatus($posts_clauses)
+{
     global $wpdb;
 
     if (is_woocommerce() && (is_shop() || is_product_category() || is_product_tag())) {
@@ -18,6 +19,7 @@ function orderByStockStatus($posts_clauses) {
 
     return $posts_clauses;
 }
+
 if (!\function_exists('getElectroThemeImageUrl')) {
     function getElectroThemeImageUrl(string $imageName): string
     {
@@ -1399,3 +1401,14 @@ add_action('woocommerce_checkout_create_order', function () {
 
     }
 }, 20, 2);
+
+add_action('template_redirect', 'woocommerceCustomRedirections');
+/**
+ * @return void
+ */
+function woocommerceCustomRedirections(): void
+{
+    if (!is_user_logged_in() && is_checkout()) {
+        wp_redirect(get_permalink(get_option('woocommerce_myaccount_page_id')));
+    }
+}
