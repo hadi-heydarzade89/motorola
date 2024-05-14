@@ -33,7 +33,7 @@ if ( ! class_exists( 'YITH_WCWL_Frontend' ) ) {
 		 * @var string
 		 * @since 1.0.0
 		 */
-		public $version = '3.33.0';
+		public $version = '3.34.0';
 
 		/**
 		 * Plugin database version
@@ -41,7 +41,7 @@ if ( ! class_exists( 'YITH_WCWL_Frontend' ) ) {
 		 * @var string
 		 * @since 1.0.0
 		 */
-		public $db_version = '3.0.0';
+		public $db_version = '3.0.1';
 
 		/**
 		 * Store class yith_WCWL_Install.

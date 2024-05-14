@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-22 10:16:46+0000\n"
+"PO-Revision-Date: 2024-05-10 22:03:33+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -470,14 +470,14 @@ msgstr "این فرایند، قسمت‌های متای <code>coupon_data</code
 msgid "This will stop the background process that converts <code>coupon_data</code> order item meta entries to simplified <code>coupon_info</code> entries. There are currently %d entries that can be converted."
 msgstr "این کار فرایند پس‌زمینه‌ی تبدیل قسمت‌های متای <code>coupon_data</code> در سفارشات به قسمت‌های ساده‌شده‌ی <code>coupon_info</code> را متوقف خواهد کرد. در حال حاضر %d ورودی برای تبدیل وجود دارد."
 
+#: src/Internal/ReceiptRendering/ReceiptRenderingEngine.php:271
+msgid "AID"
+msgstr "AID"
+
 #. translators: %d=count of entries pending conversion
 #: src/Internal/OrderCouponDataMigrator.php:193
 msgid "This will convert <code>coupon_data</code> order item meta entries to simplified <code>coupon_info</code> entries. The conversion will happen overtime in the background (via Action Scheduler). There are currently %d entries that can be converted."
 msgstr "این فرایند، قسمت‌های متای <code>coupon_data</code> در سفارشات را به قسمت‌های ساده‌شده‌ی <code>coupon_info</code> تبدیل می‌کند. تبدیل به صورت خودکار و در پس‌زمینه، به مرور زمان انجام خواهد شد (با استفاده از زمان‌بندی عملیات). در حال حاضر %d ورودی برای تبدیل وجود دارد."
-
-#: src/Internal/ReceiptRendering/ReceiptRenderingEngine.php:271
-msgid "AID"
-msgstr "AID"
 
 #: src/Blocks/BlockTypes/ProductGalleryLargeImageNextPrevious.php:109
 msgid "Next image"
@@ -4394,28 +4394,51 @@ msgctxt "block title"
 msgid "Stock level threshold"
 msgstr "آستانه سطح موجودی"
 
-#: assets/client/admin/product-editor/blocks/generic/conditional/block.json
-msgctxt "block title"
-msgid "Conditional"
-msgstr "شرطی"
-
-#: assets/client/admin/product-editor/blocks/generic/product-tab/block.json
-#: assets/client/admin/product-editor/blocks/generic/tab/block.json
-msgctxt "block description"
-msgid "The product tab."
-msgstr "زبانۀ محصول."
-
-#: assets/client/admin/product-editor/blocks/generic/product-tab/block.json
-#: assets/client/admin/product-editor/blocks/generic/tab/block.json
-msgctxt "block title"
-msgid "Product tab"
-msgstr "زبانۀ محصول"
-
 #: assets/client/admin/product-editor/blocks/product-fields/product-summary-field/block.json
 #: assets/client/admin/product-editor/blocks/product-fields/summary/block.json
 msgctxt "block description"
 msgid "The product summary."
 msgstr "خلاصۀ محصول."
+
+#: assets/client/admin/product-editor/blocks/product-fields/product-summary-field/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/summary/block.json
+msgctxt "block title"
+msgid "Product summary"
+msgstr "خلاصۀ محصول"
+
+#: assets/client/admin/product-editor/blocks/generic/pricing/block.json
+#: assets/client/admin/product-editor/blocks/generic/product-pricing-field/block.json
+msgctxt "block title"
+msgid "Product pricing"
+msgstr "قیمت گذاری محصول"
+
+#: assets/client/admin/product-editor/blocks/product-fields/inventory-sku/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/product-sku-field/block.json
+msgctxt "block description"
+msgid "The product sku."
+msgstr "شناسه محصول."
+
+#: assets/client/admin/product-editor/blocks/product-fields/inventory-sku/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/product-sku-field/block.json
+msgctxt "block keyword"
+msgid "sku"
+msgstr "شناسه محصول"
+
+#: assets/client/admin/product-editor/blocks/generic/pricing/block.json
+#: assets/client/admin/product-editor/blocks/generic/product-pricing-field/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/product-regular-price-field/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/product-sale-price-field/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/regular-price/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/sale-price/block.json
+msgctxt "block description"
+msgid "A product price block with currency display."
+msgstr "بلوک قیمت محصول با نمایش ارز."
+
+#: assets/client/admin/product-editor/blocks/generic/collapsible/block.json
+#: assets/client/admin/product-editor/blocks/generic/product-collapsible/block.json
+msgctxt "block description"
+msgid "Container with collapsible inner blocks."
+msgstr "ظرف با بلوک های داخلی تاشو."
 
 #: assets/client/admin/product-editor/blocks/generic/checkbox/block.json
 #: assets/client/admin/product-editor/blocks/generic/linked-product-list/block.json
@@ -4496,45 +4519,22 @@ msgctxt "block keyword"
 msgid "products"
 msgstr "محصولات"
 
-#: assets/client/admin/product-editor/blocks/product-fields/product-summary-field/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/summary/block.json
+#: assets/client/admin/product-editor/blocks/generic/conditional/block.json
 msgctxt "block title"
-msgid "Product summary"
-msgstr "خلاصۀ محصول"
+msgid "Conditional"
+msgstr "شرطی"
 
-#: assets/client/admin/product-editor/blocks/generic/pricing/block.json
-#: assets/client/admin/product-editor/blocks/generic/product-pricing-field/block.json
+#: assets/client/admin/product-editor/blocks/generic/product-tab/block.json
+#: assets/client/admin/product-editor/blocks/generic/tab/block.json
+msgctxt "block description"
+msgid "The product tab."
+msgstr "زبانۀ محصول."
+
+#: assets/client/admin/product-editor/blocks/generic/product-tab/block.json
+#: assets/client/admin/product-editor/blocks/generic/tab/block.json
 msgctxt "block title"
-msgid "Product pricing"
-msgstr "قیمت گذاری محصول"
-
-#: assets/client/admin/product-editor/blocks/product-fields/inventory-sku/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/product-sku-field/block.json
-msgctxt "block description"
-msgid "The product sku."
-msgstr "شناسه محصول."
-
-#: assets/client/admin/product-editor/blocks/product-fields/inventory-sku/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/product-sku-field/block.json
-msgctxt "block keyword"
-msgid "sku"
-msgstr "شناسه محصول"
-
-#: assets/client/admin/product-editor/blocks/generic/pricing/block.json
-#: assets/client/admin/product-editor/blocks/generic/product-pricing-field/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/product-regular-price-field/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/product-sale-price-field/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/regular-price/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/sale-price/block.json
-msgctxt "block description"
-msgid "A product price block with currency display."
-msgstr "بلوک قیمت محصول با نمایش ارز."
-
-#: assets/client/admin/product-editor/blocks/generic/collapsible/block.json
-#: assets/client/admin/product-editor/blocks/generic/product-collapsible/block.json
-msgctxt "block description"
-msgid "Container with collapsible inner blocks."
-msgstr "ظرف با بلوک های داخلی تاشو."
+msgid "Product tab"
+msgstr "زبانۀ محصول"
 
 #: assets/client/admin/product-editor/blocks/product-fields/inventory-sku/block.json
 #: assets/client/admin/product-editor/blocks/product-fields/product-sku-field/block.json
@@ -7639,21 +7639,6 @@ msgstr "اعلان PDT برای حساب دیگر دریافت شد: %1$s. شن�
 msgid "Received PDT notification for order %1$d on endpoint for order %2$d."
 msgstr "اعلان PDT برای سفارش %1$d در نقطه پایانی برای سفارش %2$d دریافت شد."
 
-#: assets/client/blocks/checkout/block.json
-msgctxt "block title"
-msgid "Checkout"
-msgstr "تسویه حساب"
-
-#: assets/client/blocks/inner-blocks/mini-cart-items-block/block.json
-msgctxt "block title"
-msgid "Mini-Cart Items"
-msgstr "موارد سبد خرید کوچک"
-
-#: assets/client/blocks/checkout/block.json
-msgctxt "block description"
-msgid "Display a checkout form so your customers can submit orders."
-msgstr "یک فرم تسویه حساب را نمایش دهید تا مشتریان شما بتوانند سفارشات خود را ارسال کنند."
-
 #: assets/client/blocks/active-filters/block.json
 #: assets/client/blocks/add-to-cart-form/block.json
 #: assets/client/blocks/all-products/block.json
@@ -7721,6 +7706,21 @@ msgstr "یک فرم تسویه حساب را نمایش دهید تا مشتری
 msgctxt "block keyword"
 msgid "WooCommerce"
 msgstr "ووکامرس"
+
+#: assets/client/blocks/checkout/block.json
+msgctxt "block title"
+msgid "Checkout"
+msgstr "تسویه حساب"
+
+#: assets/client/blocks/inner-blocks/mini-cart-items-block/block.json
+msgctxt "block title"
+msgid "Mini-Cart Items"
+msgstr "موارد سبد خرید کوچک"
+
+#: assets/client/blocks/checkout/block.json
+msgctxt "block description"
+msgid "Display a checkout form so your customers can submit orders."
+msgstr "یک فرم تسویه حساب را نمایش دهید تا مشتریان شما بتوانند سفارشات خود را ارسال کنند."
 
 #: assets/client/blocks/inner-blocks/mini-cart-items-block/block.json
 msgctxt "block description"
@@ -12920,13 +12920,13 @@ msgstr "آیا برای افزودن اولین محصول خود به کمک ن
 msgid "This video tutorial will help you go through the process of adding your first product in WooCommerce."
 msgstr "این فیلم آموزشی به شما کمک می کند تا مراحل اضافه کردن اولین محصول خود را در ووکامرس طی کنید."
 
-#: src/Internal/Admin/Notes/OnlineClothingStore.php:85
-msgid "Starting a fashion website is exciting but it may seem overwhelming as well. In this article, we'll walk you through the setup process, teach you to create successful product listings, and show you how to market to your ideal audience."
-msgstr "راه‌اندازی یک وب‌سایت مد هیجان‌انگیز است، اما ممکن است سخت به نظر برسد. در این مقاله، شما را از طریق فرآیند راه‌اندازی راهنمایی می‌کنیم، به شما یاد می‌دهیم که فهرست‌های محصول موفقی ایجاد کنید، و به شما نشان می‌دهیم که چگونه برای مخاطبان ایده‌آل خود بازاریابی کنید."
-
 #: src/Admin/Notes/Note.php:585
 msgid "The admin note layout has a wrong prop value."
 msgstr "طرح یادداشت مدیریت دارای ارزش پایه اشتباه است."
+
+#: src/Internal/Admin/Notes/OnlineClothingStore.php:85
+msgid "Starting a fashion website is exciting but it may seem overwhelming as well. In this article, we'll walk you through the setup process, teach you to create successful product listings, and show you how to market to your ideal audience."
+msgstr "راه‌اندازی یک وب‌سایت مد هیجان‌انگیز است، اما ممکن است سخت به نظر برسد. در این مقاله، شما را از طریق فرآیند راه‌اندازی راهنمایی می‌کنیم، به شما یاد می‌دهیم که فهرست‌های محصول موفقی ایجاد کنید، و به شما نشان می‌دهیم که چگونه برای مخاطبان ایده‌آل خود بازاریابی کنید."
 
 #: src/Internal/Admin/Notes/GivingFeedbackNotes.php:50
 #: assets/client/admin/chunks/4300.js:1
@@ -21097,18 +21097,6 @@ msgstr "نمایش یک لیست از صفات جهت فیلتر کردن محص
 msgid "Display a slider to filter products in your store by price."
 msgstr "نمایش یک اسلایدر جهت فیلتر کردن محصولات بر اساس قیمت در فروشگاه شما."
 
-#: includes/class-wc-form-handler.php:535
-msgid "Invalid payment gateway."
-msgstr "درگاه پرداخت نامعتبر."
-
-#: includes/class-wc-form-handler.php:548
-msgid "Payment method successfully added."
-msgstr "روش پرداخت باموفقیت اضافه شد."
-
-#: includes/class-wc-form-handler.php:552
-msgid "Unable to add payment method to your account."
-msgstr "عدم توانایی جهت افزودن روش پرداخت به حساب کاربری شما."
-
 #: includes/shortcodes/class-wc-shortcode-order-tracking.php:50
 #: assets/client/blocks/cart-blocks/cart-order-summary-frontend.js:4
 #: assets/client/blocks/cart-blocks/order-summary-coupon-form-frontend.js:4
@@ -21126,6 +21114,18 @@ msgstr "عدم توانایی جهت افزودن روش پرداخت به حس�
 #: assets/client/blocks/checkout.js:2
 msgid "Please enter a valid email address"
 msgstr "لطفا یک آدرس ایمیل معتبر وارد نمائید"
+
+#: includes/class-wc-form-handler.php:535
+msgid "Invalid payment gateway."
+msgstr "درگاه پرداخت نامعتبر."
+
+#: includes/class-wc-form-handler.php:548
+msgid "Payment method successfully added."
+msgstr "روش پرداخت باموفقیت اضافه شد."
+
+#: includes/class-wc-form-handler.php:552
+msgid "Unable to add payment method to your account."
+msgstr "عدم توانایی جهت افزودن روش پرداخت به حساب کاربری شما."
 
 #: includes/class-wc-coupon.php:568 includes/class-wc-coupon.php:572
 msgid "Invalid discount amount"
@@ -28532,11 +28532,6 @@ msgstr "شناسه یکتا برای شیء."
 msgid "The coupon code cannot be empty."
 msgstr "کد تخفیف نمی تواند خالی باشد."
 
-#: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:520
-#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:463
-msgid "List of category IDs the coupon does not apply to."
-msgstr "لیست شناسه‌های دسته‌هایی که کد تخفیف بر آنها اعمال نمی شود."
-
 #: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:84
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customer-downloads-v1-controller.php:46
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:78
@@ -28604,6 +28599,11 @@ msgstr "لیست شناسه‌های دسته‌هایی که کد تخفیف ب
 #: src/StoreApi/Schemas/V1/TermSchema.php:30
 msgid "Unique identifier for the resource."
 msgstr "شناسه یکتا برای منبع."
+
+#: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:520
+#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:463
+msgid "List of category IDs the coupon does not apply to."
+msgstr "لیست شناسه‌های دسته‌هایی که کد تخفیف بر آنها اعمال نمی شود."
 
 #: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:110
 #: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:105
@@ -28903,6 +28903,10 @@ msgstr "منطقه وجود ندارد !"
 msgid "Calculations"
 msgstr "محاسبات"
 
+#: includes/admin/settings/class-wc-settings-advanced.php:217
+msgid "Set default payment method"
+msgstr "تنظیم روش پرداخت پیش‌فرض"
+
 #: includes/admin/importers/class-wc-product-csv-importer-controller.php:730
 #: includes/admin/settings/class-wc-settings-advanced.php:256
 #: includes/admin/views/html-admin-page-product-export.php:40
@@ -28922,10 +28926,6 @@ msgstr "محاسبات"
 #: assets/client/blocks/order-confirmation-downloads-wrapper.js:1
 msgid "Downloads"
 msgstr "دانلودها"
-
-#: includes/admin/settings/class-wc-settings-advanced.php:217
-msgid "Set default payment method"
-msgstr "تنظیم روش پرداخت پیش‌فرض"
 
 #: includes/admin/meta-boxes/views/html-order-items.php:294
 msgid "This order is no longer editable."
@@ -32943,6 +32943,13 @@ msgid "Pending payment <span class=\"count\">(%s)</span>"
 msgid_plural "Pending payment <span class=\"count\">(%s)</span>"
 msgstr[0] "در انتظار پرداخت <span class=\"count\">(%s)</span>"
 
+#. translators: %s: Attribute name.
+#: includes/class-wc-cart.php:1126
+#: src/StoreApi/Utilities/CartController.php:1262
+msgid "%s is a required field"
+msgid_plural "%s are required fields"
+msgstr[0] "%s یک فیلد الزامی است"
+
 #. translators: %s number of products in cart.
 #. translators: %d is the count of products.
 #: src/Blocks/BlockTypes/ProductCategories.php:397
@@ -32961,13 +32968,6 @@ msgstr[0] "در انتظار پرداخت <span class=\"count\">(%s)</span>"
 msgid "%d product"
 msgid_plural "%d products"
 msgstr[0] "%d محصول"
-
-#. translators: %s: Attribute name.
-#: includes/class-wc-cart.php:1126
-#: src/StoreApi/Utilities/CartController.php:1262
-msgid "%s is a required field"
-msgid_plural "%s are required fields"
-msgstr[0] "%s یک فیلد الزامی است"
 
 #. translators: %s: product name
 #: includes/class-wc-cart-session.php:178
@@ -37367,24 +37367,6 @@ msgstr "آدرسی برای حمل و نقل تنظیم نشده."
 msgid "No billing address set."
 msgstr "آدرسی برای صورت حساب تنظیم نشده."
 
-#: includes/admin/meta-boxes/views/html-product-data-general.php:182
-#: includes/admin/views/html-bulk-edit-product.php:79
-#: includes/admin/views/html-quick-edit-product.php:55
-msgid "Shipping only"
-msgstr "فقط حمل و نقل"
-
-#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:521
-msgid "Load shipping address"
-msgstr "بارگزاری آدرس حمل و نقل"
-
-#. translators: %s: date
-#: includes/admin/class-wc-admin-webhooks.php:74
-#: includes/legacy/api/v2/class-wc-api-webhooks.php:199
-#: includes/legacy/api/v3/class-wc-api-webhooks.php:199
-#: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:516
-msgid "Webhook created on %s"
-msgstr "وب هوک در %s ساخته شد"
-
 #: includes/admin/class-wc-admin-setup-wizard.php:241
 #: includes/admin/class-wc-admin-setup-wizard.php:1020
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:518
@@ -37423,6 +37405,24 @@ msgstr "وب هوک در %s ساخته شد"
 #: assets/client/blocks/wc-blocks-data.js:7
 msgid "Shipping"
 msgstr "حمل و نقل"
+
+#: includes/admin/meta-boxes/views/html-product-data-general.php:182
+#: includes/admin/views/html-bulk-edit-product.php:79
+#: includes/admin/views/html-quick-edit-product.php:55
+msgid "Shipping only"
+msgstr "فقط حمل و نقل"
+
+#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:521
+msgid "Load shipping address"
+msgstr "بارگزاری آدرس حمل و نقل"
+
+#. translators: %s: date
+#: includes/admin/class-wc-admin-webhooks.php:74
+#: includes/legacy/api/v2/class-wc-api-webhooks.php:199
+#: includes/legacy/api/v3/class-wc-api-webhooks.php:199
+#: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:516
+msgid "Webhook created on %s"
+msgstr "وب هوک در %s ساخته شد"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:248
 msgid "No categories"
@@ -38285,6 +38285,24 @@ msgid "Plus %d other note"
 msgid_plural "Plus %d other notes"
 msgstr[0] "به اضافه %d یادداشت دیگر"
 
+#: includes/abstracts/abstract-wc-order.php:2427
+#: includes/admin/class-wc-admin-dashboard.php:453
+#: includes/admin/list-tables/class-wc-admin-list-table-orders.php:122
+#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:212
+#: includes/admin/reports/class-wc-report-downloads.php:87
+#: includes/admin/reports/class-wc-report-downloads.php:221
+#: includes/gateways/paypal/includes/class-wc-gateway-paypal-request.php:310
+#: includes/wc-account-functions.php:202 src/Internal/Admin/Orders/Edit.php:154
+#: src/Internal/Admin/Orders/ListTable.php:858
+#: templates/myaccount/my-orders.php:14
+#: assets/client/admin/chunks/analytics-report-categories.js:1
+#: assets/client/admin/chunks/analytics-report-coupons.js:1
+#: assets/client/admin/chunks/analytics-report-orders.js:1
+#: assets/client/admin/chunks/analytics-report-products.js:1
+msgid "Order"
+msgid_plural "Orders"
+msgstr[0] "سفارش"
+
 #. translators: %s: coupon count
 #: includes/admin/class-wc-admin-post-types.php:253
 msgid "%s coupon restored from the Trash."
@@ -38322,24 +38340,6 @@ msgstr[0] "کدتخفیف %s به‌روز شد."
 msgid "%s order restored from the Trash."
 msgid_plural "%s orders restored from the Trash."
 msgstr[0] "%s سفارش‌ها از سطل بازیافت بازیابی شدند."
-
-#: includes/abstracts/abstract-wc-order.php:2427
-#: includes/admin/class-wc-admin-dashboard.php:453
-#: includes/admin/list-tables/class-wc-admin-list-table-orders.php:122
-#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:212
-#: includes/admin/reports/class-wc-report-downloads.php:87
-#: includes/admin/reports/class-wc-report-downloads.php:221
-#: includes/gateways/paypal/includes/class-wc-gateway-paypal-request.php:310
-#: includes/wc-account-functions.php:202 src/Internal/Admin/Orders/Edit.php:154
-#: src/Internal/Admin/Orders/ListTable.php:858
-#: templates/myaccount/my-orders.php:14
-#: assets/client/admin/chunks/analytics-report-categories.js:1
-#: assets/client/admin/chunks/analytics-report-coupons.js:1
-#: assets/client/admin/chunks/analytics-report-orders.js:1
-#: assets/client/admin/chunks/analytics-report-products.js:1
-msgid "Order"
-msgid_plural "Orders"
-msgstr[0] "سفارش"
 
 #. translators: %s: order count
 #. translators: %s: orders count
@@ -38456,6 +38456,12 @@ msgstr "بزن بریم !"
 msgid "Billing"
 msgstr "صورت حساب"
 
+#: includes/admin/list-tables/class-wc-admin-list-table-coupons.php:84
+#: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:91
+#: includes/admin/reports/class-wc-report-sales-by-date.php:741
+msgid "Coupon amount"
+msgstr "میزان تخفیف"
+
 #: includes/admin/class-wc-admin-dashboard.php:455
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:127
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:262
@@ -38490,12 +38496,6 @@ msgstr "صورت حساب"
 #: assets/client/blocks/order-confirmation-totals.js:1
 msgid "Total"
 msgstr "مجموع"
-
-#: includes/admin/list-tables/class-wc-admin-list-table-coupons.php:84
-#: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:91
-#: includes/admin/reports/class-wc-report-sales-by-date.php:741
-msgid "Coupon amount"
-msgstr "میزان تخفیف"
 
 #: includes/admin/importers/class-wc-product-csv-importer-controller.php:513
 #: includes/admin/importers/class-wc-product-csv-importer-controller.php:677
@@ -39354,11 +39354,6 @@ msgstr "ناموجود"
 msgid "Available on backorder"
 msgstr "اکنون موجود نیست؛ اما می‌توانید این محصول را پیش‌خرید کنید"
 
-#. translators: %s: stock amount
-#: includes/wc-formatting-functions.php:1261
-msgid "%s in stock"
-msgstr "%s عدد در انبار"
-
 #: includes/admin/list-tables/class-wc-admin-list-table-products.php:275
 #: includes/admin/reports/class-wc-report-stock.php:116
 #: includes/wc-formatting-functions.php:1249
@@ -39373,6 +39368,11 @@ msgstr "%s عدد در انبار"
 #: assets/client/blocks/product-stock-indicator.js:2
 msgid "In stock"
 msgstr "موجود"
+
+#. translators: %s: stock amount
+#: includes/wc-formatting-functions.php:1261
+msgid "%s in stock"
+msgstr "%s عدد در انبار"
 
 #: includes/admin/class-wc-admin-attributes.php:400
 msgid "Configure terms"
@@ -39640,27 +39640,6 @@ msgstr "ساموآی آمریکا"
 msgid "Enter a value (fixed or %)"
 msgstr "مقدار را وارد کنید ( بصورت ثابت یا %)"
 
-#: includes/admin/class-wc-admin-attributes.php:336
-#: includes/admin/class-wc-admin-log-table-list.php:234
-#: includes/admin/meta-boxes/class-wc-meta-box-product-images.php:56
-#: includes/admin/meta-boxes/class-wc-meta-box-product-images.php:81
-#: includes/admin/meta-boxes/views/html-product-download.php:29
-#: includes/admin/meta-boxes/views/html-product-variation-download.php:29
-#: includes/admin/settings/views/html-admin-page-shipping-classes.php:162
-#: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:128
-#: includes/admin/settings/views/html-admin-page-shipping-zones.php:87
-#: includes/wc-account-functions.php:361
-#: packages/action-scheduler/classes/ActionScheduler_ListTable.php:92
-#: src/Internal/Admin/Orders/MetaBoxes/CustomMetaBox.php:392
-#: src/Internal/DataStores/Orders/CustomOrdersTableController.php:260
-#: assets/client/admin/chunks/customize-store.js:1
-#: assets/client/admin/chunks/homescreen.js:1
-#: assets/client/admin/experimental/index.js:2
-#: assets/client/admin/product-editor/blocks/product-fields/downloads/edit-downloads-modal/edit-downloads-modal.js:1
-#: assets/client/admin/product-editor/index.js:2
-msgid "Delete"
-msgstr "حذف"
-
 #: includes/admin/class-wc-admin-assets.php:392
 msgid "Load the customer's shipping information? This will remove any currently entered shipping information."
 msgstr "بارگذاری اطلاعات حمل و نقل مشتری؟ این هرگونه اطلاعات حمل و نقلی که در حال حاضر وارد شده را حذف می کند."
@@ -39688,6 +39667,27 @@ msgstr "حذف"
 #: assets/client/blocks/checkout.js:16
 msgid "Shipping:"
 msgstr "حمل و نقل:"
+
+#: includes/admin/class-wc-admin-attributes.php:336
+#: includes/admin/class-wc-admin-log-table-list.php:234
+#: includes/admin/meta-boxes/class-wc-meta-box-product-images.php:56
+#: includes/admin/meta-boxes/class-wc-meta-box-product-images.php:81
+#: includes/admin/meta-boxes/views/html-product-download.php:29
+#: includes/admin/meta-boxes/views/html-product-variation-download.php:29
+#: includes/admin/settings/views/html-admin-page-shipping-classes.php:162
+#: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:128
+#: includes/admin/settings/views/html-admin-page-shipping-zones.php:87
+#: includes/wc-account-functions.php:361
+#: packages/action-scheduler/classes/ActionScheduler_ListTable.php:92
+#: src/Internal/Admin/Orders/MetaBoxes/CustomMetaBox.php:392
+#: src/Internal/DataStores/Orders/CustomOrdersTableController.php:260
+#: assets/client/admin/chunks/customize-store.js:1
+#: assets/client/admin/chunks/homescreen.js:1
+#: assets/client/admin/experimental/index.js:2
+#: assets/client/admin/product-editor/blocks/product-fields/downloads/edit-downloads-modal/edit-downloads-modal.js:1
+#: assets/client/admin/product-editor/index.js:2
+msgid "Delete"
+msgstr "حذف"
 
 #: includes/admin/class-wc-admin-permalink-settings.php:46
 msgid "Product category base"
@@ -39788,26 +39788,6 @@ msgstr "هیچ صفتی موجود نیست."
 msgid "Are you sure you want to delete this attribute?"
 msgstr "آیا میخواهید این ویژگی را پاک کنید؟"
 
-#: includes/admin/class-wc-admin-menus.php:123
-#: includes/admin/views/html-admin-page-status-report.php:668
-#: includes/class-wc-install.php:2102
-#: includes/react-admin/connect-existing-pages.php:35
-#: src/Admin/Features/Navigation/CoreMenu.php:126
-#: src/Internal/Admin/Analytics.php:305
-#: src/Internal/Admin/Logging/PageController.php:211
-#: src/Internal/Admin/SettingsNavigationFeature.php:86
-#: assets/client/admin/app/index.js:2 assets/client/admin/chunks/4.js:2
-#: assets/client/admin/chunks/customize-store.js:1
-#: assets/client/admin/chunks/edit-product-page.js:1
-#: assets/client/admin/chunks/homescreen.js:1
-#: assets/client/admin/product-editor/index.js:2
-#: assets/client/blocks/cart.js:16 assets/client/blocks/mini-cart.js:1
-#: assets/client/blocks/price-filter.js:5
-#: assets/client/blocks/product-collection.js:12
-#: assets/client/blocks/product-filter-price.js:1
-msgid "Settings"
-msgstr "پیکربندی"
-
 #: includes/class-wc-order-item-product.php:228
 #: includes/legacy/abstract-wc-legacy-order.php:164
 msgid "Backordered"
@@ -39830,6 +39810,26 @@ msgstr "رایگان !"
 #: assets/client/blocks/wc-blocks-data.js:7
 msgid "Fee"
 msgstr "هزینه نگهداری"
+
+#: includes/admin/class-wc-admin-menus.php:123
+#: includes/admin/views/html-admin-page-status-report.php:668
+#: includes/class-wc-install.php:2102
+#: includes/react-admin/connect-existing-pages.php:35
+#: src/Admin/Features/Navigation/CoreMenu.php:126
+#: src/Internal/Admin/Analytics.php:305
+#: src/Internal/Admin/Logging/PageController.php:211
+#: src/Internal/Admin/SettingsNavigationFeature.php:86
+#: assets/client/admin/app/index.js:2 assets/client/admin/chunks/4.js:2
+#: assets/client/admin/chunks/customize-store.js:1
+#: assets/client/admin/chunks/edit-product-page.js:1
+#: assets/client/admin/chunks/homescreen.js:1
+#: assets/client/admin/product-editor/index.js:2
+#: assets/client/blocks/cart.js:16 assets/client/blocks/mini-cart.js:1
+#: assets/client/blocks/price-filter.js:5
+#: assets/client/blocks/product-collection.js:12
+#: assets/client/blocks/product-filter-price.js:1
+msgid "Settings"
+msgstr "پیکربندی"
 
 #. translators: %s: average rating
 #. translators: %s: rating
