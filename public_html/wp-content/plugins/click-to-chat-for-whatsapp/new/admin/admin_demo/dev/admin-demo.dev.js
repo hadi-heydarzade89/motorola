@@ -542,7 +542,7 @@
                     $('.ctc_ad_badge').text(count);
                 });
 
-                // time dealy
+                // time delay
                 var timeoutId;
                 $('.field_notification_time').on('change', function () {
                     $('.ctc_ad_notification').hide();

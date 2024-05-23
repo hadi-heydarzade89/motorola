@@ -237,6 +237,7 @@ class HT_CTC_DB {
             'v3_23' => $time,
             'v3_28' => $time,
             'v3_31' => $time,
+            'v4_3' => $time,
         );
 
         $db_values = get_option( 'ht_ctc_plugin_details', array() );

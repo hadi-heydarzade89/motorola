@@ -105,6 +105,8 @@ class HT_CTC_Admin_Others {
         $ht_ctc_notices = get_option('ht_ctc_notices');
         $ht_ctc_pro_plugin_details = get_option('ht_ctc_pro_plugin_details');
 
+        $load_pro_notice_scripts = 'no';
+
         if ( isset( $ht_ctc_chat_options['number'] ) ) {
             if ( '' == $ht_ctc_chat_options['number'] ) {
                 add_action('admin_notices', array( $this, 'ifnumberblank') );
@@ -141,33 +143,60 @@ class HT_CTC_Admin_Others {
          * 
          * not closed/dismissed the pro notice
          * not yet installed once.
-         * after 1 week of first install..
+         * after 5 days of first install..
          */
-        if ( !isset($ht_ctc_notices['pro_banner']) ) {
+        // display pro banner only if pro plugin is not yet installed once
+        if ( !isset($ht_ctc_pro_plugin_details['version']) ) {
 
-            // display pro banner only if pro plugin is not yet installed once
-            if ( !isset($ht_ctc_pro_plugin_details['version']) ) {
+            if ( !isset($ht_ctc_notices['pro_banner']) ) {
 
-                $time = time();
-                // 1 week
-                $wait_time = (7*24*60*60);
+                    $time = time();
+                    
+                    // 5 days
+                    $wait_time = (5*24*60*60);
 
-                $ht_ctc_plugin_details = get_option('ht_ctc_plugin_details');
-                $first_install_time = (isset($ht_ctc_plugin_details['first_install_time'])) ? esc_attr($ht_ctc_plugin_details['first_install_time']) : 1;
+                    $ht_ctc_plugin_details = get_option('ht_ctc_plugin_details');
+                    $first_install_time = (isset($ht_ctc_plugin_details['first_install_time'])) ? esc_attr($ht_ctc_plugin_details['first_install_time']) : 1;
 
-                $diff_time = $time - $first_install_time;
+                    $diff_time = $time - $first_install_time;
 
-                if ( $diff_time > $wait_time ) {
-                    add_action('admin_notices', array( $this, 'pro_notice') );
-                    add_action('admin_footer', array( $this, 'admin_pro_notice_scripts') );
+                    if ( $diff_time > $wait_time ) {
+                        add_action('admin_notices', array( $this, 'pro_notice') );
+                        $load_pro_notice_scripts = 'yes';
+                    }
+
+
+            }
+
+            // if ht_ctc_notices['pro_banner'] is set and ht_ctc_notices['pro_banner_country'] is not set.. then display pro notice based on country code.
+            if ( isset($ht_ctc_notices['pro_banner']) && !isset($ht_ctc_notices['pro_banner_country']) ) {
+
+                // pro banner is also closed before 4.3. var 'version' is 'pro_banner' closed version.
+                if ( isset($ht_ctc_notices['version']) && version_compare($ht_ctc_notices['version'], '4.3', '<') ) {
+                    add_action('admin_notices', array( $this, 'pro_notice_country') );
+                    $load_pro_notice_scripts = 'yes';
                 }
+                
+            }
 
+
+
+
+            // load pro notice scripts
+            if ( 'yes' == $load_pro_notice_scripts ) {
+                add_action('admin_footer', array( $this, 'admin_pro_notice_scripts') );
             }
 
         }
 
+
+        
+
+
+        // // todo: comment this lines.. before release
         // add_action('admin_notices', array( $this, 'pro_notice') );
         // add_action('admin_footer', array( $this, 'admin_pro_notice_scripts') );
+        // add_action('admin_notices', array( $this, 'pro_notice_country') );
 
 
         /**
@@ -232,8 +261,32 @@ class HT_CTC_Admin_Others {
         <div class="notice notice-info is-dismissible ht-ctc-notice-pro-banner" data-db="pro_banner" style="display:flex; flex-direction:column; padding:14px; border-radius:5px;">
             <p style="margin:0; font-size:1.4rem; color:#1d2327; font-weight:600;">Click to Chat - PRO</p>
             <p style="margin:0 0 2px;">
-                Random Number, <strong>Form filling</strong>, <strong>Multi Agent</strong>, Webhooks, Business hours, Display based on time range, days in a week, time dealy, scroll delay, login status and much more.
+            <p class="description">Random number, <strong>Form filling</strong>, <strong>Multi-Agent</strong>, Webhooks, Google Ads Conversion</p>
+            <p class="description">Display based on <strong>website visitors country</strong>, Business hours (schedule), time delay, scroll delay, login status, and much more..</p>
+            <!-- WooCommerce integration -->
+            <p>
+                <a class="button button-primary" style="padding:2px 15px;" href="https://holithemes.com/plugins/click-to-chat/pricing/" target="_blank">Buy Now</a>
+                <br>
+                <a class="button-dismiss" style="text-decoration: none;" href="#">Dismiss</a>
             </p>
+        </div>
+        <?php
+    }
+
+
+
+    /**
+     * pro notice: display based on website vistors country code.
+     * 
+     * only display if first version is before 4.3 and pro banner is also closed before 4.3 release. 
+     * 
+     */
+    function pro_notice_country() {
+        ?>
+        <div class="notice notice-info is-dismissible ht-ctc-notice-pro-banner" data-db="pro_banner_country" style="display:flex; flex-direction:column; padding:14px; border-radius:5px;">
+            <p style="margin:0; font-size:1.4rem; color:#1d2327; font-weight:600;">Click to Chat - PRO</p>
+            <p style="margin:0 0 2px;">
+            <p class="description"><strong>NEW: </strong> Display Chat Widget based on website visitors <a href="https://holithemes.com/plugins/click-to-chat/display-based-on-country/" target="_blank">country</a></p>
             <p>
                 <a class="button button-primary" style="padding:2px 15px;" href="https://holithemes.com/plugins/click-to-chat/pricing/" target="_blank">Buy Now</a>
                 <br>
@@ -269,7 +322,7 @@ class HT_CTC_Admin_Others {
                                 e.preventDefault();
 
                                 var element = e.target.closest('.is-dismissible');
-                                var db = (element.hasAttribute('data-db')) ? element.getAttribute('data-db') : '';
+                                var db = (element.hasAttribute('data-db')) ? element.getAttribute('data-db') : 'fallback';
 
                                 const http = new XMLHttpRequest();
                                 http.open('POST', ajaxurl, true);
@@ -304,6 +357,7 @@ class HT_CTC_Admin_Others {
 
         // map_deep may not required. instead call post of db directly and sanitize.
         $post_data = ($_POST) ? map_deep( $_POST, 'sanitize_text_field' ) : '';
+
         $db_key = (isset($post_data['db'])) ? esc_attr( $post_data['db'] ) : '';
 
         // update/add at db..
@@ -319,9 +373,21 @@ class HT_CTC_Admin_Others {
 
         // update to latest values
         $update_values['version'] = HT_CTC_VERSION;
+
+        // db_key santized. but to avoid unwanted values to save in db.
+        $db_key_values = [
+            'pro_banner',
+            'pro_banner_country'
+        ];
+
         // add data ..
-        if ('' !== $db_key) {
+        if ('' !== $db_key && in_array($db_key, $db_key_values) ) {
+
             $update_values[$db_key] = $time;
+
+            // @since 4.3. key with current version
+            $db_key_version = "{$db_key}_version";
+            $update_values[$db_key_version] = HT_CTC_VERSION;
         }
         update_option( 'ht_ctc_notices', $update_values );
 

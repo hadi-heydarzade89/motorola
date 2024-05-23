@@ -3,7 +3,7 @@ Requires at least: 4.6
 Tested up to: 6.5.3
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 4.2
+Stable tag: 4.3
 Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, WooCommerce WhatsApp
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -221,6 +221,7 @@ Connect other applications using Integrate, Automation tools like Zapier, IFTTT,
     * Hide When Offline
     * Show/Hide on selected time range in a day
     * Show/Hide on selected days in a week
+* Display based on website visitor's country
 * Webhooks - Dynamic variables
     * {url} - replace with current page URL
     * {time} - time the user interacted with WhatsApp Button/Icon
@@ -280,6 +281,7 @@ PRO:
 * Selected time range in a day
 * Selected Days in a week
 * Website visitor login status
+* Website visitor country
 
 == ✅ Opt-in ==
 
@@ -448,6 +450,10 @@ User consent before starting the chat.
 
 [Opt-in](https://holithemes.com/plugins/click-to-chat/opt-in/)
 
+= Display only on selected countries =
+
+[Display based on country](https://holithemes.com/plugins/click-to-chat/display-based-on-country/)
+
 = Show/Hide on Selected pages/devices = 
 
 [Show only on selected pages](https://holithemes.com/plugins/click-to-chat/show-only-on-selected-pages/)
@@ -531,8 +537,12 @@ After Activating the plugin, add a WhatsApp Number in the plugin settings.
 
 == Changelog ==
 
+= 4.3 =
+* Shorcodes now works with URL settings - new tab, same tab, popup.
+* PRO: NEW: Display based on website visitor's country.
+
 = 4.2 = 
-* Fix: Different widgets for mobile and desktop cache issue.
+* Fix: set different widgets for mobile and desktop cache issue.
 
 = 4.1 =
 * Enhancement: Admin settings WhatsApp number input filed with country code search option.

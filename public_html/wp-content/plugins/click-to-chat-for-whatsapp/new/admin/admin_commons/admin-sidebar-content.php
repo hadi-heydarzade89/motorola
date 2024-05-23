@@ -46,6 +46,7 @@ $othersettings = get_option('ht_ctc_othersettings');
                             <p class="description">&emsp;With different time ranges</p>
                             <p class="description">&emsp;Hide agent when offline or</p>
                             <p class="description">&emsp;Display offline agent with next available time</p>
+                            <p class="description">Display based on country [NEW]</p>
                             <p class="description">Google Ads Conversion</p>
                             <p class="description">Business Hours</p>
                             <p class="description">&emsp;Hide when offline</p>

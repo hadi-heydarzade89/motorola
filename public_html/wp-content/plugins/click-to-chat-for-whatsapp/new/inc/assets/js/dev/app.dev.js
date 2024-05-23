@@ -514,15 +514,13 @@
                 new CustomEvent("ht_ctc_event_analytics")
             );
 
-            // global number (fixed, user created elememt)
-            // todo:l multi agent, random number.. 
-            var id = ctc.number;
+            var id = (ctc.chat_number && '' !== ctc.chat_number) ? ctc.chat_number : ctc.number;
 
             // if its shortcode
-            if (values.classList.contains('ht-ctc-sc')) {
-                // shortcode number
-                id = values.getAttribute('data-number');
-            }
+            // if (values.classList.contains('ht-ctc-sc')) {
+            //     // shortcode number
+            //     id = values.getAttribute('data-number');
+            // }
 
             console.log(id);
 
@@ -742,22 +740,29 @@
 
         }
 
-        // link - chat
+        /**
+         *  link - chat
+         * 
+         * @used floating chat, shortcode, custom element. ht_ctc_chat_greetings_box_link click
+         */
         function ht_ctc_link(values) {
+
+            console.log('ht_ctc_link');
+            console.log(values);
 
             console.log(ctc.number);
             document.dispatchEvent(
                 new CustomEvent("ht_ctc_event_number", { detail: { ctc } })
             );
-
             console.log(ctc.number);
 
             var number = ctc.number;
             var pre_filled = ctc.pre_filled;
 
-            if (values.hasAttribute('data-number')) {
-                console.log('has number attribute');
+            if ( values.hasAttribute('data-number') && '' !== values.getAttribute('data-number') ) {
+                console.log('data-number is added');
                 number = values.getAttribute('data-number');
+                console.log('data-number: ' + number);
             }
 
             if (values.hasAttribute('data-pre_filled')) {
@@ -881,6 +886,9 @@
 
             window.open(base_url, url_target, specs);
 
+            // number assigned to the clicked element.
+            ctc.chat_number = number;
+
             // analytics
             ht_ctc_chat_analytics(values);
 
@@ -896,24 +904,45 @@
             // shortcode - click
             $(document).on('click', '.ht-ctc-sc-chat', function () {
 
-                var number = this.getAttribute('data-number');
-                var pre_filled = this.getAttribute('data-pre_filled');
-                pre_filled = pre_filled.replace(/\[url]/gi, url);
-                pre_filled = encodeURIComponent(pre_filled);
+                /**
+                 * @since 4.3 calling ht_ctc_link function directly... 
+                 * benficts using global number.. page level settings number, .. random number, .. shortcode number.
+                 * url structure.. 
+                 */
+                // var number = this.hasAttribute('data-number') ? this.getAttribute('data-number') : '';
+                // console.log(typeof number);
 
-                if (ctc.url_structure_d && is_mobile !== 'yes') {
-                    // web.whatsapp - if web api is enabled and is not mobile
-                    window.open('https://web.whatsapp.com/send' + '?phone=' + number + '&text=' + pre_filled, '_blank', 'noopener');
-                } else {
-                    // wa.me
-                    window.open('https://wa.me/' + number + '?text=' + pre_filled, '_blank', 'noopener');
-                }
+                // console.log('shortcode number: ' + number);
 
-                // analytics
-                ht_ctc_chat_analytics(this);
+                // if ('' == number) {
+                //     console.log('shortcode: adding global number');
+                //     number = ctc.number;
+                //     console.log('shortcode: global number: ' + number);
+                // }
+                
+                // var pre_filled = this.getAttribute('data-pre_filled');
+                // pre_filled = pre_filled.replace(/\[url]/gi, url);
+                // pre_filled = encodeURIComponent(pre_filled);
 
-                // hook
-                hook(number);
+                // if (ctc.url_structure_d && is_mobile !== 'yes') {
+                //     // web.whatsapp - if web api is enabled and is not mobile
+                //     window.open('https://web.whatsapp.com/send' + '?phone=' + number + '&text=' + pre_filled, '_blank', 'noopener');
+                // } else {
+                //     // wa.me
+                //     window.open('https://wa.me/' + number + '?text=' + pre_filled, '_blank', 'noopener');
+                // }
+
+                // // analytics
+                // ctc.chat_number = number;
+
+                // ht_ctc_chat_analytics(this);
+
+                // // webhook
+                // hook(number);
+
+                console.log('shortcode click');
+                ht_ctc_link(this);
+
             });
         }
 
