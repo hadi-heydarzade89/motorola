@@ -55,7 +55,7 @@ if (WOOF_REQUEST::isset('hide_terms_count_txt_short') AND intval(WOOF_REQUEST::i
 }
 //***
 ?>
-<div data-css-class="woof_meta_mselect_container" class="woof_meta_mselect_container woof_container woof_container_<?php echo esc_attr($meta_key) ?> woof_container woof_container_<?php echo esc_attr($meta_key) ?>  woof_container_<?php echo esc_attr("mselect_" . $meta_key) ?> <?php echo WOOF_HELPER::generate_container_css_classes($meta_key) ?>" >
+<div data-css-class="woof_meta_mselect_container" class="woof_meta_mselect_container woof_container woof_container_<?php echo esc_attr($meta_key) ?> woof_container woof_container_<?php echo esc_attr($meta_key) ?>  woof_container_<?php echo esc_attr("mselect_" . $meta_key) ?> <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes($meta_key)) ?>" >
     <div class="woof_container_inner">
         <div class="woof_container_inner woof_container_inner_meta_mselect">
             <?php if ($show_title_label) {

@@ -283,7 +283,7 @@ final class WOOF_EXT_PRODS_MESSENGER extends WOOF_EXT {
             $subscr = array();
         }
         if (count($subscr) >= $this->subscr_count) {
-            die('<li class="woof_pm_max_count" >' . __('Сount is max', 'woocommerce-products-filter') . '</li>'); // Check limit count on backend
+            die('<li class="woof_pm_max_count" >' . esc_html__('Сount is max', 'woocommerce-products-filter') . '</li>'); // Check limit count on backend
         }
         //+++
         $data['subscr_lang'] = apply_filters('woof_subscribe_lang', $this->subscribe_lang); //Text of  the subscriptions
@@ -308,7 +308,8 @@ final class WOOF_EXT_PRODS_MESSENGER extends WOOF_EXT {
         $data['ext_link'] = $this->get_ext_link();
         //for Ajax redraw
         $cont = woof()->render_html($this->get_ext_path() . 'views' . DIRECTORY_SEPARATOR . 'item_list_subscr.php', $data);
-        die($cont);
+		wp_send_json($cont);
+        //die($cont);
     }
 
     public function woof_remove_subscr() {

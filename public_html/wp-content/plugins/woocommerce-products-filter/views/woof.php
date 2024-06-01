@@ -153,7 +153,7 @@ if (!function_exists('woof_print_tax')) {
         //https://wordpress.org/support/topic/adding-classes-woof_container-div
         $primax_class = sanitize_key(WOOF_HELPER::wpml_translate($taxonomies_info[$tax_slug] ?? ''));
         ?>
-        <div data-css-class="woof_container_<?php echo esc_attr($tax_slug) ?>" class="woof_container woof_container_<?php echo esc_attr(isset($woof_settings['tax_type'][$tax_slug]) ? $woof_settings['tax_type'][$tax_slug] : '') ?> woof_container_<?php echo esc_attr($tax_slug) ?> woof_container_<?php echo esc_attr($counter) ?> woof_container_<?php echo esc_attr($primax_class) ?> <?php echo WOOF_HELPER::generate_container_css_classes($tax_slug) ?>">
+        <div data-css-class="woof_container_<?php echo esc_attr($tax_slug) ?>" class="woof_container woof_container_<?php echo esc_attr(isset($woof_settings['tax_type'][$tax_slug]) ? $woof_settings['tax_type'][$tax_slug] : '') ?> woof_container_<?php echo esc_attr($tax_slug) ?> woof_container_<?php echo esc_attr($counter) ?> woof_container_<?php echo esc_attr($primax_class) ?> <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes($tax_slug)) ?>">
             <div class="woof_container_overlay_item"></div>
             <div class="woof_container_inner woof_container_inner_<?php echo esc_attr($primax_class) ?>">
                 <?php
@@ -360,7 +360,7 @@ if (!function_exists('woof_print_item_by_key')) {
                         break;
                     }
                     ?>
-                    <div data-css-class="woof_price_search_container" class="woof_price_search_container woof_container woof_price_filter <?php echo WOOF_HELPER::generate_container_css_classes('by_price') ?>">
+                    <div data-css-class="woof_price_search_container" class="woof_price_search_container woof_container woof_price_filter <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes('by_price')) ?>">
                         <div class="woof_container_overlay_item"></div>
                         <div class="woof_container_inner">
                             <div class="woocommerce widget_price_filter">
@@ -379,7 +379,7 @@ if (!function_exists('woof_print_item_by_key')) {
                 <?php endif; ?>
 
                 <?php if ($price_filter == 2): ?>
-                    <div data-css-class="woof_price2_search_container" class="woof_price2_search_container woof_container woof_price_filter <?php echo WOOF_HELPER::generate_container_css_classes('by_price') ?>">
+                    <div data-css-class="woof_price2_search_container" class="woof_price2_search_container woof_container woof_price_filter <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes('by_price')) ?>">
                         <div class="woof_container_overlay_item"></div>
                         <div class="woof_container_inner">
                             <?php if (isset(woof()->settings['by_price']['title_text']) AND !empty(woof()->settings['by_price']['title_text'])): ?>
@@ -403,7 +403,7 @@ if (!function_exists('woof_print_item_by_key')) {
                         break;
                     }
                     ?>
-                    <div data-css-class="woof_price3_search_container" class="woof_price3_search_container woof_container woof_price_filter <?php echo WOOF_HELPER::generate_container_css_classes('by_price') ?>">
+                    <div data-css-class="woof_price3_search_container" class="woof_price3_search_container woof_container woof_price_filter <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes('by_price')) ?>">
                         <div class="woof_container_overlay_item"></div>
                         <div class="woof_container_inner">
                             <?php if (isset(woof()->settings['by_price']['title_text']) AND !empty(woof()->settings['by_price']['title_text'])): ?>
@@ -421,7 +421,7 @@ if (!function_exists('woof_print_item_by_key')) {
 
 
                 <?php if ($price_filter == 4): ?>
-                    <div data-css-class="woof_price4_search_container" class="woof_price4_search_container woof_container woof_price_filter <?php echo WOOF_HELPER::generate_container_css_classes('by_price') ?>">
+                    <div data-css-class="woof_price4_search_container" class="woof_price4_search_container woof_container woof_price_filter <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes('by_price')) ?>">
                         <div class="woof_container_overlay_item"></div>
                         <div class="woof_container_inner">
                             <?php if (isset(woof()->settings['by_price']['title_text']) AND !empty(woof()->settings['by_price']['title_text'])): ?>
@@ -437,7 +437,7 @@ if (!function_exists('woof_print_item_by_key')) {
                     </div>
                 <?php endif; ?>
                 <?php if ($price_filter == 5): ?>
-                    <div data-css-class="woof_price5_search_container" class="woof_price5_search_container woof_container woof_price_filter <?php echo WOOF_HELPER::generate_container_css_classes('by_price') ?>">
+                    <div data-css-class="woof_price5_search_container" class="woof_price5_search_container woof_container woof_price_filter <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes('by_price')) ?>">
                         <div class="woof_container_overlay_item"></div>
                         <div class="woof_container_inner">
                             <?php
@@ -522,20 +522,29 @@ if (!function_exists('woof_print_item_by_key')) {
             }
             ?>
 
-            <div data-slug="<?php echo esc_attr(isset($swoof_slug) ? $swoof_slug : '') ?>" class="woof <?php if (!empty($sid)): ?>woof_sid woof_sid_<?php echo esc_attr($sid) ?><?php endif; ?> <?php echo esc_attr($woof_class) ?>" <?php if (!empty($sid)): ?>data-sid="<?php echo esc_attr($sid); ?>"<?php endif; ?> data-shortcode="<?php echo esc_html(WOOF_REQUEST::isset('woof_shortcode_txt') ? WOOF_REQUEST::get('woof_shortcode_txt') : 'woof') ?>" data-redirect="<?php echo esc_attr($redirect) ?>" data-autosubmit="<?php echo esc_attr($autosubmit) ?>" data-ajax-redraw="<?php echo esc_attr($ajax_redraw) ?>">
-                <?php
-                if (wp_is_mobile() && (isset($mobile_mode) && $mobile_mode) && isset($sid)) {
-                    $image_mb_open = (isset($this->settings['image_mobile_behavior_open'])) ? $this->settings['image_mobile_behavior_open'] : '';
-                    $image_mb_close = (isset($this->settings['image_mobile_behavior_close'])) ? $this->settings['image_mobile_behavior_close'] : '';
-                    if ($image_mb_open != -1 && empty($image_mb_open)) {
-                        $image_mb_open = WOOF_LINK . "img/open_filter.png";
-                    }
-                    if ($image_mb_close != -1 && empty($image_mb_close)) {
-                        $image_mb_close = WOOF_LINK . "img/close_filter.png";
-                    }
-                    $text_mb_open = (isset($this->settings['text_mobile_behavior_open'])) ? $this->settings['text_mobile_behavior_open'] : esc_html__('Open filter', 'woocommerce-products-filter');
-                    $text_mb_close = (isset($this->settings['text_mobile_behavior_close'])) ? $this->settings['text_mobile_behavior_close'] : esc_html__('Close filter', 'woocommerce-products-filter');
-                    ?>
+            <div data-slug="<?php echo esc_attr(isset($swoof_slug) ? $swoof_slug : '') ?>" 
+                 class="woof <?php if (!empty($sid)): ?>woof_sid woof_sid_<?php echo esc_attr($sid) ?><?php endif; ?> <?php echo esc_attr($woof_class) ?>" 
+                 <?php if (!empty($sid)): ?>
+                     data-sid="<?php echo esc_attr($sid); ?>"
+                 <?php endif; ?> 
+                 data-shortcode="<?php echo esc_html(WOOF_REQUEST::isset('woof_shortcode_txt') ? WOOF_REQUEST::get('woof_shortcode_txt') : 'woof') ?>" 
+                 data-redirect="<?php echo esc_url($redirect) ?>" 
+                 data-autosubmit="<?php echo esc_attr($autosubmit) ?>" 
+                 data-ajax-redraw="<?php echo esc_attr($ajax_redraw) ?>"
+                 >
+                     <?php
+                     if (wp_is_mobile() && (isset($mobile_mode) && $mobile_mode) && isset($sid)) {
+                         $image_mb_open = (isset($this->settings['image_mobile_behavior_open'])) ? $this->settings['image_mobile_behavior_open'] : '';
+                         $image_mb_close = (isset($this->settings['image_mobile_behavior_close'])) ? $this->settings['image_mobile_behavior_close'] : '';
+                         if ($image_mb_open != -1 && empty($image_mb_open)) {
+                             $image_mb_open = WOOF_LINK . "img/open_filter.png";
+                         }
+                         if ($image_mb_close != -1 && empty($image_mb_close)) {
+                             $image_mb_close = WOOF_LINK . "img/close_filter.png";
+                         }
+                         $text_mb_open = (isset($this->settings['text_mobile_behavior_open'])) ? $this->settings['text_mobile_behavior_open'] : esc_html__('Open filter', 'woocommerce-products-filter');
+                         $text_mb_close = (isset($this->settings['text_mobile_behavior_close'])) ? $this->settings['text_mobile_behavior_close'] : esc_html__('Close filter', 'woocommerce-products-filter');
+                         ?>
                     <div class="woof_show_mobile_filter" data-sid="<?php echo esc_attr($sid); ?>">
                         <?php if ($image_mb_open != -1) : ?>
                             <img src="<?php echo esc_url($image_mb_open); ?>" alt="">
@@ -560,10 +569,17 @@ if (!function_exists('woof_print_item_by_key')) {
                     <div></div>
                 <?php endif; ?>
 
+                <?php
+                $woof_filter_class = "woof_redraw_zone";
+
+                if (isset($filter_blur) && intval($filter_blur) === 1) {
+                    $woof_filter_class .= " woof_blur_redraw_zone";
+                }
+                ?>	
                 <!--- here is possible to drop html code which is never redraws by AJAX ---->
                 <?php echo wp_kses_post(wp_unslash(apply_filters('woof_print_content_before_redraw_zone', ''))) ?>
 
-                <div class="woof_redraw_zone" data-woof-ver="<?php echo esc_attr(WOOF_VERSION) ?>" data-icheck-skin="<?php echo woof()->settings['icheck_skin'] ?>">
+                <div class="<?php echo esc_attr($woof_filter_class) ?>" data-woof-ver="<?php echo esc_attr(WOOF_VERSION) ?>" data-icheck-skin="<?php echo esc_attr(woof()->settings['icheck_skin']) ?>">
                     <?php echo wp_kses_post(wp_unslash(apply_filters('woof_print_content_before_search_form', ''))) ?>
                     <?php
                     if (isset($start_filtering_btn) AND (int) $start_filtering_btn == 1) {
@@ -691,7 +707,6 @@ if (!function_exists('woof_print_item_by_key')) {
                         ?>
 
                     <?php endif; ?>
-
                 </div>
 
             </div>

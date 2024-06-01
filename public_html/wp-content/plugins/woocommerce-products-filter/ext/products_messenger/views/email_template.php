@@ -2,7 +2,7 @@
 $unsobscr_link = "";
 $link = explode("?", $subscr['link']);
 $unsobscr_link = $link[0] . "?id_user=" . $subscr['user_id'] . "&key=" . $subscr['key'] . "&woof_skey=" . $subscr['secret_key'];
-if (count($link) == 1) {
+if (count($link) === 1) {
     $subscr['link'] .= "?swoof=1";
 }
 $search_terms = $subscr['get'];

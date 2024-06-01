@@ -205,7 +205,8 @@ final class WOOF_EXT_QUICK_TEXT extends WOOF_EXT {
         
         $data = array();
         $data['woof_settings'] = $this->woof_settings;
-        echo woof()->render_html($this->get_ext_path() . 'views/tabs_content.php', $data);
+
+		woof()->render_html_e($this->get_ext_path() . 'views/tabs_content.php', $data);
     }
 
     public function get_woof_cron_schedules($key = '') {
@@ -610,10 +611,15 @@ final class WOOF_EXT_QUICK_TEXT extends WOOF_EXT {
     public static function show_sort_html_by_title() {
         return self::show_sort_html('title-asc', 'title-desc');
     }
-
+    public static function show_sort_html_by_title_e() {
+		self::show_sort_html_e('title-asc', 'title-desc');
+    }
     public static function show_sort_html_by_price() {
         return self::show_sort_html('price-asc', 'price-desc');
     }
+    public static function show_sort_html_by_price_e() {
+        self::show_sort_html_e('price-asc', 'price-desc');
+    }	
 
     public static function show_sort_html_select() {
         $data = array(
@@ -624,7 +630,15 @@ final class WOOF_EXT_QUICK_TEXT extends WOOF_EXT {
         );
         return self::show_sort_select_html(apply_filters('woof_qs_sort_select_data', $data));
     }
-
+    public static function show_sort_html_select_e() {
+        $data = array(
+            'price-asc' => sprintf(__('Price- %s ', 'woocommerce-products-filter'), '&uarr;'),
+            'price-desc' => sprintf(__('Price- %s ', 'woocommerce-products-filter'), '&darr;'),
+            'title-asc' => sprintf(__('Title- %s ', 'woocommerce-products-filter'), '&uarr;'),
+            'title-desc' => sprintf(__('Title- %s ', 'woocommerce-products-filter'), '&darr;'),
+        );
+        self::show_sort_select_html_e(apply_filters('woof_qs_sort_select_data', $data));
+    }
     public static function show_sort_html($asc = 'title-asc', $desc = 'title-desc') {
         
         $data = array(
@@ -633,7 +647,14 @@ final class WOOF_EXT_QUICK_TEXT extends WOOF_EXT {
         );
         return woof()->render_html(WOOF_EXT_PATH . 'quick_search' . DIRECTORY_SEPARATOR . 'views/sort_html.php', $data);
     }
-
+    public static function show_sort_html_e($asc = 'title-asc', $desc = 'title-desc') {
+        
+        $data = array(
+            'asc' => $asc,
+            'desc' => $desc,
+        );
+        woof()->render_html_e(WOOF_EXT_PATH . 'quick_search' . DIRECTORY_SEPARATOR . 'views/sort_html.php', $data);
+    }
     public static function show_sort_select_html($args) {
         $data = array(
             'sort' => $args,
@@ -641,7 +662,13 @@ final class WOOF_EXT_QUICK_TEXT extends WOOF_EXT {
         
         return woof()->render_html(WOOF_EXT_PATH . 'quick_search' . DIRECTORY_SEPARATOR . 'views/sort_select_html.php', $data);
     }
-
+    public static function show_sort_select_html_e($args) {
+        $data = array(
+            'sort' => $args,
+        );
+        
+        woof()->render_html_e(WOOF_EXT_PATH . 'quick_search' . DIRECTORY_SEPARATOR . 'views/sort_select_html.php', $data);
+    }
     //+++
     public static function parse_template_structure($str) {
         $tpl_str = array(); //array('key'=>'title',title=>'Title',class=>'woof_qs_title','alias'=>'__TITLE__')

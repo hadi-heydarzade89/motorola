@@ -77,7 +77,7 @@ if (!defined('ABSPATH'))
     <?php $cron_key = $woof_settings[$key]['use_external_cron'] ?>
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][show_title_label]" value="<?php echo intval($woof_settings[$key]['show_title_label']) ?>" /> 
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][label]" value="<?php echo esc_html($woof_settings[$key]['label']) ?>" />
-    <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][notes_for_customer]" value="<?php echo stripcslashes(wp_kses_post(wp_unslash($woof_settings[$key]['notes_for_customer']))); ?>" />
+    <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][notes_for_customer]" value="<?php echo wp_kses_post(wp_unslash($woof_settings[$key]['notes_for_customer'])); ?>" />
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][show_btn_subscr]" value="<?php echo intval($woof_settings[$key]['show_btn_subscr']) ?>" />
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][wp_cron_period]" value="<?php echo esc_html($woof_settings[$key]['wp_cron_period']) ?>" />
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][use_external_cron]" value="<?php echo esc_html($woof_settings[$key]['use_external_cron']) ?>" />
@@ -163,7 +163,7 @@ if (!defined('ABSPATH'))
 
             <div class="woof-name-description">
                 <strong><?php esc_html_e('External cron key (is recommended as flexible for timetable)', 'woocommerce-products-filter') ?></strong>
-                <span><?php esc_html_e('For external cron use the next link', 'woocommerce-products-filter'); ?>: <i class="woof_cron_link" ><b><?php echo get_home_url() . "?woof_pm_cron_key=" . esc_html($cron_key); ?></b></i><br />
+                <span><?php esc_html_e('For external cron use the next link', 'woocommerce-products-filter'); ?>: <i class="woof_cron_link" ><b><?php echo esc_url(get_home_url()) . "?woof_pm_cron_key=" . esc_html($cron_key); ?></b></i><br />
                     <?php esc_html_e('To update the key, just delete it and save the plugin settings. Key should be min 16 symbols.', 'woocommerce-products-filter'); ?> 
                 </span>
             </div>

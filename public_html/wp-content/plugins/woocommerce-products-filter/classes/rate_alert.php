@@ -45,7 +45,7 @@ class WOOF_RATE_ALERT {
                 ?>
                 <div style="background: #fff; padding: 15px; border-radius: 4px;" id="woof_rate_alert">
                     <p class="plugin-card-woocommerce-products-filter">
-                        <?php printf("Hi, looks like you using <b>HUSKY - Products Filter for WooCommerce</b> for some time and I hope this software helped you with your business. If you satisfied with the plugin functionality, could you please give us BIG favor and give it a 5-star rating to help us spread the word and boost our motivation?<br /><br /><strong>~ PluginUs.NET developers team</strong>", "<a href='{$support_link}' target='_blank'>" . __('support', 'woocommerce-products-filter') . "</a>") ?>
+                        <?php printf("Hi, looks like you using <b>HUSKY - Products Filter for WooCommerce</b> for some time and I hope this software helped you with your business. If you satisfied with the plugin functionality, could you please give us BIG favor and give it a 5-star rating to help us spread the word and boost our motivation?<br /><br /><strong>~ PluginUs.NET developers team</strong>", "<a href='" . esc_url($support_link) . "' target='_blank'>" . esc_html__('support', 'woocommerce-products-filter') . "</a>") ?>
                     </p>
 
                     <hr />
@@ -60,15 +60,15 @@ class WOOF_RATE_ALERT {
                     <table style="width: 100%; margin-bottom: 7px;">
                         <tr>
                             <td style="width: 33%; text-align: left;">
-                                <a href="javascript: woof_manage_alert(0);void(0);" class="button button-large dashicons-before dashicons-clock">&nbsp;<?php echo __('Nope, maybe later!', 'woocommerce-products-filter') ?></a>
+                                <a href="javascript: woof_manage_alert(0);void(0);" class="button button-large dashicons-before dashicons-clock">&nbsp;<?php echo esc_html__('Nope, maybe later!', 'woocommerce-products-filter') ?></a>
                             </td>
 
                             <td style="width: 33%; text-align: center;">
-                                <a href="<?= $link ?>" target="_blank" class="woof-panel-button dashicons-before dashicons-star-filled">&nbsp;<?php echo __('Ok, you deserve it', 'woocommerce-products-filter') ?></a>
+                                <a href="<?php echo esc_url($link) ?>" target="_blank" class="woof-panel-button dashicons-before dashicons-star-filled">&nbsp;<?php echo esc_html__('Ok, you deserve it', 'woocommerce-products-filter') ?></a>
                             </td>
 
                             <td style="width: 33%; text-align: right;">
-                                <a href="javascript: woof_manage_alert(1);void(0);" class="button button-large dashicons-before dashicons-thumbs-up">&nbsp;<?php echo __('Thank you, I did it!', 'woocommerce-products-filter') ?></a>
+                                <a href="javascript: woof_manage_alert(1);void(0);" class="button button-large dashicons-before dashicons-thumbs-up">&nbsp;<?php echo esc_html__('Thank you, I did it!', 'woocommerce-products-filter') ?></a>
                             </td>
                         </tr>
                     </table>
@@ -82,7 +82,7 @@ class WOOF_RATE_ALERT {
                         jQuery.post(ajaxurl, {
                             action: "woof_manage_alert",
                             value: value,
-							sec: <?php echo wp_create_nonce('woof_dissmiss_alert') ?>				
+							sec: <?php echo esc_attr(wp_create_nonce('woof_dissmiss_alert')) ?>				
                         }, function (data) {
                             console.log(data);
                         });

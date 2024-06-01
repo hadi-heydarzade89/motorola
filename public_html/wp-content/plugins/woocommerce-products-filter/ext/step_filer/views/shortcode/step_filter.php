@@ -28,7 +28,7 @@ $woof_reset_btn_txt = WOOF_HELPER::wpml_translate(null, $woof_reset_btn_txt);
         <button class="button woof_step_filter_next"><?php esc_html_e($next_btn_txt) ?></button>
     </div>
     <?php if ($images): ?>
-        <input class="woof_step_filter_images" type="hidden" value=<?php echo base64_encode(json_encode($images)) ?> data-selector="<?php echo esc_attr($selector) ?>" data-behavior="<?php echo esc_attr($img_behavior) ?>" >
+        <input class="woof_step_filter_images" type="hidden" value=<?php echo esc_attr(base64_encode(json_encode($images))) ?> data-selector="<?php echo esc_attr($selector) ?>" data-behavior="<?php echo esc_attr($img_behavior) ?>" >
     <?php endif; ?>
 </div>
 

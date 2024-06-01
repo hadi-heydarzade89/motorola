@@ -67,7 +67,7 @@ if (!defined('ABSPATH'))
                     <h4 class="woof_fix3"><?php esc_html_e('Select period:', 'woocommerce-products-filter') ?></h4>
                     <?php if (!empty($stat_min_date)): ?>
                         <div class="woof_fix4">
-                            <?php printf(esc_html__('(Statistic collected from: %s %d)', 'woocommerce-products-filter'), $wp_locale->get_month($stat_min_date[1]), $stat_min_date[0]) ?>
+                            <?php printf(esc_html__('(Statistic collected from: %s %d)', 'woocommerce-products-filter'), esc_html($wp_locale->get_month($stat_min_date[1])), esc_html($stat_min_date[0])) ?>
                         </div>
                     <?php endif; ?>
                     <br />
@@ -229,7 +229,7 @@ if (!defined('ABSPATH'))
                                 <div class="error">
                                     <p class="description">
                                         <?php
-                                        printf(__('Statistic extension is activated but statistics collection is not enabled. Enable it on: tab Statistic -> tab Options -> "Statistics collection enabled"', 'woocommerce-products-filter'));
+                                        printf(esc_html__('Statistic extension is activated but statistics collection is not enabled. Enable it on: tab Statistic -> tab Options -> "Statistics collection enabled"', 'woocommerce-products-filter'));
                                         ?>
                                     </p>
                                 </div>
@@ -275,7 +275,7 @@ if (!defined('ABSPATH'))
                         <div class="error">
                             <p class="description">
                                 <?php
-                                printf(__('Statistic -> tab Options -> "Stat server options" inputs should be filled in by right data, another way not possible to collect statistical data!', 'woocommerce-products-filter'));
+                                printf(esc_html__('Statistic -> tab Options -> "Stat server options" inputs should be filled in by right data, another way not possible to collect statistical data!', 'woocommerce-products-filter'));
                                 ?>
                             </p>
                         </div>
@@ -645,7 +645,7 @@ if (!defined('ABSPATH'))
             </section>
 
         </div>
-		<input type="hidden" id="woof_stat_nonce" value="<?php echo  wp_create_nonce( 'woof_stat_nonce' ); ?>">
+		<input type="hidden" id="woof_stat_nonce" value="<?php echo  esc_attr(wp_create_nonce( 'woof_stat_nonce' )); ?>">
     </div>
 </section>
 

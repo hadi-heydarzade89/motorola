@@ -166,10 +166,10 @@ final class WOOF_SLIDEOUT extends WOOF_EXT {
 
         
         $show = true;
-        if ($atts['mobile_behavior'] == 1 AND!wp_is_mobile()) {
+        if (intval($atts['mobile_behavior']) === 1 AND!wp_is_mobile()) {
             $show = false;
         }
-        if ($atts['mobile_behavior'] == 2 AND wp_is_mobile()) {
+        if (intval($atts['mobile_behavior']) === 2 AND wp_is_mobile()) {
             $show = false;
         }
 
@@ -212,7 +212,7 @@ final class WOOF_SLIDEOUT extends WOOF_EXT {
             'woof_slideout_class' => "class="
         );
 
-        if (isset($attr['woof_slideout_type_btn']) AND $attr['woof_slideout_type_btn'] == 1) {
+        if (isset($attr['woof_slideout_type_btn']) AND intval($attr['woof_slideout_type_btn']) === 1) {
             $attr['woof_slideout_img'] = 'null';
             $deff_attr['woof_slideout_txt'] = "text=";
         }
@@ -258,7 +258,8 @@ final class WOOF_SLIDEOUT extends WOOF_EXT {
             return;
         }		
         $shortcode = $this->generate_shortcode(wc_clean($_POST));
-        die($shortcode);
+		wp_send_json($shortcode);
+       // die($shortcode);
     }
 
 }

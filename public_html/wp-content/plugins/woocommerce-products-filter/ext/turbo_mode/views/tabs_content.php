@@ -129,14 +129,6 @@ if (!defined('ABSPATH'))
                         <div class="woof-control">
 
                             <?php
-                            $wp_cron_periods = array(
-                                'daily' => esc_html__('daily', 'woocommerce-products-filter'),
-                                'weekly' => esc_html__('weekly', 'woocommerce-products-filter'),
-                                'twicemonthly' => esc_html__('twicemonthly', 'woocommerce-products-filter'),
-                                'month' => esc_html__('monthly', 'woocommerce-products-filter'),
-								'min1' => esc_html__('min1', 'woocommerce-products-filter'),
-                                'no' => esc_html__('without update', 'woocommerce-products-filter'),
-                            );
 
                             if (!isset($woof_settings['woof_turbo_mode']['wp_cron_period'])) {
                                 $woof_settings['woof_turbo_mode']['wp_cron_period'] = 'weekly';
@@ -146,8 +138,8 @@ if (!defined('ABSPATH'))
 
                             <div class="select-wrap">
                                 <select name="woof_settings[woof_turbo_mode][wp_cron_period]" class="chosen_select">
-                                    <?php foreach ($wp_cron_periods as $key => $value) : ?>
-                                        <option value="<?php echo esc_attr($key) ?>" <?php selected($wp_cron_period == $key) ?>><?php esc_html_e($value) ?></option>
+                                    <?php foreach ($schedules as $key => $value) : ?>
+                                        <option value="<?php echo esc_attr($key) ?>" <?php selected($wp_cron_period == $key) ?>><?php esc_html_e($value['name']) ?></option>
                                     <?php endforeach; ?>
                                 </select>
                             </div>

@@ -54,7 +54,7 @@ if (isset(woof()->settings[$meta_key]) AND intval(woof()->settings[$meta_key]['s
     }
     ?>
     <?php if ($show): ?>
-        <div data-css-class="woof_acf_checkbox_container" class="woof_acf_checkbox_container woof_container woof_container_<?php echo esc_attr($meta_key) ?> <?php echo WOOF_HELPER::generate_container_css_classes($meta_key) ?>">
+        <div data-css-class="woof_acf_checkbox_container" class="woof_acf_checkbox_container woof_container woof_container_<?php echo esc_attr($meta_key) ?> <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes($meta_key)) ?>">
             <div class="woof_container_overlay_item"></div>
             <div class="woof_container_inner">
                 <input type="checkbox" class="woof_acf_checkbox" <?php echo esc_html($disable); ?> id="woof_acf_checkbox_<?php echo esc_attr($meta_key) ?>" <?php ?>  name="<?php echo esc_attr($meta_key) ?>" value="0" <?php checked(1, woof()->is_isset_in_request_data($meta_key) ? 1 : '', true) ?> />&nbsp;&nbsp;

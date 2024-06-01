@@ -63,7 +63,7 @@ add_action('init', function() {
             </div>
 
             <div id="pn_<?php echo esc_attr($slug) ?>_review_yes" style="display: none;">
-                <p><?php printf(__('That\'s awesome! Could you please do us a BIG favor and give it a 5-star rating on %s to help us spread the word and boost our motivation?', 'woocommerce-products-filter'), $on) ?></p>
+                <p><?php printf(esc_html__('That\'s awesome! Could you please do us a BIG favor and give it a 5-star rating on %s to help us spread the word and boost our motivation?', 'woocommerce-products-filter'), esc_html($on)) ?></p>
                 <p><b>~ PluginUs.NET developers team</b></p>
                 <p>
 
@@ -81,7 +81,7 @@ add_action('init', function() {
                     |&nbsp;<a href="javascript: pn_<?php echo esc_attr($slug) ?>_dismiss_review(2); void(0);"><?php esc_html_e('No thanks', 'woocommerce-products-filter'); ?></a>
                 </p>
             </div>
-			<input type="hidden" class="woof_alert_nonce" value="<?php echo wp_create_nonce('alert_nonce')?>">
+			<input type="hidden" class="woof_alert_nonce" value="<?php echo esc_attr(wp_create_nonce('alert_nonce'))?>">
         </div>
         <?php
     });

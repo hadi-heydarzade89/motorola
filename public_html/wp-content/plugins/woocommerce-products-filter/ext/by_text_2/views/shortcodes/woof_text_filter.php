@@ -1,5 +1,5 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<div data-css-class="woof_text_search_container" class="woof_text_search_container woof_container woof_container_woof_text <?php echo WOOF_HELPER::generate_container_css_classes('by_text_2') ?>">
+<div data-css-class="woof_text_search_container" class="woof_text_search_container woof_container woof_container_woof_text <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes('by_text_2')) ?>">
     <div class="woof_container_overlay_item"></div>
     <div class="woof_container_inner">
         <?php
@@ -37,9 +37,9 @@
             <input type="search" class="woof_show_text_search <?php echo esc_attr($unique_id) ?>" id="<?php echo esc_attr($unique_id) ?>" data-uid="<?php echo esc_attr($unique_id) ?>" data-auto_res_count="<?php echo intval((isset($auto_res_count) ? $auto_res_count : 0)) ?>" data-auto_search_by="<?php echo esc_html(isset($auto_search_by) ? $auto_search_by : "") ?>" placeholder="<?php echo esc_html(isset($placeholder) ? $placeholder : $p) ?>" name="woof_text" value="<?php echo esc_html($woof_text) ?>" />
 
             <?php if (isset(woof()->settings['by_text_2']['notes_for_customer']) AND!empty(woof()->settings['by_text_2']['notes_for_customer'])): ?>
-                <span class="woof_text_notes_for_customer"><?php echo stripcslashes(wp_kses_post(wp_unslash(woof()->settings['by_text_2']['notes_for_customer']))); ?></span>
+                <span class="woof_text_notes_for_customer"><?php echo wp_kses_post(wp_unslash(woof()->settings['by_text_2']['notes_for_customer'])); ?></span>
             <?php endif; ?>  
-			<input type="hidden" class="woof_text_search_nonce" value="<?php echo wp_create_nonce('text_search_nonce')?>">
+			<input type="hidden" class="woof_text_search_nonce" value="<?php echo esc_attr(wp_create_nonce('text_search_nonce'))?>">
         </div>
 
 

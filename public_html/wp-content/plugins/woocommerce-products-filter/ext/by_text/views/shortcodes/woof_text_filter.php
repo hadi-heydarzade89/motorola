@@ -4,7 +4,7 @@ if (!defined('ABSPATH'))
 global $WOOCS;
 $search_id = uniqid('woof_txt_search');
 ?>
-<div data-css-class="woof_text_search_container" class="woof_text_search_container woof_container woof_container_woof_text <?php echo WOOF_HELPER::generate_container_css_classes('by_text') ?>">
+<div data-css-class="woof_text_search_container" class="woof_text_search_container woof_container woof_container_woof_text <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes('by_text')) ?>">
     <div class="woof_container_overlay_item"></div>
     <div class="woof_container_inner">
         <a href="javascript:void(0);"  class="woof_text_search_go" rel=nofollow ></a>
@@ -32,8 +32,8 @@ $search_id = uniqid('woof_txt_search');
                value="<?php echo esc_html($woof_text) ?>" autocomplete="off" />
 
         <?php if (isset($data['notes_for_customer']) AND!empty($data['notes_for_customer'])): ?>
-            <span class="woof_text_notes_for_customer"><?php echo stripcslashes(wp_kses_post(wp_unslash($data['notes_for_customer']))); ?></span>
+            <span class="woof_text_notes_for_customer"><?php echo wp_kses_post(wp_unslash($data['notes_for_customer'])); ?></span>
         <?php endif; ?>   		
-		<input type="hidden" class="woof_text_search_nonce" value="<?php echo wp_create_nonce('text_search_nonce')?>">
+		<input type="hidden" class="woof_text_search_nonce" value="<?php echo esc_attr(wp_create_nonce('text_search_nonce'))?>">
 	</div>
 </div>

@@ -47,7 +47,7 @@ if (!defined('ABSPATH'))
                         <div class="woof-description">
                             <h5><?php esc_html_e('Get keys from any product by its ID', 'woocommerce-products-filter') ?>:</h5>
                             <input type="number" min="1" class="woof_meta_keys_get_input woof_width_75p" value="" placeholder="<?php esc_html_e('enter product ID', 'woocommerce-products-filter') ?>">&nbsp;<a href="#" id="woof_meta_get_btn" class="button button-primary button-large"><?php esc_html_e('Get', 'woocommerce-products-filter') ?></a>
-							<input type="hidden" id="woof_meta_nonce" value="<?php echo wp_create_nonce( 'woof_get_meta_keys' ) ?>">
+							<input type="hidden" id="woof_meta_nonce" value="<?php echo esc_attr(wp_create_nonce( 'woof_get_meta_keys' )) ?>">
 
                         </div>
                     </div>

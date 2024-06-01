@@ -9,10 +9,14 @@ class PW_Super_Admin {
 	private $blocked_url = [];
 
 	public function __construct() {
+		global $pagenow;
 
 		if ( function_exists( 'is_plugin_active' ) && is_plugin_active( 'super-admin/super-admin.php' ) ) {
 			return;
 		}
+
+		add_filter( 'PW_Tools_tabs', [ $this, 'tabs' ] );
+		add_filter( 'PW_Tools_settings', [ $this, 'settings' ] );
 
 		// Woocommerce.com - Not working and useful in IRAN
 		if ( 'yes' === get_option( 'woocommerce_allow_tracking', 'no' ) ) {
@@ -46,37 +50,6 @@ class PW_Super_Admin {
 		if ( $this->blocked_url ) {
 			add_filter( 'pre_http_request', [ $this, 'pre_http_request' ], 1000, 3 );
 		}
-
-		if ( PW()->get_options( 'super_admin_disable_core', 'no' ) == 'yes' ) {
-			add_filter( 'pre_site_transient_update_core', [ $this, '__return_null' ] );
-			remove_action( 'admin_init', '_maybe_update_core' );
-			remove_action( 'wp_version_check', 'wp_version_check' );
-
-			add_filter( 'admin_menu', function () {
-				remove_submenu_page( 'index.php', 'update-core.php' );
-			} );
-		}
-
-		if ( PW()->get_options( 'super_admin_disable_plugins', 'no' ) == 'yes' ) {
-			remove_action( 'load-plugins.php', 'wp_update_plugins' );
-			remove_action( 'load-update.php', 'wp_update_plugins' );
-			remove_action( 'load-update-core.php', 'wp_update_plugins' );
-			remove_action( 'admin_init', '_maybe_update_plugins' );
-			remove_action( 'wp_update_plugins', 'wp_update_plugins' );
-			add_filter( 'pre_site_transient_update_plugins', [ $this, '__return_null' ] );
-		}
-
-		if ( PW()->get_options( 'super_admin_disable_themes', 'no' ) == 'yes' ) {
-			remove_action( 'load-themes.php', 'wp_update_themes' );
-			remove_action( 'load-update.php', 'wp_update_themes' );
-			remove_action( 'load-update-core.php', 'wp_update_themes' );
-			remove_action( 'admin_init', '_maybe_update_themes' );
-			remove_action( 'wp_update_themes', 'wp_update_themes' );
-			add_filter( 'pre_site_transient_update_themes', [ $this, '__return_null' ] );
-		}
-
-		add_filter( 'PW_Tools_tabs', [ $this, 'tabs' ] );
-		add_filter( 'PW_Tools_settings', [ $this, 'settings' ] );
 	}
 
 	public function tabs( array $tabs ): array {
@@ -107,27 +80,6 @@ class PW_Super_Admin {
 				'type'    => 'checkbox',
 				'default' => 'no',
 				'desc'    => 'افزایش سرعت آنالیزهای پیشخوان وردپرس',
-			],
-			[
-				'title'   => 'افزایش سرعت هسته',
-				'id'      => 'PW_Options[super_admin_disable_core]',
-				'type'    => 'checkbox',
-				'default' => 'no',
-				'desc'    => 'غیرفعالسازی موقت بروزرسانی هسته وردپرس',
-			],
-			[
-				'title'   => 'افزایش سرعت افزونه‌ها',
-				'id'      => 'PW_Options[super_admin_disable_plugins]',
-				'type'    => 'checkbox',
-				'default' => 'no',
-				'desc'    => 'غیرفعالسازی موقت بروزرسانی افزونه‌های وردپرس',
-			],
-			[
-				'title'   => 'افزایش سرعت قالب‌ها',
-				'id'      => 'PW_Options[super_admin_disable_themes]',
-				'type'    => 'checkbox',
-				'default' => 'no',
-				'desc'    => 'غیرفعالسازی موقت بروزرسانی قالب‌های وردپرس',
 			],
 
 			[

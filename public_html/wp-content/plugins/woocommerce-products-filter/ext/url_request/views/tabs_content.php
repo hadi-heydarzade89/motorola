@@ -239,6 +239,6 @@ if (!defined('ABSPATH'))
             </section>
 
         </div>
-		<input id="woof_url_request_nonce" type="hidden" value="<?php echo wp_create_nonce('woof_url_request_nonce');?>">
+		<input id="woof_url_request_nonce" type="hidden" value="<?php echo esc_attr(wp_create_nonce('woof_url_request_nonce'));?>">
     </div>
 </section>

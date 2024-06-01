@@ -33,8 +33,9 @@ final class WOOF_SD_PRESETS {
 			}
             if (!current_user_can('manage_woocommerce')) {
                 die('0');
-            }				
-            die(strval($this->create(esc_html($_REQUEST['title']), esc_html($_REQUEST['type']), intval($_REQUEST['element_id']))));
+            }
+			wp_send_json(strval($this->create(esc_html($_REQUEST['title']), esc_html($_REQUEST['type']), intval($_REQUEST['element_id']))));
+            //die(strval($this->create(esc_html($_REQUEST['title']), esc_html($_REQUEST['type']), intval($_REQUEST['element_id']))));
         });
 
         add_action('wp_ajax_woof_sd_apply_preset', function () {
@@ -47,7 +48,8 @@ final class WOOF_SD_PRESETS {
             $element_id = intval($_REQUEST['element_id']);
             $preset = $this->get(intval($_REQUEST['option_id']));
             $this->db->update($this->table_main, array('options' => $preset), array('id' => $element_id));
-            die(strval($preset));
+			wp_send_json(strval($preset));
+            //die(strval($preset));
         });
 
         add_action('wp_ajax_woof_sd_get_preset', function () {
@@ -58,7 +60,8 @@ final class WOOF_SD_PRESETS {
                 die('0');
             }				
             $preset = $this->get(intval($_REQUEST['option_id']));
-            die(strval($preset));
+			wp_send_json(strval($preset));
+            //wp_die(strval($preset));
         });
 
         add_action('wp_ajax_woof_sd_import_preset', function () {

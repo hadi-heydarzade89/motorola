@@ -49,7 +49,7 @@ var WoofTurboMode_obj = function (data) {
                     search_logic = "AND";
                 }
                 if (data.settings[i] != undefined) {
-                    if (data.settings[i]['search_option'] != undefined && data.settings[i]['search_option'] == 1) {
+                    if (data.settings[i]['search_option'] != undefined && parseInt(data.settings[i]['search_option']) === 1) {
                         checkbox_logic = "exist";
                     } else if (data.settings[i]['search_option'] != undefined && data.settings[i]['search_value'] != undefined && data.settings[i]['search_option'] == 0) {
                         if (data.settings[i]['search_value'].length) {

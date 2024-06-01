@@ -75,8 +75,12 @@ final class WOOF_EXP_IMP extends WOOF_EXT {
         if (!wp_verify_nonce($_REQUEST['_nonce'], 'woof_export_settings')) {
             die(json_encode(array()));
         }
-
-        die($this->get_all_options());
+		
+		$data = json_decode($this->get_all_options());
+		
+		wp_send_json($data); 
+		
+        //die();
     }
 
     public function do_import_data() {

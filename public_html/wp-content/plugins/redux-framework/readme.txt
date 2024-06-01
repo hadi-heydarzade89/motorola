@@ -4,7 +4,7 @@ Tags: admin, options, theme options, plugin options, options framework
 Requires at least: 5.0
 Requires PHP: 7.1
 Tested up to: 6.5
-Stable tag: 4.4.16
+Stable tag: 4.4.17
 License: GPL-3.0+
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
@@ -121,6 +121,12 @@ NOTE: Redux is not intended to be used on its own. It requires a config file pro
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 
 == Changelog ==
+= 4.4.17 =
+* Fixed: `social_profiles` in customizer.
+* Fixed: Section divide returning `null`, which caused a PHP warning.
+* Fixed: Undefined index in `tabbed` when resetting settings.
+* Release date: May 23, 2024
+
 = 4.4.16 =
 * Modified: Temporarily disable `social_profiles` and `color_scheme` from customizer. They don't work.
 * Removed: Finished removing Redux Pro support.

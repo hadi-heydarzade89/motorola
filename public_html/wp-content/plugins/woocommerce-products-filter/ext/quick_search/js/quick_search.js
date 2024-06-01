@@ -1309,7 +1309,7 @@ if (woof_qt_form.length) {
             woof_qt_tax_logic = 'AND';
         }
         init_text_filter_content();
-        if (woof_qt_form.attr('data-preload') == 1) {
+        if (parseInt(woof_qt_form.attr('data-preload')) === 1) {
             woof_load_serch_data();
         }
     } else {

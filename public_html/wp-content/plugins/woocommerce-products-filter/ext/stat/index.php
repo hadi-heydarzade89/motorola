@@ -233,7 +233,7 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
             <div class="error">
                 <p class="description">
                     <?php
-                    printf(__('PHP extension PDO_MYSQL is not enabled on your server, not possible to collect statistic data! Contact your hosting support to about enabling PDO_MYSQL.', 'woocommerce-products-filter'));
+                    printf(esc_html__('PHP extension PDO_MYSQL is not enabled on your server, not possible to collect statistic data! Contact your hosting support to about enabling PDO_MYSQL.', 'woocommerce-products-filter'));
                     ?>
                 </p>
             </div>
@@ -252,7 +252,7 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
             <div class="error">
                 <p class="description">
                     <?php
-                    printf(__('Very recommend for the statistic not less than %s of the memory to avoid malfunctionality. Now is on the site %s', 'woocommerce-products-filter'), size_format($min_memory_mb), size_format($memory));
+                    printf(esc_html__('Very recommend for the statistic not less than %s of the memory to avoid malfunctionality. Now is on the site %s', 'woocommerce-products-filter'), esc_html(size_format($min_memory_mb)), esc_html(size_format($memory)));
                     ?>
                 </p>
             </div>
@@ -281,7 +281,7 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
                         <div class="error">
                             <p class="description">
                                 <?php
-                                printf(__('Wrong data for "Server options for statistic stock" options', 'woocommerce-products-filter'));
+                                printf(esc_html__('Wrong data for "Server options for statistic stock" options', 'woocommerce-products-filter'));
                                 ?>
                             </p>
                         </div>
@@ -432,7 +432,7 @@ final class WOOF_EXT_STAT extends WOOF_EXT {
                 //this for under dev feature for working with dedicated terms, now not possible to set any terms for each taxonomy
                 foreach ($search_template as &$value) {
                     $value = explode(',', $value);
-                    if (count($value) == 1 AND empty($value[0])) {
+                    if (count($value) === 1 AND empty($value[0])) {
                         $value = array();
                     }
                 }

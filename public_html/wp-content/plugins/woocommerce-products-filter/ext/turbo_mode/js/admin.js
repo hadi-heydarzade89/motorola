@@ -79,7 +79,7 @@ woof_turbo_mode_creator.stop = function () {
 
 //to avoid logic errors with the count options
 jQuery('#woof_hide_dynamic_empty_pos_turbo_mode').change(function () {
-    if (jQuery(this).val() == 1) {
+    if (parseInt(jQuery(this).val()) === 1) {
         jQuery('#woof_show_count_turbo_mode').val(1);
         jQuery('#woof_show_count_dynamic_turbo_mode').val(1);
     }

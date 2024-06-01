@@ -1237,3 +1237,20 @@ ul.chosen-results{
 .widget_price_filter .price_slider_wrapper .price_slider {
     min-width: 200px;
 }
+
+.woof_redraw_zone.woof_blur_redraw_zone{
+   position: relative;
+    filter: blur(12px);
+    background-image: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5) 50%, transparent 100%), linear-gradient(#DDD 100%, transparent 0);
+    background-repeat: no-repeat;
+    background-size: 75px 100%, 100% 100%, 100% 16px, 100% 30px;
+    background-position: -185px 0, center 0, center 115px, center 142px;
+    box-sizing: border-box;
+    animation: woof-animloader 1.3s ease-in-out infinite;
+}
+
+@keyframes woof-animloader {
+  to {
+    background-position: 100% 0, center 0, center 115px, center 142px;
+  }
+}

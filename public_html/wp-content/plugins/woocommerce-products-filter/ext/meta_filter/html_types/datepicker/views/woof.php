@@ -95,7 +95,7 @@ if ($show):
         $top_panel_txt .= sprintf(esc_html__("to: %s", 'woocommerce-products-filter'), date($format_, $to));
     }
     ?>
-    <div data-css-class="woof_meta_datepicker_container" class="woof_meta_datepicker_container woof_container woof_container_<?php echo esc_attr("datepicker_" . $meta_key) ?>" <?php echo WOOF_HELPER::generate_container_css_classes($meta_key) ?>>
+    <div data-css-class="woof_meta_datepicker_container" class="woof_meta_datepicker_container woof_container woof_container_<?php echo esc_attr("datepicker_" . $meta_key) ?>" <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes($meta_key)) ?>>
         <div class="woof_container_inner">
             <div class="woof_container_inner woof_container_inner_datepicker_slider">
                 <?php if ($show_title_label) :

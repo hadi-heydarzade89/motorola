@@ -31,7 +31,7 @@ final class WOOF_HELPER {
     public static function escape($value, $echo = false) {
         if (is_string($value)) {
             if ($echo) {
-                echo sanitize_text_field(esc_html($value));
+                echo esc_html($value);
             } else {
                 return sanitize_text_field(esc_html($value));
             }
@@ -55,9 +55,9 @@ final class WOOF_HELPER {
         $is_html = array('override_no_products');
         $is_textarea = array('init_only_on', 'custom_css_code', 'js_after_ajax_done');
         $is_js = array();
-		
-		$potential_html = array_intersect_key(woof()->settings,array_flip(['result_count_redraw','order_dropdown_redraw', 'per_page_redraw']));
-		$is_html = array_merge($is_html ,array_filter(array_values($potential_html)));
+
+        $potential_html = array_intersect_key(woof()->settings, array_flip(['result_count_redraw', 'order_dropdown_redraw', 'per_page_redraw']));
+        $is_html = array_merge($is_html, array_filter(array_values($potential_html)));
 
         if (is_array($array) && !empty($array)) {
             foreach ($array as $key => $data) {
@@ -133,7 +133,7 @@ final class WOOF_HELPER {
         }
 
         //***
-        if (isset(woof()->settings['cache_terms']) AND woof()->settings['cache_terms'] == 1) {
+        if (isset(woof()->settings['cache_terms']) AND intval(woof()->settings['cache_terms']) === 1) {
             $cache_key = 'woof_terms_cache_' . md5($taxonomy . '-' . (int) $hide_empty . '-' . (int) $get_childs . '-' . (int) $selected . '-' . (int) $category_parent . '-' . $lang_key);
             if (false !== ( $cats = get_transient($cache_key) )) {
                 return $cats;
@@ -205,7 +205,7 @@ final class WOOF_HELPER {
         }
 
         //***
-        if (isset(woof()->settings['cache_terms']) AND woof()->settings['cache_terms'] == 1) {
+        if (isset(woof()->settings['cache_terms']) AND intval(woof()->settings['cache_terms']) === 1) {
             $period = 0;
 
             $periods = array(
@@ -328,7 +328,7 @@ final class WOOF_HELPER {
             }
         }
 
-        return $string;
+        return apply_filters('woof_filter_title', $string, $taxonomy_info, $index);
     }
 
     public static function price_filter_e($additional_taxes = "", $min = null, $max = null) {
@@ -581,7 +581,7 @@ final class WOOF_HELPER {
                 if ($v[0] >= $v[1]) {
                     continue;
                 }
-				
+
                 //***
                 $r[$key] = $value;
                 if ($show_count) {
@@ -589,10 +589,9 @@ final class WOOF_HELPER {
                 } else {
                     $rc[$key] = 0;
                 }
-
             }
             $_GET = WOOF_HELPER::sanitize_array($get);
-			
+
             $ranges['options'] = $r;
             $ranges['count'] = $rc;
             //+++
@@ -856,11 +855,11 @@ final class WOOF_HELPER {
     public static function hide_admin_notices() {
         if (isset($_GET['woof_hide_notice']) && isset($_GET['_wpnonce'])) {
             if (!wp_verify_nonce($_GET['_wpnonce'])) {
-                wp_die(__('Action failed. Please refresh the page and retry.', 'woocommerce-products-filter'));
+                wp_die(esc_html__('Action failed. Please refresh the page and retry.', 'woocommerce-products-filter'));
             }
 
             if (!current_user_can('manage_woocommerce')) {
-                wp_die(__('Cheatin&#8217; huh?', 'woocommerce-products-filter'));
+                wp_die(esc_html__('Cheatin&#8217; huh?', 'woocommerce-products-filter'));
             }
 
             $key = self::escape($_GET['woof_hide_notice']);
@@ -1124,5 +1123,4 @@ final class WOOF_HELPER {
     public static function generate_container_css_classes($section_key) {
         return apply_filters('woof_generate_container_css_classes', $section_key);
     }
-
 }

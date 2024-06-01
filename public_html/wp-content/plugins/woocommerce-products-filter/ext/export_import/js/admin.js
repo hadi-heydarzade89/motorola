@@ -6,7 +6,8 @@ jQuery('#woof_get_export').on('click', function () {
 	_nonce: jQuery('#woof_export_settings_nc').val()
     };
     jQuery.post(ajaxurl, data, function (answer) {
-        jQuery('#woof_export_settings').text(answer);
+
+        jQuery('#woof_export_settings').text(JSON.stringify(answer));
     });
 });
 

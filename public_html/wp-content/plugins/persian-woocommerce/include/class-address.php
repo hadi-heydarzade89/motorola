@@ -308,7 +308,7 @@ class Persian_Woocommerce_Address extends Persian_Woocommerce_Core {
 
                 $(document.body).on('change', '#<?php echo esc_attr( $type ); ?>_state', function () {
 
-                    if (<?php echo esc_attr( $type ); ?>_iran_exist == 'yes' && (<?php echo esc_attr( $type ); ?>_just_iran || $('#<?php echo esc_attr( $type ); ?>_country').val() == '<?php echo $this->country ?>')) {
+                    if (<?php echo esc_attr( $type ); ?>_iran_exist == 'yes' && (<?php echo esc_attr( $type ); ?>_just_iran || $('#<?php echo esc_attr( $type ); ?>_country').val() == '<?php echo esc_attr( $this->country ); ?>')) {
 
 						<?php echo esc_attr( $type ); ?>_cities = [];
 						<?php echo esc_attr( $type ); ?>_cities[0] = new Array('خطا در دریافت شهرها', '0');
@@ -351,7 +351,7 @@ class Persian_Woocommerce_Address extends Persian_Woocommerce_Core {
                 var <?php echo esc_attr( $type ); ?>_city_input = '<input id="<?php echo esc_attr( $type ); ?>_city" name="<?php echo esc_attr( $type ); ?>_city" type="text" class="input-text" value="<?php echo esc_attr( $value );?>" placeholder="<?php echo esc_attr( $placeholder );?>" />';
 
                 $(document.body).on('change', '#<?php echo esc_attr( $type ); ?>_country', function () {
-                    var is_iran = $('#<?php echo esc_attr( $type ); ?>_country').val() == '<?php echo $this->country ?>' ? 'yes' : 'no';
+                    var is_iran = $('#<?php echo esc_attr( $type ); ?>_country').val() == '<?php echo esc_attr( $this->country ); ?>' ? 'yes' : 'no';
                     set_iran_cities_field('<?php echo esc_attr( $type ); ?>', is_iran);
                 });
                 $('#<?php echo esc_attr( $type ); ?>_country').trigger('change');

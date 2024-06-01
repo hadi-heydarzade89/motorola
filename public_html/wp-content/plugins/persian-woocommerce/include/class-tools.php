@@ -38,10 +38,13 @@ class Persian_Woocommerce_Tools extends Persian_Woocommerce_Core {
 
 			if ( $tab == $current_tab ) {
 				$active['tab'] = $tab;
-				$class         = ' nav-tab-active';
+				$class         = 'nav-tab-active';
 			}
 
-			printf( "<a class='nav-tab%s' href='?page=persian-wc-tools&tab=%s'>%s</a>", $class, $tab, $tab_name );
+			printf( "<a class='nav-tab %s' href='?page=persian-wc-tools&tab=%s'>%s</a>",
+				esc_attr( $class ),
+				esc_attr( $tab ),
+				esc_attr( $tab_name ) );
 
 			if ( $tab == $current_tab && isset( $sections[ $tab ] ) ) {
 				foreach ( $sections[ $tab ] as $section => $section_name ) {
@@ -61,7 +64,7 @@ class Persian_Woocommerce_Tools extends Persian_Woocommerce_Core {
 		echo '</h2>';
 
 		if ( count( $html_sections ) ) {
-			printf( '<ul class="subsubsub">%s</ul><br>', implode( " | ", $html_sections ) );
+			printf( '<ul class="subsubsub">%s</ul><br>', esc_html( implode( " | ", $html_sections ) ) );
 		}
 
 		return array_values( $active );
@@ -443,8 +446,8 @@ class Persian_Woocommerce_Tools extends Persian_Woocommerce_Core {
 					}
 				}
 				?>
-			</select> <br/><a class="select_all button" href="#"><?php _e( 'Select all', 'woocommerce' ); ?></a> <a
-					class="select_none button" href="#"><?php _e( 'Select none', 'woocommerce' ); ?></a>
+			</select> <br/><a class="select_all button" href="#">انتخاب همه</a> <a
+					class="select_none button" href="#">هیچکدام</a>
 		</td>
 		</tr><?php
 	}

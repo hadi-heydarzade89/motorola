@@ -2,9 +2,8 @@
 /**
  * Admin View: Gateways
  */
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
+
+defined( 'ABSPATH' ) || exit;
 
 $response = wp_remote_get( 'http://woocommerce.ir/api/gateways.json' );
 
@@ -21,7 +20,7 @@ if ( is_array( $response ) ) {
 $count = 0;
 ?>
 <div class="wrap woocommerce wc_addons_wrap persian-woocommerce">
-	<h1><?php echo get_admin_page_title(); ?></h1>
+	<h1><?php echo esc_attr( get_admin_page_title() ); ?></h1>
 
 
 	<div class="addons-featured">

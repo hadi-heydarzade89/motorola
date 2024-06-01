@@ -720,7 +720,7 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
                 $search_type = ' NOT LIKE ';
             }
             $word = $wpdb->esc_like($term);
-            if (isset($this->options['search_by_full_word']) && $this->options['search_by_full_word'] == 1) {
+            if (isset($this->options['search_by_full_word']) && intval($this->options['search_by_full_word']) === 1) {
                 $search_type = ' RLIKE ';
                 $like = '[[:<:]]' . $wpdb->esc_like($term) . '[[:>:]]';
             } else {
@@ -747,7 +747,7 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
 
         if (1 == $search_on_vardesc) {
 
-            if (isset($this->options['use_cache']) && (int) $this->options['use_cache'] == 1) {
+            if (isset($this->options['use_cache']) && intval($this->options['use_cache']) === 1) {
                 $use_cache = true;
             } else {
                 $use_cache = false;
@@ -767,7 +767,7 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
                         $search_type = ' NOT LIKE ';
                     }
                     $word = $wpdb->esc_like($term);
-                    if (isset($this->options['search_by_full_word']) && $this->options['search_by_full_word'] == 1) {
+                    if (isset($this->options['search_by_full_word']) && intval($this->options['search_by_full_word']) === 1) {
                         $search_type = ' RLIKE ';
                         $like = '[[:<:]]' . $wpdb->esc_like($term) . '[[:>:]]';
                     } else {
@@ -842,7 +842,7 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
             $options = $this->data_fields();
         }
 
-        if (isset($options['use_cache']) && (int) $options['use_cache'] == 1) {
+        if (isset($options['use_cache']) && intval($options['use_cache']) === 1) {
             $options['use_cache'] = true;
         } else {
             $options['use_cache'] = false;
