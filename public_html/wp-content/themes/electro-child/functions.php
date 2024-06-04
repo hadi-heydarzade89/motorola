@@ -1,8 +1,10 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
 use ElectroApp\Hooks\ThemeInitHook;
+use Morilog\Jalali\Jalalian;
 
 if (in_array('woocommerce/woocommerce.php', apply_filters('active_plugins', get_option('active_plugins')))) {
     add_filter('posts_clauses', 'orderByStockStatus', 10);
@@ -201,9 +203,6 @@ function wc_remove_checkout_fields($fields)
 }
 
 
-
-
-
 if (!function_exists('woocommerce_mini_cart')) {
     function woocommerce_mini_cart($args = array())
     {
@@ -289,5 +288,64 @@ function woocommerceCustomRedirections(): void
 {
     if (!is_user_logged_in() && is_checkout()) {
         wp_redirect(get_permalink(get_option('woocommerce_myaccount_page_id')));
+    }
+}
+
+function wcElectroChildPrintColumn($columns)
+{
+    $columns['electro_print_column'] = 'فاکتور';
+    return $columns;
+}
+
+add_filter('manage_edit-shop_order_columns', 'wcElectroChildPrintColumn');
+
+
+function addElectroPrintColumnContent($column)
+{
+    global $post;
+    if ('electro_print_column' === $column && is_admin()) {
+        ?>
+        <a href="<?= get_admin_url() . 'admin.php?electro_woo_invoice_type=thermal&electro_woo_invoice=' . $post->ID ?>"
+           target="_blank"
+           title="پرینت حرارتی">
+            <div class="wooi"
+                 style="background: #ff64b1; display: inline-block; margin-top: 5px; padding: 6px 10px;color: white;border-radius: 5px;">
+                <span class="dashicons dashicons-text-page" style="line-height: 25px;"></span></div>
+        </a>
+<!--        <a href="--><?php //= get_admin_url() . 'admin.php?electro_woo_invoice_type=invoice&electro_woo_invoice=' . $post->ID ?><!--"-->
+<!--           target="_blank" title="فاکتور">-->
+<!--            <div class="wooi"-->
+<!--                 style="background: #98b4c7; display: inline-block; margin-top: 5px; padding: 6px 10px;color: white;border-radius: 5px;">-->
+<!--                <span class="dashicons dashicons-media-spreadsheet" style="line-height: 25px;"></span></div>-->
+<!--        </a>-->
+        <?php
+    }
+}
+
+add_action('manage_shop_order_posts_custom_column', 'addElectroPrintColumnContent');
+
+add_action('admin_init', 'loadOrderInvoiceData');
+
+function loadOrderInvoiceData(): void
+{
+    if ($_GET['electro_woo_invoice'] && is_admin()) {
+        $order = wc_get_order($_GET['electro_woo_invoice']);
+        if ($order === false) {
+            wp_redirect(admin_url());
+            exit();
+        }
+        $customerId = $order->get_customer_id();
+        $billingPhone = $order->get_billing_phone();
+
+        $shippingAddress = $order->get_shipping_address_1();
+        $shippingPostcode = $order->get_shipping_postcode();
+
+        $currencySymbol = get_woocommerce_currency_symbol($order->get_currency());
+        $createdDatetime = Jalalian::forge((new DateTime(date('Y-m-d H:i:s')))->getTimestamp())->format('Y/m/d');
+        if ($_GET['electro_woo_invoice_type'] === 'thermal') {
+            include plugin_dir_path(__FILE__) . 'templates/invoice/a5.php';
+        } elseif ($_GET['electro_woo_invoice_type'] === 'invoice') {
+//            include plugin_dir_path(__FILE__) . 'templates/invoice/ticket.php';
+        }
     }
 }

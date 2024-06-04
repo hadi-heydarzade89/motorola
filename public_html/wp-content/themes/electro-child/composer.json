@@ -1,6 +1,7 @@
 {
   "require": {
-    "mobiledetect/mobiledetectlib": "^3.74"
+    "mobiledetect/mobiledetectlib": "^3.74",
+    "morilog/jalali": "^3.4"
   },
   "autoload": {
     "psr-4": {
