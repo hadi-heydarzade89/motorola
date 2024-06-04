@@ -1344,9 +1344,6 @@ class HT_CTC_Admin_Other_Settings {
                     } else {
                         $new_input[$key] = sanitize_text_field( $input[$key] );
                     }
-                } elseif ( 'hook_v' == $key ) {
-                    // todo:l hook_v might covers at array itself
-                    $new_input[$key] = array_map( 'sanitize_text_field', $input[$key] );
                 } elseif ( isset( $input[$key] ) ) {
                     $new_input[$key] = sanitize_text_field( $input[$key] );
                 }

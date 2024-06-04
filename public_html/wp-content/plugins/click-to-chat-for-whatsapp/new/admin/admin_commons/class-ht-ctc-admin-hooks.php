@@ -190,10 +190,6 @@ class HT_CTC_Admin_Others {
         }
 
 
-        
-
-
-        // // todo: comment this lines.. before release
         // add_action('admin_notices', array( $this, 'pro_notice') );
         // add_action('admin_footer', array( $this, 'admin_pro_notice_scripts') );
         // add_action('admin_notices', array( $this, 'pro_notice_country') );

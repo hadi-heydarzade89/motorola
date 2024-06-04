@@ -95,8 +95,8 @@
                     'pixel_param_3': { 'key': 'ID', 'value': '{number}' },
                     'pixel_param_4': { 'key': 'Title', 'value': '{title}' },
                 }
-                window.ht_ctc_chat_var = ctc_values;
-                console.log(ht_ctc_chat_var);
+                window.ht_ctc_variables = ctc_values;
+                console.log(ht_ctc_variables);
             }
             console.log(ctc_values);
         }
@@ -776,7 +776,8 @@
             try {
                 pre_filled = pre_filled.replaceAll('%', '%25');
 
-                pre_filled = pre_filled.replace(/\[url]/gi, url);
+                var update_url = window.location.href;
+                pre_filled = pre_filled.replace(/\[url]/gi, update_url);
 
                 // pre_filled = encodeURIComponent(pre_filled);
                 pre_filled = encodeURIComponent(decodeURI(pre_filled));

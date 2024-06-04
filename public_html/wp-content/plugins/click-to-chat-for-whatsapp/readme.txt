@@ -3,7 +3,7 @@ Requires at least: 4.6
 Tested up to: 6.5.3
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 4.3
+Stable tag: 4.4
 Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, WooCommerce WhatsApp
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -537,9 +537,13 @@ After Activating the plugin, add a WhatsApp Number in the plugin settings.
 
 == Changelog ==
 
+= 4.4 =
+* Fix: Get the updated URL with query parameters for the pre-filled message variable [url].
+* Page-level settings have a higher prevalence than the string translations of multilingual plugins.
+
 = 4.3 =
 * Shorcodes now works with URL settings - new tab, same tab, popup.
-* PRO: NEW: Display based on website visitor's country.
+* PRO: NEW: Display based on website visitor's [country](https://holithemes.com/plugins/click-to-chat/display-based-on-country/).
 
 = 4.2 = 
 * Fix: set different widgets for mobile and desktop cache issue.

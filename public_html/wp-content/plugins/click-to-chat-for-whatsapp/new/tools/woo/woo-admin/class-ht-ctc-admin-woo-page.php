@@ -173,9 +173,11 @@ class HT_CTC_Admin_Woo_Page {
 
         ?>
 
-<!-- overwrite settings -->
+        <!-- overwrite settings -->
         <div class="margin_bottom_15"><strong class="description ht_ctc_subtitle">Overwrite Settings for WooCommerce Pages</strong></div>
+
         <div class="row">
+
             <div class="col s12">
                 <ul class="tabs tabs-fixed-width">
                     <li class="tab col s3 md_tab_li"><a href="#overwrite_tab-1"><?php _e( 'Single Product Pages', 'click-to-chat-for-whatsapp' ); ?></a></li>
@@ -183,7 +185,7 @@ class HT_CTC_Admin_Woo_Page {
                 </ul>
             </div>
 
-    <!-- overwrite: single product page -->
+            <!-- overwrite: single product page -->
             <div id="overwrite_tab-1" class="col s12 md_tab">
                 <div class="ctc_md_tab">
                     <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/woocommerce-single-product-pages/"><?php _e( 'WooCommerce Single Product pages', 'click-to-chat-for-whatsapp' ); ?></a></p>
@@ -211,19 +213,18 @@ class HT_CTC_Admin_Woo_Page {
                     <?php
                     do_action('ht_ctc_ah_admin_after_woo_overwrite_single_settings');
                     ?>
-                     
+                        
                     <br><br>
                 </div>
             </div>
 
-    <!-- overwrite: shop, cart, checkout, account - page level settings -->
+            <!-- overwrite: shop, cart, checkout, account - page level settings -->
             <div id="overwrite_tab-2" class="col s12 md_tab">
                 <div class="ctc_md_tab">
                     <!-- Page Level settings - for WooCommerce pages -->
                     <p class="description">At <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/change-values-at-page-level/">Page Level Settings</a> can overwrite: Number, Call to Action, Prefilled Message (<a target="_blank" href="https://holithemes.com/plugins/click-to-chat/pricing/">PRO</a>: Greetings, Style, Time Delay, Scroll Delay)</p>
                     <br>
                     <?php
-
                     $admin_url = admin_url();
                     
                     if (function_exists( 'wc_get_page_id')) {
@@ -238,7 +239,6 @@ class HT_CTC_Admin_Woo_Page {
                         
                         $myaccount_page_id = wc_get_page_id( 'myaccount' );
                         $myaccount_admin_url = "{$admin_url}post.php?post={$myaccount_page_id}&action=edit";
-
                         ?>
                         <p class="description"><a target="_blank" href="<?= $shop_admin_url ?>">Edit Shop Page</a> </p>
                         <p class="description"><a target="_blank" href="<?= $cart_admin_url ?>">Edit Cart Page</a> </p>
@@ -252,12 +252,11 @@ class HT_CTC_Admin_Woo_Page {
             </div>
 
 
-
         </div>
 
 
         <br><br>
-<!-- Add WhatsApp -->
+        <!-- Add WhatsApp -->
         <div class="margin_bottom_15"><strong class="description ht_ctc_subtitle">Add WhatsApp</strong></div>
         <div class="row">
             <div class="col s12">

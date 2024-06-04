@@ -167,27 +167,38 @@ class HT_CTC_Chat {
         $ht_ctc_chat['position_mobile'] = $position_mobile;
         
         // number
-        $number = (isset($options['number'])) ? esc_attr($options['number']) : '';
-        $call_to_action = (isset($options['call_to_action'])) ? __(esc_attr($options['call_to_action']) , 'click-to-chat-for-whatsapp' ) : '';
-        $pre_filled = (isset($options['pre_filled'])) ? __(esc_attr($options['pre_filled']) , 'click-to-chat-for-whatsapp' ) : '';
+        $ht_ctc_chat['number'] = (isset($options['number'])) ? esc_attr($options['number']) : '';
+        $ht_ctc_chat['call_to_action'] = (isset($options['call_to_action'])) ? __(esc_attr($options['call_to_action']) , 'click-to-chat-for-whatsapp' ) : '';
+        $ht_ctc_chat['pre_filled'] = (isset($options['pre_filled'])) ? __(esc_attr($options['pre_filled']) , 'click-to-chat-for-whatsapp' ) : '';
 
         // safe side action .. if number not saved in new method
-        if ( '' == $number ) {
+        if ( '' == $ht_ctc_chat['number'] ) {
             $cc = (isset($options['cc'])) ? esc_attr($options['cc']) : '';
             $num = (isset($options['num'])) ? esc_attr($options['num']) : '';
-            $number = $cc.$num;
+            if ( '' !== $cc && '' !== $num ) {
+                $ht_ctc_chat['number'] = $cc . $num;
+            }
         }
 
-        $ht_ctc_chat['number'] = (isset($ht_ctc_pagelevel['number'])) ? esc_attr($ht_ctc_pagelevel['number']) : $number;
         $ht_ctc_chat['number'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_chat['number'], 'Click to Chat for WhatsApp', 'number' );
 
+        if ( isset($ht_ctc_pagelevel['number']) ) {
+            $ht_ctc_chat['number'] = esc_attr($ht_ctc_pagelevel['number']);
+        }
+
         // call to action
-        $ht_ctc_chat['call_to_action'] = (isset($ht_ctc_pagelevel['call_to_action'])) ? esc_attr($ht_ctc_pagelevel['call_to_action']) : $call_to_action;
         $ht_ctc_chat['call_to_action'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_chat['call_to_action'], 'Click to Chat for WhatsApp', 'call_to_action' );
 
+        if ( isset($ht_ctc_pagelevel['call_to_action']) ) {
+            $ht_ctc_chat['call_to_action'] = esc_attr($ht_ctc_pagelevel['call_to_action']);
+        }
+
         // prefilled text
-        $ht_ctc_chat['pre_filled'] = (isset($ht_ctc_pagelevel['pre_filled'])) ? esc_attr($ht_ctc_pagelevel['pre_filled']) : $pre_filled;
         $ht_ctc_chat['pre_filled'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_chat['pre_filled'], 'Click to Chat for WhatsApp', 'pre_filled' );
+
+        if ( isset($ht_ctc_pagelevel['pre_filled']) ) {
+            $ht_ctc_chat['pre_filled'] = esc_attr($ht_ctc_pagelevel['pre_filled']);
+        }
 
         $ht_ctc_chat['url_target_d'] = ( isset( $options['url_target_d'] ) ) ? esc_attr($options['url_target_d']) : '_blank';
         $ht_ctc_chat['url_structure_d'] = ( isset( $options['url_structure_d'] ) ) ? esc_attr($options['url_structure_d']) : '';
