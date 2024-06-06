@@ -1,5 +1,5 @@
 <?php
-defined( 'ABSPATH' ) || exit;
+defined('ABSPATH') || exit;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
@@ -88,7 +88,8 @@ function addToCartValidation($passed)
     if (is_user_logged_in()) {
         if (empty(getNationalId(get_current_user_id()))) {
             $passed = false;
-            $error_notice[] = 'کد ملی شما ثبت نشده است. کد ملی خود را ثبت نمایید.';
+            $pageLink = get_permalink(get_option('woocommerce_myaccount_page_id'));
+            $error_notice[] = 'کد ملی شما ثبت نشده است. کد ملی خود را ثبت نمایید.' . " <a class='electro-error-link' href='{$pageLink}/edit-account/'>برای افزودن کد ملی کلیک نمایید.</a>";
         }
 
         if (!empty($error_notice)) {
@@ -312,12 +313,12 @@ function addElectroPrintColumnContent($column)
                  style="background: #ff64b1; display: inline-block; margin-top: 5px; padding: 6px 10px;color: white;border-radius: 5px;">
                 <span class="dashicons dashicons-text-page" style="line-height: 25px;"></span></div>
         </a>
-<!--        <a href="--><?php //= get_admin_url() . 'admin.php?electro_woo_invoice_type=invoice&electro_woo_invoice=' . $post->ID ?><!--"-->
-<!--           target="_blank" title="فاکتور">-->
-<!--            <div class="wooi"-->
-<!--                 style="background: #98b4c7; display: inline-block; margin-top: 5px; padding: 6px 10px;color: white;border-radius: 5px;">-->
-<!--                <span class="dashicons dashicons-media-spreadsheet" style="line-height: 25px;"></span></div>-->
-<!--        </a>-->
+        <!--        <a href="--><?php //= get_admin_url() . 'admin.php?electro_woo_invoice_type=invoice&electro_woo_invoice=' . $post->ID ?><!--"-->
+        <!--           target="_blank" title="فاکتور">-->
+        <!--            <div class="wooi"-->
+        <!--                 style="background: #98b4c7; display: inline-block; margin-top: 5px; padding: 6px 10px;color: white;border-radius: 5px;">-->
+        <!--                <span class="dashicons dashicons-media-spreadsheet" style="line-height: 25px;"></span></div>-->
+        <!--        </a>-->
         <?php
     }
 }
@@ -349,3 +350,15 @@ function loadOrderInvoiceData(): void
         }
     }
 }
+
+function add_fake_error($posted)
+{
+    $nationalId = get_user_meta(get_current_user_id(), 'nationalcode', true);
+
+    if (empty($nationalId) or !checkNationalCode($nationalId)) {
+        $pageLink = get_permalink(get_option('woocommerce_myaccount_page_id'));
+        wc_add_notice("کد ملی اجباری می باشد " . "<a class='electro-error-link' href='{$pageLink}/edit-account/'>برای افزودن کد ملی کلیک نمایید.</a>" , 'error');
+    }
+}
+
+add_action('woocommerce_after_checkout_validation', 'add_fake_error');
