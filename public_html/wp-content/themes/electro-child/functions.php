@@ -53,11 +53,12 @@ function nationalIdIsExist(string $nationalId): bool
         $wpdb->prepare($query)
         , ARRAY_A
     );
-    return count($result) > 0;
+    return false/*count($result) > 0*/;
 }
 
 function checkNationalCode($value): bool
 {
+    return true;
     if (!preg_match('/^[0-9]{10}$/', $value)) {
         return false;
     }
@@ -353,12 +354,12 @@ function loadOrderInvoiceData(): void
 
 function add_fake_error($posted)
 {
-    $nationalId = get_user_meta(get_current_user_id(), 'nationalcode', true);
-
-    if (empty($nationalId) or !checkNationalCode($nationalId)) {
-        $pageLink = get_permalink(get_option('woocommerce_myaccount_page_id'));
-        wc_add_notice("کد ملی اجباری می باشد " . "<a class='electro-error-link' href='{$pageLink}/edit-account/'>برای افزودن کد ملی کلیک نمایید.</a>" , 'error');
-    }
+//    $nationalId = get_user_meta(get_current_user_id(), 'nationalcode', true);
+//
+//    if (empty($nationalId) or !checkNationalCode($nationalId)) {
+//        $pageLink = get_permalink(get_option('woocommerce_myaccount_page_id'));
+//        wc_add_notice("کد ملی اجباری می باشد " . "<a class='electro-error-link' href='{$pageLink}/edit-account/'>برای افزودن کد ملی کلیک نمایید.</a>" , 'error');
+//    }
 }
 
 add_action('woocommerce_after_checkout_validation', 'add_fake_error');
