@@ -81,7 +81,7 @@ function checkNationalCode($value): bool
 }
 
 
-add_action('woocommerce_add_to_cart_validation', 'addToCartValidation');
+//add_action('woocommerce_add_to_cart_validation', 'addToCartValidation');
 function addToCartValidation($passed)
 {
     $error_notice = [];
