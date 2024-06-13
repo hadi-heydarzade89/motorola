@@ -53,12 +53,11 @@ function nationalIdIsExist(string $nationalId): bool
         $wpdb->prepare($query)
         , ARRAY_A
     );
-    return false/*count($result) > 0*/;
+    return false/*count($result) > 0*/ ;
 }
 
 function checkNationalCode($value): bool
 {
-    return true;
     if (!preg_match('/^[0-9]{10}$/', $value)) {
         return false;
     }
@@ -127,7 +126,7 @@ add_action('edit_user_profile_update', 'storeNationalId');
 
 function storeNationalId($userId): bool
 {
-    if (isset($_POST['admin_nation_id']) && current_user_can('edit_user', $userId) && checkNationalCode($_POST['admin_nation_id'])) {
+    if (isset($_POST['admin_nation_id']) && current_user_can('edit_user', $userId)) {
         update_user_meta($userId, 'national_id', $_POST['admin_nation_id']);
     }
     return true;
@@ -178,6 +177,9 @@ function validateNationalIdInMyAccountPage(): void
         if (!checkNationalCode($_POST['user_account_national_id'])) {
 
             wc_add_notice('کد ملی اشتباه وارد شده است.', 'error');
+        }
+        if ((isset($_POST['account_first_name']) && !isPersianWord($_POST['account_first_name'])) || (isset($_POST['account_last_name']) && !isPersianWord($_POST['account_last_name']))) {
+            wc_add_notice('نام و نام خانوادگی را با حروف فارسی وارد نمایید.', 'error');
         }
     }
 
@@ -352,14 +354,56 @@ function loadOrderInvoiceData(): void
     }
 }
 
-function add_fake_error($posted)
+function validateNationalCodeAfterCheckoutValidation($posted): void
 {
-//    $nationalId = get_user_meta(get_current_user_id(), 'nationalcode', true);
-//
-//    if (empty($nationalId) or !checkNationalCode($nationalId)) {
-//        $pageLink = get_permalink(get_option('woocommerce_myaccount_page_id'));
-//        wc_add_notice("کد ملی اجباری می باشد " . "<a class='electro-error-link' href='{$pageLink}/edit-account/'>برای افزودن کد ملی کلیک نمایید.</a>" , 'error');
-//    }
+
+    if (!checkNationalCode($posted['billing_national_code'])) {
+        wc_add_notice("کد ملی وارد شده معتبر نمیباشد لطفا از صحت کد ملی وارد شده اطمینان حاصل نمایید.", 'error');
+    } else {
+        if (is_user_logged_in()) {
+            $nationalCode = update_user_meta(get_current_user_id(), 'nationalcode', $posted['billing_national_code']);
+            if (!$nationalCode) {
+                wc_add_notice("کد ملی ذخیره نشد لطفا دوباره امتحان نمایید.", 'error');
+            }
+        }
+    }
+    if (!isPersianWord($posted['billing_first_name']) || !isPersianWord($posted['billing_last_name'])) {
+        wc_add_notice('لطفا از حروف فارسی برای نام و نام خانوادگی استفاده نمایید.', 'error');
+    }
+
 }
 
-add_action('woocommerce_after_checkout_validation', 'add_fake_error');
+add_action('woocommerce_after_checkout_validation', 'validateNationalCodeAfterCheckoutValidation');
+
+add_filter('woocommerce_billing_fields', 'addNationalCodeFieldOnCheckoutPage');
+function addNationalCodeFieldOnCheckoutPage($fields)
+{
+    $fields['billing_national_code'] = [
+        'label' => 'کد ملی',
+        'required' => true,
+        'autocomplete' => 'nationalcode',
+        'priority' => 9,
+        'class' => ['form-row-wide']
+    ];
+    $fields['billing_last_name']['class'] = $fields['billing_first_name']['class'] = ['form-row-wide'];
+    return $fields;
+}
+
+
+remove_action('woocommerce_account_content', 'woocommerce_output_all_notices', 5);
+add_action('woocommerce_before_checkout_form', 'woocommerce_output_all_notices', 10);
+add_action('woocommerce_account_content', 'customWooError', 5);
+
+function customWooError(): void
+{
+    echo '<div id="woo-custom-error" class="woocommerce-notices-wrapper">';
+    wc_print_notices();
+    echo '</div>';
+}
+
+function isPersianWord($word): bool
+{
+    // Persian Unicode range
+    $pattern = '/^[\x{0600}-\x{06FF}\x{0750}-\x{077F}\x{FB50}-\x{FDFF}\x{FE70}-\x{FEFF}]+$/u';
+    return preg_match($pattern, $word);
+}

@@ -345,6 +345,27 @@ ul[data-view="grid-extended"] .product-short-description {
     color: #000 !important;
 }
 
+.woocommerce-form-row {
+    position: relative;
+}
+
+.woocommerce-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+}
+
+.motorola-error {
+    position: absolute;
+    color: red;
+    font-weight: bolder;
+    min-width: 196px;
+}
+
+.woocommerce-input-wrapper .motorola-error {
+    bottom: -25px;
+}
+
 @media (max-width: 576px) {
     .product .price-add-to-cart {
         display: flex !important;
