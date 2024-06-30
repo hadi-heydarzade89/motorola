@@ -43,69 +43,131 @@ function mo_api_authentication_main_menu() {
 	}
 	?>
 
-	<div class="bg-light">
-		<?php if ( ! isset( $_GET['tab'] ) || ( isset( $_GET['tab'] ) && sanitize_text_field( wp_unslash( $_GET['tab'] ) ) !== 'licensing' ) ) : //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Ignoring nonce validation because we are directly fetching value from URL and not form submission. ?>
-			<div class="bg-white" style="margin-left: -1.8%">
-				<nav class="navbar navbar-light mo-caw-navbar border-bottom mo-caw-element-to-toggle mo-caw-light-mode p-0">
-					<div class="container-fluid">
-						<a class="navbar-brand d-flex align-items-center p-0 ms-3" href="https://plugins.miniorange.com/wordpress-rest-api-authentication">
-							<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/miniorange-full-logo.png" alt="miniOrange" width="" height="80px" class="d-inline-block align-text-top mx-3 py-0">
-						</a>
-						<span>
-							<a class="btn p-2 ms-1" href="admin.php?page=mo_api_authentication_settings&tab=postman" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Export Postman Samples"><img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/postman.png" height="20px"> Postman-Samples</a>
-							<a class="btn p-2 ms-1" href="https://plugins.miniorange.com/wordpress-rest-api-authentication#rest-api-methods" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Learn more about the plugin"><img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/know-how.png" height="20px"> Learn-More</a>
-							<a class="btn p-2 ms-1" href="https://wordpress.org/support/plugin/wp-rest-api-authentication/" target="__blank" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="WordPress Forum"><img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/wordpress-logo.png" height="20px"> WordPress Forum</a>
-							<a class="btn p-2 ms-1" href="https://faq.miniorange.com/" role="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="FAQ"><img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/faq.png" height="20px"> FAQ</a>
-						</span>
+	<div>
+
+	<div style="margin-left: -1.8%">
+		<?php if ( ! isset( $_GET['tab'] ) || ( isset( $_GET['tab'] ) && sanitize_text_field( wp_unslash( $_GET['tab'] ) ) !== 'licensing' ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Ignoring nonce validation because we are directly fetching value from URL and not form submission. ?>
+		<div class="mo_api_top_menu">
+			<a href="https://plugins.miniorange.com/wordpress-rest-api-authentication" target="_blank" ><img style="float:left;width: 13.75em;height: 6em; margin-top: -10px;margin-left: -225px;" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/miniorange-full-logo.png"></a>
+			<a href="https://faq.miniorange.com/" target="_blank"><h2 class="mo_api_top_menu_h2"><img class="mo_api_top_menu_img" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/faq.png">&nbsp;FAQ</h2></a>
+			<a href="https://plugins.miniorange.com/wordpress-rest-api-authentication#rest-api-methods" target="_blank"><h2 class="mo_api_top_menu_h2"><img class="mo_api_top_menu_img" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/know-how.png">&nbsp;Learn-More</h2></a>
+			<a href="admin.php?page=mo_api_authentication_settings&tab=postman"><h2 class="mo_api_top_menu_h2"><img class="mo_api_top_menu_img" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/postman.png">&nbsp;Postman-Samples</h2></a>
+			<a href="https://wordpress.org/support/plugin/wp-rest-api-authentication/" target="_blank"><h2 class="mo_api_top_menu_h2"><img class="mo_api_top_menu_img" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/wordpress-logo.png">&nbsp;WordPress Forum</h2></a>
+		</div>
+	</div>
+		<div class="mo_api_side_bar">
+			<div id="mo_api_side_bar_content" style="padding-top: 3.5em;">
+				<div class="<?php echo ( '' === $currenttab || 'config' === $currenttab ) ? 'mo_api_side_bar_select' : ''; ?> " >
+				<a href="admin.php?page=mo_api_authentication_settings&tab=config" style="text-decoration:none">
+					<div style="text-align: center;padding-bottom: 1px;">
+						<img style="width: 2em;height: 2em;display: block;padding-left: 8.5em;" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/setting.png">
+						<p style="color: white;font-size: 1.3em;margin-top: 2px;text-align: center">Configure Methods</p>
 					</div>
-				</nav>
-			</div>
-		<?php endif; ?>
-		<?php if ( ! isset( $_GET['tab'] ) || ( isset( $_GET['tab'] ) && sanitize_text_field( wp_unslash( $_GET['tab'] ) ) !== 'licensing' ) ) : //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Ignoring nonce validation because we are directly fetching value from URL and not form submission. ?>
-			<div class="mo_api_side_bar py-4" id="mo_api_side_bar_content">
-				<a class="d-flex flex-column align-items-center text-decoration-none py-3 <?php echo ( '' === $currenttab || 'config' === $currenttab ) ? 'mo_api_side_bar_select' : ''; ?>" href="admin.php?page=mo_api_authentication_settings&tab=config">
-					<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/setting.png" height="30px" width="30px">
-					<h6 class="text-white mt-2 mb-0">Configure Methods</h6>
-				</a>
-				<a class="d-flex flex-column align-items-center text-decoration-none py-3 <?php echo ( 'protectedrestapis' === $currenttab ) ? 'mo_api_side_bar_select' : ''; ?>" href="admin.php?page=mo_api_authentication_settings&tab=protectedrestapis">
-					<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/shield.png" height="30px" width="30px">
-					<h6 class="text-white mt-2 mb-0">Protected REST APIs</h6>
-				</a>
-				<a class="d-flex flex-column align-items-center text-decoration-none py-3 <?php echo ( 'advancedsettings' === $currenttab ) ? 'mo_api_side_bar_select' : ''; ?>" href="admin.php?page=mo_api_authentication_settings&tab=advancedsettings">
-					<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/settings.png" height="30px" width="30px">
-					<h6 class="text-white mt-2 mb-0">Advanced Settings</h6>
-				</a>
-				<a class="d-flex flex-column align-items-center text-decoration-none py-3 <?php echo ( 'custom-integration' === $currenttab ) ? 'mo_api_side_bar_select' : ''; ?>" href="admin.php?page=mo_api_authentication_settings&tab=custom-integration">
-					<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/controller.png" height="30px" width="30px">
-					<h6 class="text-white mt-2 mb-0">Third Party Plugin Integrations</h6>
-				</a>
-				<a class="d-flex flex-column align-items-center text-decoration-none py-3 <?php echo ( 'third-party-integration' === $currenttab ) ? 'mo_api_side_bar_select' : ''; ?>" href="admin.php?page=mo_api_authentication_settings&tab=third-party-integration">
-					<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/popular.png" height="30px" width="30px">
-					<h6 class="text-white mt-2 mb-0">Popular Use Cases</h6>
-				</a>
-				<a class="d-flex flex-column align-items-center text-decoration-none py-3 <?php echo ( 'requestfordemo' === $currenttab ) ? 'mo_api_side_bar_select' : ''; ?>" href="admin.php?page=mo_api_authentication_settings&tab=requestfordemo">
-					<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/trial.png" height="30px" width="30px">
-					<h6 class="text-white mt-2 mb-0">Premium Trials</h6>
-				</a>
-				<a class="d-flex flex-column align-items-center text-decoration-none py-3 <?php echo ( 'account' === $currenttab ) ? 'mo_api_side_bar_select' : ''; ?>" href="admin.php?page=mo_api_authentication_settings&tab=account">
-					<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/account.png" height="30px" width="30px">
-					<h6 class="text-white mt-2 mb-0">Account Setup</h6>
 				</a>
 			</div>
-		<?php else : ?>
-			<div id="nav-container" class="bg-white d-flex justify-content-center py-3">
-				<div>
-					<a class="position-absolute start-0 text-black text-center text-decoration-none ms-3" href="<?php echo ! empty( $_SERVER['REQUEST_URI'] ) ? esc_url( add_query_arg( array( 'tab' => 'config' ), sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) ) : ''; ?>">
-						<button id="Back-To-Plugin-Configuration" type="button" value="Back-To-Plugin-Configuration" class="btn btn-sm">
-							<span class="dashicons dashicons-arrow-left-alt" style="vertical-align: middle;"></span>
-							Plugin Configuration
-						</button> 
-					</a> 
-				</div>
-				<p class="fw-bold fs-4 m-0">miniOrange REST API Authentication</p>
+				<div class="
+				<?php
+				if ( 'protectedrestapis' === $currenttab ) {
+					echo 'mo_api_side_bar_select';}
+				?>
+					" >
+				<a href="admin.php?page=mo_api_authentication_settings&tab=protectedrestapis" style="text-decoration:none">
+					<div style="text-align: center;padding-bottom: 1px;">
+						<img style="width: 1.8em;height: 1.8em;display: block;padding-left: 8.5em;" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/shield.png">
+						<p style="color: white;font-size: 1.3em;margin-top: 2px;text-align: center">Protected REST APIs</p>
+					</div>
+				</a>
 			</div>
-		<?php endif; ?>
-		<?php
+				<div class="
+				<?php
+				if ( 'advancedsettings' === $currenttab ) {
+					echo 'mo_api_side_bar_select';}
+				?>
+					" >
+				<a href="admin.php?page=mo_api_authentication_settings&tab=advancedsettings" style="text-decoration:none">
+					<div style="text-align: center;padding-bottom: 1px;">
+						<img style="width: 1.8em;height: 1.8em;display: block;padding-left: 8.5em;" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/settings.png">
+						<p style="color: white;font-size: 1.3em;margin-top: 2px;text-align: center">Advanced Settings</p>
+					</div>
+				</a>
+			</div>
+
+				<div class="
+				<?php
+				if ( 'custom-integration' === $currenttab ) {
+					echo 'mo_api_side_bar_select';}
+				?>
+					" >
+				<a href="admin.php?page=mo_api_authentication_settings&tab=custom-integration" style="text-decoration:none">
+					<div style="text-align: center;padding-bottom: 1px;">
+						<img style="width: 1.8em;height: 1.8em;display: block;padding-left: 8.5em;" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/controller.png">
+						<p style="color: white;font-size: 1.3em;margin-top: 2px;text-align: center">Custom APIs Auth</p>
+					</div>
+				</a>				
+			</div>
+			<div class="
+			<?php
+			if ( 'third-party-integration' === $currenttab ) {
+				echo 'mo_api_side_bar_select';}
+			?>
+				" >
+				<a href="admin.php?page=mo_api_authentication_settings&tab=third-party-integration" style="text-decoration:none">
+					<div style="text-align: center;padding-bottom: 1px;">
+						<img style="width: 1.8em;height: 1.8em;display: block;padding-left: 8.5em;" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/controller.png">
+						<p style="color: white;font-size: 1.3em;margin-top: 2px;text-align: center">Third Party Integrations</p>
+					</div>
+				</a>				
+			</div>
+				<div class="
+				<?php
+				if ( 'requestfordemo' === $currenttab ) {
+					echo 'mo_api_side_bar_select';}
+				?>
+					" >
+				<a href="admin.php?page=mo_api_authentication_settings&tab=requestfordemo" style="text-decoration:none">
+					<div style="text-align: center;padding-bottom: 1px;">
+						<img style="width: 2em;height: 2em;display: block;padding-left: 8.5em;" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/trial.png">
+						<p style="color: white;font-size: 1.3em;margin-top: 2px;text-align: center">Premium Trials</p>
+					</div>
+				</a>
+			</div>
+			<div class="
+			<?php
+			if ( 'account' === $currenttab ) {
+				echo 'mo_api_side_bar_select';}
+			?>
+				" >
+				<a href="admin.php?page=mo_api_authentication_settings&tab=account" style="text-decoration:none">
+					<div style="text-align: center;padding-bottom: 1px;">
+						<img style="width: 2em;height: 2em;display: block;padding-left: 8.5em;" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/account.png">
+						<p style="color: white;font-size: 1.3em;margin-top: 2px;text-align: center">Account Setup</p>
+					</div>
+				</a>
+			</div>
+		</div>
+		</div>
+
+			<?php
+
+		} else {
+			?>
+
+		<div style="background-color:#f9f9f9;  display: flex;justify-content: center; padding-bottom:7px;padding-top:20px;" id="nav-container">
+			<div>
+				<a style="font-size: 16px; color: #000;text-align: center;text-decoration: none;display: inline-block;" href="<?php echo ! empty( $_SERVER['REQUEST_URI'] ) ? esc_url( add_query_arg( array( 'tab' => 'config' ), sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) ) : ''; ?>">
+					<button id="Back-To-Plugin-Configuration" type="button" value="Back-To-Plugin-Configuration" class="button button-primary button-large" style="position:absolute;left:15px;background: #473970">
+						<span class="dashicons dashicons-arrow-left-alt" style="vertical-align: middle;"></span> 
+						Plugin Configuration
+					</button> 
+				</a> 
+			</div>
+			<div style="display:block;text-align:center;margin: 10px;">
+				<p style="font-size: 20px;font-weight: 800">miniOrange REST API Authentication</p>
+			</div>
+		</div>
+			<?php
+		}
+
 		$mo_licensing_width        = '';
 		$mo_api_main_dashboard_css = '';
 
@@ -119,35 +181,41 @@ function mo_api_authentication_main_menu() {
 
 		?>
 		<div class="<?php echo esc_attr( $mo_api_main_dashboard_css ); ?>">
-		<?php
+	<?php
 
-		$mo_api_auth_message_flag  = get_option( 'mo_api_auth_message_flag' );
-		$mo_api_auth_message_class = '';
+	$mo_api_auth_message_flag  = get_option( 'mo_api_auth_message_flag' );
+	$mo_api_auth_message_class = '';
 
-		if ( 2 === $mo_api_auth_message_flag ) {
-			$mo_api_auth_message_class = 'mo_api_auth_admin_custom_notice_alert ms-4 me-2 p-2';
-		} elseif ( 1 === $mo_api_auth_message_flag ) {
-			$mo_api_auth_message_class = 'mo_api_auth_admin_custom_notice_success ms-4 me-2 p-2';
-		}
+	if ( 2 === $mo_api_auth_message_flag ) {
+		$mo_api_auth_message_class = 'mo_api_auth_admin_custom_notice_alert';
+	} elseif ( 1 === $mo_api_auth_message_flag ) {
+		$mo_api_auth_message_class = 'mo_api_auth_admin_custom_notice_success';
+	}
 
-		if ( $mo_api_auth_message_flag ) {
-			update_option( 'mo_api_auth_message_flag', 0 );
-			?>
-			<div class="<?php echo esc_attr( $mo_api_auth_message_class ); ?>" ><p class="m-0"><b><?php echo esc_html( get_option( 'mo_api_auth_message' ) ); ?></b></p></div>
-			<br>
-			<?php
-		}
+	if ( $mo_api_auth_message_flag ) {
+		update_option( 'mo_api_auth_message_flag', 0 );
 		?>
-	<div id="mo_api_authentication_settings" style="padding-left:1em;">
-		<div class="miniorange_container" style="padding-left:1em;">
-			<div class="row">
-				<div class="col"><?php Mo_API_Authentication_Admin_Menu::mo_api_auth_show_tab( $currenttab ); ?></div>
-				<?php if ( 'licensing' !== $currenttab ) : ?>
-					<div class="col-3 ps-0"><?php Mo_API_Authentication_Admin_Menu::mo_api_auth_show_support_sidebar( $currenttab ); ?></div>
-				<?php endif; ?>
-			</div>
-			<div class="mo_api_authentication_tutorial_overlay" id="mo_api_authentication_tutorial_overlay" hidden></div>
-			</div>
+
+		<div class="<?php echo esc_attr( $mo_api_auth_message_class ); ?>" ><b><p style="font-size: 12px;"><?php echo esc_html( get_option( 'mo_api_auth_message' ) ); ?></p></b></div>
+		<br>
+		<?php
+	}
+
+	echo '
+	<div id="mo_api_authentication_settings" style="padding-left:1em;">';
+		echo '
+		<div class="miniorange_container" style="padding-left:1em;">';
+		echo '
+		<table style="width:100%;">
+			<tr>
+				<td style="vertical-align:top;' . esc_attr( $mo_licensing_width ) . ';" class="mo_api_authentication_content">';
+					Mo_API_Authentication_Admin_Menu::mo_api_auth_show_tab( $currenttab );
+					Mo_API_Authentication_Admin_Menu::mo_api_auth_show_support_sidebar( $currenttab );
+				echo '</tr>
+		</table>
+		<div class="mo_api_authentication_tutorial_overlay" id="mo_api_authentication_tutorial_overlay" hidden></div>
+		</div>';
+	?>
 		</div>
 	</div>
 
@@ -194,6 +262,7 @@ class Mo_API_Authentication_Admin_Menu {
 		} elseif ( 'postman' === $currenttab ) {
 			Mo_API_Authentication_Postman::mo_api_authentication_postman_page();
 		}
+
 	}
 
 	/**
@@ -204,13 +273,14 @@ class Mo_API_Authentication_Admin_Menu {
 	 */
 	public static function mo_api_auth_show_support_sidebar( $currenttab ) {
 		if ( 'licensing' !== $currenttab ) {
-			?>
-			<div>
-				<?php echo esc_html( Mo_API_Authentication_Support::mo_api_authentication_admin_support() ); ?>
-				<?php echo esc_html( Mo_API_Authentication_Support::mo_api_authentication_advertise() ); ?>
-				<?php echo esc_html( Mo_API_Authentication_Support::mo_oauth_client_setup_support() ); ?>
-			</div>
-			<?php
+			echo '<td style="vertical-align:top;padding-left:1%;" class="mo_api_authentication_sidebar">';
+			echo esc_html( Mo_API_Authentication_Support::mo_api_authentication_admin_support() );
+			echo '<br>';
+			echo esc_html( Mo_API_Authentication_Support::mo_api_authentication_advertise() );
+			echo '<br>';
+			echo esc_html( Mo_API_Authentication_Support::mo_oauth_client_setup_support() );
+			echo '</td>';
 		}
 	}
+
 }

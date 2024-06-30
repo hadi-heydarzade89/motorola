@@ -48,34 +48,31 @@ if ( ! class_exists( 'acf_field_taxonomy' ) ) :
 			add_action( 'acf/save_post', array( $this, 'save_post' ), 15, 1 );
 		}
 
+
 		/**
-		 * Returns AJAX results for the Taxonomy field.
+		 * description
 		 *
-		 * @since 5.0.0
+		 * @type    function
+		 * @date    24/10/13
+		 * @since   5.0.0
 		 *
-		 * @return void
+		 * @param   $post_id (int)
+		 * @return  $post_id (int)
 		 */
-		public function ajax_query() {
-			$nonce             = acf_request_arg( 'nonce', '' );
-			$key               = acf_request_arg( 'field_key', '' );
-			$conditional_logic = (bool) acf_request_arg( 'conditional_logic', false );
+		function ajax_query() {
 
-			if ( $conditional_logic ) {
-				if ( ! acf_current_user_can_admin() ) {
-					die();
-				}
-
-				// Use the standard ACF admin nonce.
-				$nonce = '';
-				$key   = '';
-			}
-
-			if ( ! acf_verify_ajax( $nonce, $key ) ) {
+			// validate
+			if ( ! acf_verify_ajax() ) {
 				die();
 			}
 
-			acf_send_ajax_results( $this->get_ajax_query( $_POST ) );
+			// get choices
+			$response = $this->get_ajax_query( $_POST );
+
+			// return
+			acf_send_ajax_results( $response );
 		}
+
 
 		/**
 		 * This function will return an array of data formatted for use in a select2 AJAX response
@@ -458,15 +455,18 @@ if ( ! class_exists( 'acf_field_taxonomy' ) ) :
 			return $value;
 		}
 
+
 		/**
-		 * Renders the Taxonomy field.
+		 * Create the HTML interface for your field
 		 *
-		 * @since 3.6
+		 * @type    action
+		 * @since   3.6
+		 * @date    23/01/13
 		 *
-		 * @param array $field The field settings array.
-		 * @return void
+		 * @param   $field - an array holding all the field's data
 		 */
-		public function render_field( $field ) {
+		function render_field( $field ) {
+
 			// force value to array
 			$field['value'] = acf_get_array( $field['value'] );
 
@@ -477,7 +477,6 @@ if ( ! class_exists( 'acf_field_taxonomy' ) ) :
 				'data-ftype'      => $field['field_type'],
 				'data-taxonomy'   => $field['taxonomy'],
 				'data-allow_null' => $field['allow_null'],
-				'data-nonce'      => wp_create_nonce( $field['key'] ),
 			);
 			// get taxonomy
 			$taxonomy = get_taxonomy( $field['taxonomy'] );
@@ -514,6 +513,7 @@ if ( ! class_exists( 'acf_field_taxonomy' ) ) :
 </div>
 			<?php
 		}
+
 
 		/**
 		 * Create the HTML interface for your field
@@ -750,14 +750,25 @@ if ( ! class_exists( 'acf_field_taxonomy' ) ) :
 
 
 		/**
-		 * AJAX handler for adding Taxonomy field terms.
+		 * ajax_add_term
 		 *
-		 * @since 5.2.3
+		 * @since  5.2.3
+		 *
+		 * @type   function
+		 * @date   17/04/2015
 		 *
 		 * @return void
 		 */
-		public function ajax_add_term() {
-			$args = acf_request_args(
+		function ajax_add_term() {
+
+			// verify nonce
+			if ( ! acf_verify_ajax() ) {
+				die();
+			}
+
+			// vars
+			$args = wp_parse_args(
+				$_POST,
 				array(
 					'nonce'       => '',
 					'field_key'   => '',
@@ -765,10 +776,6 @@ if ( ! class_exists( 'acf_field_taxonomy' ) ) :
 					'term_parent' => '',
 				)
 			);
-
-			if ( ! acf_verify_ajax( $args['nonce'], $args['field_key'] ) ) {
-				die();
-			}
 
 			// load field
 			$field = acf_get_field( $args['field_key'] );

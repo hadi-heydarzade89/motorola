@@ -188,12 +188,6 @@ class PWS_Status {
 
 		if ( OrderUtil::custom_orders_table_usage_is_enabled() ) {
 
-			$page = $_GET['page'] ?? '';
-
-			if ( $page != 'wc-orders' ) {
-				return;
-			}
-
 			$action = $_GET['action'] ?? '';
 
 			if ( in_array( $action, [ 'new', 'edit' ] ) ) {

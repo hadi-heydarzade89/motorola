@@ -1,14 +1,14 @@
 /* ======================================================
- # Login as User for WordPress - v1.5.1 (free version)
+ # Login as User for WordPress - v1.5.0 (free version)
  # -------------------------------------------------------
  # For WordPress
  # Author: Web357
- # Copyright © 2014-2024 Web357. All rights reserved.
+ # Copyright @ 2014-2024 Web357. All rights reserved.
  # License: GNU/GPLv3, http://www.gnu.org/licenses/gpl-3.0.html
- # Website: https://www.web357.com/product/login-as-user-wordpress-plugin
- # Demo: https://demo-wordpress.web357.com/try-the-login-as-a-user-wordpress-plugin/
- # Support: https://www.web357.com/support
- # Last modified: Friday 28 June 2024, 06:04:10 PM
+ # Website: https:/www.web357.com
+ # Demo: https://demo.web357.com/wordpress/login-as-user/wp-admin/
+ # Support: support@web357.com
+ # Last modified: Friday 26 April 2024, 03:25:02 AM
  ========================================================= */
 .button .dashicons {
     padding-top: 3px;
@@ -27,10 +27,7 @@
     margin: 20px;
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
     float: right;
-    width: 480px;
-}
-.lau-about td {
-    padding: 5px 20px;
+    width: 280px;
 }
 
 .lau-form {
@@ -66,12 +63,6 @@
 
 .lau-free-vs-pro .lau-feature-info {
     font-size: 11px;
-}
-.lau-free-vs-pro .lau-feature-title {
-    font-weight: 700;
-}
-.lau-free-vs-pro .lau-feature-desc {
-    font-weight: 400;
 }
 
 .lau-free-vs-pro .lau-icon {

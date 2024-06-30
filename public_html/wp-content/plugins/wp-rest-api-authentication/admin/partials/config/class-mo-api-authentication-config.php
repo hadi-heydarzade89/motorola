@@ -34,119 +34,181 @@ class Mo_API_Authentication_Config {
 	 */
 	public static function mo_api_authentication_config_panel() {
 		?>
-		<div id="mo_api_section_method" class="bg-white rounded-4">
-			<div id="mo_api_authentication_password_setting_layout" class="border border-1 rounded-4 p-3 bg-white">
-				<div class="d-flex align-items-center gap-3 mb-3 justify-content-between">
-					<h5 class="m-0">API Authentication Methods Configuration</h5>
-					<?php if ( get_option( 'mo_api_authentication_selected_authentication_method' ) ) : ?>
-						<button class="btn btn-sm mo_rest_api_button text-white" aria-disabled="true" disabled><i class="fa fa-plus"></i> Add Application</button>
-					<?php endif; ?>
-				</div>
-				<?php if ( get_option( 'mo_api_authentication_selected_authentication_method' ) ) : ?>
+		<div id='mo_api_section_method'>
+		<div class="mo_api_authentication_support_layout">
+			<span>
+				<p style="font-size: 20px;font-weight: 900">API Authentication Methods Configuration</p>
+				<?php
+				if ( get_option( 'mo_api_authentication_selected_authentication_method' ) ) {
+					?>
+						<button disabled><i class="fa fa-plus"></i> Add Application</button>
+					<?php
+				}
+				?>
+			</span>
+			<?php
+			if ( get_option( 'mo_api_authentication_selected_authentication_method' ) ) {
+				?>
 					<div id="mo_api_auth_add_app_message">
 						<p class="mo_api_auth_note"><strong><i>Note: </i></strong>You can only configure one authentication method at a time with the free version. Please <strong><a href="admin.php?page=mo_api_authentication_settings&tab=licensing">Upgrade to All-Inclusive Plan Package</a></strong> to configure multiple authentication applications.</p>
 					</div>
-				<?php else : ?>
-					<p>Select any of the below authentication methods to get started</p>
-				<?php endif; ?>
-				<div class="row px-3 gap-2 mb-3">
-					<div class="col d-flex justify-content-start align-items-center p-3 rounded-3 mo_rest_api_auth_method <?php echo 'basic_auth' === get_option( 'mo_api_authentication_selected_authentication_method' ) ? 'mo_rest_api_selected_border' : 'border border-1'; ?>" onclick="api_ajax_redir('basic auth')">
-						<img class="me-3" src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) ); ?>/images/basic-key.png" height="55px">
-						<h6 class="fw-bolder mb-0">BASIC AUTHENTICATION</h6>
-					</div>
-					<div class="col d-flex justify-content-start align-items-center p-3 rounded-3 mo_rest_api_auth_method <?php echo 'jwt_auth' === get_option( 'mo_api_authentication_selected_authentication_method' ) ? 'mo_rest_api_selected_border' : 'border border-1'; ?>" onclick="api_ajax_redir('jwt auth')">
-						<img class="me-3" src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) ); ?>/images/jwt_authentication.png" height="55px">
-						<h6 class="fw-bolder mb-0">JWT AUTHENTICATION</h6>
-					</div>
+				<?php
+			} else {
+				?>
+					<p style="font-size: 15px;font-weight: 500">Select any of the below authentication methods to get started - </p>
+				<?php
+			}
+			?>
+			<div class="mo_api_authentication_card_layout">
+				<div class="mo_api_flex_child" id='mo_api_config_bauth' onclick="api_ajax_redir('basic auth')" style="<?php echo get_option( 'mo_api_authentication_selected_authentication_method' ) === 'basic_auth' ? 'box-shadow: 4px 4px 4px 2px rgba(0,0,0,0.1);border: 3px solid #473970' : ''; ?>" >
+					<div class="mo_api_auth_method_img">
+					<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __FILE__ ) ) ) ); ?>/images/basic-key.png" height="55em" width="55em"></div>
+					<div class="mo_api_auth_div_internal">
+					<p class="mo_api_auth_div_nested_internal">BASIC AUTHENTICATION</p></div>
+
 				</div>
-				<div class="row px-3 gap-2 mb-3">
-					<div class="col p-0">
-						<div class="d-flex justify-content-start align-items-center p-3 rounded-3 mo_rest_api_auth_method <?php echo 'tokenapi' === get_option( 'mo_api_authentication_selected_authentication_method' ) ? 'mo_rest_api_selected_border' : 'border border-1'; ?>" onclick="api_ajax_redir('apikey auth')">
-							<img class="me-3" src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) ); ?>/images/api-key.png" height="55px">
-							<h6 class="fw-bolder mb-0">API KEY AUTHENTICATION</h6>
-						</div>
-						<div class="mo_api_auth_premium_label_main">
-							<div class="mo_api_auth_premium_label_internal">
-								<p class="mb-0 rounded-1 mo_api_auth_premium_label_text">Premium</p>
-							</div>
-						</div>
-					</div>
-					<div class="col p-0">
-						<div class="d-flex justify-content-start align-items-center p-3 border border-1 rounded-3 mo_rest_api_auth_method" onclick="api_ajax_redir('oauth2 auth')">
-							<img class="me-3" src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) ); ?>/images/oauth_2.png" height="55px">
-							<h6 class="fw-bolder mb-0">OAUTH 2.0 AUTHENTICATION</h6>
-						</div>
-						<div class="mo_api_auth_premium_label_main">
-							<div class="mo_api_auth_premium_label_internal">
-								<p class="mb-0 rounded-1 mo_api_auth_premium_label_text">Premium</p>
-							</div>
-						</div>
-						<div class="me-1 mo_api_auth_premium_label_main">
-							<div class="mo_api_auth_premium_label_internal">
-								<div class="mb-0 rounded-1 mo_api_auth_premium_label_text" style='background-color: #ffa033'>Most Secure</div>
-							</div>
-						</div>
-					</div>
+				<div class="mo_api_flex_child" onclick="api_ajax_redir('jwt auth')" style="
+				<?php
+				if ( get_option( 'mo_api_authentication_selected_authentication_method' ) === 'jwt_auth' ) {
+					echo 'box-shadow: 4px 4px 4px 2px rgba(0,0,0,0.1);border: 3px solid #473970';}
+				?>
+				">
+					<div class="mo_api_auth_method_img">
+					<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __FILE__ ) ) ) ); ?>/images/jwt_authentication.png" height="55em" width="55em"></div>
+					<div class="mo_api_auth_div_internal">
+					<p class="mo_api_auth_div_nested_internal">JWT AUTHENTICATION</p></div>
+
 				</div>
-				<div class="row px-3" id="mo_rest_api_auth_third_party_selector">
-					<div class="col-6 p-0">
-						<div class="d-flex justify-content-start align-items-center p-3 border border-1 rounded-3 mo_rest_api_auth_method" onclick="api_ajax_redir('thirdparty auth')">
-							<img class="me-3" src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) ); ?>/images/third_party.png" height="55px">
-							<h6 class="fw-bolder mb-0">THIRD PARTY AUTHENTICATION</h6>
-						</div>
-						<div class="mo_api_auth_premium_label_main">
-							<div class="mo_api_auth_premium_label_internal">
-								<p class="mb-0 rounded-1 mo_api_auth_premium_label_text">Premium</p>
-							</div>
+			</div>
+			<br>
+			<div class="mo_api_authentication_card_layout">
+
+				<div class="mo_api_flex_child" onclick="api_ajax_redir('apikey auth')" style="
+				<?php
+				if ( get_option( 'mo_api_authentication_selected_authentication_method' ) === 'tokenapi' ) {
+					echo 'box-shadow: 4px 4px 4px 2px rgba(0,0,0,0.1);border: 3px solid #473970';}
+				?>
+				">
+					<div class="mo_api_auth_method_img">
+						<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __FILE__ ) ) ) ); ?>/images/api-key.png" height="55em" width="55em">
+					</div>
+					<div class="mo_api_auth_div_internal">
+						<p class="mo_api_auth_div_nested_internal">API KEY AUTHENTICATION</p>
+					</div>
+					<div class="mo_api_auth_premium_label_main">
+						<div class="mo_api_auth_premium_label_internal">
+							<div class="mo_api_auth_premium_label_text">Premium</div>
 						</div>
 					</div>
 				</div>
+				<div class="mo_api_flex_child" onclick="api_ajax_redir('oauth2 auth')">
+					<div class="mo_api_auth_method_img">
+					<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __FILE__ ) ) ) ); ?>/images/oauth_2.png" height="55em" width="55em"></div>
+					<div class="mo_api_auth_div_internal">
+					<p class="mo_api_auth_div_nested_internal">OAUTH 2.0 AUTHENTICATION</p></div>
+					<div class="mo_api_auth_premium_label_main" style='margin-left:-85px'>
+						<div class="mo_api_auth_premium_label_internal">
+							<div class="mo_api_auth_premium_label_text" >Premium</div>
+						</div>
+					</div>
+					<div class="mo_api_auth_premium_label_main" >
+						<div class="mo_api_auth_premium_label_internal">
+							<div class="mo_api_auth_premium_label_text" style='margin-left:-16px; background-color: #ffa033'>Most Secure</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<br>
+			<div class="mo_api_authentication_card_layout" onclick="api_ajax_redir('thirdparty auth')">
+
+				<div class="mo_api_flex_child">
+					<div class="mo_api_auth_method_img">
+					<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __FILE__ ) ) ) ); ?>/images/third_party.png" height="55em" width="55em"></div>
+					<div class="mo_api_auth_div_internal">
+					<p class="mo_api_auth_div_nested_internal">THIRD-PARTY AUTHENTICATION</p></div>
+					<div class="mo_api_auth_premium_label_main">
+						<div class="mo_api_auth_premium_label_internal">
+							<div class="mo_api_auth_premium_label_text">Premium</div>
+						</div>
+					</div>
+				</div>
+				<div class="mo_api_flex_child" style="border: 0px">
+
+				</div>
+
+			</div>
+			<br>
+		</div>
+		</div>
+
+		<div id='mo_api_section_basicauth_method' style="display: none">
+			<?php
+			Mo_API_Authentication_Basic_Oauth_Config::mo_api_auth_configuration_output();
+			?>
+		</div>
+		<div id='mo_api_section_jwtauth_method' style="display: none">
+			<?php
+			Mo_API_Authentication_Jwt_Auth_Config::mo_api_auth_configuration_output();
+			?>
+		</div>
+		<div id='mo_api_section_apikeyauth_method' style="display: none">
+			<?php
+			Mo_API_Authentication_TokenAPI_Config::mo_api_auth_configuration_output();
+			?>
+		</div>
+		<div id='mo_api_section_oauth2auth_method' style="display: none">
+			<?php
+			Mo_API_Authentication_OAuth_Client_Config::mo_api_auth_configuration_output();
+			?>
+		</div>
+		<div id='mo_api_section_thirdpartyauth_method' style="display: none">
+			<?php
+			Mo_API_Authentication_Third_Party_Provider_Config::mo_api_auth_configuration_output();
+			?>
+		</div>
+		<div id="mo_api_auth_step_container" style="display: none;padding-top: 200px;">
+			<h2 style="text-align: center;color: white;padding-top: 25px;font-size: 20px"><span>&#9751;</span> Configuration Tracker</h2>
+			<div class="mo_step_container" style="padding-top: 25px;">
+			<div class="step completed">
+				<div class="v-stepper">
+				<div class="circle"></div>
+				<div class="line"></div>
+				</div>
+
+				<div class="content">
+				Configure Authentication Method
+				</div>
+		</div>
+		<div class="step active" id="basic_authentication_finish_stepper">
+			<div class="v-stepper">
+			<div class="circle"></div>
+			<div class="line"></div>
+			</div>
+
+			<div id="mo_api_auth_flow_method_name" class="content">
+			Basic Authentication Method Configurations (Pre-Configured)
 			</div>
 		</div>
-		<div>
-			<div id='mo_api_section_basicauth_method' class="d-none rounded-4 bg-white">
-				<?php Mo_API_Authentication_Basic_Oauth_Config::mo_api_auth_configuration_output(); ?>
-			</div>
-			<div id='mo_api_section_jwtauth_method' class="d-none rounded-4 bg-white">
-				<?php Mo_API_Authentication_Jwt_Auth_Config::mo_api_auth_configuration_output(); ?>
-			</div>
-			<div id='mo_api_section_apikeyauth_method' class="d-none rounded-4 bg-white">
-				<?php Mo_API_Authentication_TokenAPI_Config::mo_api_auth_configuration_output(); ?>
-			</div>
-			<div id='mo_api_section_oauth2auth_method' class="d-none rounded-4 bg-white">
-				<?php Mo_API_Authentication_OAuth_Client_Config::mo_api_auth_configuration_output(); ?>
-			</div>
-			<div id='mo_api_section_thirdpartyauth_method' class="d-none rounded-4 bg-white">
-				<?php Mo_API_Authentication_Third_Party_Provider_Config::mo_api_auth_configuration_output(); ?>
-			</div>
-			<div id="mo_api_auth_step_container" class="d-none">
-				<h5 class="text-white text-center p-2">Configuration Tracker</h5>
-				<div class="step completed d-flex gap-2 py-0">
-					<div class="v-stepper d-flex flex-column align-items-center">
-						<span class="circle rounded-circle"></span>
-						<span class="line h-100"></span>
-					</div>
-					<p class="text-white">Configure Authentication Method</p>
-				</div>
-				<div class="step active d-flex gap-2 py-0" id="basic_authentication_finish_stepper">
-					<div class="v-stepper d-flex flex-column align-items-center">
-						<span class="circle rounded-circle"></span>
-						<span class="line h-100"></span>
-					</div>
-					<p class="text-white" id="mo_api_auth_flow_method_name">Basic Authentication Method Configurations (Pre-Configured)</p>
-				</div>
-				<div class="step active d-flex gap-2 py-0">
-					<div class="v-stepper d-flex flex-column align-items-center">
-						<span class="circle rounded-circle"></span>
-					</div>
-					<p class="text-white">Save Configuration and Get Started</p>
-				</div>
-			</div>
+		<div class="step active">
+		<div class="v-stepper">
+			<div class="circle"></div> 
 		</div>
+
+		<div class="content">
+			Save Configuration and get started
+		</div>
+		</div>
+
+		</div>
+		</div>	
+
 		<script>
+
 			function api_ajax_redir(auth_method){
+
 				div = document.getElementById('mo_api_section_method');
-				div.classList.add("d-none");
+				div.style.display = "none";
 				if(auth_method == "basic auth"){
 					handle_auth_display('mo_api_section_basicauth_method', 'Basic Authentication Method Configurations (Pre-Configured)');
 				}
@@ -166,8 +228,7 @@ class Mo_API_Authentication_Config {
 
 			function handle_auth_display(section, display_text) {
 				div2 = document.getElementById(section);
-				div2.classList.remove("d-none");
-				div2.classList.add("d-block");
+				div2.style.display = "block";
 				close_success_message('mo_api_auth_admin_custom_notice_success');
 				close_success_message('mo_api_auth_admin_custom_notice_alert');
 				document.getElementById('mo_api_side_bar_content').innerHTML = document.getElementById('mo_api_auth_step_container').innerHTML;
@@ -181,6 +242,8 @@ class Mo_API_Authentication_Config {
 			}
 
 		</script>
+
 		<?php
 	}
+
 }

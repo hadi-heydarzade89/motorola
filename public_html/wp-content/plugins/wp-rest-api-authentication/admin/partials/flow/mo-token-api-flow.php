@@ -163,6 +163,7 @@ function mo_api_auth_create_jwt_token( $client_secret, $user ) {
 	);
 
 	return $token_data;
+
 }
 
 /**
@@ -184,10 +185,11 @@ function mo_api_auth_restrict_rest_api_for_invalid_users() {
 		return true;
 	}
 
-	if ( get_option( 'mo_api_authentication_protectedrestapi_route_whitelist' ) && Miniorange_API_Authentication_Admin::protect_routes( true ) === true ) {
+	if ( get_option( 'mo_api_authentication_protectedrestapi_route_whitelist' ) && Miniorange_API_Authentication_Admin::whitelist_routes( true ) === true ) {
 		return true;
 	}
 	Miniorange_API_Authentication_Admin::mo_api_auth_else();
+
 }
 
 
@@ -205,14 +207,13 @@ function mo_api_auth_is_valid_request() {
 	if ( get_option( 'permalink_structure' ) === '' && isset( $url_and_params[1] ) ) {
 		$url_and_params[0] = $url_and_params[1];
 	}
-
-	if ( stripos( $url_and_params[0], '/wp/v2' ) === false && ! stripos( $url_and_params[0], '/syncito/v1' ) ) {
+	if ( stripos( $url_and_params[0], '/wp/v2' ) === false ) {
 		if ( get_option( 'mo_rest_api_protect_migrate' ) ) {
 			$response = array(
 				'status'            => 'error',
 				'error'             => 'Restricted',
 				'error_description' => 'Sorry, you are not allowed to access REST API.',
-				'error_reason'      => 'With the free plan, only WordPress default endpoints can be authenticated. You can upgrade to the All-Inclusive plan to securely access the custom built or 3rd-party plugin REST API endpoints. Reach out at apisupport@xecurify.com in case of any questions.',
+				'error_reason'      => 'With the free plan, only WordPress default endpoints can be authenticated. You can upgrade to the suitable premium plan to securely access the custom built or 3rd-party plugin endpoint.',
 			);
 			wp_send_json( $response, 403 );
 		}

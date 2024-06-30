@@ -401,18 +401,14 @@ function wpo_cache_filename($ext = '.html') {
 		}
 	}
 
-	// Adding cache key with queried cookies and variables to the cache file name.
+	// add hash of queried cookies and variables to cache file name.
 	if ('' !== $cache_key) {
-		// Add human-readable cache key to the filename
-		$filename .= str_replace('--', '-', '-'.$cache_key);
+		$hash = md5($cache_key);
+		$filename .= '-'.$hash;
+		$wpo_cache_filename_debug[] = 'Hash: ' . $hash;
 	}
 
 	$filename = apply_filters('wpo_cache_filename', $filename);
-
-	// Trimming filename if it exceeds 240 characters due to filesystem limitations
-	if (strlen($filename) > 240) {
-		$filename = substr($filename, 0, 199) . '-' . sha1($filename);
-	}
 
 	$wpo_cache_filename_debug[] = 'Extension: ' . $ext;
 	$wpo_cache_filename_debug[] = 'Filename: ' . $filename.$ext;

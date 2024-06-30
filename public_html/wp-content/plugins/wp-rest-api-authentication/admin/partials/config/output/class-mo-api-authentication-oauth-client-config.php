@@ -21,88 +21,93 @@ class Mo_API_Authentication_OAuth_Client_Config {
 	 */
 	public static function mo_api_auth_configuration_output() {
 		?>
-		<div id="mo_api_oauth_authentication_support_layout" class="border border-1 rounded-4 p-3">
-			<form method="post">
-				<input type="hidden" name="action" id="mo_api_oauth2auth_save_config_input" value="Save OAuth2 Auth">
-				<?php wp_nonce_field( 'mo_api_oAuth_authentication_method_config', 'mo_api_oAuth_authentication_method_config_fields' ); ?>	
-				<div class="d-flex align-items-center mb-3 justify-content-between">
-					<div class="d-flex justify-content-between gap-2 flex-column">
-						<h5 class="m-0">
-							<a class="text-decoration-none" href="admin.php?page=mo_api_authentication_settings&tab=config">Configure Methods</a><span> > OAuth 2.0 Authentication Method</span>
-						</h5>
-						<div class="d-flex gap-2">
-							<span class="mo_api_auth_inner_premium_label">Premium</span>
-							<span class="mo_api_auth_inner_premium_label_special">Most Secure</span>
-						</div>
-					</div>
-					<div class="d-flex gap-2 text-center">
-						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" onclick="window.location.href='admin.php?page=mo_api_authentication_settings'">Back</button>
-						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" disabled>Next</button>
-					</div>
+	<div id="mo_api_oauth_authentication_support_layout" class="mo_api_authentication_support_layout">
+
+		<form>
+		<input type="hidden" name="action" id="mo_api_oauth2auth_save_config_input" value="Save OAuth2 Auth">
+		<?php wp_nonce_field( 'mo_api_oAuth_authentication_method_config', 'mo_api_oAuth_authentication_method_config_fields' ); ?>	
+		<div id="mo_api_authentication_support_basicoauth" class="mo_api_authentication_common_div_css">
+
+			<button type="button" disabled class="mo_api_authentication_method_save_button button button-primary button-large">Next</button>
+			<a href="admin.php?page=mo_api_authentication_settings"><button type="button" class="mo_api_authentication_method_save_button button button-primary button-large" style="background: #473970;margin-right: 15px;">Back</button></a>
+			<h4><a href="admin.php?page=mo_api_authentication_settings&tab=config" style="text-decoration: none">Configure Methods</a> > OAuth 2.0 Authentication Method</h4>
+			<div style="display: flex;">
+				<div style="float: left"><h2 class="mo_api_authentication_method_head">OAuth 2.0 Authentication Method</h2></div>
+				<div class="mo_api_authentication_premium_methods">
+					<div class="mo_api_auth_inner_premium_label"><p>Premium</p></div>
 				</div>
-				<div>
-					<p>WordPress REST API OAuth 2.0 Authentication Method involves the REST APIs access on validation against the access token/JWT token (JSON Web Token) generated based on the user or client credentials using highly secure encryption algorithm. It follows the standards of OAuth 2.0 protocol.</p>
-					<div class="d-flex gap-3 my-4">
-						<div class="d-flex justify-content-between align-items-center gap-1 border border-1 rounded-2 p-1">
-							<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/user-guide.png" height="25px" width="25px">
-							<a class="btn btn-sm text-decoration-none text-black" href="https://plugins.miniorange.com/wordpress-rest-api-oauth-2-0-authentication-method#step_1" target="_blank">Setup Guide</a>
+				<div class="mo_api_authentication_premium_methods">
+					<div class="mo_api_auth_inner_premium_label_special"><p>Most Secure</p></div>
+				</div>
+			</div>	
+			<p class="mo_api_authentication_method_description">WordPress REST API OAuth 2.0 Authentication Method involves the REST APIs access on validation against the access token/JWT token (JSON Web Token) generated based on the user or client credentials using highly secure encryption algorithm. It follows the standards of OAuth 2.0 protocol.</p>
+			<br>
+			<div class="mo_api_auth_setup_guide2">
+				<div class="mo_api_auth_setup_guide1"><img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/user-guide.png" height="25px" width="25px"></div>
+				<a href="https://plugins.miniorange.com/wordpress-rest-api-oauth-2-0-authentication-method#step_1" target="_blank"><div class="mo_api_authentication_guide1"><p style="font-weight: 700;">Setup Guide</p></div></a>
+			</div>
+			<div class="mo_api_auth_setup_guide2">
+				<div class="mo_api_auth_setup_guide1"><img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/document.png" height="25px" width="25px"></div>
+				<a href="https://developers.miniorange.com/docs/rest-api-authentication/wordpress/oauth-authentication" target="_blank"><div class="mo_api_authentication_guide1"><p style="font-weight: 700;">Developer Doc</b></p></div></a>
+			</div>
+			<br><br>
+			<div class="mo_api_authentication_support_layout" style="border-width: 0px;padding-left: 2px; padding-right: 0;">
+				<br>
+				<h3 style="margin-top: 40px">Select OAuth 2.0 Grant Type -</h3>
+				<br>
+				<div class="mo_api_authentication_card_layout_internal" style="width: 100%">
+					<div class="mo_api_flex_child mo_api_no_cursor" id="mo_api_config_bauth">
+
+						<div style="height: 30%">
+							<div class="mo_api_oauth_internal1">
+								<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/guarantee.png" height="30px" width="30px">
+							</div>
 						</div>
-						<div class="d-flex justify-content-between align-items-center gap-1 border border-1 rounded-2 p-1">
-							<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/document.png" height="25px" width="25px">
-							<a class="btn btn-sm text-decoration-none text-black" href="https://developers.miniorange.com/docs/rest-api-authentication/wordpress/oauth-authentication" target="_blank">Developer Doc</a>
+						<div class="mo_api_oauth_internal2">
+							<p class="mo_api_oauth_internal_text">Password Grant with Access Token</p>
+						</div>
+
+					</div>
+					<div class="mo_api_flex_child mo_api_no_cursor">
+						<div style="height: 30%">
+
+						<div class="mo_api_oauth_internal1">
+						<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/user-authentication.png" height="30px" width="30px"></div>
+						</div>
+						<div class="mo_api_oauth_internal2">
+							<p class="mo_api_oauth_internal_text">Password Grant with JWT Token</p>
 						</div>
 					</div>
-					<div class="container p-0 mt-5">
-						<div class="row mx-1 gx-2">
-							<div class="col me-2 border border-1 p-4 mo_rest_api_cursor_no_drop rounded-3">
-								<div class="d-flex flex-column justify-content-center align-items-center gap-2 text-center">
-									<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/guarantee.png" height="30px" width="30px">
-									<span class="mo_rest_api_primary_font">Password Grant with Access Token</span>
-								</div>
-							</div>
-							<div class="col me-2 border border-1 p-4 mo_rest_api_cursor_no_drop rounded-3">
-								<div class="d-flex flex-column justify-content-center align-items-center gap-2 text-center">
-									<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/user-authentication.png" height="30px" width="30px">
-									<span class="mo_rest_api_primary_font">Password Grant with JWT Token</span>
-								</div>
-							</div>
-							<div class="col border border-1 p-4 mo_rest_api_cursor_no_drop rounded-3">
-								<div class="d-flex flex-column justify-content-center align-items-center gap-2 text-center">
-									<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/secure.png" height="30px" width="30px">
-									<span class="mo_rest_api_primary_font">Client Credentials with Access Token</span>
-								</div>
-							</div>
+					<div class="mo_api_flex_child mo_api_no_cursor">
+						<div style="height: 30%">
+						<div class="mo_api_oauth_internal1">
+						<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/secure.png" height="30px" width="30px"></div>
 						</div>
-						<hr>
-						<h6 class="my-3 mt-5">Additional Configurations to control OAuth 2.0</h6>
-						<div class="form-check d-flex align-items-center gx-1">
-							<input class="form-check-input" type="checkbox" name="mo_api_oauth_refresh_token" disabled>
-							<label class="form-check-label mo_rest_api_primary_font" for="mo_api_oauth_refresh_token">
-								<b>Refresh Token </b> (Refresh tokens are the credentials to be used to acquire new access tokens to increase session timeout)
-							</label>
-						</div>
-						<div class="form-check d-flex align-items-center gx-1">
-							<input class="form-check-input" type="checkbox" name="mo_api_oauth_refresh_token" disabled>
-							<label class="form-check-label mo_rest_api_primary_font" for="mo_api_oauth_refresh_token">
-								<b>Revoke Token </b> (Revoke token request causes the removal of the client permissions associated with the specified token)
-							</label>
-						</div>
-						<div class="form-check d-flex align-items-center gx-1">
-							<input class="form-check-input" type="checkbox" name="mo_api_oauth_refresh_token" disabled>
-							<label class="form-check-label mo_rest_api_primary_font" for="mo_api_oauth_refresh_token">
-								<b>Client Secret Validation</b>
-							</label>
-						</div>
-						<div class="form-check d-flex align-items-center gx-1">
-							<input class="form-check-input" type="checkbox" name="mo_api_oauth_refresh_token" disabled>
-							<label class="form-check-label mo_rest_api_primary_font" for="mo_api_oauth_refresh_token">
-								<b>Client Credentials Validation on refresh token</b>
-							</label>
+						<div class="mo_api_oauth_internal2">
+							<p class="mo_api_oauth_internal_text">Client Credentials with Access Token</p></div>
 						</div>
 					</div>
 				</div>
-			</form>
+				<br>
+				<div class="mo_api_authentication_support_layout" style="width:95%; margin-top: 0px;">
+					<p style="font-weight: 500;font-size: 16px;color: black">Additional Configurations to control OAuth 2.0 - </p>
+					<br>
+						<input type="checkbox" name="mo_api_oauth_refresh_token" disabled> <b>Refresh Token </b> <small>(Refresh tokens are the credentials to be used to acquire new access tokens to increase session timeout)</small><br><br>
+						<input type="checkbox" name="mo_api_oauth_revoke_token" disabled > <b>Revoke Token </b> <small>(Revoke token request causes the removal of the client permissions associated with the specified token)</small><br><br>
+						<input type="checkbox" name="mo_api_oauth_client_secret_validation" disabled> <b>Client Secret Validation </b> <small></small><br><br>
+						<input type="checkbox" name="mo_api_oauth_client_cred_validation_refresh_token" disabled> <b>Client Credentials Validation on refresh token </b> <small></small>
+					<br>
+					<br>
+				</div>
+				<br>
+				<br>
+			</div>
+			<br>
+
 		</div>
+	</form>
+</div>
+
 		<?php
 	}
 }
