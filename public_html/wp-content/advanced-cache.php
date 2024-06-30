@@ -2,7 +2,7 @@
 
 if (!defined('ABSPATH')) die('No direct access allowed');
 
-// WP-Optimize advanced-cache.php (written by version: 3.2.18) (do not change this line, it is used for correctness checks)
+// WP-Optimize advanced-cache.php (written by version: 3.4.1) (homeurl: https://iranmotorola.ir/) (abspath: /home/admin/domains/iranmotorola.ir/public_html/) (do not change this line, it is used for correctness checks)
 
 if (!defined('WPO_ADVANCED_CACHE')) define('WPO_ADVANCED_CACHE', true);
 
