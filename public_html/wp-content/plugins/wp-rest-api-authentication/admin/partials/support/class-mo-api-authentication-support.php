@@ -23,14 +23,12 @@ class Mo_API_Authentication_Support {
 	 */
 	public static function mo_api_authentication_admin_support() {
 		?>
-		<div id="mo_api_authentication_support_layout" class="mo_api_authentication_support_layout" style="background: linear-gradient(to right, #09B9CE, #3C79DA, #7039E5)">
-			<div style="padding: 0 5px 5px 5px 5px">
-				<img src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) . 'images/mologo.png' ); ?>" height="45px" width="45px" style="float: right;padding-right: 10px;">
-				<h2 class="mo_api_authentication_adv">Unlock More</h2>
-				<h2 class="mo_api_authentication_adv">Security Features</h2>
-				<p class="mo_api_authentication_adv_internal">Starting at  <span class="mo_api_authentication_adv_span">$149*</span></p>
-				<hr class="mo_api_authentication_adv_hr">
-				<p class="mo_api_authentication_adv_internal2"><a href="<?php echo esc_url( site_url() ); ?>/wp-admin/admin.php?page=mo_api_authentication_settings&tab=licensing"><button type="button" style="width:140px;height: 40px;background: #473970;color: white" class="button button-primary button-large">Go Premium Now</button></a></p>
+		<div id="mo_api_authentication_support_layout" class="card text-white mo_api_authentication_support_layout p-0 text-center rounded-4 mb-2" style="background: linear-gradient(to right, #09B9CE, #3C79DA, #7039E5)">
+			<h6 class="card-header bg-transparent border-0">Unlock More Security Features</h6>
+			<div class="card-body">
+				<h5 class="card-title">Starting at  <span class="mo_api_authentication_adv_span">$199*</span></h5>
+				<hr>
+				<a href="<?php echo esc_url( site_url() ); ?>/wp-admin/admin.php?page=mo_api_authentication_settings&tab=licensing" class="btn btn-sm mo_rest_api_button text-white text-capitalization">Go Premium Now</a>
 			</div>
 		</div>
 		<?php
@@ -42,48 +40,70 @@ class Mo_API_Authentication_Support {
 	 * @return void
 	 */
 	public static function mo_api_authentication_advertise() {
+		$plugin_name = 'custom-api-for-wp';
+		$plugin_path = WP_PLUGIN_DIR . '/' . $plugin_name . '/custom-api-for-wordpress.php';
 		?>
-		<div id="mo_api_authentication_support_layout" class="mo_api_authentication_support_layout" style="padding-top: 20px; margin-top: 0px">
-			<div style="padding: 0 5px 5px 5px 5px;">
-
-				<div style="display: flex;width: 100%;height: 65px">
-					<div style="flex: 1;width: 19%">
-						<img src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) . 'images/mologo.png' ); ?>" height="65px" width="65px">
-					</div>
-					<div style="width: 75%">
-						<p class="mo_api_authentication_adv_custom_api_heading">Custom API for WordPress</p>
-					</div>
-				</div>
-					<p class="mo_api_authentication_adv_custom_api">Create your own REST API endpoints in WordPress to interact with WordPress database to fetch, insert, update, delete data. Also, any external APIs can be connected to WordPress for interaction between WordPress & External application.</p>
-				<br><br>
+		<div id="mo_api_authentication_support_layout" class="card mo_api_authentication_support_layout p-0 text-center rounded-4 mb-2">
+			<h6 class="m-2 mt-3">Our Other WordPress Integrations</h6>
+			<hr>
+			<div>
+				<h6>Connect to external APIs | Custom endpoints for WP</h6>
+				<p class="text-muted mx-3 mo_rest_api_primary_font" style="text-align: justify;">Create your own REST API endpoints in WordPress to interact with WordPress database to fetch, insert, update, delete data. Also, any external APIs can be connected to WordPress for interaction between WordPress & External application.</p>
 				<div>
-				<p class="mo_api_authentication_adv_custom_api_p"><a href="https://wordpress.org/plugins/custom-api-for-wp/" target="_blank" rel="noopener" ><button type="button" style="width:120px;height: 40px;background: #473970;color: white" class="button button-primary button-large">Install Plugin</button></a></p>
-			</div>
-			</div>
-			<br>
-		</div>
-		<br>
-		<div id="mo_api_authentication_support_layout" class="mo_api_authentication_support_layout" style="padding: 20px; margin-top: 0px">
-			<div style="padding: 5px 5px 5px 5px;">
-				<div style="text-align: center;">
-					<div>
-						<img src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) . 'images/api-gateway.png' ); ?>">
-					</div>
-					<div style="font-weight: 700;font-size: 15px;">
-					Try miniOrange API Gateway today and take your APIs to the next level
-					</div>
-				</div>
-				<p>Protect your APIs with miniOrange's API Gateway which acts as a security layer on top of your backend services, offering a one stop solution for enhanced security and mitigating OWASP vulnerabilities. It ensures secure request routing, rate limiting, authentication, caching, and other essential security.</p>
-				<div style="margin-top:20px; display:flex;">
-					<p style="flex: auto;align-self: center;"><a href="https://apisecurity.miniorange.com/?source=RESTAPIPlugin" target="_blank" rel="noopener" style="font-weight: bold;font-size:15px; color:#00CC83; text-decoration:none;" >Learn More 
-						<svg xmlns="http://www.w3.org/2000/svg" width="17" height="12" viewBox="0 0 17 12" fill="none">
-							<path d="M16.5303 6.53033C16.8232 6.23744 16.8232 5.76256 16.5303 5.46967L11.7574 0.6967C11.4645 0.403807 10.9896 0.403807 10.6967 0.6967C10.4038 0.989593 10.4038 1.46447 10.6967 1.75736L14.9393 6L10.6967 10.2426C10.4038 10.5355 10.4038 11.0104 10.6967 11.3033C10.9896 11.5962 11.4645 11.5962 11.7574 11.3033L16.5303 6.53033ZM-6.55671e-08 6.75L16 6.75L16 5.25L6.55671e-08 5.25L-6.55671e-08 6.75Z" fill="#00CC83"/>
-						</svg>
-					</a></p>
-					<p><a href="https://apiconsole.miniorange.com/?source=RESTAPIPlugin" target="_blank" rel="noopener" ><button type="button" style="width:120px;height: 40px;background: #00CC83;font-weight: bold;color: white;border:none;" class="button button-primary button-large">Try Now</button></a></p>
+					<p class="mo_api_authentication_adv_custom_api_p mb-0">
+						<button id="mo_api_authentication_caw_loading" type="button" class="btn btn-sm mo_rest_api_button text-white" onclick="mo_api_authentication_install_and_activate_caw_free(<?php echo esc_attr( file_exists( $plugin_path ) ); ?>)">
+						<?php
+						if ( file_exists( $plugin_path ) ) {
+							if ( is_plugin_active( $plugin_name . '/custom-api-for-wordpress.php' ) ) {
+								?>
+								<svg style="transform: translateY(2px);" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="15" height="15" viewBox="0 0 256 256" xml:space="preserve"><defs></defs><g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)"><path d="M 45 90 C 20.187 90 0 69.813 0 45 C 0 20.187 20.187 0 45 0 c 24.813 0 45 20.187 45 45 C 90 69.813 69.813 90 45 90 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(0,186,119); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round"/><polygon points="35.86,69.67 17.5,51.31 26.66,42.15 35.86,51.34 63.34,23.87 72.5,33.03 " style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/></g></svg>
+								<?php
+								echo( esc_html( 'Go to Settings' ) );
+							} else {
+								echo( esc_html( 'Activate Now' ) );
+							}
+						} else {
+							echo( esc_html( 'Install Now' ) );
+						}
+						?>
+						</button>
+						</a>
+					</p>
 				</div>
 			</div>
+			<hr>
+			<div>
+				<h6>WooCommerce Product Sync Integrator</h6>
+				<p class="text-muted mx-3 mo_rest_api_primary_font" style="text-align: justify;">Automatically sync product data from inventories and suppliers to your WooCommerce store using their API. You can run the sync manually or schedule it. Also, send order details back to your inventory in real-time whenever an order is placed.</p>
+				<div>
+					<p class="mo_api_authentication_adv_custom_api_p mb-0"><a href="https://plugins.miniorange.com/woocommerce-api-product-sync-with-woocommerce-rest-apis" target="_blank" rel="noopener" ><button type="button" class="btn btn-sm mo_rest_api_button text-white">Know More</button></a></p>
+				</div>
+			</div>
 		</div>
+		<script>
+			function mo_api_authentication_install_and_activate_caw_free( plugin_exists ) {
+				var data = {
+					'action': 'install_and_activate_caw_free',
+					'nonce': '<?php echo esc_attr( wp_create_nonce( 'mo_rest_api_install_and_activate_caw_free' ) ); ?>'
+				};
+
+				if ( plugin_exists ) {
+					jQuery('#mo_api_authentication_caw_loading').text('Opening...');
+				} else {
+					jQuery('#mo_api_authentication_caw_loading').text('Installing...');			
+				}
+				jQuery.post(ajaxurl, data)
+					.done(function(response) {
+						if ( response.success ) {
+							window.location.href = response.data.redirect_url;
+						}
+					})
+					.fail(function(xhr, textStatus, errorThrown) {
+						jQuery('#mo_api_authentication_caw_loading').text('Activate Now');
+						window.location.href = 'https://wordpress.org/plugins/custom-api-for-wp/';
+					});
+			}
+		</script>
 		<?php
 	}
 
@@ -94,19 +114,19 @@ class Mo_API_Authentication_Support {
 	 */
 	public static function mo_oauth_client_setup_support() {
 		?>
-	<div class="mo_rest_api_support-icon" style="display: block;">
-			<div class="mo_rest_api_help-container" id="help-container" style="display: block;">
+	<div class="mo_rest_api_support-icon d-block">
+			<div class="mo_rest_api_help-container" id="help-container">
 				<span class="mo_rest_api_span1">
 					<div class="mo_rest_api_need">
 						<span class="mo_rest_api_span2"></span>
-						<div id="mo-rest-api-support-msg">Need Help or request a feature? We are right here!</div>
+						<div class="mo_rest_api_primary_font" id="mo-rest-api-support-msg">Need help or request a feature? We are right here!</div>
 						<span class="fa fa-times fa-1x " id="mo-support-msg-hide" style="cursor:pointer;float:right;display:inline;">
 					</span>
 					</div>
 				</span>
 				<div id="service-btn">
-				<div class="mo-rest-api-service-icon">
-					<img src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) . 'images/mail.png' ); ?>" class="mo-rest-api-service-img" alt="support">
+				<div class="mo-rest-api-service-icon text-center p-2">
+					<img src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) . 'images/mail.png' ); ?>" class="" alt="support" width="100%">
 				</div>
 			</div>
 			</div>
@@ -174,6 +194,9 @@ class Mo_API_Authentication_Support {
 			</div>
 		</div>
 	<script>
+			jQuery('#mo-support-msg-hide').click(function(){
+				jQuery(".mo_rest_api_span1").css('display','none');
+			});
 
 			jQuery('#mo-rest-api-support-form-hide').click(function(){
 				jQuery(".mo-rest-api-support-form-container").css('display','none');
@@ -246,5 +269,4 @@ class Mo_API_Authentication_Support {
 	</script>
 		<?php
 	}
-
 }

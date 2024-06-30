@@ -24,6 +24,10 @@ class PWS_Settings_Tools extends PWS_Settings {
 				'id'    => 'pws_tools',
 				'title' => 'ابزارهای کاربردی',
 			],
+			[
+				'id'    => 'pws_map',
+				'title' => __( 'نقشه (آزمایشی)' ),
+			],
 		] );
 	}
 
@@ -100,6 +104,95 @@ class PWS_Settings_Tools extends PWS_Settings {
 					'default' => 0,
 					'type'    => 'checkbox',
 					'desc'    => 'به صورت پیشفرض هیچ یک از روش‌های حمل و نقل انتخاب (فعال) نخواهند شد. ' . ( $has_pro ? '' : '(این امکان فقط در <a href="' . PWS()->pws_pro_url( 'remove_chosen_shipping_method' ) . '" target="_blank">نسخه حرفه‌ای</a> فعال می‌باشد)' ),
+				],
+			],
+
+			/**
+			 * Map Settings
+			 * @since 4.0.4
+			 */
+			'pws_map'   => [
+				[
+					'name' => 'html',
+					'desc' => sprintf( '<h5>%s</h5>',
+						__( 'نقشه را در صفحه تسویه حساب و یا با استفاده از شورتکد [pws_map]، در صفحات دلخواه نمایش دهید.' )
+					),
+					'type' => 'html',
+				],
+				[
+					'label'   => __( 'فعال سازی نقشه' ),
+					'name'    => 'enable',
+					'default' => '0',
+					'type'    => 'checkbox',
+					'desc'    => '',
+				],
+				[
+					'label'   => __( 'سرویس ارائه دهنده' ),
+					'name'    => 'provider',
+					'type'    => 'select',
+					'default' => 'osm',
+					'options' => [
+						'osm'    => __( 'OpenStreetMap.org' ),
+						'neshan' => __( 'Neshan.org' ),
+					],
+				],
+				[
+					'label'   => __( ' کلید دسترسی وب' ),
+					'name'    => 'neshan_api_key',
+					'default' => null,
+					'type'    => 'text',
+					'desc'    => sprintf(
+						'<b class="pws-map__help-neshan">&nbsp;%s&nbsp;<a href="%s">%s</a></b>',
+						__( 'لطفا برای دریافت کلید دسترسی نمایش نقشه پلتفرم نشان' ),
+						'https://platform.neshan.org/panel/api-key',
+						__( 'اینجا کلیک کنید' )
+					),
+				],
+				[
+					'label'   => __( 'کلید دسترسی سرویس' ),
+					'name'    => 'neshan_service_key',
+					'default' => null,
+					'type'    => 'text',
+					'desc'    => sprintf(
+						'<b class="pws-map__help-neshan ">&nbsp;%s&nbsp;<a href="%s">%s</a></b>',
+						__( 'لطفا برای دریافت کلید دسترسی سرویس های پلتفرم نشان' ),
+						'https://platform.neshan.org/panel/api-key',
+						__( 'اینجا کلیک کنید' )
+					),
+				],
+				[
+					'label'   => __( 'نوع نقشه' ),
+					'name'    => 'neshan_type',
+					'type'    => 'select',
+					'default' => 'vector',
+					'options' => [
+						'vector' => __( 'روشن' ),
+						'night'  => __( 'تاریک' ),
+					],
+				],
+				[
+					'label'   => __( 'نمایش در تسویه حساب' ),
+					'name'    => 'checkout_enable',
+					'default' => '1',
+					'type'    => 'checkbox',
+					'desc'    => __( 'نمایش نقشه در صفحه تسویه حساب و هماهنگ سازی با فرم آدرس' ),
+				],
+				[
+					'label'   => __( 'محل قرارگیری در فرم تسویه حساب' ),
+					'name'    => 'checkout_placement',
+					'type'    => 'select',
+					'default' => 'after_form',
+					'options' => [
+						'after_form'  => __( 'بعد از فرم' ),
+						'before_form' => __( 'قبل از فرم' ),
+					],
+				],
+				[
+					'label'   => __( 'الزام به انتخاب موقعیت' ),
+					'name'    => 'required_location',
+					'default' => '1',
+					'type'    => 'checkbox',
+					'desc'    => __( 'در صورت فعال بودن این قابلیت، کاربران موظف به انتخاب مکان خود روی نقشه هستند.' ),
 				],
 			],
 		] );

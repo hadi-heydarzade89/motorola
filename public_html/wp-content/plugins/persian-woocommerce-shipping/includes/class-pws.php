@@ -62,6 +62,7 @@ class PWS_Core {
 	 */
 	protected function init_hooks() {
 
+        	$this->load_maps_init();
 		$this->state_city_taxonomy();
 
 		// Actions
@@ -73,6 +74,7 @@ class PWS_Core {
 		add_action( 'woocommerce_checkout_update_order_review', [ $this, 'checkout_update_order_review' ], 10, 1 );
 		add_action( 'woocommerce_admin_field_pws_single_country', [ $this, 'pws_single_country_field' ], 10, 1 );
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_select2_scripts' ], 1000 );
+        	add_action('admin_enqueue_scripts', [$this, 'enqueue_admin_scripts'], 1000);
 
 		// Filters
 		add_filter( 'woocommerce_shipping_methods', [ $this, 'add_shipping_method' ] );
@@ -109,6 +111,16 @@ class PWS_Core {
 		add_filter( 'woocommerce_checkout_get_value', [ $this, 'checkout_get_value' ], 10, 2 );
 	}
 
+    /**
+     * Load the map engines
+     * @since 4.0.4
+     */
+    public function load_maps_init()
+    {
+        require_once PWS_DIR . '/maps/class-map-service.php';
+        require_once PWS_DIR . '/maps/class-neshan.php';
+        require_once PWS_DIR . '/maps/class-osm.php';
+    }
 	// Actions
 
 	public function state_city_taxonomy() {
@@ -223,6 +235,15 @@ class PWS_Core {
 
 	// Filters
 
+    public function enqueue_admin_scripts()
+    {
+        wp_enqueue_script(
+            'pws-admin-general',
+            PWS_URL . 'assets/js/admin.js',
+            ['jquery'],
+            PWS_VERSION
+        );
+    }
 	public function add_shipping_method( $methods ) {
 
 		foreach ( self::$methods as $new_method ) {

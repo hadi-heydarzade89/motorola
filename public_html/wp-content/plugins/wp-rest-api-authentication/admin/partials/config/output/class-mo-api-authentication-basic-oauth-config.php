@@ -20,243 +20,175 @@ class Mo_API_Authentication_Basic_Oauth_Config {
 	 * @return void
 	 */
 	public static function mo_api_auth_configuration_output() {
-
 		?>
-		<div id="mo_api_basic_authentication_support_layout" class="mo_api_authentication_support_layout">				
-
-		<input type="hidden" name="action" id="mo_api_basicauth_save_config_input" value="Save Basic Auth">
-		<div id="mo_api_authentication_support_basicoauth" class="mo_api_authentication_common_div_css">
-
-			<button type="button" onclick="moBasicAuthenticationMethodSave('save_basic_auth')" class="mo_api_authentication_method_save_button button button-primary button-large" style="background: #473970;">Next</button>
-			<a href="admin.php?page=mo_api_authentication_settings"><button type="button" class="mo_api_authentication_method_save_button button button-primary button-large" style="background: #473970;margin-right: 15px;">Back</button></a>
-
-			<h4><a href="admin.php?page=mo_api_authentication_settings&tab=config" style="text-decoration: none">Configure Methods</a> > Basic Authentication Method</h4>
-			<h2 class="mo_api_authentication_method_head">Basic Authentication Method</h2>
-
-			<p class="mo_api_authentication_method_description">WordPress REST API - Basic Authentication Method involves the REST APIs access on validation against the API token generated based on the user’s username, password and on basis of client credentials.</p>
-			<br>
-			<div class="mo_api_auth_setup_guide2">
-				<div class="mo_api_auth_setup_guide1"><img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/youtube.png" height="25px" width="25px"></div>
-				<a href="https://www.youtube.com/watch?v=vwxkpuj7LCw" target="_blank" rel="noopener noreferrer"><div class="mo_api_authentication_guide1"><p style="font-weight: 700;">Video guide</b></p></div></a>
-			</div>
-			<div class="mo_api_auth_setup_guide2">
-				<div class="mo_api_auth_setup_guide1"><img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/user-guide.png" height="25px" width="25px"></div>
-				<a href="https://plugins.miniorange.com/wordpress-rest-api-basic-authentication-method#step_1" target="_blank"><div class="mo_api_authentication_guide1"><p style="font-weight: 700;">Setup Guide</p></div></a>
-			</div>
-			<div class="mo_api_auth_setup_guide2">
-				<div class="mo_api_auth_setup_guide1"><img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/document.png" height="25px" width="25px"></div>
-				<a href="https://developers.miniorange.com/docs/rest-api-authentication/wordpress/basic-authentication" target="_blank"><div class="mo_api_authentication_guide1"><p style="font-weight: 700;">Developer Doc</b></p></div></a>
-			</div>
-			<br><br>
-			<div class="mo_api_authentication_support_layout" style="border-width: 0px;padding-left: 2px">
-				<br>
-				<h3 style="margin-top: 40px">Select One of the below Basic Token generation types - </h3>
-				<br>
-				<div class="mo_api_authentication_card_layout_internal">
-
-					<div class="mo_api_flex_child" id="mo_api_config_bauth1" onclick="moBasicAuthenticationClienCreds('uname_pass')">
-						<div style="height: 30%">
-						<div id="mo_api_basicauth_select_type1" style="
-						<?php
-						if ( ! get_option( 'mo_api_authentication_selected_authentication_method' ) || ( get_option( 'mo_api_authentication_selected_authentication_method' ) === 'basic_auth' && get_option( 'mo_api_authentication_authentication_key' ) === 'uname_pass' ) ) {
-							echo 'display:block';
-						} else {
-							echo 'display:none';}
-						?>
-						"><img src="<?php echo esc_attr( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/select-all.png" height="25px" width="25px" style="float: right;padding-top: 0px;padding-right: 5px;">
-						</div>
-						<div class="mo_api_bauth_internal_div">
-						<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/guarantee.png" height="30px" width="30px"></div>
-						</div>
-						<div style="height: 50%;width: 90%;text-align: center;padding-top: 10%">
-							<p style="font-size: 15px;font-weight: 500">Username & Password with Base64 Encoding</p>
-						</div>
+		<div id="mo_api_basic_authentication_support_layout" class="border border-1 rounded-4 p-3">
+			<form method="post">
+				<input type="hidden" name="action" id="mo_api_basicauth_save_config_input" value="Save Basic Auth">
+				<div class="d-flex align-items-center gap-3 mb-3 justify-content-between">
+					<h5 class="m-0">
+						<a class="text-decoration-none" href="admin.php?page=mo_api_authentication_settings&tab=config">Configure Methods</a>
+						> Basic Authentication Method
+					</h4>
+					<div class="d-flex gap-2 text-center">
+						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" onclick="window.location.href='admin.php?page=mo_api_authentication_settings'">Back</button>
+						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" onclick="moBasicAuthenticationMethodSave('save_basic_auth')">Next</button>
 					</div>
-					<div class="mo_api_flex_child mo_api_no_cursor">
-						<div style="height: 30%">
-							<div class="mo_api_auth_premium_label_jwt">
-								<div class="mo_api_auth_premium_label_internal_jwt">
-									<div class="mo_api_auth_premium_label_text_jwt">Premium</div>
-								</div>
-							</div>
-						<div class="mo_api_bauth_internal_div">
-						<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/user-authentication.png" height="30px" width="30px"></div>
-						</div>
-						<div style="height: 50%;width: 90%;text-align: center;padding-top: 10%;">
-						<p style="font-size: 15px;font-weight: 500">Username & Password with HMAC Validation</p>
-						</div>
-
 				</div>
-			</div>
-				<br>
-
-				<?php
-
-					$basic_auth_client_creds_enable = 0;
-
-				if ( get_option( 'mo_api_authentication_selected_authentication_method' ) === 'basic_auth' && get_option( 'mo_api_authentication_authentication_key' ) === 'cid_secret' ) {
-					$basic_auth_client_creds_enable = 1;
-				} else {
-					$basic_auth_client_creds_enable = 0;
-				}
-				?>
-
-				<div class="mo_api_authentication_card_layout_internal">
-					<div class="mo_api_flex_child" id="mo_api_config_bauth2" onclick="moBasicAuthenticationClienCreds('cid_secret')" style="
-					<?php
-					if ( ! $basic_auth_client_creds_enable ) {
-						echo 'cursor:no-drop';}
-					?>
-					" >
-						<div style="height: 30%">
-							<div class="mo_api_auth_premium_label_jwt">
-								<div class="mo_api_auth_premium_label_internal_jwt">
-									<div class="mo_api_auth_premium_label_text_jwt">Premium</div>
-								</div>
-							</div>
-							<?php if ( $basic_auth_client_creds_enable ) { ?>
-						<div id="mo_api_basicauth_select_type2" style=""><img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/select-all.png" height="25px" width="25px" style="float: right;padding-top: 0px;padding-right: 5px;"></div>
-					<?php } ?>
-						<div class="mo_api_bauth_internal_div" >
-						<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/key.png" height="30px" width="30px"></div>
+				<div id="mo_api_authentication_support_basicoauth">
+					<p>WordPress REST API - Basic Authentication Method involves the REST APIs access on validation against the API token generated based on the user’s username, password and on basis of client credentials.</p>
+					<div class="d-flex gap-3 my-4">
+						<div class="d-flex justify-content-between align-items-center gap-1 border border-1 rounded-2 p-1">
+							<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/youtube.png" height="25px" width="25px">
+							<a class="btn btn-sm text-decoration-none text-black" href="https://www.youtube.com/watch?v=vwxkpuj7LCw" target="_blank" rel="noopener noreferrer">Video Guide</a>
 						</div>
-						<div class="mo_api_bauth_internal" >
-						<p style="font-size: 15px;font-weight: 500">Client ID & Secret with Base64 Encoding</p></div>
-
+						<div class="d-flex justify-content-between align-items-center gap-1 border border-1 rounded-2 p-1">
+							<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/user-guide.png" height="25px" width="25px">
+							<a class="btn btn-sm text-decoration-none text-black" href="https://plugins.miniorange.com/wordpress-rest-api-basic-authentication-method#step_1" target="_blank">Setup Guide</a>
+						</div>
+						<div class="d-flex justify-content-between align-items-center gap-1 border border-1 rounded-2 p-1">
+							<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/document.png" height="25px" width="25px">
+							<a class="btn btn-sm text-decoration-none text-black" href="https://developers.miniorange.com/docs/rest-api-authentication/wordpress/basic-authentication" target="_blank">Developer Doc</a>
+						</div>
 					</div>
-					<div class="mo_api_flex_child mo_api_no_cursor">
-						<div style="height: 30%">
-							<div class="mo_api_auth_premium_label_jwt">
-								<div class="mo_api_auth_premium_label_internal_jwt">
-									<div class="mo_api_auth_premium_label_text_jwt">Premium</div>
+					<h6 class="my-3 mt-5">Select One of the below Basic Token generation types</h6>
+					<div class="container p-0" id="mo_rest_api_basic_auth_options">
+						<div class="row gx-3">
+							<div class="col-6 mo_rest_api_cursor_pointer">
+								<div class="p-4 border border-1 rounded-3">
+									<div class="d-flex flex-column justify-content-center align-items-center gap-2 text-center" onclick="moBasicAuthenticationClienCreds('uname_pass')">
+										<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/guarantee.png" height="30px" width="30px">
+										<span class="mo_rest_api_primary_font">Username & Password with Base64 Encoding</span>
+									</div>
+									<div class="mo_api_auth_premium_label_main" id="mo_api_basicauth_select_type1" class="<?php echo ( ! get_option( 'mo_api_authentication_selected_authentication_method' ) || ( get_option( 'mo_api_authentication_selected_authentication_method' ) === 'basic_auth' && get_option( 'mo_api_authentication_authentication_key' ) === 'uname_pass' ) ) ? 'd-block' : 'd-none'; ?>">
+										<img class="position-relative" src="<?php echo esc_attr( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/select-all.png" height="25px">
+									</div>
 								</div>
 							</div>
-						<div class="mo_api_bauth_internal_div">
-						<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/secure.png" height="30px" width="30px"></div>
-						</div>
-						<div class="mo_api_bauth_internal">
-							<p style="font-size: 15px;font-weight: 500">Client ID & Secret with HMAC Validation</p>
+							<div class="col-6 mo_rest_api_cursor_no_drop">
+								<div class="p-4 border border-1 rounded-3 d-flex flex-column justify-content-center align-items-center gap-2 text-center" onclick="moBasicAuthenticationClienCreds('uname_pass')">
+									<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/user-authentication.png" height="30px" width="30px">
+									<span class="mo_rest_api_primary_font">Username & Password with HMAC Validation</span>
+								</div>
+								<div class="mo_api_auth_premium_label_main">
+									<div class="mo_api_auth_premium_label_internal">
+										<p class="me-4 mb-0 rounded-1 mo_api_auth_premium_label_text">Premium</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-6 mo_rest_api_cursor_no_drop">
+								<div class="p-4 border border-1 rounded-3 d-flex flex-column justify-content-center align-items-center gap-2 text-center" onclick="moBasicAuthenticationClienCreds('cid_secret')">
+									<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/key.png" height="30px" width="30px">
+									<span class="mo_rest_api_primary_font">Username & Password with Base64 Encoding</span>
+								</div>
+								<div class="mo_api_auth_premium_label_main">
+									<div class="mo_api_auth_premium_label_internal">
+										<p class="me-4 mb-0 rounded-1 mo_api_auth_premium_label_text">Premium</p>
+									</div>
+								</div>
+							</div>
+							<div class="col-6 mo_rest_api_cursor_no_drop">
+								<div class="p-4 border border-1 rounded-3 d-flex flex-column justify-content-center align-items-center gap-2 text-center" onclick="moBasicAuthenticationClienCreds('cid_secret')">
+									<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/secure.png" height="30px" width="30px">
+									<span class="mo_rest_api_primary_font">Username & Password with Base64 Encoding</span>
+								</div>
+								<div class="mo_api_auth_premium_label_main">
+									<div class="mo_api_auth_premium_label_internal">
+										<p class="me-4 mb-0 rounded-1 mo_api_auth_premium_label_text">Premium</p>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
-				<br>
-			</div>
-			<br>
-
+			</form>
 		</div>
-		</div>
-	</form>
-</div>
-
-<div class="mo_api_authentication_support_layout" id="mo_api_basicauth_finish" style="display: none;">
-		<form method="post" id="mo-api-basic-authentication-method-form" action="">
-					<input required type="hidden" name="option" value="mo_api_basic_authentication_config_form" />
-					<?php wp_nonce_field( 'mo_api_basic_authentication_method_config', 'mo_api_basic_authentication_method_config_fields' ); ?>	
-
-			<div id="mo_api_basicauth_client_creds" style="margin-left: 20px;">
+		<div class="d-none border border-1 rounded-4 p-3" id="mo_api_basicauth_finish">
+			<form method="post" id="mo-api-basic-authentication-method-form">
+				<input required type="hidden" name="option" value="mo_api_basic_authentication_config_form" />
 				<input type="hidden" name="action" id="mo_api_auth_save_config_input" value="Save Configuration">
-				<button type="submit" onclick="moBasicAuthenticationMethodFinish()" class="mo_api_authentication_method_save_button2 button button-primary button-large" style="background: #473970;margin-right: 10px;">Finish</button>
-				<button type="button" onclick="moBasicAuthenticationMethodBack()" class="mo_api_authentication_method_save_button button button-primary button-large" style="background: #473970;margin-right: 15px;">Back</button>
-				<b><p><a href="admin.php?page=mo_api_authentication_settings&tab=config" style="text-decoration: none">Configure Methods</a> > Basic Authentication Method</p></b>
-			<h2 style="font-size: 22px;">Configuration Overview</h2>
-				<br>
-				<div class="mo_api_authentication_support_layout" style="width: 90%;">
-					<br>
-
-					<table width="80%">
-						<tr>
-							<td>
-								<p style="font-size: 15px;">Token credentials Type :</p>
-							</td>
-							<td>
-								<p id="mo_api_basicauth_token_type" class="mo_api_basicauth_creds_type"></p>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p style="font-size: 15px;">Token Encryption Method :</p>
-							</td>
-							<td>
-								<p class="mo_api_basicauth_creds_type" >Base64 Encoding</p>
-							</td>
-						</tr>
-					</table>
-
-						<div id="mo_api_basic_auth_show_client_creds" style="display: none;">
-
-						<table width="80%">
-							<tr>
-								<td style="width: 60%">
-									<p style="font-size: 15px;">Client ID :</p>
-								</td>
-								<td >
-									<p><input id="mo_api_basicauth_clientid" type="text" value="" disabled></p>
-								</td>
-							</tr>
-							<tr>
-								<td>
-									<p style="font-size: 15px;">Client Secret :</p>
-								</td>
-								<td>
-									<p><input id="mo_api_basicauth_clientsecret" type="password" value="" disabled></p>
-								</td>
-							</tr>
-							</table>
-						</div>
-				</div>
-				<br>
-				<h2 style="font-size: 22px;">Test Configuration</h2>
-				<br>
-				<div class="mo_api_authentication_support_layout" id="mo_api_authentication_basic_test_config" style="width: 90%;">
-					<table width="80%">
-						<tr>
-							<td>
-								<p>Username:</p>
-								<input type="text" id='mo_rest_api_basic_auth_username' size="28" placeholder="Enter WordPress Username" class='mo_test_config_input' >
-							</td>
-							<td>
-								<p >Password:</p>
-								<span id="mo_api_auth_test_password">
-									<input type="password" id='mo_rest_api_rest_basic_auth_password' size="28" placeholder="Enter WordPress Password" class = 'mo_test_config_input'>
-									<i class="fa fa-fw fa-eye-slash" id="mo_api_basic_eye_show_hide" aria-hidden="true" onclick="mo_rest_api_display_basic_auth_password()"></i>
-								</span>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<p>REST API Endpoint: </p>
-							</td>
-						</tr>
-						<tr>
-							<td colspan='2'><input type='button' value="GET" class='mo_test_config_request_method'>&nbsp;<input type='text' id='rest_basic_auth_endpoint' value="<?php echo esc_html( get_rest_url() ) . 'wp/v2/posts'; ?>" size="40" class = 'mo_test_config_input' placeholder='Enter REST API Endpoint' /></td>
-						</tr>
-						<tr>
-							<td>
-								<br><br><input type='button' onclick="mo_rest_api_JWTtest_config_basic_auth();" value="Test Configuration" class="mo_test_config_button"></button>
-							</td>
-						</tr>
-					</table>
-					<br><br>
-						<div id="mo_api_basic_auth_message">
-							<p class="mo_api_auth_note"><strong><i>Note: </i></strong>The Test has been done successfully. Please click on <strong>"Finish"</strong> button on the top right corner of the screen to save the authentication method.</p>
-						</div>
-					<br>
-					<h4 id='basic_auth_req_headers_text' style='display:none;'><b> Request Headers: </b></h4>
-					<div id="basic_auth_request_headers" class='mo_request_header_basic_auth'>
-						<p><span class='mo_test_config_key'>Authorization </span><span class='mo_test_config_string'>Basic </span><span class='mo_test_config_key_string' id='basic_auth_request_headers_value'></span></p>
+				<?php wp_nonce_field( 'mo_api_basic_authentication_method_config', 'mo_api_basic_authentication_method_config_fields' ); ?>
+				<div class="d-flex align-items-center gap-3 mb-3 justify-content-between">
+					<h5 class="m-0">
+						<a class="text-decoration-none" href="admin.php?page=mo_api_authentication_settings&tab=config">Configure Methods</a>
+						> Basic Authentication Method
+					</h4>
+					<div class="d-grid gap-2 d-md-block text-center">
+						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" onclick="moBasicAuthenticationMethodBack()">Back</button>
+						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="submit" onclick="moBasicAuthenticationMethodFinish()">Finish</button>
 					</div>
-					<h4 id='basic_auth_response_text' style='display:none;'><b> Response: </b></h4>
-					<pre id="json_basic_auth" class = 'mo_test_config_response'></pre>
-					<h4 id='basic_display_text' style='display:none;'><img class="mo_oauth_rest_troubleshoot" src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/trouble_2.png"><b style="margin-left:25px;"> TroubleShoot </b></h4>
-					<pre style='padding: 15px 10px 15px 25px;' id="basic_display_troubleshoot" class='mo_test_config_response'>
-					</pre>
-					<br>	
-					<br>
 				</div>
-
-			</div>
-			<br><br>
-		</form>
+				<div id="mo_api_basicauth_client_creds">
+					<div class="border border-1 rounded-3 p-3">
+						<h6>Configuration Overview</h6>
+						<div class="pt-3">
+							<div class="row">
+								<div class="col-3">
+									<p>Token Credentials Type:</p>
+								</div>
+								<div class="col">
+									<p><b>WordPress Username & Password</b></p>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-3">
+									<p>Token Encryption Type Type:</p>
+								</div>
+								<div class="col">
+									<p><b>Base 64 Encoding</b></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="border border-1 rounded-3 mt-2 p-3">
+						<h6>Test Configuration</h6>
+						<div id="mo_api_authentication_basic_test_config">
+							<div class="row mt-3">
+								<div class="col mb-3">
+									<label for="mo_rest_api_basic_auth_username" class="form-label mo_rest_api_primary_font">Username</label>
+									<input type="text" class="form-control mo_test_config_input" id="mo_rest_api_basic_auth_username">
+								</div>
+								<div class="col mb-3">
+									<label for="mo_rest_api_rest_basic_auth_password" class="form-label mo_rest_api_primary_font">Password</label>
+									<span id="mo_api_auth_test_password">
+										<input type="password" class="form-control mo_test_config_input" id="mo_rest_api_rest_basic_auth_password">
+										<i class="fa fa-fw fa-eye-slash" id="mo_api_basic_eye_show_hide" aria-hidden="true" onclick="mo_rest_api_display_basic_auth_password()"></i>
+									</span>
+								</div>
+							</div>
+							<label for="" class="mo_rest_api_primary_font">REST API Endpoint:</label>
+							<div class="row mt-3">
+								<div class="col-2">
+									<button type="button" class="btn btn-success fw-bold w-100">GET</button>
+								</div>
+								<div class="col p-0">
+									<input class="form-control mo_test_config_input w-100" type="text" name="rest_basic_auth_endpoint" id="rest_basic_auth_endpoint" value="<?php echo esc_html( get_rest_url() ) . 'wp/v2/posts'; ?>" placeholder="Enter REST API Endpoint">
+								</div>
+							</div>
+							<div class="d-grid justify-content-center my-3">
+								<button type="button" class="btn btn-sm text-white mo_rest_api_button" onclick="mo_rest_api_JWTtest_config_basic_auth()">Test Configuration</button>
+							</div>
+							<div id="mo_api_basic_auth_message">
+								<p class="mo_api_auth_note"><strong><i>Note: </i></strong>The Test has been done successfully. Please click on <strong>"Finish"</strong> button on the top right corner of the screen to save the authentication method.</p>
+							</div>
+							<h6 id="basic_auth_req_headers_text" class="d-none mt-3">Request Headers</h6>
+							<div id="basic_auth_request_headers" class='mo_request_header_basic_auth d-none'>
+								<div>
+									<span class='mo_test_config_key text-wrap'>Authorization </span>
+									<span class='mo_test_config_string text-wrap'>Basic </span>
+									<span class='mo_test_config_key_string text-wrap' id='basic_auth_request_headers_value'></span>
+								</div>
+							</div>
+							<h6 id="basic_auth_response_text" class="d-none mt-3">Response</h6>
+							<pre id="json_basic_auth" class="mo_test_config_response d-none"></pre>
+							<h6 id="basic_display_text" class="d-none align-items-center gap-2 mt-3">
+								<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/trouble_2.png" height="15px">
+								<span>TroubleShoot</span>
+							</h6>
+							<pre id="basic_display_troubleshoot" class="pt-3 text-wrap mo_test_config_response"></pre>
+						</div>
+					</div>
+				</div>
+			</form>
 		</div>
 
 		<script>
@@ -289,19 +221,21 @@ class Mo_API_Authentication_Basic_Oauth_Config {
 				jQuery.post(ajaxurl, data);
 
 				div = document.getElementById('mo_api_basic_authentication_support_layout');
-				div.style.display = "none";
+				div.classList.add("d-none");
 				div2 = document.getElementById('mo_api_basicauth_finish');
-				div2.style.display = "block";
+				div2.classList.remove("d-none");
+				div2.classList.add("d-block")
 
 				document.getElementById('basic_authentication_finish_stepper').classList.add('completed');
+				document.getElementById('basic_authentication_finish_stepper').classList.remove('d-none');
+				document.getElementById('basic_authentication_finish_stepper').classList.add('d-flex');
+
 
 				if(localStorage.getItem('mo_api_basic_token_type') == 'uname_pass' || localStorage.getItem('mo_api_basic_token_type') == ''){
 					document.getElementById('mo_api_basicauth_token_type').innerHTML = 'WordPress Username & Password';
 				}
 				else{
 					document.getElementById('mo_api_basicauth_token_type').innerHTML = 'Client ID & Secret';
-					div3 = document.getElementById('mo_api_basic_auth_show_client_creds');
-					div3.style.display = "block";
 				}
 			}
 
@@ -311,10 +245,13 @@ class Mo_API_Authentication_Basic_Oauth_Config {
 
 			function moBasicAuthenticationMethodBack(){
 				div = document.getElementById('mo_api_basic_authentication_support_layout');
-				div.style.display = "block";
+				div.classList.remove("d-none");
+				div.classList.add("d-block");
 				div2 = document.getElementById('mo_api_basicauth_finish');
-				div2.style.display = "none";
+				div2.classList.add("d-none");
 				document.getElementById('basic_authentication_finish_stepper').classList.remove('completed');
+				document.getElementById('basic_authentication_finish_stepper').classList.remove('d-none');
+				document.getElementById('basic_authentication_finish_stepper').classList.add('d-flex');
 			}
 
 			function moBasicAuthenticationClienCreds(type){
@@ -322,13 +259,17 @@ class Mo_API_Authentication_Basic_Oauth_Config {
 				div2 = document.getElementById('mo_api_basicauth_select_type2');
 
 				if(type == 'cid_secret'){
-					div.style.display = "none";
-					div2.style.display = "block";
+					div.classList.remove("d-block");
+					div.classList.add("d-none");
+					div2.classList.remove("d-none");
+					div2.classList.add("d-block");
 				}
 				else{
-					div.style.display = "block";
+					div.classList.remove("d-none");
+					div.classList.add("d-block");
 					if(div2 != null){
-						div2.style.display = "none";
+							div2.classList.remove("d-block");
+						div2.classList.add("d-none");
 					}
 				}
 
@@ -376,7 +317,7 @@ class Mo_API_Authentication_Basic_Oauth_Config {
 						if (/:$/.test(match)) {
 							cls = 'mo_test_config_key';
 						} else {
-							cls = 'mo_test_config_string';
+							cls = 'mo_test_config_string text-wrap';
 						}
 					} else if (/true|false/.test(match)) {
 						cls = 'mo_test_config_boolean';
@@ -394,10 +335,14 @@ class Mo_API_Authentication_Basic_Oauth_Config {
 				var container = document.getElementById("mo_api_authentication_basic_test_config");
 
 				mo_rest_api_output_basic_auth(mo_rest_api_syntaxHighlight_basic_auth(json));
-				document.getElementById("json_basic_auth").style.display = "block";
-				document.getElementById("basic_auth_request_headers").style.display = "block";
-				document.getElementById("basic_auth_req_headers_text").style.display = "block";
-				document.getElementById("basic_auth_response_text").style.display = "block";
+				document.getElementById("json_basic_auth").classList.remove("d-none");
+				document.getElementById("json_basic_auth").classList.add("d-block");
+				document.getElementById("basic_auth_request_headers").classList.remove("d-none");
+				document.getElementById("basic_auth_request_headers").classList.add("d-block");
+				document.getElementById("basic_auth_req_headers_text").classList.remove("d-none");
+				document.getElementById("basic_auth_req_headers_text").classList.add("d-block");
+				document.getElementById("basic_auth_response_text").classList.remove("d-none");
+				document.getElementById("basic_auth_response_text").classList.add("d-block");
 				container.scrollTo({
 					top: document.getElementById("basic_auth_response_text").offsetTop - container.offsetTop,
 					behavior: "smooth"
@@ -410,55 +355,65 @@ class Mo_API_Authentication_Basic_Oauth_Config {
 			}
 			function mo_rest_api_troubleshootHideBasic(){
 
-						document.getElementById("basic_display_troubleshoot").style.display = "none";
-						document.getElementById("basic_display_text").style.display = "none";
-						document.querySelector("#mo_api_basic_auth_message .mo_api_auth_note ").innerHTML = '<strong><i>Note: </i></strong>The Test has been done successfully. Please click on <strong>"Finish"</strong> button on the top right corner of the screen to save the authentication method.';
-				document.querySelector("#mo_api_basic_auth_message .mo_api_auth_note").style.display = "block";
+				document.getElementById("basic_display_troubleshoot").classList.remove("d-block");
+				document.getElementById("basic_display_troubleshoot").classList.add("d-none");
+				document.getElementById("basic_display_text").classList.remove("d-flex");
+				document.getElementById("basic_display_text").classList.add("d-none");
+				document.querySelector("#mo_api_basic_auth_message .mo_api_auth_note ").innerHTML = '<strong><i>Note: </i></strong>The Test has been done successfully. Please click on <strong>"Finish"</strong> button on the top right corner of the screen to save the authentication method.';
+				document.querySelector("#mo_api_basic_auth_message .mo_api_auth_note").classList.remove("d-none");
+				document.querySelector("#mo_api_basic_auth_message .mo_api_auth_note").classList.add("d-block");
 			}
 			function mo_rest_api_troubleshootPrintBasic(err){
 				if(err === "INVALID_PASSWORD")
 				{
 					document.getElementById("basic_display_troubleshoot").innerHTML = `<ul style="list-style: inside;"><li>Check if username and password entered are correct.</li><li>If yes try password without special characters.</li></ul>`;
-					document.getElementById("basic_display_troubleshoot").style.display = "block";
-					document.getElementById("basic_display_text").style.display = "inline-block";
-
+					document.getElementById("basic_display_troubleshoot").classList.remove("d-none");
+					document.getElementById("basic_display_troubleshoot").classList.add("d-block");
+					document.getElementById("basic_display_text").classList.remove("d-none");
+					document.getElementById("basic_display_text").classList.add("d-flex");
 				}
 				else if(err  === "INVALID_USERNAME")
 				{
 					document.getElementById("basic_display_troubleshoot").innerHTML = '<ul style="list-style: inside;"><li>Check if user with this username exists or the entered username spelling is correct.</li><li>Make sure that you are using WordPress username and not email, as Basic Authentication with email and password is available with the Premium plan only.</li></ul>';
-					document.getElementById("basic_display_troubleshoot").style.display = "block";
-					document.getElementById("basic_display_text").style.display = "inline-block";
-
+					document.getElementById("basic_display_troubleshoot").classList.remove("d-none");
+					document.getElementById("basic_display_troubleshoot").classList.add("d-block");
+					document.getElementById("basic_display_text").classList.remove("d-none");
+					document.getElementById("basic_display_text").classList.add("d-flex");
 				}
 				else if(err === "INVALID_CLIENT_CREDENTIALS")
 				{
 					document.getElementById("basic_display_troubleshoot").innerHTML = 'INVALID_CLIENT_CREDENTIALS';
-					document.getElementById("basic_display_troubleshoot").style.display = "block";
-					document.getElementById("basic_display_text").style.display = "inline-block";
-
+					document.getElementById("basic_display_troubleshoot").classList.remove("d-none");
+					document.getElementById("basic_display_troubleshoot").classList.add("d-block");
+					document.getElementById("basic_display_text").classList.remove("d-none");
+					document.getElementById("basic_display_text").classList.add("d-flex");
 				}
 				else if(err === "MISSING_AUTHORIZATION_HEADER")
 				{
 					document.getElementById("basic_display_troubleshoot").innerHTML = '<ul style="list-style: inside;"><li>Verify if you have added necessary headers.</li><li>Add below lines to your htaccess file(Apache server)</li><ul style="padding-inline-start: 19px;"><li>RewriteEngine On &NewLine;RewriteCond %{HTTP:Authorization} ^(.*) &NewLine;RewriteRule .* - [e=HTTP_AUTHORIZATION:%1]</li></ul><li>Add below lines to your config file(NGINX server)</li><ul style="padding-inline-start: 19px;"><li>add_header Access-Control-Allow-Headers "Authorization";</li></ul></ul>';
-					document.getElementById("basic_display_troubleshoot").style.display = "block";
-					document.getElementById("basic_display_text").style.display = "inline-block";
-
+					document.getElementById("basic_display_troubleshoot").classList.remove("d-none");
+					document.getElementById("basic_display_troubleshoot").classList.add("d-block");
+					document.getElementById("basic_display_text").classList.remove("d-none");
+					document.getElementById("basic_display_text").classList.add("d-flex");
 				}
 				else if(err === "INVALID_AUTHORIZATION_HEADER_TOKEN_TYPE")
 				{
 					document.getElementById("basic_display_troubleshoot").innerHTML = 'INVALID_AUTHORIZATION_HEADER_TOKEN_TYPE';
-					document.getElementById("basic_display_troubleshoot").style.display = "block";
-					document.getElementById("basic_display_text").style.display = "inline-block";
-				}
+					document.getElementById("basic_display_troubleshoot").classList.remove("d-none");
+					document.getElementById("basic_display_troubleshoot").classList.add("d-block");
+					document.getElementById("basic_display_text").classList.remove("d-none");
+					document.getElementById("basic_display_text").classList.add("d-flex");				}
 				else if(err === "INVALID_TOKEN_FORMAT")
 				{
 					document.getElementById("basic_display_troubleshoot").innerHTML = 'INVALID_TOKEN_FORMAT';
-					document.getElementById("basic_display_troubleshoot").style.display = "block";
-					document.getElementById("basic_display_text").style.display = "inline-block";
-
+					document.getElementById("basic_display_troubleshoot").classList.remove("d-none");
+					document.getElementById("basic_display_troubleshoot").classList.add("d-block");
+					document.getElementById("basic_display_text").classList.remove("d-none");
+					document.getElementById("basic_display_text").classList.add("d-flex");
 				}
 				document.querySelector("#mo_api_basic_auth_message .mo_api_auth_note ").innerHTML = '<strong><i>Note: </i></strong>You are currently in the testing mode and this authentication method is not yet enabled on your site. Please click on <strong>"Finish"</strong> button on the top right corner of the screen to save the authentication method.';
-				document.querySelector("#mo_api_basic_auth_message .mo_api_auth_note").style.display = "block";
+				document.querySelector("#mo_api_basic_auth_message .mo_api_auth_note").classList.remove("d-none");
+				document.querySelector("#mo_api_basic_auth_message .mo_api_auth_note").classList.add("d-block");
 			}
 
 			function mo_rest_api_display_basic_auth_password() {

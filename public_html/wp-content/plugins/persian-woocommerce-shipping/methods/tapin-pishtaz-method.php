@@ -33,48 +33,6 @@ class Tapin_Pishtaz_Method extends PWS_Tapin_Method {
 
 		$weight = $args['weight'];
 
-		$state_center = [
-			381,
-			561,
-			571,
-			81,
-			61,
-			6931,
-			941,
-			791,
-			751,
-			971,
-			51,
-			1,
-			681,
-			41,
-			981,
-			451,
-			481,
-			351,
-			661,
-			881,
-			71,
-			341,
-			371,
-			31,
-			761,
-			671,
-			491,
-			91,
-			651,
-			7591,
-			891,
-			1011,
-			1013,
-			1014,
-			1015,
-			1016,
-			1017,
-			1018,
-			1019,
-		];
-
 		$gateway = $args['gateway'] ?? 'tapin';
 
 		if ( $gateway == 'tapin' ) {
@@ -92,33 +50,38 @@ class Tapin_Pishtaz_Method extends PWS_Tapin_Method {
 				$cost += $per_kg * ceil( ( $weight - 1000 ) / 1000 );
 			}
 
+			if ( in_array( $args['to_city'], [ 1, 91, 61, 51, 71, 81, 31 ] ) ) {
+				$cost *= 1.1;
+			}
+
 		} else {
 
-			$in_city    = 110010;
-			$in_center  = 166110;
-			$in_country = 166110;
-
-			if ( $args['from_province'] == $args['to_province'] ) {
-				$cost = $in_city;
-			} elseif ( in_array( $args['from_city'], $state_center ) && in_array( $args['to_city'], $state_center ) ) {
-				$cost = $in_center;
-			} else {
-				$cost = $in_country;
+			switch ( true ) {
+				case $weight <= 500:
+					$cost = 183400;
+					break;
+				case $weight >= 501 && $weight <= 1000:
+					$cost = 202400;
+					break;
+				case $weight >= 1001 && $weight <= 2000:
+					$cost = 247400;
+					break;
+				case $weight >= 2001 && $weight <= 2500:
+					$cost = 297400;
+					break;
+				default:
+					$cost = 300120;
 			}
 
 			// calculate
-			if ( $weight > 1000 ) {
-				$cost += 34850 * ceil( ( $weight - 1000 ) / 1000 );
+			if ( $weight > 3000 ) {
+				$cost += 50000 * ceil( ( $weight - 3000 ) / 1000 );
 			}
 
 		}
 
 		if ( $args['content_type'] != 1 || $weight >= 2500 ) {
 			$cost *= 1.25;
-		}
-
-		if ( in_array( $args['to_city'], [ 1, 91, 61, 51, 71, 81, 31 ] ) ) {
-			$cost *= 1.1;
 		}
 
 		// INSURANCE
@@ -134,7 +97,7 @@ class Tapin_Pishtaz_Method extends PWS_Tapin_Method {
 		}
 
 		// TAX
-		$cost += $cost * 0.09;
+		$cost += $cost * 0.1;
 
 		return intval( $cost );
 	}

@@ -59,7 +59,6 @@ class Miniorange_API_Authentication_Admin {
 		add_action( 'admin_menu', array( $this, 'miniorange_api_authentication_save_settings' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'plugin_settings_style' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'plugin_settings_script' ) );
-
 	}
 
 	// Function to add the Premium settings in Plugin's section.
@@ -93,8 +92,6 @@ class Miniorange_API_Authentication_Admin {
 	 * @return void
 	 */
 	public function plugin_settings_style() {
-		wp_enqueue_style( 'mo_api_authentication_admin_settings_style', plugins_url( 'css/style_settings.min.css', __FILE__ ), MINIORANGE_API_AUTHENTICATION_VERSION, array(), false, false );
-		wp_enqueue_style( 'mo_api_authentication_admin_settings_phone_style', plugins_url( 'css/phone.min.css', __FILE__ ), MINIORANGE_API_AUTHENTICATION_VERSION, array(), false, false );
 	}
 
 	/**
@@ -103,7 +100,10 @@ class Miniorange_API_Authentication_Admin {
 	 * @return void
 	 */
 	public function plugin_settings_script() {
-		wp_enqueue_script( 'mo_api_authentication_admin_settings_phone_script', plugins_url( 'js/phone.min.js', __FILE__ ), MINIORANGE_API_AUTHENTICATION_VERSION, array(), false, false );
+		if ( isset( $_GET['page'] ) && 'mo_api_authentication_settings' === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Using this to enqueue styles and script only on the plugin page.
+			wp_enqueue_script( 'mo_api_authentication_admin_bootstrap_bundle_script', plugins_url( 'js/bootstrap.bundle.min.js', __FILE__ ), MINIORANGE_API_AUTHENTICATION_VERSION, array(), '5.0.2', false );
+			wp_enqueue_script( 'mo_api_authentication_admin_settings_phone_script', plugins_url( 'js/phone.min.js', __FILE__ ), MINIORANGE_API_AUTHENTICATION_VERSION, array(), false, false );
+		}
 	}
 
 	/**
@@ -125,11 +125,13 @@ class Miniorange_API_Authentication_Admin {
 		 * class.
 		 */
 
-		wp_enqueue_style( 'mo_rest_api_material_icon', plugin_dir_url( __FILE__ ) . 'css/materialdesignicons.min.css', array(), $this->version, 'all' );
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/miniorange-api-authentication-admin.min.css', array(), $this->version, 'all' );
-		if ( isset( $_REQUEST['tab'] ) && sanitize_text_field( wp_unslash( $_REQUEST['tab'] ) ) === 'licensing' ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Ignoring nonce validation because we are getting data from URL and not form submission.
-			wp_enqueue_style( 'mo-api-auth-license', plugin_dir_url( __FILE__ ) . 'css/miniorange-api-authentication-license.min.css', array(), $this->version, 'all' );
-			wp_enqueue_style( 'mo_api_authentication_bootstrap_css', plugins_url( 'css/bootstrap/bootstrap.min.css', __FILE__ ), MINIORANGE_API_AUTHENTICATION_VERSION, array(), false, false );
+		if ( isset( $_REQUEST['page'] ) && sanitize_text_field( wp_unslash( $_REQUEST['page'] ) ) === 'mo_api_authentication_settings' ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Ignoring nonce validation because we are getting data from URL and not form submission.
+			if ( isset( $_REQUEST['tab'] ) && sanitize_text_field( wp_unslash( $_REQUEST['tab'] ) ) === 'licensing' ) { //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Ignoring nonce validation because we are getting data from URL and not form submission.
+				wp_enqueue_style( 'mo-api-auth-license', plugin_dir_url( __FILE__ ) . 'css/miniorange-api-authentication-license.min.css', array(), $this->version, 'all' );
+			}
+			wp_enqueue_style( 'mo_rest_api_material_icon', plugin_dir_url( __FILE__ ) . 'css/materialdesignicons.min.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/miniorange-api-authentication-admin.min.css', array(), $this->version, 'all' );
+			wp_enqueue_style( 'mo_api_authentication_bootstrap_css', plugins_url( 'css/bootstrap/bootstrap.min.css', __FILE__ ), array(), '5.3.3', false );
 		}
 	}
 
@@ -186,7 +188,7 @@ class Miniorange_API_Authentication_Admin {
 	 */
 	public function mo_api_auth_admin_menu() {
 
-		$page = add_menu_page( 'API Authentication Settings ' . __( 'Configure Authentication', 'mo_api_authentication_settings' ), 'miniOrange API Authentication', 'administrator', 'mo_api_authentication_settings', array( $this, 'mo_api_auth_menu_options' ), plugin_dir_url( __FILE__ ) . 'images/miniorange.png' );
+		add_menu_page( 'API Authentication Settings ' . __( 'Configure Authentication', 'mo_api_authentication_settings' ), 'miniOrange API Authentication', 'administrator', 'mo_api_authentication_settings', array( $this, 'mo_api_auth_menu_options' ), plugin_dir_url( __FILE__ ) . 'images/miniorange.png' );
 	}
 
 	/**
@@ -195,10 +197,8 @@ class Miniorange_API_Authentication_Admin {
 	 * @return void
 	 */
 	public function mo_api_auth_menu_options() {
-		global $wpdb;
 		mo_api_authentication_is_customer_registered();
 		mo_api_authentication_main_menu();
-
 	}
 
 	/**
@@ -207,27 +207,26 @@ class Miniorange_API_Authentication_Admin {
 	 * @param mixed $access access to route.
 	 * @return string
 	 */
-	public static function whitelist_routes( $access ) {
+	public static function protect_routes( $access ) {
 
 		$current_route = self::get_current_route();
 
-		if ( self::is_whitelisted( $current_route ) ) {
+		if ( self::is_protected( $current_route ) ) {
 			return false;
 		}
 
 		return $access;
-
 	}
 
 	/**
-	 * Check if whitelisted.
+	 * Check if protected.
 	 *
 	 * @param mixed $current_route current REST API endpoint requested.
 	 * @return bool
 	 */
-	public static function is_whitelisted( $current_route ) {
+	public static function is_protected( $current_route ) {
 		return array_reduce(
-			self::get_route_whitelist_option(),
+			self::get_route_protect_option(),
 			function ( $is_matched, $pattern ) use ( $current_route ) {
 				return $is_matched || (bool) preg_match( '@^' . htmlspecialchars_decode( $pattern ) . '$@i', $current_route );
 			},
@@ -236,11 +235,11 @@ class Miniorange_API_Authentication_Admin {
 	}
 
 	/**
-	 * Get route whitelist option.
+	 * Get route protect option.
 	 *
 	 * @return array
 	 */
-	public static function get_route_whitelist_option() {
+	public static function get_route_protect_option() {
 		return (array) get_option( 'mo_api_authentication_protectedrestapi_route_whitelist', array() );
 	}
 
@@ -326,7 +325,6 @@ class Miniorange_API_Authentication_Admin {
 				'permission_callback' => '__return_true',
 			)
 		);
-
 	}
 
 	/**
@@ -344,7 +342,6 @@ class Miniorange_API_Authentication_Admin {
 			'password' => $password,
 		);
 		mo_api_auth_token_endpoint_flow( $json );
-
 	}
 
 	/**
@@ -354,9 +351,38 @@ class Miniorange_API_Authentication_Admin {
 	 */
 	public function mo_api_auth_initialize_api_flow() {
 		if ( isset( $_SERVER['REQUEST_METHOD'] ) && 'OPTIONS' === $_SERVER['REQUEST_METHOD'] ) {
-			return true;
+			$response = array(
+				'code'    => '200',
+				'status'  => 'success',
+				'message' => 'Preflight request accepted',
+
+			);
+			wp_send_json( $response );
 		}
+
 		mo_api_auth_restrict_rest_api_for_invalid_users();
+	}
+
+	/**
+	 * This function adds newly registered REST routes to protected routes list.
+	 */
+	public static function protect_newly_added_rest_routes() {
+		$wp_rest_server = rest_get_server();
+		$all_routes     = array_keys( $wp_rest_server->get_routes() );
+
+		$protected_routes = get_option( 'mo_api_authentication_protectedrestapi_route_whitelist', array() );
+		$unsecured_routes = get_option( 'mo_api_authentication_unprotectedrestapi_route', array() );
+
+		$new_added_routes = array_map( 'esc_html', array_diff( $all_routes, $protected_routes ) );
+		$new_added_routes = array_diff( $new_added_routes, $unsecured_routes );
+
+		if ( ! empty( $unsecured_routes ) && count( $new_added_routes ) >= 0 ) {
+
+			$new_protected_routes = array_merge( $protected_routes, $new_added_routes );
+			update_option( 'mo_api_authentication_protectedrestapi_route_whitelist', $new_protected_routes );
+		} else {
+			update_option( 'mo_api_authentication_unprotectedrestapi_route', $new_added_routes );
+		}
 	}
 
 	/**
@@ -424,7 +450,6 @@ class Miniorange_API_Authentication_Admin {
 			);
 			wp_send_json( $response, 401 );
 		}
-
 	}
 
 
@@ -496,10 +521,8 @@ class Miniorange_API_Authentication_Admin {
 					$customer = new Miniorange_API_Authentication_Customer();
 					$email    = get_option( 'mo_api_authentication_admin_email' );
 					$content  = json_decode( $customer->check_customer(), true );
-
 					if ( strcasecmp( $content['status'], 'CUSTOMER_NOT_FOUND' ) === 0 ) {
 						$response = json_decode( $customer->create_customer( $password ), true );
-
 						if ( strcasecmp( $response['status'], 'SUCCESS' ) !== 0 ) {
 							update_option( 'mo_api_auth_message', 'Failed to create customer. Try again.' );
 							update_option( 'mo_api_auth_message_flag', 2 );
@@ -560,7 +583,7 @@ class Miniorange_API_Authentication_Admin {
 					update_option( 'mo_api_auth_message_flag', 2 );
 				}
 			} elseif ( isset( $_POST['option'] ) && sanitize_text_field( wp_unslash( $_POST['option'] ) ) === 'mo_api_authentication_skip_feedback' && isset( $_REQUEST['mo_api_authentication_skip_feedback_form_fields'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['mo_api_authentication_skip_feedback_form_fields'] ) ), 'mo_api_authentication_skip_feedback_form' ) ) {
-				$path = plugin_dir_path( dirname( __FILE__ ) ) . 'miniorange-api-authentication.php';
+				$path = plugin_dir_path( __DIR__ ) . 'miniorange-api-authentication.php';
 				deactivate_plugins( $path );
 				update_option( 'mo_api_auth_message', 'Plugin deactivated successfully' );
 				mo_api_auth_show_success_message();
@@ -602,7 +625,7 @@ class Miniorange_API_Authentication_Admin {
 					$feedback_reasons = new Miniorange_API_Authentication_Customer();
 					$submitted        = $feedback_reasons->mo_api_authentication_send_email_alert( $email, $phone, $reply, $message, 'WordPress REST API Authentication by miniOrange' );
 
-					$path = plugin_dir_path( dirname( __FILE__ ) ) . 'miniorange-api-authentication.php';
+					$path = plugin_dir_path( __DIR__ ) . 'miniorange-api-authentication.php';
 					deactivate_plugins( $path );
 					if ( false === $submitted ) {
 						update_option( 'mo_api_auth_message', 'Your query could not be submitted. Please try again.' );
@@ -664,9 +687,8 @@ class Miniorange_API_Authentication_Admin {
 					return $this->mo_api_authentication_show_curl_error();
 				}
 
-				$email     = ! empty( $_POST['mo_api_authentication_demo_email'] ) ? sanitize_email( wp_unslash( $_POST['mo_api_authentication_demo_email'] ) ) : '';
-				$demo_plan = ! empty( $_POST['mo_api_authentication_demo_plan'] ) ? sanitize_text_field( wp_unslash( $_POST['mo_api_authentication_demo_plan'] ) ) : '';
-				$query     = ! empty( $_POST['mo_api_authentication_demo_usecase'] ) ? sanitize_text_field( wp_unslash( $_POST['mo_api_authentication_demo_usecase'] ) ) : '';
+				$email = ! empty( $_POST['mo_api_authentication_demo_email'] ) ? sanitize_email( wp_unslash( $_POST['mo_api_authentication_demo_email'] ) ) : '';
+				$query = ! empty( $_POST['mo_api_authentication_demo_usecase'] ) ? sanitize_text_field( wp_unslash( $_POST['mo_api_authentication_demo_usecase'] ) ) : '';
 
 				$auth_methods_selected = '';
 				$auth_methods          = array(
@@ -689,7 +711,7 @@ class Miniorange_API_Authentication_Admin {
 				$endpoints_selected = '';
 				$endpoints          = array(
 					'mo_api_authentication_demo_endpoints_wp_rest_api' => 'WP REST APIs',
-					'mo_api_authentication_demo_endpoints_custom_api'  => 'WP Third Party/ Custom APIs',
+					'mo_api_authentication_demo_endpoints_custom_api'  => 'WP Third Party/Custom APIs',
 				);
 				foreach ( $endpoints as $key => $value ) {
 					if ( isset( $_POST[ $key ] ) && sanitize_text_field( wp_unslash( $_POST[ $key ] ) ) === 'on' ) {
@@ -701,76 +723,20 @@ class Miniorange_API_Authentication_Admin {
 
 				$query .= '<br /><b> Endpoints Selected: </b>' . $endpoints_selected;
 
-				if ( empty( $email ) || empty( $demo_plan ) || empty( $query ) ) {
-					update_option( 'message', 'Please fill up Usecase, Email field and Requested demo plan to submit your query.' );
+				if ( empty( $email ) || empty( $query ) ) {
+					update_option( 'mo_api_auth_message', 'Please enter a valid email and the usecase.' );
 					update_option( 'mo_api_auth_message_flag', 2 );
 				} else {
-					$url = 'https://demo.miniorange.com/wordpress-oauth/';
+					$subject = 'WP REST API Authentication Trial Request - ' . $email;
 
-					$headers = array(
-						'Content-Type' => 'application/x-www-form-urlencoded',
-						'charset'      => 'UTF - 8',
-					);
-					$args    = array(
-						'method'      => 'POST',
-						'body'        => array(
-							'option' => 'mo_auto_create_demosite',
-							'mo_auto_create_demosite_email' => $email,
-							'mo_auto_create_demosite_usecase' => $query,
-							'mo_auto_create_demosite_demo_plan' => $demo_plan,
-							'mo_auto_create_demosite_plugin_name' => 'mo-rest-api-authentication',
-						),
-						'timeout'     => '20',
-						'redirection' => '5',
-						'httpversion' => '1.0',
-						'blocking'    => true,
-						'headers'     => $headers,
-					);
+					$response = Mo_API_Authentication_Demo::mo_rest_api_auth_send_trial_mail( $email, $query, $subject );
 
-					$response = wp_remote_post( $url, $args );
-
-					if ( is_wp_error( $response ) ) {
-						$error_message = $response->get_error_message();
-						echo 'Something went wrong: ' . esc_html( $error_message );
-						exit();
-					}
-					$output = wp_remote_retrieve_body( $response );
-
-					$output = json_decode( $output );
-
-					if ( is_null( $output ) ) {
-						update_option( 'mo_api_auth_message', 'Something went wrong! contact to your administrator' );
-						mo_api_auth_show_error_message();
-					}
-
-					if ( 'SUCCESS' === $output->status ) {
-
-						if ( isset( $output->demo_credentials ) ) {
-							$demo_credentials = array();
-
-							$site_url           = esc_url_raw( $output->demo_credentials->site_url );
-							$email              = sanitize_email( $output->demo_credentials->email );
-							$temporary_password = $output->demo_credentials->temporary_password;
-							$password_link      = esc_url_raw( $output->demo_credentials->password_link );
-
-							$sanitized_demo_credentials = array(
-								'site_url'           => $site_url,
-								'email'              => $email,
-								'temporary_password' => $temporary_password,
-								'password_link'      => $password_link,
-								'validity'           => gmdate( 'd F, Y', strtotime( '+10 day' ) ),
-							);
-
-							update_option( 'mo_api_authentication_demo_creds', $sanitized_demo_credentials );
-
-							$output->message = 'Your trial has been generated successfully. Please use the below credentials to access the trial.';
-						}
-
-						update_option( 'mo_api_auth_message', sanitize_text_field( $output->message ) );
-						update_option( 'mo_api_auth_message_flag', 1 );
-					} else {
-						update_option( 'mo_api_auth_message', sanitize_text_field( $output->message ) );
+					if ( false === $response ) {
+						update_option( 'mo_api_auth_message', 'Demo Request could not be submitted. Please try again.' );
 						update_option( 'mo_api_auth_message_flag', 2 );
+					} else {
+						update_option( 'mo_api_auth_message', 'Hang tight! We\'ll get back to you within 24hrs.' );
+						update_option( 'mo_api_auth_message_flag', 1 );
 					}
 				}
 			}

@@ -59,10 +59,16 @@ function mo_api_authentication_config_app_settings() {
 			update_option( 'mo_api_auth_message', 'API Key Authentication Method is configured successfully.' );
 			update_option( 'mo_api_auth_message_flag', 1 );
 		} elseif ( ( isset( $_POST['option'] ) && sanitize_text_field( wp_unslash( $_POST['option'] ) ) === 'mo_api_authentication_protected_apis_form' ) && isset( $_REQUEST['ProtectedRestAPI_admin_nonce_fields'] ) && wp_verify_nonce( sanitize_text_field( wp_unslash( $_REQUEST['ProtectedRestAPI_admin_nonce_fields'] ) ), 'ProtectedRestAPI_admin_nonce' ) ) {
-			// Catch the routes that should be whitelisted.
-			$rest_routes = ( isset( $_POST['rest_routes'] ) ) ? array_map( 'esc_html', wp_unslash( $_POST['rest_routes'] ) ) : null; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Not sanitizing the data as it will remove the brackets present in the regular expression of REST API endpoint.
-			// If resetting or whitelist is empty, clear the option and exit the function.
-			if ( empty( $rest_routes ) || isset( $_POST['reset'] ) ) {
+			// Catch the routes that should be protected.
+			$protected_rest_routes = ( isset( $_POST['mo_rest_routes'] ) ) ? array_map( 'esc_html', wp_unslash( $_POST['mo_rest_routes'] ) ) : null; //phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized -- Not sanitizing the data as it will remove the brackets present in the regular expression of REST API endpoint.
+
+			$wp_rest_server = rest_get_server();
+			$all_routes     = array_keys( $wp_rest_server->get_routes() );
+
+			$unsecured_routes = array_map( 'esc_html', array_diff( $all_routes, $protected_rest_routes ) );
+
+			// If resetting or protect is empty, clear the option and exit the function.
+			if ( empty( $protected_rest_routes ) || isset( $_POST['reset'] ) ) {
 				mo_api_authentication_reset_api_protection();
 				add_settings_error( 'ProtectedRestAPI_notices', 'settings_updated', 'All APIs below are protected.', 'updated' );
 				update_option( 'mo_api_auth_message', 'Your Settings for Protected REST APIs have been reset successfully' );
@@ -70,9 +76,8 @@ function mo_api_authentication_config_app_settings() {
 				return;
 			}
 
-			// Save whitelist to the Options table.
-
-			update_option( 'mo_api_authentication_protectedrestapi_route_whitelist', $rest_routes );
+			// Save protect to the Options table.
+			update_option( 'mo_api_authentication_protectedrestapi_route_whitelist', $protected_rest_routes );
 			add_settings_error( 'ProtectedRestAPI_notices', 'settings_updated', 'Whitelist settings saved.', 'updated' );
 			update_option( 'mo_api_auth_message', 'Your Settings for Protected REST APIs have been saved successfully' );
 			update_option( 'mo_api_auth_message_flag', 1 );
@@ -100,16 +105,16 @@ function mo_api_authentication_reset_api_protection() {
 	$all_routes     = array_keys( $wp_rest_server->get_routes() );
 	$all_routes     = array_map( 'esc_html', $all_routes );
 
+	$unsecured_routes = array();
+
 	foreach ( $all_routes as $key => $value ) {
-		if ( '/api/v1/token' === $value ) {
-			array_splice( $all_routes, $key, 1 );
+		if ( in_array( $value, array( '/api/v1', '/api/v1/token', '/api/v1/token-validate' ), true ) ) {
+			array_push( $unsecured_routes, $all_routes[ $key ] );
+			unset( $all_routes[ $key ] );
 		}
 	}
-	foreach ( $all_routes as $key => $value ) {
-		if ( '/api/v1/token-validate' === $value ) {
-			array_splice( $all_routes, $key, 1 );
-		}
-	}
+
+	$unsecured_routes = array_map( 'esc_html', $unsecured_routes );
 
 	update_option( 'mo_api_authentication_protectedrestapi_route_whitelist', $all_routes );
 }
@@ -199,11 +204,11 @@ function mo_api_authentication_postman_download( $method ) {
 	$contents = '';
 	$filename = '';
 	for ( $i = 0; $i < $zip->numFiles; $i++ ) { //phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- Ignoring camel case here because the ZIP library has it's variables in camel case.
-		$stat     = $zip->statIndex( $i );
-		$filename = basename( $stat['name'] );
-		$fp       = $zip->getStream( $filename );
-		while ( ! feof( $fp ) ) {
-			$contents .= fread( $fp, 2 ); //phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fread -- Using deafult WordPress function to read local file.
+		$stat         = $zip->statIndex( $i );
+		$filename     = basename( $stat['name'] );
+		$file_pointer = $zip->getStream( $filename );
+		while ( ! feof( $file_pointer ) ) {
+			$contents .= fread( $file_pointer, 2 ); //phpcs:ignore WordPress.WP.AlternativeFunctions.file_system_read_fread -- Using default WordPress function to read local file.
 		}
 	}
 
