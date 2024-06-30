@@ -3,7 +3,7 @@ Contributors: miniOrange
 Tags: api, rest-api, REST, jwt auth, jwt, basic auth, secure api, token, endpoints, json web token, oauth, api key auth
 Requires at least: 3.0.1
 Tested up to: 6.5
-Stable tag: 3.2.0
+Stable tag: 3.3.1
 Requires PHP: 5.6
 License: MIT/Expat
 License URI: https://docs.miniorange.com/mit-license
@@ -213,6 +213,12 @@ This plugin does not store any user data.
 7. Postman Sample Settings
 
 == Changelog ==
+
+= 3.3.1 =
+* Major Release with UI and UX improvements
+
+= 3.3.0 =
+* Major Release with UI and UX improvements
 
 = 3.2.0 =
 * Compatibility with WordPress 6.5

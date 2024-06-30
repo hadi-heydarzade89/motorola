@@ -63,7 +63,7 @@ class Miniorange_API_Authentication_Customer {
 	 * Create customer.
 	 *
 	 * @param mixed $password miniOrange password.
-	 * @return array
+	 * @return string
 	 */
 	public function create_customer( $password ) {
 		$url         = get_option( 'host_name' ) . '/moas/rest/customer/add';
@@ -112,7 +112,7 @@ class Miniorange_API_Authentication_Customer {
 	/**
 	 * Check customer.
 	 *
-	 * @return array
+	 * @return string
 	 */
 	public function check_customer() {
 		$url   = get_option( 'host_name' ) . '/moas/rest/customer/check-if-exists';
@@ -152,7 +152,7 @@ class Miniorange_API_Authentication_Customer {
 	 *
 	 * @return array
 	 */
-	public function get_timestamp() {
+	public static function get_timestamp() {
 		$url     = get_option( 'host_name' ) . '/moas/rest/mobile/get-timestamp';
 		$headers = array(
 			'Content-Type'  => 'application/json',
@@ -251,7 +251,7 @@ class Miniorange_API_Authentication_Customer {
 	 * Get customer key.
 	 *
 	 * @param mixed $password miniOrange password.
-	 * @return array
+	 * @return string
 	 */
 	public function get_customer_key( $password ) {
 		$url          = get_option( 'host_name' ) . '/moas/rest/customer/key';

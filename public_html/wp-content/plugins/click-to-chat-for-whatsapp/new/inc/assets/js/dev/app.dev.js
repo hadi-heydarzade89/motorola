@@ -5,7 +5,7 @@
     $(function () {
 
         // variables
-        var v = '3.31.1';
+        var v = '4.5';
         var url = window.location.href;
         var post_title = (typeof document.title !== "undefined") ? document.title : '';
         // is_mobile yes/no,  desktop > 1024 
@@ -494,8 +494,11 @@
             }
 
             // apply variables
-            function apply_variables(v, number) {
+            function apply_variables(v) {
                 console.log('apply_variables');
+                var number = (ctc.chat_number && '' !== ctc.chat_number) ? ctc.chat_number : ctc.number;
+                console.log(number);
+
                 try {
                     // v = v.replace(/\{number\}/gi, number);
                     // v = v.replace(/\{title\}/gi, post_title);
@@ -548,7 +551,7 @@
 
                 var g_event_name = (ctc.g_an_event_name && '' !== ctc.g_an_event_name) ? ctc.g_an_event_name : 'click to chat';
                 console.log('Event Name: ' + g_event_name);
-                g_event_name = apply_variables(g_event_name, id);
+                g_event_name = apply_variables(g_event_name);
 
                 // if ht_ctc_variables is not loaded to front end, then use default values.
                 // since 3.31. with user defined event name, params
@@ -564,8 +567,8 @@
                             console.log(p);
                             var k = p['key'];
                             var v = p['value'];
-                            k = apply_variables(k, id);
-                            v = apply_variables(v, id);
+                            k = apply_variables(k);
+                            v = apply_variables(v);
                             console.log(k);
                             console.log(v);
                             ga_parms[k] = v;
@@ -724,8 +727,8 @@
                                 console.log(p);
                                 var k = p['key'];
                                 var v = p['value'];
-                                k = apply_variables(k, id);
-                                v = apply_variables(v, id);
+                                k = apply_variables(k);
+                                v = apply_variables(v);
                                 console.log(k);
                                 console.log(v);
                                 pixelParams[k] = v;

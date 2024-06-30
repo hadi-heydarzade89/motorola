@@ -10,4 +10,4 @@ $description = (isset($input['description'])) ? $input['description'] : '';
 ?>
 
 <details class="description">
-    <summary><?= $title ?></summary>
+    <summary style="margin-bottom:8px;"><?= $title ?></summary>

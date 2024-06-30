@@ -3,11 +3,11 @@ Contributors: mahdiy,nabiknet
 Tags: woocommerce,shipping,persian woocommerce,persian,ووکامرس فارسی
 Donate link: https://yun.ir/pws-pro?utm_source=donate
 Requires at least: 6.0.0
-Tested up to: 6.4.2
+Tested up to: 6.5.5
 Requires PHP: 7.4
-Stable tag: 4.0.4
+Stable tag: 4.1.1
 License: GPLv3
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 ارسال مرسوله های ووکامرس از طریق پست پیشتاز، سفارشی، پیک موتوری و تیپاکس با محاسبه خودکار تعرفه
 
@@ -30,11 +30,12 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * سازگار با چهار واحد پولی ایران در ووکامرس
 * سازگار با تمامی افزونه های فاکتور و برچسب ساز
 * سازگار با افزونه چند فروشندگی دکان
+* قابلیت انتخاب موقعیت کاربر از روش نقشه
 * و ...
 
 ## نسخه حرفه‌ای
 نیاز به امکانات حرفه‌ای تر دارید؟ [نسخه حرفه‌ای](https://nabik.net/product/persian-woocommerce-shipping-pro/) را بررسی کنید:
-* محاسبه اتوماتیک هزینه پست پیشتاز و سفارشی بر اساس وزن (تعرفه سال 1402)
+* محاسبه اتوماتیک هزینه پست پیشتاز و سفارشی بر اساس وزن (تعرفه سال 1403)
 * تعریف شرط برای روش‌های حمل و نقل (براساس استان، شهر، محصول، دسته بندی، کلاس حمل و نقل، نقش کاربری، روش پرداخت، وزن، مجموع سبد خرید، تعداد اقلام سبد خرید و...)
 * بارگذاری سریع لیست شهرها
 * نمایش لیست شهرها در حساب کاربری
@@ -100,6 +101,12 @@ Ask your questions in [Persian Woocommerce Shipping](https://nabik.net/contact/)
 6. Support Tapin dashboard
 
 == Changelog ==
+= 4.1.1 =
+* Fix: Add manual order in HPOS mode
+= 4.1.0 =
+* Tweak: Compatibility with woocommerce 9.0.0
+* Tweak: Add map service (Neshan, OSM)
+* Tapin: Update posteketab rate
 = 4.0.4 =
 * Tweak: Add register status option for tapin orders
 * Tweak: Add 'pws_sms_tags' filter for SMS tags

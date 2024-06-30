@@ -130,7 +130,15 @@ class PWS_Tapin_Method extends PWS_Shipping_Method {
 
 		$args = apply_filters( 'pws_tapin_calculate_rates_args', $args, $package, $this );
 
-		$shipping_total = $this->calculate_rates( $args ) + ( $shop->total_price ?? 0 );
+		$shipping_total = $this->calculate_rates( $args );
+
+		if ( isset( $shop->total_price ) ) {
+			$shipping_total += $shop->total_price;
+		}
+
+		if ( isset( $shop->has_first_mile_request ) && $shop->has_first_mile_request ) {
+			$shipping_total += 16500;
+		}
 
 		if ( PWS()->get_option( 'tapin.roundup_price' ) ) {
 			$shipping_total = ceil( $shipping_total / 1000 ) * 1000;

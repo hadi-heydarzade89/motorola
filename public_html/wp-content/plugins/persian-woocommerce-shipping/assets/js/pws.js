@@ -58,8 +58,12 @@ jQuery(function ($) {
 
     $("select[id$='_state']").on('select2:select', function (e) {
         let type = $(this).attr('id').indexOf('billing') !== -1 ? 'billing' : 'shipping';
+        if (typeof e.params == 'undefined' && typeof e.params.data == 'undefined') {
+            return;
+        }
         let data = e.params.data;
         pws_state_changed(type, data.id);
+
     });
 
     $("select[id$='_city']").on('select2:select', function (e) {

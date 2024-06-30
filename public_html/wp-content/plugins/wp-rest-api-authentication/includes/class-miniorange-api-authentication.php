@@ -78,7 +78,6 @@ class Miniorange_Api_Authentication {
 		$this->load_dependencies();
 		$this->set_locale();
 		$this->define_admin_hooks();
-
 	}
 
 	/**
@@ -103,21 +102,27 @@ class Miniorange_Api_Authentication {
 		 * The class responsible for orchestrating the actions and filters of the
 		 * core plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-miniorange-api-authentication-loader.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-miniorange-api-authentication-loader.php';
 
 		/**
 		 * The class responsible for defining internationalization functionality
 		 * of the plugin.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-miniorange-api-authentication-i18n.php';
+		require_once plugin_dir_path( __DIR__ ) . 'includes/class-miniorange-api-authentication-i18n.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-miniorange-api-authentication-admin.php';
+		require_once plugin_dir_path( __DIR__ ) . 'admin/class-miniorange-api-authentication-admin.php';
 
 		$this->loader = new Miniorange_Api_Authentication_Loader();
 
+		/**
+		 * The class responsible for installing and activating custom-api-for-wp.
+		 */
+		require_once plugin_dir_path( __DIR__ ) . 'admin/partials/utils/class-mo-api-authentication-utils.php';
+
+		$this->loader = new Miniorange_Api_Authentication_Loader();
 	}
 
 	/**
@@ -134,7 +139,6 @@ class Miniorange_Api_Authentication {
 		$plugin_i18n = new Miniorange_Api_Authentication_I18n();
 
 		$this->loader->add_action( 'plugins_loaded', $plugin_i18n, 'load_plugin_textdomain' );
-
 	}
 
 	/**
@@ -154,6 +158,7 @@ class Miniorange_Api_Authentication {
 		$this->loader->add_action( 'rest_api_init', $plugin_admin, 'register_rest_routes' );
 		$this->loader->add_action( 'rest_api_init', $plugin_admin, 'mo_api_auth_initialize_api_flow' );
 		$this->loader->add_action( 'wp_ajax_save_temporary_data', $plugin_admin, 'save_temporary_data' );
+		$this->loader->add_action( 'wp_ajax_install_and_activate_caw_free', new Mo_API_Authentication_Utils(), 'install_and_activate_caw_free' );
 	}
 
 	/**
@@ -192,5 +197,4 @@ class Miniorange_Api_Authentication {
 	public function get_version() {
 		return $this->version;
 	}
-
 }

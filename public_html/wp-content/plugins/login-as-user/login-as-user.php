@@ -1,26 +1,26 @@
 <?php
 /* ======================================================
- # Login as User for WordPress - v1.5.0 (free version)
+ # Login as User for WordPress - v1.5.1 (free version)
  # -------------------------------------------------------
  # For WordPress
  # Author: Web357
- # Copyright @ 2014-2024 Web357. All rights reserved.
+ # Copyright © 2014-2024 Web357. All rights reserved.
  # License: GNU/GPLv3, http://www.gnu.org/licenses/gpl-3.0.html
- # Website: https:/www.web357.com
- # Demo: https://demo.web357.com/wordpress/login-as-user/wp-admin/
- # Support: support@web357.com
- # Last modified: Friday 26 April 2024, 03:25:02 AM
+ # Website: https://www.web357.com/product/login-as-user-wordpress-plugin
+ # Demo: https://demo-wordpress.web357.com/try-the-login-as-a-user-wordpress-plugin/
+ # Support: https://www.web357.com/support
+ # Last modified: Friday 28 June 2024, 06:04:10 PM
  ========================================================= */
  
 /**
  * Plugin Name:       Login as User
  * Plugin URI:        https://www.web357.com/product/login-as-user-wordpress-plugin
  * Description:       Login as User is a free WordPress plugin that helps admins switch user accounts instantly to check data.
- * Version:           1.5.0
+ * Version:           1.5.1
  * Author:            Web357
  * Author URI:        https://www.web357.com/
- * License:           GPL-2.0+
- * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
+ * License:           GPL-3.0
+ * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       login-as-user
  * Domain Path:       /languages
  */
@@ -34,7 +34,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Currently plugin version.
  */
 if ( !defined( 'LOGINASUSER_VERSION' ) ) {
-	define( 'LOGINASUSER_VERSION', '1.5.0' );
+	define( 'LOGINASUSER_VERSION', '1.5.1' );
 }
 
 
@@ -68,8 +68,11 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-main.php';
  */
 function run_LoginAsUser() 
 {
-	$plugin = new LoginAsUser();
-	$plugin->run();
+	global $LoginAsUser;
+	if (!$LoginAsUser) {
+		$LoginAsUser = new LoginAsUser();
+	}
+	$LoginAsUser->run();
 }
 run_LoginAsUser();
 
