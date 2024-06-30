@@ -361,10 +361,7 @@ function validateNationalCodeAfterCheckoutValidation($posted): void
         wc_add_notice("کد ملی وارد شده معتبر نمیباشد لطفا از صحت کد ملی وارد شده اطمینان حاصل نمایید.", 'error');
     } else {
         if (is_user_logged_in()) {
-            $nationalCode = update_user_meta(get_current_user_id(), 'nationalcode', $posted['billing_national_code']);
-            if (!$nationalCode) {
-                wc_add_notice("کد ملی ذخیره نشد لطفا دوباره امتحان نمایید.", 'error');
-            }
+            update_user_meta(get_current_user_id(), 'nationalcode', $posted['billing_national_code']);
         }
     }
     if (!isPersianWord($posted['billing_first_name']) || !isPersianWord($posted['billing_last_name'])) {
@@ -404,6 +401,6 @@ function customWooError(): void
 function isPersianWord($word): bool
 {
     // Persian Unicode range
-    $pattern = '/^[\x{0600}-\x{06FF}\x{0750}-\x{077F}\x{FB50}-\x{FDFF}\x{FE70}-\x{FEFF}]+$/u';
+    $pattern = '/[^\u0600-\u06FF\s]/u';
     return preg_match($pattern, $word);
 }
