@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-06-29 19:28:46+0000\n"
+"PO-Revision-Date: 2024-07-06 20:35:17+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -78,6 +78,10 @@ msgstr "ورزش و سرگرمی"
 msgid "Marketing tactic"
 msgstr "تاکتیک بازاریابی"
 
+#: templates/order/attribution-details.php:95
+msgid "Creative format"
+msgstr "ساختار خلاقانه"
+
 #: includes/admin/views/html-admin-page-status-report.php:105
 msgid "The Legacy REST API plugin is not installed on this site."
 msgstr "افزونه Legacy REST API روی این سایت نصب نیست."
@@ -102,6 +106,15 @@ msgstr "بسته WooCommerce Legacy REST API"
 #: includes/admin/views/html-admin-page-status-report.php:101
 msgid "The WooCommerce Legacy REST API plugin running on this site."
 msgstr "افزونه WooCommerce Legacy REST API روی این سایت در حال اجرا است."
+
+#. translators: placeholders are URLs
+#: includes/admin/settings/class-wc-settings-advanced.php:398
+msgid "⚠️ The WooCommerce Legacy REST API has been moved to <a target=”_blank” href=\"%1$s\">a dedicated extension</a>. <b><a target=”_blank” href=\"%2$s\">Learn more about this change</a></b>"
+msgstr "⚠️ WooCommerce Legacy REST API به <a target=”_blank” href=\"%1$s\">یک افزودنی مجزا</a> منتقل شده است. <b><a target=”_blank” href=\"%2$s\">درباره این تغییر بیشتر بدانید</a></b>"
+
+#: includes/admin/settings/views/html-webhooks-edit.php:151
+msgid "Legacy API v3 (⚠️ NOT AVAILABLE)"
+msgstr "Legacy API v3 (⚠️ در دسترس نیست)"
 
 #. translators: 1: Product regular price
 #: includes/admin/helper/class-wc-helper-updater.php:276
@@ -130,6 +143,10 @@ msgstr "ℹ️️ افزونه Legacy REST API ووکامرس نصب و فعال
 #: includes/admin/settings/class-wc-settings-advanced.php:390
 msgid "The legacy REST API is enabled"
 msgstr "Legacy REST API فعال است"
+
+#: includes/admin/settings/class-wc-settings-advanced.php:391
+msgid "The legacy REST API is NOT enabled"
+msgstr "legacy REST API فعال نیست"
 
 #: assets/client/blocks/inner-blocks/cart-order-summary-totals-block/block.json
 #: assets/client/blocks/inner-blocks/checkout-order-summary-totals-block/block.json
@@ -169,6 +186,11 @@ msgstr "قالب برگه برای صفحه به‌زودی."
 #: src/Admin/Features/OnboardingTasks/Tasks/Shipping.php:48
 msgid "Select your shipping options"
 msgstr "گزینه‌های حمل‌ونقل خود را انتخاب کنید"
+
+#. translators: 1: Woo Update Manager plugin install URL
+#: includes/admin/helper/class-wc-helper-updater.php:199
+msgid " <a href=\"%1$s\" class=\"woocommerce-connect-your-store\">Connect your store</a> to woocommerce.com to update."
+msgstr " <a href=\"%1$s\" class=\"woocommerce-connect-your-store\">فروشگاه خود را</a> برای به‌روزرسانی به woocommerce.com متصل کنید."
 
 #: assets/client/admin/product-editor/blocks/product-fields/custom-fields-toggle/block.json
 #: assets/client/admin/product-editor/blocks/product-fields/custom-fields/block.json
@@ -302,6 +324,10 @@ msgstr "نام فیلد سفارشی جدید"
 msgid "WooCommerce Blocks development mode requires files to be built. From the root directory, run %1$s to ensure your node version is aligned, run %2$s to install dependencies, %3$s to build the files or %4$s to build the files and watch for changes."
 msgstr "حالت توسعه بلوک‌های ووکامرس نیاز به ساخت فایل‌هایی دارد. از دایرکتوری root، %1$s را اجرا کنید تا مطمئن شوید نسخه گره شما هم راستا است، %2$s را برای نصب وابستگی‌ها، %3$s را برای ساخت فایل‌ها یا %4$s را برای ساخت فایل‌ها و مشاهده تغییرات اجرا کنید."
 
+#: src/Blocks/Assets/AssetDataRegistry.php:421
+msgid "Overriding existing data with an already registered key is not allowed"
+msgstr "باطل کردن دادهٔ موجود توسط یک کلید از پیش ثبت شده مجاز نیست"
+
 #: src/Database/Migrations/CustomOrderTable/CLIRunner.php:564
 msgid "Please review the errors above."
 msgstr "لطفاً خطاهای بالا را بررسی کنید."
@@ -378,7 +404,7 @@ msgstr "تسویه‌حساب را می‌توان <a href=\"%s\">در ویرا�
 #. API removal
 #: includes/class-wc-install.php:1331
 msgid "⚠️ WooCommerce attempted to install <a href=\"%1$s\">the Legacy REST API plugin</a> because this site has <a href=\"%2$s\">the Legacy REST API enabled</a> or has <a href=\"%3$s\">legacy webhooks defined</a>, but the installation failed (see error details in <a href=\"%4$s\">the WooCommerce logs</a>). Please install and activate the plugin manually. <a href=\"%5$s\">More information</a>"
-msgstr "⚠️ ووکامرس تلاش کرد <a href=\"%1$s\">افزونه Legacy REST API</a> را نصب کند زیرا این سایت <a href=\"%2$s\">REST API قدیمی را فعال کرده است</a> یا <a href=\"%3$s\">وب‌هوک‌های قدیمی تعریف شده است</a>، اما نصب انجام نشد (جزئیات خطا را در <a href=\"%4$s\">گزارش‌های ووکامرس</a> ببینید). لطفا افزونه را به صورت دستی نصب و فعال کنید. <a href=\"%5$s\">اطلاعات بیشتر</a>"
+msgstr "⚠️ ووکامرس تلاش کرد <a href=\"%1$s\">افزونهٔ Legacy REST API</a> را نصب کند زیرا این سایت <a href=\"%2$s\">REST API قدیمی را فعال کرده است</a> یا <a href=\"%3$s\">وب‌هوک‌های قدیمی تعریف شده است</a>، اما نصب انجام نشد (جزئیات خطا را در <a href=\"%4$s\">گزارش‌های ووکامرس</a> ببینید). لطفاً افزونه را به صورت دستی نصب و فعال کنید. <a href=\"%5$s\">اطلاعات بیشتر</a>"
 
 #. translators: 1 = URL of Legacy REST API plugin page, 2 = URL of Legacy API
 #. settings in current site, 3 = URL of webhooks settings in current site, 4 =
@@ -2271,13 +2297,13 @@ msgstr "بدون ضرورت"
 msgid "Add to cart: &ldquo;%s&rdquo;"
 msgstr "افزودن به سبد خرید: &ldquo;%s&rdquo;"
 
-#: includes/admin/settings/views/html-admin-page-shipping-zones.php:29
-msgid "An optional zone you can use to set the shipping method(s) available to any regions that have not been listed above."
-msgstr "یک منطقه اختیاری که می توانید از آن برای تنظیم روش(های) حمل و نقل در دسترس برای هر منطقه ای که در بالا ذکر نشده است استفاده کنید."
-
 #: includes/admin/settings/views/html-admin-page-shipping-zones.php:11
 msgid "A shipping zone consists of the region(s) you'd like to ship to and the shipping method(s) offered. A shopper can only be matched to one zone, and we'll use their shipping address to show them the methods available in their area."
 msgstr "منطقه حمل و نقل شامل ناحیه یا نواحی‌ای است که می‌خواهید به آنجا ارسال داشته باشید و همچنین روش‌های حمل و نقلی که ارائه می‌دهید. هر خریدار فقط می‌تواند به یک منطقه اختصاص داده شود و ما از آدرس حمل و نقل او برای نمایش روش‌های حمل و نقلی که در منطقه او در دسترس هستند، استفاده می‌کنیم."
+
+#: includes/admin/settings/views/html-admin-page-shipping-zones.php:29
+msgid "An optional zone you can use to set the shipping method(s) available to any regions that have not been listed above."
+msgstr "یک منطقه اختیاری که می‌توانید از آن برای تنظیم روش(های) حمل و نقل در دسترس برای هر منطقه‌ای که در بالا ذکر نشده است استفاده کنید."
 
 #: includes/admin/settings/views/html-admin-page-shipping-zone-methods.php:72
 msgid "Add the shipping methods you'd like to make available to customers in this zone."
@@ -4480,51 +4506,28 @@ msgctxt "block title"
 msgid "Stock level threshold"
 msgstr "آستانه سطح موجودی"
 
+#: assets/client/admin/product-editor/blocks/generic/conditional/block.json
+msgctxt "block title"
+msgid "Conditional"
+msgstr "شرطی"
+
+#: assets/client/admin/product-editor/blocks/generic/product-tab/block.json
+#: assets/client/admin/product-editor/blocks/generic/tab/block.json
+msgctxt "block description"
+msgid "The product tab."
+msgstr "زبانۀ محصول."
+
+#: assets/client/admin/product-editor/blocks/generic/product-tab/block.json
+#: assets/client/admin/product-editor/blocks/generic/tab/block.json
+msgctxt "block title"
+msgid "Product tab"
+msgstr "زبانۀ محصول"
+
 #: assets/client/admin/product-editor/blocks/product-fields/product-summary-field/block.json
 #: assets/client/admin/product-editor/blocks/product-fields/summary/block.json
 msgctxt "block description"
 msgid "The product summary."
 msgstr "خلاصۀ محصول."
-
-#: assets/client/admin/product-editor/blocks/product-fields/product-summary-field/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/summary/block.json
-msgctxt "block title"
-msgid "Product summary"
-msgstr "خلاصۀ محصول"
-
-#: assets/client/admin/product-editor/blocks/generic/pricing/block.json
-#: assets/client/admin/product-editor/blocks/generic/product-pricing-field/block.json
-msgctxt "block title"
-msgid "Product pricing"
-msgstr "قیمت گذاری محصول"
-
-#: assets/client/admin/product-editor/blocks/product-fields/inventory-sku/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/product-sku-field/block.json
-msgctxt "block description"
-msgid "The product sku."
-msgstr "شناسه محصول."
-
-#: assets/client/admin/product-editor/blocks/product-fields/inventory-sku/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/product-sku-field/block.json
-msgctxt "block keyword"
-msgid "sku"
-msgstr "شناسه محصول"
-
-#: assets/client/admin/product-editor/blocks/generic/pricing/block.json
-#: assets/client/admin/product-editor/blocks/generic/product-pricing-field/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/product-regular-price-field/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/product-sale-price-field/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/regular-price/block.json
-#: assets/client/admin/product-editor/blocks/product-fields/sale-price/block.json
-msgctxt "block description"
-msgid "A product price block with currency display."
-msgstr "بلوک قیمت محصول با نمایش ارز."
-
-#: assets/client/admin/product-editor/blocks/generic/collapsible/block.json
-#: assets/client/admin/product-editor/blocks/generic/product-collapsible/block.json
-msgctxt "block description"
-msgid "Container with collapsible inner blocks."
-msgstr "ظرف با بلوک های داخلی تاشو."
 
 #: assets/client/admin/product-editor/blocks/generic/checkbox/block.json
 #: assets/client/admin/product-editor/blocks/generic/linked-product-list/block.json
@@ -4605,22 +4608,45 @@ msgctxt "block keyword"
 msgid "products"
 msgstr "محصولات"
 
-#: assets/client/admin/product-editor/blocks/generic/conditional/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/product-summary-field/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/summary/block.json
 msgctxt "block title"
-msgid "Conditional"
-msgstr "شرطی"
+msgid "Product summary"
+msgstr "خلاصۀ محصول"
 
-#: assets/client/admin/product-editor/blocks/generic/product-tab/block.json
-#: assets/client/admin/product-editor/blocks/generic/tab/block.json
+#: assets/client/admin/product-editor/blocks/generic/pricing/block.json
+#: assets/client/admin/product-editor/blocks/generic/product-pricing-field/block.json
+msgctxt "block title"
+msgid "Product pricing"
+msgstr "قیمت گذاری محصول"
+
+#: assets/client/admin/product-editor/blocks/product-fields/inventory-sku/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/product-sku-field/block.json
 msgctxt "block description"
-msgid "The product tab."
-msgstr "زبانۀ محصول."
+msgid "The product sku."
+msgstr "شناسه محصول."
 
-#: assets/client/admin/product-editor/blocks/generic/product-tab/block.json
-#: assets/client/admin/product-editor/blocks/generic/tab/block.json
-msgctxt "block title"
-msgid "Product tab"
-msgstr "زبانۀ محصول"
+#: assets/client/admin/product-editor/blocks/product-fields/inventory-sku/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/product-sku-field/block.json
+msgctxt "block keyword"
+msgid "sku"
+msgstr "شناسه محصول"
+
+#: assets/client/admin/product-editor/blocks/generic/pricing/block.json
+#: assets/client/admin/product-editor/blocks/generic/product-pricing-field/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/product-regular-price-field/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/product-sale-price-field/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/regular-price/block.json
+#: assets/client/admin/product-editor/blocks/product-fields/sale-price/block.json
+msgctxt "block description"
+msgid "A product price block with currency display."
+msgstr "بلوک قیمت محصول با نمایش ارز."
+
+#: assets/client/admin/product-editor/blocks/generic/collapsible/block.json
+#: assets/client/admin/product-editor/blocks/generic/product-collapsible/block.json
+msgctxt "block description"
+msgid "Container with collapsible inner blocks."
+msgstr "ظرف با بلوک های داخلی تاشو."
 
 #: assets/client/admin/product-editor/blocks/product-fields/inventory-sku/block.json
 #: assets/client/admin/product-editor/blocks/product-fields/product-sku-field/block.json
@@ -7521,6 +7547,12 @@ msgstr "یک تسویه حساب سریع و آشنا را برای صدها م�
 msgid "Afterpay allows customers to receive products immediately and pay for purchases over four installments, always interest-free."
 msgstr "پس از پرداخت به مشتریان این امکان را می دهد که محصولات را بلافاصله دریافت کنند و برای خریدهای خود در چهار قسط و همیشه بدون بهره پرداخت کنند."
 
+#. translators: %s: number of pending orders.
+#: src/Internal/DataStores/Orders/CustomOrdersTableController.php:606
+msgid "There's %s order pending sync."
+msgid_plural "There are %s orders pending sync."
+msgstr[0] "%s سفارش در انتظار همگام‌سازی است."
+
 #: src/Admin/API/PaymentGatewaySuggestions.php:166
 msgid "Gateway title."
 msgstr "عنوان درگاه پرداخت"
@@ -7590,6 +7622,12 @@ msgstr "فایل قابل دانلود %s نمی تواند استفاده شو�
 msgid "Headers already sent when generating download error message."
 msgstr "Headers already sent when generating download error message."
 
+#. translators: %1$s and %3$s are HTML (opening link tags). %2$s is also HTML
+#. (closing link tag).
+#: includes/admin/views/html-notice-download-dir-sync-complete.php:20
+msgid "The %1$sApproved Product Download Directories list%2$s has been updated. To protect your site, please review the list and make any changes that might be required. For more information, please refer to %3$sthis guide%2$s."
+msgstr "فهرست %1$s فهرست راهنماهای دانلود محصول تأییدشده%2$s به‌روزرسانی شده است. برای محافظت از سایت خود، لطفاً فهرست را مرور کنید و هر گونه تغییری که ممکن است لازم باشد را انجام دهید. برای اطلاعات بیشتر، لطفاً به %3$sاین راهنما%2$s مراجعه کنید."
+
 #: includes/admin/views/html-admin-page-status-report.php:764
 msgid "Is your site enforcing the use of Approved Product Download Directories?"
 msgstr "آیا سایت شما از دایرکتوری های دانلود محصول تایید شده استفاده می کند؟"
@@ -7597,12 +7635,6 @@ msgstr "آیا سایت شما از دایرکتوری های دانلود مح�
 #: includes/admin/views/html-admin-page-status-report.php:763
 msgid "Enforce Approved Product Download Directories"
 msgstr "دایرکتوری های دانلود محصول تایید شده را اجرا کنید"
-
-#. translators: %1$s and %3$s are HTML (opening link tags). %2$s is also HTML
-#. (closing link tag).
-#: includes/admin/views/html-notice-download-dir-sync-complete.php:20
-msgid "The %1$sApproved Product Download Directories list%2$s has been updated. To protect your site, please review the list and make any changes that might be required. For more information, please refer to %3$sthis guide%2$s."
-msgstr "فهرست %1$s فهرست راهنماهای دانلود محصول تأییدشده%2$s به‌روزرسانی شده است. برای محافظت از سایت خود، لطفاً فهرست را مرور کنید و هر گونه تغییری که ممکن است لازم باشد را انجام دهید. برای اطلاعات بیشتر، لطفاً به %3$sاین راهنما%2$s مراجعه کنید."
 
 #: src/Internal/Admin/CustomerEffortScoreTracks.php:385
 msgid "How easy was it to edit your product?"
@@ -21049,24 +21081,6 @@ msgstr "روش پرداخت باموفقیت اضافه شد."
 msgid "Unable to add payment method to your account."
 msgstr "عدم توانایی جهت افزودن روش پرداخت به حساب کاربری شما."
 
-#: includes/shortcodes/class-wc-shortcode-order-tracking.php:50
-#: assets/client/blocks/cart-blocks/cart-order-summary-frontend.js:4
-#: assets/client/blocks/cart-blocks/order-summary-coupon-form-frontend.js:4
-#: assets/client/blocks/cart-blocks/order-summary-discount-frontend.js:4
-#: assets/client/blocks/cart-blocks/order-summary-shipping-frontend.js:4
-#: assets/client/blocks/cart.js:25
-#: assets/client/blocks/checkout-blocks/additional-information-frontend.js:4
-#: assets/client/blocks/checkout-blocks/billing-address-frontend.js:4
-#: assets/client/blocks/checkout-blocks/contact-information-frontend.js:4
-#: assets/client/blocks/checkout-blocks/order-summary-coupon-form-frontend.js:4
-#: assets/client/blocks/checkout-blocks/order-summary-discount-frontend.js:4
-#: assets/client/blocks/checkout-blocks/order-summary-frontend.js:4
-#: assets/client/blocks/checkout-blocks/order-summary-shipping-frontend.js:4
-#: assets/client/blocks/checkout-blocks/shipping-address-frontend.js:4
-#: assets/client/blocks/checkout.js:5
-msgid "Please enter a valid email address"
-msgstr "لطفا یک آدرس ایمیل معتبر وارد نمائید"
-
 #: includes/class-wc-coupon.php:568 includes/class-wc-coupon.php:572
 msgid "Invalid discount amount"
 msgstr "مقدار تخفیف نامعتبر"
@@ -21088,6 +21102,24 @@ msgstr "با عرض پوزش، سفارش پیدا نشد. اگر شما دچا�
 #: src/StoreApi/Utilities/OrderController.php:642
 msgid "Sorry, \"%s\" is no longer in stock so this order cannot be paid for. We apologize for any inconvenience caused."
 msgstr "با عرض پوزش، \"%s\" دیگر موجود نیست، بنابراین این سفارش را نمی توان پرداخت کرد. از هر گونه دلخوری پیش آمده پوزش می طلبیم."
+
+#: includes/shortcodes/class-wc-shortcode-order-tracking.php:50
+#: assets/client/blocks/cart-blocks/cart-order-summary-frontend.js:4
+#: assets/client/blocks/cart-blocks/order-summary-coupon-form-frontend.js:4
+#: assets/client/blocks/cart-blocks/order-summary-discount-frontend.js:4
+#: assets/client/blocks/cart-blocks/order-summary-shipping-frontend.js:4
+#: assets/client/blocks/cart.js:25
+#: assets/client/blocks/checkout-blocks/additional-information-frontend.js:4
+#: assets/client/blocks/checkout-blocks/billing-address-frontend.js:4
+#: assets/client/blocks/checkout-blocks/contact-information-frontend.js:4
+#: assets/client/blocks/checkout-blocks/order-summary-coupon-form-frontend.js:4
+#: assets/client/blocks/checkout-blocks/order-summary-discount-frontend.js:4
+#: assets/client/blocks/checkout-blocks/order-summary-frontend.js:4
+#: assets/client/blocks/checkout-blocks/order-summary-shipping-frontend.js:4
+#: assets/client/blocks/checkout-blocks/shipping-address-frontend.js:4
+#: assets/client/blocks/checkout.js:5
+msgid "Please enter a valid email address"
+msgstr "لطفا یک آدرس ایمیل معتبر وارد نمائید"
 
 #. translators: 1: class name 2: WC_Log_Handler_Interface
 #: includes/class-wc-logger.php:81
@@ -24047,6 +24079,14 @@ msgstr "تاریخ ایجاد تصویر براساس GMT"
 msgid "Type of setting."
 msgstr "نوع تنظیمات"
 
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1402
+msgid "The date the order was completed, as GMT."
+msgstr "تاریخ تکمیل شدن سفارش براساس GMT"
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1390
+msgid "The date the order was paid, as GMT."
+msgstr "تاریخ پرداخت سفارش براساس GMT"
+
 #: includes/rest-api/Controllers/Version2/class-wc-rest-payment-gateways-v2-controller.php:412
 #: includes/rest-api/Controllers/Version2/class-wc-rest-setting-options-v2-controller.php:534
 #: includes/rest-api/Controllers/Version2/class-wc-rest-settings-v2-controller.php:210
@@ -24066,14 +24106,6 @@ msgstr "توضیح قابل خواندن برای انسان برای تنظیم
 #: includes/rest-api/Controllers/Version3/class-wc-rest-settings-controller.php:88
 msgid "A human readable label for the setting used in interfaces."
 msgstr "برچسب قابل خواندن برای انسان برای تنظیمات بکار رفته در ظاهر."
-
-#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1402
-msgid "The date the order was completed, as GMT."
-msgstr "تاریخ تکمیل شدن سفارش براساس GMT"
-
-#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:1390
-msgid "The date the order was paid, as GMT."
-msgstr "تاریخ پرداخت سفارش براساس GMT"
 
 #: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2323
 #: src/StoreApi/Routes/V1/Products.php:278
@@ -25971,10 +26003,6 @@ msgstr "eCheck"
 msgid "Every %d minutes"
 msgstr "هر %d دقیقه"
 
-#: includes/shipping/legacy-local-delivery/class-wc-shipping-legacy-local-delivery.php:44
-msgid "Local delivery (legacy)"
-msgstr "تحویل محلی (همانند قبل)"
-
 #: includes/shipping/legacy-international-delivery/class-wc-shipping-legacy-international-delivery.php:28
 msgid "International flat rate (legacy)"
 msgstr "نرخ ثابت بین المللی (همانند قبلی)"
@@ -26065,15 +26093,6 @@ msgstr "افغانی افغانستان"
 msgid "Free shipping (legacy)"
 msgstr "حمل و نقل رایگان (همانند قبل)"
 
-#. translators: %s: Admin shipping settings URL
-#: includes/shipping/legacy-flat-rate/class-wc-shipping-legacy-flat-rate.php:59
-#: includes/shipping/legacy-free-shipping/class-wc-shipping-legacy-free-shipping.php:46
-#: includes/shipping/legacy-international-delivery/class-wc-shipping-legacy-international-delivery.php:30
-#: includes/shipping/legacy-local-delivery/class-wc-shipping-legacy-local-delivery.php:46
-#: includes/shipping/legacy-local-pickup/class-wc-shipping-legacy-local-pickup.php:37
-msgid "This method is deprecated in 2.6.0 and will be removed in future versions - we recommend disabling it and instead setting up a new rate within your <a href=\"%s\">Shipping zones</a>."
-msgstr "این روش در 2.6.0 منسوخ شده است و در نسخه‌های آینده حذف خواهد شد - پیشنهاد می کنیم آن را غیرفعال کرده و به جای آن، یک نرخ جدید در <a href=\"%s\">مناطق حمل و نقل</a> تنظیم نمائید."
-
 #: includes/shipping/free-shipping/class-wc-shipping-free-shipping.php:57
 msgid "Free shipping is a special method which can be triggered with coupons and minimum spends."
 msgstr "حمل و نقل رایگان یک روش خاص است که می تواند با کدهای تخفیف و حداقل خرید فعال شود."
@@ -26085,6 +26104,15 @@ msgstr "حمل و نقل رایگان یک روش خاص است که می توا
 #: assets/client/blocks/order-confirmation-downloads.js:1
 msgid "Expires"
 msgstr "انقضا"
+
+#. translators: %s: Admin shipping settings URL
+#: includes/shipping/legacy-flat-rate/class-wc-shipping-legacy-flat-rate.php:59
+#: includes/shipping/legacy-free-shipping/class-wc-shipping-legacy-free-shipping.php:46
+#: includes/shipping/legacy-international-delivery/class-wc-shipping-legacy-international-delivery.php:30
+#: includes/shipping/legacy-local-delivery/class-wc-shipping-legacy-local-delivery.php:46
+#: includes/shipping/legacy-local-pickup/class-wc-shipping-legacy-local-pickup.php:37
+msgid "This method is deprecated in 2.6.0 and will be removed in future versions - we recommend disabling it and instead setting up a new rate within your <a href=\"%s\">Shipping zones</a>."
+msgstr "این روش در 2.6.0 منسوخ شده است و در نسخه‌های آینده حذف خواهد شد - پیشنهاد می کنیم آن را غیرفعال کرده و به جای آن، یک نرخ جدید در <a href=\"%s\">مناطق حمل و نقل</a> تنظیم نمائید."
 
 #: includes/shipping/flat-rate/class-wc-shipping-flat-rate.php:46
 msgid "Lets you charge a fixed rate for shipping."
@@ -26098,6 +26126,10 @@ msgstr "حداقل مبلغ سفارش"
 #: includes/wc-account-functions.php:99
 msgid "Dashboard"
 msgstr "پیشخوان"
+
+#: includes/shipping/legacy-local-delivery/class-wc-shipping-legacy-local-delivery.php:44
+msgid "Local delivery (legacy)"
+msgstr "تحویل محلی (قدیمی)"
 
 #: includes/class-wc-download-handler.php:694
 msgid "Go to shop"
@@ -27149,19 +27181,6 @@ msgstr "نتیجه محدود به تنظیم مرتب‌سازی محصول خ�
 msgid "Selected attribute term name."
 msgstr "نام شرط ویژگی را انتخاب کنید."
 
-#: includes/rest-api/Controllers/Version1/class-wc-rest-product-categories-v1-controller.php:244
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2180
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2512
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-categories-v2-controller.php:185
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:921
-#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2145
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-categories-controller.php:185
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:783
-#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1383
-#: src/StoreApi/Schemas/V1/ImageAttachmentSchema.php:57
-msgid "Image name."
-msgstr "نام تصویر."
-
 #: includes/rest-api/Controllers/Version1/class-wc-rest-product-reviews-v1-controller.php:550
 #: includes/rest-api/Controllers/Version2/class-wc-rest-product-reviews-v2-controller.php:179
 #: includes/rest-api/Controllers/Version3/class-wc-rest-product-reviews-controller.php:871
@@ -27175,6 +27194,19 @@ msgstr "نام بررسی کننده."
 #: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1326
 msgid "Tag name."
 msgstr "نام برچسب."
+
+#: includes/rest-api/Controllers/Version1/class-wc-rest-product-categories-v1-controller.php:244
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2180
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:2512
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-categories-v2-controller.php:185
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:921
+#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:2145
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-categories-controller.php:185
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:783
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1383
+#: src/StoreApi/Schemas/V1/ImageAttachmentSchema.php:57
+msgid "Image name."
+msgstr "نام تصویر."
 
 #: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:722
 #: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:974
@@ -28162,18 +28194,6 @@ msgstr "نشان دهید / تعریف کنید که یادداشت تنها ب�
 msgid "First name."
 msgstr "نام."
 
-#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:656
-#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:182
-#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:88
-msgid "Customer first name."
-msgstr "نام خریدار."
-
-#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:664
-#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:190
-#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:96
-msgid "Customer last name."
-msgstr "نام خانوادگی خریدار."
-
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:738
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:801
 #: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1098
@@ -28201,6 +28221,18 @@ msgstr "نام شرکت."
 msgid "City name."
 msgstr "نام شهر."
 
+#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:656
+#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:182
+#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:88
+msgid "Customer first name."
+msgstr "نام خریدار."
+
+#: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:664
+#: includes/rest-api/Controllers/Version2/class-wc-rest-customers-v2-controller.php:190
+#: includes/rest-api/Controllers/Version3/class-wc-rest-customers-controller.php:96
+msgid "Customer last name."
+msgstr "نام خانوادگی خریدار."
+
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:733
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:796
 #: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1093
@@ -28224,11 +28256,6 @@ msgstr "نام کاربری مشتری."
 msgid "Username isn't editable."
 msgstr "نام کاربری قابل ویرایش نیست. "
 
-#: includes/rest-api/Controllers/Version1/class-wc-rest-customer-downloads-v1-controller.php:187
-#: includes/rest-api/Controllers/Version2/class-wc-rest-customer-downloads-v2-controller.php:105
-msgid "Downloadable file name."
-msgstr "نام فایل قابل دانلود."
-
 #: includes/rest-api/Controllers/Version1/class-wc-rest-order-refunds-v1-controller.php:380
 #: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:1276
 #: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1747
@@ -28246,6 +28273,11 @@ msgstr "نام فایل قابل دانلود."
 #: src/StoreApi/Schemas/V1/ProductSchema.php:58
 msgid "Product name."
 msgstr "نام محصول."
+
+#: includes/rest-api/Controllers/Version1/class-wc-rest-customer-downloads-v1-controller.php:187
+#: includes/rest-api/Controllers/Version2/class-wc-rest-customer-downloads-v2-controller.php:105
+msgid "Downloadable file name."
+msgstr "نام فایل قابل دانلود."
 
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customer-downloads-v1-controller.php:223
 #: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:1892
@@ -28397,10 +28429,19 @@ msgstr "شناسه یکتا برای شیء."
 msgid "The coupon code cannot be empty."
 msgstr "کد تخفیف نمی تواند خالی باشد."
 
-#: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:520
-#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:463
-msgid "List of category IDs the coupon does not apply to."
-msgstr "لیست شناسه‌های دسته‌هایی که کد تخفیف بر آنها اعمال نمی شود."
+#: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:110
+#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:104
+#: includes/rest-api/Controllers/Version1/class-wc-rest-product-reviews-v1-controller.php:118
+#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:104
+#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:104
+#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:118
+#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:109
+#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:117
+#: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-zone-methods-v2-controller.php:87
+#: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-zones-v2-controller.php:77
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-reviews-controller.php:110
+msgid "Whether to bypass trash and force deletion."
+msgstr "دور زدن سطل زباله و اجبار به حذف."
 
 #: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:84
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customer-downloads-v1-controller.php:46
@@ -28471,19 +28512,10 @@ msgstr "لیست شناسه‌های دسته‌هایی که کد تخفیف ب
 msgid "Unique identifier for the resource."
 msgstr "شناسه یکتا برای منبع."
 
-#: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:110
-#: includes/rest-api/Controllers/Version1/class-wc-rest-orders-v1-controller.php:104
-#: includes/rest-api/Controllers/Version1/class-wc-rest-product-reviews-v1-controller.php:118
-#: includes/rest-api/Controllers/Version1/class-wc-rest-products-v1-controller.php:104
-#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:104
-#: includes/rest-api/Controllers/Version2/class-wc-rest-orders-v2-controller.php:118
-#: includes/rest-api/Controllers/Version2/class-wc-rest-product-variations-v2-controller.php:109
-#: includes/rest-api/Controllers/Version2/class-wc-rest-products-v2-controller.php:117
-#: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-zone-methods-v2-controller.php:87
-#: includes/rest-api/Controllers/Version2/class-wc-rest-shipping-zones-v2-controller.php:77
-#: includes/rest-api/Controllers/Version3/class-wc-rest-product-reviews-controller.php:110
-msgid "Whether to bypass trash and force deletion."
-msgstr "دور زدن سطل زباله و اجبار به حذف."
+#: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:520
+#: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:463
+msgid "List of category IDs the coupon does not apply to."
+msgstr "لیست شناسه‌های دسته‌هایی که کد تخفیف بر آنها اعمال نمی شود."
 
 #: includes/rest-api/Controllers/Version1/class-wc-rest-coupons-v1-controller.php:534
 #: includes/rest-api/Controllers/Version2/class-wc-rest-coupons-v2-controller.php:477
@@ -28701,15 +28733,6 @@ msgstr "نمایش زیر دسته‌ها و محصولات"
 msgid "Default customer location"
 msgstr "مکان پیش‌فرض مشتری"
 
-#: includes/admin/settings/views/html-admin-page-shipping-classes.php:37
-msgid "No shipping classes have been created."
-msgstr "هیچ کلاس حمل و نقلی ایجاد نشده است."
-
-#: includes/admin/settings/views/html-admin-page-shipping-classes.php:16
-#: includes/admin/settings/views/html-admin-page-shipping-classes.php:49
-msgid "Add shipping class"
-msgstr "افزودن کلاس حمل و نقل"
-
 #: includes/admin/settings/class-wc-settings-general.php:145
 msgid "Shipping location(s)"
 msgstr "محل(های) حمل و نقل"
@@ -28752,6 +28775,15 @@ msgstr "پیشفرض به آدرس حمل و نقل مشتری"
 msgid "Disable shipping &amp; shipping calculations"
 msgstr "غیر فعال کردن حمل‌ونقل و محاسبات حمل‌ونقل"
 
+#: includes/admin/settings/views/html-admin-page-shipping-classes.php:37
+msgid "No shipping classes have been created."
+msgstr "هیچ کلاس حمل و نقلی ایجاد نشده است."
+
+#: includes/admin/settings/views/html-admin-page-shipping-classes.php:16
+#: includes/admin/settings/views/html-admin-page-shipping-classes.php:49
+msgid "Add shipping class"
+msgstr "افزودن کلاس حمل و نقل"
+
 #: includes/customizer/class-wc-shop-customizer.php:447
 msgid "Show categories &amp; products"
 msgstr "نمایش دسته‌ها و محصولات"
@@ -28768,10 +28800,6 @@ msgstr "منطقه وجود ندارد !"
 #: includes/admin/settings/class-wc-settings-shipping.php:118
 msgid "Calculations"
 msgstr "محاسبات"
-
-#: includes/admin/settings/class-wc-settings-advanced.php:219
-msgid "Set default payment method"
-msgstr "تنظیم روش پرداخت پیش‌فرض"
 
 #: includes/admin/importers/class-wc-product-csv-importer-controller.php:730
 #: includes/admin/settings/class-wc-settings-advanced.php:258
@@ -28792,6 +28820,10 @@ msgstr "تنظیم روش پرداخت پیش‌فرض"
 #: assets/client/blocks/order-confirmation-downloads-wrapper.js:1
 msgid "Downloads"
 msgstr "دانلودها"
+
+#: includes/admin/settings/class-wc-settings-advanced.php:219
+msgid "Set default payment method"
+msgstr "تنظیم روش پرداخت پیش‌فرض"
 
 #: includes/admin/meta-boxes/views/html-order-items.php:294
 msgid "This order is no longer editable."
@@ -30398,10 +30430,6 @@ msgstr "برای اتصال به %1$s شما نیاز به ورود دارید. 
 msgid "You must be logged in to checkout."
 msgstr "برای پرداخت باید وارد شوید."
 
-#: templates/myaccount/my-address.php:46
-msgid "The following addresses will be used on the checkout page by default."
-msgstr "آدرس‌های زیر به طور پیش‌فرض در صفحه پرداخت مورد استفاده قرار مي‌گیرد."
-
 #: templates/myaccount/form-lost-password.php:25
 msgid "Lost your password? Please enter your username or email address. You will receive a link to create a new password via email."
 msgstr "گذرواژه خود را فراموش کرده اید؟ نام کاربری یا ایمیل خود را وارد کنید. یک لینک برای ساختن گذرواژه جدید در ایمیل خود دریافت خواهید کرد."
@@ -30885,6 +30913,10 @@ msgstr "مسترد &ndash; %s"
 #: includes/wc-notice-functions.php:236
 msgid "This function should not be called before woocommerce_init."
 msgstr "This function should not be called before woocommerce_init."
+
+#: templates/myaccount/my-address.php:46
+msgid "The following addresses will be used on the checkout page by default."
+msgstr "آدرس‌های زیر به طور پیش‌فرض در صفحه پرداخت مورد استفاده قرار می‌گیرد."
 
 #: templates/cart/cross-sells.php:24
 msgid "You may be interested in&hellip;"
@@ -31375,12 +31407,6 @@ msgstr "خطای معتبرسازی: مقادیر پی‌پال همخوانی �
 msgid "Payment method description that the customer will see on your website."
 msgstr "توضیحات پرداخت برای خریدار در هنگام انتخاب درگاه نمایش داده می‌شود."
 
-#: includes/gateways/bacs/class-wc-gateway-bacs.php:111
-#: includes/gateways/cheque/class-wc-gateway-cheque.php:80
-#: includes/gateways/cod/class-wc-gateway-cod.php:100
-msgid "Payment method description that the customer will see on your checkout."
-msgstr "توضیحات پرداخت كه برای خریدار هنگام انتخاب روش پرداخت نمایش داده می‌شود."
-
 #: includes/gateways/paypal/includes/settings-paypal.php:78
 msgid "Optionally enable \"Payment Data Transfer\" (Profile > Profile and Settings > My Selling Tools > Website Preferences) and then copy your identity token here. This will allow payments to be verified without the need for PayPal IPN."
 msgstr "برای فعال کردن \"انتقال داده‌های پرداخت\" به (پروفایل > پروفایل و تنظیمات > ابزار فروش من > عملکرد وب سایت) رفته و رمز هویت را در اینجا کپی کنید. اینکار اجازه پرداخت تایید شده بدون نیاز به IPN پی پال را خواهد داد."
@@ -31518,10 +31544,6 @@ msgstr "نرخ‌های اضافی"
 msgid "How to calculate delivery charges"
 msgstr "چگونه هزینه‌های تحویل را محاسبه کنید"
 
-#: includes/shipping/legacy-local-delivery/class-wc-shipping-legacy-local-delivery.php:160
-msgid "What fee do you want to charge for local delivery, disregarded if you choose free. Leave blank to disable."
-msgstr "چه هزینه ای می خواهید برای تحویل محلی در نظر بگیرید. اگر نه خالی بگذارید برای غیر فعال کردن"
-
 #: includes/gateways/bacs/class-wc-gateway-bacs.php:436
 msgid "Branch sort"
 msgstr "مرتب‌سازی بر اساس شعبه"
@@ -31565,6 +31587,10 @@ msgstr "PayPal API برای بازپرداخت وارد کنید از طریق �
 msgid "Send shipping details to PayPal instead of billing."
 msgstr "ارسال جزئیات حمل و نقل بجای صورت حساب به پی پال"
 
+#: includes/gateways/paypal/includes/settings-paypal.php:86
+msgid "Please enter a prefix for your invoice numbers. If you use your PayPal account for multiple stores ensure this prefix is unique as PayPal will not allow orders with the same invoice number."
+msgstr "خواهشمندیم پیشوند برای شماره فاکتور خود را وارد کنید. اگر شما استفاده از حساب پی پال خود را برای فروشگاه‌های مختلف استفاده می کنید، مطمئن شوید این پیشوند منحصر به فرد است در غیر اینصورت پی پال سفارشات را با شماره صورتحساب درج شده را اجازه نمی دهد."
+
 #: includes/gateways/paypal/includes/settings-paypal.php:34
 msgid "Please enter your PayPal email address; this is needed in order to take payment."
 msgstr "خواهشمندیم ایمیل پی پال خود را وارد کنید. این کار برای پرداخت لازم است."
@@ -31582,10 +31608,6 @@ msgstr "سفارش #%1$s به عنوان بازپرداختی برچسب خور�
 #: includes/gateways/paypal/includes/class-wc-gateway-paypal-ipn-handler.php:176
 msgid "Validation error: PayPal IPN response from a different email address (%s)."
 msgstr "خطای معتبرسازی: مقادیر پی پال همخوانی ندارند. (%s)"
-
-#: includes/gateways/paypal/includes/settings-paypal.php:86
-msgid "Please enter a prefix for your invoice numbers. If you use your PayPal account for multiple stores ensure this prefix is unique as PayPal will not allow orders with the same invoice number."
-msgstr "خواهشمندیم پیشوند برای شماره فاکتور خود را وارد کنید. اگر شما استفاده از حساب پی پال خود را برای فروشگاه‌های مختلف استفاده می کنید، مطمئن شوید این پیشوند منحصر به فرد است در غیر اینصورت پی پال سفارشات را با شماره صورتحساب درج شده را اجازه نمی دهد."
 
 #. translators: %s: Amount.
 #: includes/gateways/paypal/includes/class-wc-gateway-paypal-ipn-handler.php:159
@@ -31777,9 +31799,19 @@ msgstr "ایمیل‌های یادداشت خریدار وقتی شما یک ی�
 msgid "Customer note"
 msgstr "یادداشت خریدار"
 
+#: includes/gateways/bacs/class-wc-gateway-bacs.php:111
+#: includes/gateways/cheque/class-wc-gateway-cheque.php:80
+#: includes/gateways/cod/class-wc-gateway-cod.php:100
+msgid "Payment method description that the customer will see on your checkout."
+msgstr "توضیحات پرداخت که برای خریدار هنگام انتخاب روش پرداخت نمایش داده می‌شود."
+
 #: includes/emails/class-wc-email.php:1074
 msgid "Copy file to theme"
 msgstr "کپی فايل در پوسته"
+
+#: includes/shipping/legacy-local-delivery/class-wc-shipping-legacy-local-delivery.php:160
+msgid "What fee do you want to charge for local delivery, disregarded if you choose free. Leave blank to disable."
+msgstr "چه هزینه‌ای را برای دریافت حضوری می‌خواهید در نظر بگیرید، در صورت انتخاب رایگان، صرف نظر می‌شود. برای غیرفعال کردن آن را خالی بگذارید."
 
 #: includes/class-wc-ajax.php:329
 msgid "Sorry, your session has expired."
@@ -32331,15 +32363,6 @@ msgstr "برچسب‌ها"
 msgid "Sorry, coupon \"%s\" has already been applied and cannot be used in conjunction with other coupons."
 msgstr "ببخشید، كد تخفيف \"%s\" در حال استفاده است و نمی تواند همراه با سایر كدهای تخفیف استفاده شود."
 
-#: includes/class-wc-frontend-scripts.php:593
-#: templates/single-product/add-to-cart/variation.php:22
-msgid "Sorry, this product is unavailable. Please choose a different combination."
-msgstr "با عرض پوزش، این كالا در دسترس نیست. لطفاً ترکیب دیگری را انتخاب کنید."
-
-#: includes/class-wc-frontend-scripts.php:591
-msgid "Sorry, no products matched your selection. Please choose a different combination."
-msgstr "با عرض پوزش، هیچ كالايی مطابق انتخاب شما یافت نشد. لطفاً ترکیب دیگری را انتخاب کنید."
-
 #: includes/class-wc-form-handler.php:297
 msgid "This email address is already registered."
 msgstr "این آدرس ایمیل قبلا در سایت ثبت شده است."
@@ -32416,10 +32439,6 @@ msgstr "مجوز‌ها گم شده اند."
 #: includes/class-wc-download-handler.php:167
 msgid "Sorry, you have reached your download limit for this file"
 msgstr "متاسفانه دسترسی شما برای دانلود این فایل محدود شده است."
-
-#: includes/class-wc-download-handler.php:178
-msgid "Sorry, this download has expired"
-msgstr "متاسفانه اين دانلود منقضی شده است."
 
 #. translators: %s: shop cart url
 #: includes/class-wc-checkout.php:1226
@@ -32554,10 +32573,6 @@ msgstr "Valle"
 #: includes/class-wc-cart.php:771
 msgid "Sorry, \"%s\" is not in stock. Please edit your cart and try again. We apologize for any inconvenience caused."
 msgstr "متاسفانه موجودی انبار کمتر از %s است. خواهشمندیم سبد خرید خود را ویرایش کنید. عذرخواهی ما را بابت این مشکل پذیرا باشید."
-
-#: includes/class-wc-form-handler.php:771
-msgid "Your order can no longer be cancelled. Please contact us if you need assistance."
-msgstr "سفارش شما دیگر قابل لغو نیست. در صورت نياز به کمک، با ما تماس بگیرید."
 
 #: includes/abstracts/abstract-wc-order.php:1247
 #: includes/class-wc-coupon.php:1045
@@ -32836,6 +32851,19 @@ msgid "Coupon"
 msgid_plural "Coupons"
 msgstr[0] "کد تخفیف"
 
+#: includes/class-wc-form-handler.php:771
+msgid "Your order can no longer be cancelled. Please contact us if you need assistance."
+msgstr "سفارش شما دیگر قابل لغو نیست. در صورت نیاز به کمک، با ما تماس بگیرید."
+
+#: includes/class-wc-frontend-scripts.php:593
+#: templates/single-product/add-to-cart/variation.php:22
+msgid "Sorry, this product is unavailable. Please choose a different combination."
+msgstr "با عرض پوزش، این کالا در دسترس نیست. لطفاً ترکیب دیگری را انتخاب کنید."
+
+#: includes/class-wc-frontend-scripts.php:591
+msgid "Sorry, no products matched your selection. Please choose a different combination."
+msgstr "با عرض پوزش، هیچ کالايی مطابق انتخاب شما یافت نشد. لطفاً ترکیب دیگری را انتخاب کنید."
+
 #: includes/class-wc-cart.php:1085
 msgid "Please choose product options&hellip;"
 msgstr "لطفا گزينه‌های محصول را انتخاب کنيد&hellip;"
@@ -32843,6 +32871,10 @@ msgstr "لطفا گزينه‌های محصول را انتخاب کنيد&helli
 #: includes/class-wc-download-handler.php:482
 msgid "File not found"
 msgstr "فایل پیدا نشد"
+
+#: includes/class-wc-download-handler.php:178
+msgid "Sorry, this download has expired"
+msgstr "متاسفانه این دانلود منقضی شده است"
 
 #: includes/admin/views/html-admin-page-status-report.php:85
 msgid "The root URL of your site."
@@ -36457,6 +36489,22 @@ msgstr "آدرسی برای حمل و نقل تنظیم نشده."
 msgid "No billing address set."
 msgstr "آدرسی برای صورت حساب تنظیم نشده."
 
+#: includes/admin/meta-boxes/views/html-product-data-general.php:182
+#: includes/admin/views/html-bulk-edit-product.php:79
+#: includes/admin/views/html-quick-edit-product.php:55
+msgid "Shipping only"
+msgstr "فقط حمل و نقل"
+
+#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:521
+msgid "Load shipping address"
+msgstr "بارگزاری آدرس حمل و نقل"
+
+#. translators: %s: date
+#: includes/admin/class-wc-admin-webhooks.php:74
+#: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:516
+msgid "Webhook created on %s"
+msgstr "وب هوک در %s ساخته شد"
+
 #: includes/admin/class-wc-admin-setup-wizard.php:241
 #: includes/admin/class-wc-admin-setup-wizard.php:1020
 #: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:518
@@ -36494,22 +36542,6 @@ msgstr "آدرسی برای صورت حساب تنظیم نشده."
 #: assets/client/blocks/wc-blocks-data.js:7
 msgid "Shipping"
 msgstr "حمل و نقل"
-
-#: includes/admin/meta-boxes/views/html-product-data-general.php:182
-#: includes/admin/views/html-bulk-edit-product.php:79
-#: includes/admin/views/html-quick-edit-product.php:55
-msgid "Shipping only"
-msgstr "فقط حمل و نقل"
-
-#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:521
-msgid "Load shipping address"
-msgstr "بارگزاری آدرس حمل و نقل"
-
-#. translators: %s: date
-#: includes/admin/class-wc-admin-webhooks.php:74
-#: includes/rest-api/Controllers/Version1/class-wc-rest-webhooks-v1-controller.php:516
-msgid "Webhook created on %s"
-msgstr "وب هوک در %s ساخته شد"
 
 #: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:248
 msgid "No categories"
@@ -37387,24 +37419,6 @@ msgid "%s coupon moved to the Trash."
 msgid_plural "%s coupons moved to the Trash."
 msgstr[0] "کدهای تخفیف %s از زباله‌دان بازیافت شدند."
 
-#: includes/abstracts/abstract-wc-order.php:2427
-#: includes/admin/class-wc-admin-dashboard.php:453
-#: includes/admin/list-tables/class-wc-admin-list-table-orders.php:122
-#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:212
-#: includes/admin/reports/class-wc-report-downloads.php:87
-#: includes/admin/reports/class-wc-report-downloads.php:221
-#: includes/gateways/paypal/includes/class-wc-gateway-paypal-request.php:310
-#: includes/wc-account-functions.php:202 src/Internal/Admin/Orders/Edit.php:154
-#: src/Internal/Admin/Orders/ListTable.php:861
-#: templates/myaccount/my-orders.php:14
-#: assets/client/admin/chunks/analytics-report-categories.js:1
-#: assets/client/admin/chunks/analytics-report-coupons.js:1
-#: assets/client/admin/chunks/analytics-report-orders.js:1
-#: assets/client/admin/chunks/analytics-report-products.js:1
-msgid "Order"
-msgid_plural "Orders"
-msgstr[0] "سفارش"
-
 #. translators: %s: coupon count
 #: includes/admin/class-wc-admin-post-types.php:249
 msgid "%s coupon permanently deleted."
@@ -37430,6 +37444,24 @@ msgstr[0] "کدتخفیف %s به‌روز شد."
 msgid "%s order restored from the Trash."
 msgid_plural "%s orders restored from the Trash."
 msgstr[0] "%s سفارش‌ها از سطل بازیافت بازیابی شدند."
+
+#: includes/abstracts/abstract-wc-order.php:2427
+#: includes/admin/class-wc-admin-dashboard.php:453
+#: includes/admin/list-tables/class-wc-admin-list-table-orders.php:122
+#: includes/admin/meta-boxes/class-wc-meta-box-order-data.php:212
+#: includes/admin/reports/class-wc-report-downloads.php:87
+#: includes/admin/reports/class-wc-report-downloads.php:221
+#: includes/gateways/paypal/includes/class-wc-gateway-paypal-request.php:310
+#: includes/wc-account-functions.php:202 src/Internal/Admin/Orders/Edit.php:154
+#: src/Internal/Admin/Orders/ListTable.php:861
+#: templates/myaccount/my-orders.php:14
+#: assets/client/admin/chunks/analytics-report-categories.js:1
+#: assets/client/admin/chunks/analytics-report-coupons.js:1
+#: assets/client/admin/chunks/analytics-report-orders.js:1
+#: assets/client/admin/chunks/analytics-report-products.js:1
+msgid "Order"
+msgid_plural "Orders"
+msgstr[0] "سفارش"
 
 #. translators: %s: order count
 #. translators: %s: orders count
@@ -37546,12 +37578,6 @@ msgstr "بزن بریم !"
 msgid "Billing"
 msgstr "صورت حساب"
 
-#: includes/admin/list-tables/class-wc-admin-list-table-coupons.php:84
-#: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:91
-#: includes/admin/reports/class-wc-report-sales-by-date.php:741
-msgid "Coupon amount"
-msgstr "میزان تخفیف"
-
 #: includes/admin/class-wc-admin-dashboard.php:455
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:127
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:262
@@ -37586,6 +37612,12 @@ msgstr "میزان تخفیف"
 #: assets/client/blocks/order-confirmation-totals.js:1
 msgid "Total"
 msgstr "مجموع"
+
+#: includes/admin/list-tables/class-wc-admin-list-table-coupons.php:84
+#: includes/admin/meta-boxes/class-wc-meta-box-coupon-data.php:91
+#: includes/admin/reports/class-wc-report-sales-by-date.php:741
+msgid "Coupon amount"
+msgstr "میزان تخفیف"
 
 #: includes/admin/importers/class-wc-product-csv-importer-controller.php:513
 #: includes/admin/importers/class-wc-product-csv-importer-controller.php:677
@@ -38173,10 +38205,6 @@ msgstr "پروژه در وردپرس"
 msgid "Should you need help understanding, using, or extending WooCommerce, <a href=\"%s\">please read our documentation</a>. You will find all kinds of resources including snippets, tutorials and much more."
 msgstr "اگر شما نیازمند کمک درک،کاربرد یا توسعه ووکامرس دارید، <a href=\"%s\">s بخوانید مستندات مارا</a>. می توانید همه نوع منابع شامل snippets، آموزش‌ها و موارد بیشتر را بیابید."
 
-#: includes/shipping/legacy-local-delivery/class-wc-shipping-legacy-local-delivery.php:141
-msgid "Local delivery"
-msgstr "تحویل محلی"
-
 #: includes/admin/class-wc-admin-menus.php:189
 msgid "WooCommerce status"
 msgstr "وضعیت ووکامرس"
@@ -38481,42 +38509,6 @@ msgstr "امکان دسترسی وجود ندارد - احتمالا کاربر 
 msgid "Reports"
 msgstr "گزارش‌ها"
 
-#. translators: %s: order count
-#: includes/admin/class-wc-admin-dashboard.php:362
-msgid "<strong>%s product</strong> out of stock"
-msgid_plural "<strong>%s products</strong> out of stock"
-msgstr[0] "<strong>%s محصول</strong> در انبار موجود نیست"
-
-#. translators: %s: order count
-#: includes/admin/class-wc-admin-dashboard.php:351
-msgid "<strong>%s product</strong> low in stock"
-msgid_plural "<strong>%s products</strong> low in stock"
-msgstr[0] "<strong>%s محصول</strong> در انبار کم است."
-
-#. translators: %s: order count
-#: includes/admin/class-wc-admin-dashboard.php:242
-msgid "<strong>%s order</strong> awaiting processing"
-msgid_plural "<strong>%s orders</strong> awaiting processing"
-msgstr[0] "<strong>%s سفارش</strong> در انتظار پردازش"
-
-#. translators: 1: current item count
-#. translators: %d: downloads count
-#: includes/admin/helper/class-wc-helper.php:391
-#: includes/admin/helper/views/html-main.php:140
-#: includes/class-wc-emails.php:453
-#: includes/legacy/abstract-wc-legacy-order.php:508
-#: includes/wc-account-functions.php:224
-#: includes/wc-template-functions.php:3528
-#: src/Internal/Admin/Logging/FileV2/FileListTable.php:70
-#: src/Internal/Admin/Logging/PageController.php:377
-#: assets/client/admin/app/index.js:2 assets/client/admin/chunks/9941.js:1
-#: assets/client/admin/chunks/analytics-report-downloads.js:1
-#: assets/client/admin/chunks/marketplace.js:1
-#: assets/client/blocks/order-confirmation-downloads.js:1
-msgid "Download"
-msgid_plural "Downloads"
-msgstr[0] "دانلود"
-
 #: includes/admin/importers/views/html-csv-import-done.php:77
 #: includes/admin/list-tables/class-wc-admin-list-table-orders.php:259
 #: includes/admin/meta-boxes/views/html-order-items.php:407
@@ -38556,6 +38548,42 @@ msgstr[0] "دانلود"
 msgid "Product"
 msgid_plural "Products"
 msgstr[0] "محصول"
+
+#. translators: %s: order count
+#: includes/admin/class-wc-admin-dashboard.php:362
+msgid "<strong>%s product</strong> out of stock"
+msgid_plural "<strong>%s products</strong> out of stock"
+msgstr[0] "<strong>%s محصول</strong> در انبار موجود نیست"
+
+#. translators: %s: order count
+#: includes/admin/class-wc-admin-dashboard.php:351
+msgid "<strong>%s product</strong> low in stock"
+msgid_plural "<strong>%s products</strong> low in stock"
+msgstr[0] "<strong>%s محصول</strong> در انبار کم است."
+
+#. translators: %s: order count
+#: includes/admin/class-wc-admin-dashboard.php:242
+msgid "<strong>%s order</strong> awaiting processing"
+msgid_plural "<strong>%s orders</strong> awaiting processing"
+msgstr[0] "<strong>%s سفارش</strong> در انتظار پردازش"
+
+#. translators: 1: current item count
+#. translators: %d: downloads count
+#: includes/admin/helper/class-wc-helper.php:391
+#: includes/admin/helper/views/html-main.php:140
+#: includes/class-wc-emails.php:453
+#: includes/legacy/abstract-wc-legacy-order.php:508
+#: includes/wc-account-functions.php:224
+#: includes/wc-template-functions.php:3528
+#: src/Internal/Admin/Logging/FileV2/FileListTable.php:70
+#: src/Internal/Admin/Logging/PageController.php:377
+#: assets/client/admin/app/index.js:2 assets/client/admin/chunks/9941.js:1
+#: assets/client/admin/chunks/analytics-report-downloads.js:1
+#: assets/client/admin/chunks/marketplace.js:1
+#: assets/client/blocks/order-confirmation-downloads.js:1
+msgid "Download"
+msgid_plural "Downloads"
+msgstr[0] "دانلود"
 
 #: includes/admin/class-wc-admin-assets.php:387
 #: includes/admin/meta-boxes/views/html-product-attribute-inner.php:103
@@ -38617,42 +38645,6 @@ msgstr "قبل از درخواست کمک، توصیه می‌کنیم صفحه 
 msgid "Duplicate"
 msgstr "تکثیر"
 
-#: includes/admin/class-wc-admin-setup-wizard.php:873
-#: includes/shipping/legacy-free-shipping/class-wc-shipping-legacy-free-shipping.php:108
-msgid "Free Shipping"
-msgstr "حمل و نقل رایگان"
-
-#: includes/shipping/legacy-local-pickup/class-wc-shipping-legacy-local-pickup.php:112
-#: includes/shipping/local-pickup/class-wc-shipping-local-pickup.php:39
-#: includes/shipping/local-pickup/class-wc-shipping-local-pickup.php:114
-#: src/Blocks/Shipping/PickupLocation.php:30
-#: src/Blocks/Shipping/PickupLocation.php:162
-#: assets/client/blocks/cart-frontend.js:2 assets/client/blocks/cart.js:2
-#: assets/client/blocks/checkout-frontend.js:2
-#: assets/client/blocks/checkout.js:2
-#: assets/client/blocks/mini-cart-contents.js:1
-#: assets/client/blocks/wc-blocks-data.js:7
-msgid "Local pickup"
-msgstr "تحویل محلی"
-
-#: includes/admin/class-wc-admin-permalink-settings.php:74
-#: includes/wc-core-functions.php:2159 includes/wc-update-functions.php:80
-msgctxt "slug"
-msgid "product-category"
-msgstr "product-category"
-
-#: includes/admin/class-wc-admin-permalink-settings.php:193
-#: includes/admin/class-wc-admin-permalink-settings.php:196
-#: includes/wc-core-functions.php:2158 includes/wc-update-functions.php:90
-msgctxt "slug"
-msgid "product"
-msgstr "product"
-
-#: includes/admin/class-wc-admin-permalink-settings.php:105
-msgctxt "default-slug"
-msgid "product"
-msgstr "product"
-
 #: includes/admin/class-wc-admin-attributes.php:283
 #: includes/admin/helper/class-wc-helper.php:184
 #: includes/admin/helper/views/html-section-account.php:3
@@ -38676,6 +38668,29 @@ msgstr "product"
 #: assets/client/blocks/checkout.js:10
 msgid "Update"
 msgstr "بروزرسانی"
+
+#: includes/admin/class-wc-admin-setup-wizard.php:873
+#: includes/shipping/legacy-free-shipping/class-wc-shipping-legacy-free-shipping.php:108
+msgid "Free Shipping"
+msgstr "حمل و نقل رایگان"
+
+#: includes/admin/class-wc-admin-permalink-settings.php:74
+#: includes/wc-core-functions.php:2159 includes/wc-update-functions.php:80
+msgctxt "slug"
+msgid "product-category"
+msgstr "product-category"
+
+#: includes/admin/class-wc-admin-permalink-settings.php:193
+#: includes/admin/class-wc-admin-permalink-settings.php:196
+#: includes/wc-core-functions.php:2158 includes/wc-update-functions.php:90
+msgctxt "slug"
+msgid "product"
+msgstr "product"
+
+#: includes/admin/class-wc-admin-permalink-settings.php:105
+msgctxt "default-slug"
+msgid "product"
+msgstr "product"
 
 #: includes/admin/class-wc-admin-permalink-settings.php:104
 #: includes/admin/class-wc-admin-permalink-settings.php:203
@@ -38873,6 +38888,26 @@ msgstr "هیچ صفتی موجود نیست."
 msgid "Are you sure you want to delete this attribute?"
 msgstr "آیا میخواهید این ویژگی را پاک کنید؟"
 
+#: includes/admin/class-wc-admin-menus.php:123
+#: includes/admin/views/html-admin-page-status-report.php:692
+#: includes/class-wc-install.php:2161
+#: includes/react-admin/connect-existing-pages.php:35
+#: src/Admin/Features/Navigation/CoreMenu.php:126
+#: src/Internal/Admin/Analytics.php:305
+#: src/Internal/Admin/Logging/PageController.php:211
+#: src/Internal/Admin/SettingsNavigationFeature.php:86
+#: assets/client/admin/app/index.js:2 assets/client/admin/chunks/7970.js:2
+#: assets/client/admin/chunks/customize-store.js:1
+#: assets/client/admin/chunks/edit-product-page.js:1
+#: assets/client/admin/chunks/homescreen.js:1
+#: assets/client/admin/product-editor/index.js:2
+#: assets/client/blocks/cart.js:16 assets/client/blocks/coming-soon.js:1
+#: assets/client/blocks/mini-cart.js:1 assets/client/blocks/price-filter.js:5
+#: assets/client/blocks/product-collection.js:12
+#: assets/client/blocks/product-filter-price.js:1
+msgid "Settings"
+msgstr "پیکربندی"
+
 #: includes/class-wc-order-item-product.php:230
 #: includes/legacy/abstract-wc-legacy-order.php:164
 msgid "Backordered"
@@ -38895,26 +38930,6 @@ msgstr "رایگان !"
 #: assets/client/blocks/wc-blocks-data.js:7
 msgid "Fee"
 msgstr "هزینه نگهداری"
-
-#: includes/admin/class-wc-admin-menus.php:123
-#: includes/admin/views/html-admin-page-status-report.php:692
-#: includes/class-wc-install.php:2161
-#: includes/react-admin/connect-existing-pages.php:35
-#: src/Admin/Features/Navigation/CoreMenu.php:126
-#: src/Internal/Admin/Analytics.php:305
-#: src/Internal/Admin/Logging/PageController.php:211
-#: src/Internal/Admin/SettingsNavigationFeature.php:86
-#: assets/client/admin/app/index.js:2 assets/client/admin/chunks/7970.js:2
-#: assets/client/admin/chunks/customize-store.js:1
-#: assets/client/admin/chunks/edit-product-page.js:1
-#: assets/client/admin/chunks/homescreen.js:1
-#: assets/client/admin/product-editor/index.js:2
-#: assets/client/blocks/cart.js:16 assets/client/blocks/coming-soon.js:1
-#: assets/client/blocks/mini-cart.js:1 assets/client/blocks/price-filter.js:5
-#: assets/client/blocks/product-collection.js:12
-#: assets/client/blocks/product-filter-price.js:1
-msgid "Settings"
-msgstr "پیکربندی"
 
 #. translators: %s: average rating
 #. translators: %s: rating
@@ -38979,6 +38994,23 @@ msgstr "فروشگاه‌محور با دسته‌بندی"
 #: includes/admin/class-wc-admin-permalink-settings.php:121
 msgid "Shop base"
 msgstr "فروشگاه‌محور"
+
+#: includes/shipping/legacy-local-pickup/class-wc-shipping-legacy-local-pickup.php:112
+#: includes/shipping/local-pickup/class-wc-shipping-local-pickup.php:39
+#: includes/shipping/local-pickup/class-wc-shipping-local-pickup.php:114
+#: src/Blocks/Shipping/PickupLocation.php:30
+#: src/Blocks/Shipping/PickupLocation.php:162
+#: assets/client/blocks/cart-frontend.js:2 assets/client/blocks/cart.js:2
+#: assets/client/blocks/checkout-frontend.js:2
+#: assets/client/blocks/checkout.js:2
+#: assets/client/blocks/mini-cart-contents.js:1
+#: assets/client/blocks/wc-blocks-data.js:7
+msgid "Local pickup"
+msgstr "دریافت حضوری"
+
+#: includes/shipping/legacy-local-delivery/class-wc-shipping-legacy-local-delivery.php:141
+msgid "Local delivery"
+msgstr "دریافت حضوری"
 
 #: i18n/states.php:1507
 msgid "Catanduanes"

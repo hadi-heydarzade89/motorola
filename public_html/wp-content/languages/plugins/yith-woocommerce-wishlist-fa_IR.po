@@ -2,95 +2,560 @@
 # This file is distributed under the same license as the Plugins - YITH WooCommerce Wishlist - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2021-11-02 07:11:59+0000\n"
+"PO-Revision-Date: 2024-07-02 08:22:25+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/4.0.0-alpha.1\n"
+"X-Generator: GlotPress/4.0.1\n"
 "Language: fa\n"
 "Project-Id-Version: Plugins - YITH WooCommerce Wishlist - Stable (latest release)\n"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:154
+#: plugin-fw/includes/class-yith-post-type-admin.php:470
+msgid "Reset filters"
+msgstr "بازنشانی فیلترها"
+
+#. translators: Hidden accessibility text.
+#: plugin-fw/includes/class-yith-post-type-admin.php:414
+msgid "Show more details"
+msgstr "نمایش جزئیات بیشتر"
+
+#: includes/class-yith-wcwl-admin.php:305
+msgid "The premium version of the plugin allows you to structure effective marketing strategies and increase conversions. Some examples? You can send promotional emails and offer a discount to all users who have a specific product on their wishlist, notify customers when a product on their wishlist is on sale, or notify them when an out-of-stock product is available again in your shop."
+msgstr "نسخه پریمیوم این افزونه به شما امکان می دهد استراتژی های بازاریابی موثر را ساختاردهی کنید و تبدیل ها را افزایش دهید. چند نمونه؟ می‌توانید ایمیل‌های تبلیغاتی ارسال کنید و به همه کاربرانی که یک محصول خاص را در لیست علاقه‌مندی‌های خود دارند، تخفیف بدهید، هنگامی که محصولی در لیست علاقه‌مندی‌هایشان در حال فروش است به مشتریان اطلاع دهید، یا زمانی که کالای بدون موجودی دوباره در فروشگاه شما در دسترس است، به آنها اطلاع دهید. ."
+
+#: includes/class-yith-wcwl-admin.php:304
+msgid "Create targeted promotions and take advantage of the wishlists to increase conversions"
+msgstr "تبلیغات هدفمند ایجاد کنید و از لیست علاقه مندی ها برای افزایش تبدیل ها استفاده کنید"
+
+#: includes/class-yith-wcwl-admin.php:301
+msgid "In the premium version, you can analyze the wishlists of each user in your shop and get a clear overview of the most popular products in your shop."
+msgstr "در نسخه پریمیوم، می توانید لیست علاقه مندی های هر کاربر را در فروشگاه خود تجزیه و تحلیل کنید و نمای کلی واضحی از محبوب ترین محصولات فروشگاه خود داشته باشید."
+
+#: includes/class-yith-wcwl-admin.php:300
+msgid "Analyze your customers' wishlists and the most popular products in your shop"
+msgstr "لیست خواسته های مشتریان و محبوب ترین محصولات فروشگاه خود را تجزیه و تحلیل کنید"
+
+#: includes/class-yith-wcwl-admin.php:297
+msgid "Give instant access to the wishlist and show a preview of the products added to it by inserting the widget in the site header."
+msgstr "به لیست علاقه مندی ها دسترسی فوری بدهید و با قرار دادن ویجت در هدر سایت، پیش نمایشی از محصولات اضافه شده به آن را نشان دهید."
+
+#: includes/class-yith-wcwl-admin.php:296
+msgid "Insert a wishlist widget in the header of your shop"
+msgstr "ویجت لیست علاقه مندی ها را در هدر فروشگاه خود درج کنید"
+
+#: includes/class-yith-wcwl-admin.php:293
+msgid "Choose which layout you prefer to display products in the wishlist for a more modern and 100% mobile-friendly user experience."
+msgstr "برای یک تجربه کاربری مدرن‌تر و 100% سازگار با موبایل، چیدمانی را که ترجیح می‌دهید برای نمایش محصولات در لیست علاقه‌مندان انتخاب کنید."
+
+#: includes/class-yith-wcwl-admin.php:292
+msgid "Different wishlist layouts"
+msgstr "طرح بندی های مختلف لیست علاقه مندی ها"
+
+#: includes/class-yith-wcwl-admin.php:289
+msgid "Allow users to rename wishlists, choose whether to make them public or private, move products from one list to another, and more."
+msgstr "به کاربران اجازه دهید نام لیست های علاقه مندی ها را تغییر دهند، انتخاب کنند که آنها را عمومی یا خصوصی کنند، محصولات را از یک لیست به لیست دیگر منتقل کنند و موارد دیگر."
+
+#: includes/class-yith-wcwl-admin.php:288
+msgid "Advanced wishlist management"
+msgstr "مدیریت لیست علاقه مندی های پیشرفته"
+
+#: includes/class-yith-wcwl-admin.php:285
+msgid "In the premium version, your customers can create a wishlist for their birthday, Christmas, a graduation party, etc."
+msgstr "در نسخه پریمیوم، مشتریان شما می توانند برای تولد، کریسمس، جشن فارغ التحصیلی و غیره لیست علاقه مندی ایجاد کنند."
+
+#: includes/class-yith-wcwl-admin.php:284
+msgid "Allow users to create multiple wishlists"
+msgstr "به کاربران اجازه ایجاد لیست های خواسته های متعدد را بدهید"
+
+#: includes/class-yith-wcwl-admin.php:400
+msgctxt "[YOUR STORE TOOLS TAB] Description for plugin Recover Abandoned Cart"
+msgid "Contact users who have added products to the cart without completing the order and try to recover lost sales."
+msgstr "با کاربرانی که بدون تکمیل سفارش محصولاتی را به سبد خرید اضافه کرده اند تماس بگیرید و سعی کنید فروش از دست رفته را بازیابی کنید."
+
+#: includes/class-yith-wcwl-admin.php:392
+msgctxt "[YOUR STORE TOOLS TAB] Description for plugin YITH WooCommerce Customize My Account"
+msgid "Customize the My Account page of your customers by creating custom sections with promotions and ad-hoc content based on your needs."
+msgstr "صفحه حساب من مشتریان خود را با ایجاد بخش های سفارشی با تبلیغات و محتوای ویژه بر اساس نیازهای خود سفارشی کنید."
+
+#: includes/class-yith-wcwl-admin.php:380
+msgctxt "[YOUR STORE TOOLS TAB] Description for plugin YITH WooCommerce Dynamic Pricing and Discounts"
+msgid "Increase conversions through dynamic discounts and price rules, and build powerful and targeted offers."
+msgstr "از طریق تخفیف های پویا و قوانین قیمت، تبدیل ها را افزایش دهید و پیشنهادات قدرتمند و هدفمند ایجاد کنید."
+
+#: includes/class-yith-wcwl-admin.php:368
+msgctxt "[YOUR STORE TOOLS TAB] Description for plugin YITH WooCommerce Product Add-Ons"
+msgid "Add paid or free advanced options to your product pages using fields like radio buttons, checkboxes, drop-downs, custom text inputs, and more."
+msgstr "با استفاده از فیلدهایی مانند دکمه های رادیویی، چک باکس ها، کشویی ها، ورودی های متن سفارشی و موارد دیگر، گزینه های پیشرفته پولی یا رایگان را به صفحات محصول خود اضافه کنید."
+
+#: includes/class-yith-wcwl-admin.php:356
+msgctxt "[YOUR STORE TOOLS TAB] Description for plugin YITH WooCommerce Request a Quote"
+msgid "Hide prices and/or the \"Add to cart\" button and let your customers request a custom quote for every product."
+msgstr "قیمت ها و/یا دکمه \"افزودن به سبد خرید\" را مخفی کنید و به مشتریان خود اجازه دهید برای هر محصول قیمت سفارشی درخواست کنند."
+
+#: includes/class-yith-wcwl-admin.php:343
+msgctxt "[YOUR STORE TOOLS TAB] Description for plugin YITH Bookings"
+msgid "Enable a booking/appointment system to manage renting or booking of services, rooms, houses, cars, accommodation facilities and so on."
+msgstr "یک سیستم رزرو/قرار ملاقات را برای مدیریت اجاره یا رزرو خدمات، اتاق‌ها، خانه‌ها، ماشین‌ها، امکانات اقامتی و غیره فعال کنید."
+
+#: includes/class-yith-wcwl-admin.php:331
+msgctxt "[YOUR STORE TOOLS TAB] Description for plugin YITH WooCommerce Ajax Product Filter"
+msgid "Help your customers to easily find the products they are looking for and improve the user experience of your shop."
+msgstr "به مشتریان خود کمک کنید تا محصولات مورد نظر خود را به راحتی پیدا کنند و تجربه کاربری فروشگاه شما را بهبود بخشند."
+
+#: includes/class-yith-wcwl-admin.php:319
+msgctxt "[YOUR STORE TOOLS TAB] Description for plugin YITH WooCommerce Gift Cards"
+msgid "Sell gift cards in your shop to increase your earnings and attract new customers."
+msgstr "برای افزایش درآمد و جذب مشتریان جدید، کارت های هدیه را در مغازه خود بفروشید."
+
+#: plugin-options/settings-options.php:26
+msgctxt "Tab description in plugin settings panel"
+msgid "Configure the wishlist page settings."
+msgstr "تنظیمات صفحه لیست علاقه مندی ها را پیکربندی کنید."
+
+#: plugin-options/settings-options.php:24
+msgctxt "Tab title in plugin settings panel"
+msgid "Wishlist page"
+msgstr "صفحه لیست علاقه مندی"
+
+#: plugin-options/settings-options.php:21
+msgctxt "Tab description in plugin settings panel"
+msgid "Configure the Add to wishlist settings."
+msgstr "تنظیمات افزودن به لیست علاقه مندی ها را پیکربندی کنید."
+
+#: plugin-options/settings-options.php:19
+msgctxt "Tab title in plugin settings panel"
+msgid "Add to wishlist"
+msgstr "افزودن به علاقه مندی ها"
+
+#: plugin-options/settings-options.php:16
+msgctxt "Tab description in plugin settings panel"
+msgid "Configure the plugin general settings."
+msgstr "تنظیمات کلی افزونه را پیکربندی کنید."
+
+#: plugin-options/settings-options.php:14
+msgctxt "Tab title in plugin settings panel"
+msgid "General"
+msgstr "عمومی"
+
+#: plugin-fw/includes/class-yit-plugin-panel-woocommerce.php:501
+#: plugin-fw/includes/class-yit-plugin-panel.php:1562
+msgid "Options saved!"
+msgstr "گزینه‌ها ذخیره شدند!"
+
+#: includes/class-yith-wcwl-admin.php:215
+msgctxt "Settings tab name"
+msgid "Settings"
+msgstr "تنظیمات"
+
+#: plugin-fw/templates/panel/v2/premium-tab.php:24
+msgctxt "Premium Tab"
+msgid "Check out the advanced features you can get by upgrading to premium!"
+msgstr "ویژگی‌های پیشرفته‌ای را که می‌توانید با ارتقا به پریمیوم دریافت کنید، بررسی کنید!"
+
+#: plugin-fw/templates/panel/v2/premium-tab.php:22
+msgctxt "Premium Tab"
+msgid "Upgrade to unlock premium features"
+msgstr "برای باز کردن قفل امکانات ویژه، اکنون ارتقا دهید"
+
+#: plugin-fw/templates/panel/premium-tab-content.php:124
+msgctxt "Premium Tab"
+msgid "Verified Customer"
+msgstr "مشتری تأیید شده"
+
+#: plugin-fw/templates/panel/premium-tab-content.php:98
+msgctxt "Premium Tab"
+msgid "100% Money-back guarantee"
+msgstr "100% ضمانت بازگشت وجه"
+
+#: plugin-fw/templates/panel/premium-tab-content.php:97
+msgctxt "Premium Tab"
+msgid "Technical support"
+msgstr "پشتیبانی فنی"
+
+#: plugin-fw/templates/panel/premium-tab-content.php:96
+msgctxt "Premium Tab"
+msgid "Regular updates"
+msgstr "به‌روزرسانی‌های منظم"
+
+#: plugin-fw/templates/panel/premium-tab-content.php:95
+msgctxt "Premium Tab"
+msgid "Advanced features"
+msgstr "ویژگی های پیشرفته"
+
+#: plugin-fw/templates/panel/premium-tab-content.php:83
+msgctxt "Premium Tab"
+msgid "Upgrade now to unlock premium features"
+msgstr "برای باز کردن قفل امکانات ویژه، اکنون ارتقا دهید"
+
+#. translators: %s is the discount percentage.
+#: plugin-fw/templates/panel/premium-tab-content.php:79
+msgctxt "Premium Tab"
+msgid "Upgrade now to get a %s%% off"
+msgstr "اکنون ارتقا دهید تا %s%% تخفیف دریافت کنید"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1305
+msgid ""
+"At first, I was hesitant to buy the premium version so I started with the free option.\n"
+"After a while, seeing the quality of the plugin and the results I was getting, I decided to give it a shot and switch to premium. No regrets!\n"
+"They have an amazing support team that is always there no matter how big or small your problem is. Do yourself a favor and stop using free plugins that kind of work and just buy whatever plugin you need from YITH."
+msgstr ""
+"در ابتدا، من برای خرید نسخه پریمیوم مردد بودم، بنابراین با گزینه رایگان شروع کردم.\n"
+"بعد از مدتی با دیدن کیفیت افزونه و نتایجی که می‌گرفتم، تصمیم گرفتم آن را امتحان کنم و به پریمیوم تغییر دهم. پشیمان نیست!\n"
+"آنها تیم پشتیبانی شگفت انگیزی دارند که همیشه وجود دارد، مهم نیست مشکل شما چقدر بزرگ یا کوچک باشد. به خودتان لطف کنید و استفاده از این نوع افزونه های رایگان را متوقف کنید و فقط هر افزونه ای را که نیاز دارید از YITH خریداری کنید."
+
+#: plugin-fw/templates/panel/v2/your-store-tools-tab.php:51
+msgctxt "Plugin in \"Your Store Tools\" tab"
+msgid "Get it"
+msgstr "آن را دریافت کنید"
+
+#: plugin-fw/templates/panel/v2/your-store-tools-tab.php:46
+msgctxt "Plugin in \"Your Store Tools\" tab"
+msgid "Active"
+msgstr "فعال"
+
+#: plugin-fw/templates/panel/v2/your-store-tools-tab.php:35
+msgctxt "Plugin in \"Your Store Tools\" tab"
+msgid "Best choice"
+msgstr "بهترین انتخاب"
+
+#: plugin-fw/templates/panel/v2/your-store-tools-tab.php:21
+msgid "Additional tools to improve UX, increase conversions, and loyalize customers."
+msgstr "ابزارهای اضافی برای بهبود UX، افزایش تبدیل و وفاداری مشتریان."
+
+#: plugin-fw/templates/panel/v2/your-store-tools-tab.php:17
+msgid "#1 Independent Seller of <mark>WooCommerce plugins</mark>"
+msgstr "شماره 1 فروشنده مستقل <mark>افزونه های ووکامرس</mark>"
+
+#: plugin-fw/templates/fields/ajax-orders.php:16
+msgid "Search for an order..."
+msgstr "جستجو برای سفارش..."
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:992
+msgctxt "Panel tab name"
+msgid "Your Store Tools"
+msgstr "ابزار فروشگاه شما"
+
+#: plugin-options/settings/general-options.php:62
+msgid "Enable the slider with linked products on the Wishlist page."
+msgstr "نوار لغزنده را با محصولات مرتبط در صفحه فهرست علاقه مندی ها فعال کنید."
+
+#: plugin-fw/templates/panel/premium-tab-content.php:45
+#: plugin-fw/templates/panel/v2/panel-option-label-tags.php:16
+msgctxt "Panel option tag"
+msgid "PREMIUM"
+msgstr "حرفه‌ای"
+
+#: plugin-fw/templates/panel/v2/panel-nav.php:36
+msgid "Collapse"
+msgstr "جمع کردن"
+
+#. translators: %s is the alternative action "Upload a file".
+#: plugin-fw/templates/fields/media.php:72
+msgid "Upload a file"
+msgstr "بارگذاری یک پرونده"
+
+#. translators: %s is the alternative action "Upload a file".
+#: plugin-fw/templates/fields/media.php:71
+msgid "Drag or %s"
+msgstr "بکشید یا %s"
+
+#: plugin-fw/templates/fields/media.php:53
+msgid "Enter URL"
+msgstr "آدرس را وارد کنید"
+
+#: plugin-fw/templates/fields/media.php:47
+msgid "Upload file"
+msgstr "آپلود فایل"
+
+#: plugin-fw/templates/fields/file.php:14
+msgid "Drag or upload a file."
+msgstr "یک فایل را بکشید یا آپلود کنید."
+
+#: plugin-fw/includes/class-yit-plugin-panel-woocommerce.php:555
+msgid "Options reset correctly!"
+msgstr "گزینه ها به درستی بازنشانی می شوند!"
+
+#: plugin-fw/includes/class-yit-assets.php:214
+msgid "You cannot drop files here."
+msgstr "شما نمی توانید فایل ها را در اینجا رها کنید."
+
+#: plugin-fw/includes/class-yit-assets.php:213
+msgid "No file provided."
+msgstr "فایلی ارائه نشد"
+
+#: plugin-fw/includes/class-yit-assets.php:212
+msgctxt "Title"
+msgid "Error"
+msgstr "خطا"
+
+#. translators: %s is the number of characters.
+#: plugin-fw/includes/class-yit-assets.php:200
+msgctxt "Enhanced select"
+msgid "Searching&hellip;"
+msgstr "درحال جستجو&hellip;"
+
+#. translators: %s is the number of characters.
+#: plugin-fw/includes/class-yit-assets.php:199
+msgctxt "Enhanced select"
+msgid "Please enter %s or more characters"
+msgstr "لطفا %s یا بیشتر نویسه را وارد کنید"
+
+#: plugin-fw/includes/class-yit-assets.php:197
+msgctxt "Enhanced select"
+msgid "Please enter 1 or more characters"
+msgstr "لطفا 1 یا چند نویسه وارد کنید"
+
+#: plugin-fw/includes/class-yit-assets.php:196
+msgctxt "Enhanced select"
+msgid "No matches found"
+msgstr "مورد مطابقی پیدا نشد"
+
+#. translators: %s is the number of steps.
+#: plugin-fw/templates/panel/welcome-modals/welcome.php:45
+msgid "Start with these %s steps:"
+msgstr "با این مراحل %s شروع کنید:"
+
+#: plugin-fw/templates/panel/welcome-modals/welcome.php:30
+msgid "Thank you for using our plugin"
+msgstr "از اینکه از افزونه ما استفاده کردید متشکریم"
+
+#: plugin-fw/templates/panel/welcome-modals/update.php:64
+#: plugin-fw/templates/panel/welcome-modals/welcome.php:60
+msgid "Got it, close this window"
+msgstr "فهمیدم، این پنجره را ببند"
+
+#: plugin-fw/templates/panel/welcome-modals/update.php:49
+msgid "Check the changelog >"
+msgstr "تغییرات را بررسی کنید >"
+
+#. translators: %s is the plugin version.
+#: plugin-fw/templates/panel/welcome-modals/update.php:44
+msgid "What's new in version %s"
+msgstr "موارد جدید در نسخه %s"
+
+#. translators: %s is the plugin version.
+#: plugin-fw/templates/panel/welcome-modals/update.php:34
+msgid "is successfully updated to version %s."
+msgstr "با موفقیت به نسخه %s به روز شد."
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1185
+msgid "See how it works before you start using it"
+msgstr "قبل از شروع استفاده از آن، نحوه عملکرد آن را ببینید"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1184
+msgid "Watch our <mark>\"First Steps\" video</mark>"
+msgstr "<mark>ویدیوی \"اولین مراحل\"</mark> ما را تماشا کنید"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1174
+msgid "Learn what you can really do with this powerful tool"
+msgstr "بیاموزید که واقعاً با این ابزار قدرتمند چه کاری می توانید انجام دهید"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:1173
+msgid "Read the <mark>plugin documentation</mark>"
+msgstr "<mark>مستندات افزونه</mark> را بخوانید"
+
+#: plugin-fw/templates/panel/premium-tab-content.php:66
+msgctxt "Premium Tab"
+msgid "Check the premium features >"
+msgstr "ویژگی های پریمیوم > را بررسی کنید"
+
+#: plugin-fw/templates/panel/help-tab.php:241
+msgctxt "Help tab support"
+msgid "Yes, I need help"
+msgstr "بله، من به کمک نیاز دارم"
+
+#: plugin-fw/templates/panel/help-tab.php:238
+msgctxt "Help tab support"
+msgid "Call or chat 24/7 with our support agents, or let our experts build your site."
+msgstr "24/7 با نمایندگان پشتیبانی ما تماس بگیرید یا چت کنید یا به کارشناسان ما اجازه دهید سایت شما را بسازند."
+
+#: plugin-fw/templates/panel/help-tab.php:235
+msgctxt "Help tab support"
+msgid "From DIY to full-service help"
+msgstr "از DIY تا کمک خدمات کامل"
+
+#: plugin-fw/templates/panel/help-tab.php:231
+#: plugin-fw/templates/panel/help-tab.php:233
+msgctxt "Help tab support"
+msgid "Need some help?"
+msgstr "به کمک نیاز دارید؟"
+
+#: plugin-fw/templates/panel/help-tab.php:220
+msgctxt "Help tab documentation"
+msgid "to learn how it works from the basics."
+msgstr "برای یادگیری نحوه کار از اصول اولیه."
+
+#: plugin-fw/templates/panel/help-tab.php:216
+#: plugin-fw/templates/panel/help-tab.php:218
+#: plugin-fw/templates/panel/help-tab.php:223
+msgctxt "Help tab documentation"
+msgid "Read the plugin documentation"
+msgstr "مستندات افزونه را بخوانید"
+
+#: plugin-fw/includes/class-yith-bh-onboarding.php:85
+msgid "It is not possible save the options"
+msgstr "امکان ذخیره گزینه ها وجود ندارد"
+
+#. translators: 1. Plugin name.
+#: plugin-fw/includes/class-yit-plugin-panel.php:920
+msgctxt "Help tab default title"
+msgid "Thank you for using %s!"
+msgstr "بابت استفاده از %s متشکریم!"
+
+#: init.php:173
+msgid "YITH WooCommerce Wishlist was deactivated as you're running an higher tier version of the same plugin."
+msgstr "لیست علاقه مندی های YITH ووکامرس غیرفعال شد زیرا شما نسخه بالاتری از همان افزونه را اجرا می کنید."
+
+#. translators: 1. Plugin(s) name(s).
+#: plugin-fw/yit-plugin.php:281
+msgid "%s was deactivated as you're running an higher tier version of the same plugin."
+msgid_plural "%s were deactivated as you're running higher tier versions of the same plugins."
+msgstr[0] "%s غیرفعال شد زیرا شما نسخه بالاتری از همان افزونه را اجرا می‌کنید."
+
+#: plugin-fw/templates/fields/ajax-terms.php:41
+msgid "Search for a category..."
+msgstr "جستجوی دسته بندی..."
+
+#: plugin-fw/templates/fields/ajax-posts.php:41
+msgid "Search for a post..."
+msgstr "جستجو برای پست..."
+
+#: plugin-fw/templates/fields/ajax-customers.php:41
+msgid "Search for a customer..."
+msgstr "جستجو برای مشتری ..."
+
+#: plugin-fw/templates/panel/help-tab.php:142
+msgctxt "Help tab Watch video tutorials link"
+msgid "to see some helpful use cases."
+msgstr "برای دیدن چند مورد استفاده مفید"
+
+#: plugin-fw/templates/panel/help-tab.php:129
+msgctxt "Help tab Read Documentation link"
+msgid "to learn how the plugin works from the basics."
+msgstr "برای یادگیری نحوه کار این افزونه از اصول اولیه."
+
+#: plugin-fw/templates/panel/premium-tab-content.php:102
+msgctxt "Premium Tab"
+msgid "Get the premium version"
+msgstr "نسخه پریمیوم را دریافت کنید"
+
+#: plugin-fw/templates/panel/premium-tab-content.php:62
+msgctxt "Premium Tab"
+msgid "Check the free vs premium features >"
+msgstr "ویژگی‌های رایگان در مقابل پریمیوم را بررسی کنید >"
+
+#: plugin-fw/templates/panel/premium-tab-content.php:59
+msgctxt "Premium Tab"
+msgid "...and so much more!"
+msgstr "...و خیلی بیشتر!"
+
+#: plugin-fw/includes/class-yit-plugin-panel.php:977
+msgctxt "Premium tab name"
+msgid "Get premium"
+msgstr "دریافت نسخه ویژه"
+
+#. Translators: %1$f: Table size, %2$f: Index size, %3$f: Free size, %4$s
+#. Engine.
+#: plugin-fw/templates/sysinfo/tabs/main.php:174
+msgid "Data: %1$.2fMB | Index: %2$.2fMB | Free: %3$.2fMB | Engine: %4$s"
+msgstr "داده: %1$.2fMB | فهرست: %2$.2fMB | رایگان: %3$.2fMB | موتور: %4$s"
+
+#: plugin-fw/templates/sysinfo/tabs/main.php:160
 msgid "Database Free Size"
 msgstr "اندازه آزاد پایگاه داده"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:146
+#: plugin-fw/templates/sysinfo/tabs/main.php:152
 msgid "Database Index Size"
 msgstr "اندازه ایندکس پایگاه داده"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:138
+#: plugin-fw/templates/sysinfo/tabs/main.php:144
 msgid "Database Data Size"
 msgstr "اندازه داده پایگاه داده"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:130
+#: plugin-fw/templates/sysinfo/tabs/main.php:136
 msgid "Total Database Size"
 msgstr "اندازه کلی پایگاه داده"
 
 #. Translators: %s: Codex link.
-#: plugin-fw/templates/sysinfo/tabs/main.php:123
+#: plugin-fw/templates/sysinfo/tabs/main.php:129
 msgid "WordPress requirements"
 msgstr "ضروریات وردپرس"
 
 #. Translators: %s: Codex link.
-#: plugin-fw/templates/sysinfo/tabs/main.php:123
+#: plugin-fw/templates/sysinfo/tabs/main.php:129
 msgid "WordPress recommends a minimum MySQL version of 5.6. See: %s"
 msgstr "نسخه 5.6 MySQL حداقل نیاز وردپرس است. ببینید: %s"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:113
+#: plugin-fw/templates/sysinfo/tabs/main.php:119
 msgid "MySQL version"
 msgstr "نسخه MySQL"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:108
+#: plugin-fw/templates/sysinfo/tabs/main.php:114
 msgid "Database Info"
 msgstr "اطلاعات پایگاه داده"
 
 #. translators: %s is the name of the plugin that is loading the framework.
-#: plugin-fw/templates/sysinfo/tabs/main.php:64
+#: plugin-fw/templates/sysinfo/tabs/main.php:68
 msgid "loaded by %s"
 msgstr "بارگذاری توسط %s"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:55
+#: plugin-fw/templates/sysinfo/tabs/main.php:59
 msgid "YITH Plugin Framework Version"
 msgstr "نسخه فریم ورک افزونه YITH"
 
-#: plugin-fw/templates/panel/help-tab.php:203
+#: plugin-fw/templates/panel/help-tab.php:204
 msgctxt "Help tab submit ticket button"
 msgid "Submit a ticket"
 msgstr "ارسال تیکت پشتیبانی"
 
-#: plugin-fw/templates/panel/help-tab.php:192
+#: plugin-fw/templates/panel/help-tab.php:196
+msgctxt "Help tab submit ticket description"
+msgid "If you are experiencing any technical issues, ask for help from our developers. Submit a ticket through our support desk and we will help you as soon as possible."
+msgstr "اگر با مشکلات فنی مواجه هستید، از توسعه دهندگان ما کمک بخواهید. یک بلیط از طریق میز پشتیبانی ما ارسال کنید و ما در اسرع وقت به شما کمک خواهیم کرد."
+
+#: plugin-fw/templates/panel/help-tab.php:193
 msgctxt "Help tab submit ticket title"
 msgid "Need help?"
 msgstr "به کمک نیاز دارید؟"
 
-#: plugin-fw/templates/panel/help-tab.php:183
+#: plugin-fw/templates/panel/help-tab.php:184
 msgctxt "Help tab FAQ link"
 msgid "View all FAQs >"
 msgstr "مشاهده تمام سئوالات متداول >"
 
-#: plugin-fw/templates/panel/help-tab.php:169
+#: plugin-fw/templates/panel/help-tab.php:170
 msgctxt "Help tab FAQ title"
 msgid "Last FAQs in our Help Center"
 msgstr "آخرین سئوالات متداول در بخش راهنمایی ما"
 
-#: plugin-fw/templates/panel/help-tab.php:150
+#: plugin-fw/templates/panel/help-tab.php:155
+msgctxt "Help tab view FAQs link"
+msgid "to find answers to your doubts."
+msgstr "برای یافتن پاسخ به شبهات شما"
+
+#: plugin-fw/templates/panel/help-tab.php:152
 msgctxt "Help tab view FAQs link"
 msgid "Check the FAQs"
 msgstr "مشاهده سئوالات متداول"
 
-#: plugin-fw/templates/panel/help-tab.php:124
+#: plugin-fw/templates/panel/help-tab.php:139
+msgctxt "Help tab Watch video tutorials link"
+msgid "Watch our video tutorials"
+msgstr "ویدیوهای آموزشی ما را تماشا کنید"
+
+#: plugin-fw/templates/panel/help-tab.php:126
 msgctxt "Help tab Read Documentation link"
 msgid "Read the documentation"
 msgstr "مطالعه مستندات"
 
-#: plugin-fw/templates/panel/help-tab.php:94
+#: plugin-fw/templates/panel/help-tab.php:96
 msgctxt "Help tab Watch Videotutorials link"
 msgid "Videos are also available in:"
 msgstr "همچنین ویدئوها نیز اینجا در دسترس هستند:"
 
 #. translators: 1. Url to EN playlist.
-#: plugin-fw/templates/panel/help-tab.php:87
+#: plugin-fw/templates/panel/help-tab.php:89
 msgctxt "Help tab view all video link"
 msgid "Check the full <a href=\"%s\" target=\"_blank\">Playlist on Youtube</a> to learn more >"
 msgstr "برای یادگیری بیشتر <a href=\"%s\" target=\"_blank\">لیست نمایش یوتیوب</a> را ببینید >"
@@ -105,157 +570,164 @@ msgctxt "Image width field label"
 msgid "Width"
 msgstr "عرض"
 
+#: plugin-fw/includes/class-yit-plugin-panel.php:929
+msgctxt "Help tab default description"
+msgid "We want to help you enjoy a wonderful experience with all of our products."
+msgstr "ما می خواهیم به شما کمک کنیم تا از یک تجربه فوق العاده با همه محصولات ما لذت ببرید."
+
 #. translators: 1. Plugin name.
-#: plugin-fw/includes/class-yit-plugin-panel.php:809
+#: plugin-fw/includes/class-yit-plugin-panel.php:920
 msgctxt "Help tab default title"
 msgid "Thank you for purchasing %s!"
 msgstr "از اینکه از %s استفاده می‌کنید سپاسگزاریم"
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:491
+#: plugin-fw/includes/class-yit-plugin-panel.php:1007
 msgctxt "Help tab name"
 msgid "Help"
 msgstr "راهنمایی"
 
-#: plugin-fw/includes/class-yit-help-desk.php:152
+#: plugin-fw/includes/class-yit-help-desk.php:148
 msgid "There was an error with your request; please try again later."
 msgstr "خطایی برای درخواست شما وجود دارد؛ لطفا دوباره امتحان کنید."
 
-#: plugin-fw/includes/class-yit-assets.php:149
+#: plugin-fw/includes/class-yit-assets.php:241
 msgid "Are you sure you want to delete the selected items?"
 msgstr "آیا از حذف این موارد انتخابی مطمئن هستید؟"
 
-#: plugin-fw/includes/class-yit-assets.php:146 plugin-fw/yit-functions.php:1983
+#: plugin-fw/includes/class-yit-assets.php:238 plugin-fw/yit-functions.php:1996
 msgctxt "Trash confirmation action"
 msgid "Yes, move to trash"
 msgstr "بله، به زباله‌دان منتقل شود"
 
-#: plugin-fw/includes/class-yit-assets.php:145
+#: plugin-fw/includes/class-yit-assets.php:237
 msgid "Are you sure you want to trash the selected items?"
 msgstr "آیا از حذف این مورد انتخابی مطمئن هستید؟"
 
-#: includes/class-yith-wcwl-admin.php:259
+#: includes/class-yith-wcwl-admin.php:263
 msgctxt "[HELP TAB] Video title"
 msgid "Check this video to learn how to <b>configure wishlist and customize options:</b>"
 msgstr "این ویدئو را برای <b>پیکربندی لیست علاقه مندیها و شخصی سازی گزینه‌ها ببینید:</b>"
 
-#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:33
+#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:31
 msgid "Options Saved"
 msgstr "تنظیمات ذخیره شد."
 
-#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:29
-#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:33
+#: plugin-fw/templates/panel/v2/panel-content-page.php:57
+#: plugin-fw/templates/panel/v2/woocommerce/woocommerce-form.php:69
+#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:27
+#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:31
 msgid "Save Options"
 msgstr "ذخیره‌سازی تغییرات"
 
-#: plugin-fw/yit-functions.php:2119
+#: plugin-fw/yit-functions.php:2131
 msgctxt "Term action"
 msgid "Delete"
 msgstr "حذف"
 
-#: plugin-fw/yit-functions.php:2106
+#: plugin-fw/yit-functions.php:2118
 msgctxt "Term action"
 msgid "Duplicate"
 msgstr "دوبل کردن"
 
-#: plugin-fw/yit-functions.php:2098
+#: plugin-fw/yit-functions.php:2110
 msgctxt "Term action"
 msgid "Edit"
 msgstr "ویرایش"
 
-#: plugin-fw/yit-functions.php:2088
+#: plugin-fw/yit-functions.php:2100
 msgctxt "Term action"
 msgid "View"
 msgstr "نمایش"
 
-#: plugin-fw/yit-functions.php:2012 plugin-fw/yit-functions.php:2020
-#: plugin-fw/yit-functions.php:2137
+#: plugin-fw/yit-functions.php:2025 plugin-fw/yit-functions.php:2033
+#: plugin-fw/yit-functions.php:2149
 msgid "Further actions"
 msgstr "اقدامات بعدی"
 
-#: plugin-fw/includes/class-yit-assets.php:150 plugin-fw/yit-functions.php:2001
-#: plugin-fw/yit-functions.php:2128
+#: plugin-fw/includes/class-yit-assets.php:242 plugin-fw/yit-functions.php:2014
+#: plugin-fw/yit-functions.php:2140
 msgctxt "Delete confirmation action"
 msgid "Yes, delete"
 msgstr "بله، حذف کن"
 
-#: plugin-fw/includes/class-yit-assets.php:148 plugin-fw/yit-functions.php:1998
-#: plugin-fw/yit-functions.php:2126
+#: plugin-fw/includes/class-yit-assets.php:240 plugin-fw/yit-functions.php:2011
+#: plugin-fw/yit-functions.php:2138
 msgid "Confirm delete"
 msgstr "تایید حذف"
 
-#: plugin-fw/yit-functions.php:1991
+#: plugin-fw/yit-functions.php:2004
 msgctxt "Post action"
 msgid "Delete Permanently"
 msgstr "حذف دائمی"
 
-#: plugin-fw/includes/class-yit-assets.php:144 plugin-fw/yit-functions.php:1980
+#: plugin-fw/includes/class-yit-assets.php:236 plugin-fw/yit-functions.php:1993
 msgid "Confirm trash"
 msgstr "تایید زباله‌دان"
 
-#: plugin-fw/yit-functions.php:1974
+#: plugin-fw/yit-functions.php:1987
 msgctxt "Post action"
 msgid "Trash"
 msgstr "زباله‌دان"
 
-#: plugin-fw/yit-functions.php:1966
+#: plugin-fw/yit-functions.php:1979
 msgctxt "Post action"
 msgid "Restore"
 msgstr "بازگردانی"
 
-#: plugin-fw/yit-functions.php:1954
+#: plugin-fw/yit-functions.php:1967
 msgctxt "Post action"
 msgid "Duplicate"
 msgstr "دوبل کردن"
 
-#: plugin-fw/yit-functions.php:1946
+#: plugin-fw/yit-functions.php:1959
 msgctxt "Post action"
 msgid "Edit"
 msgstr "ویرایش"
 
-#: plugin-fw/yit-functions.php:1935
+#: plugin-fw/yit-functions.php:1948
 msgctxt "Post action"
 msgid "View"
 msgstr "نمایش"
 
-#: plugin-fw/yit-functions.php:1926
+#: plugin-fw/yit-functions.php:1939
 msgctxt "Post action"
 msgid "Preview"
 msgstr "پیش‌نمایش"
 
 #. translators: %s is the title of the post object.
-#: plugin-fw/includes/class-yit-assets.php:149 plugin-fw/yit-functions.php:1914
-#: plugin-fw/yit-functions.php:2074
+#: plugin-fw/includes/class-yit-assets.php:241 plugin-fw/yit-functions.php:1927
+#: plugin-fw/yit-functions.php:2086
 msgid "This action cannot be undone and you will not be able to recover this data."
 msgstr "این اقدام قابل بازگشت نخواهد بود و شما قادر به بازیابی داده ها نیستید"
 
 #. translators: %s is the title of the post object.
-#: plugin-fw/yit-functions.php:1914 plugin-fw/yit-functions.php:2074
+#: plugin-fw/yit-functions.php:1927 plugin-fw/yit-functions.php:2086
 msgid "Are you sure you want to delete \"%s\"?"
 msgstr "آیا از حذف \"%s\" مطمئن هستید؟"
 
 #. translators: %s is the title of the post object.
-#: plugin-fw/yit-functions.php:1912
+#: plugin-fw/yit-functions.php:1925
 msgid "Are you sure you want to move \"%s\" to trash?"
 msgstr "آیا مطمئن هستید که می‌خواهید %s را به زباله‌دان انتقال دهید؟"
 
 #. translators: %s is the name of the post type (example Back to "Membership
 #. Plans").
-#: plugin-fw/includes/class-yith-post-type-admin.php:286
+#: plugin-fw/includes/class-yith-post-type-admin.php:294
 msgid "Back to the list"
 msgstr "بازگشت به لیست"
 
 #. translators: %s is the name of the post type (example Back to "Membership
 #. Plans").
-#: plugin-fw/includes/class-yith-post-type-admin.php:286
+#: plugin-fw/includes/class-yith-post-type-admin.php:294
 msgid "Back to \"%s\""
 msgstr "بازگشت به \"%s\""
 
-#: plugin-fw/includes/class-yit-assets.php:133
+#: plugin-fw/includes/class-yit-assets.php:225
 msgctxt "Button text"
 msgid "Cancel"
 msgstr "انصراف"
 
-#: plugin-fw/includes/class-yit-assets.php:132
+#: plugin-fw/includes/class-yit-assets.php:224
 msgctxt "Button text"
 msgid "Confirm"
 msgstr "تایید"
@@ -270,7 +742,8 @@ msgctxt "Copy-to-clipboard message"
 msgid "Copied!"
 msgstr "کپی شد!"
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1532
+#: plugin-fw/templates/panel/panel-header.php:26
+#: plugin-fw/templates/panel/v2/panel-header.php:21
 msgid "help us by leaving a good review"
 msgstr "با گذاشتن یک بررسی خوب به ما کمک کنید"
 
@@ -298,37 +771,37 @@ msgstr "تمام افزونه های موجود ما را در %1$s و %2$s بی
 msgid "From now on, you can find all plugin options in YITH menu. Plugin customization settings will be available as a new entry in YITH menu."
 msgstr "از این پس می توانید تمام گزینه‌های افزونه را در فهرست YITH پیدا کنید. تنظیمات سفارشی سازی افزونه به عنوان ورودی جدید در فهرست YITH در دسترس خواهد بود."
 
-#: plugin-fw/templates/sysinfo/tabs/error-log.php:105
+#: plugin-fw/templates/sysinfo/tabs/error-log.php:107
 msgid "Copy Code"
 msgstr "کپی کردن کد"
 
-#: plugin-fw/templates/sysinfo/tabs/error-log.php:105
+#: plugin-fw/templates/sysinfo/tabs/error-log.php:107
 msgid "Copied!"
 msgstr "کپی شد!"
 
 #. translators: %s file name.
-#: plugin-fw/templates/sysinfo/tabs/error-log.php:96
+#: plugin-fw/templates/sysinfo/tabs/error-log.php:98
 msgid "No Log file available. Enable the WordPress debug by adding this in the %s file of your installation"
 msgstr "گزارشی موجود نیست. با افزودن %s در پرونده نصبی اشکال زدایی وردپرس را فعال کنید."
 
-#: plugin-fw/templates/sysinfo/tabs/error-log.php:72
+#: plugin-fw/templates/sysinfo/tabs/error-log.php:74
 msgid "The file size exceeds 8 megabytes so it must be downloaded"
 msgstr "پرونده بیش از 8 مگابایت است پس باید دانلود شود"
 
-#: plugin-fw/templates/sysinfo/tabs/error-log.php:60
+#: plugin-fw/templates/sysinfo/tabs/error-log.php:61
 msgid "Download"
 msgstr "دانلود"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:73
+#: plugin-fw/templates/sysinfo/tabs/main.php:79
 msgid "Plugins Requirements"
 msgstr "افزونه‌ های ضروری"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:17
+#: plugin-fw/templates/sysinfo/tabs/main.php:21
 msgid "Site Info"
 msgstr "اطلاعات سایت"
 
 #: plugin-fw/templates/sysinfo/system-information-panel.php:13
-#: plugin-fw/templates/sysinfo/tabs/error-log.php:25
+#: plugin-fw/templates/sysinfo/tabs/error-log.php:26
 msgid "Log Files"
 msgstr "گزارش فایل ها"
 
@@ -336,24 +809,24 @@ msgstr "گزارش فایل ها"
 msgid "PHPInfo"
 msgstr "اطلاعات PHP"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:47
+#: plugin-fw/templates/sysinfo/tabs/main.php:51
 msgid "External object cache"
 msgstr "کش شی خارجی"
 
-#: plugin-fw/includes/class-yit-assets.php:147
-#: plugin-fw/includes/class-yit-assets.php:151
-#: plugin-fw/templates/sysinfo/tabs/main.php:42
-#: plugin-fw/templates/sysinfo/tabs/main.php:50
-#: plugin-fw/yit-functions.php:1982 plugin-fw/yit-functions.php:2000
+#: plugin-fw/includes/class-yit-assets.php:239
+#: plugin-fw/includes/class-yit-assets.php:243
+#: plugin-fw/templates/sysinfo/tabs/main.php:46
+#: plugin-fw/templates/sysinfo/tabs/main.php:54
+#: plugin-fw/yit-functions.php:1995 plugin-fw/yit-functions.php:2013
 msgid "No"
 msgstr "خیر"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:42
-#: plugin-fw/templates/sysinfo/tabs/main.php:50
+#: plugin-fw/templates/sysinfo/tabs/main.php:46
+#: plugin-fw/templates/sysinfo/tabs/main.php:54
 msgid "Yes"
 msgstr "بله"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:39
+#: plugin-fw/templates/sysinfo/tabs/main.php:43
 msgid "Defined WP_CACHE"
 msgstr "WP_CACHE تعریف شده"
 
@@ -366,45 +839,45 @@ msgid "WP debug.log file"
 msgstr "پرونده debug.log وردپرس"
 
 #. translators: %1$s TLS label
-#: plugin-fw/includes/class-yith-system-status.php:608
+#: plugin-fw/includes/class-yith-system-status.php:599
 msgid "The system check cannot determine which %1$s version is installed due to a connection issue between your site and our server."
 msgstr "تا زمانی که ارتباط میان سرور شما و سرور ما برقرار نباشد، سیستم نمی تواند بررسی کند کدام نگارش %1$s نصب است."
 
 #. translators: %1$s TLS label, %2$s cURL label
-#: plugin-fw/includes/class-yith-system-status.php:605
+#: plugin-fw/includes/class-yith-system-status.php:596
 msgid "The system check cannot determine which %1$s version is installed because %2$s module is disabled. Ask your hosting company to enable it."
 msgstr "چون ماژول %2$s غیرفعال است سیستم نمی تواند بررسی کند کدام نگارش %1$s  نصب است. از میزبانی سایت خود بخواهید آن را فعال نماید."
 
-#: plugin-fw/includes/class-yith-system-status.php:558
+#: plugin-fw/includes/class-yith-system-status.php:550
 msgid "Contact your hosting company in order to install it."
 msgstr "برای نصب کردن آن با شرکت میزبان خود تماس بگیرید."
 
-#: plugin-fw/includes/class-yit-assets.php:167
+#: plugin-fw/includes/class-yit-assets.php:278
 msgid "Color value"
 msgstr "مقدار رنگ"
 
-#: plugin-fw/includes/class-yit-assets.php:166
+#: plugin-fw/includes/class-yit-assets.php:277
 msgid "Select Color"
 msgstr "انتخاب رنگ"
 
-#: plugin-fw/includes/class-yit-assets.php:165
+#: plugin-fw/includes/class-yit-assets.php:276
 msgid "Select default color"
 msgstr "انتخاب رنگ پیش‌فرض"
 
-#: plugin-fw/includes/class-yit-assets.php:164
+#: plugin-fw/includes/class-yit-assets.php:275
 msgid "Default"
 msgstr "پیش فرض"
 
-#: plugin-fw/includes/class-yit-assets.php:163
+#: plugin-fw/includes/class-yit-assets.php:274
 msgid "Clear color"
 msgstr "پاکسازی رنگ"
 
-#: plugin-fw/includes/class-yit-assets.php:162
+#: plugin-fw/includes/class-yit-assets.php:273
 msgid "Clear"
 msgstr "پاکسازی"
 
 #. translators: 1. Count of users when many, or "another" when only one.
-#: includes/functions-yith-wcwl.php:257
+#: includes/functions-yith-wcwl.php:317
 msgid "another"
 msgstr "ديگر"
 
@@ -433,24 +906,19 @@ msgctxt "Position in the \"Dimensions\" field"
 msgid "Top"
 msgstr "بالا"
 
-#: plugin-fw/templates/fields/onoff.php:28
-msgctxt "YES/NO button: use MAX 4 characters!"
-msgid "YES"
-msgstr "بله"
-
-#: plugin-options/lists-options.php:34
+#: plugin-options/lists-options.php:41
 msgid "Search list"
 msgstr "لیست جستجو"
 
-#: plugin-options/wishlist_page-options.php:232
+#: plugin-options/settings/wishlist_page-options.php:241
 msgid "My wishlist"
 msgstr "لیست علاقه مندی های من"
 
-#: includes/class-yith-wcwl-ajax-handler.php:77
+#: includes/class-yith-wcwl-ajax-handler.php:96
 msgid "Close"
 msgstr "بستن"
 
-#: includes/class-yith-wcwl-admin.php:125
+#: includes/class-yith-wcwl-admin.php:107
 msgid "Wishlist Page"
 msgstr "صفحه لیست علاقه مندی"
 
@@ -552,621 +1020,595 @@ msgctxt "Elementor widget name"
 msgid "YITH Wishlist"
 msgstr "لیست علاقه مندی ها ووکامرس"
 
-#: includes/functions-yith-wcwl.php:426
+#: includes/functions-yith-wcwl.php:535
 msgid "Custom"
 msgstr "سفارشی"
 
-#: plugin-fw/templates/fields/onoff.php:29
-msgctxt "YES/NO button: use MAX 4 characters!"
-msgid "NO"
-msgstr "خیر"
-
-#: plugin-fw/includes/class-yit-plugin-panel.php:1533
+#: plugin-fw/templates/panel/panel-header.php:27
+#: plugin-fw/templates/panel/v2/panel-header.php:22
 msgid ":) Thanks!"
 msgstr ":) با تشکر!"
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1530
+#: plugin-fw/templates/panel/panel-header.php:24
+#: plugin-fw/templates/panel/v2/panel-header.php:19
 msgid "to keep updating and improving the plugin. Please,"
 msgstr "برای ادامه به‌روزرسانی و بهبود افزونه. لطفا"
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1529
+#: plugin-fw/templates/panel/panel-header.php:23
+#: plugin-fw/templates/panel/v2/panel-header.php:18
 msgid "We need your support"
 msgstr "ما به پشتیبانی شما نیازمندیم"
 
-#: templates/wishlist-view-mobile.php:189
+#: templates/wishlist-view-mobile.php:196
 msgid "Stock:"
 msgstr "انبار:"
 
-#: templates/wishlist-view-mobile.php:174
+#: templates/wishlist-view-mobile.php:181
 msgid "Quantity:"
 msgstr "تعداد:"
 
-#: templates/wishlist-view-mobile.php:147
+#: templates/wishlist-view-mobile.php:154
 msgid "Price:"
 msgstr "قیمت:"
 
-#: templates/wishlist-view-mobile.php:136
+#: templates/wishlist-view-mobile.php:143
 msgid "Added on:"
 msgstr "افزودن شده در:"
 
-#: includes/class-yith-wcwl-ajax-handler.php:75
-#: templates/add-to-wishlist-remove.php:59
+#: includes/class-yith-wcwl-ajax-handler.php:94
+#: templates/add-to-wishlist-remove.php:81
 msgid "View &rsaquo;"
 msgstr "مشاهده &gt;"
 
-#: includes/class-yith-wcwl-ajax-handler.php:76
-#: templates/add-to-wishlist-remove.php:58
+#: includes/class-yith-wcwl-ajax-handler.php:95
+#: templates/add-to-wishlist-remove.php:69
 msgid "or"
 msgstr "یا"
 
-#: templates/wishlist-view-mobile.php:233 templates/wishlist-view.php:283
+#: templates/wishlist-view-mobile.php:263 templates/wishlist-view.php:575
 msgid "Move to another list &rsaquo;"
 msgstr "انتقال به لیستی دیگر"
 
-#: templates/wishlist-view.php:123
+#: templates/wishlist-view.php:206
 msgid "Arrange"
 msgstr "مرتب کردن"
 
-#: templates/wishlist-view.php:96
+#: templates/wishlist-view.php:143
 msgid "Quantity"
 msgstr "تعداد"
 
-#: templates/wishlist-view-footer-mobile.php:87
-#: templates/wishlist-view-footer.php:103
+#: templates/wishlist-view-footer-mobile.php:113
+#: templates/wishlist-view-footer.php:151
 msgid "Add all to cart"
 msgstr "افزودن همه به سبد خرید"
 
-#: templates/wishlist-view-footer-mobile.php:81
-#: templates/wishlist-view-footer.php:81
+#: templates/wishlist-view-footer-mobile.php:107
+#: templates/wishlist-view-footer.php:107
 msgid "Update"
 msgstr "بروز رسانی"
 
-#: templates/wishlist-view-footer-mobile.php:73
-#: templates/wishlist-view-footer.php:73
+#: templates/wishlist-view-footer-mobile.php:99
+#: templates/wishlist-view-footer.php:99
 msgid "Apply"
 msgstr "اعمال‌"
 
 #. translators: 1. Wishlist formatted name.
-#: templates/wishlist-view-footer-mobile.php:67
-#: templates/wishlist-view-footer.php:67
+#: templates/wishlist-view-footer-mobile.php:93
+#: templates/wishlist-view-footer.php:93
 msgid "Move to %s"
 msgstr "انتقال به %s"
 
-#: templates/wishlist-view-footer-mobile.php:49
-#: templates/wishlist-view-footer.php:49
+#: templates/wishlist-view-footer-mobile.php:73
+#: templates/wishlist-view-footer.php:73
 msgid "Remove from wishlist"
 msgstr "حذف از لیست علاقه مندی"
 
-#: templates/wishlist-view-footer-mobile.php:44
-#: templates/wishlist-view-footer.php:44
+#: templates/wishlist-view-footer-mobile.php:55
+#: templates/wishlist-view-footer.php:55
 msgid "Apply this action to all the selected items:"
 msgstr "اعمال این عملیات به تمام آیتم های انتخاب شده:"
 
-#: templates/share.php:84
+#: templates/share.php:111
 msgid "Whatsapp"
 msgstr "واتس اپ"
 
-#: plugin-options/wishlist_page-options.php:706
+#: plugin-options/settings/wishlist_page-options.php:724
 msgid "Choose colors for WhatsApp share button"
 msgstr "رنگ دکمه اشتراک واتس آپ"
 
-#: plugin-options/wishlist_page-options.php:705
+#: plugin-options/settings/wishlist_page-options.php:723
 msgid "WhatsApp share button style"
 msgstr "استایل دکمه اشتراک واتس آپ"
 
-#: plugin-options/wishlist_page-options.php:697
+#: plugin-options/settings/wishlist_page-options.php:715
 msgid "Upload an icon you'd like to use for WhatsApp share button (suggested 32px x 32px)"
 msgstr "آیکونی را که می خواهید برای دکمه اشتراک گذاری واتس اپ استفاده کنید بارگذاری کنید(پیشنهادی 32px در 32px)"
 
-#: plugin-options/wishlist_page-options.php:696
+#: plugin-options/settings/wishlist_page-options.php:714
 msgid "WhatsApp share button custom icon"
 msgstr "آیکون سفارشی دکمه اشتراک گذاری واتس اپ"
 
-#: plugin-options/wishlist_page-options.php:686
+#: plugin-options/settings/wishlist_page-options.php:704
 msgid "Select an icon for the WhatsApp share button"
 msgstr "برای دکمه اشتراک گذاری واتس اپ آیکونی را انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:685
+#: plugin-options/settings/wishlist_page-options.php:703
 msgid "WhatsApp share button icon"
 msgstr "آیکون دکمه اشتراک واتس آپ"
 
-#: plugin-options/wishlist_page-options.php:666
+#: plugin-options/settings/wishlist_page-options.php:684
 msgid "Choose colors for the Email share button"
 msgstr "رنگ دکمه اشتراک گذاری ایمیل را انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:665
+#: plugin-options/settings/wishlist_page-options.php:683
 msgid "Email share button style"
 msgstr "سبک دکمه اشتراک گذاری ایمیل"
 
-#: plugin-options/wishlist_page-options.php:657
+#: plugin-options/settings/wishlist_page-options.php:675
 msgid "Upload an icon you'd like to use for the Email share button (suggested 32px x 32px)"
 msgstr "آیکونی را که می خواهید برای دکمه اشتراک گذاری ایمیل استفاده کنید بارگذاری کنید(پیشنهادی 32px در 32px)"
 
-#: plugin-options/wishlist_page-options.php:656
+#: plugin-options/settings/wishlist_page-options.php:674
 msgid "Email share button custom icon"
 msgstr "نماد سفارشی دکمه اشتراک گذاری ایمیل"
 
-#: plugin-options/wishlist_page-options.php:646
+#: plugin-options/settings/wishlist_page-options.php:664
 msgid "Select an icon for the Email share button"
 msgstr "برای دکمه اشتراک گذاری ایمیل آیکونی را انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:645
+#: plugin-options/settings/wishlist_page-options.php:663
 msgid "Email share button icon"
 msgstr "نماد دکمه اشتراک گذاری ایمیل"
 
-#: plugin-options/wishlist_page-options.php:626
+#: plugin-options/settings/wishlist_page-options.php:644
 msgid "Choose colors for Pinterest share button"
 msgstr "رنگ دکمه اشتراک گذاری پینترست را انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:625
+#: plugin-options/settings/wishlist_page-options.php:643
 msgid "Pinterest share button style"
 msgstr "استایل دکمه اشتراک گذاری پینترست"
 
-#: plugin-options/wishlist_page-options.php:617
+#: plugin-options/settings/wishlist_page-options.php:635
 msgid "Upload an icon you'd like to use for Pinterest share button (suggested 32px x 32px)"
 msgstr "آیکونی را که می خواهید برای دکمه اشتراک گذاری پینترست استفاده کنید بارگذاری کنید(پیشنهادی 32px در 32px)"
 
-#: plugin-options/wishlist_page-options.php:616
+#: plugin-options/settings/wishlist_page-options.php:634
 msgid "Pinterest share button custom icon"
 msgstr "آیکون سفارشی دکمه اشتراک گذاری پینترست"
 
-#: plugin-options/wishlist_page-options.php:606
+#: plugin-options/settings/wishlist_page-options.php:624
 msgid "Select an icon for the Pinterest share button"
 msgstr "برای دکمه اشتراک گذاری پینترست آیکونی را انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:605
+#: plugin-options/settings/wishlist_page-options.php:623
 msgid "Pinterest share button icon"
 msgstr "آیکون دکمه اشتراک گذاری پینترست"
 
-#: plugin-options/wishlist_page-options.php:586
+#: plugin-options/settings/wishlist_page-options.php:604
 msgid "Choose colors for Twitter share button"
 msgstr "رنگ دکمه اشتراک گذاری توییتر را انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:585
+#: plugin-options/settings/wishlist_page-options.php:603
 msgid "Twitter share button style"
 msgstr "سبک دکمه اشتراک گذاری توییتر"
 
-#: plugin-options/wishlist_page-options.php:577
+#: plugin-options/settings/wishlist_page-options.php:595
 msgid "Upload an icon you'd like to use for Twitter share button (suggested 32px x 32px)"
 msgstr "آیکونی را که می خواهید برای دکمه اشتراک گذاری توییتر استفاده کنید بارگذاری کنید(پیشنهادی 32px در 32px)"
 
-#: plugin-options/wishlist_page-options.php:576
+#: plugin-options/settings/wishlist_page-options.php:594
 msgid "Twitter share button custom icon"
 msgstr "آیکون سفارشی دکمه اشتراک گذاری توییتر"
 
-#: plugin-options/wishlist_page-options.php:566
+#: plugin-options/settings/wishlist_page-options.php:584
 msgid "Select an icon for the Twitter share button"
 msgstr "آیکونی را برای دکمه اشتراک گذاری توییتر انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:565
+#: plugin-options/settings/wishlist_page-options.php:583
 msgid "Twitter share button icon"
 msgstr "آیکون دکمه اشتراک در توییتر"
 
-#: plugin-options/wishlist_page-options.php:546
+#: plugin-options/settings/wishlist_page-options.php:564
 msgid "Choose colors for Facebook share button"
 msgstr "رنگ دکمه اشتراک گذاری فیسبوک"
 
-#: plugin-options/wishlist_page-options.php:545
+#: plugin-options/settings/wishlist_page-options.php:563
 msgid "Facebook share button style"
 msgstr "سبک دکمه اشتراک گذاری فیس بوک"
 
-#: plugin-options/wishlist_page-options.php:537
+#: plugin-options/settings/wishlist_page-options.php:555
 msgid "Upload an icon you'd like to use for Facebook share button (suggested 32px x 32px)"
 msgstr "آیکونی را که می خواهید برای دکمه اشتراک گذاری فیسبوک استفاده کنید بارگذاری کنید(پیشنهادی 32px در 32px)"
 
-#: plugin-options/wishlist_page-options.php:536
+#: plugin-options/settings/wishlist_page-options.php:554
 msgid "Facebook share button custom icon"
 msgstr "آیکون سفارشی دکمه اشتراک گذاری فیس بوک"
 
-#: plugin-options/wishlist_page-options.php:526
+#: plugin-options/settings/wishlist_page-options.php:544
 msgid "Select an icon for the Facebook share button"
 msgstr "یک آیکون را برای دکمه اشتراک گذاری فیسبوک انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:525
+#: plugin-options/settings/wishlist_page-options.php:543
 msgid "Facebook share button icon"
 msgstr "آیکون دکمه اشتراک گذاری فیس بوک"
 
-#: plugin-options/wishlist_page-options.php:501
+#: plugin-options/settings/wishlist_page-options.php:519
 msgid "Choose colors for share buttons text"
 msgstr "برای متن دکمه اشتراک گذاری یک رنگ انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:500
+#: plugin-options/settings/wishlist_page-options.php:518
 msgid "Share button text color"
 msgstr "رنگ متن دکمه اشتراک گذاری"
 
-#: plugin-options/wishlist_page-options.php:488
+#: plugin-options/settings/wishlist_page-options.php:506
 msgid "Choose the color for all sections with background<br/><small>This color will be used as background for the wishlist table heading and footer (when set to \"Traditional\" layout), and for various form across wishlist views</small>"
 msgstr "رنگ را برای تمام بخشهای دارای پس زمینه انتخاب کنید<br/> <small>این رنگ به عنوان پس زمینه برای عنوان و پاورقی جدول لیست علاقه مندی ها (هنگامی که روی طرح \"سنتی\" تنظیم شده باشد) ، و برای فرم های مختلف در نماهای لیست خواسته ها استفاده خواهد شد</small>"
 
-#: plugin-options/wishlist_page-options.php:487
+#: plugin-options/settings/wishlist_page-options.php:505
 msgid "Highlight color"
 msgstr "رنگ هایلایت"
 
-#: plugin-options/wishlist_page-options.php:459
+#: plugin-options/settings/wishlist_page-options.php:477
 msgid "Choose the colors for the wishlist table (when set to \"Traditional\" layout)"
 msgstr "رنگ جدول لیست علاقه مندی را انتخاب کنید (وقتی روی طرح \"سنتی\" تنظیم شد)"
 
-#: plugin-options/wishlist_page-options.php:458
+#: plugin-options/settings/wishlist_page-options.php:476
 msgid "Wishlist table style"
 msgstr "استایل جدول لیست علاقه ها"
 
-#: plugin-options/wishlist_page-options.php:415
-#: plugin-options/wishlist_page-options.php:433
+#: plugin-options/settings/wishlist_page-options.php:433
+#: plugin-options/settings/wishlist_page-options.php:451
 msgid "Choose colors of the secondary button<br/><small>This style will be applied to the buttons that allow showing and hiding the Edit title form on Wishlist view and \"Create new Wishlist\" button on Manage view</small>"
 msgstr "رنگ دکمه ثانویه را انتخاب کنید<br/> <small>این سبک در مورد دکمه هایی که اجازه نمایش و پنهان کردن فرم ویرایش عنوان را در نمای لیست علاقه مندی ها و دکمه\"ساخت لیست علاقه مندی ها\" در نمای مدیریت اعمال می شود</small>"
 
-#: plugin-options/wishlist_page-options.php:409
+#: plugin-options/settings/wishlist_page-options.php:427
 msgid "Secondary button style"
 msgstr "سبک دکمه ثانویه"
 
-#: plugin-options/wishlist_page-options.php:384
+#: plugin-options/settings/wishlist_page-options.php:402
 msgid "Choose colors for the primary button on hover state<br/><small>This style will be applied to \"Edit title\" button on Wishlist view, \"Submit Changes\" button on Manage view and \"Search wishlist\" button on Search view</small>"
 msgstr "انتخاب رنگ دکمه اصلی در حالت بالا آمدن موس <br/><small>این استایل روی دکمه های \"ویرایش عنوان\" در بخش نمایش لیست علاقه‌مندی ها، دکمه \"ذخیره تنظیمات\" در بخش مدیریت و دکمه \"جستجوی علاقه‌مندی ها\" در بخش جستجو اعمال می شود</small>"
 
-#: plugin-options/wishlist_page-options.php:366
+#: plugin-options/settings/wishlist_page-options.php:384
 msgid "Choose colors for the primary button<br/><small>This style will be applied to \"Edit title\" button on Wishlist view, \"Submit Changes\" button on Manage view and \"Search wishlist\" button on Search view</small>"
 msgstr "انتخاب رنگ دکمه اصلی <br/><small>این استایل روی دکمه های \"ویرایش عنوان\" در بخش نمایش لیست علاقه‌مندی ها، دکمه \"ذخیره تنظیمات\" در بخش مدیریت و دکمه \"جستجوی علاقه‌مندی ها\" در بخش جستجو اعمال می شود</small>"
 
-#: plugin-options/wishlist_page-options.php:360
+#: plugin-options/settings/wishlist_page-options.php:378
 msgid "Primary button style"
 msgstr "استایل دکمه اصلی"
 
-#: plugin-options/wishlist_page-options.php:352
+#: plugin-options/settings/wishlist_page-options.php:370
 msgid "Upload an icon you'd like to use for the \"Add to cart\" button (suggested 32px x 32px)"
 msgstr "آیکونی را که می خواهید برای دکمه \"افزودن به سبد خرید\" استفاده کنید بارگذاری کنید (پیشنهاد 32px x 32px)"
 
-#: plugin-options/wishlist_page-options.php:351
+#: plugin-options/settings/wishlist_page-options.php:369
 msgid "\"Add to cart\" custom icon"
 msgstr "آیکون سفارشی \"افزودن به سبد خرید\""
 
-#: plugin-options/wishlist_page-options.php:336
+#: plugin-options/settings/wishlist_page-options.php:345
 msgid "Select an icon for the \"Add to cart\" button (optional)"
 msgstr "آیکون دکمه \"افزودن به سبد خرید\" را انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:321
+#: plugin-options/settings/wishlist_page-options.php:330
 msgid "Set the radius for the \"Add to cart\" button"
 msgstr "گردی حاشیه دکمه \"افزودن به سبد خرید\" را انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:295
+#: plugin-options/settings/wishlist_page-options.php:304
 msgid "Choose colors for the \"Add to cart\" button on hover state"
 msgstr "رنگ هاور دکمه \"افزودن به سبد خرید\" را انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:277
+#: plugin-options/settings/wishlist_page-options.php:286
 msgid "Choose the colors for the \"Add to cart\" button"
 msgstr "رنگ دکمه \"افزودن به سبد خرید\" را انتخاب کنید"
 
-#: plugin-options/wishlist_page-options.php:271
+#: plugin-options/settings/wishlist_page-options.php:280
 msgid "\"Add to cart\" button style"
 msgstr "استایل دکمه \"افزودن به سبد خرید\""
 
-#: plugin-options/wishlist_page-options.php:258
+#: plugin-options/settings/wishlist_page-options.php:267
 msgid "Choose whether to show a textual \"Add to cart\" link or a button"
 msgstr "انتخاب کنید \"افزودن به سبد خرید\" متنی باشد یا به صورت دکمه."
 
-#: plugin-options/wishlist_page-options.php:257
+#: plugin-options/settings/wishlist_page-options.php:266
 msgid "Style of \"Add to cart\""
 msgstr "استایل \"افزودن به سبد خرید\""
 
-#: plugin-options/wishlist_page-options.php:250
+#: plugin-options/settings/wishlist_page-options.php:259
 msgid "Style & color customization"
 msgstr "سفارشی سازی سبک و رنگ"
 
-#: plugin-options/wishlist_page-options.php:238
+#: plugin-options/settings/wishlist_page-options.php:247
 msgid "Enter a text for the \"Add to cart\" button"
 msgstr "متنی برای \"افزودن به سبد خرید\" وارد کنید"
 
-#: plugin-options/wishlist_page-options.php:230
+#: plugin-options/settings/wishlist_page-options.php:239
 msgid "Enter a name for the default wishlist. This is the wishlist that will be automatically generated for all users if they do not create any custom one"
 msgstr "نامی را برای لیست دلخواه پیش فرض وارد کنید. این لیست دلخواه است که در صورت ایجاد هیچ نوع سفارشی ، به طور خودکار برای همه کاربران ایجاد می شود"
 
-#: plugin-options/wishlist_page-options.php:210
+#: plugin-options/settings/wishlist_page-options.php:219
 msgid "It will be used to pin the wishlist on Pinterest."
 msgstr "از آن برای پین کردن لیست علاقه مندی در پینترست استفاده می شود."
 
-#: plugin-options/wishlist_page-options.php:201
+#: plugin-options/settings/wishlist_page-options.php:210
 msgid "Type the message you want to publish when you share your wishlist on Twitter and Pinterest"
 msgstr "هنگامی که لیست دلخواه خود را در توییتر و پینترست به اشتراک می گذارید ، پیام مورد نظر خود را تایپ کنید"
 
-#: plugin-options/wishlist_page-options.php:192
+#: plugin-options/settings/wishlist_page-options.php:201
 msgid "Wishlist title used for sharing (only used on Twitter and Pinterest)"
 msgstr "عنوان مورد علاقه برای به اشتراک گذاری استفاده می شود (فقط در توییتر و پینترست استفاده می شود)"
 
-#: plugin-options/wishlist_page-options.php:191
+#: plugin-options/settings/wishlist_page-options.php:200
 msgid "Sharing title"
 msgstr "عنوان متن به اشتراک گذاری"
 
-#: plugin-options/wishlist_page-options.php:137
-#: plugin-options/wishlist_page-options.php:146
-#: plugin-options/wishlist_page-options.php:155
-#: plugin-options/wishlist_page-options.php:164
-#: plugin-options/wishlist_page-options.php:173
+#: plugin-options/settings/wishlist_page-options.php:146
+#: plugin-options/settings/wishlist_page-options.php:155
+#: plugin-options/settings/wishlist_page-options.php:164
+#: plugin-options/settings/wishlist_page-options.php:173
+#: plugin-options/settings/wishlist_page-options.php:182
 msgid "Share on social media"
 msgstr "اشتراک گذاری در شبکه های اجتماعی"
 
-#: plugin-options/wishlist_page-options.php:129
+#: plugin-options/settings/wishlist_page-options.php:138
 msgid "Enable this option to let users share their wishlist on social media"
 msgstr "این گزینه را فعال کنید تا کاربران بتوانند لیست دلخواه خود را در رسانه های اجتماعی به اشتراک بگذارند"
 
-#: plugin-options/wishlist_page-options.php:128
+#: plugin-options/settings/wishlist_page-options.php:137
 msgid "Share wishlist"
 msgstr "اشتراک گذاری لیست علاقه مندی"
 
-#: plugin-options/wishlist_page-options.php:111
+#: plugin-options/settings/wishlist_page-options.php:120
 msgid "Redirect users to the cart page when they add a product to the cart from the wishlist page"
 msgstr "هنگامی که محصولی را از صفحه لیست دلخواه اضافه می کنید ، کاربران را به صفحه سبد خرید هدایت کنید"
 
-#: plugin-options/wishlist_page-options.php:102
+#: plugin-options/settings/wishlist_page-options.php:111
 msgid "Button to remove the product from the wishlist - to the right of the product"
 msgstr "دکمه برای حذف محصول از لیست علاقه مندی - در سمت راست محصول"
 
-#: plugin-options/wishlist_page-options.php:93
+#: plugin-options/settings/wishlist_page-options.php:102
 msgid "Icon to remove the product from the wishlist - to the left of the product"
 msgstr "نماد حذف محصول از لیست علاقه مندی - در سمت چپ محصول"
 
-#: plugin-options/wishlist_page-options.php:84
+#: plugin-options/settings/wishlist_page-options.php:93
 msgid "Add to cart option for each product"
 msgstr "گزینه سبد خرید را برای هر محصول اضافه کنید"
 
-#: plugin-options/wishlist_page-options.php:75
+#: plugin-options/settings/wishlist_page-options.php:84
 msgid "Date on which the product was added to the wishlist"
 msgstr "تاریخ اضافه شدن محصول به لیست علاقه مندی"
 
-#: plugin-options/wishlist_page-options.php:66
+#: plugin-options/settings/wishlist_page-options.php:75
 msgid "Product stock (show if the product is available or not)"
 msgstr "موجودی محصول (نشان می دهد محصول موجود است یا نه)"
 
-#: plugin-options/wishlist_page-options.php:57
+#: plugin-options/settings/wishlist_page-options.php:66
 msgid "Product price"
 msgstr "قیمت محصول"
 
-#: plugin-options/wishlist_page-options.php:48
+#: plugin-options/settings/wishlist_page-options.php:57
 msgid "Product variations selected by the user (example: size or color)"
 msgstr "تغییرات محصول انتخاب شده توسط کاربر (به عنوان مثال: اندازه یا رنگ)"
 
-#: plugin-options/wishlist_page-options.php:47
-#: plugin-options/wishlist_page-options.php:56
-#: plugin-options/wishlist_page-options.php:65
-#: plugin-options/wishlist_page-options.php:74
-#: plugin-options/wishlist_page-options.php:83
-#: plugin-options/wishlist_page-options.php:92
-#: plugin-options/wishlist_page-options.php:101
+#: plugin-options/settings/wishlist_page-options.php:56
+#: plugin-options/settings/wishlist_page-options.php:65
+#: plugin-options/settings/wishlist_page-options.php:74
+#: plugin-options/settings/wishlist_page-options.php:83
+#: plugin-options/settings/wishlist_page-options.php:92
+#: plugin-options/settings/wishlist_page-options.php:101
+#: plugin-options/settings/wishlist_page-options.php:110
 msgid "In wishlist table show"
 msgstr "در نمایش جدول لیست علاقه مندی ها"
 
-#: plugin-options/wishlist_page-options.php:40
+#: plugin-options/settings/wishlist_page-options.php:49
 msgid "Wishlist Detail Page"
 msgstr "جزییات صفحه لیست علاقه مندی"
 
-#: plugin-options/wishlist_page-options.php:27
+#: plugin-options/settings/wishlist_page-options.php:36
 msgid "Pick a page as the main Wishlist page; make sure you add the <span class=\"code\"><code>[yith_wcwl_wishlist]</code></span> shortcode into the page content"
 msgstr "یک صفحه را به عنوان صفحه اصلی لیست علاقه مندی ها انتخاب کنید. مطمئن شوید که کد کوتاه <span class=\"code\"><code>[yith_wcwl_wishlist]</code></span> به محتوای صفحه اضافه کرده اید"
 
-#: plugin-options/wishlist_page-options.php:19
-msgid "All your wishlists"
-msgstr "تمام لیست های علاقه مندی"
-
-#: plugin-options/add_to_wishlist-options.php:295
+#: plugin-options/settings/add_to_wishlist-options.php:320
 msgid "Enter custom CSS to be applied to Wishlist elements (optional)"
 msgstr "برای سفارشی سازی عناصر لیست علاقه مندی می توانید از CSS دلخواه استفاده کنید (اختیاری)"
 
-#: plugin-options/add_to_wishlist-options.php:281
+#: plugin-options/settings/add_to_wishlist-options.php:306
 msgid "\"Added to wishlist\" custom icon"
 msgstr "آیکن سفارشی \"اضافه شده به لیست علاقه مندی ها\""
 
-#: plugin-options/add_to_wishlist-options.php:277
+#: plugin-options/settings/add_to_wishlist-options.php:302
 msgid "Same used for Add to wishlist"
 msgstr "همان مورد استفاده برای افزودن به لیست علاقه مندی"
 
-#: plugin-options/add_to_wishlist-options.php:271
+#: plugin-options/settings/add_to_wishlist-options.php:287
 msgid "Select an icon for the \"Added to wishlist\" button (optional)"
 msgstr "یک آیکون برای \"به لیست علاقه مندی اضافه شد\" انتخاب کنید"
 
-#: plugin-options/add_to_wishlist-options.php:258
-#: plugin-options/add_to_wishlist-options.php:282
+#: plugin-options/settings/add_to_wishlist-options.php:274
+#: plugin-options/settings/add_to_wishlist-options.php:307
 msgid "Upload an icon you'd like to use for \"Add to wishlist\" button (suggested 32px x 32px)"
 msgstr "آیکونی را که می خواهید برای دکمه اشتراک گذاری \"افزودن به لیست علاقه مندی ها\" استفاده کنید بارگذاری کنید (پیشنهادی 32px x 32px)"
 
-#: plugin-options/add_to_wishlist-options.php:257
+#: plugin-options/settings/add_to_wishlist-options.php:273
 msgid "\"Add to wishlist\" custom icon"
 msgstr "آیکون سفارشی \"اضافه کردن به لیست علاقه مندی ها\""
 
-#: plugin-options/add_to_wishlist-options.php:247
+#: plugin-options/settings/add_to_wishlist-options.php:254
 msgid "Select an icon for the \"Add to wishlist\" button (optional)"
 msgstr "یک آیکون برای \"افزودن به علاقه مندی\" انتخاب کنید (اختیاری)"
 
-#: plugin-options/add_to_wishlist-options.php:232
+#: plugin-options/settings/add_to_wishlist-options.php:239
 msgid "Choose radius for the \"Add to wishlist\" button"
 msgstr "گردی حاشیه دکمه \"افزودن به لیست علاقه مندی\" را تنظیم کنید."
 
-#: plugin-options/add_to_wishlist-options.php:231
-#: plugin-options/wishlist_page-options.php:320
+#: plugin-options/settings/add_to_wishlist-options.php:238
+#: plugin-options/settings/wishlist_page-options.php:329
 msgid "Border radius"
 msgstr "گردی حاشیه"
 
-#: plugin-options/add_to_wishlist-options.php:218
-#: plugin-options/wishlist_page-options.php:307
-#: plugin-options/wishlist_page-options.php:396
-#: plugin-options/wishlist_page-options.php:445
+#: plugin-options/settings/add_to_wishlist-options.php:225
+#: plugin-options/settings/wishlist_page-options.php:316
+#: plugin-options/settings/wishlist_page-options.php:414
+#: plugin-options/settings/wishlist_page-options.php:463
 msgid "Border Hover"
 msgstr "هاور حاشیه"
 
-#: plugin-options/add_to_wishlist-options.php:213
-#: plugin-options/wishlist_page-options.php:302
-#: plugin-options/wishlist_page-options.php:391
-#: plugin-options/wishlist_page-options.php:440
+#: plugin-options/settings/add_to_wishlist-options.php:220
+#: plugin-options/settings/wishlist_page-options.php:311
+#: plugin-options/settings/wishlist_page-options.php:409
+#: plugin-options/settings/wishlist_page-options.php:458
 msgid "Text Hover"
 msgstr "هاور متن"
 
-#: plugin-options/add_to_wishlist-options.php:206
-msgid "Choose colors for the \"Add to wishlist\" button on hover state"
-msgstr "دکمه \"افزودن به لیست علاقه مندی\" را در حالت هاور انتخاب کنید"
-
-#: plugin-options/add_to_wishlist-options.php:188
-msgid "Choose colors for the \"Add to wishlist\" button"
-msgstr "انتخاب رنگ دکمه \"افزودن به لیست علاقه مندی ها\""
-
-#: plugin-options/add_to_wishlist-options.php:182
+#: plugin-options/settings/add_to_wishlist-options.php:191
 msgid "\"Add to wishlist\" button style"
 msgstr "سبک دکمه \"اضافه کردن به لیست علاقه مندی ها\""
 
-#: plugin-options/add_to_wishlist-options.php:174
-#: plugin-options/wishlist_page-options.php:263
+#: plugin-options/settings/add_to_wishlist-options.php:183
+#: plugin-options/settings/wishlist_page-options.php:272
 msgid "Button with custom style"
 msgstr "دکمه با سبک سفارشی"
 
-#: plugin-options/add_to_wishlist-options.php:173
-#: plugin-options/wishlist_page-options.php:262
+#: plugin-options/settings/add_to_wishlist-options.php:182
+#: plugin-options/settings/wishlist_page-options.php:271
 msgid "Button with theme style"
 msgstr "دکمه با سبک قالب"
 
-#: plugin-options/add_to_wishlist-options.php:172
-#: plugin-options/wishlist_page-options.php:261
+#: plugin-options/settings/add_to_wishlist-options.php:181
+#: plugin-options/settings/wishlist_page-options.php:270
 msgid "Textual (anchor)"
 msgstr "متنی (لنگر)"
 
-#: plugin-options/add_to_wishlist-options.php:169
+#: plugin-options/settings/add_to_wishlist-options.php:178
 msgid "Choose if you want to show a textual \"Add to wishlist\" link or a button"
 msgstr "اگر میخواهید دکمه \"افزودن به علاقه مندی\" تغییر کند از گزینه های بالا یکی را انتخاب کنید"
 
-#: plugin-options/add_to_wishlist-options.php:168
+#: plugin-options/settings/add_to_wishlist-options.php:177
 msgid "Style of \"Add to wishlist\""
 msgstr "سبک \"افزودن به لیست علاقه مندی ها\""
 
-#: plugin-options/add_to_wishlist-options.php:161
+#: plugin-options/settings/add_to_wishlist-options.php:170
 msgid "Style & Color customization"
 msgstr "سفارشی سازی سبک و رنگ"
 
-#: plugin-options/add_to_wishlist-options.php:149
+#: plugin-options/settings/add_to_wishlist-options.php:158
 msgid "Enter the text for the message displayed when the user views a product that is already in the wishlist"
 msgstr "متنی که پیغامی مبنی بر اینکه محصول از قبل به لیست علاقه مندی ها اضافه شده است وارد کنید"
 
-#: plugin-options/add_to_wishlist-options.php:141
+#: plugin-options/settings/add_to_wishlist-options.php:150
 msgid "Enter a text for the \"Browse wishlist\" link on the product page"
 msgstr "متن صفحه \"مرور لیست علاقه مندی ها\" را وارد کنید"
 
-#: plugin-options/add_to_wishlist-options.php:133
+#: plugin-options/settings/add_to_wishlist-options.php:142
 msgid "Enter the text of the message displayed when the user adds a product to the wishlist"
 msgstr "وقتی کاربر محصولی را به لیست دلخواه اضافه می کند ، متن پیام نمایش داده شده را وارد کنید"
 
-#: plugin-options/add_to_wishlist-options.php:125
+#: plugin-options/settings/add_to_wishlist-options.php:134
 msgid "Enter a text for \"Add to wishlist\" button"
 msgstr "برای دکمه \"افزودن به لیست علاقه مندی ها\" متنی وارد کنید"
 
-#: plugin-options/add_to_wishlist-options.php:117
-#: plugin-options/wishlist_page-options.php:222
+#: plugin-options/settings/add_to_wishlist-options.php:126
+#: plugin-options/settings/wishlist_page-options.php:231
 msgid "Text customization"
 msgstr "سفارشی سازی متن"
 
-#: plugin-options/add_to_wishlist-options.php:97
+#: plugin-options/settings/add_to_wishlist-options.php:106
 msgid "Choose where to show \"Add to wishlist\" button or link on the product page. <span class=\"addon\">Copy this shortcode <span class=\"code\"><code>[yith_wcwl_add_to_wishlist]</code></span> and paste it where you want to show the \"Add to wishlist\" link or button</span>"
 msgstr "انتخاب محل نمایش دکمه یا پیوند \"افزودن به لیست علاقه‌مندی\" در صفحه محصول. <span class=\"addon\">کد کوتاه <span class=\"code\"><code>[yith_wcwl_add_to_wishlist]</code></span> را کپی کنید و در جایی که می خواهید دکمه یا پیوند \"افزودن به لیست علاقه‌مندی ها\" نمایش داده شود قراردهید</span>"
 
-#: plugin-options/add_to_wishlist-options.php:96
+#: plugin-options/settings/add_to_wishlist-options.php:105
 msgid "Position of \"Add to wishlist\" on product page"
 msgstr "محل قرارگیری \"افزودن به لیست علاقه مندی ها\" در صفحه محصول"
 
-#: plugin-options/add_to_wishlist-options.php:89
+#: plugin-options/settings/add_to_wishlist-options.php:98
 msgid "Product page settings"
 msgstr "تنظیمات صفحه محصولات"
 
-#: plugin-options/add_to_wishlist-options.php:74
+#: plugin-options/settings/add_to_wishlist-options.php:83
 msgid "After \"Add to cart\" button"
 msgstr "بعد از دکمه \"افزودن به سبد خرید\""
 
-#: plugin-options/add_to_wishlist-options.php:73
+#: plugin-options/settings/add_to_wishlist-options.php:82
 msgid "Before \"Add to cart\" button"
 msgstr "قبل از دکمه \"افزودن به سبد خرید\""
 
-#: plugin-options/add_to_wishlist-options.php:72
+#: plugin-options/settings/add_to_wishlist-options.php:81
 msgid "On top of the image"
 msgstr "در بالای تصویر"
 
-#: plugin-options/add_to_wishlist-options.php:65
+#: plugin-options/settings/add_to_wishlist-options.php:74
 msgid "Choose where to show \"Add to wishlist\" button or link in WooCommerce products' loop. <span class=\"addon\">Copy this shortcode <span class=\"code\"><code>[yith_wcwl_add_to_wishlist]</code></span> and paste it where you want to show the \"Add to wishlist\" link or button</span>"
 msgstr "انتخاب محل نمایش دکمه یا پیوند \"افزودن به لیست علاقه‌مندی\" در صفحه محصول. <span class=\"addon\">کد کوتاه <span class=\"code\"><code>[yith_wcwl_add_to_wishlist]</code></span> را کپی کنید و در جایی که می خواهید دکمه یا پیوند \"افزودن به لیست علاقه‌مندی ها\" نمایش داده شود قراردهید</span>"
 
-#: plugin-options/add_to_wishlist-options.php:64
+#: plugin-options/settings/add_to_wishlist-options.php:73
 msgid "Position of \"Add to wishlist\" in loop"
 msgstr "موقعیت \"افزودن به لیست علاقه مندی ها\" در حلقه محصولات"
 
-#: plugin-options/add_to_wishlist-options.php:56
+#: plugin-options/settings/add_to_wishlist-options.php:65
 msgid "Enable the \"Add to wishlist\" feature in WooCommerce products' loop"
 msgstr "فعالسازی \"افزودن به لیست علاقه مندی\"در حلقه محصولات ووکامرس."
 
-#: plugin-options/add_to_wishlist-options.php:55
+#: plugin-options/settings/add_to_wishlist-options.php:64
 msgid "Show \"Add to wishlist\" in loop"
 msgstr "نمایش \"افزودن به لیست علاقه مندی\" در حلقه محصولات"
 
-#: plugin-options/add_to_wishlist-options.php:50
+#: plugin-options/settings/add_to_wishlist-options.php:59
 msgid "Loop options will be visible on Shop page, category pages, product shortcodes, products sliders, and all the other places where the WooCommerce products' loop is used"
 msgstr "گزینه های حلقه در صفحه فروشگاه ، صفحات طبقه بندی ، کد کوتاه محصول ، اسلایدر محصولات و سایر مکانهایی که در آن از حلقه محصولات ووکامرس استفاده می شود قابل مشاهده است."
 
-#: plugin-options/add_to_wishlist-options.php:48
+#: plugin-options/settings/add_to_wishlist-options.php:57
 msgid "Loop settings"
 msgstr "تنظیمات حلقه"
 
-#: plugin-options/add_to_wishlist-options.php:34
+#: plugin-options/settings/add_to_wishlist-options.php:43
 msgid "Show \"Remove from list\" link"
 msgstr "نمایش لینک \"حذف از لیست\""
 
-#: plugin-options/add_to_wishlist-options.php:33
+#: plugin-options/settings/add_to_wishlist-options.php:42
 msgid "Show \"View wishlist\" link"
 msgstr "نمایش لینک \"مشاهده لیست علاقه مندی ها\""
 
-#: plugin-options/add_to_wishlist-options.php:32
+#: plugin-options/settings/add_to_wishlist-options.php:41
 msgid "Show \"Add to wishlist\" button"
 msgstr "نمایش دکمه \"افزودن به لیست علاقه مندی ها\""
 
-#: plugin-options/add_to_wishlist-options.php:28
+#: plugin-options/settings/add_to_wishlist-options.php:37
 msgid "Choose the look of the Wishlist button when the product has already been added to a wishlist"
 msgstr "وقتی محصول از قبل به لیست علاقه مندی ها اضافه شده است ، ظاهر دکمه علاقه مندی ها را انتخاب کنید"
 
-#: plugin-options/add_to_wishlist-options.php:27
+#: plugin-options/settings/add_to_wishlist-options.php:36
 msgid "After product is added to wishlist"
 msgstr "پس از محصول اضافه شده به لیست علاقمندی"
 
-#. translators: 1. Example image of the integration. 2. CTA to buy Frequently
-#. Bought Together.
-#: plugin-options/settings-options.php:58
-msgid "Enable the slider with linked products on the Wishlist page (<a href=\"%1$s\" class=\"thickbox\">Example</a>). %2$s"
-msgstr "اسلایدر را با محصولات مرتبط در صفحه لیست علاقه مندی فعال کنید (<a href=\"%1$s\" class=\"thickbox\">مثال</a>). %2$s"
-
-#. translators: 1. Url to Frequently Bought Together landing page on
-#. yithemes.com.
-#: plugin-options/settings-options.php:51
-msgid "In order to use this integration you have to install and activate YITH WooCommerce Frequently Bought Together. <a href=\"%s\">Learn more</a>"
-msgstr "برای استفاده از این ادغام ، شما باید افزونه YITH WooCommerce Frequently Bought Together را نصب و فعال کنید. <a href=\"%s\">بیشتر بدانید</a>"
-
-#: plugin-options/settings-options.php:35
+#: plugin-options/settings/general-options.php:41
 msgid "Load any cacheable wishlist item via AJAX"
 msgstr "بارگذاری هر مورد کش شده از طریق ایجکس"
 
-#: plugin-options/settings-options.php:34
+#: plugin-options/settings/general-options.php:40
 msgid "Enable AJAX loading"
 msgstr "فعال کردن ایجکس"
 
-#: includes/class-yith-wcwl-form-handler.php:156
+#: includes/class-yith-wcwl-form-handler.php:193
 msgid "Please, make sure to enter a valid title"
 msgstr "لطفا، مطمئن باشید یک عنوان معتبر وارد میکنید"
 
-#: includes/data-stores/class-yith-wcwl-wishlist-data-store.php:152
-#: includes/data-stores/class-yith-wcwl-wishlist-data-store.php:174
+#: includes/data-stores/class-yith-wcwl-wishlist-data-store.php:252
+#: includes/data-stores/class-yith-wcwl-wishlist-data-store.php:274
 msgid "Invalid wishlist."
 msgstr " لیست علاقه مندی ها نامعتبر است."
 
-#: includes/data-stores/class-yith-wcwl-wishlist-item-data-store.php:119
+#: includes/data-stores/class-yith-wcwl-wishlist-item-data-store.php:210
 msgid "Invalid wishlist item."
 msgstr "مورد لیست علاقه مندی ها نامعتبر است."
 
-#: includes/class-yith-wcwl-privacy.php:228
+#: includes/class-yith-wcwl-privacy.php:272
 msgid "Wishlist URL"
 msgstr "آدرس لیست علاقمندی ها"
 
-#: includes/class-yith-wcwl-shortcode.php:621
+#: includes/class-yith-wcwl-shortcode.php:754
 msgid "Remove from list"
 msgstr "حذف از لیست"
 
-#: includes/class-yith-wcwl-shortcode.php:487
+#: includes/class-yith-wcwl-shortcode.php:556
 msgid "Share via email"
 msgstr "اشتراک گذاری از طریق ایمیل"
 
@@ -1187,121 +1629,109 @@ msgid "URL of the wishlist page (leave empty to use the default settings)"
 msgstr "لینک صفحه لیست  لیست علاقه مندی ها(برای استفاده از تنظیمات پیش فرض خالی بگذارید)"
 
 #. translators: 2: original product price.
-#: includes/class-yith-wcwl-wishlist-item.php:430
+#: includes/class-yith-wcwl-wishlist-item.php:492
 msgctxt "Part of the template that shows price variation since addition to list; placeholder will be replaced with a price"
 msgid "(Was %2$s when added  in list)"
 msgstr "(هنگام افزودن به لیست %2$s بود)"
 
 #. translators: 1. % of reduction/increase in price.
-#: includes/class-yith-wcwl-wishlist-item.php:428
+#: includes/class-yith-wcwl-wishlist-item.php:490
 msgctxt "Part of the template that shows price variation since addition to list; placeholder will be replaced with a percentage"
 msgid "Price is %1$s%%"
 msgstr "قیمت %1$s%%"
 
-#: includes/class-yith-wcwl-frontend.php:462
+#: includes/class-yith-wcwl-frontend.php:805
 msgid "Product added to cart successfully"
 msgstr "محصولات با موفقیت به سبد خریدتان اضافه شدند"
 
-#: includes/class-yith-wcwl-frontend.php:461
+#: includes/class-yith-wcwl-frontend.php:795
 msgid "We are sorry, but this feature is available only if cookies on your browser are enabled."
 msgstr "متاسفیم، لیست علاقه مندی زمانی آماده است که شما کوکی مروگرتون را فعال کرده باشید."
 
-#: includes/functions-yith-wcwl.php:461
+#: includes/functions-yith-wcwl.php:581
 msgid "Only you can see this list"
 msgstr "فقط شما میتوانید این لیست را ببینید"
 
-#: includes/functions-yith-wcwl.php:451
+#: includes/functions-yith-wcwl.php:571
 msgid "Only people with a link to this list can see it"
 msgstr "فقط افرادی که پیوندی به این لیست دارند می توانند آن را ببینند"
 
-#: includes/functions-yith-wcwl.php:471
+#: includes/functions-yith-wcwl.php:591
 msgid "Anyone can search for and see this list"
 msgstr "هرکسی می تواند این لیست را جستجو و مشاهده کند"
 
 #. translators: 1. Count of users when many, or "another" when only one.
-#: includes/functions-yith-wcwl.php:258
+#: includes/functions-yith-wcwl.php:318
 msgid "have this item in wishlist"
 msgstr "این مورد را در  لیست علاقه مندی ها قرار دهید"
 
 #. translators: 1. Count of users when many, or "another" when only one.
-#: includes/functions-yith-wcwl.php:257
+#: includes/functions-yith-wcwl.php:317
 msgid "You and %s user"
 msgid_plural "You and %d users"
 msgstr[0] "شما و %d کاربر"
 
-#: includes/functions-yith-wcwl.php:253
+#: includes/functions-yith-wcwl.php:313
 msgid "to add this item in wishlist"
 msgstr "برای افزودن این مورد در  لیست علاقه مندی ها"
 
-#: includes/functions-yith-wcwl.php:252
+#: includes/functions-yith-wcwl.php:312
 msgid "You're the first"
 msgstr "شما اولین نفر هستید"
 
 #. translators: 1. Number of users.
-#: includes/functions-yith-wcwl.php:250
+#: includes/functions-yith-wcwl.php:310
 msgid "has this item in wishlist"
 msgid_plural "have this item in wishlist"
 msgstr[0] "این مورد را در لیست علاقه مندی ها دارید"
 
 #. translators: 1. Number of users.
-#: includes/functions-yith-wcwl.php:249
+#: includes/functions-yith-wcwl.php:309
 msgid "%d user"
 msgid_plural "%d users"
 msgstr[0] "%d کاربر"
 
-#: includes/class-yith-wcwl-admin.php:249
+#: includes/class-yith-wcwl-admin.php:244
 msgid "Allows your customers to create and share lists of products that they want to purchase on your e-commerce."
 msgstr "به مشتریان شما اجازه می دهد لیستی از کالاهایی را که می خواهند در فروشگاه شما خریداری کنند ، ایجاد و به اشتراک بگذارند."
 
-#: includes/class-yith-wcwl-admin.php:149
-msgid "Wishlist page options"
-msgstr "تنظیمات برگه لیست علاقه"
-
-#: includes/class-yith-wcwl-admin.php:148
-msgid "Add to wishlist options"
-msgstr "تنظیمات علاقه مندی"
-
-#: includes/class-yith-wcwl-admin.php:147
-msgid "General settings"
-msgstr "تنظیمات عمومی"
-
-#: includes/class-yith-wcwl.php:164
+#: includes/class-yith-wcwl.php:268
 msgid "The item cannot be added to this wishlist"
 msgstr "این مورد را نمی توان به این  لیست علاقه مندی ها اضافه کرد"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:31
+#: plugin-fw/templates/sysinfo/tabs/main.php:35
 msgid "Output IP Address"
 msgstr "خروجی نشانی IP"
 
-#: plugin-fw/templates/sysinfo/tabs/main.php:22
+#: plugin-fw/templates/sysinfo/tabs/main.php:26
 msgid "Site URL"
 msgstr "آدرس سایت"
 
-#: plugin-fw/includes/class-yith-system-status.php:493
+#: plugin-fw/includes/class-yith-system-status.php:487
 msgid "N/A"
 msgstr "نامشخص"
 
-#: plugin-options/wishlist_page-options.php:183
+#: plugin-options/settings/wishlist_page-options.php:192
 msgid "Show \"Share URL\" field on wishlist page"
 msgstr "فیلد \"اشتراک آدرس\" را در صفحه لیست علاقه مندی نمایش دهید"
 
-#: plugin-options/wishlist_page-options.php:182
+#: plugin-options/settings/wishlist_page-options.php:191
 msgid "Share by URL"
 msgstr "اشتراک گذاری با آدرس"
 
-#: templates/share.php:93
+#: templates/share.php:120
 msgid "this wishlist link and share it anywhere)"
 msgstr "اشتراک گذاری این لیست در همه جا"
 
-#: templates/share.php:93
+#: templates/share.php:120
 msgid "copy"
 msgstr "کپی"
 
-#: templates/share.php:93
+#: templates/share.php:120
 msgid "(Now"
 msgstr "اکنون"
 
-#: plugin-fw/includes/class-yith-system-status.php:120
+#: plugin-fw/includes/class-yith-system-status.php:117
 msgid "Iconv Module"
 msgstr "ماژول Iconv"
 
@@ -1312,125 +1742,125 @@ msgid "%1$s (#%2$s &ndash; %3$s)"
 msgstr "%1$s (#%2$s &ndash; %3$s)"
 
 #. translators: %1$s open link tag, %2$s open link tag
-#: plugin-fw/includes/class-yith-system-status.php:346
+#: plugin-fw/includes/class-yith-system-status.php:336
 msgid "The system check has detected some compatibility issues on your installation.%1$sClick here%2$s to know more"
 msgstr "بررسی سیستم برخی از مشکلات سازگاری را در نصب شما تشخیص داده است. برای کسب اطلاعات بیشتر%1$s اینجا %2$s کلیک کنید"
 
-#: plugin-fw/includes/class-yith-system-status.php:342
+#: plugin-fw/includes/class-yith-system-status.php:332
 msgid "Warning!"
 msgstr "هشدار!"
 
-#: plugin-fw/includes/class-yith-system-status.php:191
+#: plugin-fw/includes/class-yith-system-status.php:185
 msgid "WooCommerce"
 msgstr "ووکامرس"
 
-#: plugin-fw/includes/class-yith-system-status.php:122
+#: plugin-fw/includes/class-yith-system-status.php:119
 msgid "URL FOpen"
 msgstr "نشانی اینترنتی FOpen"
 
-#: plugin-fw/includes/class-yith-system-status.php:121
+#: plugin-fw/includes/class-yith-system-status.php:118
 msgid "OPCache Save Comments"
 msgstr "OPCache ذخیره دیدگاه‌ها"
 
-#: plugin-fw/includes/class-yith-system-status.php:119
+#: plugin-fw/includes/class-yith-system-status.php:116
 msgid "GD Library"
 msgstr "کتابخانه GD"
 
-#: plugin-fw/includes/class-yith-system-status.php:118
+#: plugin-fw/includes/class-yith-system-status.php:115
 msgid "ImageMagick Version"
 msgstr "نگارش ImageMagick"
 
-#: plugin-fw/includes/class-yith-system-status.php:117
+#: plugin-fw/includes/class-yith-system-status.php:114
 msgid "MultiByte String"
 msgstr "عبارت MultiByte"
 
-#: plugin-fw/includes/class-yith-system-status.php:116
+#: plugin-fw/includes/class-yith-system-status.php:113
 msgid "SimpleXML"
 msgstr "SimpleXML"
 
-#: plugin-fw/includes/class-yith-system-status.php:115
+#: plugin-fw/includes/class-yith-system-status.php:112
 msgid "WordPress Cron"
 msgstr "زمانبندی وردپرس"
 
-#: plugin-fw/includes/class-yith-system-status.php:114
+#: plugin-fw/includes/class-yith-system-status.php:111
 msgid "TLS Version"
 msgstr "نگارش TLS"
 
-#: plugin-fw/includes/class-yith-system-status.php:113
+#: plugin-fw/includes/class-yith-system-status.php:110
 msgid "PHP Version"
 msgstr "نگارش PHP"
 
-#: plugin-fw/includes/class-yith-system-status.php:112
+#: plugin-fw/includes/class-yith-system-status.php:109
 msgid "Available Memory"
 msgstr "حافظه دردسترس"
 
-#: plugin-fw/includes/class-yith-system-status.php:111
+#: plugin-fw/includes/class-yith-system-status.php:108
 msgid "WooCommerce Version"
 msgstr "نگارش ووکامرس"
 
-#: plugin-fw/includes/class-yith-system-status.php:110
+#: plugin-fw/includes/class-yith-system-status.php:107
 msgid "WordPress Version"
 msgstr "نگارش وردپرس"
 
-#: plugin-fw/includes/class-yith-system-status.php:140
-#: plugin-fw/includes/class-yith-system-status.php:141
+#: plugin-fw/includes/class-yith-system-status.php:136
+#: plugin-fw/includes/class-yith-system-status.php:137
 #: plugin-fw/templates/sysinfo/system-information-panel.php:11
 msgid "System Status"
 msgstr "وضعیت سیستم"
 
 #. translators: %1$s opening link tag, %2$s closing link tag
-#: plugin-fw/includes/class-yith-system-status.php:577
-#: plugin-fw/includes/class-yith-system-status.php:600
+#: plugin-fw/includes/class-yith-system-status.php:569
+#: plugin-fw/includes/class-yith-system-status.php:591
 msgid "Read more %1$shere%2$s or contact your hosting company in order to increase it."
 msgstr "بیشتر بخوانید %1$s اینجا%2$ss یا با میزبان خود برای افزایش آن تماس بگیرید."
 
-#: plugin-fw/includes/class-yith-system-status.php:573
+#: plugin-fw/includes/class-yith-system-status.php:565
 msgid "Contact your hosting company in order to enable it."
 msgstr "برای فعال کردن آن با شرکت میزبان خود تماس بگیرید."
 
 #. translators: %1$s code, %2$s file name
-#: plugin-fw/includes/class-yith-system-status.php:565
+#: plugin-fw/includes/class-yith-system-status.php:557
 msgid "Remove %1$s from %2$s file"
 msgstr "%1$s را از پرونده %2$s پاک کنید"
 
-#: plugin-fw/includes/class-yith-system-status.php:554
-#: plugin-fw/includes/class-yith-system-status.php:560
+#: plugin-fw/includes/class-yith-system-status.php:546
+#: plugin-fw/includes/class-yith-system-status.php:552
 msgid "Contact your hosting company in order to update it."
 msgstr "جهت بروزرسانی آن با شرکت میزبان خود تماس بگیرید."
 
-#: plugin-fw/includes/class-yith-system-status.php:550
+#: plugin-fw/includes/class-yith-system-status.php:542
 msgid "Update it to the latest version in order to benefit of all new features and security updates."
 msgstr "برای بهره مندی از تمامی ویژگی های جدید و به روزرسانی های امنیتی ، آن را به جدیدترین نسخه به روز کنید."
 
 #. translators: %1$s plugin name, %2$s version number
-#: plugin-fw/includes/class-yith-system-status.php:526
+#: plugin-fw/includes/class-yith-system-status.php:519
 msgid "%1$s needs at least %2$s version"
 msgstr "%1$s حداقل به نگارش %2$s نیاز دارد"
 
 #. translators: %s recommended memory amount
-#: plugin-fw/includes/class-yith-system-status.php:597
+#: plugin-fw/includes/class-yith-system-status.php:588
 msgid "For optimal functioning of our plugins, we suggest setting at least %s of available memory"
 msgstr "برای عملکرد بهینه افزونه ها ، پیشنهاد می کنیم حداقل%s حافظه دردسترس فراهم کنید"
 
 #. translators: %1$s plugin name, %2$s required memory amount
-#: plugin-fw/includes/class-yith-system-status.php:523
+#: plugin-fw/includes/class-yith-system-status.php:516
 msgid "%1$s needs at least %2$s of available memory"
 msgstr "%1$s حداقل به %2$s حافظه موجود احتیاج دارد"
 
 #. translators: %1$s plugin name, %2$s requirement name
-#: plugin-fw/includes/class-yith-system-status.php:520
+#: plugin-fw/includes/class-yith-system-status.php:513
 msgid "%1$s needs %2$s enabled"
 msgstr "%1$s نیاز دارد تا %2$s فعال شود "
 
-#: plugin-fw/includes/class-yith-system-status.php:488
+#: plugin-fw/includes/class-yith-system-status.php:482
 msgid "Disabled"
 msgstr "غیرفعال شد"
 
-#: plugin-fw/includes/class-yith-system-status.php:488
+#: plugin-fw/includes/class-yith-system-status.php:482
 msgid "Enabled"
 msgstr "فعال شد"
 
-#: plugin-fw/templates/sysinfo/system-information-panel.php:22
+#: plugin-fw/templates/sysinfo/system-information-panel.php:28
 msgid "YITH System Information"
 msgstr "اطلاعات سیستم YITH"
 
@@ -1446,12 +1876,12 @@ msgstr "حذف همه"
 msgid "Add All"
 msgstr "افزودن همه"
 
-#: includes/class-yith-wcwl-shortcode.php:510
-#: plugin-options/wishlist_page-options.php:174
+#: includes/class-yith-wcwl-shortcode.php:579
+#: plugin-options/settings/wishlist_page-options.php:183
 msgid "Share on WhatsApp"
 msgstr "اشتراک گذاری در واتس اپ"
 
-#: templates/share.php:83
+#: templates/share.php:110
 msgid "WhatsApp"
 msgstr "واتس اپ"
 
@@ -1486,7 +1916,7 @@ msgstr "جدیدترین اخبار از بلاگ YITH"
 msgid "YITH Latest Updates"
 msgstr "جدیدترین به‌روزرسانی‌های YITH"
 
-#: init.php:160
+#: init.php:156
 msgid "is enabled but not effective. It requires WooCommerce to work."
 msgstr "YITH WooCommerce Wishlist فعال شده اما برای عملکرد ابتدا باید پلاگین woocommerce را نصب کنید"
 
@@ -1548,55 +1978,49 @@ msgctxt "[gutenberg]: block name"
 msgid "YITH Add to wishlist"
 msgstr "افزودن به علاقه مندی ها"
 
-#: plugin-fw/includes/builders/gutenberg/class-yith-gutenberg.php:149
+#: plugin-fw/includes/builders/gutenberg/class-yith-gutenberg.php:156
 msgctxt "[gutenberg]: Category Name"
 msgid "YITH"
 msgstr "YITH"
 
 #. Description of the plugin
+#: init.php
 msgid "<code><strong>YITH WooCommerce Wishlist</strong></code> gives your users the possibility to create, fill, manage and share their wishlists allowing you to analyze their interests and needs to improve your marketing strategies. <a href=\"https://yithemes.com/\" target=\"_blank\">Get more plugins for your e-commerce on <strong>YITH</strong></a>"
 msgstr "<code><strong>YITH WooCommerce Wishlist</strong></code> gives your users the possibility to create, fill, manage and share their wishlists allowing you to analyze their interests and needs to improve your marketing strategies. <a href=\"https://yithemes.com/\" target=\"_blank\">Get more plugins for your e-commerce on <strong>YITH</strong></a>"
 
 #. Author of the plugin
+#: init.php
 msgid "YITH"
 msgstr "افزونه های YITH"
 
-#: plugin-fw/yit-plugin.php:205
+#: plugin-fw/yit-plugin.php:242
 msgid "License"
 msgstr "لایسنس"
 
-#: plugin-fw/yit-plugin.php:201
+#: plugin-fw/yit-plugin.php:238
 msgctxt "Action links"
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: plugin-fw/yit-plugin.php:96
+#: plugin-fw/yit-plugin.php:97
 msgctxt "Plugin Row Meta"
 msgid "Premium version"
 msgstr "نسخه اصلی"
 
-#: plugin-fw/yit-plugin.php:92
+#: plugin-fw/yit-plugin.php:93
 msgctxt "Plugin Row Meta"
 msgid "Support"
 msgstr "پشتیبانی"
 
-#: plugin-fw/yit-plugin.php:88
+#: plugin-fw/yit-plugin.php:89
 msgctxt "Plugin Row Meta"
 msgid "Documentation"
 msgstr "مستندات"
 
-#: plugin-fw/yit-plugin.php:84
+#: plugin-fw/yit-plugin.php:85
 msgctxt "Plugin Row Meta"
 msgid "Live Demo"
 msgstr "دموی زنده"
-
-#: init.php:176
-msgid "while you are using the premium one."
-msgstr "در حالی که از نسخه پریمیوم استفاده می کنید."
-
-#: init.php:176
-msgid "You can't activate the free version of"
-msgstr "شما نمی توانید نسخه رایگان را فعال کنید"
 
 #: plugin-fw/includes/privacy/class-yith-privacy.php:106
 msgctxt "Privacy Policy Content"
@@ -1628,72 +2052,72 @@ msgctxt "Privacy Policy Guide Title"
 msgid "YITH Plugins"
 msgstr "افزونه‌های YITH"
 
-#: includes/class-yith-wcwl-privacy.php:232
+#: includes/class-yith-wcwl-privacy.php:276
 msgid "Items added"
 msgstr "آیتم اضافه شد"
 
-#: includes/class-yith-wcwl-privacy.php:231
+#: includes/class-yith-wcwl-privacy.php:275
 msgid "Visibility"
 msgstr "قابلیت نمایش"
 
-#: includes/class-yith-wcwl-privacy.php:230
+#: includes/class-yith-wcwl-privacy.php:274
 msgctxt "date when wishlist was created"
 msgid "Created on"
 msgstr "ساخته شده در"
 
-#: includes/class-yith-wcwl-privacy.php:229
+#: includes/class-yith-wcwl-privacy.php:273
 msgid "Title"
 msgstr "عنوان فیلد"
 
-#: includes/class-yith-wcwl-privacy.php:227
+#: includes/class-yith-wcwl-privacy.php:271
 msgid "Token"
 msgstr "توکن"
 
 #. Translators: %s Order number.
-#: includes/class-yith-wcwl-privacy.php:203
+#: includes/class-yith-wcwl-privacy.php:236
 msgid "Wishlist %s has been retained."
 msgstr "لیست علاقه مندی %s حفظ شده است."
 
 #. Translators: %s Order number.
-#: includes/class-yith-wcwl-privacy.php:199
+#: includes/class-yith-wcwl-privacy.php:232
 msgid "Removed wishlist %s."
 msgstr "لیست علاقه مندی های من در %s"
 
-#: includes/class-yith-wcwl-privacy.php:137 plugin-options/lists-options.php:25
-#: plugin-options/lists-options.php:32
+#: includes/class-yith-wcwl-privacy.php:146 plugin-options/lists-options.php:33
+#: plugin-options/lists-options.php:39
 msgid "Wishlists"
 msgstr "لیست علاقه مندی ها"
 
-#: includes/class-yith-wcwl-privacy.php:84
-#: includes/class-yith-wcwl-privacy.php:100
+#: includes/class-yith-wcwl-privacy.php:93
+#: includes/class-yith-wcwl-privacy.php:109
 msgid "Customer wishlists"
 msgstr "لیست علاقه مندی مشتری"
 
-#: includes/class-yith-wcwl-privacy.php:64
+#: includes/class-yith-wcwl-privacy.php:63
 msgid "Our team members have access to this information to offer you better deals for the products you love."
 msgstr "اعضای تیم ما به این اطلاعات دسترسی دارند تا کالاهای بهتری را برای محصولات مورد علاقه خود به شما ارائه دهند."
 
-#: includes/class-yith-wcwl-privacy.php:62
+#: includes/class-yith-wcwl-privacy.php:61
 msgid "Wishlist details, such as products added, date of addition, name and privacy settings of your wishlists"
 msgstr "جزئیات لیست علاقه مندی، مانند محصولات افزوده شده، تاریخ اضافه شدن، نام و تنظیمات قوانین لیست شما"
 
-#: includes/class-yith-wcwl-privacy.php:60
+#: includes/class-yith-wcwl-privacy.php:59
 msgid "Members of our team have access to the information you provide us with. For example, both Administrators and Shop Managers can access:"
 msgstr "اعضای تیم ما به اطلاعاتی که به ما ارائه می دهند دسترسی دارند. به عنوان مثال ، هر دو مدیر و مدیران فروشگاه می توانند دسترسی داشته باشند:"
 
-#: includes/class-yith-wcwl-privacy.php:57
+#: includes/class-yith-wcwl-privacy.php:56
 msgid "We’ll also use cookies to keep track of wishlist contents while you’re browsing our site."
 msgstr "ما هم چنین با استفاده از کوکی های شما محتوای لیست علاقه مندی شما را در سایتمان مشاهده میکنیم"
 
-#: includes/class-yith-wcwl-privacy.php:55
+#: includes/class-yith-wcwl-privacy.php:54
 msgid "Wishlists you’ve created: we’ll keep track of the wishlists you create, and make them visible to the store staff"
 msgstr "لیست شما ساخته شد: ما این لیست را حفظ میکنیم و به دیگران همکاران نشان میدهیم."
 
-#: includes/class-yith-wcwl-privacy.php:54
+#: includes/class-yith-wcwl-privacy.php:53
 msgid "Products you’ve added to the wishlist: we’ll use this to show you and other users your favourite products, and to create targeted email campaigns."
 msgstr "محصولاتی که به لیست دلخواه اضافه کرده اید: ما از این موارد استفاده خواهیم کرد تا محصولات مورد علاقه خود را به شما و سایر کاربران نشان دهیم و کمپین های ایمیل هدفمند را ایجاد کنید."
 
-#: includes/class-yith-wcwl-privacy.php:52
+#: includes/class-yith-wcwl-privacy.php:51
 msgid "While you visit our site, we’ll track:"
 msgstr "زمانی که شما وب سایت ما را مشاهده میکنید، ما شما را دنبال میکنیم:"
 
@@ -1701,8 +2125,8 @@ msgstr "زمانی که شما وب سایت ما را مشاهده میکنید
 msgid "Set Default"
 msgstr "تنظیم پیش‌فرض"
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:454
-#: plugin-fw/includes/class-yit-plugin-panel.php:457
+#: plugin-fw/includes/class-yit-plugin-panel.php:559
+#: plugin-fw/includes/class-yit-plugin-panel.php:562
 msgid "How to install premium version"
 msgstr "چگونه نسخه پولی را نصب کنید"
 
@@ -1711,68 +2135,76 @@ msgid "Reset"
 msgstr "بازگردانی"
 
 #. Author URI of the plugin
+#: init.php
 msgid "https://yithemes.com/"
 msgstr "https://yithemes.com/"
 
 #. Plugin URI of the plugin
+#: init.php
 msgid "https://yithemes.com/themes/plugins/yith-woocommerce-wishlist/"
 msgstr "https://yithemes.com/themes/plugins/yith-woocommerce-wishlist/"
 
-#: includes/functions-yith-wcwl.php:467
+#: includes/functions-yith-wcwl.php:587
 msgid "Public"
 msgstr "عمومی"
 
-#: includes/functions-yith-wcwl.php:457
+#: includes/functions-yith-wcwl.php:577
 msgid "Private"
 msgstr "خصوصی"
 
-#: includes/functions-yith-wcwl.php:447
+#: includes/functions-yith-wcwl.php:567
 msgid "Shared"
 msgstr "به اشتراک گذاشته شده"
 
-#: templates/wishlist-view-mobile.php:212 templates/wishlist-view.php:262
+#: templates/wishlist-view-mobile.php:232 templates/wishlist-view.php:544
 msgid "Move"
 msgstr "انتقال"
 
 #. translators: date added label: 1 date added.
-#: templates/wishlist-view.php:243
+#: templates/wishlist-view.php:479
 msgid "Added on: %s"
 msgstr "اضافه شده در : ‫ %s"
 
-#: templates/wishlist-view-mobile.php:192 templates/wishlist-view.php:229
+#: templates/wishlist-view-mobile.php:199 templates/wishlist-view.php:431
 msgid "In Stock"
 msgstr "موجود"
 
-#: templates/wishlist-view-mobile.php:192 templates/wishlist-view.php:229
+#: templates/wishlist-view-mobile.php:199 templates/wishlist-view.php:431
 msgid "Out of stock"
 msgstr "موجود نیست"
 
-#: includes/class-yith-wcwl-wishlist-item.php:189
+#: includes/class-yith-wcwl-wishlist-item.php:203
 msgid "Free!"
 msgstr "رایگان!"
 
-#: templates/wishlist-view-mobile.php:241 templates/wishlist-view.php:157
-#: templates/wishlist-view.php:293
+#: templates/wishlist-view-mobile.php:283 templates/wishlist-view.php:250
+#: templates/wishlist-view.php:607
 msgid "Remove this product"
 msgstr "حذف این محصول"
 
-#: templates/wishlist-view.php:105
+#: templates/wishlist-view.php:164
 msgid "Stock status"
 msgstr "وضعیت موجودی"
 
-#: templates/wishlist-view.php:87
+#: templates/wishlist-view.php:122
 msgid "Unit price"
 msgstr "قیمت واحد"
 
-#: templates/wishlist-view-header.php:48
+#: plugin-fw/templates/bh-onboarding/onboarding-tabs.php:60
+msgid "Save"
+msgstr "ذخیره"
+
+#: templates/wishlist-view-header.php:86
 msgid "Edit title"
 msgstr "ویرایش عنوان"
 
-#: templates/share.php:67 templates/share.php:68
+#: templates/share.php:72 templates/share.php:73
 msgid "Pinterest"
 msgstr "پینترست"
 
-#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:43
+#: plugin-fw/templates/panel/v2/panel-content-page.php:58
+#: plugin-fw/templates/panel/v2/woocommerce/woocommerce-form.php:70
+#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:41
 msgid "Reset Defaults"
 msgstr "بازگردانی به پیشفرض"
 
@@ -1802,24 +2234,24 @@ msgstr "بدون ناحیه کناری"
 msgid "Left sidebar"
 msgstr "ناحیه کناری چپ"
 
-#: plugin-fw/templates/fields/image-gallery.php:41
+#: plugin-fw/templates/fields/image-gallery.php:26
+#: plugin-fw/templates/fields/image-gallery.php:37
 msgid "Delete"
 msgstr "حذف"
 
-#: plugin-fw/templates/fields/image-gallery.php:39
+#: plugin-fw/templates/fields/image-gallery.php:35
 msgid "Add images"
 msgstr "افزودن تصاویر"
 
-#: plugin-fw/templates/fields/image-gallery.php:38
+#: plugin-fw/templates/fields/image-gallery.php:34
 msgid "Add to gallery"
 msgstr "افزودن به گالری"
 
-#: plugin-fw/templates/fields/image-gallery.php:37
+#: plugin-fw/templates/fields/image-gallery.php:33
 msgid "Add Images to Gallery"
 msgstr "افزودن تصاویر به گالری"
 
-#: plugin-fw/templates/fields/image-gallery.php:29
-#: plugin-fw/templates/fields/image-gallery.php:40
+#: plugin-fw/templates/fields/image-gallery.php:36
 msgid "Delete image"
 msgstr "حذف تصویر"
 
@@ -1855,19 +2287,23 @@ msgid "Upload"
 msgstr "آپلود"
 
 #: plugin-fw/templates/fields/customtabs.php:25
-#: plugin-fw/templates/fields/customtabs.php:68 templates/wishlist-view.php:293
+#: plugin-fw/templates/fields/customtabs.php:68 templates/wishlist-view.php:607
 msgid "Remove"
 msgstr "حذف"
 
-#: includes/functions-yith-wcwl.php:425
+#: includes/functions-yith-wcwl.php:534
 msgid "None"
 msgstr "انتخاب"
 
-#: templates/share.php:75 templates/share.php:76
+#: plugin-fw/templates/fields/ajax-products.php:16
+msgid "Search for a product..."
+msgstr "جستجو برای محصول ..."
+
+#: templates/share.php:102 templates/share.php:103
 msgid "Email"
 msgstr "ایمیل"
 
-#: templates/wishlist-view.php:79
+#: templates/wishlist-view.php:102
 msgid "Product name"
 msgstr "نام محصول"
 
@@ -1879,78 +2315,77 @@ msgstr "افزونه‌ها ارتقاء یافتند"
 msgid "Plugins Activated"
 msgstr "افزونه‌ها فعال شدند"
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1061
+#: plugin-fw/includes/class-yit-plugin-panel.php:1567
 msgid "Sorting successful."
 msgstr "مرتب‌سازی موفق بود."
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1060
+#: plugin-fw/includes/class-yit-plugin-panel.php:1566
 msgid "Sorry, import is disabled."
 msgstr "متاسفانه، درون‌ریزی غیرفعال است."
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1059
+#: plugin-fw/includes/class-yit-plugin-panel.php:1565
 msgid "The added file is not valid."
 msgstr "پرونده افزوده شده معتبر نیست."
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1058
+#: plugin-fw/includes/class-yit-plugin-panel.php:1564
 msgid "An error has occurred during import. Please try again."
 msgstr "خطائی هنگام درون‌ریزی رخ داده است. مجدد تلاش کنید."
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1057
+#: plugin-fw/includes/class-yit-plugin-panel.php:1563
 msgid "Database imported correctly."
 msgstr "پایگاه داده به درستی درون‌ریزی شد."
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1055
-#: plugin-fw/includes/class-yit-plugin-panel.php:1056
+#: plugin-fw/includes/class-yit-plugin-panel.php:1561
 msgid "Element updated correctly."
 msgstr "عنصر به درستی بروزرسانی شد."
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1054
+#: plugin-fw/includes/class-yit-plugin-panel.php:1560
 msgid "Element deleted correctly."
 msgstr "عنصر به درستی حذف شد."
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1053
+#: plugin-fw/includes/class-yit-plugin-panel.php:1559
 msgid "Settings reset"
 msgstr "تظنیمات بازگردانی شد"
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1052
+#: plugin-fw/includes/class-yit-plugin-panel.php:1558
 msgid "Settings saved"
 msgstr "تظنیمات ذخیره شد"
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:1051
+#: plugin-fw/includes/class-yit-plugin-panel.php:1557
 msgid "The element you have entered already exists. Please, enter another name."
 msgstr "عنصری که وارد کردید وجود دارد. نام دیگری وارد کنید."
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:667
-#: plugin-fw/includes/class-yit-plugin-subpanel.php:140
-#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:15
+#: plugin-fw/includes/class-yit-assets.php:261
+#: plugin-fw/includes/class-yit-plugin-subpanel.php:134
+#: plugin-fw/templates/panel/panel-content-page.php:14
 msgid "Are you sure?"
 msgstr "آیا اطمینان دارید?"
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:671
-#: plugin-fw/includes/class-yit-plugin-subpanel.php:143
+#: plugin-fw/includes/class-yit-plugin-subpanel.php:137
+#: plugin-fw/templates/panel/panel-content-page.php:38
 msgid "Reset to default"
 msgstr "باگردانی به پیشفرض"
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:667
-#: plugin-fw/includes/class-yit-plugin-subpanel.php:140
-#: plugin-fw/templates/panel/woocommerce/woocommerce-form.php:15
+#: plugin-fw/includes/class-yit-assets.php:262
+#: plugin-fw/includes/class-yit-plugin-subpanel.php:134
+#: plugin-fw/templates/panel/panel-content-page.php:14
 msgid "If you continue with this action, you will reset all options in this page."
 msgstr "اگر این عمل را ادامه دهید، تمام تنظیمات این صفحه بازگردانی می شود."
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:659
-#: plugin-fw/includes/class-yit-plugin-subpanel.php:133
+#: plugin-fw/includes/class-yit-plugin-subpanel.php:127
+#: plugin-fw/templates/panel/panel-content-page.php:29
 msgid "Save Changes"
 msgstr "ذخیره‏ی تغییرات"
 
-#: plugin-fw/includes/class-yith-system-status.php:183
+#: plugin-fw/includes/class-yith-system-status.php:177
 msgid "YITH Plugins"
 msgstr "افزونه های YITH"
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:83
+#: plugin-fw/includes/class-yit-plugin-panel.php:89
 msgid "Plugin Settings"
 msgstr "تنظیمات افزونه"
 
-#: plugin-fw/includes/class-yit-plugin-panel-woocommerce.php:429
+#: plugin-fw/includes/class-yit-plugin-panel-woocommerce.php:605
 msgid "The changes you have made will be lost if you leave this page."
 msgstr "تغییراتی که در این صفحه ایجاد کرده اید با ترک آن ازبین می رود."
 
@@ -1959,247 +2394,243 @@ msgstr "تغییراتی که در این صفحه ایجاد کرده اید ب
 msgid "Name"
 msgstr "نام"
 
-#: templates/wishlist-view-mobile.php:252 templates/wishlist-view.php:313
+#: templates/wishlist-view-mobile.php:304 templates/wishlist-view.php:649
 msgid "No products added to the wishlist"
 msgstr "هیچ محصولی به لیست دلخواه شما اضافه نشده است."
 
-#: includes/class-yith-wcwl.php:235 includes/class-yith-wcwl.php:241
+#: includes/class-yith-wcwl.php:375 includes/class-yith-wcwl.php:401
 msgid "Error. Unable to remove the product from the wishlist."
 msgstr "خطا : محصول از لیست علاقه مندی ها حذف نشد."
 
-#: includes/class-yith-wcwl-ajax-handler.php:155
-#: includes/class-yith-wcwl-ajax-handler.php:195
+#: includes/class-yith-wcwl-ajax-handler.php:203
+#: includes/class-yith-wcwl-ajax-handler.php:252
 msgid "Product successfully removed."
 msgstr "محصول با موفقیت حذف شد."
 
-#: includes/class-yith-wcwl.php:168 includes/class-yith-wcwl.php:174
+#: includes/class-yith-wcwl.php:272 includes/class-yith-wcwl.php:278
 msgid "An error occurred while adding the products to the wishlist."
 msgstr "هنگام افزودن محصولات به  لیست علاقه مندی ها ، خطایی روی داد."
 
-#: templates/share.php:59 templates/share.php:60
+#: templates/share.php:64 templates/share.php:65
 msgid "Twitter"
 msgstr "توییتر"
 
-#: templates/share.php:51 templates/share.php:52
+#: templates/share.php:56 templates/share.php:57
 msgid "Facebook"
 msgstr "فیسبوک"
 
-#: includes/class-yith-wcwl-shortcode.php:414
+#: includes/class-yith-wcwl-shortcode.php:461
 msgid "Share on:"
 msgstr "اشتراک در : "
 
-#: includes/class-yith-wcwl-install.php:340
+#: includes/class-yith-wcwl-install.php:352
 msgctxt "page_slug"
 msgid "wishlist"
 msgstr "wishlist"
 
-#: plugin-options/add_to_wishlist-options.php:208
-#: plugin-options/wishlist_page-options.php:297
-#: plugin-options/wishlist_page-options.php:386
-#: plugin-options/wishlist_page-options.php:435
+#: plugin-options/settings/add_to_wishlist-options.php:215
+#: plugin-options/settings/wishlist_page-options.php:306
+#: plugin-options/settings/wishlist_page-options.php:404
+#: plugin-options/settings/wishlist_page-options.php:453
 msgid "Background Hover"
 msgstr "هاور پس زمینه"
 
-#: plugin-options/wishlist_page-options.php:512
+#: plugin-options/settings/wishlist_page-options.php:530
 msgid "Text hover"
 msgstr "هاور متن"
 
-#: plugin-options/wishlist_page-options.php:557
-#: plugin-options/wishlist_page-options.php:597
-#: plugin-options/wishlist_page-options.php:637
-#: plugin-options/wishlist_page-options.php:677
-#: plugin-options/wishlist_page-options.php:717
+#: plugin-options/settings/wishlist_page-options.php:575
+#: plugin-options/settings/wishlist_page-options.php:615
+#: plugin-options/settings/wishlist_page-options.php:655
+#: plugin-options/settings/wishlist_page-options.php:695
+#: plugin-options/settings/wishlist_page-options.php:735
 msgid "Background hover"
 msgstr "هاور پس زمینه"
 
-#: plugin-options/add_to_wishlist-options.php:200
-#: plugin-options/wishlist_page-options.php:289
-#: plugin-options/wishlist_page-options.php:378
-#: plugin-options/wishlist_page-options.php:427
-#: plugin-options/wishlist_page-options.php:475
+#: plugin-options/settings/add_to_wishlist-options.php:208
+#: plugin-options/settings/wishlist_page-options.php:298
+#: plugin-options/settings/wishlist_page-options.php:396
+#: plugin-options/settings/wishlist_page-options.php:445
+#: plugin-options/settings/wishlist_page-options.php:493
 msgid "Border"
 msgstr "کادر"
 
-#: plugin-options/add_to_wishlist-options.php:195
-#: plugin-options/wishlist_page-options.php:284
-#: plugin-options/wishlist_page-options.php:373
-#: plugin-options/wishlist_page-options.php:422
-#: plugin-options/wishlist_page-options.php:470
-#: plugin-options/wishlist_page-options.php:507
+#: plugin-options/settings/add_to_wishlist-options.php:203
+#: plugin-options/settings/wishlist_page-options.php:293
+#: plugin-options/settings/wishlist_page-options.php:391
+#: plugin-options/settings/wishlist_page-options.php:440
+#: plugin-options/settings/wishlist_page-options.php:488
+#: plugin-options/settings/wishlist_page-options.php:525
 msgid "Text"
 msgstr "متن"
 
-#: plugin-options/add_to_wishlist-options.php:190
-#: plugin-options/wishlist_page-options.php:279
-#: plugin-options/wishlist_page-options.php:368
-#: plugin-options/wishlist_page-options.php:417
-#: plugin-options/wishlist_page-options.php:465
-#: plugin-options/wishlist_page-options.php:552
-#: plugin-options/wishlist_page-options.php:592
-#: plugin-options/wishlist_page-options.php:632
-#: plugin-options/wishlist_page-options.php:672
-#: plugin-options/wishlist_page-options.php:712
+#: plugin-options/settings/add_to_wishlist-options.php:198
+#: plugin-options/settings/wishlist_page-options.php:288
+#: plugin-options/settings/wishlist_page-options.php:386
+#: plugin-options/settings/wishlist_page-options.php:435
+#: plugin-options/settings/wishlist_page-options.php:483
+#: plugin-options/settings/wishlist_page-options.php:570
+#: plugin-options/settings/wishlist_page-options.php:610
+#: plugin-options/settings/wishlist_page-options.php:650
+#: plugin-options/settings/wishlist_page-options.php:690
+#: plugin-options/settings/wishlist_page-options.php:730
 msgid "Background"
 msgstr "پس زمینه"
 
-#: plugin-options/add_to_wishlist-options.php:246
+#: plugin-options/settings/add_to_wishlist-options.php:253
 msgid "\"Add to wishlist\" icon"
 msgstr "آیکون \"افزودن به علاقه مندی\""
 
-#: plugin-options/settings-options.php:56
+#: plugin-options/settings/general-options.php:61
 msgid "Enable slider in wishlist"
 msgstr "فعال سازی اسلایدر در لیست علاقه مندی ها"
 
-#: plugin-options/settings-options.php:48
+#: plugin-options/settings/general-options.php:55
 msgid "YITH WooCommerce Frequently Bought Together Integration"
 msgstr "یکپارچگی با افزونه YITH WooCommerce Frequently Bought Together"
 
-#. translators: 1. Anchor to Frequently Bought Together landing page on
-#. yithemes.com.
-#: plugin-options/settings-options.php:19
-msgid "If you want to take advantage of this feature, you could consider purchasing the %s."
-msgstr "اگر می خواهید از این ویژگی استفاده کنید ، می توانید %s. را خریداری کنید."
-
-#: plugin-options/wishlist_page-options.php:209
+#: plugin-options/settings/wishlist_page-options.php:218
 msgid "Social image URL"
 msgstr "آدرس تصویر اجتماعی"
 
-#: plugin-options/wishlist_page-options.php:200
+#: plugin-options/settings/wishlist_page-options.php:209
 msgid "Social text"
 msgstr "متن اجتماعی"
 
-#: plugin-options/wishlist_page-options.php:165
+#: plugin-options/settings/wishlist_page-options.php:174
 msgid "Share by email"
 msgstr "اشتراک گذاری با ایمیل"
 
-#: includes/class-yith-wcwl-shortcode.php:473
-#: plugin-options/wishlist_page-options.php:156
+#: includes/class-yith-wcwl-shortcode.php:542
+#: plugin-options/settings/wishlist_page-options.php:165
 msgid "Pin on Pinterest"
 msgstr "پین به پینترست"
 
-#: includes/class-yith-wcwl-shortcode.php:455
-#: plugin-options/wishlist_page-options.php:147
+#: includes/class-yith-wcwl-shortcode.php:524
+#: plugin-options/settings/wishlist_page-options.php:156
 msgid "Tweet on Twitter"
 msgstr "توییت در توییتر"
 
-#: includes/class-yith-wcwl-shortcode.php:438
-#: plugin-options/wishlist_page-options.php:138
+#: includes/class-yith-wcwl-shortcode.php:507
+#: plugin-options/settings/wishlist_page-options.php:147
 msgid "Share on Facebook"
 msgstr "اشتراک در فیس بوک"
 
-#: plugin-options/wishlist_page-options.php:335
+#: plugin-options/settings/wishlist_page-options.php:344
 msgid "\"Add to cart\" icon"
 msgstr "آیکون \"افزودن به سبد خرید\" را انتخاب کنید"
 
-#: plugin-options/add_to_wishlist-options.php:270
+#: plugin-options/settings/add_to_wishlist-options.php:286
 msgid "\"Added to wishlist\" icon"
 msgstr "آیکون \"افزوده شدن به علاقه‌مندی‌ها\""
 
-#: plugin-options/add_to_wishlist-options.php:294
+#: plugin-options/settings/add_to_wishlist-options.php:319
 msgid "Custom CSS"
 msgstr "CSS دستی"
 
-#: includes/class-yith-wcwl-frontend.php:725
-#: includes/class-yith-wcwl-shortcode.php:239
-#: plugin-options/wishlist_page-options.php:240
-#: templates/wishlist-view-footer-mobile.php:46
-#: templates/wishlist-view-footer.php:46
+#: includes/class-yith-wcwl-frontend.php:1090
+#: includes/class-yith-wcwl-shortcode.php:257
+#: plugin-options/settings/wishlist_page-options.php:249
+#: templates/wishlist-view-footer-mobile.php:59
+#: templates/wishlist-view-footer.php:59
 msgid "Add to cart"
 msgstr "افزودن به سبد خرید"
 
-#: plugin-options/wishlist_page-options.php:237
+#: plugin-options/settings/wishlist_page-options.php:246
 msgid "\"Add to cart\" text"
 msgstr "متن \"افزودن به سبد خرید\""
 
-#: plugin-options/add_to_wishlist-options.php:135
+#: plugin-options/settings/add_to_wishlist-options.php:144
 msgid "Product added!"
 msgstr "اضافه شد!"
 
-#: plugin-options/add_to_wishlist-options.php:132
+#: plugin-options/settings/add_to_wishlist-options.php:141
 msgid "\"Product added\" text"
 msgstr "متن \"محصول اضافه شد\""
 
-#: plugin-options/add_to_wishlist-options.php:151
+#: plugin-options/settings/add_to_wishlist-options.php:160
 msgid "The product is already in your wishlist!"
 msgstr "این محصول در لیست علاقه مندی ها شما قرار دارد!"
 
-#: plugin-options/add_to_wishlist-options.php:148
+#: plugin-options/settings/add_to_wishlist-options.php:157
 msgid "\"Product already in wishlist\" text"
 msgstr "متن \"محصول از قبل اضافه شده\""
 
 #: includes/widgets/elementor/class-yith-wcwl-elementor-add-to-wishlist.php:128
-#: plugin-options/add_to_wishlist-options.php:143
+#: plugin-options/settings/add_to_wishlist-options.php:152
 msgid "Browse wishlist"
 msgstr "لیست علاقه مندی ها"
 
-#: plugin-options/add_to_wishlist-options.php:140
+#: plugin-options/settings/add_to_wishlist-options.php:149
 msgid "\"Browse wishlist\" text"
 msgstr "متن \"مشاهده علاقه مندی ها\""
 
 #: includes/widgets/elementor/class-yith-wcwl-elementor-add-to-wishlist.php:118
-#: plugin-options/add_to_wishlist-options.php:127
+#: plugin-options/settings/add_to_wishlist-options.php:136
 msgid "Add to wishlist"
 msgstr "افزودن به علاقه مندی ها"
 
-#: plugin-options/add_to_wishlist-options.php:124
+#: plugin-options/settings/add_to_wishlist-options.php:133
 msgid "\"Add to wishlist\" text"
 msgstr "متن \"افزودن به لیست علاقه مندی ها\""
 
-#: plugin-options/wishlist_page-options.php:120
+#: plugin-options/settings/wishlist_page-options.php:129
 msgid "Remove the product from the wishlist after it has been added to the cart"
 msgstr "بعد از افزودن محصول به سبد خرید ، محصول را از لیست علاقه مندی خارج کنید"
 
-#: plugin-options/wishlist_page-options.php:119
+#: plugin-options/settings/wishlist_page-options.php:128
 msgid "Remove if added to the cart"
 msgstr "حذف محصول در صورت افزودن به سبد"
 
-#: plugin-options/wishlist_page-options.php:110
+#: plugin-options/settings/wishlist_page-options.php:119
 msgid "Redirect to cart"
 msgstr "انتقال به سبد خرید"
 
-#: plugin-options/add_to_wishlist-options.php:75
-#: plugin-options/add_to_wishlist-options.php:107
+#: plugin-options/settings/add_to_wishlist-options.php:84
+#: plugin-options/settings/add_to_wishlist-options.php:116
 msgid "Use shortcode"
 msgstr "استفاده از شورتکد"
 
-#: plugin-options/add_to_wishlist-options.php:106
+#: plugin-options/settings/add_to_wishlist-options.php:115
 msgid "After summary"
 msgstr "بعد از خلاصه محصول"
 
-#: plugin-options/add_to_wishlist-options.php:105
+#: plugin-options/settings/add_to_wishlist-options.php:114
 msgid "After thumbnails"
 msgstr "بعد از تصاویر محصول"
 
-#: plugin-options/add_to_wishlist-options.php:104
+#: plugin-options/settings/add_to_wishlist-options.php:113
 msgid "After \"Add to cart\""
 msgstr "بعد از  \"افزودن به سبد\""
 
 #. translators: 1. Blog name.
-#: plugin-options/wishlist_page-options.php:195
+#: plugin-options/settings/wishlist_page-options.php:204
 msgid "My wishlist on %s"
 msgstr "لیست علاقه مندی های من در %s"
 
-#: plugin-options/wishlist_page-options.php:229
+#: plugin-options/settings/wishlist_page-options.php:238
 msgid "Default wishlist name"
 msgstr "نام لیست علاقه مندی پیش فرض"
 
-#: plugin-options/add_to_wishlist-options.php:20
-#: plugin-options/settings-options.php:27
+#: plugin-options/settings/add_to_wishlist-options.php:29
+#: plugin-options/settings/general-options.php:34
 msgid "General Settings"
 msgstr "تنظیمات عمومی"
 
 #. Plugin Name of the plugin
+#: init.php
 msgid "YITH WooCommerce Wishlist"
 msgstr "YITH WooCommerce Wishlist"
 
-#: plugin-options/wishlist_page-options.php:26
+#: plugin-options/settings/wishlist_page-options.php:28
+#: plugin-options/settings/wishlist_page-options.php:35
 msgid "Wishlist page"
 msgstr "صفحه لیست علاقه مندی"
 
-#: plugin-fw/includes/class-yit-plugin-panel.php:84
+#: plugin-fw/includes/class-yit-plugin-panel.php:90
 msgid "Settings"
 msgstr "تنظیمات"
 
-#: includes/class-yith-wcwl-install.php:342
+#: includes/class-yith-wcwl-install.php:354
 msgid "Wishlist"
 msgstr "لیست علاقه مندی ها"
