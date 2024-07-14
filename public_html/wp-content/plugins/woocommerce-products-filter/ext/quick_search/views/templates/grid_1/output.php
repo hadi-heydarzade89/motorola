@@ -4,7 +4,7 @@ $structure = WOOF_EXT_QUICK_TEXT::parse_template_structure($template_structure);
 ?>
 <div class="woof_qs_result  woof_qs_list_<?php echo esc_attr($template_result) ?>   text_res_page_0" >
     <div class=" woof_qs_table_<?php echo esc_attr($template_result) ?>_header"><?php echo wp_kses_post(wp_unslash($header_text)) ?></div>
-    <?php  WOOF_EXT_QUICK_TEXT::show_sort_html_select_e() ?>
+    <?php WOOF_EXT_QUICK_TEXT::show_sort_html_select_e() ?>
     __PAGINATION__
     <ul class="cards table-hover woof_qs_container">
         <li class="cards__item woof_qs_item">

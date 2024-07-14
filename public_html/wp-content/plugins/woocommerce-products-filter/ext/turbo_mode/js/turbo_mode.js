@@ -27,6 +27,11 @@ var WoofTurboMode_obj = function (data) {
         this.additional_tax = data.additional_tax;
     }
 
+    this.file_error_msg = '';
+    if (typeof data.file_error_nitice !== undefined &&  data.file_error_nitice.length) {
+        this.file_error_msg = data.file_error_nitice;
+    }
+    
     this.keys_array = function (data) {
         var array_keys = {};
         array_keys['taxonomies'] = [];
@@ -394,6 +399,7 @@ var WoofTurboMode_obj = function (data) {
     }
     this.uploadFile = function () {
         var do_after_upload = this.do_after_upload;
+	let show_error_notice = this.show_error_notice
         var _this = this;
         if (!woof_turbo_mode_file.length) {
             jQuery.getJSON(this.file_link, function (file_data) {
@@ -403,6 +409,8 @@ var WoofTurboMode_obj = function (data) {
                 console.log("Turbo mode file downloaded!");
                 do_after_upload(_this);
             }).fail(function () {
+		//error_nitice
+		show_error_notice(_this.file_error_msg, _this);
                 console.log("I can not access files!  Please create data file OR  check  .htaccess  settings");
             });
         }
@@ -475,7 +483,24 @@ var WoofTurboMode_obj = function (data) {
         }
         return " (get_visibility(taxonomies," + search + ")= true) ";
     }
+    this.show_error_notice = function(message, _this){
+	let div = document.createElement("div");
+	div.classList.add("woof_tm_error_wrapper");
+	let icon = document.createElement("span");
+	icon.classList.add("dashicons");
+	icon.classList.add("dashicons-warning");
+	let prf = document.createElement("p");
+	prf.innerHTML = message;
+	div.appendChild(icon);
+	div.appendChild(prf);
+	
+	let filters = document.querySelectorAll('.woof_redraw_zone');
+	for (let i = 0; i < filters.length; i++) {
+	    filters[i].innerHTML = "";
+	    filters[i].appendChild(div.cloneNode(true));
+	}
 
+    }
     this.taxonomy_query = function (key, data, logic) {
         var query = [];
         data = data + "";

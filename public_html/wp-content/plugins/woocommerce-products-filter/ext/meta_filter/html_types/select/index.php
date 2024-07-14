@@ -112,7 +112,7 @@ class WOOF_META_FILTER_SELECT extends WOOF_META_FILTER_TYPE {
 
         if ($key) {
             $meta_key = str_replace("select_", "", $key);
-            $options = explode($this->options_separator, (isset(woof()->settings['meta_filter'][$meta_key]["options"])) ? woof()->settings['meta_filter'][$meta_key]["options"] : "");
+            $options = explode(',', (isset(woof()->settings['meta_filter'][$meta_key]["options"])) ? woof()->settings['meta_filter'][$meta_key]["options"] : "");
             if (!empty($options) AND isset($options[intval($value - 1)])) {
                 $op_title = explode('^', $options[intval($value) - 1], 2);
                 

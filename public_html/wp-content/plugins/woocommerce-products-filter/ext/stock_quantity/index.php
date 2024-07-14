@@ -171,7 +171,7 @@ final class WOOF_EXT_STOCK_QUANTITY extends WOOF_EXT {
                     }
                     $product_ids = array_unique($product_ids);
                 }
-                $product_ids = implode(',', array_merge($product_ids, $product_variations_ids));
+                $product_ids = esc_sql(implode(',', array_merge($product_ids, $product_variations_ids)));
                 $product_ids = !empty($product_ids) ? $product_ids : '-1';
                 $where_instock = " AND ( $wpdb->posts.ID IN($product_ids) )";
                 $where .= " AND ( $wpdb->posts.ID IN($product_ids) )";

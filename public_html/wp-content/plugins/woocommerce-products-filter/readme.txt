@@ -3,9 +3,9 @@ Contributors: RealMag777
 Donate link: https://pluginus.net/affiliate/woocommerce-products-filter
 Tags: filter, product filter, woocommerce, woof, ajax filter
 Requires at least: 6.0.0
-Tested up to: 6.5
+Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.3.6
+Stable tag: 1.3.6.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -174,6 +174,10 @@ R: [Codex](https://products-filter.com/codex/)
 
 
 == Changelog ==
+
+= 1.3.6.1 =
+* 1 security fix, thanks to Arkadiusz Hydzik from wordfence.com
+* small fixes
 
 = 1.3.6 =
 * security fix, thanks to Richard Telleng (stueotue) from wordfence.com

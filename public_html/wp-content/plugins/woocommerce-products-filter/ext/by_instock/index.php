@@ -149,6 +149,7 @@ final class WOOF_EXT_BY_INSTOCK extends WOOF_EXT {
 						
 
 						$new_db = isset(woof()->settings['by_instock']['new_db']) ? woof()->settings['by_instock']['new_db'] : 1;
+						
 						if ($new_db) {
 
 							$attr_in_search = array();
@@ -190,7 +191,6 @@ final class WOOF_EXT_BY_INSTOCK extends WOOF_EXT {
 									. "( ". implode(' OR ', $attr_sql2) ." )"
 									. " AND a.in_stock=1 "																
 									. " GROUP BY a.product_id");								
-
 							$parent_ids = array_diff($parent_ids, $instock_parent_ids);
 
 
@@ -262,7 +262,7 @@ final class WOOF_EXT_BY_INSTOCK extends WOOF_EXT {
 							}
 
 
-							$product_ids = implode(',', $products);
+							$product_ids = esc_sql(implode(',', $products));
 
 							//exit;
 

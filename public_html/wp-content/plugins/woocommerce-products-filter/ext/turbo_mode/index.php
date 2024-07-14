@@ -180,6 +180,7 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
             'hide_count' => isset($this->woof_settings['hide_terms_count_txt']) ? $this->woof_settings['hide_terms_count_txt'] : 0,
             'hide_empty_term' => get_option('woof_hide_dynamic_empty_pos_turbo_mode', 0),
             'dynamic_recount' => $dynamic_recount,
+			'file_error_nitice' => esc_html__("Oh no! It looks like the filter can't open the search file. Please try generating a new file in Advanced -> Turbo mode -> [Update now!].", 'woocommerce-products-filter')
         );
 
         wp_localize_script('woof_turbo_mode', 'woof_tm_data', $text_data);

@@ -805,7 +805,7 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
                         }
                     }
 
-                    $product_ids = implode(',', $product_ids);
+                    $product_ids = esc_sql(implode(',', $product_ids));
                     if ($use_cache) {
                         $this->cache->set($key, $product_ids);
                     }
@@ -1004,7 +1004,7 @@ final class WOOF_EXT_BY_TEXT extends WOOF_EXT {
                 $path = get_stylesheet_directory() . DIRECTORY_SEPARATOR . "woof" . DIRECTORY_SEPARATOR . "ext" .
                         DIRECTORY_SEPARATOR . $this->html_type . DIRECTORY_SEPARATOR .
                         "views" . DIRECTORY_SEPARATOR . "templates" . DIRECTORY_SEPARATOR . $template . ".php";
-                $T = $path;
+
                 if (!file_exists($path)) {
                     $path = '';
                 }

@@ -1970,7 +1970,7 @@
                                                                 esc_html_e('You should write extension info in info.dat file!', 'woocommerce-products-filter');
                                                             }
                                                         } else {
-                                                            printf(esc_html('Looks like its not the HUSKY extension here %s!', 'woocommerce-products-filter'), esc_html($dir));
+                                                            printf(esc_html__('Looks like its not the HUSKY extension here %s!', 'woocommerce-products-filter'), esc_html($dir));
                                                         }
                                                         ?>
                                                     </div>

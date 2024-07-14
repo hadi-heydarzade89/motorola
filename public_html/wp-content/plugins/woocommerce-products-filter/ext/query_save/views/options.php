@@ -69,7 +69,7 @@ if (!defined('ABSPATH'))
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][label]" value="<?php echo esc_html($woof_settings[$key]['label']) ?>" />
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][placeholder]" value="<?php echo esc_html($woof_settings[$key]['placeholder']) ?>" />
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][btn_label]" value="<?php echo esc_html($woof_settings[$key]['btn_label']) ?>" />
-    <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][notes_for_customer]" value="<?php echo wp_kses_post(wp_unslash($woof_settings[$key]['notes_for_customer'])); ?>" />
+    <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][notes_for_customer]" value="<?php echo wp_kses_post(stripcslashes(wp_unslash($woof_settings[$key]['notes_for_customer']))); ?>" />
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][search_count]" value="<?php echo intval($woof_settings[$key]['search_count']) ?>" />
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][show_notice]" value="<?php echo intval($woof_settings[$key]['show_notice']) ?>" />
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][show_notice_product]" value="<?php echo intval($woof_settings[$key]['show_notice_product']) ?>" />
