@@ -1,7 +1,10 @@
 :root {
-  --iti-hover-color: rgba(0, 0, 0, 0.05);
-  --iti-text-gray: #999;
   --iti-border-gray: #ccc;
+  --iti-text-gray: #999;
+  --iti-hover-color: rgba(0, 0, 0, 0.05);
+  --iti-border-color: var(--iti-border-gray);
+  --iti-dialcode-color: var(--iti-text-gray);
+  --iti-dropdown-bg: white;
   --iti-spacer-horizontal: 8px;
   --iti-flag-height: 15px;
   --iti-flag-width: 20px;
@@ -66,16 +69,23 @@
   display: flex;
   align-items: center;
   height: 100%;
-  padding: 0 var(--iti-arrow-padding) 0 var(--iti-spacer-horizontal);
   background: none;
   border: 0;
   margin: 0;
+  padding: 0;
+  font-family: inherit;
   font-size: inherit;
   color: inherit;
   border-radius: 0;
   font-weight: inherit;
   line-height: inherit;
   text-decoration: none;
+}
+.iti__selected-country-primary {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding: 0 var(--iti-arrow-padding) 0 var(--iti-spacer-horizontal);
 }
 .iti__arrow {
   margin-left: var(--iti-arrow-padding);
@@ -95,19 +105,15 @@
 }
 .iti__dropdown-content {
   border-radius: 3px;
-  background-color: white;
+  background-color: var(--iti-dropdown-bg);
 }
 .iti--inline-dropdown .iti__dropdown-content {
   position: absolute;
   z-index: 2;
   margin-top: 3px;
   margin-left: calc(var(--iti-border-width) * -1);
-  border: var(--iti-border-width) solid var(--iti-border-gray);
+  border: var(--iti-border-width) solid var(--iti-border-color);
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-}
-.iti__dropdown-content--dropup {
-  bottom: 100%;
-  margin-bottom: 3px;
 }
 .iti__search-input {
   width: 100%;
@@ -116,7 +122,7 @@
   padding: 9px 12px;
 }
 .iti__search-input + .iti__country-list {
-  border-top: 1px solid var(--iti-border-gray);
+  border-top: 1px solid var(--iti-border-color);
 }
 .iti__country-list {
   list-style: none;
@@ -140,11 +146,6 @@
   display: inline-block;
   width: var(--iti-flag-width);
 }
-.iti__divider {
-  padding-bottom: 5px;
-  margin-bottom: 5px;
-  border-bottom: var(--iti-border-width) solid var(--iti-border-gray);
-}
 .iti__country {
   display: flex;
   align-items: center;
@@ -152,7 +153,7 @@
   outline: none;
 }
 .iti__dial-code {
-  color: var(--iti-text-gray);
+  color: var(--iti-dialcode-color);
 }
 .iti__country.iti__highlight {
   background-color: var(--iti-hover-color);
@@ -166,53 +167,39 @@
 }
 .iti--allow-dropdown input.iti__tel-input,
 .iti--allow-dropdown input.iti__tel-input[type=text],
-.iti--allow-dropdown input.iti__tel-input[type=tel], .iti--show-selected-dial-code input.iti__tel-input,
-.iti--show-selected-dial-code input.iti__tel-input[type=text],
-.iti--show-selected-dial-code input.iti__tel-input[type=tel] {
+.iti--allow-dropdown input.iti__tel-input[type=tel] {
   padding-right: var(--iti-input-padding);
   padding-left: var(--iti-selected-country-arrow-padding);
   margin-left: 0;
 }
 [dir=rtl] .iti--allow-dropdown input.iti__tel-input,
 [dir=rtl] .iti--allow-dropdown input.iti__tel-input[type=text],
-[dir=rtl] .iti--allow-dropdown input.iti__tel-input[type=tel], [dir=rtl] .iti--show-selected-dial-code input.iti__tel-input,
-[dir=rtl] .iti--show-selected-dial-code input.iti__tel-input[type=text],
-[dir=rtl] .iti--show-selected-dial-code input.iti__tel-input[type=tel] {
+[dir=rtl] .iti--allow-dropdown input.iti__tel-input[type=tel] {
   padding-right: var(--iti-selected-country-arrow-padding);
   padding-left: var(--iti-input-padding);
   margin-right: 0;
 }
-.iti--allow-dropdown .iti__country-container, .iti--show-selected-dial-code .iti__country-container {
+.iti--allow-dropdown .iti__country-container {
   right: auto;
   left: 0;
 }
-[dir=rtl] .iti--allow-dropdown .iti__country-container, [dir=rtl] .iti--show-selected-dial-code .iti__country-container {
+[dir=rtl] .iti--allow-dropdown .iti__country-container {
   right: 0;
   left: auto;
 }
-.iti--allow-dropdown .iti__country-container:hover, .iti--allow-dropdown .iti__country-container:hover button {
+.iti--allow-dropdown .iti__country-container:not(:has(+ input[disabled])):not(:has(+ input[readonly])):hover, .iti--allow-dropdown .iti__country-container:not(:has(+ input[disabled])):not(:has(+ input[readonly])):hover button {
   cursor: pointer;
 }
-.iti--allow-dropdown .iti__country-container:hover .iti__selected-country {
+.iti--allow-dropdown .iti__country-container:not(:has(+ input[disabled])):not(:has(+ input[readonly])) .iti__selected-country-primary:hover,
+.iti--allow-dropdown .iti__country-container:not(:has(+ input[disabled])):not(:has(+ input[readonly])) .iti__selected-country:has(+ .iti__dropdown-content:hover) .iti__selected-country-primary {
   background-color: var(--iti-hover-color);
 }
-.iti--allow-dropdown .iti__country-container:has(+ input[disabled]):hover,
-.iti--allow-dropdown .iti__country-container:has(+ input[readonly]):hover {
-  cursor: default;
+.iti .iti__selected-dial-code {
+  margin-left: 4px;
 }
-.iti--allow-dropdown .iti__country-container:has(+ input[disabled]):hover .iti__selected-country,
-.iti--allow-dropdown .iti__country-container:has(+ input[readonly]):hover .iti__selected-country {
-  background-color: transparent;
-}
-.iti--show-selected-dial-code .iti__selected-country {
-  background-color: var(--iti-hover-color);
-}
-.iti--show-selected-dial-code.iti--show-flags .iti__selected-dial-code {
-  margin-left: var(--iti-arrow-padding);
-}
-[dir=rtl] .iti--show-selected-dial-code.iti--show-flags .iti__selected-dial-code {
+[dir=rtl] .iti .iti__selected-dial-code {
   margin-left: 0;
-  margin-right: var(--iti-arrow-padding);
+  margin-right: 4px;
 }
 .iti--container {
   position: fixed;
@@ -235,9 +222,6 @@
   padding: var(--iti-mobile-popup-margin);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-}
-.iti--fullscreen-popup.iti--container.iti--country-search {
   justify-content: flex-start;
 }
 .iti--fullscreen-popup .iti__dropdown-content {

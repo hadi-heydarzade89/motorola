@@ -3,9 +3,9 @@ author: المنتور فارسی
 Contributors: mohammadr3z
 Tags: elementor,persian,المنتور
 Requires at least: 5.0
-Tested up to: 6.5.5
+Tested up to: 6.6.0
 Requires PHP: 7.4
-Stable tag: 2.7.6.1
+Stable tag: 2.7.6.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -121,6 +121,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.7.6.2 =
+اضافه شدن ترجمه المنتور و المنتور پرو 3.23
+
 = 2.7.6 =
 بازطراحی افزونه برای سازگاری با PHP 8.3
 تغییر صفحه تنظیمات برای افزایش سرعت پنل

@@ -751,7 +751,7 @@ class HT_CTC_Admin_Other_Settings {
             ><?php _e( "Add Value", "click-to-chat-for-whatsapp" ); ?></span>
             
         </div>
-        <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/webhooks/#pro">PRO</a>: Webhook Dynamic Variables - {number}, {url}, {time}</p>
+        <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/webhooks/#pro">PRO</a>: Dynamic Variables - {number}, {url}, {time}</p>
         </div>
         </li>
         </ul>

@@ -223,13 +223,6 @@ class HT_CTC_Chat_Greetings {
             $template = $ht_ctc_greetings['greetings_template'];
             $g_box_classes .= " template-$template";
 
-            // safe side action(to avoid cache issue, i.e. if main.css is not loaded properly) - added to main.css - later can remove.
-            if ( 's' == $g_size ) {
-                ?>
-                <style>.ht_ctc_chat_greetings_box :not(ul):not(ol){padding:0;margin:0}.ht_ctc_chat_greetings_box ul,.ht_ctc_chat_greetings_box ol{margin-top:0;margin-bottom:0}</style>
-                <?php
-            }
-
             // styles specific to rtl pages.. 
             if ('yes' == $rtl_page) {
                 ?>

@@ -47,6 +47,10 @@
 
         var ctc_values = {};
         variable_ctc_values();
+
+        // document.dispatchEvent(
+        //     new CustomEvent("ht_ctc_fn_all", { detail: { ht_ctc_storage, ctc_setItem, ctc_getItem } })
+        // );
         
         chat_data();
         start();

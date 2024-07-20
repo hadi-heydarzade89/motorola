@@ -132,10 +132,6 @@ class HT_CTC_Chat {
         // page level
         $ht_ctc_pagelevel = get_post_meta( $page_id, 'ht_ctc_pagelevel', true );
 
-        // // custom field.
-        // $cf_prefilled = get_post_meta( $page_id, 'ht_ctc_cf_prefilled', true );
-        
-
         /**
          * show/hide
          * $page_display - page level settings  - show/hide/ null

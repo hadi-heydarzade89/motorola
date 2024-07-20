@@ -72,8 +72,8 @@ $position_type_values = apply_filters( 'ht_ctc_fh_position_type_values', $positi
     </div>
 
     <p class="description"><a style="" target="_blank" href="https://holithemes.com/plugins/click-to-chat/list-of-styles/"><?php _e( 'List of Styles', 'click-to-chat-for-whatsapp' ); ?></a> | 
-    <span title="colors, size, hover effects, .." class="customize_styles_link"><?php _e( 'Customize the styles', 'click-to-chat-for-whatsapp' ); ?>  <a target="_blank" class="customize_styles_href" href="<?= admin_url( 'admin.php?page=click-to-chat-customize-styles' ); ?>">( Click to Chat -> Customize )</a></span> | 
-    <span title="add message window"><?php _e( 'Add Greetings Dialog', 'click-to-chat-for-whatsapp' ); ?>  <a target="_blank" class="greetings_page_link" href="<?= admin_url( 'admin.php?page=click-to-chat-greetings' ); ?>">( Click to Chat -> Greetings )</a></span>
+        <span title="colors, size, hover effects, .." class="customize_styles_link"><?php _e( 'Customize the styles', 'click-to-chat-for-whatsapp' ); ?>  <a target="_blank" class="customize_styles_href" href="<?= admin_url( 'admin.php?page=click-to-chat-customize-styles' ); ?>">( Click to Chat -> Customize )</a></span> | 
+        <span title="add message window"><?php _e( 'Add Greetings Dialog', 'click-to-chat-for-whatsapp' ); ?>  <a target="_blank" class="greetings_page_link" href="<?= admin_url( 'admin.php?page=click-to-chat-greetings' ); ?>">( Click to Chat -> Greetings )</a></span>
     </p>
 
 </div>

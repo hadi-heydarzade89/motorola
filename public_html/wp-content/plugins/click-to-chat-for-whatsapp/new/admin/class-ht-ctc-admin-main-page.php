@@ -161,6 +161,23 @@ class HT_CTC_Admin_Main_Page {
                 $intl = '2';
             }
         }
+
+        // styles added in rtl pages..
+        if ( function_exists('is_rtl') && is_rtl() ) {
+            ?>
+            <style id="ctc-rtl">
+            [dir="rtl"] .row_number,
+            [dir="rtl"] .description {
+                text-align: right;
+            }
+            [dir="rtl"] .iti__dropdown-content {
+                left: 0;
+                /* right: auto !important; */
+            }
+            </style>
+            <?php
+        }
+
         ?>
 
         <style>
@@ -191,8 +208,8 @@ class HT_CTC_Admin_Main_Page {
                 $number = "+$number";
             }
             ?>
-            <div class="row" id="row_number">
-                <div class="col s12 m8">
+            <div class="row row_number" id="row_number">
+                <div class="col s12">
                     <input type="text" name="ht_ctc_chat_options[number]" data-name="ht_ctc_chat_options[number]" class="intl_number browser-default main_wa_number" value="<?= $number ?>">
                     <input name="ht_ctc_chat_options[intl]" style="display: none;" value="1" type="hidden">
                     <p class="description"><?php _e( "WhatsApp or WhatsApp business number", 'click-to-chat-for-whatsapp' ); ?></p>
