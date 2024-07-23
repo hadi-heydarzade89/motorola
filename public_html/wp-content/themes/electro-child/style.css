@@ -3,7 +3,7 @@ Theme Name:         Electro Child
 Theme URI:          https://themeforest.net/item/electro-electronics-store-woocommerce-theme/15720624
 Author:             Hadi Heydarzade
 Template:           electro
-Version:            0.4.3
+Version:            0.4.4
 Text Domain:        electrochild
 */
 
@@ -364,6 +364,9 @@ ul[data-view="grid-extended"] .product-short-description {
 
 .woocommerce-input-wrapper .motorola-error {
     bottom: -25px;
+}
+.DTFC_LeftBodyLiner{
+    padding-right: 0!important;
 }
 
 @media (max-width: 576px) {
