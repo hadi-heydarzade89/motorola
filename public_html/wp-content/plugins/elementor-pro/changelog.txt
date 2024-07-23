@@ -1,5 +1,8 @@
 # Elementor Pro - by Elementor.com
 
+#### 3.23.1 - 2024-07-23
+* Security Fix: Improved code security enforcement in link URL
+
 #### 3.23.0 - 2024-07-15
 
 * New: Search Widget with Live Results - Display live search results as visitors type into the search box, enhancing user experience and engagement ([#27664](https://github.com/elementor/elementor/issues/27664), [#24931](https://github.com/elementor/elementor/issues/24931), [#21459](https://github.com/elementor/elementor/issues/21459))

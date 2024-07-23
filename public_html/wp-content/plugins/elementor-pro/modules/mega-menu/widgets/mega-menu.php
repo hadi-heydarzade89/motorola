@@ -2458,7 +2458,7 @@ class Mega_Menu extends Widget_Nested_Base {
 
 						view.addRenderAttribute( menuItemTitleContainerLinkKey, {
 							'class': menuItemContainerClasses,
-							'href': item.item_link.url,
+							'href': elementor.helpers.sanitizeUrl( item.item_link.url ),
 							'aria-current': 'page',
 						} );
 
@@ -2592,7 +2592,7 @@ class Mega_Menu extends Widget_Nested_Base {
 
 		view.addRenderAttribute( menuItemTitleContainerLinkKey, {
 			'class': menuItemContainerClasses,
-			'href': data.item_link.url,
+			'href': elementor.helpers.sanitizeUrl( data.item_link.url ),
 			'aria-current': 'page',
 		}, null, true );
 
