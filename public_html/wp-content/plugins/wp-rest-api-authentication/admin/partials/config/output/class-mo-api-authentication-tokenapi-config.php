@@ -32,7 +32,7 @@ class Mo_API_Authentication_TokenAPI_Config {
 						<h5 class="m-0">
 							<a class="text-decoration-none" href="admin.php?page=mo_api_authentication_settings&tab=config">Configure Methods</a>
 							> API Key Authentication Method
-						</h4>
+						</h5>
 						<span class="mo_api_auth_inner_premium_label">Premium</span>
 					</div>
 					<div class="d-flex gap-2 text-center">
@@ -41,7 +41,7 @@ class Mo_API_Authentication_TokenAPI_Config {
 					</div>
 				</div>
 				<div id="mo_api_authentication_support_basicoauth">
-					<p>WordPress REST API - API Key Authentication Method involves the REST APIs access on validation against the API key/token.</p>
+					<p class="fs-6">WordPress REST API - API Key Authentication Method involves the REST APIs access on validation against the API key/token.</p>
 					<div class="d-flex gap-3 my-4">
 						<div class="d-flex justify-content-between align-items-center gap-1 border border-1 rounded-2 p-1">
 							<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/youtube.png" height="25px" width="25px">

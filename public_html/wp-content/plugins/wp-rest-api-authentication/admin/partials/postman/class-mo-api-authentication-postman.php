@@ -45,14 +45,14 @@ class Mo_API_Authentication_Postman {
 				transition: 0.5s ease-in-out;
 			}
 
-			.mo-postman-card:hover:before {
+			.mo-postman-card:before {
 				clip-path: circle(300px at 80% -20%);
 			}
 
 			.mo-postman-card:after {
 				content: 'Postman';
 				position: relative;
-				top: 60%;
+				top: 57%;
 				font-size: 3em;
 				font-weight: 800;
 				font-style: italic;
@@ -67,7 +67,7 @@ class Mo_API_Authentication_Postman {
 				transition: 0.5s;
 			}
 
-			.mo-postman-card:hover .imgBx{
+			.mo-postman-card .imgBx{
 				top: 0;
 				transform: translateY(0%);
 			}
@@ -77,7 +77,7 @@ class Mo_API_Authentication_Postman {
 				max-height: 80px;
 			}
 
-			.mo-postman-card:hover .imgBx img{
+			.mo-postman-card .imgBx img{
 				transform: translate(-50%, -300%);
 				max-height: 100px;
 			}
@@ -88,7 +88,7 @@ class Mo_API_Authentication_Postman {
 				transition: 1s;
 			}
 
-			.mo-postman-card:hover .contentBx {
+			.mo-postman-card .contentBx {
 				height: 230px;
 			}
 
@@ -102,13 +102,13 @@ class Mo_API_Authentication_Postman {
 				visibility: hidden;
 			}
 
-			.mo-postman-card:hover .contentBx .size {
+			.mo-postman-card .contentBx .size {
 				opacity: 1;
 				visibility: visible;
 				transition-delay: 0.5s;
 			}
 
-			.mo-postman-card:hover .contentBx .color {
+			.mo-postman-card .contentBx .color {
 				opacity: 1;
 				visibility: visible;
 				transition-delay: 0.6s;
@@ -142,7 +142,7 @@ class Mo_API_Authentication_Postman {
 				transition: 0.5s;
 			}
 
-			.mo-postman-card:hover .contentBx button {
+			.mo-postman-card .contentBx button {
 				opacity: 1;
 				transform: translateY(0px);
 				transition-delay: 0.35s;

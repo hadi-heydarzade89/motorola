@@ -20,6 +20,7 @@ class Mo_API_Authentication_Jwt_Auth_Config {
 	 * @return void
 	 */
 	public static function mo_api_auth_configuration_output() {
+		$current_user = wp_get_current_user();
 		?>
 		<div id="mo_api_jwt_authentication_support_layout" class="border border-1 rounded-4 p-3">
 			<form method="post">
@@ -28,14 +29,14 @@ class Mo_API_Authentication_Jwt_Auth_Config {
 					<h5 class="m-0">
 						<a class="text-decoration-none" href="admin.php?page=mo_api_authentication_settings&tab=config">Configure Methods</a>
 						> JWT Authentication Method
-					</h4>
+					</h5>
 					<div class="d-flex gap-2 text-center">
 						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" onclick="window.location.href='admin.php?page=mo_api_authentication_settings'">Back</button>
 						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" onclick="moJWTAuthenticationMethodSave('save_jwt_auth')">Next</button>
 					</div>
 				</div>
 				<div id="mo_api_authentication_support_basicoauth">
-					<p>WordPress REST API - JWT Authentication Method involves the REST APIs access on validation against the JWT token (JSON Web Token) generated based on the user’s username, password using highly secure encryption algorithm.</p>
+					<p class="fs-6">WordPress REST API - JWT Authentication Method involves the REST APIs access on validation against the JWT token (JSON Web Token) generated based on the user’s username, password using highly secure encryption algorithm.</p>
 					<div class="d-flex gap-3 my-4">
 						<div class="d-flex justify-content-between align-items-center gap-1 border border-1 rounded-2 p-1">
 							<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/youtube.png" height="25px" width="25px">
@@ -121,7 +122,7 @@ class Mo_API_Authentication_Jwt_Auth_Config {
 								<div class="row mt-3">
 									<div class="col mb-3">
 										<label for="mo_rest_api_jwt_username" class="form-label mo_rest_api_primary_font">Username</label>
-										<input type="text" class="form-control mo_test_config_input" id="mo_rest_api_jwt_username">
+										<input type="text" class="form-control mo_test_config_input" id="mo_rest_api_jwt_username" value="<?php echo esc_attr( $current_user->user_nicename ); ?>">
 									</div>
 									<div class="col mb-3">
 										<label for="mo_rest_api_jwt_password" class="form-label mo_rest_api_primary_font">Password</label>
@@ -143,7 +144,10 @@ class Mo_API_Authentication_Jwt_Auth_Config {
 								<div class="d-grid justify-content-center my-3">
 									<button type="button" class="btn btn-sm text-white mo_rest_api_button" onclick="mo_JWT_test_config('token')" value="Fetch Token">Fetch Token</button>
 								</div>
-								<h6 id="jwt_token_response_text" class="d-none mt-3">Response</h6>
+								<div id="jwt_token_response_text" class="d-none mt-3 d-flex gap-2 align-items-center justify-content-between mb-2">
+									<h6>Response</h6>
+									<button type="button" id="mo_rest_api_copy_jwt_btn" class="btn btn-outline-secondary btn-sm" onclick="moRESTcopyJWTToken(this)">Copy JWT <i class="fa fa-regular fa-copy" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Copy JWT"></i></button>
+								</div>
 								<pre id="json_jwt_token" class="mo_test_config_response d-none"></pre>
 								<h6 id="jwt_token_troubleshoot_text" class="d-none align-items-center gap-2 mt-3">
 									<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/trouble_2.png" height="15px">
@@ -162,7 +166,7 @@ class Mo_API_Authentication_Jwt_Auth_Config {
 								<label for="" class="mo_rest_api_primary_font">Token Validation Endpoint:</label>
 								<div class="row mt-2">
 									<div class="col-2">
-										<button type="button" class="btn btn-success fw-bold w-100">GET</button>
+										<button type="button" class="btn btn-success fw-bold w-100 mo_rest_api_get_test_method_btn">GET</button>
 									</div>
 									<div class="col p-0">
 										<input class="form-control mo_test_config_input w-100" type="text" name="rest_validate_endpoint" id="rest_validate_endpoint" value="<?php echo esc_url( get_rest_url() ) . 'api/v1/token-validate'; ?>" aria-readonly="true" readonly>
@@ -190,7 +194,7 @@ class Mo_API_Authentication_Jwt_Auth_Config {
 								<label for="" class="mo_rest_api_primary_font">REST API Endpoint:</label>
 								<div class="row mt-2">
 									<div class="col-2">
-										<button type="button" class="btn btn-success fw-bold w-100">GET</button>
+										<button type="button" class="btn btn-success fw-bold w-100 mo_rest_api_get_test_method_btn">GET</button>
 									</div>
 									<div class="col p-0">
 										<input class="form-control mo_test_config_input w-100" type="text" name="rest_endpoint_jwt_auth" id="rest_endpoint_jwt_auth" value="<?php echo esc_url( get_rest_url() ) . 'wp/v2/posts'; ?>" aria-readonly="true" readonly>
@@ -224,6 +228,21 @@ class Mo_API_Authentication_Jwt_Auth_Config {
 			</form>
 		</div>
 		<script>
+			function moRESTcopyJWTToken(copyButton){
+				const originalHTML = copyButton.innerHTML;
+				var tokenResponse = document.getElementById("json_jwt_token").innerText;
+				tokenResponse = JSON.parse(tokenResponse);
+
+				const jwtToken = tokenResponse.jwt_token;
+
+				navigator.clipboard.writeText(jwtToken);
+				copyButton.innerHTML = "Copied!";
+
+				setTimeout(() => {
+					copyButton.innerHTML = originalHTML;
+				}, 2000);
+			}
+
 			var token_endpoint_obj = document.getElementById('rest_token_endpoint');
 			token_endpoint_obj.style.width = ((token_endpoint_obj.value.length + 1) * 7) + 'px';
 			var token_endpoint_obj = document.getElementById('rest_validate_endpoint');
@@ -340,19 +359,25 @@ class Mo_API_Authentication_Jwt_Auth_Config {
 			function moJWTdisplay_jwt_data(result) {
 				var data = JSON.parse(result);
 				var json = JSON.stringify(data, undefined, 4);
+
+				var responseText = document.getElementById("jwt_token_response_text");
 				moJWToutput(moJWTsyntaxHighlight(json), 'token');
 				document.getElementById("json_jwt_token").classList.remove("d-none");
 				document.getElementById("json_jwt_token").classList.add("d-block");
-				document.getElementById("jwt_token_response_text").classList.remove("d-none");
-				document.getElementById("jwt_token_response_text").classList.add("d-block");
+				responseText.classList.remove("d-none");
+				responseText.classList.add("d-block");
+
 				container.scrollTo({
 					top: document.getElementById("jwt_token_response_text").offsetTop - container.offsetTop,
 					behavior: "smooth"
 				});
-				if(data.error)
+				if(data.error){
 					moJWTtroubleshootPrintJWT(data.error , 'token');
-				else
+					document.getElementById("mo_rest_api_copy_jwt_btn").classList.add('d-none');
+				}else{
 					moJWTtroubleshootHideJWT('token');
+					document.getElementById("mo_rest_api_copy_jwt_btn").classList.remove('d-none');
+				}			
 			}
 			function moJWTdisplay_token_val_data(result) {
 				var data = JSON.parse(result);
@@ -366,10 +391,11 @@ class Mo_API_Authentication_Jwt_Auth_Config {
 					top: document.getElementById("jwt_token_validate_response_text").offsetTop - container.offsetTop,
 					behavior: "smooth"
 				});
-				if(data.error)
+				if (data.error) {
 					moJWTtroubleshootPrintJWT(data.error , 'valid');
-				else
+				} else {
 					moJWTtroubleshootHideJWT('valid');
+				}
 			}
 			function moJWTtroubleshootHideJWT(place){
 				if(place === "token"){
@@ -399,7 +425,6 @@ class Mo_API_Authentication_Jwt_Auth_Config {
 					document.getElementById("json_jwt_token_troubleshoot").classList.add("d-flex");
 					document.getElementById("jwt_token_troubleshoot_text").classList.remove("d-none");
 					document.getElementById("jwt_token_troubleshoot_text").classList.add("d-flex");
-
 				}
 				else if(err === "BAD_REQUEST")
 				{

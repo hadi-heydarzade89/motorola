@@ -46,22 +46,22 @@ class Mo_API_Authentication_ProtectedRestAPIs {
 							<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" onclick="moProtectedAPIsSave()">Save</button>
 						</div>
 					</div>
-					<p>All the REST APIs listed below are protected from public access. You can uncheck the checkboxes to make it publicly accessible.</p>					</p>
-					<p><b>Note: </b>The free plan supports only default WordPress endpoints. Upgrade to the<b><i><a href="admin.php?page=mo_api_authentication_settings&tab=licensing" style="color:#a83262"><u> All-Inclusive Plan </u></a></i></b>to control access to custom and third-party plugin endpoints, allowing you to block or allow public access.</p>
-					<p class="fs-6"><b>On this website, the REST API root is <?php echo esc_attr( site_url() ) . '/wp-json'; ?></b></p>
+					<p class="fs-6">All the REST APIs listed below are protected from public access. You can uncheck the checkboxes to make it publicly accessible.</p>					</p>
+					<p class="fs-6"><b>Note: </b>The free plan supports only default WordPress endpoints. Upgrade to the<b><i><a href="admin.php?page=mo_api_authentication_settings&tab=licensing" style="color:#a83262"><u> All-Inclusive Plan </u></a></i></b>to control access to custom and third-party plugin endpoints, allowing you to block or allow public access.</p>
+					<p class="fs-6"><b>On this website, the REST API root is <a href='<?php echo esc_attr( site_url() ) . '/wp-json'; ?>' target="__blank"><?php echo esc_attr( site_url() ) . '/wp-json'; ?></a></b></p>
 					<input type="hidden" name="option" value="mo_api_authentication_protected_apis_form">
 					<?php wp_nonce_field( 'ProtectedRestAPI_admin_nonce', 'ProtectedRestAPI_admin_nonce_fields' ); ?>
 					<div class="accordion" id="mo-rest-api-protected-api-accordion-parent">
 						<div class="accordion-item">
 							<h2 class="accordion-header" id="mo-rest-api-protected-api-accordion">
-								<button class="accordion-button text-black" type="button" data-bs-toggle="collapse" data-bs-target="#mo-rest-api-protect-rest-api-accordion" aria-expanded="true" aria-controls="mo-rest-api-protect-rest-api-accordion">
+								<button class="accordion-button text-black collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mo-rest-api-protect-rest-api-accordion" aria-expanded="true" aria-controls="mo-rest-api-protect-rest-api-accordion">
 									<span class="me-2">Protected WordPress Default REST APIs</span>
 									<svg width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path fill-rule="evenodd" clip-rule="evenodd" d="M13 22.75C14.2804 22.75 15.5482 22.4978 16.7312 22.0078C17.9141 21.5178 18.9889 20.7997 19.8943 19.8943C20.7997 18.9889 21.5178 17.9141 22.0078 16.7312C22.4978 15.5482 22.75 14.2804 22.75 13C22.75 11.7196 22.4978 10.4518 22.0078 9.26884C21.5178 8.08591 20.7997 7.01108 19.8943 6.10571C18.9889 5.20034 17.9141 4.48216 16.7312 3.99217C15.5482 3.50219 14.2804 3.25 13 3.25C10.4141 3.25 7.93419 4.27723 6.10571 6.10571C4.27723 7.93419 3.25 10.4141 3.25 13C3.25 15.5859 4.27723 18.0658 6.10571 19.8943C7.93419 21.7228 10.4141 22.75 13 22.75ZM12.7487 16.9433L18.1653 10.4433L16.5013 9.05667L11.843 14.6456L9.43258 12.2341L7.90075 13.7659L11.1508 17.0159L11.9893 17.8544L12.7487 16.9433Z" fill="#3F855B" />
 									</svg>
 								</button>
 							</h2>
-							<div id="mo-rest-api-protect-rest-api-accordion" class="accordion-collapse collapse show" aria-labelledby="mo-rest-api-protected-api-accordion" data-bs-parent="#mo-rest-api-protected-api-accordion-parent">
+							<div id="mo-rest-api-protect-rest-api-accordion" class="accordion-collapse collapse" aria-labelledby="mo-rest-api-protected-api-accordion" data-bs-parent="#mo-rest-api-protected-api-accordion-parent">
 								<div class="accordion-body bg-light">
 									<div class="protectedrestapi_container"><?php self::protected_rest_api_display_route_checkboxes( $all_namespaces ); ?></div>
 								</div>
@@ -69,7 +69,7 @@ class Mo_API_Authentication_ProtectedRestAPIs {
 						</div>
 						<div class="accordion-item">
 							<h2 class="accordion-header" id="mo-rest-api-unprotected-api-accordion">
-								<button class="accordion-button text-black collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#mo-rest-api-unprotected-rest-api-accordion" aria-expanded="false" aria-controls="mo-rest-api-unprotected-rest-api-accordion">
+								<button class="accordion-button text-black" type="button" data-bs-toggle="collapse" data-bs-target="#mo-rest-api-unprotected-rest-api-accordion" aria-expanded="false" aria-controls="mo-rest-api-unprotected-rest-api-accordion">
 									<span class="d-flex gap-2">
 										<span>Un-Authenticated WordPress Custom REST APIs</span>
 										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,7 +86,7 @@ class Mo_API_Authentication_ProtectedRestAPIs {
 									<span class="mo_api_auth_inner_premium_label position-absolute" data-toggle="tooltip" title="Authenticating third-party APIs is available in all-inclusive plan.">Premium</span>
 								</button>
 							</h2>
-							<div id="mo-rest-api-unprotected-rest-api-accordion" class="accordion-collapse collapse" aria-labelledby="mo-rest-api-unprotected-api-accordion" data-bs-parent="#mo-rest-api-protected-api-accordion-parent">
+							<div id="mo-rest-api-unprotected-rest-api-accordion" class="accordion-collapse collapse show" aria-labelledby="mo-rest-api-unprotected-api-accordion" data-bs-parent="#mo-rest-api-protected-api-accordion-parent">
 								<div class="accordion-body bg-light">
 									<div class="protectedrestapi_container"><?php self::unprotected_rest_api_display_route_checkboxes( $all_namespaces ); ?></div>
 								</div>
@@ -304,8 +304,11 @@ class Mo_API_Authentication_ProtectedRestAPIs {
 		$blocked_routes = is_array( get_option( 'mo_api_authentication_protectedrestapi_route_whitelist' ) ) ? get_option( 'mo_api_authentication_protectedrestapi_route_whitelist' ) : array();
 		$blocked_routes = array_map( 'esc_html', wp_unslash( $blocked_routes ) );
 
+		$count = 0;
+
 		foreach ( $all_namespaces as $namespace => $index ) {
 			if ( 0 === strpos( $namespace, $route_prefix ) ) {
+				++$count;
 				$routes = array_keys( $wp_rest_server->get_routes( $namespace ) );
 				$routes = array_map( 'esc_html', wp_unslash( $routes ) );
 				if ( count( $routes ) > 0 ) {
@@ -328,6 +331,11 @@ class Mo_API_Authentication_ProtectedRestAPIs {
 				}
 				unset( $all_namespaces[ $namespace ] );
 			}
+		}
+		if ( 0 === $count ) {
+			?>
+			<p class="fs-6">No APIs Available.</p>
+			<?php
 		}
 	}
 }

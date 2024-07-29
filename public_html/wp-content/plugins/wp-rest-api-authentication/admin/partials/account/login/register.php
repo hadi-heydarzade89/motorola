@@ -27,7 +27,7 @@ function mo_api_authentication_register_ui() {
 			<input type="hidden" name="option" value="mo_api_authentication_register_customer" />
 			<?php wp_nonce_field( 'mo_api_authentication_register_form', 'mo_api_authentication_register_form_fields' ); ?>
 			<h5>Account Setup with miniOrange</h5>
-			<p class="mo_rest_api_primary_font">You should register so that in case you need help, we can help you with step by step instructions.<b>You will also need a miniOrange account to upgrade to the premium version of the plugins.</b> We do not store any information except the email that you will use to register with us.</p>
+			<p class="fs-6 mo_rest_api_primary_font">You should register so that in case you need help, we can help you with step by step instructions.<b>You will also need a miniOrange account to upgrade to the premium version of the plugins.</b> We do not store any information except the email that you will use to register with us.</p>
 			<div class="bg-white mo-caw-shadow p-3 mo-caw-rounded-16">
 				<div class="row px-5">
 					<div class="col ps-0">

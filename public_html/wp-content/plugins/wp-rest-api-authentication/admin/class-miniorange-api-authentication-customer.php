@@ -34,6 +34,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Miniorange_API_Authentication_Customer {
 
 	/**
+	 * Host name.
+	 */
+	public const HOST_NAME = 'https://login.xecurify.com';
+
+	/**
 	 * Customers miniOrange email address.
 	 *
 	 * @var email customer email.
@@ -66,7 +71,7 @@ class Miniorange_API_Authentication_Customer {
 	 * @return string
 	 */
 	public function create_customer( $password ) {
-		$url         = get_option( 'host_name' ) . '/moas/rest/customer/add';
+		$url         = get_option( 'host_name', self::HOST_NAME ) . '/moas/rest/customer/add';
 		$this->email = get_option( 'mo_api_authentication_admin_email' );
 		$this->phone = get_option( 'mo_api_authentication_admin_phone' );
 		$first_name  = get_option( 'mo_api_authentication_admin_fname' );
@@ -115,7 +120,7 @@ class Miniorange_API_Authentication_Customer {
 	 * @return string
 	 */
 	public function check_customer() {
-		$url   = get_option( 'host_name' ) . '/moas/rest/customer/check-if-exists';
+		$url   = get_option( 'host_name', self::HOST_NAME ) . '/moas/rest/customer/check-if-exists';
 		$email = get_option( 'mo_api_authentication_admin_email' );
 
 		$fields       = array(
@@ -153,7 +158,7 @@ class Miniorange_API_Authentication_Customer {
 	 * @return array
 	 */
 	public static function get_timestamp() {
-		$url     = get_option( 'host_name' ) . '/moas/rest/mobile/get-timestamp';
+		$url     = get_option( 'host_name', self::HOST_NAME ) . '/moas/rest/mobile/get-timestamp';
 		$headers = array(
 			'Content-Type'  => 'application/json',
 			'charset'       => 'UTF - 8',
@@ -190,7 +195,7 @@ class Miniorange_API_Authentication_Customer {
 	 * @return array
 	 */
 	public function send_otp_token( $email, $phone, $send_to_email = true, $send_to_phone = false ) {
-		$url = get_option( 'host_name' ) . '/moas/api/auth/challenge';
+		$url = get_option( 'host_name', self::HOST_NAME ) . '/moas/api/auth/challenge';
 
 		$customer_key = $this->default_customer_key;
 		$api_key      = $this->default_api_key;
@@ -254,7 +259,7 @@ class Miniorange_API_Authentication_Customer {
 	 * @return string
 	 */
 	public function get_customer_key( $password ) {
-		$url          = get_option( 'host_name' ) . '/moas/rest/customer/key';
+		$url          = get_option( 'host_name', self::HOST_NAME ) . '/moas/rest/customer/key';
 		$email        = get_option( 'mo_api_authentication_admin_email' );
 		$fields       = array(
 			'email'    => $email,
@@ -322,7 +327,7 @@ class Miniorange_API_Authentication_Customer {
 		);
 		$field_string = wp_json_encode( $fields );
 
-		$url     = get_option( 'host_name' ) . '/moas/rest/customer/contact-us';
+		$url     = get_option( 'host_name', self::HOST_NAME ) . '/moas/rest/customer/contact-us';
 		$headers = array(
 			'Content-Type'  => 'application/json',
 			'charset'       => 'UTF - 8',
@@ -361,7 +366,7 @@ class Miniorange_API_Authentication_Customer {
 	 */
 	public function mo_api_authentication_send_email_alert( $email, $phone, $reply, $message, $subject ) {
 
-		$url = get_option( 'host_name' ) . '/moas/api/notify/send';
+		$url = get_option( 'host_name', self::HOST_NAME ) . '/moas/api/notify/send';
 
 		$last_requested_api = get_option( 'mo_api_authentication_last_requested_api' );
 		$customer_key       = $this->default_customer_key;
@@ -443,7 +448,7 @@ class Miniorange_API_Authentication_Customer {
 		if ( ! $this->mo_api_authentication_check_internet_connection() ) {
 			return;
 		}
-		$url = get_option( 'host_name' ) . '/moas/api/notify/send';
+		$url = get_option( 'host_name', self::HOST_NAME ) . '/moas/api/notify/send';
 
 		$customer_key = $this->default_customer_key;
 		$api_key      = $this->default_api_key;

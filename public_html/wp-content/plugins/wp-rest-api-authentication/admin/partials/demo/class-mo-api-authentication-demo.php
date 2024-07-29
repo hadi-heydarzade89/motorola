@@ -19,6 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 class Mo_API_Authentication_Demo {
 
 	/**
+	 * Host name.
+	 */
+	public const HOST_NAME = 'https://login.xecurify.com';
+
+	/**
 	 * Internal redirect for processing demo request
 	 *
 	 * @return void
@@ -37,7 +42,7 @@ class Mo_API_Authentication_Demo {
 	 * @return null|bool|string
 	 */
 	public static function mo_rest_api_auth_send_trial_mail( $email, $message, $subject ) {
-		$url                    = get_option( 'host_name' ) . '/moas/api/notify/send';
+		$url                    = get_option( 'host_name', self::HOST_NAME ) . '/moas/api/notify/send';
 		$default_customer_key   = '16555';
 		$default_api_key        = 'fFd2XcvTGDemZvbw1bcUesNJWEqKbbUq';
 		$customer_key           = $default_customer_key;
@@ -111,7 +116,7 @@ class Mo_API_Authentication_Demo {
 			<div class="d-flex align-items-center gap-3 mb-3">
 				<h5 class="m-0">Demo/Trial Request for Premium Plans</h4>
 			</div>
-			<p>Make a request for the demo/trial of the Premium plans of the plugin to try all the features.</p>
+			<p class="fs-6">Make a request for the demo/trial of the Premium plans of the plugin to try all the features.</p>
 			<form method="post">
 				<input type="hidden" name="option" value="mo_api_authentication_demo_request_form" />
 				<?php wp_nonce_field( 'mo_api_authentication_demo_request_form', 'mo_api_authentication_demo_request_field' ); ?>

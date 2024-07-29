@@ -48,7 +48,7 @@ function mo_api_authentication_main_menu() {
 			<div class="bg-white" style="margin-left: -1.8%">
 				<nav class="navbar navbar-light mo-caw-navbar border-bottom mo-caw-element-to-toggle mo-caw-light-mode p-0">
 					<div class="container-fluid">
-						<a class="navbar-brand d-flex align-items-center p-0 ms-3" href="https://plugins.miniorange.com/wordpress-rest-api-authentication">
+						<a class="navbar-brand d-flex align-items-center p-0 ms-3" href="https://plugins.miniorange.com/wordpress-rest-api-authentication" target="__blank">
 							<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/miniorange-full-logo.png" alt="miniOrange" width="" height="80px" class="d-inline-block align-text-top mx-3 py-0">
 						</a>
 						<span>
@@ -85,7 +85,7 @@ function mo_api_authentication_main_menu() {
 				</a>
 				<a class="d-flex flex-column align-items-center text-decoration-none py-3 <?php echo ( 'requestfordemo' === $currenttab ) ? 'mo_api_side_bar_select' : ''; ?>" href="admin.php?page=mo_api_authentication_settings&tab=requestfordemo">
 					<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/trial.png" height="30px" width="30px">
-					<h6 class="text-white mt-2 mb-0">Premium Trials</h6>
+					<h6 class="text-white mt-2 mb-0">Full-Feature Trial</h6>
 				</a>
 				<a class="d-flex flex-column align-items-center text-decoration-none py-3 <?php echo ( 'account' === $currenttab ) ? 'mo_api_side_bar_select' : ''; ?>" href="admin.php?page=mo_api_authentication_settings&tab=account">
 					<img src="<?php echo esc_url( dirname( plugin_dir_url( __FILE__ ) ) ); ?>/images/account.png" height="30px" width="30px">

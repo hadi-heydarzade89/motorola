@@ -50,14 +50,32 @@ class Mo_API_Authentication_Config {
 					<p>Select any of the below authentication methods to get started</p>
 				<?php endif; ?>
 				<div class="row px-3 gap-2 mb-3">
-					<div class="col d-flex justify-content-start align-items-center p-3 rounded-3 mo_rest_api_auth_method <?php echo 'basic_auth' === get_option( 'mo_api_authentication_selected_authentication_method' ) ? 'mo_rest_api_selected_border' : 'border border-1'; ?>" onclick="api_ajax_redir('basic auth')">
-						<img class="me-3" src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) ); ?>/images/basic-key.png" height="55px">
-						<h6 class="fw-bolder mb-0">BASIC AUTHENTICATION</h6>
+					<div class="col p-3 rounded-3 mo_rest_api_auth_method <?php echo 'basic_auth' === get_option( 'mo_api_authentication_selected_authentication_method' ) ? 'mo_rest_api_selected_border' : 'border border-1'; ?>" onclick="api_ajax_redir('basic auth')">
+						<div class="d-flex justify-content-between">
+							<div class="d-flex align-items-center">
+								<img class="me-3" src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) ); ?>/images/basic-key.png" height="55" alt="Basic Authentication">
+								<h6 class="fw-bolder mb-0">BASIC AUTHENTICATION</h6>
+							</div>
+							<div class="d-flex align-items-start mt-n2 me-n2">
+								<?php if ( 'basic_auth' === get_option( 'mo_api_authentication_selected_authentication_method' ) ) : ?>
+									<img src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) ); ?>/images/select-all.png" height="25" alt="Selected" class="mo_rest_api_auth_selected_method">
+								<?php endif; ?>
+							</div>
+						</div>
 					</div>
-					<div class="col d-flex justify-content-start align-items-center p-3 rounded-3 mo_rest_api_auth_method <?php echo 'jwt_auth' === get_option( 'mo_api_authentication_selected_authentication_method' ) ? 'mo_rest_api_selected_border' : 'border border-1'; ?>" onclick="api_ajax_redir('jwt auth')">
-						<img class="me-3" src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) ); ?>/images/jwt_authentication.png" height="55px">
-						<h6 class="fw-bolder mb-0">JWT AUTHENTICATION</h6>
-					</div>
+					<div class="col p-3 rounded-3 mo_rest_api_auth_method <?php echo 'jwt_auth' === get_option( 'mo_api_authentication_selected_authentication_method' ) ? 'mo_rest_api_selected_border' : 'border border-1'; ?>" onclick="api_ajax_redir('jwt auth')">
+						<div class="d-flex justify-content-between">
+							<div class="d-flex align-items-center">
+								<img class="me-3" src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) ); ?>/images/jwt_authentication.png" height="55" alt="JWT Authentication">
+								<h6 class="fw-bolder mb-0">JWT AUTHENTICATION</h6>
+							</div>
+							<div class="d-flex align-items-start">
+								<?php if ( 'jwt_auth' === get_option( 'mo_api_authentication_selected_authentication_method' ) ) : ?>
+									<img src="<?php echo esc_url( plugin_dir_url( dirname( __DIR__ ) ) ); ?>/images/select-all.png" height="25" alt="Selected" class="mo_rest_api_auth_selected_method">
+								<?php endif; ?>
+							</div>
+						</div>
+					</div>				
 				</div>
 				<div class="row px-3 gap-2 mb-3">
 					<div class="col p-0">

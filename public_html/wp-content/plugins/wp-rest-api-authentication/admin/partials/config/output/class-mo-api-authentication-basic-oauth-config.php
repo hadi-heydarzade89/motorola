@@ -20,6 +20,7 @@ class Mo_API_Authentication_Basic_Oauth_Config {
 	 * @return void
 	 */
 	public static function mo_api_auth_configuration_output() {
+		$current_user = wp_get_current_user();
 		?>
 		<div id="mo_api_basic_authentication_support_layout" class="border border-1 rounded-4 p-3">
 			<form method="post">
@@ -28,14 +29,14 @@ class Mo_API_Authentication_Basic_Oauth_Config {
 					<h5 class="m-0">
 						<a class="text-decoration-none" href="admin.php?page=mo_api_authentication_settings&tab=config">Configure Methods</a>
 						> Basic Authentication Method
-					</h4>
+					</h5>
 					<div class="d-flex gap-2 text-center">
 						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" onclick="window.location.href='admin.php?page=mo_api_authentication_settings'">Back</button>
 						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" onclick="moBasicAuthenticationMethodSave('save_basic_auth')">Next</button>
 					</div>
 				</div>
 				<div id="mo_api_authentication_support_basicoauth">
-					<p>WordPress REST API - Basic Authentication Method involves the REST APIs access on validation against the API token generated based on the user’s username, password and on basis of client credentials.</p>
+					<p class="fs-6">WordPress REST API - Basic Authentication Method involves the REST APIs access on validation against the API token generated based on the user’s username, password and on basis of client credentials.</p>
 					<div class="d-flex gap-3 my-4">
 						<div class="d-flex justify-content-between align-items-center gap-1 border border-1 rounded-2 p-1">
 							<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/youtube.png" height="25px" width="25px">
@@ -145,7 +146,7 @@ class Mo_API_Authentication_Basic_Oauth_Config {
 							<div class="row mt-3">
 								<div class="col mb-3">
 									<label for="mo_rest_api_basic_auth_username" class="form-label mo_rest_api_primary_font">Username</label>
-									<input type="text" class="form-control mo_test_config_input" id="mo_rest_api_basic_auth_username">
+									<input type="text" class="form-control mo_test_config_input" id="mo_rest_api_basic_auth_username" value="<?php echo esc_attr( $current_user->user_nicename ); ?>">
 								</div>
 								<div class="col mb-3">
 									<label for="mo_rest_api_rest_basic_auth_password" class="form-label mo_rest_api_primary_font">Password</label>
@@ -158,7 +159,7 @@ class Mo_API_Authentication_Basic_Oauth_Config {
 							<label for="" class="mo_rest_api_primary_font">REST API Endpoint:</label>
 							<div class="row mt-3">
 								<div class="col-2">
-									<button type="button" class="btn btn-success fw-bold w-100">GET</button>
+									<button type="button" class="btn btn-success fw-bold w-100 mo_rest_api_get_test_method_btn">GET</button>
 								</div>
 								<div class="col p-0">
 									<input class="form-control mo_test_config_input w-100" type="text" name="rest_basic_auth_endpoint" id="rest_basic_auth_endpoint" value="<?php echo esc_html( get_rest_url() ) . 'wp/v2/posts'; ?>" placeholder="Enter REST API Endpoint">

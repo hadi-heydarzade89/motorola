@@ -41,7 +41,7 @@ class Mo_API_Authentication_OAuth_Client_Config {
 					</div>
 				</div>
 				<div>
-					<p>WordPress REST API OAuth 2.0 Authentication Method involves the REST APIs access on validation against the access token/JWT token (JSON Web Token) generated based on the user or client credentials using highly secure encryption algorithm. It follows the standards of OAuth 2.0 protocol.</p>
+					<p class="fs-6">WordPress REST API OAuth 2.0 Authentication Method involves the REST APIs access on validation against the access token/JWT token (JSON Web Token) generated based on the user or client credentials using highly secure encryption algorithm. It follows the standards of OAuth 2.0 protocol.</p>
 					<div class="d-flex gap-3 my-4">
 						<div class="d-flex justify-content-between align-items-center gap-1 border border-1 rounded-2 p-1">
 							<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/user-guide.png" height="25px" width="25px">

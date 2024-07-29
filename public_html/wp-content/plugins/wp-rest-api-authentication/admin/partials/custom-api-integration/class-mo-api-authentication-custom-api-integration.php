@@ -56,7 +56,7 @@ class Mo_API_Authentication_Custom_API_Integration {
 				</div>
 				<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" disabled>Save</button>
 			</div>
-			<p>The REST APIs of third-party plugin can be authenticated with the <b><i><a href="admin.php?page=mo_api_authentication_settings&tab=licensing" style="color:#a83262"><u>All-Inclusive Plan</u></a></i></b>. Also any third-party application can also be integrated using the plugin via APIs.</p>
+			<p class="fs-6">The REST APIs of third-party plugin can be authenticated with the <b><i><a href="admin.php?page=mo_api_authentication_settings&tab=licensing" style="color:#a83262"><u>All-Inclusive Plan</u></a></i></b>. Also any third-party application can also be integrated using the plugin via APIs.</p>
 			<div class="d-grid gap-3 mo_rest_api_third_party_apps_wrapper">
 				<?php foreach ( $integrations_supported as $name => $image ) : ?>
 					<div class="border border-1 rounded-3">
