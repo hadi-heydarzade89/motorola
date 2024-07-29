@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-07-23 13:22:50+0000\n"
+"PO-Revision-Date: 2024-07-24 12:15:52+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,6 +25,11 @@ msgstr "فیلتر محصول (آزمایشی)"
 msgctxt "block title"
 msgid "Product Filter: Price (Experimental)"
 msgstr "فیلتر محصول: قیمت (آزمایشی)"
+
+#: assets/client/blocks/product-filter-clear-button/block.json
+msgctxt "block title"
+msgid "Clear (Experimental)"
+msgstr "پاک کردن (آزمایشی)"
 
 #: templates/product-form/simple.php:26 templates/product-form/simple.php:27
 msgid "Translatable Label"
@@ -6138,7 +6143,7 @@ msgstr "مشتریان را قادر می‌سازد تا با انتخاب یک
 
 #. translators: %s is a product attribute name.
 #. translators: %s attribute name.
-#: src/Blocks/BlockTypes/ProductFilterAttribute.php:247
+#: src/Blocks/BlockTypes/ProductFilterAttribute.php:248
 #: assets/client/blocks/attribute-filter-frontend.js:7
 #: assets/client/blocks/attribute-filter-wrapper-frontend.js:7
 #: assets/client/blocks/attribute-filter.js:13
@@ -32247,7 +32252,7 @@ msgid "New product"
 msgstr "محصول جدید"
 
 #: includes/class-wc-post-types.php:332
-#: includes/tracks/events/class-wc-products-tracking.php:149
+#: includes/tracks/events/class-wc-products-tracking.php:148
 msgid "Edit product"
 msgstr "ویرایش محصول"
 
