@@ -47,7 +47,6 @@ do_action('woocommerce_before_edit_account_form'); ?>
     </p>
     <?php
     $nationalId = getNationalId(get_current_user_id());
-    $nationalId = empty($readOnly) ? '' : $nationalId;
     $readOnly = '';
     if (!empty($nationalId)) {
         $readOnly = checkNationalCode($nationalId) ? 'readonly' : '';

@@ -134,13 +134,9 @@ function storeNationalId($userId): bool
 
 function getNationalId($userId): string
 {
-    $nationalIdArray = get_user_meta($userId, 'national_id');
-    $nationalId = '';
+    $nationalId = get_user_meta($userId, 'national_id', true);
+    return empty($nationalId) ? '' : $nationalId;
 
-    if (is_array($nationalIdArray) && count($nationalIdArray) === 1) {
-        $nationalId = $nationalIdArray[0];
-    }
-    return $nationalId;
 }
 
 add_action('woocommerce_save_account_details', 'storeNationalIdInMyAccountPage');
@@ -380,7 +376,13 @@ function addNationalCodeFieldOnCheckoutPage($fields)
         'priority' => 9,
         'class' => ['form-row-wide']
     ];
+    $fields['billing_state']['priority'] = 70;
+    $fields['billing_city']['priority'] = 80;
     $fields['billing_last_name']['class'] = $fields['billing_first_name']['class'] = ['form-row-wide'];
+    $nationalId = get_user_meta(get_current_user_id(), 'national_id', true);
+
+    $fields['billing_national_code']['default'] = $nationalId;
+    $fields['billing_national_code']['custom_attributes'] = ['readonly' => 'readonly'];
     return $fields;
 }
 
