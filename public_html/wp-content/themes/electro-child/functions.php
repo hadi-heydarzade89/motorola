@@ -356,7 +356,9 @@ function validateNationalCodeAfterCheckoutValidation($posted): void
     if (!checkNationalCode($posted['billing_national_code'])) {
         wc_add_notice("کد ملی وارد شده معتبر نمیباشد لطفا از صحت کد ملی وارد شده اطمینان حاصل نمایید.", 'error');
     } else {
-        update_user_meta(get_current_user_id(), 'national_id', $posted['billing_national_code']);
+        if (empty(get_user_meta(get_current_user_id(), 'national_id', true))) {
+            update_user_meta(get_current_user_id(), 'national_id', $posted['billing_national_code']);
+        }
 
     }
     if (!isPersianWord($posted['billing_first_name']) || !isPersianWord($posted['billing_last_name'])) {
