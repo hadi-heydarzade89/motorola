@@ -384,7 +384,9 @@ function addNationalCodeFieldOnCheckoutPage($fields)
     $nationalId = get_user_meta(get_current_user_id(), 'national_id', true);
 
     $fields['billing_national_code']['default'] = $nationalId;
-    $fields['billing_national_code']['custom_attributes'] = ['readonly' => 'readonly'];
+    if(strlen($nationalId) > 9) {
+        $fields['billing_national_code']['custom_attributes'] = ['readonly' => 'readonly'];
+    }
     return $fields;
 }
 
