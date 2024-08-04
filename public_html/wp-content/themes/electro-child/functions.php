@@ -360,14 +360,12 @@ function validateNationalCodeAfterCheckoutValidation($posted): void
     if (!checkNationalCode($posted['billing_national_code'])) {
         wc_add_notice("کد ملی وارد شده معتبر نمیباشد لطفا از صحت کد ملی وارد شده اطمینان حاصل نمایید.", 'error');
     } else {
-        if (is_user_logged_in()) {
-            update_user_meta(get_current_user_id(), 'national_id', $posted['billing_national_code']);
-        }
+        update_user_meta(get_current_user_id(), 'national_id', $posted['billing_national_code']);
+
     }
     if (!isPersianWord($posted['billing_first_name']) || !isPersianWord($posted['billing_last_name'])) {
         wc_add_notice('لطفا از حروف فارسی برای نام و نام خانوادگی استفاده نمایید.', 'error');
     }
-
 }
 
 add_action('woocommerce_after_checkout_validation', 'validateNationalCodeAfterCheckoutValidation');
@@ -423,7 +421,7 @@ function lw_variable_product_price($v_price, $v_product)
     $regular_prices = array($v_product->get_variation_regular_price('min', true),
         $v_product->get_variation_regular_price('max', true));
     sort($regular_prices);
-    $regular_price = $regular_prices[0] !== $regular_prices[1] ?  wc_price($regular_prices[0]) : wc_price($regular_prices[0]);
+    $regular_price = $regular_prices[0] !== $regular_prices[1] ? wc_price($regular_prices[0]) : wc_price($regular_prices[0]);
 
     if ($prod_price !== $regular_price) {
         $prod_price = '<del>' . $regular_price . $v_product->get_price_suffix() . '</del> <ins>' .
