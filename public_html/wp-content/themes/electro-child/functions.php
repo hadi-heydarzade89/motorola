@@ -328,7 +328,7 @@ add_action('admin_init', 'loadOrderInvoiceData');
 
 function loadOrderInvoiceData(): void
 {
-    if ($_GET['electro_woo_invoice'] && is_admin()) {
+    if (isset($_GET['electro_woo_invoice']) && is_admin()) {
         $order = wc_get_order($_GET['electro_woo_invoice']);
         if ($order === false) {
             wp_redirect(admin_url());
@@ -344,7 +344,7 @@ function loadOrderInvoiceData(): void
         $createdDatetime = Jalalian::forge((new DateTime(date('Y-m-d H:i:s')))->getTimestamp())->format('Y/m/d');
         if ($_GET['electro_woo_invoice_type'] === 'thermal') {
             include plugin_dir_path(__FILE__) . 'templates/invoice/a5.php';
-        } elseif ($_GET['electro_woo_invoice_type'] === 'invoice') {
+        } elseif (isset($_GET['electro_woo_invoice_type']) && $_GET['electro_woo_invoice_type'] === 'invoice') {
 //            include plugin_dir_path(__FILE__) . 'templates/invoice/ticket.php';
         }
     }
@@ -384,7 +384,7 @@ function addNationalCodeFieldOnCheckoutPage($fields)
     $nationalId = get_user_meta(get_current_user_id(), 'national_id', true);
 
     $fields['billing_national_code']['default'] = $nationalId;
-    if(strlen($nationalId) > 9) {
+    if (strlen($nationalId) > 9) {
         $fields['billing_national_code']['custom_attributes'] = ['readonly' => 'readonly'];
     }
     return $fields;
