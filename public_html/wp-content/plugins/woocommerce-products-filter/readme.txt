@@ -5,7 +5,7 @@ Tags: filter, product filter, woocommerce, woof, ajax filter
 Requires at least: 6.0.0
 Tested up to: 6.6
 Requires PHP: 7.4
-Stable tag: 1.3.6.1
+Stable tag: 1.3.6.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,101 +15,102 @@ HUSKY - WooCommerce Products Filter Professional (former name is WOOF) – flexi
 
 **[HUSKY - WooCommerce Products Filter Professional](https://demo.products-filter.com/)** (formerly known as WOOF) is an advanced and versatile filter plugin that enhances the functionality of the WooCommerce plugin. It empowers your website visitors to easily search and filter woocommerce products based on: categories, attributes, tags, taxonomies, meta fields, and product price. With its powerful and user-friendly features, HUSKY provides a seamless filtering experience to help customers find the desired products efficiently
 
-HUSKY filter enables the generation of search engine optimized [SEO-friendly](https://demo.products-filter.com/swoof/color-red/product_cat-sport/) links, such as: https://demo.products-filter.com/swoof/color-red/product_cat-sport/. These links can be included in your site map file, contributing to improved search engine rankings, particularly on Google.
+🔗 HUSKY filter enables the generation of search engine optimized [SEO-friendly](https://demo.products-filter.com/swoof/color-red/product_cat-sport/) links, such as: https://demo.products-filter.com/swoof/color-red/product_cat-sport/. These links can be included in your site map file, contributing to improved search engine rankings, particularly on Google.
 
-Using [filter front builder](https://demo.products-filter.com/filter-front-builder-demo/) HUSKY allows to create filter forms directly on the site front
+🛠️ Using [filter front builder](https://demo.products-filter.com/filter-front-builder-demo/) HUSKY allows to create filter forms directly on the site front
 
 
-Supports latest version of the WooCommerce plugin. A must have plugin for your WooCommerce powered online store! Maximum flexibility!
+✅ Supports latest version of the WooCommerce plugin. A must have plugin for your WooCommerce powered online store! Maximum flexibility!
 
-If you are WP+PHP developer and you want to create something unusual in the search form interface – Welcome: using HUSKY extension API and default extensions as an examples you can create any html-items for the search form and even custom woo-products loop template for your own purposes.
-Also its possible to [create any connectors for layout plugins](https://products-filter.com/extensions/) and [create special designed filter elements](https://demo-sd.products-filter.com/)
+👨‍💻 If you are WP+PHP developer and you want to create something unusual in the search form interface – Welcome: using HUSKY extension API and default extensions as an examples you can create any html-items for the search form and even custom woo-products loop template for your own purposes.
+
+Also its possible to [🔌 create any connectors for layout plugins](https://products-filter.com/extensions/) and [🎨 create special designed filter elements](https://demo-sd.products-filter.com/)
 
 
 Latest PHP 8.x.x - COMPATIBLE!
 
-Demo site 1: [demo.products-filter.com](https://demo.products-filter.com/)
-Demo site 2: [filter form front builder](https://demo.products-filter.com/filter-front-builder-demo/)
-Demo site 3: [Smart Designer - filter elements constructor](https://demo-sd.products-filter.com/)
-Demo site 4: [demo10k.products-filter.com - 10 000 products](https://demo10k.products-filter.com/)
-Demo site 5: [turbo.products-filter.com - 23 000 products](https://turbo.products-filter.com/)
+🌐 Demo site 1: [demo.products-filter.com](https://demo.products-filter.com/)
+🌐 Demo site 2: [filter form front builder](https://demo.products-filter.com/filter-front-builder-demo/)
+🌐 Demo site 3: [Smart Designer - filter elements constructor](https://demo-sd.products-filter.com/)
+🌐 Demo site 4: [demo10k.products-filter.com - 10 000 products](https://demo10k.products-filter.com/)
+🌐 Demo site 5: [turbo.products-filter.com - 23 000 products](https://turbo.products-filter.com/)
 
 
 ### HUSKY Products Filter Features:
 
-&#9989;&nbsp;**Representation:** HUSKY can be used as Shortcode, so as the Widget. Special shortcode [[woof]](https://products-filter.com/shortcode/woof/) allows insert product filter in any part of your site. It is possible to show products taxonomies and attributes in the search form as: radio, checkbox, drop-down, multi-drop-down, radio buttons in drop-down. In the premium version also is possible to show html-elements as: color, image, label, hierarchy drop-down, [attributes/taxonomy range-slider](https://demo.products-filter.com/taxonomy-range-slider/), checkbox buttons in drop-down
+🌐&nbsp;**Representation:** HUSKY can be used as Shortcode, so as the Widget. Special shortcode [[woof]](https://products-filter.com/shortcode/woof/) allows insert product filter in any part of your site. It is possible to show products taxonomies and attributes in the search form as: radio, checkbox, drop-down, multi-drop-down, radio buttons in drop-down. In the premium version also is possible to show html-elements as: color, image, label, hierarchy drop-down, [attributes/taxonomy range-slider](https://demo.products-filter.com/taxonomy-range-slider/), checkbox buttons in drop-down
 
-&#9989;&nbsp;**Filter form Front Builder:** assemble custom filter form directly on the site front usnig shortcode [[[woof_front_builder]]](https://products-filter.com/shortcode/woof_front_builder/).
+🛠️&nbsp;**Filter form Front Builder:** assemble custom filter form directly on the site front usnig shortcode [[[woof_front_builder]]](https://products-filter.com/shortcode/woof_front_builder/).
 
-&#9989;&nbsp;**Products shortcode:** Products shortcode [[woof_products per_page=8 columns=3 is_ajax=1 taxonomies=product_cat:9]](https://products-filter.com/shortcode/woof_products/) allows to display and filter targeted products in a single page or as part of a post content, and of course products there are filterable in redirect or ajax mode. Using shortcode attribute custom_tpl it is even possible use custom templates what give wide flexibility in different projects.
+🛒&nbsp;**Products shortcode:** Products shortcode [[woof_products per_page=8 columns=3 is_ajax=1 taxonomies=product_cat:9]](https://products-filter.com/shortcode/woof_products/) allows to display and filter targeted products in a single page or as part of a post content, and of course products there are filterable in redirect or ajax mode. Using shortcode attribute custom_tpl it is even possible use custom templates what give wide flexibility in different projects.
 
-&#9989;&nbsp;**Products searching by AJAX:** (optionally) allows filter woocommerce products without page reloading. Works for 95% wordpress themes and should be tested before release to the production site as it depends of the current wp theme functionality and integrated html code there
+🔄&nbsp;**Products searching by AJAX:** (optionally) allows filter woocommerce products without page reloading. Works for 95% wordpress themes and should be tested before release to the production site as it depends of the current wp theme functionality and integrated html code there
 
-&#9989;&nbsp;**Dynamic products recount:** this powerful feature allows to display in the search form how many relevant variants will be found if to click selected html-element in the filter search form
+📊&nbsp;**Dynamic products recount:** this powerful feature allows to display in the search form how many relevant variants will be found if to click selected html-element in the filter search form
 
-&#9989;&nbsp;[**Filter woocommerce products by Meta Data**](https://products-filter.com/extencion/woocommerce-filter-by-meta-fields/): allows with using special functionality in the plugin settings page add meta fields data in the search flow (text and number type)
+🔍&nbsp;[**Filter woocommerce products by Meta Data**](https://products-filter.com/extencion/woocommerce-filter-by-meta-fields/): allows with using special functionality in the plugin settings page add meta fields data in the search flow (text and number type)
 
-&#9989;&nbsp;**Search products by SKU**: HUSKY allows filtering your shop products site by SKU as part of the big search form, so as the special shortcode [[woof_sku_filter]](https://products-filter.com/shortcode/woof_sku_filter/)
+🔢&nbsp;**Search products by SKU**: HUSKY allows filtering your shop products site by SKU as part of the big search form, so as the special shortcode [[woof_sku_filter]](https://products-filter.com/shortcode/woof_sku_filter/)
 
-&#9989;&nbsp;**Search products by Price**: can be displayed as range slider, so as drop-down with ranges selection
+💲&nbsp;**Search products by Price**: can be displayed as range slider, so as drop-down with ranges selection
 
-&#9989;&nbsp;**WooCommerce products text search** by title, content, excerpt and their combinations. It is possible to use special shortcode [[woof_text_filter]](https://products-filter.com/shortcode/woof_text_filter/) which you can insert in the place you want.
+📝&nbsp;**WooCommerce products text search** by title, content, excerpt and their combinations. It is possible to use special shortcode [[woof_text_filter]](https://products-filter.com/shortcode/woof_text_filter/) which you can insert in the place you want.
 
-&#9989;&nbsp;[**Smart Designer**](https://demo-sd.products-filter.com/): custom filter elements design-constructor that allows woocommerce shop admin to create special designed filter elements for its own business purposes
+🎨&nbsp;[**Smart Designer**](https://demo-sd.products-filter.com/): custom filter elements design-constructor that allows woocommerce shop admin to create special designed filter elements for its own business purposes
 
-&#9989;&nbsp;**Filter by ACF fields** Possible ACF types: 'select', 'radio', 'true_false' - create meta fields in ACF panel, set meta data to products, filter by them!
+🔧&nbsp;**Filter by ACF fields** Possible ACF types: 'select', 'radio', 'true_false' - create meta fields in ACF panel, set meta data to products, filter by them!
 
-&#9989;&nbsp;[**Step by step products filter**](https://products-filter.com/extencion/woocommerce-step-by-step-filter/): this technology allows to create products wizard for your shop customers where they can step by step select products they want to buy
+🧩&nbsp;[**Step by step products filter**](https://products-filter.com/extencion/woocommerce-step-by-step-filter/): this technology allows to create products wizard for your shop customers where they can step by step select products they want to buy
 
-&#9989;&nbsp;[**Statistic**](https://products-filter.com/extencion/statistic/): you can always analyze search data and understand what is more interested for your customers, and of course such data will help grow your bussiness
+📈&nbsp;[**Statistic**](https://products-filter.com/extencion/statistic/): you can always analyze search data and understand what is more interested for your customers, and of course such data will help grow your bussiness
 
-&#9989;&nbsp;[**Quick Search**](https://products-filter.com/extencion/quick-search/): this technology created especially for HUSKY and allows make instant search regardless of the products quantity of products without AJAX or page reloading
+⚡&nbsp;[**Quick Search**](https://products-filter.com/extencion/quick-search/): this technology created especially for HUSKY and allows make instant search regardless of the products quantity of products without AJAX or page reloading
 
-&#9989;&nbsp;[**Turbo Mode**](https://products-filter.com/extencion/turbo-mode/): this mode allows to avoid generating big MySQL queries while products filtering on the site front
+🚀&nbsp;[**Turbo Mode**](https://products-filter.com/extencion/turbo-mode/): this mode allows to avoid generating big MySQL queries while products filtering on the site front
 
-&#9989;&nbsp;[**Products Messenger**](https://products-filter.com/extencion/products-messenger/): allows your logged-in customers subscribe to the products filter combinations and always be informed if in your shop appeared exact products they want to buy. Such tool can grow conversion of the shop. Use it as widget, so as shortcode [woof_products_messenger]
+📬&nbsp;[**Products Messenger**](https://products-filter.com/extencion/products-messenger/): allows your logged-in customers subscribe to the products filter combinations and always be informed if in your shop appeared exact products they want to buy. Such tool can grow conversion of the shop. Use it as widget, so as shortcode [woof_products_messenger]
 
-&#9989;&nbsp;[**Saver of Search query**](https://products-filter.com/extencion/saver-of-search-query/): this extension allows for your customers save search combinations and access them in future by one click what makes your customers more informative and attenditive about your shop products
+💾&nbsp;[**Saver of Search query**](https://products-filter.com/extencion/saver-of-search-query/): this extension allows for your customers save search combinations and access them in future by one click what makes your customers more informative and attenditive about your shop products
 
-&#9989;&nbsp;[**Infinite Scrolling**](https://products-filter.com/make-infinite-scroll-for-filtered-products-also/): allows load and see woocommerce products on the shop and catalog page without click on pagination buttons
+♾️&nbsp;[**Infinite Scrolling**](https://products-filter.com/make-infinite-scroll-for-filtered-products-also/): allows load and see woocommerce products on the shop and catalog page without click on pagination buttons
 
-&#9989;&nbsp;Images can be as filter html-elements in the [search form](https://demo.products-filter.com/all-by-images-only/)
+🖼️&nbsp;Images can be as filter html-elements in the [search form](https://demo.products-filter.com/all-by-images-only/)
 
-&#9989;&nbsp;Colors can be as filter html-elements in the [search form](https://demo.products-filter.com/clothing-by-color-only/)
+🎨&nbsp;Colors can be as filter html-elements in the [search form](https://demo.products-filter.com/clothing-by-color-only/)
 
-&#9989;&nbsp;Price filter as range-slider OR as drop-down
+💲&nbsp;Price filter as range-slider OR as drop-down
 
-&#9989;&nbsp;Showing hidden search form as [BUTTON](https://demo.products-filter.com/hidden-search-form/)
+🔘&nbsp;Showing hidden search form as [BUTTON](https://demo.products-filter.com/hidden-search-form/)
 
-&#9989;&nbsp;In the plugin settings for radio and checkboxes html-elements in the filter form can be selected different skins
+🎛️&nbsp;In the plugin settings for radio and checkboxes html-elements in the filter form can be selected different skins
 
-&#9989;&nbsp;Possibility to create products custom layout template and use it with shortcode [woof_products](https://products-filter.com/shortcode/woof_products/) in ajax and redirect mode, see attributes custom_tpl and tpl_index
+📝&nbsp;Possibility to create products custom layout template and use it with shortcode [woof_products](https://products-filter.com/shortcode/woof_products/) in ajax and redirect mode, see attributes custom_tpl and tpl_index
 
-&#9989;&nbsp;Possible to create any extensions for the plugin (for developers only). See folder 'ext' for the code examples
+🔧&nbsp;Possible to create any extensions for the plugin (for developers only). See folder 'ext' for the code examples
 
-&#9989;&nbsp;[Demo site](https://demo.products-filter.com) - watch filter combinations alive
+🌐&nbsp;[Demo site](https://demo.products-filter.com) - watch filter combinations alive
 
-&#9989;&nbsp;HUSKY has wide API described in [CODEX](https://products-filter.com/codex/)
+📚&nbsp;HUSKY has wide API described in [CODEX](https://products-filter.com/codex/)
 
-&#9989;&nbsp;HUSKY uses native WooCommerce API which allows coexisting and cooperation with another plugins created for WooCommerce
+🔗&nbsp;HUSKY uses native WooCommerce API which allows coexisting and cooperation with another plugins created for WooCommerce
 
-&#9989;&nbsp;[WPML compatibility](https://wpml.org/extensions/woof-woocommerce-products-filter/?aid=180271&affiliate_key=ykFQUy0inySN)
+🌍&nbsp;[WPML compatibility](https://wpml.org/extensions/woof-woocommerce-products-filter/?aid=180271&affiliate_key=ykFQUy0inySN)
 
-&#9989;&nbsp;Compatible with [For WooCommerce plugin Currency Switcher](https://wordpress.org/plugins/woocommerce-currency-switcher/)
+💱&nbsp;Compatible with [For WooCommerce plugin Currency Switcher](https://wordpress.org/plugins/woocommerce-currency-switcher/)
 
-&#9989;&nbsp;Compatible with [WooCommerce Products Per Page](https://wordpress.org/plugins/woocommerce-products-per-page/)
+📦&nbsp;Compatible with [WooCommerce Products Per Page](https://wordpress.org/plugins/woocommerce-products-per-page/)
 
-&#9989;&nbsp;Compatible with [DIVI WordPress Theme](https://demo-divi.products-filter.com/)
+🎨&nbsp;Compatible with [DIVI WordPress Theme](https://demo-divi.products-filter.com/)
 
-&#9989;&nbsp;PHP 7.4.x - 8.x full compatibility
+🐘&nbsp;PHP 7.4.x - 8.x full compatibility
 
-&#9989;&nbsp;Simple, robust AND rich options panel
+⚙️&nbsp;Simple, robust AND rich options panel
 
-&#9989;&nbsp;**HUSKY filter is chatGPT friendly plugin** you can ask help to chat gpt about the plugin features using the plugin former name WOOF, example: "what attribute to use to make redirection in woof shortcode"
+🤖&nbsp;**HUSKY filter is chatGPT friendly plugin** you can ask help to chat gpt about the plugin features using the plugin former name WOOF, example: "what attribute to use to make redirection in woof shortcode"
 
-&#9989;&nbsp;**Strong technical support which each day works with tones of code!**
+🛠️&nbsp;**Strong technical support which each day works with tones of code!**
 
-&#9989;&nbsp;The premium version: [CODECANYON](https://products-filter.com/a/buy)
+✨&nbsp;The premium version: [CODECANYON](https://products-filter.com/a/buy)
 
 
 
@@ -174,6 +175,10 @@ R: [Codex](https://products-filter.com/codex/)
 
 
 == Changelog ==
+
+= 1.3.6.2 =
+* 1 security fix, thanks to Rafie Muhammad from Patchstack.com
+* 1 fix for WPML
 
 = 1.3.6.1 =
 * 1 security fix, thanks to Arkadiusz Hydzik from wordfence.com

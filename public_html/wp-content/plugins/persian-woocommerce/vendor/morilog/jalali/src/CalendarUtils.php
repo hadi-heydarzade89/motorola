@@ -740,7 +740,7 @@ class CalendarUtils
         $dt['zone'] = 0;
         $dt['is_dst'] = '';
 
-        if (strlen($dt['year']) == 2) {
+        if (isset($dt['year']) && strlen($dt['year']) == 2) {
             $now = Jalalian::forge('now');
             $x = $now->format('Y') - $now->format('y');
             $dt['year'] += $x;

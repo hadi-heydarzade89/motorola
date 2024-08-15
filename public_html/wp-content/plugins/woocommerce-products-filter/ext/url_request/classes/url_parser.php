@@ -359,6 +359,18 @@ class WOOF_URL_PARSER {
             if (isset($tax_relations[$f_real_keys]) AND $tax_relations[$f_real_keys] == 'NOT IN') {
                 $f_real_keys = 'rev_' . $f_real_keys;
             }
+			
+			//wpml translate
+			if (class_exists('SitePress')) {
+				if(in_array($f_key, $taxonomies_keys)){
+					$f_key_tmp = trim(apply_filters( 'wpml_get_translated_slug', $f_key, $f_key , NULL , 'taxonomy' ), "/");
+					if ($f_key_tmp) {
+						$f_key = $f_key_tmp;
+					}
+				}
+			}
+			
+			
             $f_key = preg_replace('/^pa_/', '', $f_key);
 
             switch ($f_key) {

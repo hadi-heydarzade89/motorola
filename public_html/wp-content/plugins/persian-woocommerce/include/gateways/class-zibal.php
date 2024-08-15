@@ -9,12 +9,13 @@ add_filter( 'woocommerce_payment_gateways', function ( $methods ) {
 	return array_filter( $methods, fn( $value ) => $value != 'WC_Zibal' );
 }, 20 );
 
-add_action( 'after_plugin_row_zibal-payment-gateway-for-woocommerce/index.php', function ( $plugin_file, $plugin_data, $status ) {
-	echo '<tr class="inactive"><td>&nbsp;</td><td colspan="2">
+add_action( 'after_plugin_row_zibal-payment-gateway-for-woocommerce/index.php',
+	function ( $plugin_file, $plugin_data, $status ) {
+		echo '<tr class="inactive"><td>&nbsp;</td><td colspan="2">
         	<div class="notice inline notice-warning notice-alt"><p>افزونه «<strong>درگاه پرداخت زیبال برای فروشگاه ساز ووکامرس</strong>» درون بسته ووکامرس فارسی وجود دارد و نیاز به فعال سازی نیست. به صفحه <a href="' . esc_url( admin_url( 'admin.php?page=wc-settings&tab=checkout' ) ) . '">ووکامرس > پیکربندی > تسویه حساب</a> مراجعه کنید.</p></div>
         	</td>
         </tr>';
-}, 10, 3 );
+	}, 10, 3 );
 
 class Persian_Woocommerce_Zibal extends WC_Payment_Gateway {
 
@@ -23,7 +24,8 @@ class Persian_Woocommerce_Zibal extends WC_Payment_Gateway {
 		$this->id                 = 'wc_zibal';
 		$this->method_title       = __( 'پرداخت زیبال', 'woocommerce' );
 		$this->method_description = __( 'تنظیمات درگاه پرداخت زیبال برای افزونه فروشگاه ساز ووکامرس', 'woocommerce' );
-		$this->icon               = apply_filters( 'woocommerce_ir_gateway_zibal_icon', PW()->plugin_url( 'assets/images/zibal.png' ) );
+		$this->icon               = apply_filters( 'woocommerce_ir_gateway_zibal_icon',
+			PW()->plugin_url( 'assets/images/zibal.png' ) );
 		$this->has_fields         = false;
 
 		$this->init_form_fields();
@@ -82,7 +84,8 @@ class Persian_Woocommerce_Zibal extends WC_Payment_Gateway {
 			'merchantcode'    => [
 				'title'       => __( 'مرچنت کد', 'woocommerce' ),
 				'type'        => 'text',
-				'description' => __( 'مرچنت کد درگاه زیبال - برای تست می‌توانید از مرچنت zibal استفاده کنید', 'woocommerce' ),
+				'description' => __( 'مرچنت کد درگاه زیبال - برای تست می‌توانید از مرچنت zibal استفاده کنید',
+					'woocommerce' ),
 				'default'     => '',
 				'desc_tip'    => true,
 			],
@@ -94,16 +97,27 @@ class Persian_Woocommerce_Zibal extends WC_Payment_Gateway {
 			'success_massage' => [
 				'title'       => __( 'پیام پرداخت موفق', 'woocommerce' ),
 				'type'        => 'textarea',
-				'description' => __( 'متن پیامی که میخواهید بعد از پرداخت موفق به کاربر نمایش دهید را وارد نمایید. همچنین می توانید از شورت کد {transaction_id} برای نمایش کد رهگیری (توکن) زیبال استفاده نمایید.', 'woocommerce' ),
+				'description' => __( 'متن پیامی که میخواهید بعد از پرداخت موفق به کاربر نمایش دهید را وارد نمایید. همچنین می توانید از شورت کد {transaction_id} برای نمایش کد رهگیری (توکن) زیبال استفاده نمایید.',
+					'woocommerce' ),
 				'default'     => __( 'با تشکر از شما. سفارش شما با موفقیت پرداخت شد.', 'woocommerce' ),
 			],
 			'failed_massage'  => [
 				'title'       => __( 'پیام پرداخت ناموفق', 'woocommerce' ),
 				'type'        => 'textarea',
-				'description' => __( 'متن پیامی که میخواهید بعد از پرداخت ناموفق به کاربر نمایش دهید را وارد نمایید. همچنین می توانید از شورت کد {fault} برای نمایش دلیل خطای رخ داده استفاده نمایید. این دلیل خطا از سایت زیبال ارسال می‌گردد.', 'woocommerce' ),
-				'default'     => __( 'پرداخت شما ناموفق بوده است. لطفا مجددا تلاش نمایید یا در صورت بروز اشکال با مدیر سایت تماس بگیرید.', 'woocommerce' ),
+				'description' => __( 'متن پیامی که میخواهید بعد از پرداخت ناموفق به کاربر نمایش دهید را وارد نمایید. همچنین می توانید از شورت کد {fault} برای نمایش دلیل خطای رخ داده استفاده نمایید. این دلیل خطا از سایت زیبال ارسال می‌گردد.',
+					'woocommerce' ),
+				'default'     => __( 'پرداخت شما ناموفق بوده است. لطفا مجددا تلاش نمایید یا در صورت بروز اشکال با مدیر سایت تماس بگیرید.',
+					'woocommerce' ),
 			],
 		];
+	}
+
+	public function is_available() {
+		if ( empty( $this->merchantcode ) ) {
+			return false;
+		}
+
+		return parent::is_available();
 	}
 
 	/**
@@ -122,16 +136,16 @@ class Persian_Woocommerce_Zibal extends WC_Payment_Gateway {
 
 		if ( strtolower( $currency ) == strtolower( 'IRT' ) ) {
 			$Amount = $Amount * 10;
-		} else if ( strtolower( $currency ) == strtolower( 'IRHT' ) ) {
+		} elseif ( strtolower( $currency ) == strtolower( 'IRHT' ) ) {
 			$Amount = $Amount * 10000;
-		} else if ( strtolower( $currency ) == strtolower( 'IRHR' ) ) {
+		} elseif ( strtolower( $currency ) == strtolower( 'IRHR' ) ) {
 			$Amount = $Amount * 1000;
 		}
 
 		$CallbackUrl = add_query_arg( 'wc_order', $order_id, WC()->api_request_url( $this->id ) );
 
 		// Zibal Hash Secure Code
-		$hash        = md5( $order_id . $Amount . $this->merchantcode );
+		$hash        = md5( $order_id . NONCE_SALT );
 		$CallbackUrl = add_query_arg( 'secure', $hash, $CallbackUrl );
 
 		$Description = 'خریدار: ' . $order->get_formatted_billing_full_name();
@@ -182,6 +196,35 @@ class Persian_Woocommerce_Zibal extends WC_Payment_Gateway {
 		}
 	}
 
+	/**
+	 * @param string $action (PaymentRequest, )
+	 * @param array  $params
+	 *
+	 * @return mixed
+	 */
+	public function SendRequestToZibal( string $action, array $params ) {
+		try {
+
+			$response = wp_safe_remote_post( 'https://gateway.zibal.ir/v1/' . $action, [
+				'body'    => json_encode( $params ),
+				'headers' => [
+					'Content-Type' => 'application/json',
+				],
+			] );
+
+			if ( is_wp_error( $response ) ) {
+				return false;
+			}
+
+			$body = wp_remote_retrieve_body( $response );
+
+			return json_decode( $body, true );
+
+		} catch ( Exception $ex ) {
+			return false;
+		}
+	}
+
 	public function webhook() {
 		$InvoiceNumber = isset( $_GET['orderId'] ) ? sanitize_text_field( $_GET['orderId'] ) : '';
 		$success       = sanitize_text_field( $_GET['success'] );
@@ -189,7 +232,7 @@ class Persian_Woocommerce_Zibal extends WC_Payment_Gateway {
 
 		if ( isset( $_GET['wc_order'] ) ) {
 			$order_id = sanitize_text_field( $_GET['wc_order'] );
-		} else if ( $InvoiceNumber ) {
+		} elseif ( $InvoiceNumber ) {
 			$order_id = $InvoiceNumber;
 		} else {
 			$order_id = WC()->session->get( 'order_id_Zibal' );
@@ -209,6 +252,12 @@ class Persian_Woocommerce_Zibal extends WC_Payment_Gateway {
 			exit;
 		}
 
+		$hash = md5( $order_id . NONCE_SALT );
+
+		if ( $_GET['secure'] != $hash ) {
+			wp_die( 'شما اجازه دسترسی به این قسمت را ندارید.' );
+		}
+
 		$order    = wc_get_order( $order_id );
 		$currency = $order->get_currency();
 
@@ -216,17 +265,10 @@ class Persian_Woocommerce_Zibal extends WC_Payment_Gateway {
 
 		if ( strtolower( $currency ) == strtolower( 'IRT' ) ) {
 			$Amount = $Amount * 10;
-		} else if ( strtolower( $currency ) == strtolower( 'IRHT' ) ) {
+		} elseif ( strtolower( $currency ) == strtolower( 'IRHT' ) ) {
 			$Amount = $Amount * 10000;
-		} else if ( strtolower( $currency ) == strtolower( 'IRHR' ) ) {
+		} elseif ( strtolower( $currency ) == strtolower( 'IRHR' ) ) {
 			$Amount = $Amount * 1000;
-		}
-
-		$hash = md5( $order_id . $Amount . $this->merchantcode );
-
-		if ( $_GET['secure'] != $hash ) {
-			echo 'شما اجازه دسترسی به این قسمت را ندارید.';
-			die();
 		}
 
 		if ( ! $order->has_status( 'completed' ) ) {
@@ -330,35 +372,6 @@ class Persian_Woocommerce_Zibal extends WC_Payment_Gateway {
 
 			wp_redirect( add_query_arg( 'wc_status', 'success', $this->get_return_url( $order ) ) );
 			exit;
-		}
-	}
-
-	/**
-	 * @param string $action (PaymentRequest, )
-	 * @param array  $params
-	 *
-	 * @return mixed
-	 */
-	public function SendRequestToZibal( string $action, array $params ) {
-		try {
-
-			$response = wp_safe_remote_post( 'https://gateway.zibal.ir/v1/' . $action, [
-				'body'    => json_encode( $params ),
-				'headers' => [
-					'Content-Type' => 'application/json',
-				],
-			] );
-
-			if ( is_wp_error( $response ) ) {
-				return false;
-			}
-
-			$body = wp_remote_retrieve_body( $response );
-
-			return json_decode( $body, true );
-
-		} catch ( Exception $ex ) {
-			return false;
 		}
 	}
 }

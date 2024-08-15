@@ -462,3 +462,4 @@ require_once 'tools/class-datepicker.php';
 require_once 'tools/class-date.php';
 require_once 'tools/class-checkout.php';
 require_once 'tools/class-super-admin.php';
+require_once 'tools/class-wc-admin.php';

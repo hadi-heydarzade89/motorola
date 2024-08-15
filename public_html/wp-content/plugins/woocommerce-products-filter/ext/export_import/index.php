@@ -98,9 +98,11 @@ final class WOOF_EXP_IMP extends WOOF_EXT {
             $options = wc_clean(json_decode(stripcslashes($_POST['import_value']), true));
 
             foreach ($options as $option_name => $option_data) {
-                update_option($option_name, $option_data);
+				if(substr( $option_name, 0, 5 ) === "woof_") {
+					update_option($option_name, $option_data);
+				}
+                
             }
-
             die(esc_html__("Settings imported successfully. Reload the page please.", 'woocommerce-products-filter'));
         } catch (Exception $e) {
             die(esc_html__("Error!", 'woocommerce-products-filter'));

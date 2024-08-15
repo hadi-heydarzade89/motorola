@@ -320,7 +320,11 @@ final class WOOF_EXT_PRODS_MESSENGER extends WOOF_EXT {
         if (!isset($_POST['key']) OR !isset($_POST['user_id'])) {
             die('No data!');
         }
-
+		
+		if (get_current_user_id() == 0  ||  get_current_user_id() != (int) $_POST['user_id']) {
+			return false;
+		}
+		
         $user_id = sanitize_key($_POST['user_id']);
         $key = sanitize_key($_POST['key']);
         $subscr = get_user_meta($user_id, $this->user_meta_key, true);

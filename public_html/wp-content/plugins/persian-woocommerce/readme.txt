@@ -5,9 +5,9 @@ author URI: https://woosupport.ir/
 plugin URI: https://woosupport.ir/download/
 Tags: ووکامرس,woocommerce,ووکامرس فارسی,persian woocommerce,shamsi
 Requires at least: 6.0.0
-Tested up to: 6.5.3
+Tested up to: 6.6.1
 Requires PHP: 7.4
-Stable tag: 7.1.6
+Stable tag: 9.0.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -36,6 +36,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 * ابزار مشخص نمودن حداقل میزان مبلغ برای ثبت سفارش
 * ابزار حذف خودکار فیلد های اضافه تسویه حساب برای محصولات دانلودی
 * تبدیل حروف عربی به فارسی در هنگام جستجو در فروشگاه
+* اتصال ایمن و سریع به درگاه زیبال بدون افزونه
 * و تمام آن چیزی که برای یک فروشگاه ووکامرسی نیاز است.
 
 == Installation ==
@@ -75,6 +76,10 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 میتوانید راهنما و مستندات را از طریق سایت [WooSupport.ir](https://www.woosupport.ir) بدست بیاورید
 
 == Changelog ==
+= 9.0.0 =
+* شمسی‌سازی بخش تجزیه و تحلیل (اولین و تنها شمسی‌ساز بخش تجزیه و تحلیل)
+* بهبود درگاه زیبال
+* بهبود ابزار افزایش سرعت ووکامرس
 = 7.1.5 =
 * بهبود ابزار سوپر ادمین
 = 7.1.3 =
