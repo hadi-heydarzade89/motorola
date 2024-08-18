@@ -89,6 +89,13 @@ class Persian_Woocommerce_Tools extends Persian_Woocommerce_Core {
 <p><b>پیشنهاد:</b> برای کارکردن صحیح افزونه و عملکرد مناسب این ابزار، پیشنهاد می کنیم هیچ افزونه شمسی ساز دیگری را همزمان فعال نکنید.</p>',
 				],
 				[
+					'title'   => 'تجزیه و تحلیل شمسی',
+					'id'      => 'PW_Options[enable_jalali_analytics]',
+					'type'    => 'checkbox',
+					'default' => 'no',
+					'desc'    => 'شمسی‌سازی بخش تجزیه و تحلیل ووکامرس <b>(آزمایشی)</b>',
+				],
+				[
 					'type' => 'sectionend',
 					'id'   => 'general_options',
 				],
