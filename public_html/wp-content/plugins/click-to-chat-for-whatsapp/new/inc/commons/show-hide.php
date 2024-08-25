@@ -167,6 +167,7 @@ if ( 'hide' == $show_or_hide ) {
     } elseif ( is_archive() ) {
         // loop posts
 
+        // if archive page is hidden, even if shop arcive is shown, it not working as expected.
         // woocommerce shop - archive
         if ( class_exists( 'WooCommerce' ) ) {
             if ( function_exists( 'is_shop' ) && is_shop() ) {

@@ -504,9 +504,20 @@
                 console.log(number);
 
                 try {
+
+                    console.log(v);
+                    document.dispatchEvent(
+                        new CustomEvent("ht_ctc_event_apply_variables", { detail: { v } })
+                    );
+
+                    console.log('window.apply_variables_value: ' + window.apply_variables_value);
+
+                    // if window.apply_variables_value is set.. then use that value. can set by extension or so.
+                    v = (typeof window.apply_variables_value !== "undefined") ? window.apply_variables_value : v;
+
+                    console.log(v);
+
                     // v = v.replace(/\{number\}/gi, number);
-                    // v = v.replace(/\{title\}/gi, post_title);
-                    // v = v.replace(/\{url\}/gi, url);
                     v = v.replace('{number}', number);
                     v = v.replace('{title}', post_title);
                     v = v.replace('{url}', url);
@@ -579,6 +590,7 @@
                         }
                     });
                 }
+                console.log('ga_parms');
                 console.log(ga_parms);
 
                 var gtag_count = 0;
@@ -688,7 +700,8 @@
                     'url': url,
                     'event_category': ga_category,
                     'event_label': ga_label,
-                    'event_action': ga_action
+                    'event_action': ga_action,
+                    'ref': 'dataLayer push'
                 });
             }
 
