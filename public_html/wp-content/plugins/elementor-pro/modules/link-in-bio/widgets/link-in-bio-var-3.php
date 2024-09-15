@@ -32,4 +32,7 @@ class Link_In_Bio_Var_3 extends Widget_Link_In_Bio_Base {
 		return esc_html__( 'Showcase', 'elementor-pro' );
 	}
 
+	public function get_style_depends(): array {
+		return [ 'widget-link-in-bio' ];
+	}
 }

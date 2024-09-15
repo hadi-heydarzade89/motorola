@@ -20,6 +20,7 @@ class Contact_Buttons_Var_1 extends Widget_Contact_Button_Base {
 		$config['content']['message_bubble_section']['has_typing_animation'] = false;
 		$config['style']['message_bubble_section']['has_chat_background'] = false;
 		$config['style']['send_button_section']['has_typography'] = false;
+		$config['content']['contact_section']['has_accessible_name'] = false;
 
 		return $config;
 	}
@@ -30,6 +31,10 @@ class Contact_Buttons_Var_1 extends Widget_Contact_Button_Base {
 
 	public function get_title(): string {
 		return esc_html__( 'Multi Chat', 'elementor-pro' );
+	}
+
+	public function get_style_depends(): array {
+		return [ 'widget-floating-buttons' ];
 	}
 
 	protected function add_content_tab(): void {

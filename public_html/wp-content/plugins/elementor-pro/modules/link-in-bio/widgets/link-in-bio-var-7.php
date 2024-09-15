@@ -85,6 +85,10 @@ class Link_In_Bio_Var_7 extends Widget_Link_In_Bio_Base {
 		return esc_html__( 'Business Card', 'elementor-pro' );
 	}
 
+	public function get_style_depends(): array {
+		return [ 'widget-link-in-bio' ];
+	}
+
 	public function render(): void {
 		$render_strategy = new Single_Button_Cta_Render( $this );
 

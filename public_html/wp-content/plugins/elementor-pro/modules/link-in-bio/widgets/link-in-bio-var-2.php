@@ -44,6 +44,10 @@ class Link_In_Bio_Var_2 extends Widget_Link_In_Bio_Base {
 		return esc_html__( 'Classic', 'elementor-pro' );
 	}
 
+	public function get_style_depends(): array {
+		return [ 'widget-link-in-bio' ];
+	}
+
 	public function render(): void {
 		$render = new Icons_Below_Cta_Render( $this );
 		$render->render();

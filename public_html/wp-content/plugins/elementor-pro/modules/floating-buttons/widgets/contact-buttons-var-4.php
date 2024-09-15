@@ -25,6 +25,7 @@ class Contact_Buttons_Var_4 extends Widget_Contact_Button_Base {
 		];
 		$config['content']['chat_button_section']['has_notification_dot'] = false;
 		$config['content']['chat_button_section']['has_active_tab'] = true;
+		$config['content']['chat_button_section']['chat_aria_label'] = esc_html__( 'Links', 'elementor-pro' );
 		$config['content']['contact_section']['platform']['group-1'] = [
 			Social_Network_Provider::EMAIL,
 			Social_Network_Provider::TELEPHONE,
@@ -54,6 +55,7 @@ class Contact_Buttons_Var_4 extends Widget_Contact_Button_Base {
 		$config['content']['contact_section']['repeater']['has_tooltip'] = true;
 		$config['content']['contact_section']['repeater']['tooltip_label'] = esc_html__( 'Tooltip', 'elementor-pro' );
 		$config['content']['contact_section']['platform']['limit'] = null;
+		$config['content']['contact_section']['has_accessible_name'] = false;
 		$config['style']['contact_section']['has_buttons_heading'] = false;
 		$config['style']['contact_section']['has_buttons_size'] = false;
 		$config['style']['contact_section']['has_box_shadow'] = true;
@@ -71,6 +73,10 @@ class Contact_Buttons_Var_4 extends Widget_Contact_Button_Base {
 
 	public function get_title(): string {
 		return esc_html__( 'Vertical Links', 'elementor-pro' );
+	}
+
+	public function get_style_depends(): array {
+		return [ 'widget-floating-buttons' ];
 	}
 
 	protected function add_content_tab(): void {

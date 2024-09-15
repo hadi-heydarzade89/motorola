@@ -55,6 +55,10 @@ class Contact_Buttons_Var_10 extends Widget_Contact_Button_Base {
 		return esc_html__( 'Interactive', 'elementor-pro' );
 	}
 
+	public function get_style_depends(): array {
+		return [ 'widget-floating-buttons' ];
+	}
+
 	protected function add_content_tab(): void {
 		$this->add_contact_section();
 	}

@@ -58,6 +58,10 @@ class Contact_Buttons_Var_7 extends Widget_Contact_Button_Base {
 		$this->add_style_chat_button_section();
 	}
 
+	public function get_style_depends(): array {
+		return [ 'widget-floating-buttons' ];
+	}
+
 	public function render(): void {
 		$render_strategy = new Contact_Buttons_Var_7_Render( $this );
 

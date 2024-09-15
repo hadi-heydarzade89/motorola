@@ -77,6 +77,7 @@ class Contact_Buttons_Var_3 extends Widget_Contact_Button_Base {
 				'contact_icon_platform' => Social_Network_Provider::WAZE,
 			],
 		];
+		$config['content']['contact_section']['has_accessible_name'] = false;
 
 		$config['style']['chat_box_section']['section_name'] = esc_html__( 'Box', 'elementor-pro' );
 		$config['style']['chat_box_section']['has_width'] = false;
@@ -100,6 +101,10 @@ class Contact_Buttons_Var_3 extends Widget_Contact_Button_Base {
 
 	public function get_title(): string {
 		return esc_html__( 'Info Button Box', 'elementor-pro' );
+	}
+
+	public function get_style_depends(): array {
+		return [ 'widget-floating-buttons' ];
 	}
 
 	protected function add_content_tab(): void {

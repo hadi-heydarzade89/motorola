@@ -26,6 +26,7 @@ class Contact_Buttons_Var_5 extends Widget_Contact_Button_Base {
 			Social_Network_Provider::VIBER,
 			Social_Network_Provider::WAZE,
 		];
+		$config['content']['chat_button_section']['chat_aria_label'] = esc_html__( 'Chat', 'elementor-pro' );
 		$config['style']['send_button_section']['has_typography'] = false;
 
 		return $config;
@@ -37,6 +38,10 @@ class Contact_Buttons_Var_5 extends Widget_Contact_Button_Base {
 
 	public function get_title(): string {
 		return esc_html__( 'Classic', 'elementor-pro' );
+	}
+
+	public function get_style_depends(): array {
+		return [ 'widget-floating-buttons' ];
 	}
 
 	protected function add_content_tab(): void {
