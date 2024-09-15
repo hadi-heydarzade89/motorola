@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Yoast - Yoast SEO Premium (for WordPress) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-07-08 10:32:31+0000\n"
+"PO-Revision-Date: 2024-09-04 09:41:18+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16,6 +16,13 @@ msgstr ""
 #: src/integrations/admin/cornerstone-taxonomy-column-integration.php:110
 msgid "Cornerstone content"
 msgstr "محتوای اصلی"
+
+#: assets/js/src/ai-fix-assessments/components/toast-content.js:45
+#: assets/js/src/shared-admin/components/ai-fix-assessments-introduction.js:38
+#: assets/js/src/shared-admin/components/ai-generate-titles-and-descriptions-introduction.js:38
+#: src/integrations/frontend-inspector.php:72
+msgid "Beta"
+msgstr "بتا"
 
 #: assets/js/src/frontend-inspector/components/frontend-inspector.js:28
 #: src/integrations/frontend-inspector.php:71
@@ -252,7 +259,7 @@ msgid_plural "minutes"
 msgstr[0] "دقیقه"
 
 #: assets/js/src/blocks/estimated-reading-time/block.js:108
-#: assets/js/src/blocks/table-of-contents-block.js:346
+#: assets/js/src/blocks/table-of-contents-block.js:337
 #: classes/redirect/presenters/redirect-page-presenter.php:69
 msgid "Settings"
 msgstr "تنظیمات"
@@ -267,7 +274,7 @@ msgid "Edit"
 msgstr "ویرایش"
 
 #: assets/js/src/components/RedirectNotification.js:122
-#: assets/js/src/elementor/components/RedirectNotification.js:127
+#: assets/js/src/elementor/components/RedirectNotification.js:95
 #: assets/js/src/frontend-inspector/components/frontend-inspector.js:61
 #: classes/premium-javascript-strings.php:55
 msgid "OK"
@@ -934,8 +941,9 @@ msgstr "محتوای سنگ بنای قدیمی به محتوای سنگ بنا�
 msgid "Choose a CSV file from your computer:"
 msgstr "یک فایل CSV از رایانه خود انتخاب کنید:"
 
+#: assets/js/src/ai-fix-assessments/components/fix-assessments-notification.js:183
 #: assets/js/src/components/RedirectNotification.js:132
-#: assets/js/src/elementor/components/RedirectNotification.js:133
+#: assets/js/src/elementor/components/RedirectNotification.js:101
 #: classes/watcher.php:253
 msgid "Undo"
 msgstr "بازگشت"
