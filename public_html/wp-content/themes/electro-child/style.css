@@ -365,8 +365,30 @@ ul[data-view="grid-extended"] .product-short-description {
 .woocommerce-input-wrapper .motorola-error {
     bottom: -25px;
 }
-.DTFC_LeftBodyLiner{
-    padding-right: 0!important;
+
+.DTFC_LeftBodyLiner {
+    padding-right: 0 !important;
+}
+
+.dataTables_scrollBody tbody {
+    display: flex;
+    flex-flow: column-reverse;
+}
+
+.DTFC_LeftWrapper {
+    display: none;
+}
+
+.dataTables_scrollBody tbody tr:nth-last-child(1) {
+    display: none;
+}
+
+.dataTables_scrollBody tbody tr:nth-last-child(2) {
+    display: none;
+}
+
+.dataTables_scrollBody {
+    overflow: hidden !important;
 }
 
 @media (max-width: 576px) {
@@ -374,6 +396,10 @@ ul[data-view="grid-extended"] .product-short-description {
         display: flex !important;
         flex-direction: column !important;
         height: auto !important;
+    }
+
+    #ht-ctc-chat {
+        bottom: 70px !important;
     }
 }
 
