@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-09-10 16:00:17+0000\n"
+"PO-Revision-Date: 2024-09-18 08:28:50+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -23,6 +23,22 @@ msgstr "نوارهای شناور"
 #: modules/floating-buttons/module.php:380
 msgid "Floating Element"
 msgstr "عنصر شناور"
+
+#. translators: 1: Platform name.
+#: modules/floating-buttons/classes/render/contact-buttons-render-base.php:270
+msgid "Open %1$s"
+msgstr "باز کردن %1$s"
+
+#. translators: 1: Accessible name.
+#: modules/floating-buttons/classes/render/contact-buttons-render-base.php:112
+#: modules/floating-buttons/classes/render/floating-bars-core-render.php:112
+msgid "Close %1$s"
+msgstr "بستن %1$s"
+
+#. translators: 1: Accessible name.
+#: modules/floating-buttons/classes/render/contact-buttons-render-base.php:87
+msgid "Toggle %1$s"
+msgstr "تغییر %1$s"
 
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1241
 msgid "Headline"
@@ -61,6 +77,10 @@ msgstr "مکث و اجرا"
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1155
 msgid "Floating Bar"
 msgstr "نوار شناور"
+
+#: modules/floating-buttons/base/widget-floating-bars-base.php:181
+msgid "Accessible Name"
+msgstr "نام قابل دسترسی"
 
 #: modules/floating-buttons/base/widget-floating-bars-base.php:139
 msgid "Shop now"
@@ -101,6 +121,16 @@ msgstr "تا <b>%d</b> دکمه تماس اضافه کنید"
 msgid "Add between <b>%1$d</b> to <b>%2$d</b> contact buttons"
 msgstr "بین <b>%1$d</b> تا <b>%2$d</b> دکمه تماس اضافه کنید"
 
+#: modules/floating-buttons/base/widget-contact-button-base.php:456
+#: modules/floating-buttons/base/widget-contact-button-base.php:712
+msgid "Add accessible name"
+msgstr "افزودن نام قابل دسترس"
+
+#: modules/floating-buttons/base/widget-contact-button-base.php:453
+#: modules/floating-buttons/base/widget-contact-button-base.php:709
+msgid "Accessible name"
+msgstr "نام قابل دسترس"
+
 #: modules/floating-buttons/admin-menu-items/floating-buttons-menu-item.php:22
 #: modules/floating-buttons/admin-menu-items/floating-buttons-menu-item.php:26
 #: modules/floating-buttons/documents/floating-buttons.php:207
@@ -111,9 +141,21 @@ msgstr "عناصر شناور"
 msgid "Create a new page"
 msgstr "یک برگه تازه ایجاد کنید"
 
+#: modules/checklist/steps/create-pages.php:32
+msgid "Jumpstart your creation with professional designs form the Template Library or start from scratch."
+msgstr "ایجاد کردن را با طرح‌های حرفه‌ای از کتابخانه قالب‌ها آغاز کنید یا از ابتدا شروع کنید."
+
 #: modules/checklist/steps/create-pages.php:28
 msgid "Create your first 3 pages"
 msgstr "۳ برگه اول خودتان را ایجاد کنید"
+
+#: modules/checklist/module.php:150
+msgid "Launchpad Checklist feature to boost productivity and deliver your site faster"
+msgstr "ویژگی چک لیست Launchpad برای افزایش بهره‌وری و ارائه سریعتر سایت شما"
+
+#: modules/checklist/module.php:149
+msgid "Launchpad Checklist"
+msgstr "چک لیست Launchpad"
 
 #: modules/atomic-widgets/widgets/atomic-image.php:20
 msgid "Atomic Image"
@@ -147,6 +189,18 @@ msgstr "فعال‌سازی قابلیت هوش مصنوعی المنتور"
 msgid "Elementor - AI"
 msgstr "المنتور - هوش مصنوعی"
 
+#: includes/settings/settings.php:466
+msgid "Improve initial page load performance by lazy loading all background images except the first one."
+msgstr "با بارگذاری تنبل همه تصاویر پس‌زمینه به جز تصویر اول، عملکرد بارگذاری اولیه صفحه را بهبود دهید."
+
+#: includes/settings/settings.php:336
+msgid "Personalize the way Elementor works on your website by choosing the advanced features and how they operate."
+msgstr "با انتخاب ویژگی‌های پیشرفته و نحوه عملکرد آنها، نحوه کار المنتور را در وب‌سایت خود را شخصی‌سازی کنید."
+
+#: includes/settings/settings.php:259
+msgid "Tailor how Elementor enhances your site, from post types to other functions."
+msgstr "سفارشی کنید که چگونه المنتور سایت شما را بهبود می‌بخشد، از نوع پست‌ها گرفته تا سایر عملکردها."
+
 #: includes/admin-templates/new-floating-elements.php:50
 msgid "Create Floating Element"
 msgstr "ایجاد عنصر شناور"
@@ -171,6 +225,10 @@ msgstr "بارگذاری مشروط فایل‌های Swiper CSS"
 #: core/debug/classes/shop-page-edit.php:23
 msgid "Sorry, The content area was not been found on your page"
 msgstr "با عرض پوزش، ناحیه محتوا در صفحه شما یافت نشد"
+
+#: core/debug/classes/shop-page-edit.php:15
+msgid "You are trying to edit the Shop Page although it is a Product Archive. Use the Theme Builder to create your Shop Archive template instead"
+msgstr "شما در حال تلاش برای ویرایش صفحه فروشگاه هستید، در حالی که این صفحه یک بایگانی محصولات است. از پوسته‌ساز برای ایجاد قالب بایگانی فروشگاه خود استفاده کنید."
 
 #: modules/link-in-bio/widgets/link-in-bio.php:28
 msgid "Minimalist"
@@ -245,7 +303,7 @@ msgstr "CSS"
 #: modules/floating-buttons/base/widget-contact-button-base.php:3057
 #: modules/floating-buttons/base/widget-floating-bars-base.php:1457
 msgid "Responsive visibility will take effect only on preview mode or live page, and not while editing in Elementor."
-msgstr "ریسپانسیو فقط در حالت پیش‌نمایش یا صفحه زنده قابل مشاهده است و نه در هنگام ویرایش در المنتور."
+msgstr "قابلیت مشاهده واکنش‌گرا فقط در حالت پیش‌نمایش یا صفحه زنده قابل مشاهده است و نه در هنگام ویرایش در المنتور."
 
 #: modules/floating-buttons/base/widget-contact-button-base.php:3033
 msgid "Full Width on Mobile"
@@ -393,6 +451,14 @@ msgstr "جایگذاری درونی همه CSS ها را در %s قرار می�
 msgid "Copy and Share Link"
 msgstr "کپی و به اشتراک گذاری لینک"
 
+#: includes/controls/repeater.php:194
+msgid "In a Repeater control, if you specify a minimum number of items, you must also specify a default value that contains at least that number of items."
+msgstr "در یک کنترل تکرار کننده، اگر حداقل تعداد آیتم‌ها را مشخص کنید، باید یک مقدار پیش‌فرض تعیین کنید که حداقل شامل همان تعداد آیتم‌ها باشد."
+
+#: core/kits/documents/tabs/settings-background.php:75
+msgid "Overscroll Behavior"
+msgstr "رفتار اسکرول بیش از حد"
+
 #: core/document-types/page-base.php:189
 msgid "No %s found in Trash."
 msgstr "هیچ %s در زباله‌دان یافت نشد."
@@ -417,6 +483,11 @@ msgstr "همه %s"
 #: modules/promotions/admin-menu-items/form-submissions-promotion-item.php:25
 msgid "Create Forms and Collect Leads %s with Elementor Pro"
 msgstr "فرم‌ها را با المنتور Pro ایجاد کرده و سرنخ‌های %s را جمع‌آوری کنید"
+
+#. translators: %s: br
+#: modules/promotions/admin-menu-items/custom-icons-promotion-item.php:25
+msgid "Enjoy creative freedom %s with Custom Icons"
+msgstr "با آیکون‌های سفارشی %s از آزادی در خلاقیت لذت ببرید."
 
 #: modules/element-cache/module.php:142
 msgid "Specify the duration for which data is stored in the cache. Elements caching speeds up loading by serving pre-rendered copies of elements, rather than rendering them fresh each time. This control ensures efficient performance and up-to-date content."
@@ -592,6 +663,11 @@ msgstr "پروفایل"
 msgid "Image style"
 msgstr "استایل تصویر"
 
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:902
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1235
+msgid "Identity"
+msgstr "شناسه"
+
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:874
 msgid "About Me"
 msgstr "درباره‌ی من"
@@ -690,6 +766,19 @@ msgstr "متن لینک را وارد کنید"
 msgid "Add up to <b>%d</b> CTA links"
 msgstr "تا <b>%d</b> لینک CTA اضافه کنید"
 
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:293
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:1063
+msgid "CTA Link Buttons"
+msgstr "دکمه‌های لینک CTA"
+
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:88
+msgid "Healthy Living Resources"
+msgstr "منابع زندگی سالم"
+
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:85
+msgid "Meal Prep"
+msgstr "تهیه غذا"
+
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:82
 msgid "Top 10 Recipes"
 msgstr "۱۰ دستور غذای برتر"
@@ -701,6 +790,10 @@ msgstr "سالم بمانید"
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:46
 msgid "Join me on my journey to a healthier lifestyle"
 msgstr "در سفرم به سمت یک سبک زندگی سالم به من بپیوندید"
+
+#: modules/link-in-bio/base/widget-link-in-bio-base.php:43
+msgid "Kitchen Chronicles"
+msgstr "داستان‌های آشپزخانه"
 
 #: modules/floating-buttons/base/widget-contact-button-base.php:2764
 msgid "Close Animation"
@@ -889,11 +982,20 @@ msgstr "با انتخاب ابزارهای بهینه‌سازی که به به�
 msgid "Decide where you want to go when leaving the editor."
 msgstr "هنگام خروج از ویرایشگر تصمیم بگیرید که کجا می‌خواهید بروید."
 
+#: core/settings/editor-preferences/model.php:187
+#: modules/styleguide/module.php:125
+msgid "Temporarily overlay the canvas with the style guide to preview your changes to global colors and fonts."
+msgstr "برای پیش‌نمایش تغییرات خود در رنگ‌ها و فونت‌های سراسری، بوم را به‌طور موقت با راهنمای استایل پوشش دهید."
+
 #: core/settings/editor-preferences/model.php:182
 #: modules/styleguide/module.php:123
 #: assets/js/152486453d0e39071cdb.bundle.js:448
 msgid "Show global settings"
 msgstr "نمایش تنظیمات سراسری"
+
+#: core/settings/editor-preferences/model.php:166
+msgid "This refers to elements you’ve hidden in the Responsive Visibility settings."
+msgstr "این به عناصری اشاره دارد که در تنظیمات قابلیت مشاهده واکنش‌گرا پنهان کرده‌اید."
 
 #: core/settings/editor-preferences/model.php:161
 msgid "Show hidden elements"
@@ -939,6 +1041,14 @@ msgstr "حالت نمایش"
 msgid "Panel"
 msgstr "پنل"
 
+#: core/experiments/manager.php:481
+msgid "New plugin onboarding."
+msgstr "مراحل راه‌اندازی افزونه جدید."
+
+#: core/experiments/manager.php:480
+msgid "Plugin Onboarding"
+msgstr "مراحل راه‌اندازی افزونه"
+
 #: core/experiments/manager.php:465
 msgid "Reduce the DOM size by eliminating HTML tags in various elements and widgets. This experiment includes markup changes so it might require updating custom CSS/JS code and cause compatibility issues with third party plugins."
 msgstr "با حذف تگ‌های HTML در عناصر و ابزارک‌های مختلف، اندازه DOM را کاهش دهید. این آزمایش شامل تغییرات نشانه‌گذاری است، بنابراین ممکن است نیاز به به‌روزرسانی کدهای CSS/JS سفارشی داشته باشد و باعث مشکلات سازگاری با افزونه‌های شخص ثالث شود."
@@ -951,6 +1061,14 @@ msgstr "نشانه‌گذاری بهینه شده"
 #: includes/controls/media.php:270
 msgid "Optimize your images to enhance site performance by using Image Optimizer."
 msgstr "با استفاده از بهینه‌ساز تصویر، تصاویر خود را برای بهبود عملکرد سایت بهینه کنید."
+
+#: modules/promotions/admin-menu-items/go-pro-promotion-item.php:33
+msgid "Upgrade Sale Now"
+msgstr "فروش ویژه ارتقا اکنون!"
+
+#: core/admin/admin.php:350
+msgid "Discounted Upgrades Now!"
+msgstr "ارتقاهای تخفیف‌دار اکنون!"
 
 #: core/admin/admin-notices.php:467
 msgid "Automatically compress and optimize images, resize larger files, or convert to WebP. Optimize images individually, in bulk, or on upload."
@@ -2358,6 +2476,10 @@ msgstr "هم اکنون ارتقا دهید"
 #: assets/js/styleguide.js:196
 msgid "Upgrade"
 msgstr "ارتقا"
+
+#: modules/announcements/module.php:116
+msgid "Let's do it"
+msgstr "بیا انجامش بدیم"
 
 #: modules/container-converter/module.php:88
 #: modules/container-converter/module.php:121
@@ -4114,7 +4236,7 @@ msgstr "قالب وجود ندارد."
 #: includes/elements/column.php:891 includes/elements/container.php:1790
 #: includes/elements/section.php:1393 includes/widgets/common.php:1125
 msgid "Responsive visibility will take effect only on %1$s preview mode %2$s or live page, and not while editing in Elementor."
-msgstr "توجه: تنظیمات نمایش (نمایش/مخفی کردن برای موبایل، تبلت یا کامپیوتر رومیزی) تنها زمانی اثر می کند که شما در حالت پیشنمایش یا سفارشی سازی زنده باشید."
+msgstr "قابلیت مشاهده واکنش‌گرا تنها در %1$s حالت پیش‌نمایش %2$s یا صفحه زنده تاثیر دارد و در هنگام ویرایش در المنتور موثر نخواهد بود."
 
 #: includes/base/widget-base.php:1035
 msgid "Deprecated"
@@ -4395,7 +4517,7 @@ msgstr "پاپ آپ"
 #: assets/js/packages/editor-app-bar/editor-app-bar.js:12
 #: assets/js/packages/editor-app-bar/editor-app-bar.strings.js:7
 msgid "Theme Builder"
-msgstr "پوسته ساز"
+msgstr "پوسته‌ساز"
 
 #: modules/safe-mode/module.php:370
 msgid "Enable Safe Mode"
@@ -4948,7 +5070,7 @@ msgstr "جداکننده"
 #: includes/template-library/sources/admin-menu-items/add-new-template-menu-item.php:23
 #: modules/landing-pages/module.php:271 assets/js/app-packages.js:4610
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:2
-#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:8
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:5
 msgid "Add New"
 msgstr "افزودن جدید"
 
@@ -5017,7 +5139,7 @@ msgstr "جستجوی قالب ها:"
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:2
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:1
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:3
-#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:7
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:4
 msgid "Pages"
 msgstr "برگه‌ها"
 

@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-09-14 21:30:46+0000\n"
+"PO-Revision-Date: 2024-09-19 15:03:44+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15,10 +15,38 @@ msgstr ""
 msgid "Product Pagination"
 msgstr "صفحه‌بندی محصول"
 
+#. translators: %s is the product name
+#: templates/cart/mini-cart.php:58
+msgid "&ldquo;%s&rdquo; has been removed from your cart"
+msgstr "&ldquo;%s&rdquo; از سبد خرید شما حذف شد"
+
+#. translators: %s: is the field label
+#: src/StoreApi/Routes/V1/Checkout.php:219
+msgid "There was a problem with the provided shipping address: %s is required"
+msgstr "مشکلی در آدرس ارسال ارائه شده وجود دارد: %s لازم است"
+
+#. translators: %s: is the field label
+#: src/StoreApi/Routes/V1/Checkout.php:211
+msgid "There was a problem with the provided billing address: %s is required"
+msgstr "مشکلی در آدرس صورتحساب ارائه شده وجود دارد: %s لازم است"
+
+#. translators: %s: is the field label
+#: src/StoreApi/Routes/V1/Checkout.php:197
+msgid "There was a problem with the provided additional fields: %s is required"
+msgstr "مشکلی با فیلدهای اضافی ارائه شده وجود دارد: %s لازم است"
+
 #: src/Internal/ComingSoon/ComingSoonAdminBarBadge.php:31
 #: assets/client/admin/app/index.js:2
 msgid "Coming soon"
 msgstr "به زودی"
+
+#: src/Internal/Admin/WCPayPromotion/DefaultPromotions.php:41
+msgid "Payments made simple, with no monthly fees – designed exclusively for WooCommerce stores. Accept credit cards, debit cards, and other popular payment methods."
+msgstr "پرداخت‌ها ساده و بدون کارمزد ماهانه انجام می‌شود - منحصرا برای فروشگاه‌های ووکامرس طراحی شده است. کارت‌های اعتباری، کارت‌های نقدی و سایر روش‌های پرداخت رایج را بپذیرید."
+
+#: src/Internal/Admin/WCPayPromotion/DefaultPromotions.php:29
+msgid "Payments made simple — including WooPay, a new express checkout feature."
+msgstr "پرداخت‌ها ساده شدند - از جمله WooPay، یک ویژگی جدید پرداخت سریع."
 
 #: src/Blocks/InteractivityComponents/CheckboxList.php:104
 msgid "Show more..."
@@ -39,6 +67,11 @@ msgstr "خروجی به عنوان یک فایل zip"
 #: src/Admin/Features/Blueprint/RestApi.php:55
 msgid "A list of plugins to install"
 msgstr "لیستی از افزونه‌ها برای نصب"
+
+#. translators: %s: Product title
+#: includes/class-wc-product-simple.php:88
+msgid "&ldquo;%s&rdquo; has been added to your cart"
+msgstr "&ldquo;%s&rdquo; به سبد خرید شما اضافه شد"
 
 #. translators: %s: URL to local pickup settings
 #: includes/admin/settings/views/html-admin-page-shipping-zones.php:16
@@ -126,7 +159,7 @@ msgstr "شماره کالای تجارت جهانی"
 msgid "%1$s, %2$s, %3$s, or %4$s"
 msgstr "%1$s، %2$s، %3$s یا %4$s"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:148
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:150
 msgid "File path provided for import is invalid."
 msgstr "مسیر فایل ارائه شده برای درون‌ریزی نامعتبر است."
 
@@ -158,6 +191,15 @@ msgstr "افزودن %s"
 msgid "Please create a password for your account."
 msgstr "لطفا یک رمز عبور برای حساب کاربری خود ایجاد کنید."
 
+#. Translators: %s Email address.
+#: src/StoreApi/Routes/V1/Checkout.php:628
+msgid "An account is already registered with %s. Please log in or use a different email address."
+msgstr "یک حساب کاربری قبلا با %s ثبت شده است. لطفا وارد شوید یا از آدرس ایمیل دیگری استفاده کنید."
+
+#: src/Internal/Features/FeaturesController.php:240
+msgid "Enable this feature to log errors and related data to Automattic servers for debugging purposes and to improve WooCommerce"
+msgstr "این ویژگی را فعال کنید تا خطاها و داده‌های مربوط به سرورهای Automattic را برای اهداف اشکال زدایی و بهبود ووکامرس ثبت کند."
+
 #: src/Internal/Admin/RemoteFreeExtensions/DefaultFreeExtensions.php:865
 msgid "Drive sales with Google for WooCommerce"
 msgstr "فروش را با Google for WooCommerce هدایت کنید"
@@ -186,13 +228,464 @@ msgstr "شبکه اجتماعی"
 msgid "Featured Selling"
 msgstr "فروش ویژه"
 
+#. translators: %s: site name.
+#: src/Blocks/BlockTypes/OrderConfirmation/Status.php:174
+msgid "Your account with %s has been successfully created. We emailed you a link to set your account password."
+msgstr "حساب کاربری شما در %s با موفقیت ایجاد شد. ما برای شما لینکی برای تنظیم رمز عبور حساب کاربریتان ایمیل کردیم."
+
+#: src/Blocks/AIContent/PatternsDictionary.php:666
+msgid "An impact phrase that advertises the newest additions to the store with at least 20 characters"
+msgstr "عبارتی تاثیرگذار که جدیدترین موارد اضافه شده به فروشگاه را با حداقل ۲۰ کاراکتر تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:654
+msgid "A two words button text to go to the shop page"
+msgstr "یک متن دکمه دو کلمه‌ای برای رفتن به صفحه فروشگاه"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:648
+msgid "An impact phrase that advertises the products with at least 55 characters"
+msgstr "عبارتی تاثیرگذار که محصولات را با حداقل ۵۵ کاراکتر تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:642
+msgid "A description for a product with at least 20 characters"
+msgstr "توضیحی برای یک محصول با حداقل ۲۰ کاراکتر"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:641
+msgid "Sit back and relax"
+msgstr "راحت بنشین و استراحت کن"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:628
+msgid "A description of the testimonial with at least 225 characters"
+msgstr "یک توضیح از توصیه‌نامه با حداقل ۲۲۵ کاراکتر"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:627
+msgid "Exceptional flavors, sustainable choices. The carefully curated collection of coffee pots and accessories turned my kitchen into a haven of style and taste."
+msgstr "طعم‌های استثنایی، انتخاب‌های پایدار. مجموعه‌ای از قهوه‌جوش‌ها و لوازم جانبی‌ای که با دقت انتخاب شده، آشپزخانه من را به پناهگاهی از سبک و سلیقه تبدیل کرده است."
+
+#: src/Blocks/AIContent/PatternsDictionary.php:622
+msgid "A two words title that advertises the testimonial"
+msgstr "عنوانی دو کلمه‌ای که توصیه‌نامه را تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:621
+msgid "A ‘brewtiful’ experience :-)"
+msgstr "یک تجربه \"شگفت انگیز\" :-)"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:607
+msgid "From sustainably sourced teas to chic vases, this store is a treasure trove. Love knowing my purchases contribute to a greener planet."
+msgstr "از چای‌های با منابع پایدار گرفته تا گلدان‌های شیک، این فروشگاه گنجینه‌ای است. دوست دارم بدانم خریدهای من به یک سیاره سبزتر کمک می‌کند."
+
+#: src/Blocks/AIContent/PatternsDictionary.php:603
+msgid "The organic coffee beans are a revelation. Each sip feels like a journey. Beautifully crafted accessories add a touch of elegance to my home."
+msgstr "دانه‌های قهوه ارگانیک یک مکاشفه است. هر جرعه‌ای شبیه یک سفر است. اکسسوری‌هایی که به زیبایی ساخته شده‌اند، ظرافتی را به خانه من اضافه می‌کنند."
+
+#: src/Blocks/AIContent/PatternsDictionary.php:600
+#: src/Blocks/AIContent/PatternsDictionary.php:604
+#: src/Blocks/AIContent/PatternsDictionary.php:608
+msgid "Write the testimonial from a customer with approximately 150 characters"
+msgstr "توصیه‌نامه یک مشتری با تقریبا ۱۵۰ کاراکتر را بنویسید"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:599
+msgid "Transformed my daily routine with unique, eco-friendly treasures. Exceptional quality and service. Proud to support a store that aligns with my values."
+msgstr "روتین روزانه من را با گنجینه‌های منحصر به فرد و سازگار با محیط زیست تغییر داد. کیفیت و خدمات استثنایی. مفتخرم که از فروشگاهی حمایت می‌کنم که با ارزش‌های من همسو است."
+
+#: src/Blocks/AIContent/PatternsDictionary.php:594
+msgid "Write just 4 words to advertise testimonials from customers"
+msgstr "فقط ۴ کلمه برای تبلیغ توصیه‌نامه بنویسید"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:593
+msgid "What our customers say"
+msgstr "آنچه مشتریان ما می‌گویند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:585
+msgid "Sip, Shop, Savor"
+msgstr "بنوش، بخر، بچش."
+
+#: src/Blocks/AIContent/PatternsDictionary.php:582
+#: src/Blocks/AIContent/PatternsDictionary.php:586
+#: src/Blocks/AIContent/PatternsDictionary.php:590
+msgid "Write a short title advertising a testimonial from a customer"
+msgstr "یک عنوان کوتاه بنویسید که یک توصیه‌نامه از مشتری را تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:563
+msgid "Sustainable business practices"
+msgstr "تمرین‌های کسب و کار پایدار"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:559
+msgid "Hand-picked accessories"
+msgstr "لوازم جانبی دستچین شده"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:555
+msgid "Premium organic blends"
+msgstr "ترکیبات ارگانیک اعلاء"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:552
+#: src/Blocks/AIContent/PatternsDictionary.php:556
+#: src/Blocks/AIContent/PatternsDictionary.php:560
+#: src/Blocks/AIContent/PatternsDictionary.php:564
+msgid "A three word description of the products"
+msgstr "توضیح سه کلمه‌ای محصولات"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:544
+#: src/Blocks/AIContent/PatternsDictionary.php:548
+msgid "A description of the products with at least 180 characters"
+msgstr "توضیحی برای محصولات با حداقل ۱۸۰ کاراکتر"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:534
+msgid "A two words impact phrase that advertises the brand"
+msgstr "یک عبارت تاثیرگذار دو کلمه‌ای که برند را تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:529
+msgid "Sustainable blends, stylish accessories"
+msgstr "ترکیبات پایدار، لوازم جانبی شیک"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:526
+msgid "A two words impact phrase that advertises the products"
+msgstr "یک عبارت تاثیرگذار دو کلمه‌ای که محصولات را تبلیغ می‌کند"
+
 #: src/Blocks/AIContent/PatternsDictionary.php:525
 msgid "Our products"
 msgstr "محصولات ما"
 
+#: src/Blocks/AIContent/PatternsDictionary.php:512
+msgid "A phrase that advertises the social media accounts of the store with at least 25 characters"
+msgstr "عبارتی که حساب‌های کاربری شبکه‌های اجتماعی فروشگاه را با حداقل ۲۵ کاراکتر تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:511
+msgid "Stay in the loop"
+msgstr "ماندن در این چرخه"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:497
+msgid "Chairs"
+msgstr "صندلی‌ها"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:484
+msgid "An impact phrase that advertises the fourth product collection with at least 20 characters"
+msgstr "عبارت تاثیرگذاری که چهارمین مجموعه محصول را با حداقل ۲۰ کاراکتر تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:480
+msgid "An impact phrase that advertises the third product collection with at least 20 characters"
+msgstr "عبارت تاثیرگذاری که سومین مجموعه محصول را با حداقل ۲۰ کاراکتر تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:476
+msgid "An impact phrase that advertises the second product collection with at least 20 characters"
+msgstr "عبارت تاثیرگذاری که دومین مجموعه محصول را با حداقل ۲۰ کاراکتر تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:475
+msgid "Summer Dinning"
+msgstr "شام تابستانی"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:472
+msgid "An impact phrase that advertises the first product collection with at least 30 characters"
+msgstr "عبارت تاثیرگذاری که اولین مجموعه محصول را با حداقل ۳۰ کاراکتر تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:471
+msgid "Outdoor Furniture & Accessories"
+msgstr "مبلمان و لوازم جانبی فضای باز"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:442
+#: src/Blocks/AIContent/PatternsDictionary.php:446
+#: src/Blocks/AIContent/PatternsDictionary.php:450
+#: src/Blocks/AIContent/PatternsDictionary.php:454
+msgid "The description of a product feature with at least 30 characters"
+msgstr "توضیح یک ویژگی محصول با حداقل ۳۰ کاراکتر"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:428
+msgid "An one word title that advertises a product feature"
+msgstr "عنوانی تک کلمه‌ای که یک ویژگی محصول را تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:424
+msgid "A three words title that advertises a product feature"
+msgstr "عنوانی سه کلمه‌ای که یک ویژگی محصول را تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:420
+#: src/Blocks/AIContent/PatternsDictionary.php:432
+msgid "A two words title that advertises a product feature"
+msgstr "عنوانی دو کلمه‌ای که یک ویژگی محصول را تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:402
+msgid "A two words button text to go to the featured products page"
+msgstr "یک متن دکمه دو کلمه‌ای برای رفتن به صفحه محصولات ویژه"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:396
+msgid "A description of the featured products with at least 90 characters"
+msgstr "توضیحی از محصولات ویژه با حداقل ۹۰ کاراکتر"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:389
+msgid "Fan favorites"
+msgstr "مورد علاقه هواداران"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:378
+#: src/Blocks/AIContent/PatternsDictionary.php:390
+msgid "An impact phrase that advertises the featured products with at least 10 characters"
+msgstr "عبارتی تاثیرگذار که محصولات ویژه را با حداقل ۱۰ کاراکتر تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:377
+msgid "Bestsellers"
+msgstr "پرفروش‌ها"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:365
+msgid "Our latest and greatest"
+msgstr "جدیدترین و بهترین ما"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:353
+msgid "Staff picks"
+msgstr "گزیده‌های کارکنان"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:342
+msgid "The button text to go to the product collection page with at least 15 characters"
+msgstr "متن دکمه برای رفتن به صفحه مجموعه محصول با حداقل ۱۵ کاراکتر"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:336
+#: src/Blocks/AIContent/PatternsDictionary.php:354
+msgid "An impact phrase that advertises the displayed product collection with at least 20 characters"
+msgstr "عبارت تاثیرگذاری که مجموعه محصول نمایش داده شده را با حداقل ۲۰ کاراکتر تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:323
+msgid "Shop games"
+msgstr "فروشگاه بازی‌ها"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:319
+msgid "Shop tech"
+msgstr "فروشگاه تکنولوژی"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:313
+msgid "For the gamers"
+msgstr "برای گیمرها"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:309
+msgid "Tech gifts under $100"
+msgstr "هدایای تکنولوژی زیر ۱۰۰ دلار"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:296
+msgid "An impact phrase that advertises the displayed product collection with at least 30 characters"
+msgstr "عبارت تاثیرگذاری که مجموعه محصول نمایش داده شده را با حداقل ۳۰ کاراکتر تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:284
+msgid "A description of the product collection with at least 90 characters"
+msgstr "توضیحی از مجموعه محصول با حداقل ۹۰ کاراکتر"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:264
+#: src/Blocks/AIContent/PatternsDictionary.php:320
+#: src/Blocks/AIContent/PatternsDictionary.php:324
+msgid "A two words button text to go to the product collection page"
+msgstr "یک متن دکمه دو کلمه‌ای برای رفتن به صفحه مجموعه محصول"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:258
+msgid "A description of the product collection with at least 35 characters"
+msgstr "توضیحی برای مجموعه محصول با حداقل ۳۵ کاراکتر"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:252
+msgid "An impact phrase that advertises the displayed product collection with at least 10 characters"
+msgstr "عبارت تاثیرگذاری که مجموعه محصول نمایش داده شده را با حداقل ۱۰ کاراکتر تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:251
+msgid "Sound like no other"
+msgstr "بی‌همتا در صدا"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:238
+msgid "An impact phrase that advertises the product the store is selling with at least 35 characters"
+msgstr "عبارت تاثیرگذاری که محصولی را که فروشگاه می‌فروشد با حداقل ۳۵ کاراکتر تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:237
+msgid "Keep dry with 50% off rain jackets"
+msgstr "با ۵۰٪ تخفیف ژاکت‌ها، خشک بمانید"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:224
+#: src/Blocks/AIContent/PatternsDictionary.php:460
+#: src/Blocks/AIContent/PatternsDictionary.php:570
+msgid "A two words button text to go to the product page"
+msgstr "یک متن دکمه دو کلمه‌ای برای رفتن به صفحه محصول"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:223
+msgid "Shop home decor"
+msgstr "فروشگاه دکوراسیون منزل"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:210
+#: src/Blocks/AIContent/PatternsDictionary.php:214
+#: src/Blocks/AIContent/PatternsDictionary.php:218
+msgid "A description of the product feature with at least 115 characters"
+msgstr "یک توضیح ویژگی محصول با حداقل ۱۱۵ کاراکتر"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:204
+msgid "A two words title describing the fourth displayed product feature"
+msgstr "عنوانی دو کلمه‌ای که چهارمین ویژگی محصول نمایش داده شده را توصیف می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:203
+msgid "Make your house feel like home"
+msgstr "به منزل خود حس خانه بودن بده."
+
+#: src/Blocks/AIContent/PatternsDictionary.php:200
+msgid "A two words title describing the second displayed product feature"
+msgstr "عنوانی دو کلمه‌ای که دومین ویژگی محصول نمایش داده شده را توصیف می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:199
+msgid "Unique design"
+msgstr "طراحی منحصر‌به‌فرد"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:196
+msgid "A two words title describing the first displayed product feature"
+msgstr "عنوانی دو کلمه‌ای که اولین ویژگی محصول نمایش داده شده را توصیف می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:195
+msgid "Quality Materials"
+msgstr "متریال با کیفیت"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:182
+msgid "Write a long text, with at least 130 characters, to describe a product the business is selling"
+msgstr "برای توصیف محصولی که کسب و کار در حال فروش آن است، یک متن طولانی با حداقل ۱۳۰ کاراکتر بنویسید"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:174
+#: src/Blocks/AIContent/PatternsDictionary.php:178
+msgid "Write a text with approximately 130 characters, to describe a product the business is selling"
+msgstr "برای توصیف محصولی که کسب و کار در حال فروش است، متنی حدودا ۱۳۰ کاراکتری بنویسید"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:156
+#: src/Blocks/AIContent/PatternsDictionary.php:160
+#: src/Blocks/AIContent/PatternsDictionary.php:164
+msgid "Write a two words title for advertising the store"
+msgstr "برای تبلیغات فروشگاه یک عنوان دو کلمه‌ای بنویسید"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:124
+msgid "The title of the featured products with at least 20 characters"
+msgstr "عنوان محصولات ویژه با حداقل ۲۰ کاراکتر"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:109
+msgid "Handmade gifts"
+msgstr "هدایای دست‌ساز"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:101
+msgid "Home decor"
+msgstr "دکوراسیون منزل"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:88
+msgid "A two words button text to go to the featured category"
+msgstr "یک متن دکمه دو کلمه‌ای برای رفتن به صفحه دسته ویژه"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:81
+msgid "Black and white high-quality prints"
+msgstr "چاپ سیاه و سفید با کیفیت بالا"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:54
+#: src/Blocks/AIContent/PatternsDictionary.php:68
+msgid "A two words description of the products on sale"
+msgstr "یک توضیح دو کلمه‌ای از محصولات در حراج"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:42
+msgid "A 3 words button text to go to the sale page"
+msgstr "یک متن دکمه ۳ کلمه‌ای برای رفتن به صفحه حراج"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:36
+msgid "The main description of the sale with at least 65 characters"
+msgstr "شرح اصلی حراج با حداقل ۶۵ کاراکتر"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:32
+msgid "A two words label with the sale name"
+msgstr "یک برچسب دو کلمه‌ای با نام حراج"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:31
+msgid "Holiday Sale"
+msgstr "حراج تعطیلات"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:26
+msgid "A four words title advertising the sale"
+msgstr "عنوان چهار کلمه‌ای که حراج را تبلیغ می‌کند"
+
+#: src/Blocks/AIContent/PatternsDictionary.php:25
+msgid "Up to 60% off"
+msgstr "تا ۶۰٪ تخفیف"
+
+#: src/Admin/RemoteInboxNotifications/RemoteInboxNotificationsEngine.php:308
+msgid "Inbox notification has been deleted"
+msgstr "اعلان صندوق ورودی حذف شده"
+
+#: src/Admin/RemoteInboxNotifications/RemoteInboxNotificationsEngine.php:304
+msgid "Inbox notification not found"
+msgstr "اعلان صندوق ورودی پیدا نشد"
+
+#: src/Admin/RemoteInboxNotifications/RemoteInboxNotificationsEngine.php:298
+msgid "No inbox notification selected"
+msgstr "هیچ اعلان صندوق ورودی انتخاب نشده"
+
+#: src/Admin/RemoteInboxNotifications/RemoteInboxNotificationsEngine.php:292
+msgid "Search for an inbox notification&hellip;"
+msgstr "جستجو برای اعلان صندوق ورودی&hellip;"
+
+#: src/Admin/RemoteInboxNotifications/RemoteInboxNotificationsEngine.php:288
+msgid "Select an inbox notification to delete:"
+msgstr "یک اعلان صندوق ورودی را برای حذف انتخاب کنید:"
+
+#: src/Admin/RemoteInboxNotifications/RemoteInboxNotificationsEngine.php:284
+msgid "Delete an Inbox Notification"
+msgstr "حذف یک اعلان صندوق ورودی"
+
+#: src/Admin/RemoteInboxNotifications/RemoteInboxNotificationsEngine.php:279
+msgid "Remote inbox notifications have been refreshed"
+msgstr "اعلان‌های صندوق ورودی از راه دور تازه‌سازی شده‌اند"
+
+#: src/Admin/RemoteInboxNotifications/RemoteInboxNotificationsEngine.php:274
+msgid "This will refresh the remote inbox notifications"
+msgstr "این، اعلان‌های صندوق ورودی از راه دور را تازه می‌کند"
+
+#: src/Admin/RemoteInboxNotifications/RemoteInboxNotificationsEngine.php:272
+msgid "Refresh Remote Inbox Notifications"
+msgstr "تازه‌سازی اعلان‌های صندوق ورودی از راه دور"
+
 #: src/Admin/Features/OnboardingTasks/Tasks/ExtendStore.php:26
 msgid "Enhance your store with extensions"
 msgstr "فروشگاه خود را با افزودنی‌ها بهبود دهید"
+
+#: src/Admin/API/Reports/Orders/Controller.php:468
+msgid "Net Sales"
+msgstr "فروش خالص"
+
+#: patterns/heading-with-three-columns-of-content-with-link.php:9
+#: patterns/three-columns-with-images-and-content.php:11
+msgid "Our services"
+msgstr "خدمات ما"
+
+#: patterns/content-right-image-left.php:14
+#: src/Blocks/AIContent/PatternsDictionary.php:569
+msgid "Meet us"
+msgstr "ملاقات با ما"
+
+#: patterns/content-right-image-left.php:12
+#: src/Blocks/AIContent/PatternsDictionary.php:537
+msgid "Committed to a greener lifestyle"
+msgstr "متعهد به سبک زندگی سبزتر"
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:549
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:1000
+msgid "GTIN, UPC, EAN or ISBN."
+msgstr "GTIN، UPC، EAN یا ISBN."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-variations-controller.php:544
+#: includes/rest-api/Controllers/Version3/class-wc-rest-products-controller.php:995
+msgid "Stock Keeping Unit."
+msgstr "واحد نگهداری موجودی."
+
+#: includes/rest-api/Controllers/Version3/class-wc-rest-product-custom-fields-controller.php:154
+msgid "Order sort items ascending or descending."
+msgstr "مرتب‌سازی صعودی یا نزولی بر اساس موارد"
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-system-status-v2-controller.php:489
+msgid "Legacy REST API enabled?"
+msgstr "Legacy REST API فعال است؟"
+
+#: includes/rest-api/Controllers/Version2/class-wc-rest-order-refunds-v2-controller.php:339
+msgid "An unexpected error occurred while generating the refund."
+msgstr "هنگام تولید بازپرداخت، خطای غیرمنتظره‌ای روی داد."
+
+#: includes/rest-api/Controllers/Version1/class-wc-rest-tax-classes-v1-controller.php:217
+#: includes/rest-api/Controllers/Version2/class-wc-rest-tax-classes-v2-controller.php:101
+msgid "Invalid slug."
+msgstr "نامک نامعتبر."
+
+#: includes/admin/views/html-admin-page-status-report.php:699
+msgid "Does your site have the Legacy REST API enabled?"
+msgstr "آیا سایت شما دارای Legacy REST API فعال است؟"
+
+#: includes/admin/views/html-admin-page-status-report.php:698
+msgid "Legacy API enabled"
+msgstr "Legacy API فعال است"
 
 #. Translators: 1: opening link tag 2: closing link tag.
 #: includes/admin/settings/class-wc-settings-products.php:457
@@ -214,6 +707,14 @@ msgstr "مشتریان جدید ایمیلی برای تنظیم رمز عبور
 #: includes/admin/settings/class-wc-settings-accounts.php:105
 msgid "Send password setup link (recommended)"
 msgstr "ارسال لینک تنظیم رمز عبور (توصیه می‌شود)"
+
+#: includes/admin/settings/class-wc-settings-accounts.php:96
+msgid "If unchecked, customers will need to set a username during account creation."
+msgstr "اگر علامت را بردارید، مشتریان باید در حین ایجاد حساب کاربری، یک نام کاربری تنظیم کنند."
+
+#: includes/admin/settings/class-wc-settings-accounts.php:95
+msgid "Use email address as account login (recommended)"
+msgstr "استفاده از آدرس ایمیل برای ورود به حساب کاربری (توصیه می‌شود)"
 
 #: includes/admin/settings/class-wc-settings-accounts.php:94
 #: includes/admin/settings/class-wc-settings-accounts.php:104
@@ -244,6 +745,22 @@ msgstr "فعال‌سازی ورود به سیستم در حین پرداخت"
 msgid "Enable guest checkout (recommended)"
 msgstr "فعال‌سازی تسویه حساب مهمان (توصیه می‌شود)"
 
+#: includes/admin/meta-boxes/views/html-order-shipping.php:112
+msgid "Delete shipping"
+msgstr "حذف حمل و نقل"
+
+#: includes/admin/meta-boxes/views/html-order-shipping.php:112
+msgid "Edit shipping"
+msgstr "ویرایش حمل و نقل"
+
+#: includes/admin/meta-boxes/views/html-order-fee.php:81
+msgid "Delete fee"
+msgstr "حذف هزینه"
+
+#: includes/admin/meta-boxes/views/html-order-fee.php:81
+msgid "Edit fee"
+msgstr "ویرایش هزینه"
+
 #: includes/admin/class-wc-admin-post-types.php:280
 msgid "This coupon is password protected. WooCommerce does not support password protection for coupons. You can temporarily hide a coupon by making it private. Alternatively, usage limits and restrictions can be configured below."
 msgstr "این کوپن با رمز محافظت می‌شود. ووکامرس از محافظت با رمز عبور برای کوپن‌ها پشتیبانی نمی‌کند. با خصوصی کردن کوپن، می‌توانید به طور موقت آن را پنهان کنید. از طرف دیگر، انحصار و محدودیت‌های استفاده را می‌توان در زیر پیکربندی کرد."
@@ -253,6 +770,11 @@ msgstr "این کوپن با رمز محافظت می‌شود. ووکامرس �
 #: src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:773
 msgid "Please enter only numbers and hyphens (-)."
 msgstr "لطفا فقط اعداد و خط تیره (-) وارد کنید."
+
+#: includes/abstracts/abstract-wc-product.php:863
+#: assets/client/admin/product-editor/index.js:2
+msgid "Invalid or duplicated GTIN, UPC, EAN or ISBN."
+msgstr "GTIN، UPC، EAN یا ISBN نامعتبر یا تکراری است."
 
 #: assets/client/blocks/product-filters/block.json
 msgctxt "block title"
@@ -278,6 +800,16 @@ msgstr "فیلتر محصول (آزمایشی)"
 msgctxt "block title"
 msgid "Clear (Experimental)"
 msgstr "پاک کردن (آزمایشی)"
+
+#: src/Blocks/Patterns/PatternRegistry.php:32
+#: assets/client/admin/chunks/customize-store.js:1
+msgid "Services"
+msgstr "خدمات"
+
+#: src/Blocks/Patterns/PatternRegistry.php:28
+#: assets/client/admin/chunks/customize-store.js:1
+msgid "Intro"
+msgstr "مقدمه"
 
 #: templates/product-form/simple.php:26 templates/product-form/simple.php:27
 msgid "Translatable Label"
@@ -466,6 +998,21 @@ msgstr "فرم محصول"
 #: includes/class-wc-post-types.php:390
 msgid "Product Forms"
 msgstr "فرم‌های محصول"
+
+#. Translators: %1$s: block slug.
+#: includes/admin/views/html-admin-page-status-report.php:900
+msgid "Contains the <strong>%1$s</strong> block"
+msgstr "حاوی بلوک <strong>%1$s</strong> است"
+
+#. Translators: %1$s: shortcode text.
+#: includes/admin/views/html-admin-page-status-report.php:897
+msgid "Contains the <strong>%1$s</strong> shortcode"
+msgstr "حاوی کد کوتاه <strong>%1$s</strong> است"
+
+#. Translators: %1$s: shortcode text, %2$s: block slug.
+#: includes/admin/views/html-admin-page-status-report.php:881
+msgid "Page contains both the %1$s shortcode and the %2$s block."
+msgstr "صفحه شامل کد کوتاه %1$s و بلوک %2$s است."
 
 #: assets/client/blocks/product-filters/block.json
 msgctxt "block description"
@@ -916,12 +1463,12 @@ msgstr "⚠️ ووکامرس <a href=\"%1$s\">افزونه Legacy REST API</a> 
 #. translators: %s: coupon code
 #: includes/class-wc-coupon.php:1041 includes/class-wc-coupon.php:1206
 msgid "Please enter a valid email at checkout to use coupon code \"%s\"."
-msgstr "لطفا برای استفاده از کد کوپن \"%s\" یک ایمیل معتبر هنگام تسویه‌حساب وارد کنید."
+msgstr "لطفاً برای استفاده از کد تخفیف \"%s\" هنگام تسویه‌حساب یک ایمیل معتبر وارد کنید."
 
 #. translators: %s: coupon code
 #: includes/class-wc-coupon.php:1038 includes/class-wc-coupon.php:1208
 msgid "Please enter a valid email to use coupon code \"%s\"."
-msgstr "لطفا برای استفاده از کد کوپن \"%s\" یک ایمیل معتبر وارد کنید."
+msgstr "لطفا برای استفاده از کد تخفیف \"%s\" یک ایمیل معتبر وارد کنید."
 
 #. Translators: %s: Log directory path.
 #: includes/admin/views/html-admin-page-status-report.php:147
@@ -6199,6 +6746,14 @@ msgstr "آیا همگام سازی داده ها برای HPOS فعال است؟
 msgid "HPOS data sync enabled:"
 msgstr "همگام سازی داده های HPOS فعال شد:"
 
+#: includes/admin/views/html-admin-page-status-report.php:776
+msgid "Datastore currently in use for orders."
+msgstr "مخزن داده در حال حاضر برای سفارش‌ها استفاده می‌شود."
+
+#: includes/admin/views/html-admin-page-status-report.php:775
+msgid "Order datastore:"
+msgstr "مخزن داده سفارش:"
+
 #: includes/admin/meta-boxes/views/html-product-data-variations.php:212
 msgid "Add prices"
 msgstr "افزودن قیمت‌ها"
@@ -6309,7 +6864,7 @@ msgstr "صافی بر اساس کنترل‌های ویژگی"
 
 #: patterns/filters.php:64 assets/client/blocks/filter-wrapper.js:1
 msgid "Filter by rating"
-msgstr "صافی بر اساس امتیاز"
+msgstr "فیلتر بر اساس امتیاز"
 
 #: includes/class-wc-install.php:2713 src/Blocks/BlockTypes/Cart.php:69
 #: assets/client/blocks/cart.js:12
@@ -9229,7 +9784,7 @@ msgstr "حاوی بلوک‌هایی است که وقتی سبد خرید خال
 #: assets/client/blocks/inner-blocks/empty-cart-block/block.json
 msgctxt "block title"
 msgid "Empty Cart"
-msgstr "خالی کردن سبدخرید"
+msgstr "سبد خرید خالی"
 
 #: assets/client/blocks/inner-blocks/cart-totals-block/block.json
 msgctxt "block description"
@@ -9687,7 +10242,7 @@ msgstr "تغییر وضعیت به لغو شده"
 
 #. translators: %d: Download number
 #. translators: %s: download number
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:710
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:712
 #: includes/export/class-wc-product-csv-exporter.php:620
 msgid "Download %d ID"
 msgstr "بارگیری %d شناسه"
@@ -12102,7 +12657,7 @@ msgstr "الجزایر"
 
 #: i18n/states.php:464
 msgid "Tizi Ouzou"
-msgstr "تيزي اوزو"
+msgstr "تیزی اوزو"
 
 #: i18n/states.php:463
 msgid "Tiaret"
@@ -15997,7 +16552,7 @@ msgstr "از %s"
 #: patterns/filters.php:45 assets/client/blocks/attribute-filter.js:18
 #: assets/client/blocks/filter-wrapper.js:1
 msgid "Filter by attribute"
-msgstr "صافی براساس ویژگی"
+msgstr "فیلتر بر اساس ویژگی"
 
 #: src/StoreApi/Schemas/V1/ImageAttachmentSchema.php:52
 msgid "Thumbnail sizes for responsive images."
@@ -16875,7 +17430,7 @@ msgstr "کوانیا"
 
 #: i18n/states.php:2010
 msgid "Kumi"
-msgstr "كومي"
+msgstr "کومی"
 
 #: i18n/states.php:2009
 msgid "Kotido"
@@ -17095,7 +17650,7 @@ msgstr "بووهوجو"
 
 #: i18n/states.php:1955
 msgid "Bugweri"
-msgstr "بوگوري"
+msgstr "بوگوری"
 
 #: i18n/states.php:1954
 msgid "Bugiri"
@@ -17165,15 +17720,15 @@ msgstr "عملگر برای مقایسه برچسب های محصول."
 msgid "Category URL."
 msgstr "آدرس دسته."
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:886
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:888
 msgid "Import as meta data"
 msgstr "به عنوان داده متا وارد کنید"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:850
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:852
 msgid "Tags (space separated)"
 msgstr "برچسب ها (فضای جدا شده)"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:849
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:851
 msgid "Tags (comma separated)"
 msgstr "برچسب ها (کاما از هم جدا)"
 
@@ -18017,16 +18572,16 @@ msgstr "تغییر آدرس"
 msgid "Sort by latest"
 msgstr "مرتب‌سازی بر اساس جدیدترین"
 
-#: includes/wc-stock-functions.php:381
+#: includes/wc-stock-functions.php:400
 msgid "Stock levels increased:"
 msgstr "سطح موجودی افزایش یافت:"
 
 #. translators: %s item name.
-#: includes/wc-stock-functions.php:359
+#: includes/wc-stock-functions.php:378
 msgid "Unable to restore stock for item %s."
 msgstr "نمی توان موجودی برای آیتم %s بازیابی کرد."
 
-#: includes/wc-stock-functions.php:273
+#: includes/wc-stock-functions.php:294
 msgid "Stock levels reduced:"
 msgstr "سطح موجودی کاهش یافت:"
 
@@ -18920,8 +19475,8 @@ msgstr "هنگام مدیریت %s، آیا داده‌های شخصی در دس
 msgid "Enter a number to set stock quantity at the variation level. Use a variation's 'Manage stock?' check box above to enable/disable stock management at the variation level."
 msgstr "یک عدد را برای تعیین مقدار موجودی در سطح متغیر وارد کنید. از \"مدیریت موجودی\" استفاده کنید؟ برای فعال کردن/غیرفعال کردن مدیریت موجودی در سطح متغیرها، کادر بالا را تیک بزنید."
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:662
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:833
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:664
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:835
 #: includes/export/class-wc-product-csv-exporter.php:125
 msgid "Low stock amount"
 msgstr "کمبود موجودی انبار"
@@ -19391,7 +19946,7 @@ msgstr "موارد خریداری شده"
 msgid "Order Number"
 msgstr "شماره سفارش"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:867
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:869
 #: includes/class-wc-privacy-exporters.php:142
 #: includes/class-wc-privacy-exporters.php:347
 msgid "Download ID"
@@ -20832,7 +21387,7 @@ msgstr "پرداخت در %1$s @ %2$s"
 #: assets/client/blocks/products-by-attribute.js:12
 #: assets/client/blocks/stock-filter.js:8
 msgid "Filter by stock status"
-msgstr "فیلتر براساس وضعیت موجودی"
+msgstr "فیلتر بر اساس وضعیت موجودی"
 
 #: includes/admin/list-tables/class-wc-admin-list-table-products.php:273
 #: includes/admin/reports/class-wc-report-stock.php:114
@@ -21532,17 +22087,17 @@ msgstr "یک عمل را انتخاب نمائید..."
 msgid "Send order details to customer"
 msgstr "جزئیات سفارش را برای مشتری ارسال کنید"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:688
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:887
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:690
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:889
 #: includes/export/class-wc-product-csv-exporter.php:152
 msgid "Position"
 msgstr "موقعیت"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:541
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:543
 msgid "Upload a new file"
 msgstr "آپلود یک فایل جدید"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:537
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:539
 msgid "The file is empty or using a different encoding than UTF-8, please try again with a new file."
 msgstr "فایل خالی است یا از کدگذاری‌های متفاوت از UTF-8 استفاده می کند، لطفا دوباره با یک فایل جدید امتحان کنید."
 
@@ -22367,170 +22922,170 @@ msgstr "والد موجودی"
 msgid "Product Title"
 msgstr "عنوان محصول"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:881
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:883
 msgid "Default attribute"
 msgstr "ویژگی پیش‌فرض"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:880
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:882
 msgid "Attribute visibility"
 msgstr "قابل مشاهده بودن ویژگی"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:879
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:881
 msgid "Is a global attribute?"
 msgstr "یک ویژگی عمومی است؟"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:878
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:880
 msgid "Attribute value(s)"
 msgstr "مقدار ویژگی"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:877
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:879
 #: assets/client/admin/components/index.js:2
 msgid "Attribute name"
 msgstr "نام ویژگی"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:869
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:871
 msgid "Download URL"
 msgstr "آدرس اینترنتی دانلود"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:868
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:870
 msgid "Download name"
 msgstr "نام دانلود"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:858
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:860
 #: assets/client/admin/chunks/4272.js:1
 msgid "External product"
 msgstr "محصول خارجی"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:831
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:833
 msgctxt "Quantity in stock"
 msgid "Stock"
 msgstr "موجودی"
 
 #. translators: %d: Meta number
 #. translators: %s: meta data name
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:716
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:718
 #: includes/export/class-wc-product-csv-exporter.php:741
 msgid "Meta: %s"
 msgstr "متا: %s"
 
 #. translators: %d: Download number
 #. translators: %s: download number
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:714
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:716
 #: includes/export/class-wc-product-csv-exporter.php:624
 msgid "Download %d URL"
 msgstr "آدرس URL %d دانلود"
 
 #. translators: %d: Download number
 #. translators: %s: download number
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:712
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:714
 #: includes/export/class-wc-product-csv-exporter.php:622
 msgid "Download %d name"
 msgstr "نام %d دانلود"
 
 #. translators: %d: Attribute number
 #. translators: %s: attribute number
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:708
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:710
 #: includes/export/class-wc-product-csv-exporter.php:695
 msgid "Attribute %d default"
 msgstr "پیشفرض %d صفت"
 
 #. translators: %d: Attribute number
 #. translators: %s: attribute number
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:706
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:708
 #: includes/export/class-wc-product-csv-exporter.php:657
 msgid "Attribute %d global"
 msgstr "صفت %d سراسری"
 
 #. translators: %d: Attribute number
 #. translators: %s: attribute number
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:704
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:706
 #: includes/export/class-wc-product-csv-exporter.php:655
 msgid "Attribute %d visible"
 msgstr "نمایان بودن %d صفت"
 
 #. translators: %d: Attribute number
 #. translators: %s: attribute number
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:702
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:704
 #: includes/export/class-wc-product-csv-exporter.php:653
 msgid "Attribute %d value(s)"
 msgstr "مقدار(های) %d صفت"
 
 #. translators: %d: Attribute number
 #. translators: %s: attribute number
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:700
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:702
 #: includes/export/class-wc-product-csv-exporter.php:651
 msgid "Attribute %d name"
 msgstr "نام %d صفت"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:686
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:860
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:688
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:862
 #: includes/export/class-wc-product-csv-exporter.php:150
 msgid "External URL"
 msgstr "آدرس خارجی"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:681
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:871
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:683
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:873
 #: includes/export/class-wc-product-csv-exporter.php:145
 msgid "Download expiry days"
 msgstr "روز انقضای دانلود"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:679
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:852
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:681
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:854
 #: includes/export/class-wc-product-csv-exporter.php:143
 #: src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:488
 #: assets/client/admin/chunks/6802.js:2
 msgid "Images"
 msgstr "تصاویر"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:672
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:884
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:674
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:886
 #: includes/export/class-wc-product-csv-exporter.php:136
 msgid "Allow customer reviews?"
 msgstr "آیا به مشتری اجازه نوشتن نقد داده شود؟"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:661
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:832
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:663
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:834
 #: includes/export/class-wc-product-csv-exporter.php:126
 msgid "Backorders allowed?"
 msgstr "پیش‌فروش مجاز است؟"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:656
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:825
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:658
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:827
 #: includes/export/class-wc-product-csv-exporter.php:120
 msgid "Date sale price ends"
 msgstr "تاریخ پایان فروش ویژه"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:655
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:824
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:657
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:826
 #: includes/export/class-wc-product-csv-exporter.php:119
 msgid "Date sale price starts"
 msgstr "تاریخ شروع فروش ویژه"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:653
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:817
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:655
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:819
 #: includes/export/class-wc-product-csv-exporter.php:117
 msgid "Short description"
 msgstr "توضیح کوتاه"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:652
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:816
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:654
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:818
 #: includes/export/class-wc-product-csv-exporter.php:116
 msgid "Visibility in catalog"
 msgstr "قابل مشاهده در کاتالوگ"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:651
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:815
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:653
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:817
 #: includes/export/class-wc-product-csv-exporter.php:115
 msgid "Is featured?"
 msgstr "آیا ویژه است؟"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:650
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:814
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:652
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:816
 #: includes/export/class-wc-product-csv-exporter.php:114
 msgid "Published"
 msgstr "منتشر شده"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:152
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:154
 #: includes/admin/importers/class-wc-tax-rate-importer.php:235
 #: includes/admin/importers/class-wc-tax-rate-importer.php:246
 #: includes/import/class-wc-product-csv-importer.php:87
@@ -22541,17 +23096,17 @@ msgstr "نوع پرونده معتبر نیست. درون‌ریز تنها از
 msgid "File is empty. Please upload something more substantial. This error could also be caused by uploads being disabled in your php.ini or by post_max_size being defined as smaller than upload_max_filesize in php.ini."
 msgstr "پرونده خالی است. لطفا چیزی قابل توجه‌تر بارگذاری کنید. این خطا ممکن است به دلیل غیرفعال بودن بارگذاری در php.ini یا بدلیل کوچ بودن مقدار post_max_size از upload_max_filesize در php.ini باشد."
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:192
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:194
 msgid "Done!"
 msgstr "انجام شد!"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:182
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:184
 msgid "Column mapping"
 msgstr ""
 "14/5000\n"
 "نقشه ستون"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:177
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:179
 msgid "Upload CSV file"
 msgstr "بارگذاری پرونده CSV"
 
@@ -22845,7 +23400,7 @@ msgid "Export"
 msgstr "برون‌بری"
 
 #: includes/admin/class-wc-admin-assets.php:228
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:187
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:189
 #: assets/client/admin/chunks/core-profiler.js:2
 msgid "Import"
 msgstr "درون‌ریزی"
@@ -24847,8 +25402,8 @@ msgstr "طول × عرض × ارتفاع به صورت اعشاری"
 #. translators: %s: Weight unit
 #. translators: %s: weight unit
 #. translators: %s: weight
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:665
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:836
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:667
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:838
 #: includes/admin/meta-boxes/views/html-product-data-shipping.php:18
 #: includes/admin/meta-boxes/views/html-variation-admin.php:302
 #: includes/export/class-wc-product-csv-exporter.php:129
@@ -24884,8 +25439,8 @@ msgstr "ابعاد (%s)"
 msgid "This lets you choose which products are part of this group."
 msgstr "این اجازه می دهد انتخاب کنید که محصولات بخشی از این گروه هستند."
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:685
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:856
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:687
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:858
 #: includes/admin/meta-boxes/views/html-product-data-linked-products.php:14
 #: includes/export/class-wc-product-csv-exporter.php:147
 msgid "Grouped products"
@@ -29005,7 +29560,7 @@ msgstr "شیوه پرداخت"
 msgid "Addresses"
 msgstr "آدرس‌ها"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:865
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:867
 #: includes/admin/settings/class-wc-settings-advanced.php:264
 #: includes/admin/views/html-admin-page-product-export.php:40
 #: includes/class-wc-query.php:143 includes/wc-account-functions.php:106
@@ -29053,8 +29608,8 @@ msgstr "لینک دانلود مشتری"
 msgid "Stock quantity"
 msgstr "موجودی انبار."
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:657
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:828
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:659
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:830
 #: includes/admin/meta-boxes/views/html-product-data-general.php:179
 #: includes/admin/views/html-bulk-edit-product.php:72
 #: includes/admin/views/html-quick-edit-product.php:49
@@ -29256,7 +29811,7 @@ msgstr "مجموعه مرتب‌سازی بر اساس ویژگی محصول"
 #: src/StoreApi/Routes/V1/ProductReviews.php:203
 #: src/StoreApi/Routes/V1/Products.php:215
 msgid "Order sort attribute ascending or descending."
-msgstr "مرتب کردن بر اساس ویژگی صعودی یا نزولی"
+msgstr "مرتب‌سازی صعودی یا نزولی بر اساس ویژگی."
 
 #: includes/rest-api/Controllers/Version1/class-wc-rest-customers-v1-controller.php:883
 #: includes/rest-api/Controllers/Version1/class-wc-rest-taxes-v1-controller.php:733
@@ -30623,7 +31178,7 @@ msgstr "حداقل قیمت"
 #: assets/client/blocks/filter-wrapper.js:1
 #: assets/client/blocks/price-filter.js:5
 msgid "Filter by price"
-msgstr "فیلتر براساس قیمت: "
+msgstr "فیلتر بر اساس قیمت"
 
 #. translators: %s: taxonomy name
 #: includes/widgets/class-wc-widget-layered-nav.php:250
@@ -32645,43 +33200,43 @@ msgstr "كمينه خريد برای استفاده از اين كد تخفيف 
 
 #: includes/class-wc-coupon.php:1055 includes/class-wc-discounts.php:705
 msgid "This coupon has expired."
-msgstr "این كد تخفيف منقضی شده است."
+msgstr "این كد تخفیف منقضی شده است."
 
 #: includes/class-wc-coupon.php:1052
 msgid "Coupon usage limit has been reached."
-msgstr "مهلت استفاده از كد تخفيف به پایان رسیده است."
+msgstr "مهلت استفاده از کد تخفیف به پایان رسیده است."
 
 #. translators: %s: coupon code
 #: includes/class-wc-coupon.php:1049
 msgid "Sorry, coupon \"%s\" has already been applied and cannot be used in conjunction with other coupons."
-msgstr "ببخشید، كد تخفيف \"%s\" در حال استفاده است و نمی تواند همراه با سایر كدهای تخفیف استفاده شود."
+msgstr "متاسفیم، کد تخفیف \"%s\" قبلا اعمال شده و نمی‌توان همراه با کدهای تخفیف دیگر استفاده کرد."
 
 #: includes/abstracts/abstract-wc-order.php:1247
 #: includes/class-wc-coupon.php:1045
 msgid "Coupon code already applied!"
-msgstr "كد تخفيف قبلاً اعمال شده است!"
+msgstr "کد تخفیف قبلاً اعمال شده است!"
 
 #. translators: %s: coupon code
 #: includes/class-wc-coupon.php:1031
 msgid "Sorry, it seems the coupon \"%s\" is invalid - it has now been removed from your order."
-msgstr "متاسفیم، به نظر می رسد كد تخفيف \"%s\" معتبر نیست - كد تخفيف از درخواست خرید شما پاک می شود."
+msgstr "متاسفیم، به نظر می‌رسد کد تخفیف \"%s\" معتبر نیست - کد تخفیف از سفارش شما حذف شد."
 
 #. translators: %s: coupon code
 #: includes/class-wc-coupon.php:1027 includes/class-wc-discounts.php:605
 msgid "Coupon \"%s\" does not exist!"
-msgstr "كد تخفيف \"%s\" وجود ندارد !"
+msgstr "کد تخفیف \"%s\" وجود ندارد!"
 
 #: includes/class-wc-coupon.php:1023 includes/class-wc-discounts.php:1063
 msgid "Coupon is not valid."
-msgstr "كد تخفيف معتبر نیست."
+msgstr "کد تخفیف معتبر نیست."
 
 #: includes/class-wc-coupon.php:1005
 msgid "Coupon code removed successfully."
-msgstr "کد تخفيف با موفقیت حذف شد."
+msgstr "کد تخفیف با موفقیت حذف شد."
 
 #: includes/class-wc-coupon.php:1002
 msgid "Coupon code applied successfully."
-msgstr "کد تخفيف با موفقیت اعمال شد."
+msgstr "کد تخفیف با موفقیت اعمال شد."
 
 #: includes/class-wc-privacy-erasers.php:56
 #: includes/class-wc-privacy-exporters.php:195
@@ -33136,8 +33691,8 @@ msgstr "اجرای راه اندازی سریع"
 msgid "<strong>Welcome to WooCommerce</strong> &#8211; You&lsquo;re almost ready to start selling :)"
 msgstr "<strong> به ووکامرس خوش آمدید </strong> &#8211; شما&lsquo; تقریبا آماده هستید تا فروش خود را آغاز کنید:)"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:663
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:834
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:665
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:836
 #: includes/admin/views/html-bulk-edit-product.php:333
 #: includes/export/class-wc-product-csv-exporter.php:127
 msgid "Sold individually?"
@@ -33148,8 +33703,8 @@ msgstr "فروش به صورت جداگانه؟"
 msgid "Backorders?"
 msgstr "پیش خرید؟"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:659
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:830
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:661
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:832
 #: includes/admin/views/html-bulk-edit-product.php:258
 #: includes/admin/views/html-quick-edit-product.php:174
 #: includes/export/class-wc-product-csv-exporter.php:123
@@ -33170,8 +33725,8 @@ msgstr "قابلیت نمایش"
 #. translators: %s: dimension unit
 #. translators: %s is dimension unit label
 #. translators: %s: Height
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:671
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:845
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:673
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:847
 #: includes/admin/views/html-bulk-edit-product.php:198
 #: includes/export/class-wc-product-csv-exporter.php:135
 msgid "Height (%s)"
@@ -33181,8 +33736,8 @@ msgstr "بلندا (%s)"
 #. translators: %s: dimension unit
 #. translators: %s is dimension unit label
 #. translators: %s: width
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:669
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:843
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:671
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:845
 #: includes/admin/views/html-bulk-edit-product.php:190
 #: includes/export/class-wc-product-csv-exporter.php:133
 msgid "Width (%s)"
@@ -33192,8 +33747,8 @@ msgstr "پهنا (%s)"
 #. translators: %s: dimension unit
 #. translators: %s is dimension unit label
 #. translators: %s: length
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:667
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:841
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:669
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:843
 #: includes/admin/views/html-bulk-edit-product.php:182
 #: includes/export/class-wc-product-csv-exporter.php:131
 msgid "Length (%s)"
@@ -34053,8 +34608,8 @@ msgstr "نرخ‌های استاندارد"
 msgid "Tax options"
 msgstr "پیکربندی مالیات"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:646
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:810
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:648
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:812
 #: includes/export/class-wc-product-csv-exporter.php:110
 msgid "ID"
 msgstr "شناسه"
@@ -34649,8 +35204,8 @@ msgstr "نرخ"
 msgid "Units in stock"
 msgstr "موجود در انبار"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:682
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:853
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:684
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:855
 #: includes/admin/reports/class-wc-report-stock.php:174
 #: includes/export/class-wc-product-csv-exporter.php:146
 #: assets/client/admin/product-editor/blocks/generic/taxonomy/create-taxonomy-modal.js:1
@@ -35129,8 +35684,8 @@ msgstr "تاریخ شروع فروش ویژه"
 msgid "Cancel schedule"
 msgstr "لغو زمان بندی"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:674
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:823
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:676
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:825
 #: includes/admin/meta-boxes/views/html-product-data-general.php:55
 #: includes/admin/views/html-quick-edit-product.php:41
 #: includes/export/class-wc-product-csv-exporter.php:138
@@ -35144,8 +35699,8 @@ msgstr "قیمت فروش ویژه"
 msgid "Variation price (required)"
 msgstr "قیمت متغیر (الزامی)"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:675
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:822
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:677
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:824
 #: includes/admin/meta-boxes/views/html-product-data-general.php:45
 #: includes/admin/views/html-quick-edit-product.php:34
 #: includes/export/class-wc-product-csv-exporter.php:139
@@ -35248,8 +35803,8 @@ msgstr "نرخ ٪"
 msgid "Rate code"
 msgstr "کد نرخ"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:658
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:829
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:660
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:831
 #: includes/admin/meta-boxes/views/html-order-items.php:452
 #: includes/admin/meta-boxes/views/html-product-data-general.php:194
 #: includes/admin/meta-boxes/views/html-variation-admin.php:385
@@ -35520,8 +36075,8 @@ msgstr "برو"
 msgid "Download expiry"
 msgstr "انقضای دانلود"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:680
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:870
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:682
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:872
 #: includes/admin/meta-boxes/views/html-product-data-general.php:142
 #: includes/admin/meta-boxes/views/html-product-data-variations.php:110
 #: includes/admin/meta-boxes/views/html-variation-admin.php:488
@@ -35650,8 +36205,8 @@ msgstr "ترتیب فهرست"
 msgid "Enter an optional note to send the customer after purchase."
 msgstr "در صورت تمایل یک یادداشت برای مشتری پس از خرید بفرستید"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:673
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:885
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:675
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:887
 #: includes/admin/meta-boxes/views/html-product-data-advanced.php:14
 #: includes/export/class-wc-product-csv-exporter.php:137
 msgid "Purchase note"
@@ -35661,8 +36216,8 @@ msgstr "یادداشت خرید"
 msgid "Cross-sells are products which you promote in the cart, based on the current product."
 msgstr "Cross-Sells محصولاتی که به مشتری پیشنهاد میکنید به همراه محصول حاضر، خریداری نمایند."
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:684
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:855
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:686
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:857
 #: includes/admin/meta-boxes/views/html-product-data-linked-products.php:48
 #: includes/export/class-wc-product-csv-exporter.php:149
 #: src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:1153
@@ -35673,8 +36228,8 @@ msgstr "محصولات مشابه (Cross-Sells)"
 msgid "Upsells are products which you recommend instead of the currently viewed product, for example, products that are more profitable or better quality or more expensive."
 msgstr "پرفروش محصولاتی هستند که شما به مشتری پیشنهاد می‌دهید به جای محصولی که در حال حاضر می‌بینند خریداری کنند که ارزشمندتر و بهتر و یا گران‌تر هستند."
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:683
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:854
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:685
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:856
 #: includes/admin/meta-boxes/views/html-product-data-linked-products.php:32
 #: includes/export/class-wc-product-csv-exporter.php:148
 #: src/Internal/Features/ProductBlockEditor/ProductTemplates/SimpleProductTemplate.php:1120
@@ -35712,8 +36267,8 @@ msgstr "گسترش"
 msgid "Shipping classes are used by certain shipping methods to group similar products."
 msgstr "کلاس‌های حمل و نقل توسط روش‌های حمل و نقل مشخصی جهت گروه بندی محصولات مشابه، استفاده شده اند."
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:678
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:851
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:680
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:853
 #: includes/admin/meta-boxes/views/html-product-data-shipping.php:70
 #: includes/admin/meta-boxes/views/html-variation-admin.php:363
 #: includes/admin/settings/class-wc-settings-shipping.php:449
@@ -35761,7 +36316,7 @@ msgstr "عرض"
 msgid "Length"
 msgstr "طول"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:838
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:840
 #: includes/wc-template-functions.php:3594
 #: assets/client/admin/product-editor/blocks/product-fields/shipping-dimensions/edit.js:1
 #: assets/client/admin/product-editor/index.js:2
@@ -35970,8 +36525,8 @@ msgctxt "placeholder"
 msgid "Buy product"
 msgstr "خرید محصول"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:687
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:861
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:689
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:863
 #: includes/admin/meta-boxes/views/html-product-data-general.php:29
 #: includes/export/class-wc-product-csv-exporter.php:151
 msgid "Button text"
@@ -37525,7 +38080,7 @@ msgstr "کد"
 msgid "Date"
 msgstr "تاریخ"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:677
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:679
 #: includes/admin/list-tables/class-wc-admin-list-table-products.php:130
 #: includes/export/class-wc-product-csv-exporter.php:141
 #: assets/client/admin/product-editor/blocks/product-fields/tag/edit.js:1
@@ -37533,8 +38088,8 @@ msgstr "تاریخ"
 msgid "Tags"
 msgstr "برچسب‌ها"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:676
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:848
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:678
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:850
 #: includes/admin/list-tables/class-wc-admin-list-table-products.php:129
 #: includes/admin/reports/class-wc-report-sales-by-category.php:199
 #: includes/class-wc-post-types.php:96
@@ -37546,7 +38101,7 @@ msgstr "برچسب‌ها"
 msgid "Categories"
 msgstr "دسته‌ها"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:820
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:822
 #: includes/admin/importers/mappings/generic.php:23
 #: includes/admin/list-tables/class-wc-admin-list-table-products.php:128
 #: includes/admin/views/html-bulk-edit-product.php:23
@@ -37566,7 +38121,7 @@ msgid "Price"
 msgstr "قیمت"
 
 #: includes/admin/class-wc-admin-reports.php:99
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:660
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:662
 #: includes/admin/list-tables/class-wc-admin-list-table-products.php:125
 #: includes/admin/meta-boxes/views/html-product-data-variations.php:97
 #: includes/export/class-wc-product-csv-exporter.php:124
@@ -37584,8 +38139,8 @@ msgstr "قیمت"
 msgid "Stock"
 msgstr "انبار"
 
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:648
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:812
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:650
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:814
 #: includes/admin/list-tables/class-wc-admin-list-table-products.php:121
 #: includes/admin/meta-boxes/views/html-product-data-inventory.php:22
 #: includes/admin/meta-boxes/views/html-variation-admin.php:88
@@ -38268,7 +38823,7 @@ msgid "Order by"
 msgstr "مرتب‌سازی بر اساس"
 
 #: includes/admin/class-wc-admin-menus.php:105
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:875
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:877
 #: includes/admin/meta-boxes/class-wc-meta-box-product-data.php:99
 #: includes/admin/views/html-admin-page-product-export.php:41
 #: includes/react-admin/connect-existing-pages.php:298
@@ -38327,8 +38882,8 @@ msgstr "مرتب‌سازی پیش‌فرض"
 #: includes/admin/class-wc-admin-attributes.php:243
 #: includes/admin/class-wc-admin-attributes.php:311
 #: includes/admin/class-wc-admin-attributes.php:454
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:647
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:811
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:649
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:813
 #: includes/export/class-wc-product-csv-exporter.php:111
 #: src/Admin/API/Reports/Coupons/Controller.php:225
 #: assets/client/admin/chunks/analytics-report-coupons.js:1
@@ -38482,8 +39037,8 @@ msgstr "حذف"
 #: includes/admin/class-wc-admin-attributes.php:426
 #: includes/admin/class-wc-admin-attributes.php:479
 #: includes/admin/class-wc-admin-webhooks-table-list.php:50
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:649
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:813
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:651
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:815
 #: includes/admin/list-tables/class-wc-admin-list-table-products.php:118
 #: includes/admin/meta-boxes/views/html-product-attribute-inner.php:17
 #: includes/admin/meta-boxes/views/html-product-data-general.php:84
@@ -38767,8 +39322,8 @@ msgid "Consumer key ending in"
 msgstr "کلید مصرف کننده پایان در"
 
 #: includes/admin/class-wc-admin-api-keys-table-list.php:48
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:654
-#: includes/admin/importers/class-wc-product-csv-importer-controller.php:818
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:656
+#: includes/admin/importers/class-wc-product-csv-importer-controller.php:820
 #: includes/admin/list-tables/class-wc-admin-list-table-coupons.php:85
 #: includes/admin/meta-boxes/views/html-variation-admin.php:413
 #: includes/admin/settings/class-wc-settings-payment-gateways.php:134
