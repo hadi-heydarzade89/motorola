@@ -5,11 +5,24 @@
     $(function () {
 
         // variables
-        var v = '4.5';
+        var v = '4.9';
         var url = window.location.href;
         var post_title = (typeof document.title !== "undefined") ? document.title : '';
-        // is_mobile yes/no,  desktop > 1024 
-        var is_mobile = (typeof screen.width !== "undefined" && screen.width > 1024) ? "no" : "yes";
+        var is_mobile = 'no';
+
+        try {
+            // Where user can install app. 
+            is_mobile = (typeof navigator.userAgent !== "undefined" && navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) ? "yes" : "no";
+            console.log('User agent: is_mobile: ' + is_mobile);
+        } catch (e) {}
+
+        if ('no' == is_mobile) {
+            // is_mobile yes/no,  desktop > 1025
+            var is_mobile = (typeof screen.width !== "undefined" && screen.width > 1025) ? "no" : "yes";
+            console.log('screen width: is_mobile: ' + is_mobile);
+        }
+
+
         var no_num = '';
 
         var ht_ctc_storage = {};

@@ -498,18 +498,20 @@ class HT_CTC_Admin_Main_Page {
         }
 
         ?>
-        <p class="description">Menu</p>
-        <p class="description">🎉 <a target="_blank" class="em_1_1" href="<?= admin_url( 'admin.php?page=click-to-chat-greetings' ); ?>">Greetings</a>: Greetings-1, Greetings-2, Form filling(PRO), Multi Agent(PRO)</p>
+        <p class="description">Menu:</p>
+        <p class="description">👋 <a target="_blank" class="em_1_1" href="<?= admin_url( 'admin.php?page=click-to-chat-greetings' ); ?>">Greetings</a>: Greetings-1, Greetings-2, Form filling(PRO), Multi Agent(PRO)</p>
         <p class="description">🎨 <a target="_blank" class="em_1_1" href="<?= admin_url( 'admin.php?page=click-to-chat-customize-styles' ); ?>">Customize Styles</a>: (Customize style to match your website design - color, size, call to action hover effects, ...)</p>
         <p class="description">⚙️ <a target="_blank" class="em_1_1" href="<?= admin_url( 'admin.php?page=click-to-chat-other-settings' ); ?>">Other Settings</a>: (Analytics, Animations, Notification Badge, Webhooks, ...)</p>
-        <p class="description">🛍️ <a target="_blank" class="em_1_1" href="<?= $woo_link ?>">WooCommerce</a>: <?= $woo_text ?></p>
+        <p class="description">🛒 <a target="_blank" class="em_1_1" href="<?= $woo_link ?>">WooCommerce</a>: <?= $woo_text ?></p>
         <br>
         <p class="description">Features:</p>
-        <p class="description">🌈 <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/custom-element">Custom Element: </a>Class name: ctc_chat  |  Href/Link: #ctc_chat</p>
-        <p class="description">📝 <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/shortcodes-chat">Shortcodes for Chat: </a>[ht-ctc-chat]</p>
+        <p class="description">🧩 <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/custom-element">Custom Element: </a>Class name: ctc_chat  |  Href/Link: #ctc_chat</p>
+        <p class="description">🔤 <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/shortcodes-chat">Shortcodes for Chat: </a>[ht-ctc-chat]</p>
         <br>
-        <p class="description">✏️ <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/faq">Frequently Asked Questions (FAQ)</a></p>
-        <p class="description">📧 <a target="_blank" href="https://wordpress.org/support/plugin/click-to-chat-for-whatsapp/#new-topic-0">Contact Us</a></p>
+        <p class="description">Support:</p>
+        <p class="description">📚 <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/faq">Frequently Asked Questions (FAQ)</a></p>
+        <p class="description">🤝 <a target="_blank" href="https://wordpress.org/support/plugin/click-to-chat-for-whatsapp/#new-topic-0">WordPress Forum</a></p>
+        <p class="description">📧 <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/support/">Contact Us</a></p>
 
         <?php
 
@@ -529,7 +531,6 @@ class HT_CTC_Admin_Main_Page {
         <span style="display: none;" id="<?= $clear_cache_text ?>"><?php _e( 'Please clear the cache after save changes', 'click-to-chat-for-whatsapp' ); ?></span>
         <?php
         
-        // todo: test.. how it works..
         // if multilingual plugin is active then display a message to 'After saving the settings, clear/update the translation'
         // pll_count_posts
         if ( function_exists('icl_register_string') || function_exists('pll_register_string')  ) {
@@ -598,8 +599,7 @@ class HT_CTC_Admin_Main_Page {
                     } else {
                         $new_input[$key] = sanitize_text_field( $input[$key] );
                     }
-                }
-                
+                }            
             }
         }
 
@@ -614,7 +614,6 @@ class HT_CTC_Admin_Main_Page {
 
         return $new_input;
     }
-
 
 }
 
