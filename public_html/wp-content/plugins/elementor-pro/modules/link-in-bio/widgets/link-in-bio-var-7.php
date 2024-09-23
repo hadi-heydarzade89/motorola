@@ -5,16 +5,15 @@ namespace ElementorPro\Modules\LinkInBio\Widgets;
 use Elementor\Controls_Manager;
 use Elementor\Core\Base\Providers\Social_Network_Provider;
 use Elementor\Group_Control_Typography;
-use Elementor\Modules\LinkInBio\Base\Widget_Link_In_Bio_Base;
 use Elementor\Shapes;
+use ElementorPro\Modules\LinkInBio\Base\Widget_Link_In_Bio_Base_Pro;
 use ElementorPro\Modules\LinkInBio\Classes\Render\Single_Button_Cta_Render;
-
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Link_In_Bio_Var_7 extends Widget_Link_In_Bio_Base {
+class Link_In_Bio_Var_7 extends Widget_Link_In_Bio_Base_Pro {
 
 	public static function get_configuration() {
 		$config = parent::get_configuration();
@@ -83,10 +82,6 @@ class Link_In_Bio_Var_7 extends Widget_Link_In_Bio_Base {
 
 	public function get_title(): string {
 		return esc_html__( 'Business Card', 'elementor-pro' );
-	}
-
-	public function get_style_depends(): array {
-		return [ 'widget-link-in-bio' ];
 	}
 
 	public function render(): void {

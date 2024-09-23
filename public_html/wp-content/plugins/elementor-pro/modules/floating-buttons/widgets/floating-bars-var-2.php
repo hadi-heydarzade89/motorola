@@ -2,7 +2,7 @@
 
 namespace ElementorPro\Modules\FloatingButtons\Widgets;
 
-use Elementor\Modules\FloatingButtons\Base\Widget_Floating_Bars_Base;
+use ElementorPro\Modules\FloatingButtons\Base\Widget_Floating_Bars_Base_Pro;
 use ElementorPro\Modules\FloatingButtons\Classes\Render\Floating_Bars_Var_2_Render;
 
 use Elementor\Controls_Manager;
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Floating_Bars_Var_2 extends Widget_Floating_Bars_Base {
+class Floating_Bars_Var_2 extends Widget_Floating_Bars_Base_Pro {
 	public static function get_configuration() {
 		$config = parent::get_configuration();
 		$config['content']['floating_bar_section']['close_switch_default'] = 'no';
@@ -31,10 +31,6 @@ class Floating_Bars_Var_2 extends Widget_Floating_Bars_Base {
 
 	public function get_title(): string {
 		return esc_html__( 'Ticker', 'elementor-pro' );
-	}
-
-	public function get_style_depends(): array {
-		return [ 'widget-floating-buttons' ];
 	}
 
 	protected function add_floating_bar_style_section(): void {

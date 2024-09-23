@@ -421,8 +421,12 @@ if ( ! class_exists( 'YITH\PluginUpgrade\Upgrade' ) ) :
 
 			foreach ( $this->plugins as $init => $plugin ) {
 
+				$licence = Licences::instance()->get_single_licence( $init );
+				if ( empty( $licence ) ) {
+					continue;
+				}
+
 				$update_data  = $this->get_update_data( $init );
-				$licence      = Licences::instance()->get_single_licence( $init );
 				$is_activated = $licence->is_activated();
 
 				$item = array(

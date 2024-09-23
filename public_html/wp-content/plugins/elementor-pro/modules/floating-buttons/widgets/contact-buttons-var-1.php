@@ -2,7 +2,7 @@
 
 namespace ElementorPro\Modules\FloatingButtons\Widgets;
 
-use Elementor\Modules\FloatingButtons\Base\Widget_Contact_Button_Base;
+use ElementorPro\Modules\FloatingButtons\Base\Widget_Contact_Button_Base_Pro;
 use ElementorPro\Modules\FloatingButtons\Classes\Render\Contact_Buttons_Var_1_Render;
 
 
@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Contact_Buttons_Var_1 extends Widget_Contact_Button_Base {
+class Contact_Buttons_Var_1 extends Widget_Contact_Button_Base_Pro {
 
 	public static function get_configuration() {
 		$config = parent::get_configuration();
@@ -31,10 +31,6 @@ class Contact_Buttons_Var_1 extends Widget_Contact_Button_Base {
 
 	public function get_title(): string {
 		return esc_html__( 'Multi Chat', 'elementor-pro' );
-	}
-
-	public function get_style_depends(): array {
-		return [ 'widget-floating-buttons' ];
 	}
 
 	protected function add_content_tab(): void {

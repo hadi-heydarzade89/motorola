@@ -2,19 +2,18 @@
 
 namespace ElementorPro\Modules\FloatingButtons\Widgets;
 
-use Elementor\Modules\FloatingButtons\Base\Widget_Floating_Bars_Base;
+use ElementorPro\Modules\FloatingButtons\Base\Widget_Floating_Bars_Base_Pro;
 use ElementorPro\Modules\FloatingButtons\Classes\Render\Floating_Bars_Var_3_Render;
 
 use Elementor\Controls_Manager;
 
-use Elementor\Group_Control_Background;
 use Elementor\Group_Control_Typography;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
 
-class Floating_Bars_Var_3 extends Widget_Floating_Bars_Base {
+class Floating_Bars_Var_3 extends Widget_Floating_Bars_Base_Pro {
 	public static function get_configuration() {
 		$config = parent::get_configuration();
 
@@ -40,10 +39,6 @@ class Floating_Bars_Var_3 extends Widget_Floating_Bars_Base {
 
 	public function get_title(): string {
 		return esc_html__( 'Coupon', 'elementor-pro' );
-	}
-
-	public function get_style_depends(): array {
-		return [ 'widget-floating-buttons' ];
 	}
 
 	public function add_coupon_content_section(): void {

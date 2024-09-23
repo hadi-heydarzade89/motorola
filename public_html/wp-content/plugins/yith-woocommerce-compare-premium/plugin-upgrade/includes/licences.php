@@ -317,7 +317,7 @@ if ( ! class_exists( 'YITH\PluginUpgrade\Licences' ) ) :
 		protected function load_data() {
 			// Build data array.
 			foreach ( $this->licence_types as $type => $option_name ) {
-				$this->data[ $type ] = get_option( $option_name, array() );
+				$this->data[ $type ] = get_option( $option_name, array() ) ?: array();
 			}
 		}
 	}
