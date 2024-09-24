@@ -3,13 +3,13 @@
  * Plugin Name: المنتور فارسی
  * Plugin URI: 
  * Description: بسته فارسی ساز المنتور پرو با 13 فونت فارسی، تقویم شمسی و آیکون‌های ایرانی.
- * Version: 2.7.6.2
+ * Version: 2.7.6.4
  * Author: المنتور فارسی
  * Author URI: 
  * Text Domain: persian-elementor
  * License: GPL2
- * Elementor tested up to: 3.23
- * Elementor Pro tested up to: 3.23
+ * Elementor tested up to: 3.24
+ * Elementor Pro tested up to: 3.24
  */
 if (!defined('ABSPATH')) {
     exit;

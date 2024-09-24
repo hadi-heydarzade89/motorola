@@ -1,9 +1,9 @@
 === Click to Chat - HoliThemes ===
-Requires at least: 4.6
-Tested up to: 6.6
+Requires at least: 4.7
+Tested up to: 6.6.2
 Requires PHP: 5.6
 Contributors: holithemes
-Stable tag: 4.6
+Stable tag: 4.9
 Tags: whatsapp, whatsapp business, click to chat, whatsapp chat, WooCommerce WhatsApp
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -537,42 +537,11 @@ After Activating the plugin, add a WhatsApp Number in the plugin settings.
 
 == Changelog ==
 
-= 4.6 =
-* Enchancement: WhatsApp Number input field.
+= 4.9 =
+* Fix: Display based on device not working as expected on iPad Pro.
 
-= 4.5 =
-* Enhancement: Analytics. Get the correct number attached to the Widget. (floating widget, shortcodes, pro: Random number, Multi-Agent)
+= 4.8 =
+* Enchancement: Admin interface.
 
-= 4.4 =
-* Fix: Get the updated URL with query parameters for the pre-filled message variable [url].
-* Page-level settings have a higher prevalence than the string translations of multilingual plugins.
-
-= 4.3 =
-* Shorcodes now works with URL settings - new tab, same tab, popup.
-* PRO: NEW: Display based on website visitor's [country](https://holithemes.com/plugins/click-to-chat/display-based-on-country/).
-
-= 4.2 = 
-* Fix: set different widgets for mobile and desktop cache issue.
-
-= 4.1 =
-* Enhancement: Admin settings WhatsApp number input filed with country code search option.
-* Enchancement: Google Analytics event tracking.
-
-= 4.0 =
-* Enhancement: Greeting Chat window auto closes after user click to chat.
-* Fix: sanitize shortcode attribute values.
-* Fix: Opt-in message not able to consent for the first click.
-* Enhancement: Greeting dialog close button margin increases for better visibility.
-
-= 3.35 =
-* Enhancement: Greetings Dialog Close button now with in the content box.
-* New: Preset option for Greetings dialog inital stage. opens by default on desktop and closes on mobile.
-* Fix: Greetings header online status badge for RTL Pages.
-
-= 3.34 =
-* NEW: Profile picture at the Greetings Dialog header 
-* NEW: online/offline status badge at Greetings Header Image
-* PRO: online/offline status badge color based on business hours
-* Enhancement: Select style interface updated
 
 [changelog](https://holithemes.com/plugins/click-to-chat/changelog/)

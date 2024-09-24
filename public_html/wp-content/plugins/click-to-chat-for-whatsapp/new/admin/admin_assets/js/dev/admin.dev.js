@@ -835,7 +835,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 pre_countries = (ctc_getItem('pre_countries')) ? ctc_getItem('pre_countries') : [];
                 console.log(pre_countries);
 
-                intl = intlTelInput(v, {
+                var values = {
                     autoHideDialCode: false,
                     initialCountry: "auto",
                     geoIpLookup: function (success, failure) {
@@ -852,7 +852,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     containerClass: 'intl_tel_input_container',
 
                     utilsScript: ht_ctc_admin_var.utils
-                });
+                };
+
+                intl = intlTelInput(v, values );
             }
 
             return intl;
@@ -877,6 +879,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 console.log(changed);
                 console.log(changed.getNumber());
+
+                // add value to next sibbling hidden input field.
+                $(this).next('input[type="hidden"]').val(changed.getNumber());
+
 
                 if (window.ht_ctc_admin_demo_var) {
                     console.log('for demo: update number');

@@ -139,10 +139,11 @@ class HT_CTC_Admin_Demo {
             $js = 'dev/admin-demo.dev.js';
         }
         
-        global $wp_version;
-
+        
         $args = true;
-
+        
+        global $wp_version;
+        
         // if wp version is not null and is greater than 6.3
         if ( !$wp_version && version_compare( $wp_version, '6.3', '>=' ) ) {
             $args = array(

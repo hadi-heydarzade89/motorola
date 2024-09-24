@@ -1432,7 +1432,7 @@ if ( ! class_exists( 'YITH_Woocompare_Frontend_Premium' ) ) {
 					'bundled_item' => $bundled_item,
 				),
 				false,
-				WC_PB()->woo_bundles_plugin_path() . '/templates/'
+				WC_PB()->plugin_path() . '/templates/'
 			);
 		}
 

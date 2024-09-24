@@ -40,8 +40,14 @@ if ( ! function_exists( 'yith_plugin_upgrade_get_home_url' ) ) {
 	 * @return string The home url.
 	 */
 	function yith_plugin_upgrade_get_home_url(): string {
+
+		add_filter( 'wpml_get_home_url', 'yith_plugin_upgrade_wpml_home_path', PHP_INT_MAX, 2 );
+
 		$home_url = home_url();
-		$schemes  = array( 'https://', 'http://', 'www.' );
+
+		remove_filter( 'wpml_get_home_url', 'yith_plugin_upgrade_wpml_home_path', PHP_INT_MAX );
+
+		$schemes = array( 'https://', 'http://', 'www.' );
 
 		foreach ( $schemes as $scheme ) {
 			$home_url = str_replace( $scheme, '', $home_url );
@@ -53,5 +59,19 @@ if ( ! function_exists( 'yith_plugin_upgrade_get_home_url' ) ) {
 		}
 
 		return untrailingslashit( $home_url );
+	}
+}
+
+if ( ! function_exists( 'yith_plugin_upgrade_wpml_home_path' ) ) {
+	/**
+	 * Prevent WPML filter home url.
+	 *
+	 * @since 5.1.2
+	 * @param string $wpml_home_url Filtered WPML home path.
+	 * @param string $original_home_url Original home path.
+	 * @return string
+	 */
+	function yith_plugin_upgrade_wpml_home_path( $wpml_home_url, $original_home_url ) {
+		return $original_home_url;
 	}
 }

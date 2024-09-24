@@ -70,6 +70,10 @@ class HT_CTC_Chat {
             }
         }
 
+        /**
+         * dont get page level settings if its an archive page..
+         */
+        $is_page_level_settings = 'yes';
 
         $page_id = get_the_ID();
         // $page_id = get_queried_object_id();
@@ -99,6 +103,9 @@ class HT_CTC_Chat {
             $page_url = get_permalink();
             $post_title = esc_html( get_the_title() );
         } elseif ( is_archive() ) {
+
+            //no page level settings for archive pages
+            $is_page_level_settings = 'no';
 
             if ( isset($_SERVER['HTTP_HOST']) && $_SERVER['REQUEST_URI'] ) {
                 $protocol = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) ? 'https' : 'http';
@@ -130,7 +137,12 @@ class HT_CTC_Chat {
         }
 
         // page level
-        $ht_ctc_pagelevel = get_post_meta( $page_id, 'ht_ctc_pagelevel', true );
+        $ht_ctc_pagelevel = [];
+
+
+        if ( 'no' !== $is_page_level_settings ) {
+            $ht_ctc_pagelevel = get_post_meta( $page_id, 'ht_ctc_pagelevel', true );
+        }
 
         /**
          * show/hide

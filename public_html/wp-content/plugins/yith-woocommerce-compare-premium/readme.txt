@@ -1,5 +1,15 @@
 == Changelog ==
 
+= 2.42.0 = Released on 16 September 2024
+
+* New: support for WooCommerce 9.3
+* Update: YITH plugin framework
+
+= 2.41.0 = Released on 20 August 2024
+
+* New: support for WooCommerce 9.2
+* Update: YITH plugin framework
+
 = 2.40.0 = Released on 18 July 2024
 
 * New: support for WordPress 6.6

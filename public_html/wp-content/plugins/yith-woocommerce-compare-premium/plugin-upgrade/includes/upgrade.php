@@ -291,7 +291,7 @@ if ( ! class_exists( 'YITH\PluginUpgrade\Upgrade' ) ) :
 		 * @param int    $network_id ID of the network.
 		 * @return mixed
 		 */
-		public function avoid_auto_update_bulk( $value, $old_value, string $option, int $network_id ) {
+		public function avoid_auto_update_bulk( $value, $old_value, $option, $network_id ) {
 			return array_filter(
 				$value,
 				function ( $p ) {
@@ -340,7 +340,7 @@ if ( ! class_exists( 'YITH\PluginUpgrade\Upgrade' ) ) :
 		 *                        should be checked.
 		 * @return void
 		 */
-		public function catch_plugin_upgrading( string $type, object $item, string $context ) {
+		public function catch_plugin_upgrading( $type, $item, $context ) {
 			if ( 'plugin' !== $type || empty( $item->plugin ) ) {
 				return;
 			}
@@ -421,8 +421,12 @@ if ( ! class_exists( 'YITH\PluginUpgrade\Upgrade' ) ) :
 
 			foreach ( $this->plugins as $init => $plugin ) {
 
+				$licence = Licences::instance()->get_single_licence( $init );
+				if ( empty( $licence ) ) {
+					continue;
+				}
+
 				$update_data  = $this->get_update_data( $init );
-				$licence      = Licences::instance()->get_single_licence( $init );
 				$is_activated = $licence->is_activated();
 
 				$item = array(
@@ -486,7 +490,7 @@ if ( ! class_exists( 'YITH\PluginUpgrade\Upgrade' ) ) :
 		 * @return string|WP_Error
 		 * @see    wp-admin/includes/class-wp-upgrader.php
 		 */
-		public function upgrader_pre_download( $reply, string $package, WP_Upgrader $upgrader ) {
+		public function upgrader_pre_download( $reply, $package, $upgrader ) {
 
 			$plugin_init = $this->get_plugin_upgrading( $upgrader );
 			if ( empty( $plugin_init ) || ! isset( $this->plugins[ $plugin_init ] ) ) {

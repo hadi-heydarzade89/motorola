@@ -332,6 +332,17 @@ class HT_CTC_Admin_Other_Settings {
                     
             <!-- todo:l we can add - click count, date, username, if woo... add product details, .... -->
             <p class="description" style="margin:0px 10px;">Variables: {title}, {url}, {number} replace page title, url, and number that are assigned to the widget.</p>
+
+            <details style="margin:5px 10px;">
+                <summary>PRO: Get values from URL parameters [], cookies [[]]</summary>
+                <p class="description" style="margin:8px 10px 0px 10px;">
+                    <strong>Get value from url parameters:</strong> Text with in single square brackets <code>[]</code> will get value from url parameters. if not exists, return blank
+                    e.g. <code>[gclid]</code>, <code>[utm_source]</code> 
+                    <br>
+                    <strong>Get value from cookies:</strong> Text with in double square brackets <code>[[]]</code> will get value from cookies. if not exists, return blank.
+                    <br> e.g. <code>[[_ga]]</code> 
+                </p>
+            </details>
             
         </div>
 
@@ -571,6 +582,18 @@ class HT_CTC_Admin_Other_Settings {
 
 
             <p class="description" style="margin:0px 10px;">Variables: {title}, {url}, {number} replace page title, url, and number that are assigned to the widget.</p>
+
+            <details style="margin:5px 10px;">
+                <summary>PRO: Get values from URL parameters [], cookies [[]]</summary>
+                <p class="description" style="margin:1px 10px;">
+                    <strong>Get value from url parameters:</strong> Text with in single square brackets <code>[]</code> will get value from url parameters. if not exists, return blank
+                    e.g. <code>[gclid]</code>, <code>[utm_source]</code> 
+                    <br>
+                    <strong>Get value from cookies:</strong> Text with in double square brackets <code>[[]]</code> will get value from cookies. if not exists, return blank.
+                    <br> e.g. <code>[[_ga]]</code> 
+                </p>
+            </details>
+
         </div>
 
 
@@ -751,7 +774,19 @@ class HT_CTC_Admin_Other_Settings {
             ><?php _e( "Add Value", "click-to-chat-for-whatsapp" ); ?></span>
             
         </div>
-        <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/webhooks/#pro">PRO</a>: Dynamic Variables - {number}, {url}, {time}</p>
+        <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/pricing/">PRO</a>: Dynamic Variables - {number}, {url}, {time}, {title} </p>
+        <!-- <p class="description">{number}: Number that is assigned to the widget</p> -->
+        <details style="margin:7px 0px;">
+            <summary>Get Values from cookies: [[]], URL parameters: []</summary>
+            <p class="description" style="margin:8px 10px 0px 10px;">
+                <strong>Get value from url parameters:</strong> Text with in single square brackets <code>[]</code> will get value from url parameters. if not exists, return blank
+                e.g. <code>[gclid]</code>, <code>[utm_source]</code> 
+                <br>
+                <strong>Get value from cookies:</strong> Text with in double square brackets <code>[[]]</code> will get value from cookies. if not exists, return blank.
+                <br> e.g. <code>[[_ga]]</code> 
+            </p>
+        </details>
+        <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/webhooks/#pro">Webhooks</a>
         </div>
         </li>
         </ul>

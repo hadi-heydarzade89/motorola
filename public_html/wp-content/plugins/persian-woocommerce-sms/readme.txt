@@ -1,14 +1,14 @@
 === افزونه پیامک ووکامرس Persian WooCommerce SMS ===
 author: ووکامرس فارسی
 Contributors: Persianscript
-author URI: https://www.woosupport.ir
-Donate link: https://www.woosupport.ir
+author URI: https://woosupport.ir
+Donate link: https://woosupport.ir
 plugin URI: https://woosupport.ir
 Tags: sms,ووکامرس فارسی,woocommerce,persian woocommerce,پیامک
 Requires at least: 5.8
-Tested up to: 6.3.2
+Tested up to: 6.6.2
 Requires PHP: 7.4
-Stable tag: 6.1.0
+Stable tag: 7.0.2
 
 افزونه کامل و حرفه ای برای اطلاع رسانی پیامکی سفارشات و رویداد های محصولات ووکامرس
 
@@ -118,14 +118,11 @@ Stable tag: 6.1.0
  * webone-sms.com
  * satsms.ir
  * asiasms.ir
- * LimoSMS.com
  * payamakyab.com
  * Arad ITC
  * SMSNegar.ir
+ * MAX-SMS.co (IPPANEL.co)
  
-
-= پشتیبانی =
-*  [پشتیبانی در ووکامرس فارسی](http://forum.persianscript.ir/topic/25199-%D8%AA%D8%A7%D9%BE%DB%8C%DA%A9-%D9%BE%D8%B4%D8%AA%DB%8C%D8%A8%D8%A7%D9%86%DB%8C-%D8%A7%D9%81%D8%B2%D9%88%D9%86%D9%87-%D9%BE%DB%8C%D8%A7%D9%85%DA%A9-%D9%88%D9%88%DA%A9%D8%A7%D9%85%D8%B1%D8%B3/?tab=comments#comment-129964/)
 
 == Installation ==
 1. Upload `persian-woocommerce-sms` folder to the `/wp-content/plugins/` directory
@@ -149,6 +146,14 @@ Stable tag: 6.1.0
 14. Screen shot 14
 
 == Changelog ==
+= 7.0.0 =
+* بازنویسی کامل افزونه
+* سازگاری با PHP 8.1
+* رفع خطا در هنگام ویرایش محصول
+* رفع مشکل ارسال پیامک تکراری در خبرنامه مشتریان (NEW)
+* قابلیت دریافت خروجی اکسل از شماره مشتریان (NEW)
+* امکان پاکسازی گزارش ارسال پیامک (NEW)
+* افزودن وبسرویس مکث اس ام اس - IPPANEL.CO (NEW)
 = 6.1.0 =
 * سازگاری با HPOS
 * حل مشکل ارسال تکراری در خبرنامه
@@ -365,5 +370,5 @@ Stable tag: 6.1.0
 * نسخه اولیه
 
 == Upgrade Notice ==
-= 6.0.0 =
-* بهبود دیتابیس و افزودن چند پنل پیامک
+= 7.0.0 =
+* هشدار: حتما افزونه مکمل پیامکippanel را غیرفعال کنید. در غیر اینصورت احتمال بروز خطا وجود دارد!

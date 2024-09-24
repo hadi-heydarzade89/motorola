@@ -610,6 +610,7 @@ body.yith-plugin-fw-panel.yith-plugin-fw-panel--version-2 {
         border-bottom-left-radius: inherit;
         border-bottom-right-radius: inherit;
         background: rgb(248, 250, 252);
+        z-index: 10;
 
         :not(style) + :not(style) {
             margin-left: 8px;

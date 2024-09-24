@@ -190,7 +190,7 @@ if ( '' !== $ht_ctc_greetings['header_content'] ) {
 
 <?php
 // if main content is available
-if ('' !== $ht_ctc_greetings['main_content']) { 
+if ('' !== $ht_ctc_greetings['main_content']) {
     if ('yes' == $main_bg_image) {
         // if bg image is added
         ?>
