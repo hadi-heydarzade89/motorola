@@ -377,9 +377,6 @@ ul[data-view="grid-extended"] .product-short-description {
     }
 }
 
-body{
-    background-color:  red !important;
-}
 
 
 @media (max-width: 768px) {
