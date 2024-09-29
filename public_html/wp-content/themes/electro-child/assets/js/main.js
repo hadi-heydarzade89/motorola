@@ -109,3 +109,7 @@ function addErrorSection(selectedElement) {
     // Insert the new element after the selected element
     insertAfter(newElement, selectedElement);
 }
+
+document.querySelector('.menu-toggle').addEventListener('click', function() {
+    document.querySelector('.site-content::before').style.zIndex = 1;
+});
