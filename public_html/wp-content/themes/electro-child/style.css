@@ -3,7 +3,7 @@ Theme Name:         Electro Child
 Theme URI:          https://themeforest.net/item/electro-electronics-store-woocommerce-theme/15720624
 Author:             Hadi Heydarzade
 Template:           electro
-Version:            0.4.5
+Version:            0.4.6
 Text Domain:        electrochild
 */
 
@@ -373,6 +373,29 @@ ul[data-view="grid-extended"] .product-short-description {
     padding-right: 0!important;
 }
 
+
+
+img, .container {
+    max-width: 100% !important; 
+    width: 100% !important;
+}
+
+
+/* .blockUI, .blur-layer, .overlay {
+    display: none !important;
+    background: none !important;
+} */
+
+html, body {
+    overflow-x: hidden !important; 
+}
+body form.woocommerce-checkout
+{
+    margin: auto;
+    width: 50%;
+    max-width: 50%;
+}
+
 @media (max-width: 576px) {
     .product .price-add-to-cart {
         display: flex !important;
@@ -380,9 +403,6 @@ ul[data-view="grid-extended"] .product-short-description {
         height: auto !important;
     }
 }
-
-
-
 @media (max-width: 768px) {
     .primary-nav-menu {
         display: block !important; /* the menu is visible in the mobile size */
@@ -398,6 +418,12 @@ ul[data-view="grid-extended"] .product-short-description {
         display: block !important; 
         cursor: pointer;
     }
+    body form.woocommerce-checkout
+{
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+}
 
     /* hide the desktop menu if menu is active in mobile size */
     .desktop-menu {
@@ -408,26 +434,12 @@ ul[data-view="grid-extended"] .product-short-description {
         z-index: 1 !important; /* Fix for the blur layer on mobile */
         
     }
-}
 
-html, body {
-    overflow-x: hidden !important; /*  horizontal scrolling invisible */
-}
-
-@media (max-width: 768px) {
     body {
         overflow-y: auto; /* vertical scrolling only */
     }
+    img, .container {
+        max-width: 100% !important; 
+        width: 100% !important;
+    }
 }
-
-img, .container {
-    max-width: 100% !important; /* we don't  large images or containers */
-    width: 100% !important;
-}
-
-/* 
-.blockUI, .blur-layer, .overlay {
-    display: none !important;
-    background: none !important;
-} */
-
