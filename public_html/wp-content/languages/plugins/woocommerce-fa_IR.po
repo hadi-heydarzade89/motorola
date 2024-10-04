@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - WooCommerce - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-09-19 15:03:44+0000\n"
+"PO-Revision-Date: 2024-09-25 17:59:02+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -21,12 +21,12 @@ msgid "&ldquo;%s&rdquo; has been removed from your cart"
 msgstr "&ldquo;%s&rdquo; از سبد خرید شما حذف شد"
 
 #. translators: %s: is the field label
-#: src/StoreApi/Routes/V1/Checkout.php:219
+#: src/StoreApi/Routes/V1/Checkout.php:220
 msgid "There was a problem with the provided shipping address: %s is required"
 msgstr "مشکلی در آدرس ارسال ارائه شده وجود دارد: %s لازم است"
 
 #. translators: %s: is the field label
-#: src/StoreApi/Routes/V1/Checkout.php:211
+#: src/StoreApi/Routes/V1/Checkout.php:212
 msgid "There was a problem with the provided billing address: %s is required"
 msgstr "مشکلی در آدرس صورتحساب ارائه شده وجود دارد: %s لازم است"
 
@@ -187,12 +187,12 @@ msgstr "گزینه‌های فیلتر"
 msgid "Add %s"
 msgstr "افزودن %s"
 
-#: src/StoreApi/Routes/V1/Checkout.php:636
+#: src/StoreApi/Routes/V1/Checkout.php:637
 msgid "Please create a password for your account."
 msgstr "لطفا یک رمز عبور برای حساب کاربری خود ایجاد کنید."
 
 #. Translators: %s Email address.
-#: src/StoreApi/Routes/V1/Checkout.php:628
+#: src/StoreApi/Routes/V1/Checkout.php:629
 msgid "An account is already registered with %s. Please log in or use a different email address."
 msgstr "یک حساب کاربری قبلا با %s ثبت شده است. لطفا وارد شوید یا از آدرس ایمیل دیگری استفاده کنید."
 
@@ -4740,7 +4740,7 @@ msgid "Sorry, you cannot view these options, please remember to update the optio
 msgstr "متأسفیم، شما نمی توانید این گزینه ها را مشاهده کنید، لطفاً به یاد داشته باشید که مجوزهای گزینه را در گزینه‌های API به روز کنید تا امکان مشاهده این گزینه ها در محیط های غیر تولیدی وجود داشته باشد."
 
 #. Translators: %s Payment method ID.
-#: src/StoreApi/Routes/V1/Checkout.php:571
+#: src/StoreApi/Routes/V1/Checkout.php:572
 msgid "%s is not available for this order—please choose a different payment method"
 msgstr "%s برای این سفارش در دسترس نیست—لطفا روش پرداخت دیگری را انتخاب کنید"
 
@@ -5086,7 +5086,7 @@ msgstr "نوع سفارش پاس شده با هیچ نوع سفارش ثبت ش�
 #: src/Checkout/Helpers/ReserveStock.php:160
 msgctxt "held stock note"
 msgid "Stock hold of %1$s minutes applied to: %2$s"
-msgstr "نگهداری سهام %1$s دقیقه روی %2$s اعمال شد"
+msgstr "نگهداری موجودی %1$s دقیقه اعمال شد روی: %2$s"
 
 #. translators: %d is the remaining order items count.
 #: src/Checkout/Helpers/ReserveStock.php:152
@@ -5899,7 +5899,7 @@ msgstr "غیرفعال شد در <a href=\"%s\" aria-label=\"stock management st
 
 #: includes/admin/meta-boxes/views/html-product-data-inventory.php:134
 msgid "Stock management disabled in store settings"
-msgstr "مدیریت سهام در تنظیمات فروشگاه غیرفعال است"
+msgstr "مدیریت موجودی در تنظیمات فروشگاه غیرفعال است"
 
 #: includes/admin/meta-boxes/views/html-product-data-inventory.php:61
 msgid "Track stock quantity for this product"
@@ -5908,7 +5908,7 @@ msgstr "ردیابی مقدار موجودی این محصول"
 #: includes/admin/meta-boxes/views/html-product-data-inventory.php:60
 #: includes/admin/meta-boxes/views/html-product-data-inventory.php:133
 msgid "Stock management"
-msgstr "مدیریت سهام"
+msgstr "مدیریت موجودی"
 
 #: includes/admin/meta-boxes/views/html-product-data-inventory.php:48
 msgid "Settings below apply to all variations without manual stock management enabled. "
@@ -11183,7 +11183,7 @@ msgstr "نوع تخفیف برای کوپن (به عنوان مثال درصد �
 msgid "The coupon's unique code."
 msgstr "کد یکتای کدتخفیف"
 
-#: src/StoreApi/Routes/V1/Checkout.php:476
+#: src/StoreApi/Routes/V1/Checkout.php:477
 msgid "Unable to create order"
 msgstr "ایجاد سفارش مقدور نمیباشد."
 
@@ -13569,7 +13569,7 @@ msgstr "شناسه (کلید) منحصر به فرد برای به روزرسا�
 msgid "The %s payment gateway is not available."
 msgstr "درگاه پرداخت %s موجود نیست."
 
-#: src/StoreApi/Routes/V1/Checkout.php:557
+#: src/StoreApi/Routes/V1/Checkout.php:558
 #: src/StoreApi/Routes/V1/CheckoutOrder.php:244
 msgid "No payment method provided."
 msgstr "روش پرداختی ارائه نشده است."
@@ -17968,7 +17968,7 @@ msgstr "موجودی: %d"
 #. translators: %1$s: item name %2$s: stock change
 #: includes/class-wc-ajax.php:1390
 msgid "Deleted %1$s and adjusted stock (%2$s)"
-msgstr "%1$s و سهام تنظیم شده حذف شد ( %2$s )"
+msgstr "%1$s حذف شد و موجودی تنظیم شد (%2$s)"
 
 #: includes/class-wc-ajax.php:1351
 msgid "Invalid items"
@@ -33069,7 +33069,7 @@ msgid "This email address is already registered."
 msgstr "این آدرس ایمیل قبلا در سایت ثبت شده است."
 
 #: includes/class-wc-form-handler.php:295 includes/wc-user-functions.php:54
-#: src/StoreApi/Routes/V1/Checkout.php:620
+#: src/StoreApi/Routes/V1/Checkout.php:621
 msgid "Please provide a valid email address."
 msgstr "خواهشمندیم یک آدرس ایمیل معتبر وارد کنید."
 
@@ -34517,11 +34517,11 @@ msgstr "یک نام برای این مالیات انتخاب کنید."
 
 #: includes/admin/settings/views/html-settings-tax.php:36
 msgid "Enter a tax rate (percentage) to 4 decimal places."
-msgstr "یک رتبه مالیاتی وارد کنید (درصد تا ۴ رقم اعشار)"
+msgstr "یک نرخ مالیاتی وارد کنید (درصد تا ۴ رقم اعشار)"
 
 #: includes/admin/settings/views/html-settings-tax.php:36
 msgid "Rate&nbsp;%"
-msgstr "رتبه&nbsp;%"
+msgstr "نرخ&nbsp;%"
 
 #: includes/admin/settings/views/html-settings-tax.php:35
 msgid "Cities for this rule. Semi-colon (;) separate multiple values. Leave blank to apply to all cities."
