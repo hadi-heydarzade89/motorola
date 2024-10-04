@@ -373,6 +373,23 @@ ul[data-view="grid-extended"] .product-short-description {
     padding-right: 0!important;
 }
 
+
+
+img, .container {
+    max-width: 100% !important; /* we don't  large images or containers */
+    width: 100% !important;
+}
+
+/*
+.blockUI, .blur-layer, .overlay {
+    display: none !important;
+    background: none !important;
+} */
+
+html, body {
+    overflow-x: hidden !important; /*  horizontal scrolling invisible */
+}
+
 @media (max-width: 576px) {
     .product .price-add-to-cart {
         display: flex !important;
@@ -380,9 +397,6 @@ ul[data-view="grid-extended"] .product-short-description {
         height: auto !important;
     }
 }
-
-
-
 @media (max-width: 768px) {
     .primary-nav-menu {
         display: block !important; /* the menu is visible in the mobile size */
@@ -408,26 +422,8 @@ ul[data-view="grid-extended"] .product-short-description {
         z-index: 1 !important; /* Fix for the blur layer on mobile */
         
     }
-}
 
-html, body {
-    overflow-x: hidden !important; /*  horizontal scrolling invisible */
-}
-
-@media (max-width: 768px) {
     body {
         overflow-y: auto; /* vertical scrolling only */
     }
 }
-
-img, .container {
-    max-width: 100% !important; /* we don't  large images or containers */
-    width: 100% !important;
-}
-
-/* 
-.blockUI, .blur-layer, .overlay {
-    display: none !important;
-    background: none !important;
-} */
-
