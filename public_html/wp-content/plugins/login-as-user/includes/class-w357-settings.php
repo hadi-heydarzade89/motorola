@@ -1,6 +1,6 @@
 <?php
 /* ======================================================
- # Login as User for WordPress - v1.5.3 (free version)
+ # Login as User for WordPress - v1.5.5 (free version)
  # -------------------------------------------------------
  # For WordPress
  # Author: Web357
@@ -9,7 +9,7 @@
  # Website: https://www.web357.com/product/login-as-user-wordpress-plugin
  # Demo: https://demo-wordpress.web357.com/try-the-login-as-a-user-wordpress-plugin/
  # Support: https://www.web357.com/support
- # Last modified: Monday 19 August 2024, 11:26:04 AM
+ # Last modified: Wednesday 02 October 2024, 04:09:17 PM
  ========================================================= */
  
 /**
@@ -152,13 +152,22 @@ class LoginAsUser_settings {
 				foreach ($role_management_assignments as $manager_role => $managed_roles) {
 					$sanitized_manager_role = sanitize_text_field($manager_role);
 					if (is_array($managed_roles)) {
-						$sanitized_managed_roles = array_map('sanitize_text_field', $managed_roles);
-						$sanitized_managed_roles = array_filter($sanitized_managed_roles, function($role) {
-							global $wp_roles;
-							return isset($wp_roles->roles[$role]); // Ensure the role is valid
-						});
-						if (!empty($sanitized_managed_roles)) {
-							$sanitized_assignments[$sanitized_manager_role] = $sanitized_managed_roles;
+						// Check if "None" (value "none") is selected
+						if (in_array('none', $managed_roles, true)) {
+							// If "none" is selected, ensure it's the only option saved
+							$sanitized_assignments[$sanitized_manager_role] = array('none');
+						} else {
+							// If "none" is not selected, sanitize and filter the roles normally
+							$sanitized_managed_roles = array_map('sanitize_text_field', $managed_roles);
+							$sanitized_managed_roles = array_filter($sanitized_managed_roles, function($role) {
+								global $wp_roles;
+								return isset($wp_roles->roles[$role]); // Ensure the role is valid
+							});
+
+							// Only add the roles if there are valid selections
+							if (!empty($sanitized_managed_roles)) {
+								$sanitized_assignments[$sanitized_manager_role] = $sanitized_managed_roles;
+							}
 						}
 					}
 				}

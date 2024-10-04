@@ -1,6 +1,6 @@
 <?php
 /* ======================================================
- # Login as User for WordPress - v1.5.3 (free version)
+ # Login as User for WordPress - v1.5.5 (free version)
  # -------------------------------------------------------
  # For WordPress
  # Author: Web357
@@ -9,7 +9,7 @@
  # Website: https://www.web357.com/product/login-as-user-wordpress-plugin
  # Demo: https://demo-wordpress.web357.com/try-the-login-as-a-user-wordpress-plugin/
  # Support: https://www.web357.com/support
- # Last modified: Monday 19 August 2024, 11:26:04 AM
+ # Last modified: Wednesday 02 October 2024, 04:09:17 PM
  ========================================================= */
  class w357LoginAsUser
 {
@@ -471,12 +471,14 @@ CSS;
 		$message_display_position_option = (!empty($options['message_display_position'])) ? $options['message_display_position'] : 'top';
 		$show_admin_link_in_topbar_option = (!empty($options['show_admin_link_in_topbar'])) ? $options['show_admin_link_in_topbar'] : 'yes';
 
-		if ($message_display_position_option !== 'none' || $show_admin_link_in_topbar_option === 'yes') {
+		// do not proceed if user is not logged in
+		$old_user = $this->get_old_user();
+		if ($old_user instanceof WP_User && ($message_display_position_option !== 'none' || $show_admin_link_in_topbar_option === 'yes')) {
 			wp_enqueue_style('login-as-user', plugin_dir_url(dirname(__FILE__)) . 'public/css/public.min.css', array(), LOGINASUSER_VERSION, 'all');
 			wp_enqueue_script('login-as-user', plugin_dir_url(dirname(__FILE__)) . 'public/js/public.min.js', array('jquery'), LOGINASUSER_VERSION, false);
 			wp_register_style('login-as-user-inline-style', false);
 			wp_enqueue_style('login-as-user-inline-style');
-		}		
+		}
 	}
 
 	/**
@@ -648,29 +650,15 @@ CSS;
 	 * @param WP_User  $user          Concerned user object.
 	 * @return bool[] Concerned user's capabilities.
 	 */
-	public function filter_user_has_cap(array $user_caps, array $required_caps, array $args, WP_User $user)
-	{
-		if (isset($args[2]) && 'login_as_user' === $args[0]) 
-		{
-			if ((bool)$args[2])
-			{
-				// Get the target user's roles
-				$target_user = get_userdata($args[2]);
-				$target_user_roles = $target_user->roles;
-
-				// Check if the current user can manage any of the target user's roles
-				$can_manage = false;
-				$current_user_role_has_assignments = false;
-
+	public function filter_user_has_cap(array $user_caps, array $required_caps, array $args, WP_User $user) {
+		if (isset($args[2]) && 'login_as_user' === $args[0]) {
+			if ((bool)$args[2]) {
+				
 				
 
-				// Determine capability based on the presence of role assignments
-				if ($current_user_role_has_assignments) {
-					$user_caps['login_as_user'] = $can_manage;
-				} else {
-					$user_caps['login_as_user'] = 
-						(user_can($user->ID, 'edit_user', $args[2]) && ($args[2] !== $user->ID)) || $can_manage;
-				}
+				
+				$user_caps['login_as_user'] = (user_can($user->ID, 'edit_user', $args[2]) && ($args[2] !== $user->ID));
+				
 			}
 		}
 

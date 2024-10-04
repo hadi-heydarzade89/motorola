@@ -5,7 +5,7 @@ Donate link: https://www.paypal.me/web357
 Requires at least: 5.3
 Tested up to: 6.6
 Requires PHP: 7.3
-Stable tag: 1.5.3
+Stable tag: 1.5.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -67,6 +67,18 @@ Yes, "Login as User" is designed to be compatible with most third-party plugins 
 5. Settings.
 
 == Changelog ==
+
+= 03-Oct-2024 : v1.5.5 =
+* PHP message: PHP Warning: Undefined variable  in /wp-content/plugins/login-as-user/includes/class-w357-login-as-user.php on line 667
+* Other Minor fixes and improvements.
+
+= 02-Oct-2024 : v1.5.4 =
+* Optimized Asset Loading: Prevent CSS and JavaScript files from being enqueued when no user is logged into the site, improving performance. (Thanks to "ss88_uk" for the suggestion!)
+* Update: Removed the includes/plugin-update-checker folder from the free version.
+* Fully compatible with WooCommerce v9.3.x.
+* Role-Based Login Management: Added functionality to define which user roles have the ability to log in as users of other roles. For example, Administrators can be configured to log in as any user with the roles of Customer or Shop Manager, while Office Managers can log in as users with the Author role. [Pro version]
+* Minor stability and performance improvements.
+
 = 19-Aug-2024 : v1.5.3 =
 * Fully compatible with WordPress v6.6.x
 * Fully compatible with WooCommerce v9.1.x
