@@ -376,18 +376,24 @@ ul[data-view="grid-extended"] .product-short-description {
 
 
 img, .container {
-    max-width: 100% !important; /* we don't  large images or containers */
+    max-width: 100% !important; 
     width: 100% !important;
 }
 
-/*
-.blockUI, .blur-layer, .overlay {
+
+/* .blockUI, .blur-layer, .overlay {
     display: none !important;
     background: none !important;
 } */
 
 html, body {
-    overflow-x: hidden !important; /*  horizontal scrolling invisible */
+    overflow-x: hidden !important; 
+}
+body form.woocommerce-checkout
+{
+    margin: auto;
+    width: 50%;
+    max-width: 50%;
 }
 
 @media (max-width: 576px) {
@@ -412,6 +418,12 @@ html, body {
         display: block !important; 
         cursor: pointer;
     }
+    body form.woocommerce-checkout
+{
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+}
 
     /* hide the desktop menu if menu is active in mobile size */
     .desktop-menu {
@@ -425,5 +437,9 @@ html, body {
 
     body {
         overflow-y: auto; /* vertical scrolling only */
+    }
+    img, .container {
+        max-width: 100% !important; 
+        width: 100% !important;
     }
 }
