@@ -11,6 +11,7 @@ class ThemeInitHook
         ShopPageOrderByHook::class,
         WoocommerceCartHook::class,
         ShopPageRatingHook::class,
+        CategoryMenu::class,
     ];
 
 
