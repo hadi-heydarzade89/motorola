@@ -22,7 +22,7 @@ class HT_CTC_Animations {
     /**
      * Animations
      * 
-     * Based of animations - with dealy, iteration
+     * Based of animations - with delay, iteration
      * and then calls the necessary animation function.
      * 
      * @param string $a             animation type (bounce, .. )

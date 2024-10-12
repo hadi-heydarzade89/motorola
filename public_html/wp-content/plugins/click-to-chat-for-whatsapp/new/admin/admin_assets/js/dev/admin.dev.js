@@ -132,11 +132,16 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log('cache: md tabs');
         }
 
+        // intl
         try {
+            // @parm: class name
             intl_input('intl_number');
+            $('.intl_error').remove();
         } catch (e) {
             console.log(e);
             console.log('cache: intl_input');
+            $('.greetings_links').hide();
+            $('.intl_error').show();
         }
 
 
@@ -306,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 console.log(style);
                 $(".select_style_desktop").val(style);
 
-                $(".customize_styles_link").animate({ fontSize: '1.2em' }, "slow");
+                $(".customize_styles_link").fadeOut(100).fadeIn(100);
 
             });
 
@@ -332,7 +337,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
 
             // If Styles for desktop, mobile not selected as expected
-            if ($('#select_styles_issue').is(':checked')) {
+            if ($('#select_styles_issue').is(':checked') && !$('.same_settings').is(':checked') ) {
                 $(".select_styles_issue_checkbox").show();
             }
             $('.select_styles_issue_description').on('click', function (e) {
@@ -763,7 +768,39 @@ document.addEventListener('DOMContentLoaded', function () {
 
         }
 
-        // intl
+        /**
+         * intl tel input 
+         * intlTelInput - from intl js.. 
+         * 
+         * class name - intl_number, multi agent class names
+         */
+        function intl_input(className) {
+
+            console.log('intl_input() className: ' + className);
+
+            if (document.querySelector("." + className)) {
+                console.log(className + ' class name exists');
+
+                if (typeof intlTelInput !== 'undefined') {
+                    
+                    $('.' + className).each(function () {
+                        console.log('each: calling intl_init()..' + this);
+                        var i = intl_init(this);
+                    });
+
+                    console.log('calling intl_onchange() from intl_input()');
+                    intl_onchange();
+                } else {
+                    // throw error..
+                    console.log('intlTelInput not loaded..');
+                    throw new Error('intlTelInput not loaded..');
+                }
+                
+            }
+
+        }
+
+        // intl: - init
         function intl_init(v) {
 
             console.log('intl_init()');
@@ -775,12 +812,18 @@ document.addEventListener('DOMContentLoaded', function () {
             var pre_countries = [];
             var country_code_date = new Date().toDateString();
             var country_code = (ctc_getItem('country_code_date') == country_code_date) ? ctc_getItem('country_code') : '';
+            console.log('country_code: ' + country_code);
 
             if ('' == country_code) {
+                console.log('getting country code..');
+                // fall back..
+                country_code = 'us';
+                
                 $.get("https://ipinfo.io", function () { }, "jsonp").always(function (resp) {
                     country_code = (resp && resp.country) ? resp.country : "us";
                     ctc_setItem('country_code', country_code);
                     ctc_setItem('country_code_date', country_code_date);
+                    add_prefer_countrys(country_code);
                     call_intl();
                 });
             } else {
@@ -789,51 +832,36 @@ document.addEventListener('DOMContentLoaded', function () {
 
             var intl = '';
             function call_intl() {
-                add_prefer_countrys(country_code);
                 pre_countries = (ctc_getItem('pre_countries')) ? ctc_getItem('pre_countries') : [];
+                console.log(pre_countries);
 
-                intl = intlTelInput(v, {
+                var values = {
                     autoHideDialCode: false,
                     initialCountry: "auto",
                     geoIpLookup: function (success, failure) {
                         success(country_code);
                     },
                     dropdownContainer: document.body,
-                    // formatOnDisplay: true,
-                    hiddenInput: hidden_input,
+                    hiddenInput: function () {
+                        return { phone: hidden_input, country: 'ht_ctc_chat_options[intl_country]' };
+                    },
                     nationalMode: false,
-                    autoPlaceholder: "polite",
-                    preferredCountries: pre_countries,
+                    // autoPlaceholder: "polite",
+                    countryOrder: pre_countries,
                     separateDialCode: true,
+                    containerClass: 'intl_tel_input_container',
+
                     utilsScript: ht_ctc_admin_var.utils
-                });
+                };
+
+                intl = intlTelInput(v, values );
             }
 
             return intl;
         }
+        
 
-        /**
-         * intl tel input 
-         * intlTelInput - from intl js.. 
-         */
-        function intl_input(className) {
-
-            console.log('intl_input() className: ' + className);
-
-            if (document.querySelector("." + className) && typeof intlTelInput !== 'undefined') {
-
-                console.log(className + ' class name exists');
-
-                $('.' + className).each(function () {
-                    console.log('each: calling intl_init()..' + this);
-                    var i = intl_init(this);
-                });
-
-                console.log('calling intl_onchange() from intl_input()');
-                intl_onchange();
-            }
-        }
-
+        // intl: on change
         function intl_onchange() {
 
             console.log('intl_onchange()');
@@ -841,11 +869,20 @@ document.addEventListener('DOMContentLoaded', function () {
             $('.intl_number').on("input countrychange", function (e) {
                 // if blank also it may triggers.. as if countrycode changes.
                 console.log('on change - intl_number - input, countrychange');
+                console.log(this);
+                console.log(intlTelInput);
 
-                var changed = intlTelInputGlobals.getInstance(this);
-                // changed.getNumber()
+                // var changed = intlTelInputGlobals.getInstance(this);
+                // var changed = window.intlTelInput.getInstance(this);
+                // var changed = intlTelInput(this);
+                var changed = intlTelInput.getInstance(this);
 
+                console.log(changed);
                 console.log(changed.getNumber());
+
+                // add value to next sibbling hidden input field.
+                $(this).next('input[type="hidden"]').val(changed.getNumber());
+
 
                 if (window.ht_ctc_admin_demo_var) {
                     console.log('for demo: update number');
@@ -855,14 +892,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
                 if (changed.isValidNumber()) {
                     // to display in format
-                    changed.setNumber(changed.getNumber());
-
                     console.log('valid number');
+
+                    // issue here.. setNumber ~ uses for for formating..
+                    // console.log(changed.getNumber());
 
                     var d = {
                         number: changed.getNumber()
                     };
 
+                    // @used at admin demo
                     document.dispatchEvent(
                         new CustomEvent("ht_ctc_admin_event_valid_number", { detail: { d } })
                     );
@@ -870,30 +909,41 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
 
+            // intl: only countrycode changes.
             $('.intl_number').on("countrychange", function (e) {
 
                 console.log('on change - intl_number - countrychange');
 
-                var changed = intlTelInputGlobals.getInstance(this);
+                // var changed = intlTelInputGlobals.getInstance(this);
+                // var changed = window.intlTelInput.getInstance(this);
+                // var changed = window.intlTelInput(this);
+                var changed = intlTelInput.getInstance(this);
+
                 console.log(changed);
 
                 console.log(changed.getSelectedCountryData().iso2);
                 console.log('calling add_prefer_countrys()');
                 add_prefer_countrys(changed.getSelectedCountryData().iso2);
             });
+
         }
 
         function add_prefer_countrys(country_code) {
 
             console.log('add_prefer_countrys(): ' + country_code);
 
-            country_code = country_code.toUpperCase();
+            country_code = (country_code && '' !== country_code) ? country_code.toUpperCase() : 'US';
+
             var pre_countries = (ctc_getItem('pre_countries')) ? ctc_getItem('pre_countries') : [];
             console.log(pre_countries);
 
             if (!pre_countries.includes(country_code)) {
                 console.log(country_code + ' not included. so pushing country code to pre countries');
-                pre_countries.push(country_code);
+                
+                // push to index 0..
+                pre_countries.unshift(country_code);
+                // pre_countries.push(country_code);
+
                 ctc_setItem('pre_countries', pre_countries);
             }
             console.log('#END add_prefer_countrys()');

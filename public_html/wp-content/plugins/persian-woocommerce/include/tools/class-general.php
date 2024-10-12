@@ -1,5 +1,7 @@
 <?php
 
+defined( 'ABSPATH' ) || exit;
+
 class PW_Tools_General {
 
 	public function __construct() {

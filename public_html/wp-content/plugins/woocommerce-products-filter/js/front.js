@@ -266,6 +266,7 @@ jQuery(function ($) {
 
     //***
     woof_remove_empty_elements();
+    woof_unblur_filter();
 
     woof_init_search_form();
     woof_init_pagination();
@@ -1431,7 +1432,13 @@ function woof_mass_reinit() {
     woof_reinit_native_woo_price_filter();//native woo price range slider reinit
     woof_recount_text_price_filter();
     woof_draw_products_top_panel();
+    woof_unblur_filter(); 
 }
+function woof_unblur_filter(){
+
+    jQuery('.woof_redraw_zone.woof_blur_redraw_zone').removeClass('woof_blur_redraw_zone');
+}
+
 
 function woof_recount_text_price_filter() {
     //change value in textinput price filter if WOOCS is installed
@@ -1443,7 +1450,6 @@ function woof_recount_text_price_filter() {
 }
 
 function woof_init_toggles() {
-
     jQuery('body').off('click', '.woof_front_toggle');
     jQuery('body').on('click', '.woof_front_toggle', function () {
 
@@ -1601,8 +1607,6 @@ function woof_price_filter_radio_init() {
 //    END  woof price radio;
 
 
-
-//compatibility with YITH Infinite Scrolling
 function woof_serialize(serializedString) {
     var str = decodeURI(serializedString);
     var pairs = str.split('&');
@@ -1629,10 +1633,16 @@ function woof_serialize(serializedString) {
 //compatibility with YITH Infinite Scrolling
 function woof_infinite() {
 
+    if( typeof yith_infs_premium !== 'undefined' && yith_infs_premium.options ) {
+
+	woof_change_ajax_next_link();
+	return false;
+
+    }
+
     if (typeof yith_infs === 'undefined') {
         return;
     }
-
 
     //***
     var infinite_scroll1 = {
@@ -1644,6 +1654,14 @@ function woof_infinite() {
         'loader': '<img src="' + yith_infs.loader + '">',
         'is_shop': yith_infs.shop
     };
+    woof_change_ajax_next_link();
+    jQuery(window).off("yith_infs_start"), jQuery(yith_infs.contentSelector).yit_infinitescroll(infinite_scroll1)
+}
+
+function woof_change_ajax_next_link(){
+    if (!jQuery('.woocommerce-pagination li .next').length) {
+	return false;
+    }
     var curr_l = window.location.href;
     var curr_link = curr_l.split('?');
     var get = "";
@@ -1669,10 +1687,8 @@ function woof_infinite() {
     }
 
     page_link = curr_link[0].replace(/\/$/, "") + page + '?' + get;
-
-    jQuery('.woocommerce-pagination li .next').attr('href', page_link);
-
-    jQuery(window).off("yith_infs_start"), jQuery(yith_infs.contentSelector).yit_infinitescroll(infinite_scroll1)
+    
+    jQuery('.woocommerce-pagination li .next').attr('href', page_link);   
 }
 //End infinity scroll
 

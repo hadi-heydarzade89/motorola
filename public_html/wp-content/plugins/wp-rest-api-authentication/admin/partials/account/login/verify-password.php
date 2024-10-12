@@ -18,68 +18,59 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @return void
  */
-function mo_api_authentication_verify_password_ui() { ?>
-	<form name="f" method="post" action="">
+function mo_api_authentication_verify_password_ui() {
+	?>
+	<div class="border border-1 rounded-4 p-3 bg-white">
+		<form method="post">
 			<input type="hidden" name="option" value="mo_api_authentication_verify_customer" />
 			<?php wp_nonce_field( 'mo_api_authentication_verify_customer_form', 'mo_api_authentication_verify_customer_form_fields' ); ?>
-	<div id="mo_api_authentication_password_setting_layout" class="mo_api_authentication_support_layout">
-		<h2 style="font-size: 20px;font-weight: 700">Login With miniOrange</h2>
-		<p style="font-size: 14px;font-weight: 400">Enter your miniOrange login credentials to log into the plugin.</p>
-		<br>
-
-		<div class="mo_api_authentication_support_layout" style="padding-left: 5px;width: 90%">
-			<br>
-		<table width="90%">
-			<tr>
-				<td>
-					<p style="font-size: 15px;font-weight: 500;margin-left: 20px"><b><font color="#FF0000">*</font></b>Email : </p>
-				</td>
-				<td>
-					<p><input required type="text" style="width: 70%" name="email" placeholder="person@example.com" value="<?php echo esc_attr( get_option( 'mo_api_authentication_admin_email' ) ); ?>">
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<p style="font-size: 15px;font-weight: 500;margin-left: 20px"><b><font color="#FF0000">*</font></b>Password : </p>
-				</td>
-				<td>
-					<p><input style="width: 70%" required type="password" name="password" placeholder="Choose your password (Min. length 8)" /></p>
-				</td>
-			</tr>
-			<tr>
-				<td>
-
-				</td>
-				<td>
-					<p> <a href="#mo_api_authentication_forgot_password_link">Click here if you forgot your password?</a></p>
-				</td>
-			</tr>
-			<tr>
-							<td>&nbsp;</td>
-							<td><input type="submit" name="submit" value="Login"
-								class="button button-primary button-large" style="background: #473970" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</form>
-
-								<input type="button" name="back-button" id="mo_api_authentication_back_button" onclick="document.getElementById('mo_api_authentication_change_email_form').submit();" value="Back" class="button button-primary button-large" style="background: #473970;" />
-
-								<form id="mo_api_authentication_change_email_form" method="post" action="">
-									<?php wp_nonce_field( 'mo_api_authentication_change_email_address_form', 'mo_api_authentication_change_email_address_form_fields' ); ?>
-									<input type="hidden" name="option" value="mo_api_authentication_change_email_address" />
-								</form></td>
-							</td>
-						</tr>
-		</table>
-		<br>
-
-		</div>
+			<h5>Login with miniOrange</h5>
+			<p class="mo_rest_api_primary_font">Enter your miniOrange login credentials to log into the plugin.</p>
+			<div class="bg-white mo-caw-shadow p-3 mo-caw-rounded-16">
+					<div class="row px-5">
+						<div class="col ps-0">
+							<div>
+								<div class="mb-3 col">
+									<div class="row">
+										<div class="col-3 text-start">
+											<label for="email" class="form-label mo_rest_api_primary_font mb-0 me-3">Email:</label>
+										</div>
+										<div class="col">
+											<input type="email" class="form-control mt-0" id="email" name="email" placeholder="person@example.com" value="<?php echo esc_attr( get_option( 'mo_api_authentication_admin_email' ) ); ?>" aria-required="true" required>
+										</div>
+									</div>
+								</div>
+								<div class="mb-3 col">
+									<div class="row">
+										<div class="col-3 text-start">
+											<label for="password" class="form-label mo_rest_api_primary_font mb-0 me-3">Password:</label>
+										</div>
+										<div class="col">
+											<input type="password" class="form-control mt-0" id="password" name="password" placeholder="Enter your password" aria-required="true" required>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="text-end mb-3">
+								<a class="mo_rest_api_primary_font" href="#mo_api_authentication_forgot_password_link">Click here if you forgot your password?</a>
+							</div>
+							<div class="d-grid gap-2 d-md-block text-center">
+								<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" name="mo_api_authentication_back_button" id="mo_api_authentication_back_button" onclick="document.getElementById('mo_api_authentication_change_email_form').submit();">Back</button>
+								<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="submit" value="Login">Login</button>
+							</div>
+						</div>
+					</div>
+				</div>
+		</form>
+	</div>
+	<form id="mo_api_authentication_change_email_form" method="post" action="">
+		<?php wp_nonce_field( 'mo_api_authentication_change_email_address_form', 'mo_api_authentication_change_email_address_form_fields' ); ?>
+		<input type="hidden" name="option" value="mo_api_authentication_change_email_address" />
 	</form>
-		<br />
-		</div>
-
-		<script>
-			jQuery("a[href=\"#mo_api_authentication_forgot_password_link\"]").click(function(){
-				window.open('https://login.xecurify.com/moas/idp/resetpassword');
-				//jQuery("#mo_api_authentication_forgotpassword_form").submit();
-			});
-		</script>
-		<?php
+	<script>
+		jQuery("a[href=\"#mo_api_authentication_forgot_password_link\"]").click(function(){
+			window.open('https://portal.miniorange.com/moas/idp/resetpassword');
+		});
+	</script>
+	<?php
 }

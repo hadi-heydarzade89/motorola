@@ -13,7 +13,14 @@ if (!defined('ABSPATH')) {
  * @param string $class
  */
 function cfturnstile_field_show($button_id = '', $callback = '', $form_name = '', $unique_id = '', $class = '') {
+	// Hook to not show
+	$hide = apply_filters('cfturnstile_widget_disable', false);
+	if($hide) {
+		return;
+	}
+	// Check if whitelisted
 	if(!cfturnstile_whitelisted()) {
+		// Show Turnstile
 		do_action("cfturnstile_enqueue_scripts");
 		do_action("cfturnstile_before_field", esc_attr($unique_id));
 		$key = sanitize_text_field(get_option('cfturnstile_key'));
@@ -61,7 +68,7 @@ function cfturnstile_disable_button_styles($button_id) {
  */
 add_action('cfturnstile_after_field', 'cfturnstile_always_br', 15, 1);
 function cfturnstile_always_br($unique_id) {
-	if(get_option('cfturnstile_appearance') == 'always') {
+	if(!get_option('cfturnstile_appearance') || get_option('cfturnstile_appearance') == 'always') {
 		?>
 		<br class="cf-turnstile-br cf-turnstile-br<?php echo esc_attr($unique_id); ?>">
 		<?php
@@ -98,7 +105,7 @@ function cfturnstile_failed_text($unique_id) {
 	$failed_text = get_option('cfturnstile_failure_message');
 	if(!$failed_text) { $failed_text = esc_html__('Failed to verify you are human. Please contact us if you are having issues.', 'simple-cloudflare-turnstile'); }
 	?>
-	<div class="cf-turnstile-failed-text<?php echo esc_attr($unique_id); ?>"></div>
+	<div class="cf-turnstile-failed-text cf-turnstile-failed-text<?php echo esc_attr($unique_id); ?>"></div>
 	<script>
 	function cfturnstileErrorCallback() {
 		var cfTurnstileFailedText = document.querySelector('.cf-turnstile-failed-text<?php echo esc_html($unique_id); ?>');
@@ -122,7 +129,7 @@ function cfturnstile_force_render($unique_id = '') {
 	$key = sanitize_text_field(get_option('cfturnstile_key'));
 	if($unique_id) {
 	?>
-	<script>document.addEventListener("DOMContentLoaded",(function(){var e=document.getElementById("cf-turnstile<?php echo esc_html($unique_id); ?>");e&&turnstile.render("#cf-turnstile<?php echo esc_html($unique_id); ?>",{sitekey:"<?php echo esc_html($key); ?>"})}));</script>
+	<script>document.addEventListener("DOMContentLoaded",(function(){var e=document.getElementById("cf-turnstile<?php echo esc_html($unique_id); ?>");e&&!e.innerHTML.trim()&&(turnstile.remove("#cf-turnstile<?php echo esc_html($unique_id); ?>"),turnstile.render("#cf-turnstile<?php echo esc_html($unique_id); ?>",{sitekey:"<?php echo esc_html($key); ?>"}))}));</script>
 	<?php
 	}
 }
@@ -137,15 +144,25 @@ function cfturnstile_check($postdata = "") {
 
 	$results = array();
 
+	// Check if whitelisted
 	if(cfturnstile_whitelisted()) {
 		$results['success'] = true;
 		return $results;
 	}
 
+	// Hook to allow custom skip
+	$skip = apply_filters('cfturnstile_widget_disable', false);
+	if($skip) {
+		$results['success'] = true;
+		return $results;
+	}
+
+	// Check if POST data is empty
 	if (empty($postdata) && isset($_POST['cf-turnstile-response'])) {
 		$postdata = sanitize_text_field($_POST['cf-turnstile-response']);
 	}
 
+	// Get Turnstile Keys from Settings
 	$key = sanitize_text_field(get_option('cfturnstile_key'));
 	$secret = sanitize_text_field(get_option('cfturnstile_secret'));
 
@@ -178,6 +195,8 @@ function cfturnstile_check($postdata = "") {
 			}
 		}
 
+		do_action('cfturnstile_after_check', $response, $results);
+
 		return $results;
 
 	} else {
@@ -186,6 +205,42 @@ function cfturnstile_check($postdata = "") {
 
 	}
 	
+}
+
+/* 
+ * Add Turnstile check to a "cfturnstile_log" option
+ */
+add_action('cfturnstile_after_check', 'cfturnstile_log', 10, 2);
+function cfturnstile_log($response, $results) {
+	if(get_option('cfturnstile_log_enable')) {
+		// Get log
+		$cfturnstile_log = get_option('cfturnstile_log');
+		if(!$cfturnstile_log) {
+			$cfturnstile_log = array();
+		}
+		// Get Values
+		$error_code = $results['error_code'];
+		// Success Yes or No
+		if($response->success) {
+			$success = true;
+		} else {
+			$success = false;
+		}
+		// Add to log
+		$cfturnstile_log[] = array(
+			'date' => date('Y-m-d H:i:s'),
+			'success' => $success,
+			'error' => $error_code,
+			'ip' => $_SERVER['REMOTE_ADDR'],
+			'page' => $_SERVER['REQUEST_URI'],
+		);
+		// Max 50
+		if(count($cfturnstile_log) > 50) {
+			array_shift($cfturnstile_log);
+		}
+		// Update log
+		update_option('cfturnstile_log', $cfturnstile_log);
+	}
 }
 
 /**

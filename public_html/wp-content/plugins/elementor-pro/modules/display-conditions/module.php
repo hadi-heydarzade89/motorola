@@ -43,6 +43,7 @@ class Module extends Module_Base {
 		$this->add_render_actions();
 
 		add_action( 'elementor/ajax/register_actions', [ $this, 'register_ajax_actions' ] );
+		add_filter( 'elementor/element/is_dynamic_content', [ $this, 'filter_element_caching_is_dynamic_content' ], 10, 3 );
 	}
 
 	private function add_components() {
@@ -233,11 +234,23 @@ class Module extends Module_Base {
 		$ajax_manager->register_ajax_action( 'display_conditions_set_cache_notice_status', [ $this->get_component( 'cache_notice' ), 'set_notice_status' ] );
 	}
 
+	public function filter_element_caching_is_dynamic_content( $is_dynamic_content, $element_rqw_data, $element_instance ) {
+		if ( ! empty( $element_rqw_data['settings']['e_display_conditions'] ) ) {
+			$is_dynamic_content = true;
+		}
+
+		return $is_dynamic_content;
+	}
+
 	/**
 	 * @return bool
 	 */
 	public static function can_use_display_conditions(): bool {
-		return API::is_license_active() && API::is_licence_has_feature( self::LICENSE_FEATURE_NAME, API::BC_VALIDATION_CALLBACK );
+		if ( is_admin() ) {
+			return API::is_license_active() && API::is_licence_has_feature( self::LICENSE_FEATURE_NAME, API::BC_VALIDATION_CALLBACK );
+		}
+
+		return API::is_licence_has_feature( self::LICENSE_FEATURE_NAME, API::BC_VALIDATION_CALLBACK );
 	}
 
 	/**

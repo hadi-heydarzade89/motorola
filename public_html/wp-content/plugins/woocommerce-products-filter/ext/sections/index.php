@@ -71,7 +71,8 @@ final class WOOF_EXT_SECTIONS extends WOOF_EXT {
         ob_start();
         $this->woof_draw_sctions_item();
         $section = ob_get_clean();
-        die($section);
+		wp_send_json($section);
+        //die($section);
     }
 
     public function woof_draw_sctions_item($ukey = "", $title = "", $from = -1, $to = -1) {
@@ -167,7 +168,7 @@ final class WOOF_EXT_SECTIONS extends WOOF_EXT {
     public function add_shortcode_attr($attr) {
         
         $settings = woof()->settings;
-        if (!isset($attr['shortcode_atts']['sections']) && isset($settings['woof_init_sections']) && $settings['woof_init_sections'] == 1) {
+        if (!isset($attr['shortcode_atts']['sections']) && isset($settings['woof_init_sections']) && intval($settings['woof_init_sections']) === 1) {
             $attr['shortcode_atts'] = array();
             if (isset($settings['sections']) && is_array($settings['sections'])) {
                 $attr['shortcode_atts']['sections'] = $this->generate_shortcode_attr($settings['sections']);

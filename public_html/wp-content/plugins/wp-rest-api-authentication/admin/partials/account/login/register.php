@@ -22,111 +22,71 @@ function mo_api_authentication_register_ui() {
 	update_option( 'mo_api_authentication_new_registration', 'true' );
 	$current_user = wp_get_current_user();
 	?>
-			<!--Register with miniOrange-->
-		<form name="f" method="post" action="">
+	<div class="border border-1 rounded-4 p-3 bg-white">
+		<form method="post">
 			<input type="hidden" name="option" value="mo_api_authentication_register_customer" />
 			<?php wp_nonce_field( 'mo_api_authentication_register_form', 'mo_api_authentication_register_form_fields' ); ?>
-
-			<div id="mo_api_authentication_advanced_setting_layout" class="mo_api_authentication_support_layout">
-
-			<h2 style="font-size: 20px;font-weight: 700">Account Setup With miniOrange</h2>
-			<p style="font-size: 14px;font-weight: 400;padding-right: 10px">You should register so that in case you need help, we can help you with step by step instructions.
-							<b>You will also need a miniOrange account to upgrade to the premium version of the plugins.</b> We do not store any information except the email that you will use to register with us.</p>
-			<br>
-
-			<div class="mo_api_authentication_support_layout" style="padding-left: 5px;width: 90%">
-
-			<table width="80%">
-
-				<tr class="hidden">
-						<td><b><font color="#FF0000">*</font>Website/Company Name:</b></td>
-						<td><input class="" type="text" name="company"
-						required placeholder="Enter website or company name"
-						value="<?php echo ! empty( $_SERVER['SERVER_NAME'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_SERVER['SERVER_NAME'] ) ) ) : ''; ?>"/></td>
-					</tr>
-					<tr  class="hidden">
-						<td><b>&nbsp;&nbsp;First Name:</b></td>
-						<td><input class="" type="text" name="fname"
-						placeholder="Enter first name" value="<?php echo esc_attr( $current_user->user_firstname ); ?>" /></td>
-					</tr>
-					<tr class="hidden">
-						<td><b>&nbsp;&nbsp;Last Name:</b></td>
-						<td><input class="" type="text" name="lname"
-						placeholder="Enter last name" value="<?php echo esc_attr( $current_user->user_lastname ); ?>" /></td>
-					</tr>
-
-					<tr  class="hidden">
-						<td><b>&nbsp;&nbsp;Phone number :</b></td>
-						<td><input class="" type="text" name="phone" pattern="[\+]?([0-9]{1,4})?\s?([0-9]{7,12})?" id="phone" title="Phone with country code eg. +1xxxxxxxxxx" placeholder="Phone with country code eg. +1xxxxxxxxxx" value="<?php echo esc_attr( get_option( 'mo_api_authentication_admin_phone' ) ); ?>" />
-						This is an optional field. We will contact you only if you need support.</td>
-						</tr>
-					</tr>
-					<tr  class="hidden">
-						<td></td>
-						<td>We will call only if you need support.</td>
-					</tr>
-
-					<tr>
-						<td>
-							<p style="font-size: 15px;font-weight: 500;margin-left: 20px;"><b><font color="#FF0000">*</font></b>Email : </p>
-						</td>
-						<td>
-							<p><input required type="text" style="width: 80%" name="email" placeholder="person@example.com" value="<?php echo esc_attr( get_option( 'mo_api_authentication_admin_email' ) ); ?>">
-
-							</p>
-						</td>
-					</tr>
-
-					<tr>
-						<td>
-							<p style="font-size: 15px;font-weight: 500;margin-left: 20px;"><b><font color="#FF0000">*</font></b>Password : </p>
-						</td>
-						<td>
-							<p><input style="width: 80%" required type="password"
-									name="password" style="width:100%" placeholder="Choose your password (Min. length 8)" />
-
-							</p>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<p style="font-size: 15px;font-weight: 500;margin-left: 20px"><b><font color="#FF0000">*</font></b>Confirm Password : </p>
-						</td>
-						<td>
-							<p><input style="width: 80%" required type="password"
-									name="confirm_password" style="width:100%" placeholder="Confirm your password">
-
-							</p>
-						</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td>
-							<input type="submit" name="submit" value="Register" class="button button-primary button-large" style="width:80px;background: #473970" />&nbsp;&nbsp;&nbsp;&nbsp;
-							<input type="button" name="mo_api_authentication_goto_login" id="mo_api_authentication_goto_login" value="Already have an account?" class="button button-primary button-large" style="width:180px;background: #473970" />
-						</td>
-					</tr>
-				</table>
-				<br>
+			<h5>Account Setup with miniOrange</h5>
+			<p class="fs-6 mo_rest_api_primary_font">You should register so that in case you need help, we can help you with step by step instructions.<b>You will also need a miniOrange account to upgrade to the premium version of the plugins.</b> We do not store any information except the email that you will use to register with us.</p>
+			<div class="bg-white mo-caw-shadow p-3 mo-caw-rounded-16">
+				<div class="row px-5">
+					<div class="col ps-0">
+						<div>
+							<input type="hidden" name="company" value="<?php echo ! empty( $_SERVER['SERVER_NAME'] ) ? esc_attr( sanitize_text_field( wp_unslash( $_SERVER['SERVER_NAME'] ) ) ) : ''; ?>">
+							<input type="hidden" name="fname" value="<?php echo esc_attr( $current_user->user_firstname ); ?>">
+							<input type="hidden" name="lname" value="<?php echo esc_attr( $current_user->user_lastname ); ?>"">
+							<input type="hidden" name="phone" value="<?php echo esc_attr( get_option( 'mo_api_authentication_admin_phone' ) ); ?>">
+							<div class="mb-3 col">
+								<div class="row">
+									<div class="col-3 text-start">
+										<label for="email" class="form-label mo_rest_api_primary_font mb-0 me-3">Email:</label>
+									</div>
+									<div class="col">
+										<input type="email" class="form-control mt-0" id="email" name="email" placeholder="person@example.com" value="<?php echo esc_attr( get_option( 'mo_api_authentication_admin_email' ) ); ?>" aria-required="true" required>
+									</div>
+								</div>
+							</div>
+							<div class="mb-3 col">
+								<div class="row">
+									<div class="col-3 text-start">
+										<label for="password" class="form-label mo_rest_api_primary_font mb-0 me-3">Password:</label>
+									</div>
+									<div class="col">
+										<input type="password" class="form-control mt-0" id="password" name="password" placeholder="Enter your password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^a-zA-Z0-9]).{12,}$" title="Password should be at least 12 characters long and should contain at least one from A-Z, a-z and 0-9 and a special character." aria-required="true" required>
+									</div>
+								</div>
+							</div>
+							<div class="mb-3 col">
+								<div class="row">
+									<div class="col-3 text-start">
+										<label for="confirm_password" class="form-label mo_rest_api_primary_font mb-0 me-3">Confirm Password:</label>
+									</div>
+									<div class="col">
+										<input type="password" class="form-control mt-0" id="confirm_password" name="confirm_password" placeholder="Confirm your password" aria-required="true" required>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="d-grid gap-2 d-md-block text-center">
+							<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" name="mo_api_authentication_goto_login" id="mo_api_authentication_goto_login">Already have an account?</button>
+							<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="submit">Register</button>
+						</div>
+					</div>
+				</div>
 			</div>
-			<br>&nbsp;&nbsp;
-			<br>
-
-			<br><br>
-		</div>
-	</form>
-	<form name="f1" method="post" action="" id="mo_api_authentication_goto_login_form">
-				<?php wp_nonce_field( 'mo_api_authentication_goto_login', 'mo_api_authentication_goto_login_fields' ); ?>			
-				<input type="hidden" name="option" value="mo_api_authentication_goto_login"/>
-			</form>
+		</form>
 	</div>
-			<script>
-				jQuery("#phone").intlTelInput();
-				jQuery('#mo_api_authentication_goto_login').click(function () {
-					jQuery('#mo_api_authentication_goto_login_form').submit();
-				} );
-			</script>
-		<?php
+	<form name="f1" method="post" action="" id="mo_api_authentication_goto_login_form">
+		<?php wp_nonce_field( 'mo_api_authentication_goto_login', 'mo_api_authentication_goto_login_fields' ); ?>			
+		<input type="hidden" name="option" value="mo_api_authentication_goto_login"/>
+	</form>
+	<script>
+		jQuery("#phone").intlTelInput();
+		jQuery('#mo_api_authentication_goto_login').click(function () {
+			jQuery('#mo_api_authentication_goto_login_form').submit();
+		} );
+	</script>
+	<?php
 }
 
 /**
@@ -136,46 +96,29 @@ function mo_api_authentication_register_ui() {
  */
 function mo_api_authentication_show_customer_info() {
 	?>
-
-	<div id="mo_api_authentication_advanced_setting_layout" class="mo_api_authentication_support_layout">
-
-		<h2 style="font-size: 20px;font-weight: 700">miniOrange Account Information</h2>
-		<br>
-		<div class="mo_api_authentication_support_layout" style="padding-left: 5px;width: 90%">
-			<table width="50%">
-				<tr>
-					<td>
-						<p style="font-size: 15px;font-weight: 500;margin-left: 20px">Account Email : </p>
-					</td>
-					<td>
-						<p><?php echo esc_html( get_option( 'mo_api_authentication_admin_email' ) ); ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<p style="font-size: 15px;font-weight: 500;margin-left: 20px">Customer ID : </p>
-					</td>
-					<td>
-						<p><?php echo esc_html( get_option( 'mo_api_authentication_admin_customer_key' ) ); ?></p>
-					</td>
-				</tr>
-				<tr>
-					<td></td>
-					<td><form name="f1" method="post" action="">
-				<?php wp_nonce_field( 'mo_api_authentication_change_email_address_form', 'mo_api_authentication_change_email_address_form_fields' ); ?>
-				<input type="hidden" value="mo_api_authentication_change_email_address" name="option"/>
-				<input type="submit" value="Change Account" class="button button-primary button-large" style="width:120px;background: #473970" />
-			</form></td>
-				</tr>
-			</table>
-			<br>
-
-		</div>
-		<br>
-
-		<br>
-		<br>
+	<div class="border border-1 rounded-4 p-3 bg-white" id="mo_api_authentication_advanced_setting_layout">
+		<form method="post" name="f1">
+			<?php wp_nonce_field( 'mo_api_authentication_change_email_address_form', 'mo_api_authentication_change_email_address_form_fields' ); ?>
+			<input type="hidden" value="mo_api_authentication_change_email_address" name="option"/>
+			<h5>miniOrange Account Information</h5>
+			<div class="bg-white mo-caw-shadow mo-caw-rounded-16">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th class="mo_rest_api_primary_font" scope="col">Account Email</th>
+							<td class="mo_rest_api_primary_font" scope="col"><?php echo esc_html( get_option( 'mo_api_authentication_admin_email' ) ); ?></td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<th class="mo_rest_api_primary_font" scope="col">Customer ID</th>
+							<td class="mo_rest_api_primary_font" scope="col"><?php echo esc_html( get_option( 'mo_api_authentication_admin_customer_key', '' ) ); ?></td>
+						</tr>
+					</tbody>
+				</table>
+				<button class="btn btn-sm mo_rest_api_button text-capitalize text-white" type="submit">Change Account</button>
+			</div>
+		</form>
 	</div>
-
 	<?php
 }

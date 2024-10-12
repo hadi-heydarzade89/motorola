@@ -15,7 +15,7 @@ class Persian_Woocommerce_Translate extends Persian_Woocommerce_Core {
 		self::$translates = get_option( self::TRANSLATE_OPTION_KEY );
 
 		$this->translates();
-        add_filter( 'override_unload_textdomain', [ $this, 'unload_textdomain' ], 9999, 2 );
+		add_filter( 'override_unload_textdomain', [ $this, 'unload_textdomain' ], 9999, 2 );
 		add_filter( 'load_textdomain_mofile', [ $this, 'load_textdomain' ], 10, 2 );
 
 		add_action( 'add_meta_boxes', [ $this, 'add_meta_box' ] );
@@ -23,8 +23,9 @@ class Persian_Woocommerce_Translate extends Persian_Woocommerce_Core {
 
 		add_action( 'wp_ajax_pw_save_translates', [ $this, 'save_translates' ] );
 	}
+
 	public function unload_textdomain( $override, $domain ) {
-	    return get_locale() == 'fa_IR' && $domain === 'woocommerce' ? true : $override;
+		return get_locale() == 'fa_IR' && $domain === 'woocommerce' ? true : $override;
 	}
 
 	public function load_textdomain( $mo_file, $domain ) {
@@ -135,7 +136,7 @@ class Persian_Woocommerce_Translate extends Persian_Woocommerce_Core {
 	public function meta_box_form() {
 		?>
 		<form action="" method="post" id="woocommerce_persian_translate">
-			<input type="hidden" name="s" value="<?php echo esc_attr( $_GET['s'] ?? null ); ?>"/>
+			<input type="hidden" name="s" value="<?php echo esc_attr( sanitize_text_field( $_GET['s'] ?? null ) ); ?>"/>
 			<input type="hidden" name="action" value="pw_save_translates"/>
 			<input type="hidden" name="security"
 				   value="<?php echo wp_create_nonce( 'pw_save_translates' ); ?>"/>
@@ -268,22 +269,23 @@ class Persian_Woocommerce_Translate_List_Table extends WP_List_Table {
 	private $data;
 
 	public function __construct() {
-
 		global $wpdb;
 
-		$search  = '';
+		$table   = $wpdb->prefix . 'woocommerce_ir';
 		$perPage = 20;
 		$db_page = ( $this->get_pagenum() - 1 ) * $perPage;
 
-		if ( isset( $_GET['s'] ) && ! empty( $_GET['s'] ) ) {
-			$s      = sanitize_text_field( $_GET['s'] );
-			$search = " WHERE text1 LIKE '%{$s}%' OR text2 LIKE '%{$s}%'";
-		}
+		$s = sanitize_text_field( trim( $_GET['s'] ?? '' ) );
 
-		$this->data = $wpdb->get_results( "SELECT * FROM `{$wpdb->prefix}woocommerce_ir`{$search} ORDER BY id DESC LIMIT $db_page, $perPage;", ARRAY_A );
+		$query       = $wpdb->prepare( "SELECT * FROM %i 
+								 WHERE `text1` LIKE '%%%s%' OR `text2` LIKE '%%%s%'
+							 ORDER BY `id` DESC LIMIT %d, %d;", $table, $s, $s, $db_page, $perPage );
+		$total_query = $wpdb->prepare( "SELECT COUNT(*) FROM %i WHERE `text1` LIKE '%%%s%' OR `text2` LIKE '%%%s%';", $table, $s, $s );
+
+		$this->data = $wpdb->get_results( $query, ARRAY_A );
 
 		$this->set_pagination_args( [
-			'total_items' => $wpdb->get_var( "SELECT COUNT(*) FROM `{$wpdb->prefix}woocommerce_ir`{$search};" ),
+			'total_items' => $wpdb->get_var( $total_query ),
 			'per_page'    => $perPage,
 		] );
 

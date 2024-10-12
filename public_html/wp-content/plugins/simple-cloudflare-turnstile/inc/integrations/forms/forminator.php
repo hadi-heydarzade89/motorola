@@ -15,7 +15,7 @@ if(get_option('cfturnstile_forminator')) {
 
             // if cfturnstile script doesnt exist, enqueue it
             if(!wp_script_is('cfturnstile', 'enqueued')) {
-                wp_enqueue_script("cfturnstile", "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit", array(), '', 'true');
+                wp_register_script("cfturnstile", "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit", array(), '', 'true');
                 wp_print_scripts('cfturnstile');
             }
             echo "<style>#cf-turnstile-fmntr-".esc_html($form_id)." { margin-left: 0px !important; }</style>";
@@ -23,13 +23,16 @@ if(get_option('cfturnstile_forminator')) {
             cfturnstile_field_show('.forminator-button-submit', 'turnstileForminatorCallback', 'forminator-form-' . esc_html($form_id), '-fmntr-' . esc_html($form_id));
             ?>
             <script>
-            // On ajax.complete run turnstile.render if empty
+            // On ajax.complete run turnstile.render if element is empty
             jQuery(document).ajaxComplete(function() {
-                if (document.getElementById('cf-turnstile-fmntr-<?php echo esc_html($form_id); ?>')) {
-                    setTimeout(function() {
-                        turnstile.render('#cf-turnstile-fmntr-<?php echo esc_html($form_id); ?>');
-                    }, 10);
-                }
+                setTimeout(function() {
+                    if (document.getElementById('cf-turnstile-fmntr-<?php echo esc_html($form_id); ?>')) {
+                        if(!document.getElementById('cf-turnstile-fmntr-<?php echo esc_html($form_id); ?>').innerHTML.trim()) {
+                                turnstile.remove('#cf-turnstile-fmntr-<?php echo esc_html($form_id); ?>');
+                                turnstile.render('#cf-turnstile-fmntr-<?php echo esc_html($form_id); ?>');
+                        }
+                    }
+                }, 1000);
             });
             // Enable Submit Button Function
             function turnstileForminatorCallback() {
@@ -38,6 +41,17 @@ if(get_option('cfturnstile_forminator')) {
                     el.style.opacity = '1';
                 });
             }
+            // On submit re-render
+            jQuery(document).ready(function() {
+                jQuery('.forminator-custom-form').on('submit', function() {
+                    if(document.getElementById('cf-turnstile-fmntr-<?php echo esc_html($form_id); ?>')) {
+                        setTimeout(function() {
+                            turnstile.remove('#cf-turnstile-fmntr-<?php echo esc_html($form_id); ?>');
+                            turnstile.render('#cf-turnstile-fmntr-<?php echo esc_html($form_id); ?>');
+                        }, 1000);
+                    }
+                });
+            });
             </script>
             <?php
             $cfturnstile = ob_get_contents();

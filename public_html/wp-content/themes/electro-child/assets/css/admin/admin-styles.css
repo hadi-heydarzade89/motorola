@@ -1,0 +1,331 @@
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../../fonts/IRANYekanXFaNum-Regular.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('../../fonts/IRANYekanXFaNum-Regular.ttf') format('truetype');
+}
+
+
+@media print {
+    .factor, .ticket {
+        page-break-after: always;
+    }
+}
+
+.tickets .table {
+    height: 250px;
+}
+
+* {
+    font-family: iranyekan !important;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+    font-family: iranyekan;
+    overflow-x: hidden;
+    font-size: 13px;
+}
+
+.rotated-order-id {
+    position: relative;
+    top: -10px;
+    right: 90px;
+    float: left;
+}
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.content {
+    margin: 0 auto 0;
+}
+
+.content.barchasb table {
+    width: 44%;
+    float: right;
+    margin-top: 1%;
+    margin-bottom: 2%;
+}
+
+.content.barchasb table:nth-child(1), .content.barchasb table:nth-child(2) {
+    margin-top: 1%;
+}
+
+.content.barchasb table:nth-last-child(1), .content.barchasb table:nth-last-child(2) {
+    margin-bottom: 1%;
+}
+
+.content.barchasb table:nth-child(odd) {
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.content.barchasb table:nth-child(even) {
+    margin-left: 2%;
+}
+
+.content.barchasb table, .content.barchasb th, .content.barchasb td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.content.barchasb th, .content.barchasb td {
+    padding: 5px;
+    font-size: 12px;
+}
+
+.content.barchasb th {
+    background: #f8f8f8;
+    background-color: #f8f8f8;
+    font-size: 14px;
+}
+
+.content.barchasb table td:nth-child(1), .content.barchasb table td:nth-child(2) {
+    padding: 15px;
+}
+
+.content.barchasb table tr td img.qr {
+    float: right;
+    padding-left: 10px;
+}
+
+.content.barchasb table tr td img.qrs {
+    float: left;
+    width: 50px;
+}
+
+.content.barchasb table tr td .fright {
+    float: right;
+    width: 85%;
+}
+
+.content.barchasb table tr td .fleft {
+    float: left;
+    width: 15%;
+}
+
+.content.barchasb table tr td .fleft p {
+    text-align: left;
+    float: inherit;
+}
+
+.print_btn {
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 2.15384615;
+    min-height: 30px;
+    padding: 0 10px;
+    cursor: pointer;
+    border-width: 1px;
+    border-style: solid;
+    -webkit-appearance: none;
+    border-radius: 3px;
+    white-space: nowrap;
+    box-sizing: border-box;
+    background: #e14d43;
+    border-color: #e14d43;
+    color: #fff;
+    font-family: iranyekan;
+    margin: 14px 45%;
+    width: 10%;
+}
+
+@media print {
+    .print_btn {
+        display: none;
+    }
+}
+
+.content.factor {
+    padding: 1% 2% 2%;
+}
+
+.content.factor .header .logo {
+    width: 25%;
+    float: right;
+}
+
+.content.factor .header .logo img {
+    max-height: 100px;
+    margin-top: 3.5%;
+}
+
+.content.factor .header .text {
+    width: 50%;
+    float: right;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 2.5%;
+}
+
+.content.factor .header .info {
+    width: 25%;
+    float: right;
+    margin-top: 1.5%;
+}
+
+.content.factor table {
+    width: 100%;
+    margin-bottom: 1.5%;
+}
+
+.content.factor table, .content.factor th, .content.factor td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.content.factor th, .content.factor td {
+    padding: 5px;
+}
+
+.content.factor th {
+    background: #f8f8f8;
+    background-color: #f8f8f8;
+    font-size: 14px;
+}
+
+.content.factor p.description {
+    margin-top: -60px;
+}
+
+.content.factor .emza {
+    font-weight: bold;
+    font-size: 15px;
+    padding-bottom: 1%;
+}
+
+.content.factor .emza .forooshande {
+    width: 40%;
+    float: right;
+    padding-right: 50px;
+}
+
+.content.factor .emza .kharidar {
+    width: 40%;
+    float: right;
+    padding-right: 50px;
+}
+
+.content.stock {
+    padding: 10px;
+}
+
+.content.stock table, .content.stock th, .content.stock td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.content.stock th, .content.stock td {
+    padding: 5px;
+    text-align: center;
+}
+
+.content.stock th {
+    background: #f8f8f8;
+}
+
+.content.stock table td:nth-child(3) {
+    direction: ltr;
+}
+
+.SA_tablle {
+    display: inline;
+    width: 94%;
+    float: right;
+    height: 452px;
+    padding: 9px;
+}
+
+.table {
+    width: 45%;
+    float: right;
+    border: 1px solid #000;
+    height: 320px;
+    margin-bottom: 17px;
+}
+
+.table.odd {
+    margin-left: 35px;
+}
+
+.title {
+    border-bottom: 2px solid #000;
+    background: #f1f1f1;
+    line-height: 24px;
+    padding: 9px;
+    font-size: 11px;
+}
+
+.sender {
+    padding: 0;
+    float: right;
+    border-bottom: 2px solid #000;
+    width: 100%;
+}
+
+.qr_code {
+    float: right;
+    margin-left: 15px;
+}
+
+.receiver {
+    padding: 0px 3px;
+    position: relative;
+    float: right;
+}
+
+.pdg {
+    padding: 8px;
+}
+
+.address {
+    float: right;
+    width: 100%;
+    padding-top: 5px;
+}
+
+.left {
+    width: 58px;
+    margin-top: 9px;
+    height: 25px;
+    display: inline;
+}
+
+.qrs {
+    float: left;
+}
+
+.leftp {
+    text-align: left;
+}
+
+.rightp {
+    text-align: right;
+}
+
+.centerp {
+    text-align: center;
+}
+
+.ticket-image {
+    background: url('../images/ticket-image.png') repeat-x;
+    height: 12px;
+    width: 100%;
+    display: table;
+}
+
+.thermal {
+    width: 250px;
+    margin: 0 auto;
+}
+
+th.image-col {
+    width: 60px;
+}

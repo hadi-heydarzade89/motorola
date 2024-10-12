@@ -12,6 +12,7 @@ return array(
     'Symfony\\Component\\Translation\\' => array($vendorDir . '/symfony/translation'),
     'Psr\\Clock\\' => array($vendorDir . '/psr/clock/src'),
     'Morilog\\Jalali\\' => array($vendorDir . '/morilog/jalali/src'),
+    'Carbon\\Doctrine\\' => array($vendorDir . '/carbonphp/carbon-doctrine-types/src/Carbon/Doctrine'),
     'Carbon\\' => array($vendorDir . '/nesbot/carbon/src/Carbon'),
     'Assert\\' => array($vendorDir . '/beberlei/assert/lib/Assert'),
 );

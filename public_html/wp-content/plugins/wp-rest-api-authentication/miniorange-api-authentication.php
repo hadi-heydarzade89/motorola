@@ -11,7 +11,7 @@
  * Plugin Name:       WordPress REST API Authentication
  * Plugin URI:        wp-rest-api-authentication
  * Description:       WordPress REST API Authentication secures rest API access for unauthorized users using OAuth 2.0, Basic Auth, JWT, API Key. Also reduces potential attack factors to the respective site.
- * Version:           3.1.0
+ * Version:           3.4.0
  * Author:            miniOrange
  * Author URI:        https://www.miniorange.com
  * License:           MIT/Expat
@@ -33,7 +33,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'MINIORANGE_API_AUTHENTICATION_VERSION', '3.1.0' );
+define( 'MINIORANGE_API_AUTHENTICATION_VERSION', '3.4.0' );
 
 /**
  * The code that runs during plugin activation.
@@ -95,9 +95,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-miniorange-api-authenticat
  * @return void
  */
 function mo_api_auth_plugin_settings_style() {
-	wp_enqueue_style( 'mo_api_authentication_admin_settings_style', plugins_url( 'css/style_settings.min.css', __FILE__ ), MINIORANGE_API_AUTHENTICATION_VERSION, array(), false, false );
-	wp_enqueue_style( 'mo_api_authentication_admin_settings_phone_style', plugins_url( 'css/phone.min.css', __FILE__ ), MINIORANGE_API_AUTHENTICATION_VERSION, array(), false, false );
-	wp_enqueue_style( 'mo_api_authentication_admin_settings_fontAwesome_style', plugins_url( 'css/font-awesome.min.css', __FILE__ ), MINIORANGE_API_AUTHENTICATION_VERSION, array(), false, false );
+	if ( isset( $_GET['page'] ) && 'mo_api_authentication_settings' === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Using this to enqueue styles and script only on the plugin page.
+		wp_enqueue_style( 'mo_api_authentication_admin_settings_style', plugins_url( 'css/style_settings.min.css', __FILE__ ), MINIORANGE_API_AUTHENTICATION_VERSION, array(), false, false );
+		wp_enqueue_style( 'mo_api_authentication_admin_settings_fontAwesome_style', plugins_url( 'css/font-awesome.min.css', __FILE__ ), MINIORANGE_API_AUTHENTICATION_VERSION, array(), false, false );
+	}
 }
 
 /**
@@ -118,7 +119,6 @@ function run_miniorange_api_authentication() {
 
 	$plugin = new Miniorange_Api_Authentication();
 	$plugin->run();
-
 }
 run_miniorange_api_authentication();
 

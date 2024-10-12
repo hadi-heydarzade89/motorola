@@ -114,7 +114,7 @@ if (!count($all_options)) {
     return "";
 }
 ?>
-<div data-css-class="woof_acf_select_container" class="woof_acf_select_container woof_container woof_container_<?php echo esc_attr($meta_key) ?>  woof_container_<?php echo esc_attr( $meta_key) ?> <?php echo WOOF_HELPER::generate_container_css_classes($meta_key) ?>">
+<div data-css-class="woof_acf_select_container" class="woof_acf_select_container woof_container woof_container_<?php echo esc_attr($meta_key) ?>  woof_container_<?php echo esc_attr( $meta_key) ?> <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes($meta_key)) ?>">
     <div class="woof_container_inner">
         <div class="woof_container_inner woof_container_inner_meta_select">
             <?php if ($show_title_label) {

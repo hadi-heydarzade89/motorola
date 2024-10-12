@@ -1,15 +1,15 @@
 <?php
 /* ======================================================
- # Login as User for WordPress - v1.4.8 (free version)
+ # Login as User for WordPress - v1.5.5 (free version)
  # -------------------------------------------------------
  # For WordPress
  # Author: Web357
- # Copyright @ 2014-2023 Web357. All rights reserved.
+ # Copyright © 2014-2024 Web357. All rights reserved.
  # License: GNU/GPLv3, http://www.gnu.org/licenses/gpl-3.0.html
- # Website: https:/www.web357.com
- # Demo: https://demo.web357.com/wordpress/login-as-user/wp-admin/
- # Support: support@web357.com
- # Last modified: Monday 23 October 2023, 12:29:41 AM
+ # Website: https://www.web357.com/product/login-as-user-wordpress-plugin
+ # Demo: https://demo-wordpress.web357.com/try-the-login-as-a-user-wordpress-plugin/
+ # Support: https://www.web357.com/support
+ # Last modified: Wednesday 02 October 2024, 04:09:17 PM
  ========================================================= */
  
 /**
@@ -128,15 +128,55 @@ class LoginAsUser_settings {
 		$login_as_type_characters_limit = strip_tags( stripslashes( $login_as_type_characters_limit ) );
 		$valid_fields['login_as_type_characters_limit'] = $login_as_type_characters_limit;
 
-		// Validate "login_as_user_toolbar_position" Field
-		$login_as_user_toolbar_position = trim( $fields['login_as_user_toolbar_position'] );
-		$login_as_user_toolbar_position = strip_tags( stripslashes( $login_as_user_toolbar_position ) );
-		$valid_fields['login_as_user_toolbar_position'] = $login_as_user_toolbar_position;
-	
+		// Validate "message_display_position" Field
+		$message_display_position = trim( $fields['message_display_position'] );
+		$message_display_position = strip_tags( stripslashes( $message_display_position ) );
+		$valid_fields['message_display_position'] = $message_display_position;
+
+		// Validate "show_admin_link_in_topbar" Field
+		$show_admin_link_in_topbar = trim( $fields['show_admin_link_in_topbar'] );
+		$show_admin_link_in_topbar = strip_tags( stripslashes( $show_admin_link_in_topbar ) );
+		$valid_fields['show_admin_link_in_topbar'] = $show_admin_link_in_topbar;
+			
 		// Validate "license_key" Field
 		$license_key = trim( $fields['license_key'] );
 		$license_key = strip_tags( stripslashes( $license_key ) );
 		$valid_fields['license_key'] = $license_key;
+
+		// Validate "role_management_assignments" Field
+		if (isset($fields['role_management_assignments'])) {
+			$role_management_assignments = $fields['role_management_assignments'];
+			$sanitized_assignments = array();
+
+			if (is_array($role_management_assignments)) {
+				foreach ($role_management_assignments as $manager_role => $managed_roles) {
+					$sanitized_manager_role = sanitize_text_field($manager_role);
+					if (is_array($managed_roles)) {
+						// Check if "None" (value "none") is selected
+						if (in_array('none', $managed_roles, true)) {
+							// If "none" is selected, ensure it's the only option saved
+							$sanitized_assignments[$sanitized_manager_role] = array('none');
+						} else {
+							// If "none" is not selected, sanitize and filter the roles normally
+							$sanitized_managed_roles = array_map('sanitize_text_field', $managed_roles);
+							$sanitized_managed_roles = array_filter($sanitized_managed_roles, function($role) {
+								global $wp_roles;
+								return isset($wp_roles->roles[$role]); // Ensure the role is valid
+							});
+
+							// Only add the roles if there are valid selections
+							if (!empty($sanitized_managed_roles)) {
+								$sanitized_assignments[$sanitized_manager_role] = $sanitized_managed_roles;
+							}
+						}
+					}
+				}
+			}
+
+			$valid_fields['role_management_assignments'] = $sanitized_assignments;
+		} else {
+			$valid_fields['role_management_assignments'] = array();
+		}
 
 		return apply_filters( 'validateSettings', $valid_fields, $fields);
 	}
@@ -259,21 +299,40 @@ class LoginAsUser_settings {
 			]
 		);
 
-		// Characters limit of login as name
+		// Message Display Position
 		add_settings_field( 
-			'login_as_user_toolbar_position', 
-			esc_html__( 'Toolbar\'s position', 'login-as-user' ), 
+			'message_display_position', 
+			esc_html__( 'Message Display Position', 'login-as-user' ), 
 			array($this->fields, 'selectField'),
 			'login-as-user', 
 			'base_settings_section',
 			[
-				'id' => 'login_as_user_toolbar_position',
-				'default_value' => 'top',
+				'id' => 'message_display_position',
+				'default_value' => 'bottom',
 				'options' => [
 					['id' => 'top', 'label' => esc_html__('Top', 'login-as-user'), 'value' => 'top'],
 					['id' => 'bottom', 'label' => esc_html__('Bottom', 'login-as-user'), 'value' => 'bottom'],
+					['id' => 'none', 'label' => esc_html__('None', 'login-as-user'), 'value' => 'none']
 				],
-				'desc' => __('Choose the position of the "Login as user" toolbar.', 'login-as-user'),
+				'desc' => __('Choose where the login message should appear on the frontend. Only Admins and Managers with "login-as-a-user" privileges can see this message.', 'login-as-user'),
+			]
+		);
+
+		// Show Admin Link in Topbar
+		add_settings_field( 
+			'show_admin_link_in_topbar', 
+			esc_html__( 'Show Admin Link in Topbar', 'login-as-user' ), 
+			array($this->fields, 'selectField'),
+			'login-as-user', 
+			'base_settings_section',
+			[
+				'id' => 'show_admin_link_in_topbar',
+				'default_value' => '1',
+				'options' => [
+					['id' => 'yes', 'label' => esc_html__('Yes', 'login-as-user'), 'value' => 'yes'],
+					['id' => 'no', 'label' => esc_html__('No', 'login-as-user'), 'value' => 'no'],
+				],
+				'desc' => __('Display a link in the WordPress topbar to navigate back to dashboard as Admin.', 'login-as-user'),
 			]
 		);
 
@@ -297,5 +356,7 @@ class LoginAsUser_settings {
 				'desc' => __('In order to update commercial Web357 plugins, you have to enter the Web357 License Key.<br>You can find the License Key in your account settings at Web357.com, in the <a href="//www.web357.com/my-account/web357-license-manager" target="_blank"><strong>Web357 License Key Manager</strong></a> section.', 'login-as-user')
 			]
 		);
+
+		
 	}
 }

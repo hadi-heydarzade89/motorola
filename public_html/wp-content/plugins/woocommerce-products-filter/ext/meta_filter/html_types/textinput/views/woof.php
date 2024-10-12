@@ -1,5 +1,5 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
-<div data-css-class="woof_textinput_container" class="woof_textinput_container woof_container  woof_container_<?php echo esc_attr("textinput_".$meta_key) ?> <?php echo WOOF_HELPER::generate_container_css_classes($meta_key) ?>">
+<div data-css-class="woof_textinput_container" class="woof_textinput_container woof_container  woof_container_<?php echo esc_attr("textinput_".$meta_key) ?> <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes($meta_key)) ?>">
     <div class="woof_container_overlay_item"></div>
     <div class="woof_container_inner">
         <?php

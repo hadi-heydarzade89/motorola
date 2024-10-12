@@ -26,3 +26,15 @@
 .woof_found_count{
     display: none;
 }
+.woof_tm_error_wrapper{
+    text-align: center;
+    padding: 10px;
+    background-color: #f1f0f0;    
+    border-radius: 3px;
+}
+.woof_tm_error_wrapper .dashicons{
+    color: #ff7070;
+}
+.woof_tm_error_wrapper p{
+    font-style: italic;
+}

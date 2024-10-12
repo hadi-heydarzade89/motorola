@@ -24,12 +24,13 @@ class HT_CTC_Chat_Shortcode {
         $options = get_option( 'ht_ctc_chat_options' );
         $ht_ctc_os = array();
 
-        $number_db = (isset($options['number'])) ? esc_attr($options['number']) : '';
-        
         $call_to_action_db = esc_attr( $options['call_to_action'] );
         $pre_filled_db = esc_attr( $options['pre_filled'] );
+        
+        // @since 4.3 if shortcode number attribute is not added, global number will be used at js.
+        // $number_db = (isset($options['number'])) ? esc_attr($options['number']) : '';
+        // $number = __( $number_db , 'click-to-chat-for-whatsapp' );
 
-        $number = __( $number_db , 'click-to-chat-for-whatsapp' );
         $call_to_action = __( $call_to_action_db , 'click-to-chat-for-whatsapp' );
         $pre_filled = __( $pre_filled_db , 'click-to-chat-for-whatsapp' );
 
@@ -84,7 +85,7 @@ class HT_CTC_Chat_Shortcode {
         
         $a = shortcode_atts(
             array(
-                'number' => $number,
+                'number' => '',
                 'call_to_action' => $call_to_action,
                 'pre_filled' => $pre_filled,
                 'style' => $style,
@@ -180,6 +181,7 @@ class HT_CTC_Chat_Shortcode {
         $return_type = "chat";
 
         $style = esc_attr($a["style"]);
+        $style = sanitize_file_name( $style );
 
         // call to action
         $call_to_action   = esc_attr($a["call_to_action"]);
@@ -200,6 +202,12 @@ class HT_CTC_Chat_Shortcode {
         // Hooks
         $ht_ctc_os = apply_filters( 'ht_ctc_fh_os', $ht_ctc_os );
 
+        $data_number = '';
+        // if number not null, then add data-number attribute
+        if ( '' !== $number ) {
+            $data_number .= ' data-number="'.$number.'"';
+        }
+
 
         $o = '';
 
@@ -207,14 +215,8 @@ class HT_CTC_Chat_Shortcode {
         $sc_path = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/styles-shortcode/sc-style-' . $style. '.php';
 
         if ( is_file( $sc_path ) ) {
-            $o .= '<div data-number="'.$number.'" data-pre_filled="'.$pre_filled.'" data-style="'.$style.'" style="display: inline; cursor: pointer; z-index: 99999999; '.$css.'" class="'.$class_names.' ht-ctc-inline">';
+            $o .= '<div '.$data_number.' data-pre_filled="'.$pre_filled.'" data-style="'.$style.'" style="display: inline; cursor: pointer; z-index: 99999999; '.$css.'" class="'.$class_names.' ht-ctc-inline">';
             include $sc_path;
-            $o .= '</div>';
-        } else {
-            // if style is not in the list.. 
-            $img_link = plugins_url("./new/inc/assets/img/whatsapp-logo.svg", HT_CTC_PLUGIN_FILE );
-            $o .= '<div data-number="'.$number.'" data-pre_filled="'.$pre_filled.'" style="display: inline; cursor: pointer; z-index: 99999999; '.$css.'" class="'.$class_names.' ht-ctc-inline">';
-            $o .= '<img class="img-icon-sc sc_item pointer style-3-sc" src="'.$img_link.'" alt="'.$call_to_action.'" style="height: 50px; '.$css.' " >';
             $o .= '</div>';
         }
 

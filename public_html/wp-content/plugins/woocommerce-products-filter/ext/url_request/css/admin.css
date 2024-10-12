@@ -24,6 +24,11 @@
     width: fit-content;
     vertical-align: top;
 }
+.woof_seo_rule_up, .woof_seo_rule_down{
+    display: inline-block;
+    width: fit-content;
+    vertical-align: top;    
+}
 
 .woof_seo_rules_item{
     border: solid 1px #ddd;
@@ -88,3 +93,13 @@
     line-height: 1.6em;
 }
 
+.woof_seo_rule_up .dashicons-arrow-up-alt, .woof_seo_rule_down .dashicons-arrow-down-alt{
+    line-height: 1.6em;
+}
+#woof_seo_rules_list > .woof_seo_rules_item:last-of-type .woof_seo_rule_down{
+    display: none;
+}
+
+#woof_seo_rules_list > .woof_seo_rules_item:first-of-type .woof_seo_rule_up{
+    display: none;
+}

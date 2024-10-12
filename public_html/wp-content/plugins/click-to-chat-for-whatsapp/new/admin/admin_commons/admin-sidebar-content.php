@@ -18,9 +18,16 @@ $othersettings = get_option('ht_ctc_othersettings');
                 <li class="active">
                     <div class="collapsible-header"><?php _e( 'Contact Us', 'click-to-chat-for-whatsapp' ); ?></div>	
                     <div class="collapsible-body">
-                        <p class="description"><a target="_blank" href="https://wordpress.org/support/plugin/click-to-chat-for-whatsapp/#new-topic-0"> Click to Chat</a> (main)</p>
-                        <p class="description" style="margin-top:8px;"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/support"> Click to Chat PRO</a> (main, pro)</p>
                         <?php
+                        if ( defined( 'HT_CTC_PRO_VERSION' ) ) {
+                            ?>
+                            <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/support"> Click to Chat PRO</a></p>
+                            <?php
+                        } else {
+                            ?>
+                            <p class="description"><a target="_blank" href="https://wordpress.org/support/plugin/click-to-chat-for-whatsapp/#new-topic-0"> Click to Chat</a></p>
+                            <?php
+                        }
                         do_action('ht_ctc_ah_admin_sidebar_contact_details' );
                         ?>
                     </div>	
@@ -46,6 +53,7 @@ $othersettings = get_option('ht_ctc_othersettings');
                             <p class="description">&emsp;With different time ranges</p>
                             <p class="description">&emsp;Hide agent when offline or</p>
                             <p class="description">&emsp;Display offline agent with next available time</p>
+                            <p class="description">Display based on country [NEW]</p>
                             <p class="description">Google Ads Conversion</p>
                             <p class="description">Business Hours</p>
                             <p class="description">&emsp;Hide when offline</p>

@@ -47,8 +47,11 @@ do_action('woocommerce_before_edit_account_form'); ?>
     </p>
     <?php
     $nationalId = getNationalId(get_current_user_id());
-    $readOnly = checkNationalCode($nationalId) ? 'readonly' : '';
-    $nationalId = empty($readOnly) ? '' : $nationalId;
+    $readOnly = '';
+    if (!empty($nationalId)) {
+        $readOnly = checkNationalCode($nationalId) ? 'readonly' : '';
+    }
+
     ?>
     <p class="woocommerce-form-row woocommerce-form-row--last form-row form-row-last">
         <label for="user_account_national_id">کد ملی&nbsp;<span class="required">*</span></label>

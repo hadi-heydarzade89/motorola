@@ -5,28 +5,51 @@
     $(function () {
 
         // variables
-        var v = '3.31.1';
+        var v = '4.9';
         var url = window.location.href;
         var post_title = (typeof document.title !== "undefined") ? document.title : '';
-        // is_mobile yes/no,  desktop > 1024 
-        var is_mobile = (typeof screen.width !== "undefined" && screen.width > 1024) ? "no" : "yes";
+        var is_mobile = 'no';
+
+        try {
+            // Where user can install app. 
+            is_mobile = (typeof navigator.userAgent !== "undefined" && navigator.userAgent.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i)) ? "yes" : "no";
+            console.log('User agent: is_mobile: ' + is_mobile);
+        } catch (e) {}
+
+        if ('no' == is_mobile) {
+            // is_mobile yes/no,  desktop > 1025
+            var is_mobile = (typeof screen.width !== "undefined" && screen.width > 1025) ? "no" : "yes";
+            console.log('screen width: is_mobile: ' + is_mobile);
+        }
+
         var no_num = '';
 
         var ht_ctc_storage = {};
 
-        if (localStorage.getItem('ht_ctc_storage')) {
-            ht_ctc_storage = localStorage.getItem('ht_ctc_storage');
-            ht_ctc_storage = JSON.parse(ht_ctc_storage);
+        function getStorageData() {
+            console.log('app.js - getStorageData');
+            if (localStorage.getItem('ht_ctc_storage')) {
+                ht_ctc_storage = localStorage.getItem('ht_ctc_storage');
+                ht_ctc_storage = JSON.parse(ht_ctc_storage);
+                console.log(ht_ctc_storage);
+            }
         }
+        getStorageData();
 
         // get items from ht_ctc_storage
         function ctc_getItem(item) {
+            console.log('app.js - ctc_getItem');
             return (ht_ctc_storage[item]) ? ht_ctc_storage[item] : false;
         }
 
         // set items to ht_ctc_storage storage
         function ctc_setItem(name, value) {
+            console.log(ht_ctc_storage);
+            getStorageData();
+            console.log(ht_ctc_storage);
+            console.log('app.js - ctc_setItem: name: ' + name + ' value: ' + value);
             ht_ctc_storage[name] = value;
+            console.log(ht_ctc_storage);
             var newValues = JSON.stringify(ht_ctc_storage);
             localStorage.setItem('ht_ctc_storage', newValues);
         }
@@ -36,6 +59,10 @@
 
         var ctc_values = {};
         variable_ctc_values();
+
+        // document.dispatchEvent(
+        //     new CustomEvent("ht_ctc_fn_all", { detail: { ht_ctc_storage, ctc_setItem, ctc_getItem } })
+        // );
         
         chat_data();
         start();
@@ -84,8 +111,8 @@
                     'pixel_param_3': { 'key': 'ID', 'value': '{number}' },
                     'pixel_param_4': { 'key': 'Title', 'value': '{title}' },
                 }
-                window.ht_ctc_chat_var = ctc_values;
-                console.log(ht_ctc_chat_var);
+                window.ht_ctc_variables = ctc_values;
+                console.log(ht_ctc_variables);
             }
             console.log(ctc_values);
         }
@@ -165,17 +192,24 @@
                         //     $('#ctc_opt').prop('checked', true);
                         // }
                         if ($('#ctc_opt').is(':checked') || ctc_getItem('g_optin')) {
+                            console.log('optin');
                             ht_ctc_link(ht_ctc_chat);
+                            // close greetings dialog
+                            greetings_close_500();
                         } else {
+                            console.log('animate option checkbox');
                             $('.ctc_opt_in').show(400).fadeOut('1').fadeIn('1');
                         }
                     } else {
                         ht_ctc_link(ht_ctc_chat);
+                        // close greetings dialog
+                        greetings_close_500();
                     }
 
                     document.dispatchEvent(
                         new CustomEvent("ht_ctc_event_greetings")
                     );
+
                 });
 
                 // optin - checkbox on change
@@ -186,6 +220,7 @@
                             ctc_setItem('g_optin', 'y');
                             setTimeout(() => {
                                 ht_ctc_link(ht_ctc_chat);
+                                greetings_close_500();
                             }, 500);
                         }
                     });
@@ -222,6 +257,7 @@
         }
 
         function greetings_display() {
+            console.log('greetings_display');
 
             if ($('.ht_ctc_chat_greetings_box').length) {
 
@@ -242,8 +278,17 @@
                     new CustomEvent("ht_ctc_event_after_chat_displayed", { detail: { ctc, greetings_open, greetings_close } })
                 );
 
-                if (ctc.g_init && 'open' == ctc.g_init && 'user_closed' !== ctc_getItem('g_user_action')) {
-                    greetings_open('init');
+                if (ctc.g_init && 'user_closed' !== ctc_getItem('g_user_action')) {
+                    console.log('g_init');
+                    // initial stage - default(preset): open on desktop, closes on mobile. open: open on all devices.
+                    if ('default' == ctc.g_init) {
+                        // if desktop then open
+                        if (is_mobile !== 'yes') {
+                            greetings_open('init');
+                        }
+                    } else if('open' == ctc.g_init) {
+                        greetings_open('init');
+                    }
                 }
 
 
@@ -263,12 +308,21 @@
          * 
          */
         function greetings_open(message = 'open') {
-            console.log('open');
+            console.log('Greetings open: ' + message);
 
             stop_notification_badge();
 
             $('.ctc_cta_stick').remove();
-            $('.ht_ctc_chat_greetings_box').show(70);
+
+
+            // todo:l enhance entry animations effects.. 
+            if ('init' == message) {
+                $('.ht_ctc_chat_greetings_box').show(70);
+            } else {
+                $('.ht_ctc_chat_greetings_box').show(400);
+            }
+
+
             $('.ht_ctc_chat_greetings_box').addClass('ctc_greetings_opened').removeClass('ctc_greetings_closed');
             ctc_setItem('g_action', message);
             if ('user_opened' == message) {
@@ -276,9 +330,21 @@
             }
         }
 
+        function greetings_close_500() {
+            setTimeout(() => {
+                greetings_close('chat_clicked');
+            }, 500);
+        }
+
         function greetings_close(message = 'close') {
-            console.log('close');
-            $('.ht_ctc_chat_greetings_box').hide(70);
+            console.log('Greetings close: ' + message);
+            
+            if ('element' == message) {
+                $('.ht_ctc_chat_greetings_box').hide(70);
+            } else {
+                $('.ht_ctc_chat_greetings_box').hide(400);
+            }
+
             $('.ht_ctc_chat_greetings_box').addClass('ctc_greetings_closed').removeClass('ctc_greetings_opened');
             ctc_setItem('g_action', message);
             if ('user_closed' == message) {
@@ -444,12 +510,26 @@
             }
 
             // apply variables
-            function apply_variables(v, number) {
+            function apply_variables(v) {
                 console.log('apply_variables');
+                var number = (ctc.chat_number && '' !== ctc.chat_number) ? ctc.chat_number : ctc.number;
+                console.log(number);
+
                 try {
+
+                    console.log(v);
+                    document.dispatchEvent(
+                        new CustomEvent("ht_ctc_event_apply_variables", { detail: { v } })
+                    );
+
+                    console.log('window.apply_variables_value: ' + window.apply_variables_value);
+
+                    // if window.apply_variables_value is set.. then use that value. can set by extension or so.
+                    v = (typeof window.apply_variables_value !== "undefined") ? window.apply_variables_value : v;
+
+                    console.log(v);
+
                     // v = v.replace(/\{number\}/gi, number);
-                    // v = v.replace(/\{title\}/gi, post_title);
-                    // v = v.replace(/\{url\}/gi, url);
                     v = v.replace('{number}', number);
                     v = v.replace('{title}', post_title);
                     v = v.replace('{url}', url);
@@ -464,15 +544,13 @@
                 new CustomEvent("ht_ctc_event_analytics")
             );
 
-            // global number (fixed, user created elememt)
-            // todo:l multi agent, random number.. 
-            var id = ctc.number;
+            var id = (ctc.chat_number && '' !== ctc.chat_number) ? ctc.chat_number : ctc.number;
 
             // if its shortcode
-            if (values.classList.contains('ht-ctc-sc')) {
-                // shortcode number
-                id = values.getAttribute('data-number');
-            }
+            // if (values.classList.contains('ht-ctc-sc')) {
+            //     // shortcode number
+            //     id = values.getAttribute('data-number');
+            // }
 
             console.log(id);
 
@@ -480,14 +558,19 @@
 
             /**
              * if installed using GTM then gtag may not work. so user can create event using dataLayer object.
+             * if google anlatyics installed using gtm (from GTM user can create event using gtm datalayer object, ...)
              * 
              * if google analytics installed directly. then gtag works. 
-             */
-
-
-            /**
+             * 
              * analytics - event names added to ht_ctc_chat_var (its loads most cases with out issue) and event params added to ht_ctc_variables.
              */
+
+
+            var ga_parms = {};
+            var ga_category = 'Click to Chat for WhatsApp';
+            var ga_action = 'chat: ' + id;
+            var ga_label = post_title + ', ' + url;
+
 
             // if ga_enabled
             if (ctc.ga) {
@@ -495,13 +578,7 @@
 
                 var g_event_name = (ctc.g_an_event_name && '' !== ctc.g_an_event_name) ? ctc.g_an_event_name : 'click to chat';
                 console.log('Event Name: ' + g_event_name);
-                g_event_name = apply_variables(g_event_name, id);
-
-                var ga_parms = {};
-                var ga_category = 'Click to Chat for WhatsApp';
-                var ga_action = 'chat: ' + id;
-                var ga_label = post_title + ', ' + url;
-
+                g_event_name = apply_variables(g_event_name);
 
                 // if ht_ctc_variables is not loaded to front end, then use default values.
                 // since 3.31. with user defined event name, params
@@ -517,34 +594,114 @@
                             console.log(p);
                             var k = p['key'];
                             var v = p['value'];
-                            k = apply_variables(k, id);
-                            v = apply_variables(v, id);
+                            k = apply_variables(k);
+                            v = apply_variables(v);
                             console.log(k);
                             console.log(v);
                             ga_parms[k] = v;
                         }
                     });
                 }
+                console.log('ga_parms');
                 console.log(ga_parms);
 
-                if (typeof gtag !== "undefined") {
-                    // gtag may not work if google anlatyics installed using gtm (from GTM user can create event usind gtm datalayer object, ...)
-                    console.log('gtag');
-                    gtag('event', g_event_name, ga_parms);
-                } else if (typeof ga !== "undefined" && typeof ga.getAll !== "undefined") {
-                    console.log('ga');
-                    var tracker = ga.getAll();
-                    tracker[0].send("event", ga_category, ga_action, ga_label);
-                    // ga('send', 'event', 'check ga_category', 'ga_action', 'ga_label');
-                    // ga.getAll()[0].send("event", 'check ga_category', 'ga_action', 'ga_label');
-                } else if (typeof __gaTracker !== "undefined") {
-                    console.log('__gaTracker');
-                    __gaTracker('send', 'event', ga_category, ga_action, ga_label);
+                var gtag_count = 0;
+
+                // is gtag function added by plugin
+                var is_ctc_add_gtag = 'no';
+
+                if (typeof dataLayer !== "undefined") {
+
+                    console.log('event with gtag id..');
+
+                    try {
+
+                        // if gtag not defined. then create gtag function
+                        if (typeof gtag == "undefined") {
+                            console.log('gtag not defined');
+                            window.gtag = function () {
+                                dataLayer.push(arguments);
+                            };
+                            is_ctc_add_gtag = 'yes';
+                        }
+
+                        var tags_list = [];
+
+                        function call_gtag(tag_id) {
+
+                            tag_id = tag_id.toUpperCase();
+                            console.log('fn: call_gtag(): ' + tag_id);
+
+                            
+                            console.log(tags_list);
+
+                            if (tags_list.includes(tag_id)) {
+                                console.log('tag_id already included');
+                                return;
+                            }
+
+                            tags_list.push(tag_id);
+                            console.log(tags_list);
+
+                            // if starts with g- or gt-
+                            if (tag_id.startsWith('G-') || tag_id.startsWith('GT-')) {
+
+                                ga_parms['send_to'] = tag_id;
+                                console.log(ga_parms);
+
+                                console.log('gtag event - send_to: ' + tag_id);
+
+                                gtag('event', g_event_name, ga_parms);
+
+                                gtag_count++;
+
+                            }
+                        }
+
+                        if (window.google_tag_data && window.google_tag_data.tidr && window.google_tag_data.tidr.destination) {
+                            console.log('google_tag_data tidr destination');
+                            console.log(window.google_tag_data.tidr.destination);
+
+                            // for each tag_id
+                            for (var tag_id in window.google_tag_data.tidr.destination) {
+                                console.log('google_tag_data destination - loop: ' + tag_id);
+                                call_gtag(tag_id);
+                            }
+                        }
+
+                        dataLayer.forEach(function (i) {
+                            console.log('datalayer - loop');
+                            console.log(i);
+                            if (i[0] == 'config' && i[1]) {
+                                tag_id = i[1];
+                                console.log('datalayer - loop - tag_id: ' + tag_id);
+                                call_gtag(tag_id);
+                            }
+                        });
+
+                    } catch (e) {}
+                }
+
+                // if above method sending event with tag_id is not worked. and if gtag is already defined. then call default gtag (safe side)
+                if (0 == gtag_count && 'no' == is_ctc_add_gtag) {
+                    if (typeof gtag !== "undefined") {
+                        console.log('calling gtag - default');
+                        gtag('event', g_event_name, ga_parms);
+                    } else if (typeof ga !== "undefined" && typeof ga.getAll !== "undefined") {
+                        console.log('ga');
+                        var tracker = ga.getAll();
+                        tracker[0].send("event", ga_category, ga_action, ga_label);
+                        // ga('send', 'event', 'check ga_category', 'ga_action', 'ga_label');
+                        // ga.getAll()[0].send("event", 'check ga_category', 'ga_action', 'ga_label');
+                    } else if (typeof __gaTracker !== "undefined") {
+                        console.log('__gaTracker');
+                        __gaTracker('send', 'event', ga_category, ga_action, ga_label);
+                    }
                 }
 
             }
 
-            // dataLayer
+            // dataLayer (for GTM)
             if (typeof dataLayer !== "undefined") {
                 console.log('dataLayer');
                 dataLayer.push({
@@ -555,7 +712,8 @@
                     'url': url,
                     'event_category': ga_category,
                     'event_label': ga_label,
-                    'event_action': ga_action
+                    'event_action': ga_action,
+                    'ref': 'dataLayer push'
                 });
             }
 
@@ -598,8 +756,8 @@
                                 console.log(p);
                                 var k = p['key'];
                                 var v = p['value'];
-                                k = apply_variables(k, id);
-                                v = apply_variables(v, id);
+                                k = apply_variables(k);
+                                v = apply_variables(v);
                                 console.log(k);
                                 console.log(v);
                                 pixelParams[k] = v;
@@ -614,22 +772,29 @@
 
         }
 
-        // link - chat
+        /**
+         *  link - chat
+         * 
+         * @used floating chat, shortcode, custom element. ht_ctc_chat_greetings_box_link click
+         */
         function ht_ctc_link(values) {
+
+            console.log('ht_ctc_link');
+            console.log(values);
 
             console.log(ctc.number);
             document.dispatchEvent(
                 new CustomEvent("ht_ctc_event_number", { detail: { ctc } })
             );
-
             console.log(ctc.number);
 
             var number = ctc.number;
             var pre_filled = ctc.pre_filled;
 
-            if (values.hasAttribute('data-number')) {
-                console.log('has number attribute');
+            if ( values.hasAttribute('data-number') && '' !== values.getAttribute('data-number') ) {
+                console.log('data-number is added');
                 number = values.getAttribute('data-number');
+                console.log('data-number: ' + number);
             }
 
             if (values.hasAttribute('data-pre_filled')) {
@@ -643,7 +808,8 @@
             try {
                 pre_filled = pre_filled.replaceAll('%', '%25');
 
-                pre_filled = pre_filled.replace(/\[url]/gi, url);
+                var update_url = window.location.href;
+                pre_filled = pre_filled.replace(/\[url]/gi, update_url);
 
                 // pre_filled = encodeURIComponent(pre_filled);
                 pre_filled = encodeURIComponent(decodeURI(pre_filled));
@@ -753,6 +919,9 @@
 
             window.open(base_url, url_target, specs);
 
+            // number assigned to the clicked element.
+            ctc.chat_number = number;
+
             // analytics
             ht_ctc_chat_analytics(values);
 
@@ -768,24 +937,45 @@
             // shortcode - click
             $(document).on('click', '.ht-ctc-sc-chat', function () {
 
-                var number = this.getAttribute('data-number');
-                var pre_filled = this.getAttribute('data-pre_filled');
-                pre_filled = pre_filled.replace(/\[url]/gi, url);
-                pre_filled = encodeURIComponent(pre_filled);
+                /**
+                 * @since 4.3 calling ht_ctc_link function directly... 
+                 * benficts using global number.. page level settings number, .. random number, .. shortcode number.
+                 * url structure.. 
+                 */
+                // var number = this.hasAttribute('data-number') ? this.getAttribute('data-number') : '';
+                // console.log(typeof number);
 
-                if (ctc.url_structure_d && is_mobile !== 'yes') {
-                    // web.whatsapp - if web api is enabled and is not mobile
-                    window.open('https://web.whatsapp.com/send' + '?phone=' + number + '&text=' + pre_filled, '_blank', 'noopener');
-                } else {
-                    // wa.me
-                    window.open('https://wa.me/' + number + '?text=' + pre_filled, '_blank', 'noopener');
-                }
+                // console.log('shortcode number: ' + number);
 
-                // analytics
-                ht_ctc_chat_analytics(this);
+                // if ('' == number) {
+                //     console.log('shortcode: adding global number');
+                //     number = ctc.number;
+                //     console.log('shortcode: global number: ' + number);
+                // }
+                
+                // var pre_filled = this.getAttribute('data-pre_filled');
+                // pre_filled = pre_filled.replace(/\[url]/gi, url);
+                // pre_filled = encodeURIComponent(pre_filled);
 
-                // hook
-                hook(number);
+                // if (ctc.url_structure_d && is_mobile !== 'yes') {
+                //     // web.whatsapp - if web api is enabled and is not mobile
+                //     window.open('https://web.whatsapp.com/send' + '?phone=' + number + '&text=' + pre_filled, '_blank', 'noopener');
+                // } else {
+                //     // wa.me
+                //     window.open('https://wa.me/' + number + '?text=' + pre_filled, '_blank', 'noopener');
+                // }
+
+                // // analytics
+                // ctc.chat_number = number;
+
+                // ht_ctc_chat_analytics(this);
+
+                // // webhook
+                // hook(number);
+
+                console.log('shortcode click');
+                ht_ctc_link(this);
+
             });
         }
 

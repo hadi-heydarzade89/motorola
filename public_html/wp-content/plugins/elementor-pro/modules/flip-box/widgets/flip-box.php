@@ -31,6 +31,24 @@ class Flip_Box extends Base_Widget {
 		return 'eicon-flip-box';
 	}
 
+	protected function is_dynamic_content(): bool {
+		return false;
+	}
+
+	/**
+	 * Get style dependencies.
+	 *
+	 * Retrieve the list of style dependencies the widget requires.
+	 *
+	 * @since 3.24.0
+	 * @access public
+	 *
+	 * @return array Widget style dependencies.
+	 */
+	public function get_style_depends(): array {
+		return [ 'widget-flip-box' ];
+	}
+
 	protected function register_controls() {
 
 		$this->start_controls_section(
@@ -112,40 +130,6 @@ class Flip_Box extends Base_Widget {
 		);
 
 		$this->add_control(
-			'icon_view',
-			[
-				'label' => esc_html__( 'View', 'elementor-pro' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'default' => esc_html__( 'Default', 'elementor-pro' ),
-					'stacked' => esc_html__( 'Stacked', 'elementor-pro' ),
-					'framed' => esc_html__( 'Framed', 'elementor-pro' ),
-				],
-				'default' => 'default',
-				'condition' => [
-					'graphic_element' => 'icon',
-				],
-			]
-		);
-
-		$this->add_control(
-			'icon_shape',
-			[
-				'label' => esc_html__( 'Shape', 'elementor-pro' ),
-				'type' => Controls_Manager::SELECT,
-				'options' => [
-					'circle' => esc_html__( 'Circle', 'elementor-pro' ),
-					'square' => esc_html__( 'Square', 'elementor-pro' ),
-				],
-				'default' => 'circle',
-				'condition' => [
-					'icon_view!' => 'default',
-					'graphic_element' => 'icon',
-				],
-			]
-		);
-
-		$this->add_control(
 			'title_text_a',
 			[
 				'label' => esc_html__( 'Title', 'elementor-pro' ),
@@ -184,16 +168,6 @@ class Flip_Box extends Base_Widget {
 				'name' => 'background_a',
 				'types' => [ 'classic', 'gradient' ],
 				'selector' => '{{WRAPPER}} .elementor-flip-box__front',
-				'fields_options' => [
-					'image' => [
-						'background_lazyload' => [
-							'active' => true,
-							'keys' => [ 'background_a_image', 'url' ],
-							// Using both selectors because the lazy load module supports only a single background control per element.
-							'selector' => '.elementor-flip-box__front, .elementor-flip-box__back',
-						],
-					],
-				],
 			]
 		);
 
@@ -319,7 +293,6 @@ class Flip_Box extends Base_Widget {
 				'dynamic' => [
 					'active' => true,
 				],
-				'placeholder' => esc_html__( 'https://your-link.com', 'elementor-pro' ),
 			]
 		);
 
@@ -807,6 +780,40 @@ class Flip_Box extends Base_Widget {
 					'graphic_element' => 'icon',
 				],
 				'separator' => 'before',
+			]
+		);
+
+		$this->add_control(
+			'icon_view',
+			[
+				'label' => esc_html__( 'View', 'elementor-pro' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'default' => esc_html__( 'Default', 'elementor-pro' ),
+					'stacked' => esc_html__( 'Stacked', 'elementor-pro' ),
+					'framed' => esc_html__( 'Framed', 'elementor-pro' ),
+				],
+				'default' => 'default',
+				'condition' => [
+					'graphic_element' => 'icon',
+				],
+			]
+		);
+
+		$this->add_control(
+			'icon_shape',
+			[
+				'label' => esc_html__( 'Shape', 'elementor-pro' ),
+				'type' => Controls_Manager::SELECT,
+				'options' => [
+					'circle' => esc_html__( 'Circle', 'elementor-pro' ),
+					'square' => esc_html__( 'Square', 'elementor-pro' ),
+				],
+				'default' => 'circle',
+				'condition' => [
+					'icon_view!' => 'default',
+					'graphic_element' => 'icon',
+				],
 			]
 		);
 

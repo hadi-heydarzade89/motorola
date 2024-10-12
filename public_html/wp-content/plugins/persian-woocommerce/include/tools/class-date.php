@@ -303,16 +303,16 @@ class Persian_Woocommerce_Date {
 
 		foreach ( $dates as $year => $months ) {
 
-			printf( '<optgroup label="سال %s">', CalendarUtils::convertNumbers( $year ) );
+			printf( '<optgroup label="سال %s">', esc_attr( CalendarUtils::convertNumbers( $year ) ) );
 
 			foreach ( $months as $month => $count ) {
 
 				printf( '<option %s value="%d">%s %s (%s)</option>',
 					selected( $year . zeroise( $month, 2 ), $m, true ),
-					$year . zeroise( $month, 2 ),
-					$month_names[ $month ],
-					CalendarUtils::convertNumbers( $year ),
-					CalendarUtils::convertNumbers( $count )
+					intval( $year . zeroise( $month, 2 ) ),
+					esc_attr( $month_names[ $month ] ),
+					esc_attr( CalendarUtils::convertNumbers( $year ) ),
+					esc_attr( CalendarUtils::convertNumbers( $count ) )
 				);
 
 			}
@@ -416,16 +416,16 @@ class Persian_Woocommerce_Date {
 
 		foreach ( $dates as $year => $months ) {
 
-			printf( '<optgroup label="سال %s">', CalendarUtils::convertNumbers( $year ) );
+			printf( '<optgroup label="سال %s">', esc_attr( CalendarUtils::convertNumbers( $year ) ) );
 
 			foreach ( $months as $month => $count ) {
 
 				printf( '<option %s value="%d">%s %s (%s)</option>',
 					selected( $year . zeroise( $month, 2 ), $m, true ),
-					$year . zeroise( $month, 2 ),
-					$month_names[ $month ],
-					CalendarUtils::convertNumbers( $year ),
-					CalendarUtils::convertNumbers( $count )
+					intval( $year . zeroise( $month, 2 ) ),
+					esc_attr( $month_names[ $month ] ),
+					esc_attr( CalendarUtils::convertNumbers( $year ) ),
+					esc_attr( CalendarUtils::convertNumbers( $count ) )
 				);
 
 			}

@@ -427,15 +427,15 @@ class Manager {
 		$post_status = get_post_status( $post_id );
 
 		if ( get_post_type( $post_id ) !== Source_Local::CPT ) {
-			return new \WP_Error( 'template_error', esc_html__( 'Invalid template type or template does not exist', 'elementor' ) );
+			return new \WP_Error( 'template_error', esc_html__( 'Invalid template type or template does not exist.', 'elementor' ) );
 		}
 
 		if ( 'private' === $post_status && ! current_user_can( 'read_private_posts', $post_id ) ) {
-			return new \WP_Error( 'template_error', esc_html__( 'You do not have permission to access this template', 'elementor' ) );
+			return new \WP_Error( 'template_error', esc_html__( 'You do not have permission to access this template.', 'elementor' ) );
 		}
 
 		if ( 'publish' !== $post_status && ! current_user_can( 'edit_post', $post_id ) ) {
-			return new \WP_Error( 'template_error', esc_html__( 'You do not have permission to export this template', 'elementor' ) );
+			return new \WP_Error( 'template_error', esc_html__( 'You do not have permission to export this template.', 'elementor' ) );
 		}
 
 		$source = $this->get_source( $args['source'] );
@@ -668,6 +668,10 @@ class Manager {
 			'export_template',
 			'direct_import_template',
 		];
+
+		if ( 'direct_import_template' === $action && ! User::is_current_user_can_upload_json() ) {
+			return;
+		}
 
 		if ( in_array( $action, $whitelist_methods, true ) ) {
 			$result = $this->$action( $_REQUEST ); // phpcs:ignore -- Nonce already verified.

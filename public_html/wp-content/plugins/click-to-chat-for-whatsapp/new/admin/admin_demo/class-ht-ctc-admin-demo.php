@@ -135,14 +135,15 @@ class HT_CTC_Admin_Demo {
         $js = 'admin-demo.js';
         
         
-        if ( isset($os['debug_mode']) || (isset($_GET) && isset($_GET['debug'])) ) {
+        if ( defined('HT_CTC_DEBUG_MODE') ) {
             $js = 'dev/admin-demo.dev.js';
         }
         
-        global $wp_version;
-
+        
         $args = true;
-
+        
+        global $wp_version;
+        
         // if wp version is not null and is greater than 6.3
         if ( !$wp_version && version_compare( $wp_version, '6.3', '>=' ) ) {
             $args = array(
@@ -164,7 +165,7 @@ class HT_CTC_Admin_Demo {
         $css = 'admin-demo.css';
         $animation_css = 'admin-demo-animations.css';
 
-        if ( isset($os['debug_mode']) || (isset($_GET) && isset($_GET['debug'])) ) {
+        if ( defined('HT_CTC_DEBUG_MODE') ) {
             $css = 'dev/admin-demo.dev.css';
             $animation_css = 'dev/admin-demo-animations.dev.css';
         }
@@ -277,6 +278,8 @@ class HT_CTC_Admin_Demo {
                 </span>
                 <?php
             }
+            // no need to santize_file_name. its not user input
+            $style = sanitize_file_name( $style );
             $path = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/styles/style-' . $style. '.php';
             include $path;
             ?>
@@ -299,7 +302,6 @@ class HT_CTC_Admin_Demo {
                 <a target="_blank" href="<?= $cs_link ?>" class="ctc_cs_link">Customize Styles</a> | <a target="_blank" href="<?= $os_link ?>">Animations, Notification badge</a>
             </p>
             <a href="https://holithemes.com/plugins/click-to-chat/admin-live-preview-messages/#no-live-preview/" target="_blank" class="description ctc_no_demo_notice ctc_init_display_none">No live demo for this feature</a>
-            <!-- todo:l finish how the demo messages will work.. -->
             <a href="https://holithemes.com/plugins/click-to-chat/admin-live-preview-messages/" target="_blank" class="description ctc_demo_messages ctc_init_display_none"></a>
         </div>
         <?php

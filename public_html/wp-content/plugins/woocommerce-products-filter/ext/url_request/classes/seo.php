@@ -69,8 +69,8 @@ class WOOF_SEO {
         }
         foreach ($rules as $key => $rule_data) {
             if (isset($rule_data['url'])) {
-                $needle = array('{any}', '/');
-                $replase = array('.*', '\/');
+				$needle = array('{any}', '/', 'end');
+                $replase = array('.*', '\/', '$');
                 $url = str_replace($needle, $replase, $rule_data['url']);
                 preg_match('/' . $url . '/', $current_url, $matches);
                 if ($matches) {

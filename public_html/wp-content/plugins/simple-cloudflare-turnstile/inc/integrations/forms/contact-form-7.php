@@ -9,10 +9,10 @@ add_filter('wpcf7_form_elements', 'do_shortcode');
 function cfturnstile_cf7_shortcode() {
 	ob_start();
 	$id = wp_rand();
-	echo '<div class="cf7-cf-turnstile" style="margin-top: -10px; margin-bottom: -15px;">';
+	echo '<div class="cf7-cf-turnstile" style="margin-top: 0px; margin-bottom: -15px;">';
 	echo cfturnstile_field_show('.wpcf7-submit', 'turnstileCF7Callback', 'contact-form-7', '-cf7-' . $id);
 	?>
-	<script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll('.wpcf7-form').forEach(function(e){e.addEventListener('submit',function(){if(document.getElementById('cf-turnstile-cf7-<?php echo $id; ?>')){setTimeout(function(){turnstile.render('#cf-turnstile-cf7-<?php echo $id; ?>');},4000)}})})});</script>
+	<script>document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll('.wpcf7-form').forEach(function(e){e.addEventListener('submit',function(){if(document.getElementById('cf-turnstile-cf7-<?php echo $id; ?>')){setTimeout(function(){turnstile.reset('#cf-turnstile-cf7-<?php echo $id; ?>');},1000)}})})});</script>
 	<?php
 	echo '</div>';
 	$thecontent = ob_get_contents();

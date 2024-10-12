@@ -43,8 +43,8 @@
         <div class="woof-form-shortcode-item">
             <?php
             $autohide_g = array(
-                0 => esc_html("No", 'woocommerce-products-filter'),
-                1 => esc_html("Yes", 'woocommerce-products-filter'),
+                0 => esc_html__("No", 'woocommerce-products-filter'),
+                1 => esc_html__("Yes", 'woocommerce-products-filter'),
             );
             ?>
             <h4>autohide</h4>
@@ -59,9 +59,9 @@
         <div class="woof-form-shortcode-item">
             <?php
             $autosubmit_g = array(
-                -1 => esc_html("Default", 'woocommerce-products-filter'),
-                0 => esc_html("No", 'woocommerce-products-filter'),
-                1 => esc_html("Yes", 'woocommerce-products-filter'),
+                -1 => esc_html__("Default", 'woocommerce-products-filter'),
+                0 => esc_html__("No", 'woocommerce-products-filter'),
+                1 => esc_html__("Yes", 'woocommerce-products-filter'),
             );
             ?>
             <h4>autosubmit</h4>
@@ -76,8 +76,8 @@
         <div class="woof-form-shortcode-item">
             <?php
             $is_ajax_g = array(
-                0 => esc_html("No", 'woocommerce-products-filter'),
-                1 => esc_html("Yes", 'woocommerce-products-filter'),
+                0 => esc_html__("No", 'woocommerce-products-filter'),
+                1 => esc_html__("Yes", 'woocommerce-products-filter'),
             );
             ?>
             <h4>is_ajax</h4>
@@ -92,8 +92,8 @@
         <div class="woof-form-shortcode-item">
             <?php
             $ajax_redraw_g = array(
-                0 => esc_html("No", 'woocommerce-products-filter'),
-                1 => esc_html("Yes", 'woocommerce-products-filter'),
+                0 => esc_html__("No", 'woocommerce-products-filter'),
+                1 => esc_html__("Yes", 'woocommerce-products-filter'),
             );
             ?>
             <h4>ajax_redraw</h4>
@@ -109,8 +109,8 @@
         <div class="woof-form-shortcode-item">
             <?php
             $start_filtering_btn_g = array(
-                0 => esc_html("No", 'woocommerce-products-filter'),
-                1 => esc_html("Yes", 'woocommerce-products-filter'),
+                0 => esc_html__("No", 'woocommerce-products-filter'),
+                1 => esc_html__("Yes", 'woocommerce-products-filter'),
             );
             ?>
             <h4>start_filtering_btn</h4>
@@ -126,9 +126,9 @@
         <div class="woof-form-shortcode-item">
             <?php
             $btn_position_g = array(
-                'b' => esc_html("Bottom", 'woocommerce-products-filter'),
-                't' => esc_html("Top", 'woocommerce-products-filter'),
-                'tb' => esc_html("Top&bottom", 'woocommerce-products-filter'),
+                'b' => esc_html__("Bottom", 'woocommerce-products-filter'),
+                't' => esc_html__("Top", 'woocommerce-products-filter'),
+                'tb' => esc_html__("Top&bottom", 'woocommerce-products-filter'),
             );
             ?>
             <h4>btn_position</h4>
@@ -144,9 +144,9 @@
         <div class="woof-form-shortcode-item">
             <?php
             $dynamic_recount_g = array(
-                -1 => esc_html("Default", 'woocommerce-products-filter'),
-                0 => esc_html("No", 'woocommerce-products-filter'),
-                1 => esc_html("Yes", 'woocommerce-products-filter'),
+                -1 => esc_html__("Default", 'woocommerce-products-filter'),
+                0 => esc_html__("No", 'woocommerce-products-filter'),
+                1 => esc_html__("Yes", 'woocommerce-products-filter'),
             );
             ?>
             <h4>dynamic_recount</h4>
@@ -162,8 +162,8 @@
         <div class="woof-form-shortcode-item">
             <?php
             $hide_terms_count_txt_g = array(
-                0 => esc_html("No", 'woocommerce-products-filter'),
-                1 => esc_html("Yes", 'woocommerce-products-filter'),
+                0 => esc_html__("No", 'woocommerce-products-filter'),
+                1 => esc_html__("Yes", 'woocommerce-products-filter'),
             );
             ?>
             <h4>hide_terms_count_txt</h4>
@@ -184,8 +184,8 @@
         <div class="woof-form-shortcode-item">
             <?php
             $mobile_mode_g = array(
-                0 => esc_html("No", 'woocommerce-products-filter'),
-                1 => esc_html("Yes", 'woocommerce-products-filter'),
+                0 => esc_html__("No", 'woocommerce-products-filter'),
+                1 => esc_html__("Yes", 'woocommerce-products-filter'),
             );
             ?>
             <h4>mobile_mode</h4>
@@ -208,7 +208,7 @@
             ?>
             <h4>tax_only</h4>
             <select multiple="multiple" name="tax_only" class="chosen_select shortcode-generator-value">
-                <option value="none"><?php echo esc_html("None", 'woocommerce-products-filter'); ?></option>
+                <option value="none"><?php echo esc_html__("None", 'woocommerce-products-filter'); ?></option>
                 <?php foreach ($all_taxonomies as $all_taxonomy_key => $all_taxonomy_val) { ?>
                     <option value="<?php echo esc_html($all_taxonomy_key); ?>"><?php echo esc_html($all_taxonomy_val); ?></option>
                 <?php } ?>
@@ -227,7 +227,7 @@
             ?>
             <h4>by_only</h4>
             <select multiple="multiple" name="by_only" class="chosen_select shortcode-generator-value">
-                <option value="none"><?php echo esc_html("None", 'woocommerce-products-filter'); ?></option>
+                <option value="none"><?php echo esc_html__("None", 'woocommerce-products-filter'); ?></option>
                 <?php foreach ($by_items as $by_item_key => $by_item_val) { ?>
                     <option value="<?php echo esc_html($by_item_key); ?>"><?php echo esc_html($by_item_val); ?></option>
                 <?php } ?>
@@ -257,7 +257,7 @@
             <h4>taxonomies</h4>
             <div class="woof_select_taxonomy_wrapper">
                 <select  class="chosen_select woof_select_taxonomy">
-                    <option value="-1"><?php echo esc_html("Select taxonomy", 'woocommerce-products-filter'); ?></option>
+                    <option value="-1"><?php echo esc_html__("Select taxonomy", 'woocommerce-products-filter'); ?></option>
                     <?php foreach ($all_taxonomies_array as $all_filters_key => $all_filters_val) { ?>
                         <option value="<?php echo esc_html($all_filters_key); ?>"><?php echo esc_html($all_filters_val->label); ?></option>
                     <?php } ?>
@@ -268,7 +268,7 @@
                 </select>
             </div>
             <button style="display: none;" class="button btn-warning woof_add_taxonomies_shortcode">
-                <?php echo esc_html("Select Taxonomies Terms", 'woocommerce-products-filter'); ?>
+                <?php echo esc_html__("Select Taxonomies Terms", 'woocommerce-products-filter'); ?>
                 <span class="dashicons dashicons-migrate"></span>
             </button>
             <input name="taxonomies" class="shortcode-generator-value">
@@ -281,11 +281,11 @@
 
         <div class="woof-form-shortcode-generate">
             <button  class="button btn-warning generate_woof_shortcode">
-                <?php echo esc_html("Generate shortcode", 'woocommerce-products-filter'); ?>
+                <?php echo esc_html__("Generate shortcode", 'woocommerce-products-filter'); ?>
                 <span class="dashicons dashicons-shortcode"></span>
             </button>
             <button  style="display: none;"class="button btn-warning copy_woof_shortcode">
-                <?php echo esc_html("Copy", 'woocommerce-products-filter'); ?>
+                <?php echo esc_html__("Copy", 'woocommerce-products-filter'); ?>
                 <span class="dashicons dashicons-admin-page"></span>
             </button>
             <span style="display: none;" class="copy_woof_shortcode_info"><?php echo esc_html_e("Copied!", 'woocommerce-products-filter'); ?></span>

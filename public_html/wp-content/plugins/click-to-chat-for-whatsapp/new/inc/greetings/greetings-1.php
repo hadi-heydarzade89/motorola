@@ -64,6 +64,13 @@ if ('s' == $g_size) {
 
 $main_css .= ('yes' == $rtl_page) ? "padding: 18px 18px $main_padding_bottom 24px;" : "padding: 18px 24px $main_padding_bottom 18px;" ;
 
+$g_header_image_css = "border-radius:50%;height:50px; width:50px;";
+if ('yes' == $rtl_page) {
+    $g_header_image_css .= "margin-left:9px;";
+} else {
+    $g_header_image_css .= "margin-right:9px;";
+}
+
 if ('' !== $message_box_bg_color) {
     $message_box_css .= "padding:6px 8px 8px 9px;background-color:$message_box_bg_color;";
 }
@@ -150,7 +157,7 @@ if ( '' !== $ht_ctc_greetings['header_content'] ) {
         <div class="ctc_g_heading" style="<?= $header_css ?>">
             <div style="display: flex; align-items: center;">
 
-                <div class="greetings_header_image" style="border-radius:50%;height:50px; width:50px; margin-right:9px;">
+                <div class="greetings_header_image" style="<?= $g_header_image_css ?>">
                     <img style="display:inline-block; border-radius:50%; height:50px; width:50px;" src="<?= $g_header_image ?>" alt="">
                     <?php
                     if ( isset($greetings['g_header_online_status']) ) {
@@ -183,7 +190,7 @@ if ( '' !== $ht_ctc_greetings['header_content'] ) {
 
 <?php
 // if main content is available
-if ('' !== $ht_ctc_greetings['main_content']) { 
+if ('' !== $ht_ctc_greetings['main_content']) {
     if ('yes' == $main_bg_image) {
         // if bg image is added
         ?>

@@ -1,6 +1,5 @@
 "use strict";
 function woof_init_mselects() {
-
     if (woof_select_type == 'chosen') {
         jQuery('select.woof_mselect').chosen();
     } else if (woof_select_type == 'selectwoo') {

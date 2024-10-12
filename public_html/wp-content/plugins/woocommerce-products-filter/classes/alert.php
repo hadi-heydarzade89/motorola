@@ -97,9 +97,9 @@ class WOOF_ADV {
         ?>
         <div class="notice notice-info is-dismissible" id="woof_alert_woocs" style="display: none;">
             <p class="plugin-card-woocommerce-currency-switcher" <?php if ($screen->id != 'plugin-install'): ?>id="plugin-filter"<?php endif; ?>>
-                <?php esc_html_e('For more marketing attraction of your woocommerce shop HUSKY team recommends you to install', 'woocommerce-products-filter') ?> <a href="<?php echo network_admin_url('plugin-install.php?tab=plugin-information') ?>&amp;plugin=woocommerce-currency-switcher&amp;TB_iframe=true&amp;width=600&amp;height=550" class="thickbox open-plugin-details-modal" aria-label="HUSKY team recommends" data-title="WOOCS">WOOCS - WooCommerce Currency Switcher </a>.
-                <a href="<?php echo network_admin_url('plugin-install.php?tab=plugin-information') ?>&amp;plugin=woocommerce-currency-switcher&amp;TB_iframe=true&amp;width=600&amp;height=550" class="thickbox open-plugin-details-modal button" aria-label="More information about WOOCS" data-title="WOOCS" id="woof_alert_install_button"><?php esc_html_e('Install', 'woocommerce-products-filter') ?></a>
-                <a class="install-now button" data-slug="woocommerce-currency-switcher" href="<?php echo network_admin_url('update.php?action=install-plugin') ?>&amp;plugin=woocommerce-currency-switcher&amp;_wpnonce=<?php echo wp_create_nonce('install-plugin-woocommerce-currency-switcher') ?>" aria-label="Install woocommerce currency switcher now" data-name="WOOCS - Woocommerce currency switcher" style="display:none"><?php esc_html_e('Install Now', 'woocommerce-products-filter') ?></a>
+                <?php esc_html_e('For more marketing attraction of your woocommerce shop HUSKY team recommends you to install', 'woocommerce-products-filter') ?> <a href="<?php echo esc_url(network_admin_url('plugin-install.php?tab=plugin-information')) ?>&amp;plugin=woocommerce-currency-switcher&amp;TB_iframe=true&amp;width=600&amp;height=550" class="thickbox open-plugin-details-modal" aria-label="HUSKY team recommends" data-title="WOOCS">WOOCS - WooCommerce Currency Switcher </a>.
+                <a href="<?php echo esc_url(network_admin_url('plugin-install.php?tab=plugin-information')) ?>&amp;plugin=woocommerce-currency-switcher&amp;TB_iframe=true&amp;width=600&amp;height=550" class="thickbox open-plugin-details-modal button" aria-label="More information about WOOCS" data-title="WOOCS" id="woof_alert_install_button"><?php esc_html_e('Install', 'woocommerce-products-filter') ?></a>
+                <a class="install-now button" data-slug="woocommerce-currency-switcher" href="<?php echo esc_url(network_admin_url('update.php?action=install-plugin')) ?>&amp;plugin=woocommerce-currency-switcher&amp;_wpnonce=<?php echo esc_attr(wp_create_nonce('install-plugin-woocommerce-currency-switcher')) ?>" aria-label="Install woocommerce currency switcher now" data-name="WOOCS - Woocommerce currency switcher" style="display:none"><?php esc_html_e('Install Now', 'woocommerce-products-filter') ?></a>
             </p>
         </div>
         <script>
@@ -113,7 +113,7 @@ class WOOF_ADV {
                 alert_w.on('click', '.notice-dismiss', function (e) {
                     $.post(ajaxurl, {action: 'woof_dismiss_alert',
                         alert: 'woocommerce_currency_switcher',
-                        sec: <?php echo wp_create_nonce('woof_dissmiss_alert') ?>
+                        sec: <?php echo esc_attr(wp_create_nonce('woof_dissmiss_alert')) ?>
                     });
                 });
 
@@ -141,9 +141,9 @@ class WOOF_ADV {
         ?>
         <div class="notice notice-info is-dismissible" id="woof_alert_woobe" style="display: none;">
             <p class="plugin-card-woo-bulk-editor" <?php if ($screen->id != 'plugin-install'): ?>id="plugin-woobe"<?php endif; ?>>
-                <?php esc_html_e('Try plugin for managing and BULK edit WooCommerce Products data in robust and flexible way', 'woocommerce-products-filter') ?>: <a href="<?php echo network_admin_url('plugin-install.php?tab=plugin-information') ?>&amp;plugin=woo-bulk-editor&amp;TB_iframe=true&amp;width=600&amp;height=550" class="thickbox open-plugin-details-modal" aria-label="HUSKY team recommends" data-title="BEAR">BEAR - WooCommerce Bulk Editor Professional</a>.
-                <a href="<?php echo network_admin_url('plugin-install.php?tab=plugin-information') ?>&amp;plugin=woo-bulk-editor&amp;TB_iframe=true&amp;width=600&amp;height=550" class="thickbox open-plugin-details-modal button" aria-label="More information about BEAR" data-title="BEAR" id="woof_alert_install_button_woobe"><?php esc_html_e('Install', 'woocommerce-products-filter') ?></a>
-                <a class="install-now button" data-slug="woo-bulk-editor" href="<?php echo network_admin_url('update.php?action=install-plugin') ?>&amp;plugin=woo-bulk-editor&amp;_wpnonce=<?php echo wp_create_nonce('install-plugin-woo-bulk-editor') ?>" aria-label="Install woocommerce bulk editor now" data-name="Woocommerce bulk editor" style="display:none"><?php esc_html_e('Install Now', 'woocommerce-products-filter') ?></a>
+                <?php esc_html_e('Try plugin for managing and BULK edit WooCommerce Products data in robust and flexible way', 'woocommerce-products-filter') ?>: <a href="<?php echo esc_url(network_admin_url('plugin-install.php?tab=plugin-information')) ?>&amp;plugin=woo-bulk-editor&amp;TB_iframe=true&amp;width=600&amp;height=550" class="thickbox open-plugin-details-modal" aria-label="HUSKY team recommends" data-title="BEAR">BEAR - WooCommerce Bulk Editor Professional</a>.
+                <a href="<?php echo esc_url(network_admin_url('plugin-install.php?tab=plugin-information')) ?>&amp;plugin=woo-bulk-editor&amp;TB_iframe=true&amp;width=600&amp;height=550" class="thickbox open-plugin-details-modal button" aria-label="More information about BEAR" data-title="BEAR" id="woof_alert_install_button_woobe"><?php esc_html_e('Install', 'woocommerce-products-filter') ?></a>
+                <a class="install-now button" data-slug="woo-bulk-editor" href="<?php echo esc_url(network_admin_url('update.php?action=install-plugin')) ?>&amp;plugin=woo-bulk-editor&amp;_wpnonce=<?php echo esc_attr(wp_create_nonce('install-plugin-woo-bulk-editor')) ?>" aria-label="Install woocommerce bulk editor now" data-name="Woocommerce bulk editor" style="display:none"><?php esc_html_e('Install Now', 'woocommerce-products-filter') ?></a>
             </p>
         </div>
         <script>
@@ -158,7 +158,7 @@ class WOOF_ADV {
                     $.post(ajaxurl, {
                         action: 'woof_dismiss_alert',
                         alert: 'woocommerce_bulk_editor',
-                        sec: <?php echo wp_create_nonce('woof_dissmiss_alert') ?>
+                        sec: <?php echo esc_attr(wp_create_nonce('woof_dissmiss_alert')) ?>
                     });
                 });
 
@@ -186,9 +186,9 @@ class WOOF_ADV {
         ?>
         <div class="notice notice-info is-dismissible" id="woof_alert_woot" style="display: none;">
             <p class="plugin-card-profit-products-tables-for-woocommerce" <?php if ($screen->id != 'plugin-install'): ?>id="plugin-woot"<?php endif; ?>>
-                <?php esc_html_e('Try HUSKY compatible plugin for displaying your WooCommerce shop products in table format', 'woocommerce-products-filter') ?>: <a href="<?php echo network_admin_url('plugin-install.php?tab=plugin-information') ?>&amp;plugin=profit-products-tables-for-woocommerce&amp;TB_iframe=true&amp;width=600&amp;height=550" class="thickbox open-plugin-details-modal" aria-label="HUSKY team recommends" data-title="WOOT">WOOT - Active Products Tables for WooCommerce</a>.
-                <a href="<?php echo network_admin_url('plugin-install.php?tab=plugin-information') ?>&amp;plugin=profit-products-tables-for-woocommerce&amp;TB_iframe=true&amp;width=600&amp;height=550" class="thickbox open-plugin-details-modal button" aria-label="More information about WOOT" data-title="WOOT" id="woof_alert_install_button_woot"><?php esc_html_e('Install', 'woocommerce-products-filter') ?></a>
-                <a class="install-now button" data-slug="woot-products-tables" href="<?php echo network_admin_url('update.php?action=install-plugin') ?>&amp;plugin=profit-products-tables-for-woocommerce&amp;_wpnonce=<?php echo wp_create_nonce('install-plugin-woot-products-tables') ?>" aria-label="Install woot now" data-name="Woocommerce woot" style="display:none"><?php esc_html_e('Install Now', 'woocommerce-products-filter') ?></a>
+                <?php esc_html_e('Try HUSKY compatible plugin for displaying your WooCommerce shop products in table format', 'woocommerce-products-filter') ?>: <a href="<?php echo esc_url(network_admin_url('plugin-install.php?tab=plugin-information')) ?>&amp;plugin=profit-products-tables-for-woocommerce&amp;TB_iframe=true&amp;width=600&amp;height=550" class="thickbox open-plugin-details-modal" aria-label="HUSKY team recommends" data-title="WOOT">WOOT - Active Products Tables for WooCommerce</a>.
+                <a href="<?php echo esc_url(network_admin_url('plugin-install.php?tab=plugin-information')) ?>&amp;plugin=profit-products-tables-for-woocommerce&amp;TB_iframe=true&amp;width=600&amp;height=550" class="thickbox open-plugin-details-modal button" aria-label="More information about WOOT" data-title="WOOT" id="woof_alert_install_button_woot"><?php esc_html_e('Install', 'woocommerce-products-filter') ?></a>
+                <a class="install-now button" data-slug="woot-products-tables" href="<?php echo esc_url(network_admin_url('update.php?action=install-plugin')) ?>&amp;plugin=profit-products-tables-for-woocommerce&amp;_wpnonce=<?php echo esc_attr(wp_create_nonce('install-plugin-woot-products-tables')) ?>" aria-label="Install woot now" data-name="Woocommerce woot" style="display:none"><?php esc_html_e('Install Now', 'woocommerce-products-filter') ?></a>
             </p>
         </div>
         <script>
@@ -203,7 +203,7 @@ class WOOF_ADV {
                     $.post(ajaxurl, {
                         action: 'woof_dismiss_alert',
                         alert: 'woot_products_tables',
-                        sec: <?php echo wp_create_nonce('woof_dissmiss_alert') ?>
+                        sec: <?php echo esc_attr(wp_create_nonce('woof_dissmiss_alert')) ?>
                     });
                 });
 

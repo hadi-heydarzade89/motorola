@@ -161,6 +161,23 @@ class HT_CTC_Admin_Main_Page {
                 $intl = '2';
             }
         }
+
+        // styles added in rtl pages..
+        if ( function_exists('is_rtl') && is_rtl() ) {
+            ?>
+            <style id="ctc-rtl">
+            [dir="rtl"] .row_number,
+            [dir="rtl"] .description {
+                text-align: right;
+            }
+            [dir="rtl"] .iti__dropdown-content {
+                left: 0;
+                /* right: auto !important; */
+            }
+            </style>
+            <?php
+        }
+
         ?>
 
         <style>
@@ -186,17 +203,39 @@ class HT_CTC_Admin_Main_Page {
              *  i.e. $intl 
              *    2: intl-tel-input
              *    1: no intl-tel-input
+             * 
              */
             if ( '' !== $number && substr($number, 0, 1) !== '+') {
                 $number = "+$number";
             }
             ?>
-            <div class="row" id="row_number">
-                <div class="col s12 m8">
+            <div class="row row_number" id="row_number">
+                <div class="col s12">
                     <input type="text" name="ht_ctc_chat_options[number]" data-name="ht_ctc_chat_options[number]" class="intl_number browser-default main_wa_number" value="<?= $number ?>">
                     <input name="ht_ctc_chat_options[intl]" style="display: none;" value="1" type="hidden">
                     <p class="description"><?php _e( "WhatsApp or WhatsApp business number", 'click-to-chat-for-whatsapp' ); ?></p>
+                    <?php
+                    // display plain input number filed link.. if number filed is null/blank.
+                    //  - ..
+                    $ht_ctc_admin_pages = get_option('ht_ctc_admin_pages');
+                    $save_count = ( isset( $ht_ctc_admin_pages['count'] ) ) ? $ht_ctc_admin_pages['count'] : 0;
+
+                    // if number is not set/null and save count is more than 5 then display the link.
+                    if ( '' == $number ) {
+                        if ( $save_count > 5 ) {
+                            ?>
+                            <p class="description">If WhatsApp number is not saving? load plain <a href="<?= admin_url( 'admin.php?page=click-to-chat&number-field=1' ); ?>">input field</a></p>
+                            <?php
+                        }
+                    }
+                    ?>
+
                 </div>
+            </div>
+
+
+            <div class="intl_error" style="display:none;">
+                <p class="description ht_ctc_error_message">If the WhatsApp number field is not working, <a href="<?= admin_url( 'admin.php?page=click-to-chat&number-field=1' ); ?>">click here</a> to load the plain input field instead of the INTL library.</p>
             </div>
             <?php
         } else {
@@ -239,6 +278,7 @@ class HT_CTC_Admin_Main_Page {
                 <p class="description"><?php _e( "WhatsApp or WhatsApp business number with ", 'click-to-chat-for-whatsapp' ); ?> <a target="_blank" href="https://holithemes.com/blog/country-codes/"><?php _e( 'country code', 'click-to-chat-for-whatsapp' ); ?></a> </p>
                 <p class="description"><?php _e( '( E.g. 916123456789 - herein e.g. 91 is country code, 6123456789 is the mobile number )', 'click-to-chat-for-whatsapp' ); ?> - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/whatsapp-number/"><?php _e( 'more info', 'click-to-chat-for-whatsapp' ); ?></a> </p>
 
+                <p class="description">Display WhatsApp number input field using: <a href="<?= admin_url( 'admin.php?page=click-to-chat&number-field=2' ); ?>">Intl input library</a></p>
                 
 
             </div>
@@ -251,7 +291,8 @@ class HT_CTC_Admin_Main_Page {
 
         if ( ! defined( 'HT_CTC_PRO_VERSION' ) ) {
             ?>
-            <p class="description">PRO: <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/multi-agent/">Multi Agent</a> | <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/random-number/">Random Number</a></p>
+            <p class="description greetings_links">Greetings dialog(message window) at <a href="<?= admin_url( 'admin.php?page=click-to-chat-greetings' ); ?>" target="_blank">Greetings</a> page</p>
+            <p class="description greetings_links">PRO: <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/multi-agent/">Multi Agent</a> | <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/random-number/">Random Number</a></p>
             <?php
         }
 
@@ -341,7 +382,7 @@ class HT_CTC_Admin_Main_Page {
         <ul class="collapsible url_structure" id="url_structure">
         <li class="">
         <div class="collapsible-header"><?php _e( 'URL Structure', 'click-to-chat-for-whatsapp' ); ?>
-            <span class="dashicons dashicons-arrow-down-alt2"></span>
+            <span class="right_icon dashicons dashicons-arrow-down-alt2"></span>
         </div>
         <div class="collapsible-body">
 
@@ -457,18 +498,24 @@ class HT_CTC_Admin_Main_Page {
         }
 
         ?>
-        <p class="description">🎉 <a target="_blank" class="em_1_1" href="<?= admin_url( 'admin.php?page=click-to-chat-greetings' ); ?>">Greetings</a>: Greetings-1, Greetings-2, Form filling(PRO), Multi Agent(PRO)</p>
+        <p class="description">Menu:</p>
+        <p class="description">👋 <a target="_blank" class="em_1_1" href="<?= admin_url( 'admin.php?page=click-to-chat-greetings' ); ?>">Greetings</a>: Greetings-1, Greetings-2, Form filling(PRO), Multi Agent(PRO)</p>
         <p class="description">🎨 <a target="_blank" class="em_1_1" href="<?= admin_url( 'admin.php?page=click-to-chat-customize-styles' ); ?>">Customize Styles</a>: (Customize style to match your website design - color, size, call to action hover effects, ...)</p>
         <p class="description">⚙️ <a target="_blank" class="em_1_1" href="<?= admin_url( 'admin.php?page=click-to-chat-other-settings' ); ?>">Other Settings</a>: (Analytics, Animations, Notification Badge, Webhooks, ...)</p>
-        <p class="description">🛍️ <a target="_blank" class="em_1_1" href="<?= $woo_link ?>">WooCommerce</a>: <?= $woo_text ?></p>
+        <p class="description">🛒 <a target="_blank" class="em_1_1" href="<?= $woo_link ?>">WooCommerce</a>: <?= $woo_text ?></p>
         <br>
-        <p class="description">🌈 <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/custom-element">Custom Element: </a>Class name: ctc_chat  |  Href/Link: #ctc_chat</p>
-        <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/shortcodes-chat">Shortcodes for Chat: </a>[ht-ctc-chat]</p>
-        <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/faq">Frequently Asked Questions (FAQ)</a></p>
-        <p class="description"><a target="_blank" href="https://wordpress.org/support/plugin/click-to-chat-for-whatsapp/#new-topic-0">Contact Us</a></p>
+        <p class="description">Features:</p>
+        <p class="description">🧩 <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/custom-element">Custom Element: </a>Class name: ctc_chat  |  Href/Link: #ctc_chat</p>
+        <p class="description">🔤 <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/shortcodes-chat">Shortcodes for Chat: </a>[ht-ctc-chat]</p>
+        <br>
+        <p class="description">Support:</p>
+        <p class="description">📚 <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/faq">Frequently Asked Questions (FAQ)</a></p>
+        <p class="description">🤝 <a target="_blank" href="https://wordpress.org/support/plugin/click-to-chat-for-whatsapp/#new-topic-0">WordPress Forum</a></p>
+        <p class="description">📧 <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/support/">Contact Us</a></p>
 
         <?php
 
+        // clear cache hover text
         $clear_cache_text = 'ctc_no_hover_text';
 
         if ( function_exists('wp_cache_clear_cache') || function_exists('w3tc_pgcache_flush') || function_exists('wpfc_clear_all_cache') || function_exists('rocket_clean_domain') || function_exists('sg_cachepress_purge_cache') || function_exists('wpo_cache_flush') ) {
@@ -484,6 +531,14 @@ class HT_CTC_Admin_Main_Page {
         <span style="display: none;" id="<?= $clear_cache_text ?>"><?php _e( 'Please clear the cache after save changes', 'click-to-chat-for-whatsapp' ); ?></span>
         <?php
         
+        // if multilingual plugin is active then display a message to 'After saving the settings, clear/update the translation'
+        // pll_count_posts
+        if ( function_exists('icl_register_string') || function_exists('pll_register_string')  ) {
+            ?>
+            <p class="description" style="margin-top: 24px;">Multilingual: </p>
+            <p class="description">🚩 If multilingual plugins are installed, After saving the changes, clear/update the string translations</p>
+            <?php
+        }
     }
 
     
@@ -544,8 +599,7 @@ class HT_CTC_Admin_Main_Page {
                     } else {
                         $new_input[$key] = sanitize_text_field( $input[$key] );
                     }
-                }
-                
+                }            
             }
         }
 
@@ -560,7 +614,6 @@ class HT_CTC_Admin_Main_Page {
 
         return $new_input;
     }
-
 
 }
 

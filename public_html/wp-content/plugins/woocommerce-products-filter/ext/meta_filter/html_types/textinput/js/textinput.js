@@ -6,7 +6,6 @@ function woof_init_meta_text_input() {
         var val = jQuery(this).val();
 	val=val.replace("\'","\&#039;");
 
-       console.log(val)
         var uid = jQuery(this).data('uid');
         if (e.keyCode == 13 /*&& val.length > 0*/) {
             woof_text_do_submit = true;

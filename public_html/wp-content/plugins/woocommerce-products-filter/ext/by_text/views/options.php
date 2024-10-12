@@ -114,7 +114,7 @@ if (!defined('ABSPATH'))
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][image]" value="<?php echo esc_url($woof_settings[$key]['image']) ?>" />
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][sku_compatibility]" value="<?php echo intval($woof_settings[$key]['sku_compatibility']) ?>" />
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][notes_for_customer]" value="<?php echo wp_kses_post(wp_unslash($woof_settings[$key]['notes_for_customer'])); ?>" />
-    <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][template]" value="<?php echo stripcslashes(esc_html($woof_settings[$key]['template'])); ?>" />
+    <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][template]" value="<?php echo esc_html($woof_settings[$key]['template']); ?>" />
 
     <div id="woof-modal-content-by_text" style="display: none;">
 

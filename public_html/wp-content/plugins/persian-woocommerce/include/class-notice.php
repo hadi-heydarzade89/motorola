@@ -22,16 +22,16 @@ class Persian_Woocommerce_Notice {
 
 		foreach ( $this->notices() as $notice ) {
 
-			if ( $notice['condition'] == false || $this->is_dismiss( $notice['id'] ) ) {
+			if ( ! $notice['condition'] || $this->is_dismiss( $notice['id'] ) ) {
 				continue;
 			}
 
-			$dismissible = $notice['dismiss'] ? 'is-dismissible' : '';
-
-			$notice_id      = esc_attr( $notice['id'] );
 			$notice_content = strip_tags( $notice['content'], '<p><a><input><b><img><ul><ol><li>' );
 
-			printf( '<div class="notice pw_notice notice-success %s" id="pw_%s"><p>%s</p></div>', $dismissible, $notice_id, $notice_content );
+			printf( '<div class="notice pw_notice notice-success %s" id="pw_%s"><p>%s</p></div>',
+				esc_attr( $notice['dismiss'] ? 'is-dismissible' : '' ),
+				esc_attr( $notice['id'] ),
+				strip_tags( $notice['content'], '<p><a><input><b><img><ul><ol><li>' ) );
 
 			break;
 		}
@@ -50,7 +50,7 @@ class Persian_Woocommerce_Notice {
                         notice = notice.replace('pw_', '');
 
                         $.ajax({
-                            url: "<?php echo admin_url( 'admin-ajax.php' ) ?>",
+                            url: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ) ?>",
                             type: 'post',
                             data: {
                                 notice: notice,
@@ -63,7 +63,7 @@ class Persian_Woocommerce_Notice {
                 });
 
                 $.ajax({
-                    url: "<?php echo admin_url( 'admin-ajax.php' ) ?>",
+                    url: "<?php echo esc_url( admin_url( 'admin-ajax.php' ) ) ?>",
                     type: 'post',
                     data: {
                         action: 'pw_update_notice',
@@ -234,7 +234,7 @@ class Persian_Woocommerce_Notice {
 
 		check_ajax_referer( 'pw_dismiss_notice', 'nonce' );
 
-		$this->set_dismiss( $_POST['notice'] );
+		$this->set_dismiss( sanitize_text_field( $_POST['notice'] ) );
 
 		die();
 	}

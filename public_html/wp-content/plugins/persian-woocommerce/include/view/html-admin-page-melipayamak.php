@@ -2,10 +2,8 @@
 /**
  * Admin View: Gateways
  */
-if ( ! defined( 'ABSPATH' ) ) {
-	exit;
-}
 
+defined( 'ABSPATH' ) || exit;
 
 ?>
 <div class="main-box font-iran-sans my-10">
@@ -82,7 +80,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<div class="text-center  mb-2">
-				<a href="<?php echo admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-sms' ); ?>"
+				<a href="<?php echo esc_url( admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-sms' ) ); ?>"
 				   class="flex w-full items-center justify-center gap-2 bg-gray-button rounded-[3px] py-3 sm:px-5 px-3  hover:shadow-xl hover:-translate-y-0.5 a2:hover"
 				   target="_blank">
                     <span class="rtl" style="font-size: 16px;">
@@ -255,7 +253,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			</div>
 
 			<div class="text-center  mb-2">
-				<a href="<?php echo admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-sms' ); ?>"
+				<a href="<?php echo esc_url( admin_url( 'plugin-install.php?tab=plugin-information&plugin=persian-woocommerce-sms' ) ); ?>"
 				   class="flex w-full items-center justify-center gap-2 bg-gray-button rounded-[3px] py-3 sm:px-5 px-3  hover:shadow-xl hover:-translate-y-0.5 a2:hover"
 				   target="_blank">
                     <span class="rtl" style="font-size: 16px;">
@@ -1120,7 +1118,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
     .main-box ul {
         padding-right: 0.75rem;
-        list-style-image: url("<?php echo PW()->plugin_url( 'assets/images/check.png' ); ?>");
+        list-style-image: url("<?php echo esc_url(PW()->plugin_url( 'assets/images/check.png' )); ?>");
     }
 
     .main-box ul li {

@@ -3,7 +3,7 @@ Theme Name:         Electro Child
 Theme URI:          https://themeforest.net/item/electro-electronics-store-woocommerce-theme/15720624
 Author:             Hadi Heydarzade
 Template:           electro
-Version:            0.3.9
+Version:            0.4.6
 Text Domain:        electrochild
 */
 
@@ -14,6 +14,18 @@ Text Domain:        electrochild
     font-weight: normal;
     src: url('assets/fonts/IRANYekanXFaNum-Regular.woff') format('woff'),
     url('assets/fonts/IRANYekanXFaNum-Regular.woff2') format('woff2');
+}
+html, body {
+    overflow: auto !important; /* Ensure scrolling is enabled */
+}
+
+
+@font-face {
+    font-family: IRANYekanEnglishNumber;
+    font-style: normal;
+    font-weight: normal;
+    src: url('assets/fonts/IRANYekanX-Regular.woff') format('woff'),
+    url('assets/fonts/IRANYekanX-Regular.woff2') format('woff2');
 }
 
 body {
@@ -30,7 +42,7 @@ h1 {
 
 .primary-nav-menu .nav-inline > .menu-item + .menu-item {
     margin-right: 16px !important;
-}
+    }
 
 .shopping-cart-section {
     width: auto;
@@ -210,6 +222,7 @@ ul[data-view="grid-extended"] .product-short-description {
 .product-card .card-body {
     flex: unset;
     max-width: unset;
+    width: 100%;
 }
 
 .product-card.product .price-add-to-cart {
@@ -261,10 +274,6 @@ ul[data-view="grid-extended"] .product-short-description {
 .elementor-menu-cart__footer-buttons {
     display: flex;
     justify-content: space-between;
-}
-
-.woocommerce-cart-form__cart-item.cart_item {
-    display: flex;
 }
 
 .widget_shopping_cart_content {
@@ -322,11 +331,69 @@ ul[data-view="grid-extended"] .product-short-description {
     font-size: 20px;
     color: #000 !important;
 }
+
 .mini-cart-product-container .quantity {
     margin-right: unset;
 }
-.home .entry-header{
-  display: none;
+
+.home .entry-header {
+    display: none;
+}
+
+.product:hover .hover-area {
+    display: none !important;
+}
+
+.woocommerce-error .electro-error-link {
+    font-weight: bold;
+    color: #000 !important;
+}
+
+.woocommerce-form-row {
+    position: relative;
+}
+
+.woocommerce-input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+}
+
+.motorola-error {
+    position: absolute;
+    color: red;
+    font-weight: bolder;
+    min-width: 196px;
+}
+
+.woocommerce-input-wrapper .motorola-error {
+    bottom: -25px;
+}
+.DTFC_LeftBodyLiner{
+    padding-right: 0!important;
+}
+
+
+
+img, .container {
+    max-width: 100% !important; 
+    width: 100% !important;
+}
+
+
+/* .blockUI, .blur-layer, .overlay {
+    display: none !important;
+    background: none !important;
+} */
+
+html, body {
+    overflow-x: hidden !important; 
+}
+body form.woocommerce-checkout
+{
+    margin: auto;
+    width: 50%;
+    max-width: 50%;
 }
 
 @media (max-width: 576px) {
@@ -334,5 +401,45 @@ ul[data-view="grid-extended"] .product-short-description {
         display: flex !important;
         flex-direction: column !important;
         height: auto !important;
+    }
+}
+@media (max-width: 768px) {
+    .primary-nav-menu {
+        display: block !important; /* the menu is visible in the mobile size */
+    }
+    .ht_ctc_style.ht_ctc_chat_style {
+        position: fixed;  
+        bottom: 20px;     
+        left: 20px;       
+        z-index: 9999;    
+        }
+
+    .menu-toggle {
+        display: block !important; 
+        cursor: pointer;
+    }
+    body form.woocommerce-checkout
+{
+    margin: auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+    /* hide the desktop menu if menu is active in mobile size */
+    .desktop-menu {
+        display: none !important;
+    }
+
+    .off-canvas-bg-opacity .site-content::before {
+        z-index: 1 !important; /* Fix for the blur layer on mobile */
+        
+    }
+
+    body {
+        overflow-y: auto; /* vertical scrolling only */
+    }
+    img, .container {
+        max-width: 100% !important; 
+        width: 100% !important;
     }
 }

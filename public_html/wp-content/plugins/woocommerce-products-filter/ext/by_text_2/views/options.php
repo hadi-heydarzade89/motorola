@@ -80,7 +80,7 @@ if (!defined('ABSPATH'))
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][post_links_in_autocomplete]" value="<?php echo intval($woof_settings[$key]['post_links_in_autocomplete']) ?>" />
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][how_to_open_links]" value="<?php echo intval($woof_settings[$key]['how_to_open_links']) ?>" />
     <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][sku_compatibility]" value="<?php echo intval($woof_settings[$key]['sku_compatibility']) ?>" />
-    <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][notes_for_customer]" value="<?php echo stripcslashes(wp_kses_post(wp_unslash($woof_settings[$key]['notes_for_customer']))); ?>" />
+    <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][notes_for_customer]" value="<?php echo wp_kses_post(wp_unslash($woof_settings[$key]['notes_for_customer'])); ?>" />
 
     <div id="woof-modal-content-by_text_2" style="display: none;">
 

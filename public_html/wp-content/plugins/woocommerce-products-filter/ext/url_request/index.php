@@ -123,7 +123,8 @@ final class WOOF_EXT_URL_REQUEST extends WOOF_EXT {
         }
         $this->woof_draw_seo_rules_item('', $lang, $url);
         $seo_rule = ob_get_clean();
-        die($seo_rule);
+		wp_send_json($seo_rule);
+		//die($seo_rule);
     }
 
     public function woof_print_applications_tabs_content() {
@@ -186,7 +187,13 @@ final class WOOF_EXT_URL_REQUEST extends WOOF_EXT {
             </div>
             <div class='woof_seo_rule_delete' >                
                 <a href="#" class="button button-primary woof_seo_rules_delete woof-button" data-key='<?php echo esc_attr($ukey); ?>' title="delete"><span class="dashicons dashicons-trash"></span></a>
-            </div>				
+            </div>
+            <div class='woof_seo_rule_up' >                
+                <a href="#" class="button button-primary woof_seo_rules_move_up woof-button" data-key='<?php echo esc_attr($ukey); ?>' title="delete"><span class="dashicons dashicons-arrow-up-alt"></span></a>
+            </div>
+            <div class='woof_seo_rule_down' >                
+                <a href="#" class="button button-primary woof_seo_rules_move_down woof-button" data-key='<?php echo esc_attr($ukey); ?>' title="delete"><span class="dashicons dashicons-arrow-down-alt"></span></a>
+            </div>			
         </li>
         <?php
     }

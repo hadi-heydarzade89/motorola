@@ -56,6 +56,7 @@ function cfturnstile_settings_list($all = false) {
         'cfturnstile_ajax_comments',
         'cfturnstile_whitelist_users',
         'cfturnstile_whitelist_ips',
+        'cfturnstile_whitelist_agents',
     );
 
     $integrations = array(
@@ -85,6 +86,11 @@ function cfturnstile_settings_list($all = false) {
             'cfturnstile_cf7_all',
         ),
         'wpforms-lite/wpforms.php' => array(
+            'cfturnstile_wpforms',
+            'cfturnstile_wpforms_pos',
+            'cfturnstile_wpforms_disable',
+        ),
+        'wpforms/wpforms.php' => array(
             'cfturnstile_wpforms',
             'cfturnstile_wpforms_pos',
             'cfturnstile_wpforms_disable',
@@ -129,6 +135,7 @@ function cfturnstile_settings_list($all = false) {
         'memberpress/memberpress.php' => array(
             'cfturnstile_mepr_login',
             'cfturnstile_mepr_register',
+            'cfturnstile_mepr_product_ids',
         ),
         'wp-user-frontend/wpuf.php' => array(
             'cfturnstile_wpuf_register',
@@ -142,8 +149,11 @@ function cfturnstile_settings_list($all = false) {
         }
     }
 
-    $settings[] = 'cfturnstile_uninstall_remove'; // Always last
+    $settings[] = 'cfturnstile_log_enable';
+    $settings[] = 'cfturnstile_log';
 
+    $settings[] = 'cfturnstile_uninstall_remove'; // Always last
+    
     return $settings;
 }
 

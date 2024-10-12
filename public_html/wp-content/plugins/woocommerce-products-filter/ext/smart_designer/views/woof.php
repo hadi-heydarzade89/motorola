@@ -249,7 +249,22 @@ if (!empty($sd_options)) {
     $terms_count_printed = 0;
 
     if (!empty($terms) AND is_array($terms)) {
-        echo woof_sd_assemble_terms($tax_slug, $terms, $hidden_terms, $hide_childs, $sd_data, $sd_template, $sd_template_num, $current_request, $show_count, $show_count_dynamic, $hide_dynamic_empty_pos, $not_toggled_terms_count, $sd_type, 0);
+        echo woof_sd_assemble_terms(
+					$tax_slug, 
+					$terms, 
+					$hidden_terms, 
+					$hide_childs, 
+					$sd_data, 
+					$sd_template, 
+					$sd_template_num, 
+					$current_request, 
+					$show_count, 
+					$show_count_dynamic, 
+					$hide_dynamic_empty_pos, 
+					$not_toggled_terms_count, 
+					$sd_type, 
+					0
+				);
 
         if ($not_toggled_terms_count > 0 AND count($terms) > $not_toggled_terms_count) {
             ?>

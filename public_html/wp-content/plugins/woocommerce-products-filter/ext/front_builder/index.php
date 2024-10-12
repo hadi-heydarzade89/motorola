@@ -28,6 +28,9 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
 
     public function __construct() {
         parent::__construct();
+		
+		add_action("woof_after_inline_js", array($this, 'add_js'));
+		
         global $wpdb;
         $this->db = $wpdb;
         $this->table = $this->db->prefix . 'woof_front_builder';
@@ -80,7 +83,38 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
         $this->init();
     }
 
-    public function get_ext_path() {
+	public function add_js() {
+			$str = "";
+	        if ($this->demo) {
+                $str .= ' var woof_front_builder_is_demo=1;';
+            }
+
+            $str .= ' var woof_front_sd_is_a=' . intval(isset(WOOF_EXT::$includes['applications']['sd'])) . ';';
+            $str .= 'var woof_front_show_notes=' . intval(woof()->show_notes) . ';';
+            $str .= 'var woof_lang_front_builder_del="' . esc_html__('Are you sure you want to delete this filter-section?', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_options="' . esc_html__('Options', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_option="' . esc_html__('Option', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_section_options="' . esc_html__('Section Options', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_description="' . esc_html__('Description', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_close="' . esc_html__('Close', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_suggest="' . esc_html__('Suggest the feature', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_good_to_use="' . esc_html__('good to use in content areas', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_confirm_sd="' . esc_html__('Smart Designer item will be created and attached to this filter section and will cancel current type, proceed?', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_creating="' . esc_html__('Creating', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_shortcode="' . esc_html__('Shortcode', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_layout="' . esc_html__('Layout', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_filter_section="' . esc_html__('Section options', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_filter_redrawing="' . esc_html__('filter redrawing', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_filter_redrawn="' . esc_html__('redrawn', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_filter_redrawn="' . esc_html__('redrawn', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_title_top_info="' . esc_html__('this functionality is only visible for the site administrator', 'woocommerce-products-filter') . '";';
+            $str .= 'var woof_lang_front_builder_title_top_info_demo="' . esc_html__('demo mode is activated, and results are visible only to you', 'woocommerce-products-filter') . '";';
+
+            $str .= ';var woof_lang_front_builder_select="+ ' . esc_html__('Add filter section', 'woocommerce-products-filter') . '";';	
+		
+		wp_add_inline_script('woof_front', $str, 'before');
+	}
+	public function get_ext_path() {
         return plugin_dir_path(__FILE__);
     }
 
@@ -357,35 +391,7 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
         add_action('admin_footer', array($this, "admin_footer"));
         add_shortcode("woof_front_builder", array($this, "woof_front_builder"));
 
-        add_action('woof_wp_load_js', function ($str) {
 
-            if ($this->demo) {
-                $str .= ';var woof_front_builder_is_demo=1;';
-            }
-
-            $str .= ';var woof_front_sd_is_a=' . intval(isset(WOOF_EXT::$includes['applications']['sd'])) . ';';
-            $str .= 'var woof_front_show_notes=' . intval(woof()->show_notes) . ';';
-            $str .= 'var woof_lang_front_builder_del="' . esc_html__('Are you sure you want to delete this filter-section?', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_options="' . esc_html__('Options', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_option="' . esc_html__('Option', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_section_options="' . esc_html__('Section Options', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_description="' . esc_html__('Description', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_close="' . esc_html__('Close', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_suggest="' . esc_html__('Suggest the feature', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_good_to_use="' . esc_html__('good to use in content areas', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_confirm_sd="' . esc_html__('Smart Designer item will be created and attached to this filter section and will cancel current type, proceed?', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_creating="' . esc_html__('Creating', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_shortcode="' . esc_html__('Shortcode', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_layout="' . esc_html__('Layout', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_filter_section="' . esc_html__('Section options', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_filter_redrawing="' . esc_html__('filter redrawing', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_filter_redrawn="' . esc_html__('redrawn', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_filter_redrawn="' . esc_html__('redrawn', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_title_top_info="' . esc_html__('this functionality is only visible for the site administrator', 'woocommerce-products-filter') . '";';
-            $str .= 'var woof_lang_front_builder_title_top_info_demo="' . esc_html__('demo mode is activated, and results are visible only to you', 'woocommerce-products-filter') . '";';
-
-            return $str . ';var woof_lang_front_builder_select="+ ' . esc_html__('Add filter section', 'woocommerce-products-filter') . '";';
-        });
     }
 
     private function is_admin() {
@@ -791,6 +797,9 @@ final class WOOF_FRONT_BUILDER extends WOOF_EXT {
 		}
         $woof_settings = get_option('woof_settings', []);
         $slug = $alias; //default slug
+		if (!is_array($woof_settings)) {
+			$woof_settings = array();
+		}
 		if (!isset($woof_settings['slug_alias']) || !is_array($woof_settings['slug_alias'])) {
 			$woof_settings['slug_alias'] = array();
 		}

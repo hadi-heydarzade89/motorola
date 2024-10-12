@@ -26,18 +26,20 @@ class HT_CTC_Admin_Scripts {
     // Register css styles, javascript files only on 'click-to-chat' page
     function register_scripts_admin($hook) {
 
-        $os = get_option('ht_ctc_othersettings');
 
         // true/false
         $load_js_bottom = apply_filters( 'ht_ctc_fh_load_admin_js_bottom', true );
 
         
         $js = 'admin.js';
+        /**
+         * greetings js. greetings_template, editor related. required in greetings page, woo page
+         */
         $greetings_js = 'greetings.js';
 
         $css = 'admin.css';
         
-        if ( isset($os['debug_mode']) || (isset($_GET) && isset($_GET['debug'])) ) {
+        if ( defined('HT_CTC_DEBUG_MODE') ) {
             $js = 'dev/admin.dev.js';
             $greetings_js = 'dev/greetings.dev.js';
             
@@ -60,6 +62,7 @@ class HT_CTC_Admin_Scripts {
             wp_enqueue_style('ctc_admin_md_css', plugins_url( "new/admin/admin_assets/css/$md_css", HT_CTC_PLUGIN_FILE ) , '', HT_CTC_VERSION );
             wp_enqueue_style('ctc_admin_css', plugins_url( "new/admin/admin_assets/css/$css", HT_CTC_PLUGIN_FILE ) , '', HT_CTC_VERSION );
 
+            // intlTelInput. register and enqueue
             wp_register_style('ctc_admin_intl_css', plugins_url( 'new/admin/admin_assets/intl/css/intlTelInput.min.css', HT_CTC_PLUGIN_FILE ) , '', HT_CTC_VERSION );
             wp_register_script( 'ctc_admin_intl_js', plugins_url( 'new/admin/admin_assets/intl/js/intlTelInput.min.js', HT_CTC_PLUGIN_FILE ), '', HT_CTC_VERSION, $load_js_bottom );
 

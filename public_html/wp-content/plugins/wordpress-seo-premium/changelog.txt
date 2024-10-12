@@ -1,7 +1,9 @@
 *** Yoast SEO premium Changelog ***
 
 
-2024-03-19 - version 22.4
-* fix -  Fixes a bug where where an AJAX request on the edit tags page that did not have `data` as a `string` would cause a JavaScript error on our side, stopping our redirect notification checks.
-* update -   Bumps the minimum required version of Yoast SEO to 22.4.
+2024-09-24 - version 23.5
+* add -  Improves the text of error messages that are shown when there is a problem with using the AI features.
+* fix -  Fixes a bug where two sentences in the internal linking suggestions would not be translated.
+* fix -  Fixes a bug where the toast notification would appear in the wrong position when using the AI generator with little or no content. 
+* update -  Bumps the minimum required version of Yoast SEO to 23.5.
 

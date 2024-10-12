@@ -37,6 +37,20 @@ class Author_Box extends Base {
 		return [ 'author', 'user', 'profile', 'biography', 'testimonial', 'avatar' ];
 	}
 
+	/**
+	 * Get style dependencies.
+	 *
+	 * Retrieve the list of style dependencies the widget requires.
+	 *
+	 * @since 3.24.0
+	 * @access public
+	 *
+	 * @return array Widget style dependencies.
+	 */
+	public function get_style_depends(): array {
+		return [ 'widget-theme-elements' ];
+	}
+
 	protected function register_controls() {
 		$this->start_controls_section(
 			'section_author_info',
@@ -218,7 +232,6 @@ class Author_Box extends Base {
 			[
 				'label' => esc_html__( 'Link', 'elementor-pro' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'elementor-pro' ),
 				'condition' => [
 					'source' => 'custom',
 				],
@@ -248,7 +261,6 @@ class Author_Box extends Base {
 			[
 				'label' => esc_html__( 'Archive Button', 'elementor-pro' ),
 				'type' => Controls_Manager::URL,
-				'placeholder' => esc_html__( 'https://your-link.com', 'elementor-pro' ),
 				'dynamic' => [
 					'active' => true,
 				],
@@ -1539,7 +1551,13 @@ class Author_Box extends Base {
 				'avatar',
 				[
 					'src' => esc_url( $author['avatar'] ),
-					'alt' => ( ! empty( $author['display_name'] ) ) ? $author['display_name'] : esc_html__( 'Author picture', 'elementor-pro' ),
+					'alt' => ( ! empty( $author['display_name'] ) )
+						? sprintf(
+							/* translators: %s: Author display name. */
+							esc_attr__( 'Picture of %s', 'elementor-pro' ),
+							$author['display_name']
+						)
+						: esc_html__( 'Author picture', 'elementor-pro' ),
 					'loading' => 'lazy',
 				]
 			);

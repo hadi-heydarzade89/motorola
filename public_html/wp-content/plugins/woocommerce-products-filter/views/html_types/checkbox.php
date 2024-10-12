@@ -101,7 +101,7 @@ if (!function_exists('woof_draw_checkbox_childs')) {
 							   />
 						<label <?php do_action('woof_print_label_attributes', $term) ?>   class="woof_checkbox_label <?php if (in_array($term['slug'], $current_request)): ?>woof_checkbox_label_selected<?php endif; ?>" for="<?php echo esc_attr('woof_' . $term['term_id'] . '_' . $inique_id) ?>"><?php
                     if (has_filter('woof_before_term_name'))
-                        echo apply_filters('woof_before_term_name', $term, $taxonomy_info);
+                        echo   wp_kses_post(wp_unslash(apply_filters('woof_before_term_name', $term, $taxonomy_info)));
                     else
                         echo esc_attr($term['name']);
                     ?><?php echo wp_kses_post(wp_unslash($count_string)) ?></label>
@@ -208,7 +208,7 @@ if (!function_exists('woof_draw_checkbox_childs')) {
 					   value="<?php echo esc_attr($term['term_id']) ?>" <?php checked(in_array($term['slug'], $current_request)) ?> />
                 <label <?php do_action('woof_print_label_attributes', $term) ?>  class="woof_checkbox_label <?php if (in_array($term['slug'], $current_request)): ?>woof_checkbox_label_selected<?php endif; ?>" for="<?php echo esc_attr('woof_' . $term['term_id'] . '_' . $inique_id) ?>"><?php
             if (has_filter('woof_before_term_name'))
-                echo apply_filters('woof_before_term_name', $term, $taxonomy_info);
+                echo wp_kses_post(wp_unslash(apply_filters('woof_before_term_name', $term, $taxonomy_info)));
             else
                 echo esc_html($term['name']);
             ?><?php echo wp_kses_post(wp_unslash($count_string)) ?></label>

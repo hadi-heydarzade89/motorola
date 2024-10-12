@@ -564,14 +564,14 @@ var woof_sort_order = [];
         //***
         //to avoid logic errors with the count options
         $('#woof_hide_dynamic_empty_pos').change(function () {
-            if ($(this).val() == 1) {
+            if (parseInt($(this).val()) === 1) {
                 $('#woof_show_count').val(1);
                 $('#woof_show_count_dynamic').val(1);
             }
         });
 
         $('#woof_show_count_dynamic').change(function () {
-            if ($(this).val() == 1) {
+            if (parseInt($(this).val()) === 1) {
                 $('#woof_show_count').val(1);
             } else {
                 $('#woof_hide_dynamic_empty_pos').val(0);
@@ -651,8 +651,8 @@ var woof_sort_order = [];
             var values = jQuery('.woof-form-shortcode-generator').find('.shortcode-generator-value');
             var sortcode_txt = "";
             $.each(values, function (index, element) {
-                console.log(jQuery(element).attr("name"));
-                console.log(jQuery(element).val());
+                //console.log(jQuery(element).attr("name"));
+                //console.log(jQuery(element).val());
                 var value = jQuery(element).val();
                 var name = jQuery(element).attr("name");
                 if (Array.isArray(value) && value.length) {

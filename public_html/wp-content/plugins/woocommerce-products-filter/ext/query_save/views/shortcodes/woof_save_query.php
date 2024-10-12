@@ -28,7 +28,7 @@ if (is_user_logged_in() AND isset(woof()->settings['query_save'])) {
     $cur_user_id = get_current_user_id();
     $user_data_queries = get_user_meta($cur_user_id, 'woof_user_search_query', true);
     ?>
-    <div data-css-class="woof_query_save_container" class="woof_query_save_container woof_container <?php echo esc_attr($adding_class) ?> <?php echo WOOF_HELPER::generate_container_css_classes('query_save') ?>">
+    <div data-css-class="woof_query_save_container" class="woof_query_save_container woof_container <?php echo esc_attr($adding_class) ?> <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes('query_save')) ?>">
         <div class="woof_container_overlay_item"></div>
         <div class="woof_container_inner">
             <<?php echo esc_html(apply_filters('woof_title_tag', 'h4')); ?>>
@@ -101,7 +101,7 @@ if (is_user_logged_in() AND isset(woof()->settings['query_save'])) {
             <?php if (isset($this->settings['query_save']['notes_for_customer']) AND !empty($this->settings['query_save']['notes_for_customer'])): ?>
                 <span class="woof_query_save_notes_for_customer"><?php echo do_shortcode(wp_kses_post(wp_unslash($this->settings['query_save']['notes_for_customer']))) ?></span>
             <?php endif; ?>
-		<input type="hidden" class="woof_query_save_nonce" value="<?php echo wp_create_nonce('query_save_nonce')?>">		
+		<input type="hidden" class="woof_query_save_nonce" value="<?php echo esc_attr(wp_create_nonce('query_save_nonce'))?>">		
         </div>
     </div>
     <?php

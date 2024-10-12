@@ -2,8 +2,8 @@
 Contributors: miniOrange
 Tags: api, rest-api, REST, jwt auth, jwt, basic auth, secure api, token, endpoints, json web token, oauth, api key auth
 Requires at least: 3.0.1
-Tested up to: 6.4
-Stable tag: 3.1.0
+Tested up to: 6.6
+Stable tag: 3.4.0
 Requires PHP: 5.6
 License: MIT/Expat
 License URI: https://docs.miniorange.com/mit-license
@@ -16,6 +16,8 @@ Secure and protect your WP REST API endpoints from unauthorized access with our 
 It also allows you to access the WordPress REST APIs using the above-mentioned authentication methods from Android / iOS and desktop applications.
 This plugin will make sure that only after the successful authentication, the user is allowed to access your site's resources which adds to our motivation toward secure API. REST API Authentication will make your **WordPress login endpoints secure from unauthorized access.** You can protect APIs with ease and in a highly secure way using this plugin.
 This plugin also provides features for authentication of custom-developed REST endpoints and third-party plugin REST API endpoints like that of [Woocommerce](https://wordpress.org/plugins/woocommerce/), [Learndash](https://www.learndash.com/), [Buddypress](https://wordpress.org/plugins/buddypress/), [Gravity forms](https://www.gravityforms.com/), [CoCart](https://wordpress.org/plugins/cart-rest-api-for-woocommerce/) etc.
+
+[youtube https://www.youtube.com/watch?v=IsyKI7eEV-I&t=2s]
 
 **_You can create the custom routes/REST endpoints in WordPress with another GUI-based plugin [Custom API for WordPress](https://wordpress.org/plugins/custom-api-for-wp/)_**. 
 
@@ -211,6 +213,20 @@ This plugin does not store any user data.
 7. Postman Sample Settings
 
 == Changelog ==
+
+= 3.4.0 =
+* Compatibility with WordPress 6.6
+* UI Updates
+
+= 3.3.1 =
+* Major Release with UI and UX improvements
+
+= 3.3.0 =
+* Major Release with UI and UX improvements
+
+= 3.2.0 =
+* Compatibility with WordPress 6.5
+* Fix related to CORS issue
 
 = 3.1.0 =
 * Minor UI Improvements

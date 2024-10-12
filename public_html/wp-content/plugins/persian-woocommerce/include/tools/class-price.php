@@ -75,14 +75,13 @@ if ( ! class_exists( 'PW_Tools_Price' ) ) :
 
 			if ( WC()->cart->get_total( null ) < $minimum ) {
 
-				$message = sprintf( __( 'مبلغ سفارش شما %s می باشد، حداقل مبلغ جهت ثبت سفارش %s است.' ), wc_price( WC()->cart->get_total( null ) ), wc_price( $minimum ) );
+				$message = sprintf( 'مبلغ سفارش شما %s می باشد، حداقل مبلغ جهت ثبت سفارش %s است.', wc_price( WC()->cart->get_total( null ) ), wc_price( $minimum ) );
 
 				if ( is_cart() ) {
 
 					wc_print_notice( $message, 'error' );
 
 				} else {
-
 					wc_add_notice( $message, 'error' );
 
 				}

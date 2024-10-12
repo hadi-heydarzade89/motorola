@@ -90,6 +90,7 @@ if( 1 == $is_mobile ) {
 }
 
 // floating style template path
+$style = sanitize_file_name( $style );
 $path = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'prev/inc/commons/styles-list/style-' . $style. '.php';
 
 $version = HT_CTC_VERSION;

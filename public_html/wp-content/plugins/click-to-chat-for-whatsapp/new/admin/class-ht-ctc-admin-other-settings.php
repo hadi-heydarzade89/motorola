@@ -110,6 +110,7 @@ class HT_CTC_Admin_Other_Settings {
         <ul class="collapsible" data-collapsible="accordion" id="ht_ctc_analytics">
         <li class="active have-sub-collapsible">
         <div class="collapsible-header"><?php _e( 'Google Analytics, Facebook Pixel, Google Ads Conversion', 'click-to-chat-for-whatsapp' ); ?>
+           <span class="right_icon dashicons dashicons-arrow-down-alt2"></span>
         </div>
         <div class="collapsible-body">
         
@@ -139,7 +140,7 @@ class HT_CTC_Admin_Other_Settings {
         <li class="">
         <div class="collapsible-header">
             <span><?php _e( 'Google Analytics', 'click-to-chat-for-whatsapp' ); ?></span>
-            <span class="dashicons dashicons-arrow-down-alt2"></span>
+            <span class="right_icon dashicons dashicons-arrow-down-alt2"></span>
         </div>
         <div class="collapsible-body">
         <p>
@@ -332,6 +333,17 @@ class HT_CTC_Admin_Other_Settings {
                     
             <!-- todo:l we can add - click count, date, username, if woo... add product details, .... -->
             <p class="description" style="margin:0px 10px;">Variables: {title}, {url}, {number} replace page title, url, and number that are assigned to the widget.</p>
+
+            <details style="margin:5px 10px;">
+                <summary>PRO: Get values from URL parameters [], cookies [[]]</summary>
+                <p class="description" style="margin:8px 10px 0px 10px;">
+                    <strong>Get value from url parameters:</strong> Text with in single square brackets <code>[]</code> will get value from url parameters. if not exists, return blank
+                    e.g. <code>[gclid]</code>, <code>[utm_source]</code> 
+                    <br>
+                    <strong>Get value from cookies:</strong> Text with in double square brackets <code>[[]]</code> will get value from cookies. if not exists, return blank.
+                    <br> e.g. <code>[[_ga]]</code> 
+                </p>
+            </details>
             
         </div>
 
@@ -359,7 +371,7 @@ class HT_CTC_Admin_Other_Settings {
         <li class="">
         <div class="collapsible-header">
             <span><?php _e( 'Pixel', 'click-to-chat-for-whatsapp' ); ?></span>
-            <span class="dashicons dashicons-arrow-down-alt2"></span>
+            <span class="right_icon dashicons dashicons-arrow-down-alt2"></span>
         </div>
         <div class="collapsible-body">
             
@@ -571,6 +583,18 @@ class HT_CTC_Admin_Other_Settings {
 
 
             <p class="description" style="margin:0px 10px;">Variables: {title}, {url}, {number} replace page title, url, and number that are assigned to the widget.</p>
+
+            <details style="margin:5px 10px;">
+                <summary>PRO: Get values from URL parameters [], cookies [[]]</summary>
+                <p class="description" style="margin:1px 10px;">
+                    <strong>Get value from url parameters:</strong> Text with in single square brackets <code>[]</code> will get value from url parameters. if not exists, return blank
+                    e.g. <code>[gclid]</code>, <code>[utm_source]</code> 
+                    <br>
+                    <strong>Get value from cookies:</strong> Text with in double square brackets <code>[[]]</code> will get value from cookies. if not exists, return blank.
+                    <br> e.g. <code>[[_ga]]</code> 
+                </p>
+            </details>
+
         </div>
 
 
@@ -589,7 +613,7 @@ class HT_CTC_Admin_Other_Settings {
         <li class="">
         <div class="collapsible-header">
             <span><?php _e( 'Google Ads Conversion', 'click-to-chat-for-whatsapp' ); ?></span>
-            <span class="dashicons dashicons-arrow-down-alt2"></span>
+            <span class="right_icon dashicons dashicons-arrow-down-alt2"></span>
         </div>
         <div class="collapsible-body">
 
@@ -684,18 +708,19 @@ class HT_CTC_Admin_Other_Settings {
         <ul class="collapsible ht_ctc_webhooks" data-collapsible="accordion" id="ht_ctc_webhooks">
         <li class="">
         <div class="collapsible-header"><?php _e( 'Webhooks', 'click-to-chat-for-whatsapp' ); ?>
-            <span class="dashicons dashicons-arrow-down-alt2"></span>
+            <span class="right_icon dashicons dashicons-arrow-down-alt2"></span>
         </div>
         <div class="collapsible-body">
         
         <p class="description" style="margin-bottom: 40px;"><?php _e( 'Integrate, Automation', 'click-to-chat-for-whatsapp' ); ?> <?php _e( 'using', 'click-to-chat-for-whatsapp' ); ?> <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/webhooks/"><?php _e( 'Webhooks', 'click-to-chat-for-whatsapp' ); ?></a></p>
+       <p class="description" style="margin-top:10px;">To get the greetings form data, use the <a href="https://holithemes.com/plugins/click-to-chat/greetings-form#webhooks" target="_blank">Greetings Form webhook</a> feature.</p>
 
         <!-- Webhook URL -->
         <div class="row">
             <div class="input-field col s12">
                 <input name="<?= $dbrow; ?>[hook_url]" value="<?= $hook_url ?>" id="hook_url" type="text" class="input-margin">
                 <label for="hook_url"><?php _e( 'Webhook URL', 'click-to-chat-for-whatsapp' ); ?></label>
-                <p class="description"><?php _e( 'Calls this webhook url after user clicks on WhatsApp Icon/Button', 'click-to-chat-for-whatsapp' ); ?></p>
+                <p class="description"><?php _e( 'Clicking on the WhatsApp widget triggers this Webhook URL', 'click-to-chat-for-whatsapp' ); ?></p>
             </div>
         </div>
 
@@ -750,16 +775,19 @@ class HT_CTC_Admin_Other_Settings {
             ><?php _e( "Add Value", "click-to-chat-for-whatsapp" ); ?></span>
             
         </div>
-        <?php
-        if ( ! defined( 'HT_CTC_PRO_VERSION' ) ) {
-            ?>
-            <p class="description">Webhook Dynamic Variables - {number}, {url}, {time} - <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/webhooks/#pro">PRO</a></p>
-            <?php
-        }
-        ?>
-       
-       <p class="description" style="margin-top:10px;">If Click to Chat Form is added to your website, use the <a href="https://holithemes.com/plugins/click-to-chat/greetings-form/webhooks" target="_blank">Greetings Form webhook</a> feature to get form details.</p>
-
+        <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/pricing/">PRO</a>: Dynamic Variables - {number}, {url}, {time}, {title} </p>
+        <!-- <p class="description">{number}: Number that is assigned to the widget</p> -->
+        <details style="margin:7px 0px;">
+            <summary>Get Values from cookies: [[]], URL parameters: []</summary>
+            <p class="description" style="margin:8px 10px 0px 10px;">
+                <strong>Get value from url parameters:</strong> Text with in single square brackets <code>[]</code> will get value from url parameters. if not exists, return blank
+                e.g. <code>[gclid]</code>, <code>[utm_source]</code> 
+                <br>
+                <strong>Get value from cookies:</strong> Text with in double square brackets <code>[[]]</code> will get value from cookies. if not exists, return blank.
+                <br> e.g. <code>[[_ga]]</code> 
+            </p>
+        </details>
+        <a target="_blank" href="https://holithemes.com/plugins/click-to-chat/webhooks/#pro">Webhooks</a>
         </div>
         </li>
         </ul>
@@ -810,7 +838,7 @@ class HT_CTC_Admin_Other_Settings {
         <ul class="collapsible ht_ctc_animations" data-collapsible="accordion" id="ht_ctc_animations">
         <li class="">
         <div class="collapsible-header"><?php _e( 'Animations', 'click-to-chat-for-whatsapp' ); ?>
-            <span class="dashicons dashicons-arrow-down-alt2"></span>
+            <span class="right_icon dashicons dashicons-arrow-down-alt2"></span>
         </div>
         <div class="collapsible-body">
 
@@ -905,7 +933,7 @@ class HT_CTC_Admin_Other_Settings {
         <ul class="collapsible ht_ctc_notification" data-collapsible="accordion" id="ht_ctc_notification" style="margin-top: 2rem;">
         <li class="">
         <div class="collapsible-header"><?php _e( 'Notification Badge', 'click-to-chat-for-whatsapp' ); ?>
-            <span class="dashicons dashicons-arrow-down-alt2"></span>
+            <span class="right_icon dashicons dashicons-arrow-down-alt2"></span>
         </div>
         <div class="collapsible-body">
         <p class="description" style="margin-bottom:25px;"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/notification-badge/"><?php _e( 'Notification Badge', 'click-to-chat-for-whatsapp' ); ?></a></p>
@@ -985,7 +1013,7 @@ class HT_CTC_Admin_Other_Settings {
             if ( ('' !== $greetings_template || 'no' !== $greetings_template) && 'open' == $g_init) {
                 $greetings_page_url = admin_url( 'admin.php?page=click-to-chat-greetings' );
                 ?>
-                <p class="description" style="color:#ff4c4c;">If the <a href="<?= $greetings_page_url . '#g_init:~:text=initial%20stage' ?>" target="_blank">Greetings dialog initial stage is open</a>, the notification badge maynot be displayed.</p>
+                <p class="description" style="color:#ff4c4c;">If the <a href="<?= $greetings_page_url . '#g_init:~:text=initial%20stage' ?>" target="_blank">Greetings dialog initial stage is open</a>, the notification badge cannot be displayed.</p>
                 <?php
             }
             ?>
@@ -1023,7 +1051,7 @@ class HT_CTC_Admin_Other_Settings {
         <ul class="collapsible ht_ctc_other_settings" data-collapsible="accordion" id="ht_ctc_othersettings">
         <li class="">
         <div class="collapsible-header">Advanced Settings
-            <span class="dashicons dashicons-arrow-down-alt2"></span>
+            <span class="right_icon dashicons dashicons-arrow-down-alt2"></span>
         </div>
         <div class="collapsible-body">
 
@@ -1099,7 +1127,7 @@ class HT_CTC_Admin_Other_Settings {
         <ul class="collapsible ht_ctc_enable_share_group" data-collapsible="accordion" id="ht_ctc_enable_share_group">
         <li <?= $li_active_gr_sh; ?>>
         <div class="collapsible-header"><?php _e( 'Group, Share features', 'click-to-chat-for-whatsapp' ); ?>
-            <span class="dashicons dashicons-arrow-down-alt2"></span>
+            <span class="right_icon dashicons dashicons-arrow-down-alt2"></span>
         </div>
         <div class="collapsible-body">
         
@@ -1173,7 +1201,7 @@ class HT_CTC_Admin_Other_Settings {
         <ul class="collapsible ht_ctc_debug" data-collapsible="accordion" id="ht_ctc_debug">
         <li>
         <div class="collapsible-header"><?php _e( 'Debug, Troubleshoot, ..', 'click-to-chat-for-whatsapp' ); ?>
-            <span class="dashicons dashicons-arrow-down-alt2"></span>
+            <span class="right_icon dashicons dashicons-arrow-down-alt2"></span>
         </div>
         <div class="collapsible-body">
         <?php
@@ -1207,16 +1235,16 @@ class HT_CTC_Admin_Other_Settings {
             <?php
         }
 
+        // enable debug mode checkbox
         $debug_mode = ( isset( $options['debug_mode']) ) ? esc_attr( $options['debug_mode'] ) : '';
         $chat_load_hook = ( isset( $options['chat_load_hook']) ) ? esc_attr( $options['chat_load_hook'] ) : '';
 
-        // debug mode 
         if ( isset( $options['debug_mode'] ) || (isset($_GET) && isset($_GET['debug'])) ) {
             ?>
             <p>
                 <label>
                     <input name="ht_ctc_othersettings[debug_mode]" type="checkbox" value="1" <?php checked( $debug_mode, 1 ); ?> id="debug_mode"   />
-                    <span><?php _e( 'Debug mode', 'click-to-chat-for-whatsapp' ); ?></span>
+                    <span><?php _e( 'Debug/Dev mode', 'click-to-chat-for-whatsapp' ); ?></span>
                 </label>
             </p>
             <?php
@@ -1226,11 +1254,9 @@ class HT_CTC_Admin_Other_Settings {
 
         <p class="description">
             <ol style="list-style-type: disc;">
-
                 <li>Basic Troubleshoot
                     <ol>
-                        <ul>Clear Cache from cache plugins</ul>
-                        <ul>Clear Server side cache if exists</ul>
+                        <ul>Clear Cache: Cache plugins, Server side, CDN cache (if available)</ul>
                         <ul>Check display settings</ul>
                     </ol>
                 </li>
@@ -1238,11 +1264,6 @@ class HT_CTC_Admin_Other_Settings {
                 <li>
                     <ul><p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/faq"><?php _e( 'FAQ', 'click-to-chat-for-whatsapp' ); ?> (<?php _e( 'Frequently Asked Questions', 'click-to-chat-for-whatsapp' ); ?>)</a></p></ul>
                 </li>
-            
-                <!-- <li><?php _e( 'If any issue? Please, contact us', 'click-to-chat-for-whatsapp' ); ?> 
-                    <ul><?php _e( 'Chat', 'click-to-chat-for-whatsapp' ); ?>: <a target="_blank" href="https://api.whatsapp.com/send?phone=919494429789&text=Hi%20HoliThemes,%20I%20have%20a%20question"><?php _e( 'WhatsApp', 'click-to-chat-for-whatsapp' ); ?></a></ul>
-                    <ul><?php _e( 'Mail', 'click-to-chat-for-whatsapp' ); ?>: <a href="mailto:ctc@holithemes.com">ctc@holithemes.com</a> </ul>
-                </li> -->
             </ol>
         </p>
         <!-- <p class="description"><a target="_blank" href="https://holithemes.com/plugins/click-to-chat/link/">Basic Troubleshooting</a></p> -->
@@ -1351,9 +1372,6 @@ class HT_CTC_Admin_Other_Settings {
                     } else {
                         $new_input[$key] = sanitize_text_field( $input[$key] );
                     }
-                } elseif ( 'hook_v' == $key ) {
-                    // todo:l hook_v might covers at array itself
-                    $new_input[$key] = array_map( 'sanitize_text_field', $input[$key] );
                 } elseif ( isset( $input[$key] ) ) {
                     $new_input[$key] = sanitize_text_field( $input[$key] );
                 }

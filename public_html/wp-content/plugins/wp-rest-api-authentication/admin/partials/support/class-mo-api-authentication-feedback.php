@@ -31,7 +31,7 @@ class Mo_API_Authentication_Feedback {
 		wp_enqueue_style( 'wp-pointer' );
 		wp_enqueue_script( 'wp-pointer' );
 		wp_enqueue_script( 'utils' );
-		wp_enqueue_style( 'mo_api_admin_settings_style', plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) . 'css/style_settings.min.css', MINIORANGE_API_AUTHENTICATION_VERSION, array(), false, false );
+		wp_enqueue_style( 'mo_api_admin_settings_style', plugin_dir_url( dirname( dirname( __DIR__ ) ) ) . 'css/style_settings.min.css', MINIORANGE_API_AUTHENTICATION_VERSION, array(), false, false );
 		?>
 	<div id="mo_api_feedback_modal" class="mo_api_modal" style="width: 75%; margin: auto; text-align: center;">
 		<div class="mo_api_modal-content" style="">

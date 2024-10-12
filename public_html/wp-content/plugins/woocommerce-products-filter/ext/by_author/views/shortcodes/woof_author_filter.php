@@ -1,6 +1,6 @@
 <?php if (!defined('ABSPATH')) die('No direct access allowed'); ?>
 <?php  ?>
-<div data-css-class="woof_author_search_container" class="woof_author_search_container woof_container woof_container_woof_author <?php echo WOOF_HELPER::generate_container_css_classes('by_author') ?>">
+<div data-css-class="woof_author_search_container" class="woof_author_search_container woof_container woof_container_woof_author <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes('by_author')) ?>">
     <div class="woof_container_overlay_item"></div>
     <div class="woof_container_inner">
 

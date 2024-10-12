@@ -19,12 +19,8 @@ class Experiments {
 				'<span style="display: block; font-weight: 700; color: #21759b; font-style: italic; line-height: 18px; padding-block-start: 10px; margin-block-end: -5px;">',
 				'</span>',
 			),
-			'release_status' => Manager::RELEASE_STATUS_BETA,
-			'default'        => Manager::STATE_INACTIVE,
-			'new_site'       => [
-				'default_active' => true,
-				'minimum_installation_version' => '3.20',
-			],
+			'release_status' => Manager::RELEASE_STATUS_STABLE,
+			'default'        => Manager::STATE_ACTIVE,
 		] );
 	}
 }

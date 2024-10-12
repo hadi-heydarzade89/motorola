@@ -38,7 +38,7 @@ class HT_CTC_Defaults_Greetings {
             'g_header_online_status_color' => '#06e376',
             'g_header_online_status' => '1',
             'g_device' => 'all',
-            'g_init' => 'open',
+            'g_init' => 'default',
         );
 
         return $values;

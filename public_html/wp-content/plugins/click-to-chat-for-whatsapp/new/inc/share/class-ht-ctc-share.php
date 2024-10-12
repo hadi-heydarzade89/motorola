@@ -132,9 +132,13 @@ class HT_CTC_Share {
         }
 
         // call style
+        $style = sanitize_file_name( $style );
         $path = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/styles/style-' . $style. '.php';
 
+        $style_desktop = sanitize_file_name( $style_desktop );
         $path_d = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/styles/style-' . $style_desktop. '.php';
+
+        $style_mobile = sanitize_file_name( $style_mobile );
         $path_m = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/styles/style-' . $style_mobile. '.php';
 
 

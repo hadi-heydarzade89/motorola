@@ -88,7 +88,7 @@ if (!function_exists('woof_draw_label_childs')) {
                     <li <?php if (woof()->settings['dispay_in_row'][$tax_slug] AND empty($term['childs'])): ?>style="display: inline-block !important;"<?php endif; ?>>
                         <input type="checkbox" <?php if (!$count AND!in_array($term['slug'], $current_request) AND $show_count): ?>disabled=""<?php endif; ?> id="<?php echo esc_attr('woof_' . $term['term_id'] . '_' . $inique_id) ?>" class="woof_label_term" data-tax="<?php echo esc_attr(woof()->check_slug($tax_slug)) ?>" name="<?php echo esc_html($term['slug']) ?>" value="<?php echo esc_html($term['term_id']) ?>" <?php checked(in_array($term['slug'], $current_request)) ?> />&nbsp;<label for="<?php echo esc_attr('woof_' . $term['term_id'] . '_' . $inique_id) ?>" <?php if (checked(in_array($term['slug'], $current_request))): ?>style="font-weight: bold;"<?php endif; ?>><?php
                             if (has_filter('woof_before_term_name'))
-                                echo wp_unslash(apply_filters('woof_before_term_name', $term, $taxonomy_info));
+                                echo wp_kses_post(wp_unslash(apply_filters('woof_before_term_name', $term, $taxonomy_info)));
                             else
                                 echo esc_html($term['name']);
                             ?> <?php echo wp_kses_post($count_string) ?></label>

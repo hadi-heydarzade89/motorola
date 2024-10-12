@@ -20,7 +20,7 @@ extract($options);
             {
                 case 'textinput':
                     ?>
-                    <input type="text" placeholder="<?php echo esc_attr($placeholder) ?>" name="woof_settings[<?php echo esc_attr($key) ?>]" value="<?php echo stripcslashes(wp_kses_post(wp_unslash($woof_settings[$key]))) ?>" id="<?php echo esc_attr($key) ?>" />
+                    <input type="text" placeholder="<?php echo esc_attr($placeholder) ?>" name="woof_settings[<?php echo esc_attr($key) ?>]" value="<?php echo wp_kses_post(wp_unslash($woof_settings[$key])) ?>" id="<?php echo esc_attr($key) ?>" />
                     <?php
                     break;
                 case 'color':

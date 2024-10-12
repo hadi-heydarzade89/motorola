@@ -33,8 +33,9 @@ class Persian_Woocommerce_Widget extends Persian_Woocommerce_Core {
 			?>
 
 			<div style="border-top: 1px solid #e7e7e7; padding-top: 12px !important; font-size: 12px;">
-				<img src="<?php echo PW()->plugin_url( 'assets/images/feed.png' ); ?>" width="16" height="16">
-				<a href="http://woocommerce.ir" target="_new" title="خانه">وب سایت پشتیبان ووکامرس پارسی</a>
+				<img src="<?php echo esc_url( PW()->plugin_url( 'assets/images/feed.png' ) ); ?>" width="16"
+					 height="16">
+				<a href="http://woosupport.ir" target="_new" title="خانه">وب سایت پشتیبان ووکامرس پارسی</a>
 			</div>
 		</div>
 		<?php

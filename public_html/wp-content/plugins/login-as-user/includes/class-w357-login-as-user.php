@@ -1,18 +1,17 @@
 <?php
 /* ======================================================
- # Login as User for WordPress - v1.4.8 (free version)
+ # Login as User for WordPress - v1.5.5 (free version)
  # -------------------------------------------------------
  # For WordPress
  # Author: Web357
- # Copyright @ 2014-2023 Web357. All rights reserved.
+ # Copyright © 2014-2024 Web357. All rights reserved.
  # License: GNU/GPLv3, http://www.gnu.org/licenses/gpl-3.0.html
- # Website: https:/www.web357.com
- # Demo: https://demo.web357.com/wordpress/login-as-user/wp-admin/
- # Support: support@web357.com
- # Last modified: Monday 23 October 2023, 12:29:41 AM
+ # Website: https://www.web357.com/product/login-as-user-wordpress-plugin
+ # Demo: https://demo-wordpress.web357.com/try-the-login-as-a-user-wordpress-plugin/
+ # Support: https://www.web357.com/support
+ # Last modified: Wednesday 02 October 2024, 04:09:17 PM
  ========================================================= */
- 
-class w357LoginAsUser
+ class w357LoginAsUser
 {
 	/**
 	 * Sets up all the filters and actions.
@@ -25,6 +24,7 @@ class w357LoginAsUser
 		add_action('wp_logout', array($this, 'login_as_user_clear_olduser_cookie'));
 		add_action('wp_login', array($this, 'login_as_user_clear_olduser_cookie'));
 		add_filter('wp_head', array($this, 'filter_login_message'), 1);
+		add_action('admin_bar_menu', array($this, 'login_as_user_link_back_link_on_toolbar'), 999);
 		add_filter('removable_query_args', array($this, 'filter_removable_query_args'));
 		add_filter('manage_users_columns', array($this, 'loginasuser_col'), 1000);
 		add_filter('manage_users_custom_column', array($this, 'loginasuser_col_content'), 15, 3);
@@ -32,15 +32,23 @@ class w357LoginAsUser
 		add_action('admin_print_styles', array($this, 'loginasuser_col_style'));
 		add_action('wp_enqueue_scripts', array($this, 'enqueue_styles'));
         add_filter('login_redirect', array($this,'login_redirect'), 20, 3 );
-		add_filter('manage_edit-shop_order_columns', array($this, 'loginasuser_col'), 1000);
-		add_filter('manage_edit-shop_subscription_columns', array($this, 'loginasuser_col'), 1000);
-		add_action('manage_shop_order_posts_custom_column', array($this, 'loginasuser_woo_col_content'));
-		add_action('manage_shop_subscription_posts_custom_column', array($this, 'loginasuser_woo_col_content'));
 		add_action('add_meta_boxes', array($this, 'add_login_as_user_metabox'));
 		add_filter('usin_user_db_data', array($this, 'usin_user_db_loginasuser'), 1000);
 		add_filter('usin_single_user_db_data', array($this, 'usin_user_db_loginasuser'), 1000);
 		add_filter('usin_fields', array($this, 'usin_fields_loginasuser'), 1000);
 		add_shortcode('login_as_user', array($this, 'loginasuserShortcode'));
+
+		// WooCommerce
+		add_filter('manage_edit-shop_order_columns', array($this, 'loginasuser_col'), 1000);
+		add_action('manage_shop_order_posts_custom_column', array($this, 'loginasuser_woo_col_content'));
+		add_filter('woocommerce_shop_order_list_table_columns', array($this, 'loginasuser_col'), 1000); 
+		add_action('woocommerce_shop_order_list_table_custom_column', array($this, 'loginasuser_woo_col_content_hpos'), 10, 2);
+
+		// WooCommerce Subscriptions
+		add_filter( 'manage_edit-shop_subscription_columns', array( $this, 'loginasuser_col' ), 1000);
+		add_action( 'manage_shop_subscription_posts_custom_column', array( $this, 'loginasuser_woo_col_content_hpos' ), 10, 2 );
+		add_filter( 'woocommerce_shop_subscription_list_table_columns', array( $this, 'loginasuser_col' ), 1000 );
+		add_action( 'woocommerce_shop_subscription_list_table_custom_column', array( $this, 'loginasuser_woo_col_content_hpos' ), 10, 2 );
 	}
 
 	public function login_redirect($redirect_to, $requested, $user)
@@ -109,9 +117,7 @@ class w357LoginAsUser
 					$redirect_to = self::get_redirect($user, $current_user);
 
 					// Redirect to the dashboard or the home URL depending on capabilities:
-					$args = array(
-						'logged_in_as_user' => 'true',
-					);
+					$args = [];
 
 					if ($redirect_to) 
 					{
@@ -131,8 +137,18 @@ class w357LoginAsUser
 					} 
 					else 
 					{
-						$options = (object) get_option( 'login_as_user_options' );
-						$redirect_to = (!empty($options->redirect_to)) ? home_url('/') . $options->redirect_to : home_url('/');
+						// Modify the redirect logic to check for the redirect_to value from the shortcode
+						$shortcode_redirect = isset($_GET['redirect_to']) ? $_GET['redirect_to'] : '';
+						
+						// When determining the redirect_to URL, prioritize the shortcode redirect if available
+						if (!empty($shortcode_redirect)) {
+							$redirect_to = home_url('/') . ltrim($shortcode_redirect, '/');
+						} else {
+							// Fallback to the default plugin redirect_to logic
+							$options = (object) get_option('login_as_user_options');
+							$redirect_to = (!empty($options->redirect_to)) ? home_url('/') . $options->redirect_to : home_url('/');
+						}
+
 						wp_safe_redirect(add_query_arg($args, $redirect_to), 302, 'Login as User - WordPress Plugin');
 					}
 					exit;
@@ -167,9 +183,7 @@ class w357LoginAsUser
 					}
 
 					$redirect_to = self::get_redirect($old_user, $current_user);
-					$args        = array(
-						'logged_in_as_user' => 'true',
-					);
+					$args = [];
 
 					if ($redirect_to) {
 						wp_safe_redirect(add_query_arg($args, $redirect_to), 302, 'Login as User - WordPress Plugin');
@@ -267,7 +281,13 @@ class w357LoginAsUser
 	public function filter_login_message($message)
 	{
 		$options = (object) get_option( 'login_as_user_options' );
-		$login_as_user_toolbar_position_option = (!empty($options->login_as_user_toolbar_position)) ? $options->login_as_user_toolbar_position : 'top';
+		$message_display_position_option = (!empty($options->message_display_position)) ? $options->message_display_position : 'bottom';
+
+		// If the message display position is set to none, then return
+		if ($message_display_position_option == 'none') {
+			return;
+		}
+		
 		$old_user = $this->get_old_user();
 
 		if ($old_user instanceof WP_User) {
@@ -298,8 +318,7 @@ class w357LoginAsUser
 			);
 
 			
-			$toolbar_position = $login_as_user_toolbar_position_option; // top or bottom
-			if (is_admin_bar_showing() && $toolbar_position == 'top') 
+			if (is_admin_bar_showing() && $message_display_position_option == 'top') 
 			{
 				$css = <<<CSS
 				body { 
@@ -316,7 +335,7 @@ class w357LoginAsUser
 				}
 CSS;
 			}
-			elseif (is_admin_bar_showing() && $toolbar_position == 'bottom') 
+			elseif (is_admin_bar_showing() && $message_display_position_option == 'bottom') 
 			{
 				$css = <<<CSS
 				body { 
@@ -328,7 +347,7 @@ CSS;
 				}
 CSS;
 			} 
-			elseif ( $toolbar_position == 'top') 
+			elseif ( $message_display_position_option == 'top') 
 			{
 				$css = <<<CSS
 				body { 
@@ -345,7 +364,7 @@ CSS;
 				}
 CSS;
 			}
-			elseif ($toolbar_position == 'bottom') 
+			elseif ($message_display_position_option == 'bottom') 
 			{
 				$css = <<<CSS
 				body { 
@@ -371,28 +390,75 @@ CSS;
 CSS;
 			}
 
-			// Load the css and js files only if the login as user functionality is enabled
-			wp_enqueue_style( 'login-as-user', plugin_dir_url( dirname( __FILE__ ) ) . 'public/css/public.min.css', array(), LOGINASUSER_VERSION, 'all' );
-			wp_enqueue_script( 'login-as-user', plugin_dir_url( dirname( __FILE__ ) ) . 'public/js/public.min.js', array( 'jquery' ), LOGINASUSER_VERSION, false );
-
 			// Inline CSS
 			wp_add_inline_style('login-as-user-inline-style', $css);
 
-			// add the class to the body
-			add_filter( 'body_class', array($this, 'addBodyClass'), 10, 3);
+			// Add the class to the body
+			add_filter('body_class', function($classes) use ($message_display_position_option) {
+				$classes[] = 'login-as-user-' . $message_display_position_option;
+				return $classes;
+			});
 
-			// output
-			echo  '<div class="login-as-user login-as-user-'.$toolbar_position.'">'; // login-as-user-top or login-as-user-bottom
-			echo  '<div class="login-as-user-inner">';
-			echo  '<div class="login-as-user-content">';
-			echo  '<div class="login-as-user-msg">'.sprintf(__('You have been logged in as the user <strong>%1$s</strong>', 'login-as-user'), esc_html__($current_user_name)).'</div>';
-			echo  '<a class="button w357-login-as-user-btn w357-login-as-user-frontend-btn" href="' . esc_url($url) . '">' . esc_html($link) . '</a>';
-			echo  '</div>';
-			echo  '</div>';
-			echo  '</div>';
+			// Output the message
+			echo '<div class="login-as-user login-as-user-' . esc_attr($message_display_position_option) . '">';
+			echo '<div class="login-as-user-inner">';
+			echo '<div class="login-as-user-content">';
+			echo '<div class="login-as-user-msg">' . sprintf(__('You have been logged in as the user <strong>%1$s</strong>', 'login-as-user'), esc_html($current_user_name)) . '</div>';
+			echo '<a class="button w357-login-as-user-btn w357-login-as-user-frontend-btn" href="' . esc_url($url) . '">' . esc_html($link) . '</a>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
 		}
 	}
+	
+	
+	function login_as_user_link_back_link_on_toolbar($wp_admin_bar) {
 
+		$options = (object) get_option( 'login_as_user_options' );
+		$show_admin_link_in_topbar_option = (!empty($options->show_admin_link_in_topbar)) ? $options->show_admin_link_in_topbar : 'yes';
+
+		if (is_admin_bar_showing() && $show_admin_link_in_topbar_option == 'yes') {
+
+			$old_user = $this->get_old_user();
+
+			if ($old_user instanceof WP_User) {
+				$url = self::back_url($old_user);
+
+				if (!empty($_REQUEST['interim-login'])) {
+					$url = add_query_arg(array(
+						'interim-login' => '1',
+					), $url);
+				} elseif (!empty($_REQUEST['redirect_to'])) {
+					$url = add_query_arg(array(
+						'redirect_to' => urlencode(wp_unslash($_REQUEST['redirect_to'])),
+					), $url);
+				}
+
+				$current_user = (is_user_logged_in()) ? wp_get_current_user() : null;
+				$current_user_name = sprintf(
+					/* Translators: 1: user display name; 2: username; */
+					__('%1$s (%2$s)', 'login-as-user'),
+					$current_user->display_name,
+					$current_user->user_login
+				);
+
+				// Add a new top-level item with a back arrow icon
+				$args = array(
+					'id'    => 'lau-back-to-admin-dashboard',
+					'title' => sprintf(__('Go back as %1$s', 'login-as-user'), $old_user->display_name),
+					'href'  => esc_url($url),
+					'meta'  => array(
+						'class' => 'logged-in-successfully',
+						'title' => sprintf(__('You have been logged in as the user "%1$s".', 'login-as-user'), esc_html__($current_user_name)) . ' ' . sprintf(
+									__('Click here to go back to admin dashboard as %1$s (%2$s).', 'login-as-user'), $old_user->display_name, $old_user->user_email
+						),
+					)
+				);
+				$wp_admin_bar->add_node($args);
+			}
+		}
+	}
+	
 	public function addBodyClass( $classes ) 
 	{
 		$classes[] = 'admin-has-been-logged-in-as-a-user';
@@ -401,8 +467,18 @@ CSS;
 
 	public function enqueue_styles()
 	{
-		wp_register_style('login-as-user-inline-style', false);
-		wp_enqueue_style('login-as-user-inline-style');
+		$options = get_option('login_as_user_options', array());
+		$message_display_position_option = (!empty($options['message_display_position'])) ? $options['message_display_position'] : 'top';
+		$show_admin_link_in_topbar_option = (!empty($options['show_admin_link_in_topbar'])) ? $options['show_admin_link_in_topbar'] : 'yes';
+
+		// do not proceed if user is not logged in
+		$old_user = $this->get_old_user();
+		if ($old_user instanceof WP_User && ($message_display_position_option !== 'none' || $show_admin_link_in_topbar_option === 'yes')) {
+			wp_enqueue_style('login-as-user', plugin_dir_url(dirname(__FILE__)) . 'public/css/public.min.css', array(), LOGINASUSER_VERSION, 'all');
+			wp_enqueue_script('login-as-user', plugin_dir_url(dirname(__FILE__)) . 'public/js/public.min.js', array('jquery'), LOGINASUSER_VERSION, false);
+			wp_register_style('login-as-user-inline-style', false);
+			wp_enqueue_style('login-as-user-inline-style');
+		}
 	}
 
 	/**
@@ -445,7 +521,11 @@ CSS;
 	 */
 	public static function loginasuser_url(WP_User $user)
 	{
-		$current_url = urlencode(wp_unslash(site_url($_SERVER['REQUEST_URI'])));
+		// Check if HTTPS or HTTP
+		$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443 ? 'https://' : 'http://';
+
+		// Build the current URL with the correct protocol
+		$current_url = urlencode($protocol . $_SERVER['HTTP_HOST'] . wp_unslash($_SERVER['REQUEST_URI']));
 
 		if (isset($_SERVER['REQUEST_URI']) && strpos($_SERVER['REQUEST_URI'], 'admin-ajax.php') !== false)
 		{
@@ -570,13 +650,15 @@ CSS;
 	 * @param WP_User  $user          Concerned user object.
 	 * @return bool[] Concerned user's capabilities.
 	 */
-	public function filter_user_has_cap(array $user_caps, array $required_caps, array $args, WP_User $user)
-	{
-		if (isset($args[2]) && 'login_as_user' === $args[0]) 
-		{
-			if ((bool)$args[2])
-			{
+	public function filter_user_has_cap(array $user_caps, array $required_caps, array $args, WP_User $user) {
+		if (isset($args[2]) && 'login_as_user' === $args[0]) {
+			if ((bool)$args[2]) {
+				
+				
+
+				
 				$user_caps['login_as_user'] = (user_can($user->ID, 'edit_user', $args[2]) && ($args[2] !== $user->ID));
+				
 			}
 		}
 
@@ -614,7 +696,9 @@ CSS;
 	// Add a custom metabox only for shop_order and shop_subscription post types
 	public function add_login_as_user_metabox()
 	{
-		add_meta_box( 'login_as_user_metabox', __( 'Login as User' ), array($this, 'login_as_user_metabox'), array('shop_order', 'shop_subscription'), 'side', 'low');
+		add_meta_box( 'login_as_user_metabox', __( 'Login as User' ), array($this, 'login_as_user_metabox'), 'shop_order', 'side', 'core');	
+		add_meta_box( 'login_as_user_metabox',  __( 'Login as User' ), array($this, 'login_as_user_metabox'), 'woocommerce_page_wc-orders', 'side', 'core' );
+		add_meta_box( 'login_as_user_metabox',  __( 'Login as User' ), array($this, 'login_as_user_metabox'), 'woocommerce_page_wc-orders--shop_subscription', 'side', 'core' );
 	}
 
 	// Get the string type for the Login as ... button.
@@ -667,7 +751,7 @@ CSS;
 		return $login_as_type;
 	}
 
-	public function login_as_user_metabox()
+	public function login_as_user_metabox($post)
 	{
 		
 
@@ -698,12 +782,15 @@ CSS;
 
 	public function loginasuser_col_content($val, $column_name, $user_id)
 	{
-		global $wpdb;
 		switch ($column_name) {
 			case 'loginasuser_col':
 				$user = new WP_User($user_id);
 
 				$login_as_user_url = $this->build_the_login_as_user_url($user);
+
+				if (get_current_user_id() == $user_id) {
+					return __('It\'s me.', 'login-as-user');
+				}
 
 				if (!current_user_can('login_as_user', $user_id)) {
 					return __('Could not login as this user.', 'login-as-user');
@@ -726,6 +813,18 @@ CSS;
 			default:
 		}
 		return $val;
+	}
+
+	public function loginasuser_woo_col_content_hpos($column, $order_id)
+	{
+		if ('loginasuser_col' === $column) 
+		{
+			
+
+			
+			echo $this->onlyInProTextLink();
+			
+		}
 	}
 
 	public function loginasuser_woo_col_content($column)
@@ -1073,7 +1172,7 @@ CSS;
 		return $fields;
 	}
 
-	// Usage: [login_as_user user_id="1"]
+	// Usage: [login_as_user user_id="1" redirect_to="/my-account" button_name="Login as $USER"]
 	function loginasuserShortcode($atts)
 	{
 		
@@ -1084,6 +1183,8 @@ CSS;
 		return ob_get_clean();
 		
 	}
+	
+	
 }
 
 $plugin = new w357LoginAsUser();

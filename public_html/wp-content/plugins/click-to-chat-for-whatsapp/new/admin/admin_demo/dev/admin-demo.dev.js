@@ -178,7 +178,7 @@
                 // number
                 // here this event works. but in general admin-demo.js have to load early then admin.js ..
                 document.addEventListener("ht_ctc_admin_event_valid_number", function (e) {
-                    console.log('ht_ctc_event_number');
+                    console.log('addEventListener: ht_ctc_admin_event_valid_number');
                     console.log(e.detail);
                     console.log(e);
 
@@ -542,7 +542,7 @@
                     $('.ctc_ad_badge').text(count);
                 });
 
-                // time dealy
+                // time delay
                 var timeoutId;
                 $('.field_notification_time').on('change', function () {
                     $('.ctc_ad_notification').hide();

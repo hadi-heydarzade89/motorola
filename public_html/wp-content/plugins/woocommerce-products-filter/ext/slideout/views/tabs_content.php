@@ -100,7 +100,7 @@ if (!isset($woof_settings['woof_slideout_img'])) {
     $woof_settings['woof_slideout_img'] = '';
 }
 ?>
-                <div class="woof-control-section" <?php if ($woof_settings['woof_slideout_type_btn'] == 1) : ?>style="display:none"<?php endif; ?> >
+                <div class="woof-control-section" <?php if (intval($woof_settings['woof_slideout_type_btn']) === 1) : ?>style="display:none"<?php endif; ?> >
                     <h4><?php esc_html_e('Slideout image', 'woocommerce-products-filter') ?></h4>
 
                     <div class="woof-control-container">
@@ -132,7 +132,7 @@ if (!isset($woof_settings['woof_slideout_txt'])) {
                     </div>
                 </div><!--/ .woof-control-section-->                     
 
-                <div class="woof-control-section" <?php if ($woof_settings['woof_slideout_type_btn'] == 1) : ?>style="display:none"<?php endif; ?>>
+                <div class="woof-control-section" <?php if (intval($woof_settings['woof_slideout_type_btn']) === 1) : ?>style="display:none"<?php endif; ?>>
 
                     <h4><?php esc_html_e('Button image size', 'woocommerce-products-filter') ?></h4>
 
@@ -389,6 +389,6 @@ $slideout_mobile = array(
         </div>
 
     </div>
-	<input type="hidden" id="woof_slideout_nonce"  value="<?php echo wp_create_nonce('slideout_nonce'); ?>">
+	<input type="hidden" id="woof_slideout_nonce"  value="<?php echo esc_attr(wp_create_nonce('slideout_nonce')); ?>">
 </section>
 

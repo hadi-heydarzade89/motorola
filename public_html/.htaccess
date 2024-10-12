@@ -86,7 +86,7 @@
 </IfModule>
 # END WP-Optimize Gzip compression
 <Files "xmlrpc.php">
-  Require all denied
+	Require all denied
 </Files>
 
 # BEGIN WordPress

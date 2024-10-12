@@ -22,7 +22,7 @@
         <div class="woof-header">
             <div>
                 <h3 class="woof_plugin_name"><?php esc_html_e('HUSKY - Products Filter Professional for WooCommerce', 'woocommerce-products-filter') ?>&nbsp;<span class="woof__text-success">v.<?php echo esc_attr(WOOF_VERSION) ?></span>&nbsp;<span id="woof-head"><img src="<?php echo esc_url(WOOF_LINK) ?>/img/husky.png" width="80" alt=""></span></h3>
-                <i><?php printf(esc_html__('Actualized for WooCommerce v.%s.x', 'woocommerce-products-filter'), WOOCOMMERCE_VERSION) ?></i><br />
+                <i><?php printf(esc_html__('Actualized for WooCommerce v.%s.x', 'woocommerce-products-filter'), esc_html(WOOCOMMERCE_VERSION)) ?></i><br />
             </div>
             <div>
                 <?php if ($this->show_notes): ?>
@@ -34,7 +34,7 @@
 
         <input type="hidden" name="woof_settings" value="" />
         <input type="hidden" name="woof_settings[items_order]" value="<?php echo esc_html(isset($woof_settings['items_order']) ? $woof_settings['items_order'] : '') ?>" />
-        <input type="hidden" name="_wpnonce_woof" value="<?php echo wp_create_nonce('woof_save_option'); ?>">
+        <input type="hidden" name="_wpnonce_woof" value="<?php echo esc_attr(wp_create_nonce('woof_save_option')); ?>">
         <?php if (version_compare(WOOCOMMERCE_VERSION, WOOF_MIN_WOOCOMMERCE_VERSION, '<')): ?>
 
             <div id="message" class="error fade"><p><strong><?php esc_html_e("ATTENTION! Your version of the woocommerce plugin is too obsolete. There is no warranty for working with HUSKY!!", 'woocommerce-products-filter') ?></strong></p></div>
@@ -269,6 +269,45 @@
                     </div><!--/ .woof-control-section-->
 
 
+                    <div class="woof-control-section">
+
+                        <h4><?php esc_html_e('Use filter blur', 'woocommerce-products-filter') ?></h4>
+
+                        <div class="woof-control-container">
+
+                            <div class="woof-control">
+
+                                <?php
+                                $use_filter_blur = array(
+                                    0 => esc_html__('No', 'woocommerce-products-filter'),
+                                    1 => esc_html__('Yes', 'woocommerce-products-filter')
+                                );
+
+                                if (!isset($woof_settings['filter_blur'])) {
+                                    $woof_settings['filter_blur'] = 0;
+                                }
+                                $filter_blur = intval($woof_settings['filter_blur']);
+                                ?>
+
+                                <div class="select-wrap">
+                                    <select name="woof_settings[filter_blur]" class="chosen_select">
+                                        <?php foreach ($use_filter_blur as $key => $value) : ?>
+                                            <option value="<?php echo esc_attr($key) ?>" <?php selected($filter_blur == $key) ?>><?php esc_html_e($value) ?></option>
+                                        <?php endforeach; ?>
+                                    </select>
+                                </div>
+
+
+                            </div>
+                            <div class="woof-description">
+                                <p class="description">
+                                    <?php esc_html_e('Blur the filter form until styles and JS scripts are loaded', 'woocommerce-products-filter') ?>
+                                </p>
+                            </div>
+                        </div>
+                    </div><!--/ .woof-control-section-->
+
+
                     <div class="woof-control-section" <?php if ($skin != 'default'): ?>style="display: none;"<?php endif; ?>>
 
                         <h4><?php esc_html_e('Loading word', 'woocommerce-products-filter') ?></h4>
@@ -341,6 +380,7 @@
                             </div>
                         </div>
                     </div><!--/ .woof-control-section-->
+
 
 
                     <div class="woof-control-section">
@@ -997,7 +1037,11 @@
                                     <tr>
                                         <th scope="row"><label for="js_after_ajax_done"><?php esc_html_e('JavaScript code after AJAX is done', 'woocommerce-products-filter') ?></label></th>
                                         <td>
-                                            <textarea class="wide woof_custom_css" id="js_after_ajax_done" name="woof_settings[js_after_ajax_done]"><?php if (isset($this->settings['js_after_ajax_done'])): ?><?php echo stripcslashes(esc_js(str_replace('"', "'", $this->settings['js_after_ajax_done']))) ?><?php endif; ?></textarea>
+                                            <textarea class="wide woof_custom_css" id="js_after_ajax_done" name="woof_settings[js_after_ajax_done]">
+                                                <?php if (isset($this->settings['js_after_ajax_done'])): ?>
+                                                    <?php echo esc_textarea(stripcslashes(esc_js(str_replace('"', "'", $this->settings['js_after_ajax_done'])))) ?>
+                                                <?php endif; ?>
+                                            </textarea>
                                             <p class="description"><?php esc_html_e('Use it when you are need additional action after AJAX redraw your products in shop page or in page with shortcode! For use when you need additional functionality after AJAX redraw of your products on the shop page or on pages with shortcodes.', 'woocommerce-products-filter') ?></p>
                                         </td>
                                     </tr>
@@ -1044,7 +1088,7 @@
                                                 $this->settings['init_only_on'] = '';
                                             }
                                             ?>
-                                            <textarea class="wide woof_custom_css" id="init_only_on" name="woof_settings[init_only_on]"><?php echo stripcslashes(trim(esc_textarea($this->settings['init_only_on']))) ?></textarea>
+                                            <textarea class="wide woof_custom_css" id="init_only_on" name="woof_settings[init_only_on]"><?php echo esc_textarea(stripcslashes(trim($this->settings['init_only_on']))) ?></textarea>
                                             <p class="description"><?php esc_html_e('This option enables or disables initialization of the plugin on all pages of the site except links and link-masks in the textarea. One row - one link (or link-mask)! Example of link: http://site.com/ajaxed-search-7. Example of link-mask: product-category . Leave it empty to allow the plugin initialization on all pages of the site!', 'woocommerce-products-filter') ?></p>
                                             <p class="description"><?php esc_html_e('Use sign # before link to apply strict compliance. Example: #https://your_site.com/product-category/man/', 'woocommerce-products-filter') ?></p>
                                         </td>
@@ -1195,8 +1239,8 @@
                                         0 => esc_html__("No", 'woocommerce-products-filter'),
                                         1 => esc_html__("Yes", 'woocommerce-products-filter')
                                     );
-									
-                                    if (!isset($woof_settings['show_images_by_attr_show'])OR empty($woof_settings['show_images_by_attr_show'])) {
+
+                                    if (!isset($woof_settings['show_images_by_attr_show']) OR empty($woof_settings['show_images_by_attr_show'])) {
                                         $woof_settings['show_images_by_attr_show'] = 0;
                                     }
                                     ?>
@@ -1296,7 +1340,7 @@
 
                                             <?php
                                             if (!isset($woof_settings['listen_catalog_visibility']) OR empty($woof_settings['listen_catalog_visibility'])) {
-                                                $woof_settings['listen_catalog_visibility'] = 0;
+                                                $woof_settings['listen_catalog_visibility'] = 1;
                                             }
                                             ?>
 
@@ -1349,6 +1393,41 @@
                                         </div>
                                         <div class="woof-description">
                                             <p class="description"><?php esc_html_e("Sometimes code 'wp_query->is_post_type_archive = true' does not necessary. Try to disable this and try woof-search on your site. If all is ok - leave its disabled. Disabled code by this option you can find in index.php by mark disable_swoof_influence.", 'woocommerce-products-filter') ?></p>
+                                        </div>
+                                    </div>
+
+                                </div><!--/ .woof-control-section-->
+
+                                <div class="woof-control-section">
+
+                                    <h5><?php esc_html_e("Additional check of the category page", 'woocommerce-products-filter') ?></h5>
+
+                                    <div class="woof-control-container">
+                                        <div class="woof-control">
+
+                                            <?php
+                                            $check_category_page = array(
+                                                0 => esc_html__("No", 'woocommerce-products-filter'),
+                                                1 => esc_html__("Yes", 'woocommerce-products-filter')
+                                            );
+                                            ?>
+
+                                            <?php
+                                            if (!isset($woof_settings['check_really_tax']) OR empty($woof_settings['check_really_tax'])) {
+                                                $woof_settings['check_really_tax'] = 0;
+                                            }
+                                            ?>
+
+                                            <select name="woof_settings[check_really_tax]">
+                                                <?php foreach ($check_category_page as $key => $value) : ?>
+                                                    <option value="<?php echo esc_attr($key) ?>" <?php selected($woof_settings['check_really_tax'] == $key) ?>><?php esc_html_e($value) ?></option>
+                                                <?php endforeach; ?>
+                                            </select>
+
+
+                                        </div>
+                                        <div class="woof-description">
+                                            <p class="description"><?php esc_html_e("Sometimes in block themes the plugin may not detect the current taxonomy (archive page). In this case, activate this option.", 'woocommerce-products-filter') ?></p>
                                         </div>
                                     </div>
 
@@ -1613,7 +1692,7 @@
                                             <input type="text" name="woof_settings[custom_extensions_path]" value="<?php echo esc_html($woof_settings['custom_extensions_path']) ?>" id="custom_extensions_path" placeholder="Example: my_woof_extensions" />
                                         </div>
                                         <div class="woof-description">
-                                            <p class="description"><?php printf(__('Custom extensions folder path relative to: %s', 'woocommerce-products-filter'), WP_CONTENT_DIR . DIRECTORY_SEPARATOR) ?></p>
+                                            <p class="description"><?php printf(esc_html__('Custom extensions folder path relative to: %s', 'woocommerce-products-filter'), esc_html(WP_CONTENT_DIR) . esc_html(DIRECTORY_SEPARATOR)) ?></p>
                                         </div>
                                     </div>
 
@@ -1701,7 +1780,7 @@
                                     </div>
 
                                 </div><!--/ .woof-control-section-->
-								<?php do_action('woof_print_option_advanced'); ?>
+                                <?php do_action('woof_print_option_advanced'); ?>
                             </section>
 
                             <?php do_action('woof_print_applications_tabs_content_advanced'); ?>
@@ -1820,7 +1899,7 @@
                                                     <div id="picbox" class="clear"></div>
 
                                                 <?php else: ?>
-                                                    <span class="woof_orangered"><?php printf(__('Note for admin: Folder %s for extensions is not writable OR doesn exists! Ignore this message if you not planning using HUSKY custom extensions!', 'woocommerce-products-filter'), $this->get_custom_ext_path()) ?></span>
+                                                    <span class="woof_orangered"><?php printf(esc_html__('Note for admin: Folder %s for extensions is not writable OR doesn exists! Ignore this message if you not planning using HUSKY custom extensions!', 'woocommerce-products-filter'), esc_html($this->get_custom_ext_path())) ?></span>
                                                 <?php endif; ?>
                                             </div>
                                         </div>
@@ -1838,7 +1917,7 @@
                                     ?>
                                     <?php if (!empty($extensions) AND is_array($extensions)): ?>
 
-                                        <input type="hidden" id="rm-ext-nonce" value="<?php echo wp_create_nonce('rm-ext-nonce') ?>">
+                                        <input type="hidden" id="rm-ext-nonce" value="<?php echo esc_attr(wp_create_nonce('rm-ext-nonce')) ?>">
                                         <ul class="woof_extensions woof_custom_extensions">
 
                                             <?php foreach ($extensions['custom'] as $dir): ?>
@@ -1891,7 +1970,7 @@
                                                                 esc_html_e('You should write extension info in info.dat file!', 'woocommerce-products-filter');
                                                             }
                                                         } else {
-                                                            printf(__('Looks like its not the HUSKY extension here %s!', 'woocommerce-products-filter'), $dir);
+                                                            printf(esc_html__('Looks like its not the HUSKY extension here %s!', 'woocommerce-products-filter'), esc_html($dir));
                                                         }
                                                         ?>
                                                     </div>
@@ -1980,7 +2059,7 @@
                                                                     <?php endif; ?>
 
                                                                     <?php
-                                                                    echo '<h5>' . esc_html($info['title']) . ' [<span style="font-weight: normal;">' . $ext_key . '</span>]' . '</h5>';
+                                                                    echo '<h5>' . esc_html($info['title']) . ' [<span style="font-weight: normal;">' . esc_html($ext_key) . '</span>]' . '</h5>';
                                                                     if (isset($info['link'])) {
                                                                         echo '<a href="' . esc_attr($info['link']) . '" class="woof_ext_title" target="_blank"><span class="icon-link"></span></a>';
                                                                     }
@@ -2063,8 +2142,8 @@
                                                                 $name = $obj->folder_name;
                                                             }
                                                             ?>
-                                                            <a href="#tabs-<?php echo esc_attr($obj->folder_name) ?>" title="<?php printf(esc_html__("%s", 'woocommerce-products-filter'), $name) ?>">
-                                                                <span><?php printf(esc_html__("%s", 'woocommerce-products-filter'), $name) ?></span>
+                                                            <a href="#tabs-<?php echo esc_attr($obj->folder_name) ?>" title="<?php printf(esc_html__("%s", 'woocommerce-products-filter'), esc_html($name)) ?>">
+                                                                <span><?php printf(esc_html__("%s", 'woocommerce-products-filter'), esc_html($name)) ?></span>
                                                             </a>
                                                         </li>
                                                         <?php
@@ -2433,7 +2512,12 @@
                 <div class="woof-name-description">
                     <strong><?php esc_html_e('Not toggled terms count', 'woocommerce-products-filter') ?></strong>
                     <span><?php esc_html_e('Enter count of terms which should be visible to make all other collapsible. "Show more" button will be appeared. This feature is works with: radio, checkboxes, labels, colors, smart designer items.', 'woocommerce-products-filter') ?></span>
-                    <span><?php printf(__('Advanced info is <a href="%s" target="_blank">here</a>', 'woocommerce-products-filter'), 'https://products-filter.com/hook/woof_get_more_less_button_xxxx/') ?></span>
+
+                    <span><?php esc_html_e('Advanced info is ', 'woocommerce-products-filter') ?>
+                        <a href="https://products-filter.com/hook/woof_get_more_less_button_xxxx/" target="_blank">
+                            <?php esc_html_e('here', 'woocommerce-products-filter') ?>
+                        </a>
+                    </span>
                 </div>
 
                 <div class="woof-form-element">
@@ -3239,7 +3323,7 @@ function woof_print_item_by_key($key, $woof_settings) {
                     $woof_settings[$key]['price_slider_skin'] = 0;
                 }
                 ?>
-                <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][tooltip_text]" placeholder="" value="<?php echo stripcslashes(esc_html($woof_settings[$key]['tooltip_text'])) ?>" />
+                <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][tooltip_text]" placeholder="" value="<?php echo esc_html($woof_settings[$key]['tooltip_text']) ?>" />
                 <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][show_button]" value="<?php echo intval($woof_settings[$key]['show_button']) ?>" />
                 <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][title_text]" value="<?php echo esc_html($woof_settings[$key]['title_text']) ?>" />
                 <input type="hidden" name="woof_settings[<?php echo esc_attr($key) ?>][show_toggle_button]" value="<?php echo esc_html($woof_settings[$key]['show_toggle_button']) ?>" />

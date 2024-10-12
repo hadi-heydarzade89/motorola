@@ -61,6 +61,8 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
             update_option('woof_try_ajax', 1);
         }
 
+
+
         add_action($this->crone_hook, array($this, 'do_recreate_file'), 10, 3);
         add_filter($this->crone_filter, array($this, 'get_cron_ids'), 10, 2);
         $this->cron_obj = new PN_WP_CRON_WOOF_TURBO_MODE('woof_turbo_init_wpcrone_', $this->crone_hook, $this->crone_filter);
@@ -96,6 +98,7 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
         //ajax
         add_action('wp_ajax_woof_turbo_mode_update_file', array($this, 'ajax_create_data_search_files'));
         add_action('wp_ajax_nopriv_woof_turbo_mode_update_file', array($this, 'ajax_create_data_search_files'));
+
     }
 
     public function create_data_search_files_when_init() {
@@ -106,6 +109,36 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
         $txt = "<div class='woof_turbo_mode_overlay'></div>" . $txt;
         return $txt;
     }
+	public function get_schedules(){
+		return apply_filters('woof_turbo_mode_schedules',
+				array(
+					'daily' => array( 
+						'value' => DAY_IN_SECONDS,
+						'name' => esc_html__('daily', 'woocommerce-products-filter')
+						),
+					'weekly' => array( 
+						'value' => WEEK_IN_SECONDS,
+						'name' => esc_html__('weekly', 'woocommerce-products-filter')
+						),
+					'twicemonthly' => array( 
+						'value' => WEEK_IN_SECONDS * 2,
+						'name' => esc_html__('twicemonthly', 'woocommerce-products-filter')
+						),
+					'month' => array( 
+						'value' => WEEK_IN_SECONDS * 4,
+						'name' => esc_html__('monthly', 'woocommerce-products-filter')
+						),
+					'min1' => array( 
+						'value' => MINUTE_IN_SECONDS,
+						'name' => esc_html__('min1', 'woocommerce-products-filter')
+						),
+					'no' => array( 
+						'value' => -1,
+						'name' => esc_html__('without update', 'woocommerce-products-filter')
+						)
+				)
+		);		
+	}
 
     public function wp_footer() {
 
@@ -147,6 +180,7 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
             'hide_count' => isset($this->woof_settings['hide_terms_count_txt']) ? $this->woof_settings['hide_terms_count_txt'] : 0,
             'hide_empty_term' => get_option('woof_hide_dynamic_empty_pos_turbo_mode', 0),
             'dynamic_recount' => $dynamic_recount,
+			'file_error_nitice' => esc_html__("Oh no! It looks like the filter can't open the search file. Please try generating a new file in Advanced -> Turbo mode -> [Update now!].", 'woocommerce-products-filter')
         );
 
         wp_localize_script('woof_turbo_mode', 'woof_tm_data', $text_data);
@@ -170,7 +204,7 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
         ?>
         var woof_turbo_creating = "<?php esc_html_e('Creating', 'woocommerce-products-filter') ?>";
         var woof_turbo_products = "<?php esc_html_e('Products and Variants', 'woocommerce-products-filter') ?>";
-		var woof_turbo_nonce = "<?php echo wp_create_nonce( 'woof_turbo_nonce' ); ?>";		
+		var woof_turbo_nonce = "<?php echo esc_attr(wp_create_nonce( 'woof_turbo_nonce' )); ?>";		
         <?php
         $txt_js = ob_get_clean();
         wp_enqueue_script('woof_turbo_mode_admin_', $this->get_ext_link() . 'js/admin.js', array(), WOOF_VERSION);
@@ -181,7 +215,7 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
         $data = array();
 
         $data['woof_settings'] = $this->woof_settings;
-
+		$data['schedules'] = $this->get_schedules();
         woof()->render_html_e($this->get_ext_path() . 'views/tabs_content.php', $data);
     }
 	public function ajax_create_data_search_files() {
@@ -604,21 +638,13 @@ final class WOOF_EXT_TURBO_MODE extends WOOF_EXT {
     // CRON
 
     public function get_woof_cron_schedules($key = '') {
-        $schedules = array(
-            'daily' => DAY_IN_SECONDS,
-            'weekly' => WEEK_IN_SECONDS,
-            'twicemonthly' => WEEK_IN_SECONDS * 2,
-            'month' => WEEK_IN_SECONDS * 4,
-            'min1' => MINUTE_IN_SECONDS,
-            'no' => -1
-        );
 
         if (empty($key)) {
             $key = 'weekly';
         }
-
+		$schedules = $this->get_schedules();
         if (isset($schedules[$key])) {
-            return $schedules[$key];
+            return $schedules[$key]['value'];
         }
 
         return -1;

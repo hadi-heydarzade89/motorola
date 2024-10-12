@@ -12,7 +12,7 @@ if (!defined('ABSPATH'))
             <div class="woof-control-container">
                 <div class="woof-control">
                     <textarea id="woof_import_settings" ></textarea><br />
-					<input id="woof_import_settings_nc" type="hidden" value="<?php echo wp_create_nonce('woof_import_settings');?>">
+					<input id="woof_import_settings_nc" type="hidden" value="<?php echo esc_attr(wp_create_nonce('woof_import_settings'));?>">
                     <input type="button" id="woof_do_import" class="woof-button" value="<?php esc_html_e('Import placed data', 'woocommerce-products-filter') ?>">
                 </div>
                 <div class="woof-description">
@@ -28,7 +28,7 @@ if (!defined('ABSPATH'))
             <div class="woof-control-container">
                 <div class="woof-control">
                     <textarea readonly="readonly" id="woof_export_settings" ></textarea><br />
-                    <input id="woof_export_settings_nc" type="hidden" value="<?php echo wp_create_nonce('woof_export_settings');?>">
+                    <input id="woof_export_settings_nc" type="hidden" value="<?php echo esc_attr(wp_create_nonce('woof_export_settings'));?>">
 					<input type="button" id="woof_get_export" class="woof-button" value="<?php esc_html_e('Generate data for export', 'woocommerce-products-filter') ?>">
                 </div>
                 <div class="woof-description">

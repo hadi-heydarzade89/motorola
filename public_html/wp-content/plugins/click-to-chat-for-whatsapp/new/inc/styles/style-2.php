@@ -62,7 +62,7 @@ if ( 'hover' == $s2_cta_type ) {
     $title = "title = '$call_to_action'";
 }
 
-// defatul order is based on desktop. if desktop and mobile not same side. then add class name to change order..
+// default order is based on desktop. if desktop and mobile not same side. then add class name to change order..
 if ( isset($is_same_side) && 'no' == $is_same_side && isset($mobile_side) ) {
     $s2_cta_class .= ( 'left' == $mobile_side) ? " ctc_m_cta_order_1 " : " ctc_m_cta_order_0 " ;
 }

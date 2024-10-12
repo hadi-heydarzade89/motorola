@@ -100,7 +100,7 @@ if ($show):
     $top_panel_txt .= sprintf(":%s %s %s", (isset($meta_settings['prefix']) ? $meta_settings['prefix'] : ''), str_replace("^", "-", $current_request_txt), (isset($meta_settings['postfix']) ? $meta_settings['postfix'] : ''));
     $slider_id = "woof_meta_slider_" . $meta_key;
     ?>
-    <div data-css-class="woof_meta_slider_container" class="woof_meta_slider_container woof_container woof_container_<?php echo esc_attr("slider_" . $meta_key) ?> <?php echo WOOF_HELPER::generate_container_css_classes($meta_key) ?>">
+    <div data-css-class="woof_meta_slider_container" class="woof_meta_slider_container woof_container woof_container_<?php echo esc_attr("slider_" . $meta_key) ?> <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes($meta_key)) ?>">
         <div class="woof_container_inner">
             <div class="woof_container_inner woof_container_inner_meta_slider">
                 <?php if ($show_title_label) {

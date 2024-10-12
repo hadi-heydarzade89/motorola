@@ -41,7 +41,7 @@ if (isset(woof()->settings['by_onsales']) AND woof()->settings['by_onsales']['sh
         $count_string = "";
     }
     ?>
-    <div data-css-class="woof_checkbox_sales_container" class="woof_checkbox_sales_container woof_container woof_container_onsales <?php echo WOOF_HELPER::generate_container_css_classes('by_onsales') ?>">
+    <div data-css-class="woof_checkbox_sales_container" class="woof_checkbox_sales_container woof_container woof_container_onsales <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes('by_onsales')) ?>">
         <div class="woof_container_overlay_item"></div>
         <div class="woof_container_inner">
 
@@ -52,10 +52,10 @@ if (isset(woof()->settings['by_onsales']) AND woof()->settings['by_onsales']['sh
                 ?>
                 <div class="switcher23-container">
 
-                    <input type="checkbox" class="woof_checkbox_sales_as_switcher switcher23" id="<?php echo $unique_id ?>" name="sales" value="0" <?php checked('salesonly', woof()->is_isset_in_request_data('onsales') ? 'salesonly' : '', true) ?> />
+                    <input type="checkbox" class="woof_checkbox_sales_as_switcher switcher23" id="<?php echo esc_attr($unique_id) ?>" name="sales" value="0" <?php checked('salesonly', woof()->is_isset_in_request_data('onsales') ? 'salesonly' : '', true) ?> />
 
-                    <label for="<?php echo $unique_id ?>" class="switcher23-toggle">
-                        <div class="switcher23-title2"><?php echo esc_html__($woof_ext_onsales_label) . ' ' . $count_string ?></div>
+                    <label for="<?php echo esc_attr($unique_id) ?>" class="switcher23-toggle">
+                        <div class="switcher23-title2"><?php echo esc_html__($woof_ext_onsales_label) . ' ' .wp_kses_post(wp_unslash( $count_string ))?></div>
                         <span></span>                    
                     </label>
                 </div>

@@ -84,9 +84,9 @@ if (!function_exists('woof_draw_select_childs')) {
                     continue;
                 }
                 ?>
-                <option <?php if ($show_count AND $count == 0 AND!in_array($term['slug'], $current_request)): ?>disabled=""<?php endif; ?> value="<?php echo esc_attr($term['slug']) ?>" <?php selected(in_array($term['slug'], $current_request)) ?> class="woof-padding-<?php echo esc_attr($level) ?>"><?php echo str_repeat(' ', esc_attr($level)) ?><?php
+                <option <?php if ($show_count AND $count == 0 AND!in_array($term['slug'], $current_request)): ?>disabled=""<?php endif; ?> value="<?php echo esc_attr($term['slug']) ?>" <?php selected(in_array($term['slug'], $current_request)) ?> class="woof-padding-<?php echo esc_attr($level) ?>"><?php echo esc_html(str_repeat(' ', $level)) ?><?php
                     if (has_filter('woof_before_term_name'))
-                       echo apply_filters('woof_before_term_name', $term, $taxonomy_info);
+                       echo wp_kses_post(wp_unslash(apply_filters('woof_before_term_name', $term, $taxonomy_info)));
                     else
                         echo esc_html($term['name']);
                     ?> <?php echo wp_kses_post(wp_unslash($count_string)) ?></option>
@@ -171,7 +171,7 @@ $select_id = "woof_tax_select_" . $tax_slug;
             ?>
             <option <?php if ($show_count AND $count == 0 AND!in_array($term['slug'], $current_request)): ?>disabled=""<?php endif; ?> value="<?php echo esc_attr($term['slug']) ?>" <?php selected(in_array($term['slug'], $current_request)) ?>><?php
                 if (has_filter('woof_before_term_name'))
-                    echo apply_filters('woof_before_term_name', $term, $taxonomy_info);
+                    echo wp_kses_post(wp_unslash(apply_filters('woof_before_term_name', $term, $taxonomy_info)));
                 else
                     echo esc_html($term['name']);
                 ?> <?php echo wp_kses_post(wp_unslash($count_string)) ?></option>

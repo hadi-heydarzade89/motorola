@@ -9,7 +9,7 @@ if (isset(woof()->settings['by_rating']) AND woof()->settings['by_rating']['show
         $as_star = woof()->settings['by_rating']['use_star'];
     }
     ?>
-    <div data-css-class="woof_by_rating_container" class="woof_by_rating_container woof_container <?php echo WOOF_HELPER::generate_container_css_classes('by_rating') ?>">
+    <div data-css-class="woof_by_rating_container" class="woof_by_rating_container woof_container <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes('by_rating')) ?>">
         <div class="woof_container_overlay_item"></div>
         <?php
         $request = woof()->get_request_data();

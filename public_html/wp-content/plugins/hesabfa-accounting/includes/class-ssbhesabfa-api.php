@@ -4,7 +4,7 @@ include_once(plugin_dir_path(__DIR__) . 'admin/services/HesabfaLogService.php');
 
 /**
  * @class      Ssbhesabfa_Api
- * @version    2.0.97
+ * @version    2.1.1
  * @since      1.0.0
  * @package    ssbhesabfa
  * @subpackage ssbhesabfa/api
@@ -142,7 +142,6 @@ class Ssbhesabfa_Api
         $data = array(
             'contact' => $contact,
         );
-
         return $this->apiRequest($method, $data);
     }
 //================================================================================================
@@ -308,8 +307,8 @@ class Ssbhesabfa_Api
         $data = array(
             'invoice' => $invoice,
         );
-
         if($GUID != '') $data['requestUniqueId'] = $GUID;
+        $this->saveStatistics();
 
         return $this->apiRequest($method, $data);
     }
@@ -327,17 +326,6 @@ class Ssbhesabfa_Api
 //================================================================================================
     public function invoiceSavePayment($number, $financialData, $accountPath, $date, $amount, $transactionNumber = null, $description = null, $transactionFee = 0)
     {
-        if(get_option('ssbhesabfa_invoice_transaction_fee') && get_option('ssbhesabfa_invoice_transaction_fee') > 0) {
-            $transactionFeeOption = get_option('ssbhesabfa_invoice_transaction_fee');
-
-            $func = new Ssbhesabfa_Admin_Functions();
-            $transactionFeeOption = $func->convertPersianDigitsToEnglish($transactionFeeOption);
-
-            if($transactionFeeOption<100 && $transactionFeeOption>0) $transactionFeeOption /= 100;
-            $transactionFee = $amount * $transactionFeeOption;
-            if($transactionFee < 1) $transactionFee = 0;
-        }
-
         $method = 'invoice/savepayment';
         $data = array(
             'number' => (int)$number,
@@ -390,6 +378,15 @@ class Ssbhesabfa_Api
         $method = 'invoice/getWarehouseReceipt';
         $data = array(
             'idList' => $idList,
+        );
+
+        return $this->apiRequest($method, $data);
+    }
+//================================================================================================
+    public function getWarehouseReceipt($objectId) {
+        $method = 'warehouse/GetById';
+        $data = array(
+            'id' => $objectId,
         );
 
         return $this->apiRequest($method, $data);
@@ -476,6 +473,51 @@ class Ssbhesabfa_Api
     {
         $method = 'setting/getBusinessInfo';
         return $this->apiRequest($method);
+    }
+//=========================================================================================================================
+    public function getLastChangeId($start = 1000000000) {
+        $method = 'setting/GetChanges';
+        $data = array(
+            'start' => $start,
+        );
+        return $this->apiRequest($method, $data);
+    }
+//================================================================================================
+    public function saveStatistics() {
+        $plugin_version = constant('SSBHESABFA_VERSION');
+
+        $endpoint = "https://hesabfa.com/statistics/save";
+        $body = array(
+            "Platform" => "Woocommerce/" . $plugin_version,
+            "Website" => get_site_url(),
+            'APIKEY' => get_option('ssbhesabfa_account_api'),
+            "IP" => $_SERVER['REMOTE_ADDR']
+        );
+
+        $options = array(
+            'body' => wp_json_encode($body),
+            'headers' => array(
+                'Content-Type' => 'application/json',
+            ),
+            'timeout' => 60,
+            'redirection' => 5,
+            'blocking' => true,
+            'httpversion' => '1.0',
+            'sslverify' => false,
+            'data_format' => 'body',
+        );
+
+        $wp_remote_post = wp_remote_post($endpoint, $options);
+        $result = json_decode(wp_remote_retrieve_body($wp_remote_post));
+    }
+//================================================================================================
+    public function checkMobileAndNationalCode($nationalCode, $billingPhone) {
+        $method = 'inquiry/checkMobileAndNationalCode';
+        $data = array(
+            'nationalCode' => $nationalCode,
+            'mobile' => $billingPhone,
+        );
+        return $this->apiRequest($method, $data);
     }
 //================================================================================================
 }

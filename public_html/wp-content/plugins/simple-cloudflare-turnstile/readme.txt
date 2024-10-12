@@ -3,8 +3,8 @@ Contributors: ElliotVS, RelyWP
 Tags: cloudflare,turnstile,captcha,protect,spam
 Donate link: https://www.paypal.com/donate/?hosted_button_id=RX28BBH7L5XDS
 Requires at least: 4.7
-Tested up to: 6.4.0
-Stable Tag: trunk
+Tested up to: 6.6.1
+Stable Tag: 1.27.0
 License: GPLv3 or later.
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -70,7 +70,7 @@ The plugin includes several other features and options:
 * Appearance Mode: Choose if Turnstile is always displayed, or only when an interaction is required.
 * Disable Submit Button: Disable the submit button on forms until the Turnstile challenge is completed.
 * Custom Error Message: Set your own custom error message for failed submissions.
-* Whitelist: Prevent Turnstile from showing for logged in users, or certain IP addresses.
+* Whitelist: Prevent Turnstile from showing for logged in users, or certain IP addresses (wildcards are not supported).
 
 ## Getting Started ##
 
@@ -99,7 +99,7 @@ Cloudflare Turnstile is also a completely free service.
 
 ## Plugin Languages ##
 
-Currently available in <a href="https://translate.wordpress.org/projects/wp-plugins/simple-cloudflare-turnstile/" target="_blank">8 languages</a>. Thank you to all the <a href="https://translate.wordpress.org/projects/wp-plugins/simple-cloudflare-turnstile/contributors/" target="_blank">contributers</a>! If you would like to help contribute translations, please <a href="https://translate.wordpress.org/projects/wp-plugins/simple-cloudflare-turnstile/" target="_blank">click here</a>.
+Currently available in <a href="https://translate.wordpress.org/projects/wp-plugins/simple-cloudflare-turnstile/" target="_blank">10 languages</a>. Thank you to all the <a href="https://translate.wordpress.org/projects/wp-plugins/simple-cloudflare-turnstile/contributors/" target="_blank">contributers</a>! If you would like to help contribute translations, please <a href="https://translate.wordpress.org/projects/wp-plugins/simple-cloudflare-turnstile/" target="_blank">click here</a>.
 
 ## Other Information ##
 
@@ -153,11 +153,9 @@ The support forums are the only place you should submit a support ticket for 100
 
 = Is the plugin free? =
 
-Yes, this anti spam plugin is completely free with no paid version, and does not include any additional data tracking.
+Yes, this plugin is completely free with no paid version, and does not include any additional data tracking.
 
 Cloudflare Turnstile is also a completely free service.
-
-Please consider helping the ongoing development and support of this free plugin by <a href="https://wordpress.org/support/plugin/simple-cloudflare-turnstile/reviews/#new-post">leaving a review</a> or <a href="https://www.paypal.com/donate/?hosted_button_id=RX28BBH7L5XDS">making a donation</a>.
 
 = Is this better for Data Privacy & GDPR? =
 
@@ -183,9 +181,44 @@ You can report security bugs through the Patchstack Vulnerability Disclosure Pro
 
 == Changelog ===
 
+= Version 1.27.0 - 7th August 2024 =
+- New: Added a new option in the admin settings page to "enable debug logging of Turnstile form submission events". This will add a log event every time a form is submitted with Turnstile enabled, and display the log at the bottom of the settings page.
+- Fix: Fixed issue with Turnstile not rendering on Elementor popup forms.
+- Fix: Fixed issue with Turnstile not resetting properly on Contact Form 7 causing it to display twice on submission error.
+- Fix: Fixed issue with Turnstile showing twice in some cases.
+
+= Version 1.26.6 - 27th July 2024 =
+- Fix: Fixed issue with Turnstile showing twice on Forminator forms in some cases.
+
+= Version 1.26.5 - 26th July 2024 =
+- Fix: Fixed issue with Turnstile showing twice on Elementor forms.
+
+= Version 1.26.4 - 26th July 2024 =
+- Fix: Tweak to help prevent some new rare cases where the Turnstile widget was being shown twice in some cases.
+- Fix: Fixed an issue with the WooCommerce password reset form when using a hide admin login URL plugin like "WPS Hide Login".
+- Other: Tested with WordPress 6.6.1
+
+= Version 1.26.3 - 18th July 2024 =
+- Tweak: Added a message to state that it is not currently compatible with WooCommerce "block-based" checkout.
+- Fix: Fixed an issue with not being able to save the WP Forms integration settings if using the Pro version of WP Forms.
+- Other: Tested with WordPress 6.6.0
+- Other: Tested with WooCommerce 9.1.2
+
+= Version 1.26.2 - 8th May 2024 =
+- Fix: Fixed an issue with the new "ONLY enable for these Membership IDs" option with the MemberPress integration.
+
+= Version 1.26.0 - 8th May 2024 =
+- New: Added option to whitelist certain "User Agents" in the "Whitelist Settings" section to the settings page.
+- Tweak: Made a few small changes to the admin settings page.
+- Dev: Added a filter ("cfturnstile_widget_disable") to allow skipping Turnstile check and hiding the Turnstile widget programmatically.
+- Code Fork: auutstudio/simple-cloudflare-turnstile-sometimes
+-- New: Added an option to only show Turnstile on specific MemberPress registration forms, based on a declared list of Membership Product IDs.
+-- Tweak: Clarify that the Whitelist IP option does not support wildcards.
+-- Tweak: Clarify that WPForms has a redundant place in its own settings to configure Turnstile.
+
 = Version 1.25.0 - 7th November 2023 =
 - New: Added compatibility with the "Clean Login" plugin.
-- New: Added an option to only show Turnstile on the default WordPress login and registration form, and not on any other similar forms added by plugins.
+- New: Added an option to only show Turnstile on the default WordPress login and registration form, and not on any other similar forms added by plugins. This is enabled by default for new installs.
 - New: Added a new "Extra Failure Message" option, in advanced settings, which will show a custom notice to the user, under the widget, if the Turnstile challenge fails.
 - New: Added a new "Defer Scripts" option, in advanced settings, to decide whether the javascript files will be deferred or not. This is enabled by default.
 - Tweak: Modified the code for WooCommerce login check.

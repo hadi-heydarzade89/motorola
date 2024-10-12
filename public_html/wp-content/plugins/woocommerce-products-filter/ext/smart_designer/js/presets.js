@@ -180,7 +180,7 @@ export default class Presets {
         }, code => {
             Helper.message(woof_sd.lang.loaded);
             popup.set_content('');
-            let textarea = Helper.create_element('textarea', {rows: 10, disabled: 'disabled'}, JSON.stringify(code));
+            let textarea = Helper.create_element('textarea', {rows: 10, disabled: 'disabled'}, code);
             popup.append_content(textarea);
         });
     }

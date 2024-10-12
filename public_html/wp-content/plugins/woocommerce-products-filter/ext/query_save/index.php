@@ -146,8 +146,8 @@ final class WOOF_EXT_QUERY_SAVE extends WOOF_EXT {
 		$data['counter'] = count($saved_q);
 				
         $cont = woof()->render_html($this->get_ext_path() . 'views' . DIRECTORY_SEPARATOR . 'item_list_query.php', $data);
-
-        die($cont);
+		wp_send_json($cont);
+        //die($cont);
     }
 
     public function woof_remove_query() {
@@ -291,7 +291,7 @@ final class WOOF_EXT_QUERY_SAVE extends WOOF_EXT {
             if ($id) {
                 ?>
                 <div class="woof_query_save_notice_product woof_query_save_notice_product_<?php echo esc_attr($id) ?>" data-id="<?php echo esc_attr($id) ?>" ></div>
-                <input type="hidden" class="woof_query_save_notice_nonce" value="<?php echo wp_create_nonce('query_save_nonce')?>">
+                <input type="hidden" class="woof_query_save_notice_nonce" value="<?php echo esc_attr(wp_create_nonce('query_save_nonce'))?>">
 			<?php
             }
         }

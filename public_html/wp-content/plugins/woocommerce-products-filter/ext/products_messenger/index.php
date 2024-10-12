@@ -283,7 +283,7 @@ final class WOOF_EXT_PRODS_MESSENGER extends WOOF_EXT {
             $subscr = array();
         }
         if (count($subscr) >= $this->subscr_count) {
-            die('<li class="woof_pm_max_count" >' . __('Сount is max', 'woocommerce-products-filter') . '</li>'); // Check limit count on backend
+            die('<li class="woof_pm_max_count" >' . esc_html__('Сount is max', 'woocommerce-products-filter') . '</li>'); // Check limit count on backend
         }
         //+++
         $data['subscr_lang'] = apply_filters('woof_subscribe_lang', $this->subscribe_lang); //Text of  the subscriptions
@@ -308,7 +308,8 @@ final class WOOF_EXT_PRODS_MESSENGER extends WOOF_EXT {
         $data['ext_link'] = $this->get_ext_link();
         //for Ajax redraw
         $cont = woof()->render_html($this->get_ext_path() . 'views' . DIRECTORY_SEPARATOR . 'item_list_subscr.php', $data);
-        die($cont);
+		wp_send_json($cont);
+        //die($cont);
     }
 
     public function woof_remove_subscr() {
@@ -319,7 +320,11 @@ final class WOOF_EXT_PRODS_MESSENGER extends WOOF_EXT {
         if (!isset($_POST['key']) OR !isset($_POST['user_id'])) {
             die('No data!');
         }
-
+		
+		if (get_current_user_id() == 0  ||  get_current_user_id() != (int) $_POST['user_id']) {
+			return false;
+		}
+		
         $user_id = sanitize_key($_POST['user_id']);
         $key = sanitize_key($_POST['key']);
         $subscr = get_user_meta($user_id, $this->user_meta_key, true);

@@ -7,7 +7,7 @@
  * @from 
  *  class-ht-ctc-chat.php
  *  
- * 
+ * @since 4.1 this file is not included anywhere. can remove in future.
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;

@@ -59,4 +59,22 @@ function woof_init_seo_rules_scripts() {
 
         return false;
     });
+    jQuery('.woof_seo_rules_move_down').off('click');
+    jQuery('.woof_seo_rules_move_down').on('click', function () {
+        var key = jQuery(this).data('key');
+        var item = jQuery("li[data-key='" + key + "']");
+	var after = item.next();
+	item.insertAfter(after);
+
+        return false;
+    });
+    jQuery('.woof_seo_rules_move_up').off('click');
+    jQuery('.woof_seo_rules_move_up').on('click', function () {
+        var key = jQuery(this).data('key');
+        var item = jQuery("li[data-key='" + key + "']");
+	var after = item.prev();
+	item.insertBefore(after);
+
+        return false;
+    });       
 }

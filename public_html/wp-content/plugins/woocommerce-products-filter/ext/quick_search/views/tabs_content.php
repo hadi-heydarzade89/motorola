@@ -129,7 +129,7 @@ $wp_cron_period = $woof_settings['woof_quick_search']['wp_cron_period'];
                     <h4><?php esc_html_e('Reassemble data file', 'woocommerce-products-filter') ?></h4>
 
                     <div class="woof-control-container">
-                        <input type="hidden" id="woof_qs_update_nonce"  value="<?php echo wp_create_nonce('woof-qs-nonce'); ?>">
+                        <input type="hidden" id="woof_qs_update_nonce"  value="<?php echo esc_attr(wp_create_nonce('woof-qs-nonce')); ?>">
                         <div class="woof-control">
                             <a id="woof_quick_search_update" class="button" ><span class="icon-up"></span><?php esc_html_e('Update now!', 'woocommerce-products-filter') ?></a><span class="woof_qt_messange"></span><span class="woof_qt_product_count"></span>
                         </div>

@@ -40,6 +40,7 @@ class Persian_Woocommerce_Core {
 
 		add_filter( "plugin_action_links_persian-woocommerce/woocommerce-persian.php", function ( $actions, $plugin_file, $plugin_data, $context ) {
 			$woo = [ 'woo_ir' => sprintf( '<a href="%s" target="blank" style="background: #763ec2;color: white;padding: 0px 5px;border-radius: 2px;">%s</a>', 'https://woosupport.ir', 'ووکامرس فارسی' ) ];
+
 			return $woo + $actions;
 		}, 100, 4 );
 	}
@@ -65,7 +66,7 @@ class Persian_Woocommerce_Core {
 			15 => [
 				'title'      => 'تاریخ شمسی',
 				'capability' => 'manage_options',
-				'slug'       => admin_url( 'admin.php?page=persian-wc-tools&tab=date' ),
+				'slug'       => esc_url( admin_url( 'admin.php?page=persian-wc-tools&tab=date' ) ),
 				'callback'   => '',
 			],
 			20 => [
@@ -77,7 +78,7 @@ class Persian_Woocommerce_Core {
 			25 => [
 				'title'      => 'سوپر ادمین',
 				'capability' => 'manage_options',
-				'slug'       => admin_url( 'admin.php?page=persian-wc-tools&tab=super_admin' ),
+				'slug'       => esc_url( admin_url( 'admin.php?page=persian-wc-tools&tab=super_admin' ) ),
 				'callback'   => '',
 			],
 			30 => [

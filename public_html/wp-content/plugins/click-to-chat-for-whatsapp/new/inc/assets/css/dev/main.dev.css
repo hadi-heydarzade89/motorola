@@ -1,4 +1,4 @@
-.ht_ctc_chat_greetings_box *:not(ul):not(ol) {
+.ht_ctc_chat_greetings_box *:not(ul):not(ol):not(.ht_ctc_default):not(.ht_ctc_defaults *):not(.iti *) {
     padding: 0px;
     margin: 0px;
     box-sizing: border-box;
@@ -31,6 +31,7 @@
     display: inline-block;
 }
 
+/* rtl left: 0px; added with in php page. */
 .g_header_badge_online {
     position: absolute;
     bottom: 0px;

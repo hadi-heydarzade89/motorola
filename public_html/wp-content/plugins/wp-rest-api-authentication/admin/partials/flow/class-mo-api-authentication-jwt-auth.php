@@ -80,11 +80,11 @@ class Mo_API_Authentication_JWT_Auth {
 	/**
 	 * Check if string is JSON
 	 *
-	 * @param mixed $string string containing JWT token.
+	 * @param mixed $json_string String containing JWT token.
 	 * @return bool
 	 */
-	public function is_json( $string ) {
-		return ( json_decode( $string ) === null ) ? false : true;
+	public function is_json( $json_string ) {
+		return ( json_decode( $json_string ) === null ) ? false : true;
 	}
 
 	/**
@@ -131,5 +131,4 @@ class Mo_API_Authentication_JWT_Auth {
 		}
 		return false;
 	}
-
 }

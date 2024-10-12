@@ -22,152 +22,117 @@ class Mo_API_Authentication_TokenAPI_Config {
 	public static function mo_api_auth_configuration_output() {
 
 		$mo_api_key_enable = ( get_option( 'mo_api_authentication_selected_authentication_method' ) === 'tokenapi' ) ? 1 : 0;
-
 		?>
-	<div id="mo_api_key_authentication_support_layout" class="mo_api_authentication_support_layout">
-		<form method="post" id="mo-api-key-authentication-method-form" action="">
-
-		<input type="hidden" name="action" id="mo_api_apikeyauth_save_config_input" value="Save APIKey Auth">
-		<?php wp_nonce_field( 'mo_api_key_authentication_method_config', 'mo_api_key_authentication_method_config_fields' ); ?>	
-		<div id="mo_api_authentication_support_basicoauth" class="mo_api_authentication_common_div_css">
-
-			<button type="button" onclick="moAPIKeyAuthenticationMethodSave('save_apikey_auth')" class="mo_api_authentication_method_save_button button button-primary button-large" style="background: #473970;" 
-			<?php
-			if ( ! $mo_api_key_enable ) {
-				echo 'disabled';}
-			?>
-			>Next</button>
-			<a href="admin.php?page=mo_api_authentication_settings"><button type="button" class="mo_api_authentication_method_save_button button button-primary button-large" style="background: #473970;margin-right: 15px;">Back</button></a>
-			<h4><a href="admin.php?page=mo_api_authentication_settings&tab=config" style="text-decoration: none">Configure Methods</a> > API Key Authentication Method</h4>
-
-			<div style="display: flex;">
-				<div style="float: left"><h2 class="mo_api_authentication_method_head">API Key Authentication Method</h2></div>
-				<div class="mo_api_authentication_premium_methods">
-				<div class="mo_api_auth_inner_premium_label"><p>Premium</p></div>
+		<div id="mo_api_key_authentication_support_layout" class="border border-1 rounded-4 p-3">
+			<form method="post" id="mo-api-key-authentication-method-form">
+				<input type="hidden" name="action" id="mo_api_apikeyauth_save_config_input" value="Save APIKey Auth">
+				<?php wp_nonce_field( 'mo_api_key_authentication_method_config', 'mo_api_key_authentication_method_config_fields' ); ?>
+				<div class="d-flex align-items-center gap-3 mb-3 justify-content-between">
+					<div class="d-flex align-items-center gap-3 mb-3">
+						<h5 class="m-0">
+							<a class="text-decoration-none" href="admin.php?page=mo_api_authentication_settings&tab=config">Configure Methods</a>
+							> API Key Authentication Method
+						</h5>
+						<span class="mo_api_auth_inner_premium_label">Premium</span>
+					</div>
+					<div class="d-flex gap-2 text-center">
+						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" onclick="window.location.href='admin.php?page=mo_api_authentication_settings'">Back</button>
+						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" onclick="moAPIKeyAuthenticationMethodSave('save_apikey_auth')" <?php echo ! $mo_api_key_enable ? 'disabled' : ''; ?>>Next</button>
+					</div>
 				</div>
-			</div>	
-			<p class="mo_api_authentication_method_description">WordPress REST API - API Key Authentication Method involves the REST APIs access on validation against the API key/token.</p>
-			<br>
-			<div class="mo_api_auth_setup_guide2">
-				<div class="mo_api_auth_setup_guide1"><img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/youtube.png" height="25px" width="25px"></div>
-				<a href="https://www.youtube.com/watch?v=HdWvlkAdXgA" target="_blank" rel="noopener noreferrer"><div class="mo_api_authentication_guide1"><p style="font-weight: 700;">Video guide</b></p></div></a>
-			</div>
-			<div class="mo_api_auth_setup_guide2">
-				<div class="mo_api_auth_setup_guide1"><img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/user-guide.png" height="25px" width="25px"></div>
-				<a href="https://plugins.miniorange.com/rest-api-key-authentication-method#step_1" target="_blank"><div class="mo_api_authentication_guide1"><p style="font-weight: 700;">Setup Guide</p></div></a>
-			</div>
-			<div class="mo_api_auth_setup_guide2">
-				<div class="mo_api_auth_setup_guide1"><img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/document.png" height="25px" width="25px"></div>
-				<a href="https://developers.miniorange.com/docs/rest-api-authentication/wordpress/api-key-authentication" target="_blank"><div class="mo_api_authentication_guide1"><p style="font-weight: 700;">Developer Doc</b></p></div></a>
-			</div>
-			<br><br><br>
-			<div class="mo_api_authentication_support_layout" style="margin-left: 5px; margin-top: 40px;width: 90%">
-				<br>
-					<table width="100%">
-						<tr>
-							<td>
-								<p style="font-size: 15px;font-weight: 500"><img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/universal-key.png" height="25px" width="25px;margin-top:10px;margin-right:10px">&nbsp;Universal API Key : </p>
-							</td>
-							<td>
-								<p><input type="text" name="" style="width: 80%" value="
-								<?php
-								if ( esc_attr( get_option( 'mo_api_auth_bearer_token' ) ) ) {
-									echo esc_html( get_option( 'mo_api_auth_bearer_token' ) );
-								} else {
-									echo 'xxxxxxxxxxxxxxxxxxxxxx';}
-								?>
-								" disabled>
-									<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/write.png" height="25px" width="25px;margin-top:10px;">
-								</p>
-							</td>
-						</tr>
-					</table>
-				<br>
-				<p><b>Tip:</b> Universal key can be used to unlock all the WordPress REST API access which does not involves user permissions. You can create the key for any user from the above dropdown.</p>
-				<br>
-			</div>
-			<br>
-			<div class="mo_api_authentication_support_layout" style="margin-left: 5px;margin-top:20px; width: 90%">
-				<br>
-					<table width="100%">
-						<tr>
-							<td style="width: 42%">
-								<p style="font-size: 15px;font-weight: 500"><img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/user-based-login.png" height="25px" width="25px;margin-top:10px;"> &nbsp; User-specific API Key : </p>
-							</td>
-							<td style="width: 58%">
-								<?php $users = get_users(); ?>
-								<p>
-						<select disabled style="width:80%;margin-top:5px">
-						<?php
-						$count = 0;
-						foreach ( $users as $user ) {
-							$count++;
-							if ( 11 === $count ) {
-								break;
-							}
-							?>
-							<option><?php echo esc_attr( $user->user_login ); ?></option>
-							<?php
-						}
-						?>
-						</select>
-						<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( dirname( __FILE__ ) ) ) ) ); ?>/images/write.png" height="25px" width="25px;"></p>
-							</td>
-						</tr>
-					</table>
-				<br>
-				<p><b>Tip:</b> User specific key can be used to unlock all the WordPress REST API access including the ones that involves user permissions.</p>
-				<br>
-			</div>
-			<br>
+				<div id="mo_api_authentication_support_basicoauth">
+					<p class="fs-6">WordPress REST API - API Key Authentication Method involves the REST APIs access on validation against the API key/token.</p>
+					<div class="d-flex gap-3 my-4">
+						<div class="d-flex justify-content-between align-items-center gap-1 border border-1 rounded-2 p-1">
+							<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/youtube.png" height="25px" width="25px">
+							<a class="btn btn-sm text-decoration-none text-black" href="https://www.youtube.com/watch?v=HdWvlkAdXgA" target="_blank" rel="noopener noreferrer">Video Guide</a>
+						</div>
+						<div class="d-flex justify-content-between align-items-center gap-1 border border-1 rounded-2 p-1">
+							<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/user-guide.png" height="25px" width="25px">
+							<a class="btn btn-sm text-decoration-none text-black" href="https://plugins.miniorange.com/rest-api-key-authentication-method#step_1" target="_blank">Setup Guide</a>
+						</div>
+						<div class="d-flex justify-content-between align-items-center gap-1 border border-1 rounded-2 p-1">
+							<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/document.png" height="25px" width="25px">
+							<a class="btn btn-sm text-decoration-none text-black" href="https://developers.miniorange.com/docs/rest-api-authentication/wordpress/api-key-authentication" target="_blank">Developer Doc</a>
+						</div>
+					</div>
+					<div class="container p-0">
+						<div class="mt-5 p-3 border border-1 rounded-3">
+							<div class="row mb-3">
+								<label class="col-3 d-flex align-items-center gap-1">
+									<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/universal-key.png" height="25px">
+									<span class="mo_rest_api_primary_font">Universal API Key:</span>
+								</label>
+								<div class="col d-flex align-items-center gap-1">
+									<input class="form-control" type="text" value="XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX" disabled>
+									<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/write.png" height="25px">
+								</div>
+							</div>
+							<p class="text-muted"><b>Tip:</b> Universal key can be used to unlock all the WordPress REST API access which does not involves user permissions. You can create the key for any user from the above dropdown.</p>
+						</div>
+						<div class="mt-2 p-3 border border-1 rounded-3">
+							<div class="row mb-3">
+								<label class="col-3 d-flex align-items-center gap-1">
+									<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/user-based-login.png" height="25px">
+									<span class="mo_rest_api_primary_font">User-Specific API Key:</span>
+								</label>
+								<div class="col d-flex align-items-center gap-1">
+									<?php $user = wp_get_current_user(); ?>
+									<select class="form-select" disabled>
+										<option selected><?php echo esc_attr( $user->user_login ); ?></option>
+									</select>
+									<img src="<?php echo esc_url( plugin_dir_url( dirname( dirname( __DIR__ ) ) ) ); ?>/images/write.png" height="25px">
+								</div>
+							</div>
+							<p class="text-muted"><b>Tip:</b> User specific key can be used to unlock all the WordPress REST API access including the ones that involves user permissions.</p>
+						</div>
+					</div>
+				</div>
+			</form>
 		</div>
-	</form>
-	</div>
-<div class="mo_api_authentication_support_layout" id="mo_api_keyauth_finish" style="display: none;margin-left: 20px;">
-
-	<form method="post" id="mo-api-key-authentication-method-form" action="">
-					<input required type="hidden" name="option" value="mo_api_key_authentication_config_form" />
-					<?php wp_nonce_field( 'mo_api_key_authentication_method_config', 'mo_api_key_authentication_method_config_fields' ); ?>	
-
-			<div id="mo_api_basicauth_client_creds" style="margin-left: 20px;">
-				<button type="button" onclick="moAPIKeyAuthenticationMethodFinish()" class="mo_api_authentication_method_save_button2 button button-primary button-large" style="background: #473970;margin-right: 10px;">Finish</button>
-				<a href="admin.php?page=mo_api_authentication_settings"><button type="button" class="mo_api_authentication_method_save_button button button-primary button-large" style="background: #473970;margin-right: 15px;">Back</button></a>
-				<b><p><a href="admin.php?page=mo_api_authentication_settings&tab=config" style="text-decoration: none">Configure Methods</a> > API Key Authentication Method</p></b>
-			<h2 style="font-size: 22px;">Configuration Overview</h2>
-				<br>
-				<div class="mo_api_authentication_support_layout" style="width: 80%;">
-					<br>
-
-					<table width="80%">
-						<tr>
-							<td>
-								<p style="font-size: 15px;"> Universal API Key :</p>
-							</td>
-							<td>
-								<p style="font-size: 15px;font-weight: 500">
-								<?php
-								if ( esc_attr( get_option( 'mo_api_auth_bearer_token' ) ) ) {
-									echo esc_html( get_option( 'mo_api_auth_bearer_token' ) );
-								} else {
-									echo 'universal-api-key';}
-								?>
-								</p>
-							</td>
-						</tr>
-					</table>
-					<p style="padding-right: 10px;"><b>Tip : </b>Please keep this API key securely and do not share it. In case if it is compromised, you can always regenerate it.</p>
+		<div id="mo_api_keyauth_finish" class="d-none border border-1 rounded-4 p-3">
+			<form method="post" id="mo-api-key-authentication-method-form" action="">
+				<input required type="hidden" name="option" value="mo_api_key_authentication_config_form" />
+				<?php wp_nonce_field( 'mo_api_key_authentication_method_config', 'mo_api_key_authentication_method_config_fields' ); ?>	
+				<div class="d-flex align-items-center gap-3 mb-3 justify-content-between">
+					<div class="d-flex align-items-center gap-3 mb-3">
+						<h5 class="m-0">
+							<a class="text-decoration-none" href="admin.php?page=mo_api_authentication_settings&tab=config">Configure Methods</a>
+							> API Key Authentication Method
+						</h4>
+						<span class="mo_api_auth_inner_premium_label">Premium</span>
+					</div>
+					<div class="d-grid gap-2 d-md-block text-center">
+						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="button" onclick="window.location.href='admin.php?page=mo_api_authentication_settings'">Back</button>
+						<button class="btn btn-sm mo_rest_api_button text-white text-capitalize" type="submit" onclick="moAPIKeyAuthenticationMethodFinish()">Finish</button>
+					</div>
 				</div>
-			</div>
-			<br><br>
+				<div id="mo_api_basicauth_client_creds">
+					<h6>Configuration Overview</h6>
+					<div class="pt-3">
+						<div class="row">
+							<div class="col-3">
+								<p>Universal API Key:</p>
+							</div>
+							<div class="col">
+								<p><b>universal-api-key</b></p>
+							</div>
+						</div>
+					</div>
+					<p class="text-muted"><b>Tip : </b>Please keep this API key securely and do not share it. In case if it is compromised, you can always regenerate it.</p>
+				</div>
+			</form>
 		</div>
 
 		<script>
 			function moAPIKeyAuthenticationMethodSave(action){
 
 				div = document.getElementById('mo_api_key_authentication_support_layout');
-				div.style.display = "none";
+				div.classList.remove("d-block");
+				div.classList.add("d-none");
 				div2 = document.getElementById('mo_api_keyauth_finish');
-				div2.style.display = "block";
+				div2.classList.remove("d-none");
+				div2.classList.add("d-block");
 			}
 
 			function moAPIKeyAuthenticationMethodFinish(){

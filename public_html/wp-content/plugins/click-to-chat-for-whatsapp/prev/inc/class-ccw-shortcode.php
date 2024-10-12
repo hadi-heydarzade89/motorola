@@ -274,6 +274,7 @@ class CCW_Shortcode {
         $o = '';
 
         // shortcode template file path
+        $style = sanitize_file_name( $style );
         $sc_path = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'prev/inc/commons/styles-list-sc/sc-style-' . $style. '.php';
 
         if ( is_file( $sc_path ) ) {

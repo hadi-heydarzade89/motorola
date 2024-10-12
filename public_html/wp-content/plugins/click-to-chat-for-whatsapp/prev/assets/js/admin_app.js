@@ -6,16 +6,11 @@ jQuery(document).ready(function($) {
 
 // initialize materialize function .. 
 document.addEventListener('DOMContentLoaded', function() {
-  // select
   var elems = document.querySelectorAll('select');
   M.FormSelect.init(elems, {});
-
-  // Collapsible
   var elems = document.querySelectorAll('.collapsible');
   M.Collapsible.init(elems, {});
-
 });
-
 
 jQuery(document).ready(function () {
 
@@ -24,7 +19,6 @@ jQuery(document).ready(function () {
   let default_display = () => {
     
     let val = jQuery('.select').find(":selected").val();
-    
     let position1 = document.querySelector('.position-1');
     let position2 = document.querySelector('.position-2');
     let position3 = document.querySelector('.position-3');
@@ -41,9 +35,7 @@ jQuery(document).ready(function () {
     }
 
   }
-
   default_display();
-
 
   //  incase display-block is added remove it ..
   let remove = () => {
@@ -52,11 +44,8 @@ jQuery(document).ready(function () {
     });
   }
 
-
   jQuery(".select").on("change", function (e) {
-    let x = e.target;
     let val = e.target.value;
-
     let position1 = document.querySelector('.position-1');
     let position2 = document.querySelector('.position-2');
     let position3 = document.querySelector('.position-3');

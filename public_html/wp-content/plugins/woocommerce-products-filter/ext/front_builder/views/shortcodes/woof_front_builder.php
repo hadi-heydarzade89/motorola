@@ -45,13 +45,17 @@ $container_id = 'woof-front-builder-' . $shortcode_id;
 
 <div><!-- avoid wpautop for button -->
     <?php if ($is_admin): ?>
-        <a href="javascript: void(0);" id="<?php echo esc_html__($shortcode_id) ?>" data-selected="<?php echo esc_html__($selected_list) ?>" data-slug="<?php echo $swoof_slug ?>" data-filter-id="<?php echo $id ?>" data-name="<?php echo esc_html__($name) ?>" data-popup-width="<?php echo esc_html__($popup_width) ?>" data-popup-height="<?php echo esc_html__($popup_height) ?>" class="woof-form-builder-btn">
-            <img src="<?php echo $ext_link . 'img/cog.svg' ?>" style="opacity: 0;" alt="<?php echo esc_html__($name) ?>">
-            <img src="<?php echo $ext_link . 'img/husky.svg' ?>" alt="<?php echo esc_html__($name) ?>">
+        <a href="javascript: void(0);" id="<?php echo esc_html__($shortcode_id) ?>" data-selected="<?php echo esc_html__($selected_list) ?>" data-slug="<?php echo esc_attr($swoof_slug) ?>" data-filter-id="<?php echo esc_attr($id) ?>" data-name="<?php echo esc_html__($name) ?>" data-popup-width="<?php echo esc_html__($popup_width) ?>" data-popup-height="<?php echo esc_html__($popup_height) ?>" class="woof-form-builder-btn">
+            <img src="<?php echo esc_attr($ext_link) . 'img/cog.svg' ?>" style="opacity: 0;" alt="<?php echo esc_html__($name) ?>">
+            <img src="<?php echo esc_attr($ext_link) . 'img/husky.svg' ?>" alt="<?php echo esc_html__($name) ?>">
         </a>
     <?php endif; ?>
 
-    <div id="<?php echo $container_id ?>" class="woof-front-builder-container woof_section_scrolled woof_use_beauty_scroll" style="<?php echo $style ?>" data-name="<?php echo esc_html__($name) ?>" data-viewtypes='<?php echo json_encode(woof()->html_types) ?>'>
+    <div id="<?php echo esc_attr($container_id) ?>" 
+		 class="woof-front-builder-container woof_section_scrolled woof_use_beauty_scroll" 
+		 style="<?php echo wp_kses($style,'default') ?>" 
+		 data-name="<?php echo esc_html__($name) ?>" 
+		 data-viewtypes='<?php echo json_encode(woof()->html_types) ?>'>
         <?php
         if (!empty($selected)) {
             echo do_shortcode("[woof id='{$shortcode_id}' filter_id={$id} name='{$name}' swoof_slug='{$swoof_slug}' {$attributes_string} viewtypes='{$viewtypes}' tax_only='{$tax_only}' by_only='{$by_only}']");
@@ -59,16 +63,16 @@ $container_id = 'woof-front-builder-' . $shortcode_id;
         ?> 
 		
     </div>
-	<input type="hidden" class="woof_front_builder_nonce" value="<?php echo wp_create_nonce('front_builder_nonce')?>">
-    <style type="text/css" id="<?php echo $shortcode_id ?>-styles">
+	<input type="hidden" class="woof_front_builder_nonce" value="<?php echo esc_attr(wp_create_nonce('front_builder_nonce'))?>">
+    <style type="text/css" id="<?php echo esc_attr($shortcode_id) ?>-styles">
         /* styles for the current HUSKY products filter form */
         <?php
         if (!empty($sections_layout_options)) {
             foreach ($sections_layout_options as $section_key => $values) {
                 if (!empty($values)) {
-                    echo '#' . $container_id . ' .woof_fs_' . $section_key . '{';
+                    echo '#' . esc_attr($container_id) . ' .woof_fs_' . esc_attr($section_key) . '{';
                     foreach ($values as $k => $v) {
-                        echo $k . ': ' . $v . '; ';
+                        echo wp_kses( $k . ': ' . $v . '; ','default');
                     }
                     echo '}' . PHP_EOL . PHP_EOL;
                 }

@@ -70,6 +70,10 @@ class HT_CTC_Chat {
             }
         }
 
+        /**
+         * dont get page level settings if its an archive page..
+         */
+        $is_page_level_settings = 'yes';
 
         $page_id = get_the_ID();
         // $page_id = get_queried_object_id();
@@ -99,6 +103,9 @@ class HT_CTC_Chat {
             $page_url = get_permalink();
             $post_title = esc_html( get_the_title() );
         } elseif ( is_archive() ) {
+
+            //no page level settings for archive pages
+            $is_page_level_settings = 'no';
 
             if ( isset($_SERVER['HTTP_HOST']) && $_SERVER['REQUEST_URI'] ) {
                 $protocol = ( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on' ) ? 'https' : 'http';
@@ -130,11 +137,12 @@ class HT_CTC_Chat {
         }
 
         // page level
-        $ht_ctc_pagelevel = get_post_meta( $page_id, 'ht_ctc_pagelevel', true );
+        $ht_ctc_pagelevel = [];
 
-        // // custom field.
-        // $cf_prefilled = get_post_meta( $page_id, 'ht_ctc_cf_prefilled', true );
-        
+
+        if ( 'no' !== $is_page_level_settings ) {
+            $ht_ctc_pagelevel = get_post_meta( $page_id, 'ht_ctc_pagelevel', true );
+        }
 
         /**
          * show/hide
@@ -167,27 +175,38 @@ class HT_CTC_Chat {
         $ht_ctc_chat['position_mobile'] = $position_mobile;
         
         // number
-        $number = (isset($options['number'])) ? esc_attr($options['number']) : '';
-        $call_to_action = (isset($options['call_to_action'])) ? __(esc_attr($options['call_to_action']) , 'click-to-chat-for-whatsapp' ) : '';
-        $pre_filled = (isset($options['pre_filled'])) ? __(esc_attr($options['pre_filled']) , 'click-to-chat-for-whatsapp' ) : '';
+        $ht_ctc_chat['number'] = (isset($options['number'])) ? esc_attr($options['number']) : '';
+        $ht_ctc_chat['call_to_action'] = (isset($options['call_to_action'])) ? __(esc_attr($options['call_to_action']) , 'click-to-chat-for-whatsapp' ) : '';
+        $ht_ctc_chat['pre_filled'] = (isset($options['pre_filled'])) ? __(esc_attr($options['pre_filled']) , 'click-to-chat-for-whatsapp' ) : '';
 
         // safe side action .. if number not saved in new method
-        if ( '' == $number ) {
+        if ( '' == $ht_ctc_chat['number'] ) {
             $cc = (isset($options['cc'])) ? esc_attr($options['cc']) : '';
             $num = (isset($options['num'])) ? esc_attr($options['num']) : '';
-            $number = $cc.$num;
+            if ( '' !== $cc && '' !== $num ) {
+                $ht_ctc_chat['number'] = $cc . $num;
+            }
         }
 
-        $ht_ctc_chat['number'] = (isset($ht_ctc_pagelevel['number'])) ? esc_attr($ht_ctc_pagelevel['number']) : $number;
         $ht_ctc_chat['number'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_chat['number'], 'Click to Chat for WhatsApp', 'number' );
 
+        if ( isset($ht_ctc_pagelevel['number']) ) {
+            $ht_ctc_chat['number'] = esc_attr($ht_ctc_pagelevel['number']);
+        }
+
         // call to action
-        $ht_ctc_chat['call_to_action'] = (isset($ht_ctc_pagelevel['call_to_action'])) ? esc_attr($ht_ctc_pagelevel['call_to_action']) : $call_to_action;
         $ht_ctc_chat['call_to_action'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_chat['call_to_action'], 'Click to Chat for WhatsApp', 'call_to_action' );
 
+        if ( isset($ht_ctc_pagelevel['call_to_action']) ) {
+            $ht_ctc_chat['call_to_action'] = esc_attr($ht_ctc_pagelevel['call_to_action']);
+        }
+
         // prefilled text
-        $ht_ctc_chat['pre_filled'] = (isset($ht_ctc_pagelevel['pre_filled'])) ? esc_attr($ht_ctc_pagelevel['pre_filled']) : $pre_filled;
         $ht_ctc_chat['pre_filled'] = apply_filters( 'wpml_translate_single_string', $ht_ctc_chat['pre_filled'], 'Click to Chat for WhatsApp', 'pre_filled' );
+
+        if ( isset($ht_ctc_pagelevel['pre_filled']) ) {
+            $ht_ctc_chat['pre_filled'] = esc_attr($ht_ctc_pagelevel['pre_filled']);
+        }
 
         $ht_ctc_chat['url_target_d'] = ( isset( $options['url_target_d'] ) ) ? esc_attr($options['url_target_d']) : '_blank';
         $ht_ctc_chat['url_structure_d'] = ( isset( $options['url_structure_d'] ) ) ? esc_attr($options['url_structure_d']) : '';
@@ -196,11 +215,6 @@ class HT_CTC_Chat {
         // is intl input type is added
         if ( isset($options['intl']) ) {
             $ht_ctc_chat['intl'] = '1';
-        }
-
-        // need to run the updater backup
-        if ( !isset($options['display_mobile']) ) {
-            include_once HT_CTC_PLUGIN_DIR . '/new/admin/db/class-ht-ctc-update-db-backup.php';
         }
 
         $ht_ctc_chat['display_mobile'] = (isset($options['display_mobile'])) ? esc_attr($options['display_mobile']) : 'show';
@@ -288,9 +302,13 @@ class HT_CTC_Chat {
         $ht_ctc_chat['class_names'] .= " $wp_device style-$style $other_classes ";
 
         // call style
+        $style = sanitize_file_name( $style );
         $path = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/styles/style-' . $style. '.php';
-
+        
+        $style_desktop = sanitize_file_name( $style_desktop );
         $path_d = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/styles/style-' . $style_desktop. '.php';
+        
+        $style_mobile = sanitize_file_name( $style_mobile );
         $path_m = plugin_dir_path( HT_CTC_PLUGIN_FILE ) . 'new/inc/styles/style-' . $style_mobile. '.php';
 
         
@@ -459,10 +477,8 @@ class HT_CTC_Chat {
 
 
         // Greetings - init display ..
-        $g_init = isset($greetings_settings['g_init']) ? esc_attr( $greetings_settings['g_init'] ) : '';
-        if ('open' == $g_init) {
-            $ctc['g_init'] = $g_init;
-        }
+        $g_init = isset($greetings_settings['g_init']) ? esc_attr( $greetings_settings['g_init'] ) : 'default';
+        $ctc['g_init'] = $g_init;
 
         // Greetings - display device based (if not all then add value)
         $g_device = isset($greetings_settings['g_device']) ? esc_attr( $greetings_settings['g_device'] ) : 'all';

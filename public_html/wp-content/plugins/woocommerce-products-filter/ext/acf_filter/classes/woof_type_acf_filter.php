@@ -50,7 +50,7 @@ abstract class WOOF_ACF_FILTER_TYPE {
         ?>
             <span class="icon-arrow-combo help_tip woof_drag_and_drope" data-tip="<?php esc_html_e("drag and drop", 'woocommerce-products-filter'); ?>"></span>
 
-            <strong class="woof_fix1"><?php echo esc_html($this->type_options['title']) . " (" . $this->type_options['group_name'] . ")" ?>:</strong>
+            <strong class="woof_fix1"><?php echo esc_html($this->type_options['title']) . " (" . esc_html($this->type_options['group_name']) . ")" ?>:</strong>
 
 
             <span class="icon-question help_tip" data-tip="<?php esc_html_e('ACF fields', 'woocommerce-products-filter') ?>"></span>

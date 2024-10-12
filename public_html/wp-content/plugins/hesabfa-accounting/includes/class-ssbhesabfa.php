@@ -10,7 +10,7 @@
  * version of the plugin.
  *
  * @class      Ssbhesabfa
- * @version    2.0.97
+ * @version    2.1.1
  * @since      1.0.0
  * @package    ssbhesabfa
  * @subpackage ssbhesabfa/includes
@@ -64,7 +64,7 @@ class Ssbhesabfa
         if (defined('SSBHESABFA_VERSION')) {
             $this->version = SSBHESABFA_VERSION;
         } else {
-            $this->version = '2.0.97';
+            $this->version = '2.1.0';
         }
         $this->plugin_name = 'ssbhesabfa';
 
@@ -153,7 +153,7 @@ class Ssbhesabfa
         $plugin_admin = new Ssbhesabfa_Admin($this->get_plugin_name(), $this->get_version());
 
         //Related to check DB ver on plugin update
-        $this->loader->add_action('plugins_loaded', $plugin_admin, 'ssbhesabfa_update_db_check');
+        //$this->loader->add_action('plugins_loaded', $plugin_admin, 'ssbhesabfa_update_db_check');
 
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_styles');
         $this->loader->add_action('admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts');
@@ -175,6 +175,12 @@ class Ssbhesabfa
                     $this->loader->add_action('admin_notices', $plugin_admin, 'ssbhesabfa_currency_notice');
                 }
 
+                if(get_option('ssbhesabfa_show_hesabfa_code_in_excel_export', 'no') == 'yes' || get_option('ssbhesabfa_show_hesabfa_code_in_excel_export', 0) == 1) {
+                    ///////////ADD COLUMN TO WOOCOMMERCE CSV
+                    $this->loader->add_filter( 'woocommerce_product_export_column_names', $plugin_admin, 'admin_product_add_column' );
+                    $this->loader->add_filter( 'woocommerce_product_export_product_default_columns', $plugin_admin, 'admin_product_add_column' );
+                    $this->loader->add_filter('woocommerce_product_export_rows', $plugin_admin, 'admin_product_export_rows', 10, 2);
+                }
                 // these lines add hesabfa id to the all products list page and make it sortable as well
                 ///////////////////////////////////////////////////////////////////////////////////////////////////////
                 if(get_option('ssbhesabfa_show_product_code_in_products_page') === 'yes') {
@@ -186,17 +192,27 @@ class Ssbhesabfa
                 $this->loader->add_action('custom_product_tabs', $plugin_admin, 'ssbhesabfa_general_notices');
 
                 // add filter and action for woocommerce order list
-                $this->loader->add_filter('manage_edit-shop_order_columns', $plugin_admin, 'custom_hesabfa_column_order_list', 20);
-                $this->loader->add_action('manage_shop_order_posts_custom_column', $plugin_admin, 'custom_orders_list_column_content', 20, 2);
+
                 $this->loader->add_filter('bulk_actions-edit-shop_order', $plugin_admin, 'custom_orders_list_bulk_action', 20, 1);
                 $this->loader->add_filter('handle_bulk_actions-edit-shop_order', $plugin_admin, 'custom_orders_list_bulk_action_run', 10, 3);
+
+                if (get_option('woocommerce_custom_orders_table_enabled') == 'yes') {
+                    $this->loader->add_filter( 'woocommerce_shop_order_list_table_columns', $plugin_admin, 'custom_hesabfa_column_order_list', 20);
+                    $this->loader->add_action( 'woocommerce_shop_order_list_table_custom_column', $plugin_admin, 'custom_orders_list_column_content', 10, 2 );
+                } else {
+                    $this->loader->add_filter('manage_edit-shop_order_columns', $plugin_admin, 'custom_hesabfa_column_order_list', 20);
+                    $this->loader->add_action('manage_shop_order_posts_custom_column', $plugin_admin, 'custom_orders_list_column_content', 20, 2);
+                }
+
 	            // check add fields to checkout page by hesabfa plugin
-				if(get_option('ssbhesabfa_contact_add_additional_checkout_fields_hesabfa') == 1)
+				if(get_option('ssbhesabfa_contact_add_additional_checkout_fields_hesabfa') == 1) {
 					$this->loader->add_filter('woocommerce_checkout_fields', $plugin_admin, 'add_additional_fields_to_checkout', 10, 3);
+                }
 
 				// show checkout additional fields in order detail
-	            if(get_option('ssbhesabfa_contact_add_additional_checkout_fields_hesabfa') == 1)
+	            if(get_option('ssbhesabfa_contact_add_additional_checkout_fields_hesabfa') == 1) {
 	                $this->loader->add_action('woocommerce_admin_order_data_after_billing_address', $plugin_admin, 'show_additional_fields_in_order_detail', 10, 3);
+                }
 
                 //Runs when a new order added.
                 $this->loader->add_action('woocommerce_order_status_changed', $plugin_admin, 'ssbhesabfa_hook_order_status_change', 10, 3);
@@ -206,6 +222,8 @@ class Ssbhesabfa
 //                $this->loader->add_filter('woocommerce_payment_complete_order_status', $plugin_admin, 'ssbhesabfa_hook_payment_confirmation', 10, 1);
 //                $this->loader->add_filter('woocommerce_order_status_completed', $plugin_admin, 'ssbhesabfa_hook_payment_confirmation', 10, 1);
                 $this->loader->add_filter('woocommerce_order_status_changed', $plugin_admin, 'ssbhesabfa_hook_payment_confirmation', 11, 3);
+
+                $this->loader->add_action('woocommerce_new_order', $plugin_admin, 'ssbhesabfa_hook_new_order', 11, 2);
 
                 //Runs when a user's profile is first created.
                 $this->loader->add_action('edit_user_profile', $plugin_admin, 'ssbhesabfa_hook_edit_user');

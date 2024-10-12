@@ -22,7 +22,7 @@ if (is_user_logged_in() AND isset(woof()->settings['products_messenger'])) {
     $user_data_mess = get_user_meta($cur_user_id, 'woof_user_messenger', true);
 	//var_dump($user_data_mess);
     ?>
-    <div data-css-class="woof_products_messenger_container" class="woof_products_messenger_container woof_container <?php echo esc_attr($adding_class) ?> <?php echo WOOF_HELPER::generate_container_css_classes('products_messenger') ?>">
+    <div data-css-class="woof_products_messenger_container" class="woof_products_messenger_container woof_container <?php echo esc_attr($adding_class) ?> <?php echo esc_attr(WOOF_HELPER::generate_container_css_classes('products_messenger')) ?>">
         <div class="woof_container_overlay_item"></div>
         <div class="woof_container_inner">
             <<?php echo esc_html(apply_filters('woof_title_tag', 'h4')); ?>>
@@ -63,9 +63,9 @@ if (is_user_logged_in() AND isset(woof()->settings['products_messenger'])) {
 
             <?php } ?>
             <?php if (isset($this->settings['products_messenger']['notes_for_customer']) AND!empty($this->settings['products_messenger']['notes_for_customer'])): ?>
-                <span class="woof_products_messenger_notes_for_customer"><?php echo stripcslashes(wp_kses_post(wp_unslash(do_shortcode($this->settings['products_messenger']['notes_for_customer'])))); ?></span>
+                <span class="woof_products_messenger_notes_for_customer"><?php echo wp_kses_post(wp_unslash(do_shortcode($this->settings['products_messenger']['notes_for_customer']))); ?></span>
             <?php endif; ?>
-			<input type="hidden" class="woof_product_messenger_nonce" value="<?php echo wp_create_nonce('product_messenger_nonce')?>">
+			<input type="hidden" class="woof_product_messenger_nonce" value="<?php echo esc_attr(wp_create_nonce('product_messenger_nonce'))?>">
         </div>
     </div>
     <?php
