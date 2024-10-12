@@ -15,6 +15,7 @@ Text Domain:        electrochild
     src: url('assets/fonts/IRANYekanXFaNum-Regular.woff') format('woff'),
     url('assets/fonts/IRANYekanXFaNum-Regular.woff2') format('woff2');
 }
+
 html, body {
     overflow: auto !important; /* Ensure scrolling is enabled */
 }
@@ -42,7 +43,7 @@ h1 {
 
 .primary-nav-menu .nav-inline > .menu-item + .menu-item {
     margin-right: 16px !important;
-    }
+}
 
 .shopping-cart-section {
     width: auto;
@@ -369,28 +370,16 @@ ul[data-view="grid-extended"] .product-short-description {
 .woocommerce-input-wrapper .motorola-error {
     bottom: -25px;
 }
-.DTFC_LeftBodyLiner{
-    padding-right: 0!important;
+
+.DTFC_LeftBodyLiner {
+    padding-right: 0 !important;
 }
-
-
-
-img, .container {
-    max-width: 100% !important; 
-    width: 100% !important;
-}
-
-
-/* .blockUI, .blur-layer, .overlay {
-    display: none !important;
-    background: none !important;
-} */
 
 html, body {
-    overflow-x: hidden !important; 
+    overflow-x: hidden !important;
 }
-body form.woocommerce-checkout
-{
+
+body form.woocommerce-checkout {
     margin: auto;
     width: 50%;
     max-width: 50%;
@@ -403,27 +392,29 @@ body form.woocommerce-checkout
         height: auto !important;
     }
 }
+
 @media (max-width: 768px) {
     .primary-nav-menu {
         display: block !important; /* the menu is visible in the mobile size */
     }
+
     .ht_ctc_style.ht_ctc_chat_style {
-        position: fixed;  
-        bottom: 20px;     
-        left: 20px;       
-        z-index: 9999;    
-        }
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        z-index: 9999;
+    }
 
     .menu-toggle {
-        display: block !important; 
+        display: block !important;
         cursor: pointer;
     }
-    body form.woocommerce-checkout
-{
-    margin: auto;
-    width: 100%;
-    max-width: 100%;
-}
+
+    body form.woocommerce-checkout {
+        margin: auto;
+        width: 100%;
+        max-width: 100%;
+    }
 
     /* hide the desktop menu if menu is active in mobile size */
     .desktop-menu {
@@ -432,14 +423,15 @@ body form.woocommerce-checkout
 
     .off-canvas-bg-opacity .site-content::before {
         z-index: 1 !important; /* Fix for the blur layer on mobile */
-        
+
     }
 
     body {
         overflow-y: auto; /* vertical scrolling only */
     }
+
     img, .container {
-        max-width: 100% !important; 
+        max-width: 100% !important;
         width: 100% !important;
     }
 }
