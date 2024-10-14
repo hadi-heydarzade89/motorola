@@ -648,13 +648,16 @@ if ( ! class_exists( 'ACF_Post_Type' ) ) {
 				return;
 			}
 
-			$original_post = $_POST; //phpcs:ignore -- Only used as temporary storage to prevent CSRFs in callbacks.
-			$_POST         = array();
-			$return        = false;
+			$original_post    = $_POST; //phpcs:ignore -- Only used as temporary storage to prevent CSRFs in callbacks.
+			$original_request = $_REQUEST;
+			$_POST            = array();
+			$_REQUEST         = array();
+			$return           = false;
 			if ( is_callable( $original_cb ) ) {
 				$return = call_user_func( $original_cb, $post );
 			}
-			$_POST = $original_post;
+			$_POST    = $original_post;
+			$_REQUEST = $original_request;
 			return $return;
 		}
 
