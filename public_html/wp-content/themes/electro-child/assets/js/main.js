@@ -33,11 +33,62 @@ document.addEventListener('DOMContentLoaded', function () {
         addErrorSection(billingLastName);
     }
 
+    // Load Google Material Icons (if needed)
+    const link = document.createElement('link');
+    link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
+    link.rel = 'stylesheet';
+    document.head.appendChild(link);
 
 
+// Icons to be added for each category item
+const icons = {
+    "بدون دسته‌بندی": "category",
+    "پرفروش های موتورولا": "star",
+    "تلفن های همراه موتورولا": "stay_primary_portrait",
+    "شگفت انگیز": "whatshot",
+    "قطعات سری موتورولا ایکس": "build",
+    "قطعات سری موتورولا جی": "build",
+    "قطعات سری موتورولا دروید": "build",
+    "قطعات سری موتورولا زد": "build",
+    "قطعات سری موتورولا سی": "build",
+    "قطعات سری موتورولا وان": "build",
+    "قطعات موتو ۳۶۰": "watch",
+    "قطعات موتو ام": "build",
+    "قطعات موتو ای ۷": "build",
+    "قطعات موتو ای ۷ آی پاور": "build",
+    "قطعات موتو جی 9 پاور": "battery_alert",
+    "قطعات موتو جی 9 پلاس": "battery_full",
+    "خشاب سیم کارت": "sim_card",
+    "سنسور اثر انگشت موتورولا": "fingerprint",
+    "قطعات سری اج موتورولا": "build",
+    "قطعات اج ۳۰ پرو": "build",
+    "قطعات موتورولا":"build"
+};
+
+// Select all the menu items
+const menuItems = document.querySelectorAll('#menu-secondary li a');
+
+// Loop through each menu item and inject the icon beside the text
+menuItems.forEach(menuItem => {
+    const text = menuItem.innerText.trim();
+    if (icons[text]) {
+        const iconElement = document.createElement('span');
+        iconElement.classList.add('material-icons');
+        iconElement.textContent = icons[text]; // Set the appropriate icon from the object
+        menuItem.prepend(iconElement); // Insert the icon before the text
+    } else {
+        console.log("Icon not found for:", text);
+    }
 });
 
+
+// End Icons
+
+
+
+
 // Category start
+
 
 const createModal = () => {
     const modal = document.createElement('div');
@@ -68,11 +119,8 @@ const createModal = () => {
     modal.appendChild(modalContent);
     document.body.appendChild(modal);
 };
+createModal(); // Initialize the modal
 
-
-// Start category
-// Call the function to create the modal
-createModal();
 
 const subProducts = {
     "بدون دسته‌بندی": ["Product 1", "Product 2"],
@@ -86,74 +134,62 @@ const subProducts = {
 };
 
 
-
-const populateModal = (categoryName) => {
+const populateModal = (categoryName, subMenu) => {
     const modalTitle = document.getElementById('modalTitle');
     const subProductList = document.getElementById('subProductList');
 
-    // Set the modal title with the clicked category
+    // Set modal title to the category clicked
     modalTitle.textContent = categoryName;
+    subProductList.innerHTML = ''; // Clear previous items
 
-    // Clear the previous list in the modal
-    subProductList.innerHTML = '';
+    // Extract sub-menu items
+    if (subMenu) {
+        const subItems = subMenu.querySelectorAll('li');
+        if (subItems.length > 0) {
+            // If there are sub-menu items, list them in the modal
+            subItems.forEach(item => {
+                const li = document.createElement('li');
+                const aTag = item.querySelector('a');
+                li.textContent = aTag ? aTag.innerText : item.innerText;
+                li.classList.add('sub-product-item');
 
-    const categoryData = subProducts[categoryName];
-    if (typeof categoryData === 'object') {
-        // Handle nested sub-categories
-        for (let subCategory in categoryData) {
-            const li = document.createElement('li');
-            li.textContent = subCategory;
-            li.classList.add('sub-product-item');
-            
-            // Add click event to show sub-products
-            li.addEventListener('click', () => {
-                const subProductsList = categoryData[subCategory];
-                // Clear the current list and populate sub-products
-                subProductList.innerHTML = '';
-                subProductsList.forEach(product => {
-                    const subLi = document.createElement('li');
-                    subLi.textContent = product;
-                    subLi.classList.add('sub-product-item');
-                    subProductList.appendChild(subLi);
+                // Add click event for each subcategory
+                li.addEventListener('click', (event) => {
+                    event.stopPropagation();
+
+                    // If this item has another sub-menu, populate it
+                    const nestedSubMenu = item.querySelector('.sub-menu');
+                    if (nestedSubMenu) {
+                        populateModal(li.textContent, nestedSubMenu);
+                    } else if (aTag) {
+                        // If it's a final item (with no more sub-menus), navigate to the URL
+                        window.location.href = aTag.href;
+                    }
                 });
+
+                subProductList.appendChild(li);
             });
-            
-            subProductList.appendChild(li);
         }
-    } else if (Array.isArray(categoryData)) {
-        // Direct sub-products (no nested sub-categories)
-        categoryData.forEach(product => {
-            const li = document.createElement('li');
-            li.textContent = product;
-            li.classList.add('sub-product-item');
-            subProductList.appendChild(li);
-        });
-    } else {
-        // If no sub-products available, show a message
-        const li = document.createElement('li');
-        li.textContent = 'No sub-products available';
-        li.classList.add('sub-product-item');
-        subProductList.appendChild(li);
     }
 };
 
 
 
-
-
-document.querySelectorAll('.category-item').forEach(item => {
+document.querySelectorAll('#menu-secondary li').forEach(item => {
     item.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent navigation
         event.stopPropagation();
 
-        const category = event.target.closest('.category-item').innerText;
+        const category = item.querySelector('a').innerText;
+        const subMenu = item.querySelector('.sub-menu');
 
-        // Populate the modal with the appropriate sub-products
-        populateModal(category);
+        // Populate modal with the sub-menu items
+        populateModal(category, subMenu);
 
-        // Show the modal with a 500ms delay
+        // Show the modal
         setTimeout(() => {
             document.getElementById('productModal').classList.toggle('show');
-        }, 500);
+        }, 300);
     });
 });
 
@@ -161,6 +197,13 @@ document.querySelectorAll('.category-item').forEach(item => {
 document.getElementById('closeModal').addEventListener('click', () => {
     document.getElementById('productModal').classList.remove('show');
 });
+});
+
+
+// Create Icons ==> Start
+
+// Load Google Material Icons
+
 
 
 

@@ -27,7 +27,7 @@ html, body {
     src: url('assets/fonts/IRANYekanX-Regular.woff') format('woff'),
     url('assets/fonts/IRANYekanX-Regular.woff2') format('woff2');
 }
-
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 body {
     font-family: IRANYekan !important;
 }
@@ -430,6 +430,10 @@ body form.woocommerce-checkout
 
 .menu li a{
     pointer-events: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end; /* Ensures both text and icons align to the right */
+    direction: rtl; /* Ensures text is properly formatted in RTL */
 
 }
 
@@ -456,9 +460,14 @@ body form.woocommerce-checkout
 
 .modal.show
 {
-    left: -23.3%;
+    left: -21.7%;
     opacity: 1;
     
+}
+
+.material-icons {
+    font-size: 24px;
+    margin-left: 10px; /* Space between icon and text */
 }
 
 
@@ -563,16 +572,9 @@ body form.woocommerce-checkout
         text-align: right;
     }
 
-    .menu li:before {
-        content: '\e87c'; /* Material Icon */
-        font-family: 'Material Icons';
-        font-size: 24px;
-        margin-right: 10px;
-    }
-
     
     .modal.show {
-        left: -20%;
+        left: -13%;
         opacity: 1;
         width: 100%;
         padding: 20px;
@@ -599,10 +601,7 @@ body form.woocommerce-checkout
         justify-content: space-between;
     }
 
-    .menu li:before {
-        font-size: 20px;
-        margin-left: 5px;
-    }
+   
 
     .menu li a {
         width: 80%;
