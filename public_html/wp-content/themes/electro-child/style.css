@@ -546,6 +546,59 @@ body form.woocommerce-checkout
     background-color: #f1c40f;
 }
 
+/* Footer Start */
+#mobile-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.footer-link {
+    flex: 1;
+    text-align: center;
+    font-size: 12px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Style for icon and text */
+.footer-link span.material-icons {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 5px;
+    color: inherit; /* Inherit the color of the parent */
+    transition: color 0.3s;
+}
+
+/* Hover effect on both icon and text */
+.footer-link:hover {
+    color: #f1c40f; /* Change color for both icon and text */
+}
+
+/* Active state for both icon and text */
+.footer-link.active {
+    color: #f1c40f; /* Color remains yellow when clicked */
+}
+
+/* Make sure it doesn't cover content on small screens */
+body {
+    padding-bottom: 60px; /* Adjust to make room for footer */
+}
+
+/* Footer End */
 
 /* Media Query */
 
@@ -617,7 +670,7 @@ body form.woocommerce-checkout
 
     .ht_ctc_style.ht_ctc_chat_style {
         position: fixed;  
-        bottom: 20px;     
+        bottom: 40px;     
         left: 20px;       
         z-index: 9999;    
         }
@@ -650,4 +703,43 @@ body form.woocommerce-checkout
         max-width: 100% !important; 
         width: 100% !important;
     }
+
+   /* Footer */
+
+   .footer-container {
+    padding: 5px;
+}
+
+.footer-link {
+    font-size: 10px;
+}
+
+.footer-link span.material-icons {
+    font-size: 20px;
+}
+
+
+svg[width="50px"][height="50px"] {
+    width: 35px;
+    height: 35px;
+}
+
+/* Button text adjustments */
+.ctc_cta {
+    padding: 0px 10px;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+/* Optional hover effect */
+svg[width="50px"][height="50px"]:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
+   
+}
+svg[width="50px"][height="50px"] {
+    margin-top: -10px; /* Moves the icon up by 10px */
+    margin-bottom: 10px; /* Moves the icon down by 10px */
+}
+   /* Footer */
 }

@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const accountLastName = document.getElementById('account_last_name');
     const billingFirstName = document.getElementById('billing_first_name');
     const billingLastName = document.getElementById('billing_last_name');
+    const footer = document.createElement('footer');
+    footer.id = 'mobile-footer';
+
     if (accountName) {
         addErrorSection(accountName);
     }
@@ -38,6 +41,48 @@ document.addEventListener('DOMContentLoaded', function () {
     link.href = 'https://fonts.googleapis.com/icon?family=Material+Icons';
     link.rel = 'stylesheet';
     document.head.appendChild(link);
+
+    // Footer Start
+    footer.innerHTML = `
+        <div class="footer-container">
+            <a href="/" class="footer-link">
+                <span class="material-icons">home</span>
+                <span>Home</span>
+            </a>
+            <a href="/categories" class="footer-link">
+                <span class="material-icons">category</span>
+                <span>Categories</span>
+            </a>
+            <a href="/cart" class="footer-link">
+                <span class="material-icons">shopping_cart</span>
+                <span>Cart</span>
+            </a>
+            <a href="/account" class="footer-link">
+                <span class="material-icons">account_circle</span>
+                <span>Account</span>
+            </a>
+        </div>
+    `;
+
+    // Append the footer to the body
+    document.body.appendChild(footer);
+
+    // Get all footer links
+    const footerLinks = document.querySelectorAll('.footer-link');
+
+    // Add click event listener to each footer link
+    footerLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+            e.preventDefault(); // Prevent default action for now
+
+            // Remove the 'active' class from all links
+            footerLinks.forEach(l => l.classList.remove('active'));
+
+            // Add the 'active' class to the clicked link
+            link.classList.add('active');
+        });
+    });
+    // footer End 
 
 
 // Icons to be added for each category item
