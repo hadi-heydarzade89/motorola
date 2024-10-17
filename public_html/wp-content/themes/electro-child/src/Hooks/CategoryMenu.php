@@ -1,49 +1,81 @@
 <?php
 
+declare(strict_types=1);
+
 namespace ElectroApp\Hooks;
 
 class CategoryMenu
 {
 
-    public function __invoke()
+    /**
+     * @return void
+     */
+    public function __invoke(): void
     {
         add_shortcode('category_menu', [$this, 'getCategoryMenu']);
+        add_action('after_setup_theme', [$this, 'lowerMenuSetup']);
+        add_action('wp_footer', [$this, 'renderLowerMenu']);
     }
 
-    function getCategoryMenu(array $attributes)
+    /**
+     * @return void
+     */
+    public function lowerMenuSetup(): void
     {
+        register_nav_menus(
+            [
+                'lower-short-menu' => __('Lower Short Menu', 'astra'),
+            ]
+        );
+    }
 
-        // Extract shortcode attributes
+    /**
+     * @param array $attributes
+     * @return string
+     */
+    public function getCategoryMenu(array $attributes): string
+    {
         $attributes = shortcode_atts(
             [
-                'menu' => '', // Default menu (can use menu name, slug, or ID)
-                'container' => 'div', // Default container element for the menu (div, nav, etc.)
-                'container_class' => '', // Default container class
-                'menu_class' => 'menu', // Default class for the <ul> element
+                'menu' => '',
+                'container' => 'div',
+                'container_class' => '',
+                'menu_class' => 'menu',
             ],
             $attributes,
             'category_menu'
         );
 
-        // Check if the menu attribute is set, if not return an error message
+
         if (empty($attributes['menu'])) {
             return 'Please specify a menu name, slug, or ID.';
         }
+        error_log('asd',0);
 
-        // Generate the menu HTML using wp_nav_menu
-        $menu = wp_nav_menu(array(
-            'menu' => $attributes['menu'], // Menu ID, slug, or name
-            'container' => $attributes['container'], // Container element (div, nav, etc.)
-            'container_class' => esc_attr($attributes['container_class']), // Class for container element
-            'menu_class' => esc_attr($attributes['menu_class']), // Class for <ul> element
+        return wp_nav_menu([
+            'menu' => $attributes['menu'],
+            'container' => $attributes['container'],
+            'container_class' => esc_attr($attributes['container_class']),
+            'menu_class' => esc_attr($attributes['menu_class']),
             'echo' => false
-        ));
-
-        // Return the menu HTML
-        return $menu;
+        ]);
 
     }
 
 
+    public function renderLowerMenu()
+    {
+        if (has_nav_menu('lower-short-menu')) {
+            wp_nav_menu(
+                [
+                    'theme_location' => 'lower-short-menu',
+                    'container' => 'nav',
+                    'container_class' => 'lower-short-menu-container',
+                    'menu_class' => 'lower-short-menu',
+                    'echo' => true,
+                ]
+            );
+        }
+    }
 }
 
