@@ -50,7 +50,6 @@ class CategoryMenu
         if (empty($attributes['menu'])) {
             return 'Please specify a menu name, slug, or ID.';
         }
-        error_log('asd',0);
 
         return wp_nav_menu([
             'menu' => $attributes['menu'],
@@ -63,7 +62,10 @@ class CategoryMenu
     }
 
 
-    public function renderLowerMenu()
+    /**
+     * @return void
+     */
+    public function renderLowerMenu(): void
     {
         if (has_nav_menu('lower-short-menu')) {
             wp_nav_menu(
