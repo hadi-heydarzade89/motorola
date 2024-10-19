@@ -28,6 +28,7 @@ html, body {
     url('assets/fonts/IRANYekanX-Regular.woff2') format('woff2');
 }
 @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
 body {
     font-family: IRANYekan !important;
 }
@@ -546,8 +547,33 @@ body form.woocommerce-checkout
     background-color: #f1c40f;
 }
 
+/* Header Start */
+
+#masthead {
+    background-color: #f0c128; /* Matches the color in the image */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60px; /* Adjust height as needed */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px; /* Adjust as needed */
+}
+
+/* Header End */
+
 /* Footer Start */
-#mobile-footer {
+/* #mobile-footer {
     position: fixed;
     bottom: 0;
     left: 0;
@@ -572,33 +598,100 @@ body form.woocommerce-checkout
     color: #333;
     text-decoration: none;
     transition: background-color 0.3s, color 0.3s;
-}
+} */
 
 /* Style for icon and text */
+/* 
 .footer-link span.material-icons {
     display: block;
     font-size: 24px;
     margin-bottom: 5px;
-    color: inherit; /* Inherit the color of the parent */
+    color: inherit; 
     transition: color 0.3s;
 }
 
-/* Hover effect on both icon and text */
+
 .footer-link:hover {
-    color: #f1c40f; /* Change color for both icon and text */
+    color: #f1c40f; 
 }
 
-/* Active state for both icon and text */
+
+
 .footer-link.active {
-    color: #f1c40f; /* Color remains yellow when clicked */
+    color: #f1c40f; 
+} */
+
+/* Footer start */
+/* Basic footer styles */
+.lower-short-menu-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
 }
 
-/* Make sure it doesn't cover content on small screens */
+.lower-short-menu {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.lower-short-menu li {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.lower-short-menu a {
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.material-icons {
+    font-size: 24px; /* Icon size */
+    margin-bottom: 5px;
+    color: #333; /* Default icon color */
+}
+
+.lower-short-menu li span {
+    font-size: 22px; /* Text size under the icon */
+}
+
+/* Hover effect */
+.lower-short-menu li:hover a {
+    color: #f08000;
+}
+
+.lower-short-menu li:hover .material-icons {
+    color: #f08000;
+}
+
+/* Style for active state (when clicked) */
+.lower-short-menu li.active a, 
+.lower-short-menu li.active .material-icons {
+    color: #f08000;
+}
+
+
+.lower-short-menu li.active {
+    background-color: #FFFFFF0A; 
+}
+
+
+  
+
+/* Footer End */
 body {
     padding-bottom: 60px; /* Adjust to make room for footer */
 }
 
-/* Footer End */
+
 
 /* Media Query */
 
@@ -670,7 +763,7 @@ body {
 
     .ht_ctc_style.ht_ctc_chat_style {
         position: fixed;  
-        bottom: 40px;     
+        bottom: 50px;     
         left: 20px;       
         z-index: 9999;    
         }
@@ -705,7 +798,7 @@ body {
     }
 
    /* Footer */
-
+/* 
    .footer-container {
     padding: 5px;
 }
@@ -722,7 +815,7 @@ body {
 svg[width="50px"][height="50px"] {
     width: 35px;
     height: 35px;
-}
+} */
 
 /* Button text adjustments */
 .ctc_cta {

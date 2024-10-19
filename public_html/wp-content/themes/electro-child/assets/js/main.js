@@ -43,45 +43,84 @@ document.addEventListener('DOMContentLoaded', function () {
     document.head.appendChild(link);
 
     // Footer Start
-    footer.innerHTML = `
-        <div class="footer-container">
-            <a href="/" class="footer-link">
-                <span class="material-icons">home</span>
-                <span>Home</span>
-            </a>
-            <a href="/categories" class="footer-link">
-                <span class="material-icons">category</span>
-                <span>Categories</span>
-            </a>
-            <a href="/cart" class="footer-link">
-                <span class="material-icons">shopping_cart</span>
-                <span>Cart</span>
-            </a>
-            <a href="/account" class="footer-link">
-                <span class="material-icons">account_circle</span>
-                <span>Account</span>
-            </a>
-        </div>
-    `;
+    // footer.innerHTML = `
+    //     <div class="footer-container">
+    //         <a href="/" class="footer-link">
+    //             <span class="material-icons">home</span>
+    //             <span>Home</span>
+    //         </a>
+    //         <a href="/categories" class="footer-link">
+    //             <span class="material-icons">category</span>
+    //             <span>Categories</span>
+    //         </a>
+    //         <a href="/cart" class="footer-link">
+    //             <span class="material-icons">shopping_cart</span>
+    //             <span>Cart</span>
+    //         </a>
+    //         <a href="/account" class="footer-link">
+    //             <span class="material-icons">account_circle</span>
+    //             <span>Account</span>
+    //         </a>
+    //     </div>
+    // `;
 
-    // Append the footer to the body
-    document.body.appendChild(footer);
+    // // Append the footer to the body
+    // document.body.appendChild(footer);
 
-    // Get all footer links
-    const footerLinks = document.querySelectorAll('.footer-link');
+    // // Get all footer links
+    // const footerLinks = document.querySelectorAll('.footer-link');
 
-    // Add click event listener to each footer link
-    footerLinks.forEach(link => {
-        link.addEventListener('click', function (e) {
-            e.preventDefault(); // Prevent default action for now
+    // // Add click event listener to each footer link
+    // footerLinks.forEach(link => {
+    //     link.addEventListener('click', function (e) {
+    //         e.preventDefault(); // Prevent default action for now
 
-            // Remove the 'active' class from all links
-            footerLinks.forEach(l => l.classList.remove('active'));
+    //         // Remove the 'active' class from all links
+    //         footerLinks.forEach(l => l.classList.remove('active'));
 
-            // Add the 'active' class to the clicked link
-            link.classList.add('active');
+    //         // Add the 'active' class to the clicked link
+    //         link.classList.add('active');
+    //     });
+    // });
+
+
+    // Wait until the document is fully loaded
+
+    // Select the footer navigation menu
+    const menuItemss = document.querySelectorAll('.lower-short-menu li');
+    const activeItemId = localStorage.getItem('activeMenuItemId');
+
+    if (activeItemId) {
+        const activeItem = document.querySelector(`#${activeItemId}`);
+        if (activeItem) {
+            activeItem.classList.add('active');  // Add 'active' class to the stored active item
+        }
+    }
+  
+    if (menuItemss.length > 0) {
+      // Add Material Icons using class names from Google Fonts
+      menuItemss[0].querySelector('a').insertAdjacentHTML('afterbegin', `<span class="material-icons menu-icon">home</span>`);
+        menuItemss[1].querySelector('a').insertAdjacentHTML('afterbegin', `<span class="material-icons menu-icon">category</span>`);
+        menuItemss[2].querySelector('a').insertAdjacentHTML('afterbegin', `<span class="material-icons menu-icon">person</span>`);
+        menuItemss[3].querySelector('a').insertAdjacentHTML('afterbegin', `<span class="material-icons menu-icon">shopping_cart</span>`);
+    }
+    
+    
+    function handleMenuClick(event) {
+       
+        menuItemss.forEach(item => {
+          item.classList.remove('active');
         });
-    });
+        
+        this.classList.add('active');
+
+        localStorage.setItem('activeMenuItemId', this.id);
+      }
+    
+      menuItemss.forEach(item => {
+        item.addEventListener('click', handleMenuClick);
+      });
+  
     // footer End 
 
 
