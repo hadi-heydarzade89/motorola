@@ -67,7 +67,7 @@ class CategoryMenu
      */
     public function renderLowerMenu(): void
     {
-        if (has_nav_menu('lower-short-menu')) {
+        if (has_nav_menu('lower-short-menu') && wp_is_mobile()) {
             wp_nav_menu(
                 [
                     'theme_location' => 'lower-short-menu',
