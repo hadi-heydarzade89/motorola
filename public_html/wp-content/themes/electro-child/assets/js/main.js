@@ -218,6 +218,50 @@ const subProducts = {
 };
 
 
+// const populateModal = (categoryName, subMenu) => {
+//     const modalTitle = document.getElementById('modalTitle');
+//     const subProductList = document.getElementById('subProductList');
+
+//     // Set modal title to the category clicked
+//     modalTitle.textContent = categoryName;
+//     subProductList.innerHTML = ''; // Clear previous items
+
+//     // Extract sub-menu items
+//     if (subMenu) {
+//         const subItems = subMenu.querySelectorAll('li');
+//         if (subItems.length > 0) {
+//             // If there are sub-menu items, list them in the modal
+//             subItems.forEach(item => {
+//                 const li = document.createElement('li');
+//                 const aTag = item.querySelector('a');
+//                 li.textContent = aTag ? aTag.innerText : item.innerText;
+//                 li.classList.add('sub-product-item');
+
+//                 // Add click event for each subcategory
+//                 li.addEventListener('click', (event) => {
+//                     event.stopPropagation();
+
+//                     // If this item has another sub-menu, populate it
+//                     const nestedSubMenu = item.querySelector('.sub-menu');
+//                     if (nestedSubMenu) {
+//                         populateModal(li.textContent, nestedSubMenu);
+//                     } else if (aTag) {
+//                         // If it's a final item (with no more sub-menus), navigate to the URL
+//                         window.location.href = aTag.href;
+//                     }
+//                 });
+
+//                 subProductList.appendChild(li);
+//             });
+//         }
+//     }
+// };
+
+
+// Fa Icons for category
+
+// New
+
 const populateModal = (categoryName, subMenu) => {
     const modalTitle = document.getElementById('modalTitle');
     const subProductList = document.getElementById('subProductList');
@@ -226,38 +270,88 @@ const populateModal = (categoryName, subMenu) => {
     modalTitle.textContent = categoryName;
     subProductList.innerHTML = ''; // Clear previous items
 
-    // Extract sub-menu items
     if (subMenu) {
         const subItems = subMenu.querySelectorAll('li');
-        if (subItems.length > 0) {
-            // If there are sub-menu items, list them in the modal
-            subItems.forEach(item => {
-                const li = document.createElement('li');
-                const aTag = item.querySelector('a');
-                li.textContent = aTag ? aTag.innerText : item.innerText;
-                li.classList.add('sub-product-item');
+        subItems.forEach(item => {
+            const li = document.createElement('li');
+            const aTag = item.querySelector('a');
+            li.textContent = aTag ? aTag.innerText : item.innerText;
+            li.classList.add('sub-product-item');
 
-                // Add click event for each subcategory
+            // If the item has a nested <ul>, add the 'fa-angle-down' icon and recursion
+            const nestedSubMenu = item.querySelector('ul');
+            if (nestedSubMenu) {
+                const iconElement = document.createElement('span');
+                iconElement.classList.add('fa', 'fa-angle-down'); // Add Font Awesome icon
+                li.insertAdjacentElement('afterbegin', iconElement); // Insert the icon at the beginning of the <li>
+
+                // Add click event for the item with a nested submenu
                 li.addEventListener('click', (event) => {
                     event.stopPropagation();
-
-                    // If this item has another sub-menu, populate it
-                    const nestedSubMenu = item.querySelector('.sub-menu');
-                    if (nestedSubMenu) {
-                        populateModal(li.textContent, nestedSubMenu);
-                    } else if (aTag) {
-                        // If it's a final item (with no more sub-menus), navigate to the URL
-                        window.location.href = aTag.href;
-                    }
+                    populateModal(li.textContent, nestedSubMenu); // Populate the modal with the nested submenu
                 });
+            } else if (aTag) {
+                // If it's a final item (with no nested submenu), navigate to the URL
+                li.addEventListener('click', () => {
+                    window.location.href = aTag.href;
+                });
+            }
 
-                subProductList.appendChild(li);
-            });
-        }
+            subProductList.appendChild(li);
+        });
     }
 };
 
 
+// New
+
+
+
+const menuItemsss = document.querySelectorAll('#menu-secondary li');
+
+// Loop through each menu item
+menuItemsss.forEach(item => {
+    const nestedSubMenu = item.querySelector('ul'); // Check if <li> has a nested <ul>
+    
+    if (nestedSubMenu) {
+        // If there is a nested submenu, create the icon element
+        const iconElement = document.createElement('span');
+        iconElement.classList.add('material-icons');
+        // iconElement.textContent = 'expand_more'; // Google Material Icon for a down arrow
+
+        // Append the icon element to the <a> tag inside <li>
+        const link = item.querySelector('a');
+        if (link) {
+            link.appendChild(iconElement);
+        }
+    }
+});
+// fa Icons fro category
+
+
+// document.querySelectorAll('#menu-secondary li').forEach(item => {
+//     item.addEventListener('click', (event) => {
+//         event.preventDefault(); // Prevent navigation
+//         event.stopPropagation();
+
+//         const category = item.querySelector('a').innerText;
+//         const subMenu = item.querySelector('.sub-menu');
+
+//         // Populate modal with the sub-menu items
+//         populateModal(category, subMenu);
+
+//         // Show the modal
+//         setTimeout(() => {
+//             document.getElementById('productModal').classList.toggle('show');
+//         }, 300);
+//     });
+// });
+
+// Close the modal on clicking the close button
+// document.getElementById('closeModal').addEventListener('click', () => {
+//     document.getElementById('productModal').classList.remove('show');
+// });
+// });
 
 document.querySelectorAll('#menu-secondary li').forEach(item => {
     item.addEventListener('click', (event) => {
@@ -267,7 +361,6 @@ document.querySelectorAll('#menu-secondary li').forEach(item => {
         const category = item.querySelector('a').innerText;
         const subMenu = item.querySelector('.sub-menu');
 
-        // Populate modal with the sub-menu items
         populateModal(category, subMenu);
 
         // Show the modal
@@ -277,7 +370,7 @@ document.querySelectorAll('#menu-secondary li').forEach(item => {
     });
 });
 
-// Close the modal on clicking the close button
+// Close modal on clicking the close button
 document.getElementById('closeModal').addEventListener('click', () => {
     document.getElementById('productModal').classList.remove('show');
 });

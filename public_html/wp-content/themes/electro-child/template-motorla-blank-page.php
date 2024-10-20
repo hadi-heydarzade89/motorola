@@ -14,8 +14,9 @@
     <?php wp_head(); // This is necessary to include any scripts, styles, or meta information added by WordPress plugins. ?>
 </head>
 <body <?php body_class(); ?>>
-<header id="masthead" class="header-v2 stick-this site-header d-flex justify-content-center">
-    <p style="background: red; color: yellow; padding: 200px">insert your header html</p>
+<header id="masthead" class="header-blank-motorolla stick-this site-header d-flex justify-content-center">
+    <p style="color: black;">ایران موتورولا</p>
+    
 </header>
 <?php
 // Start the loop to display the page content

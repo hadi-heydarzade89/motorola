@@ -555,9 +555,13 @@ body form.woocommerce-checkout
     align-items: center;
     justify-content: center;
     height: 60px; /* Adjust height as needed */
-    position: sticky;
+    position: fixed; /* Make it fixed */
     top: 0;
-    z-index: 1000;
+    left: 0;
+    right: 0;
+    z-index: 1000; /* Ensure it's on top of other content */
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: add shadow */
 }
 
 
@@ -683,7 +687,16 @@ body form.woocommerce-checkout
     background-color: #FFFFFF0A; 
 }
 
+/* Fa for category */
 
+
+.menu li a .material-icons {
+    margin-left: 5px; /* Adjust spacing between text and icon */
+    color: #333; /* Icon color */
+    font-size: 18px; /* Icon size */
+    vertical-align: middle; /* Align with text */
+}
+/* Fa for category */
   
 
 /* Footer End */
@@ -692,6 +705,30 @@ body {
 }
 
 
+/* icon fa-angle */
+
+.sub-product-item {
+    position: relative;
+    padding-right: 10px; /* Adjust padding on the right if needed */
+    padding-left: 30px;  /* Ensure space for the icon on the left */
+    text-align: right;   /* Align text to the right */
+}
+
+.sub-product-item .fa-angle-down {
+    position: absolute;
+    left: -10px; /* Position the icon at the far left end */
+    top: 50%;
+    transform: translateY(-50%); /* Vertically center the icon */
+    font-size: 16px; /* Adjust icon size */
+    color: #333; /* Adjust icon color if needed */
+
+}
+
+.sub-product-item:hover {
+    background-color: #f1c40f; /* Add hover effect */
+}
+
+/* icon fa ansgle */
 
 /* Media Query */
 
@@ -720,13 +757,34 @@ body {
 
     
     .modal.show {
-        left: -13%;
+        /* left: -13%;
         opacity: 1;
         width: 100%;
         padding: 20px;
-        box-sizing: border-box;
-    }
+        box-sizing: border-box; */
 
+        
+            position: fixed;
+            top: 62px;
+            left: -11%;
+            width: 100%;
+            height: 83.4%;
+            background: #ffffff;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 1s ease, opacity 1s ease;
+            z-index: 100;
+            padding: 20px;
+            margin: 0;
+            opacity: 1;
+          
+    }
+    #closeModal {
+        cursor: pointer;
+        font-size: 24px;
+        position: absolute;
+        top: 38px;
+        right: 10px;
+      }
     
     .sub-menu-in-modal {
         padding: 10px;
@@ -763,7 +821,7 @@ body {
 
     .ht_ctc_style.ht_ctc_chat_style {
         position: fixed;  
-        bottom: 50px;     
+        bottom: 68px;     
         left: 20px;       
         z-index: 9999;    
         }
@@ -835,4 +893,28 @@ svg[width="50px"][height="50px"] {
     margin-bottom: 10px; /* Moves the icon down by 10px */
 }
    /* Footer */
+
+   /* Fa-angle-icon */
+   .sub-product-item .fa-angle-down {
+    position: absolute;
+    left: 56px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #333;
+  }
+
+  /* add to cart */
+  .sticky-single-add-to-cart-mobile .single_add_to_cart_button {
+    position: fixed;
+    z-index: 1080;
+    right: 0;
+    left: 0;
+    bottom: 138px;
+    margin: 0 auto;
+    border-radius: 6px;
+    background-color: #333e48 !important;
+    width: calc(100% - 30px) !important;
+  }
+  /* end add to cart */
 }
