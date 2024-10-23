@@ -33,7 +33,7 @@ if ( ! class_exists( 'ACF_Admin' ) ) :
 		 */
 		public function admin_menu() {
 
-			// Bail early if ACF is hidden.
+			// Bail early if SCF is hidden.
 			if ( ! acf_get_setting( 'show_admin' ) ) {
 				return;
 			}
@@ -43,7 +43,7 @@ if ( ! class_exists( 'ACF_Admin' ) ) :
 			$parent_slug = 'edit.php?post_type=acf-field-group';
 
 			// Add menu items.
-			add_menu_page( __( 'ACF', 'acf' ), __( 'ACF', 'acf' ), $cap, $parent_slug, false, 'dashicons-welcome-widgets-menus', 80 );
+			add_menu_page( __( 'SCF', 'acf' ), __( 'SCF', 'acf' ), $cap, $parent_slug, false, 'dashicons-welcome-widgets-menus', 80 );
 		}
 
 		/**

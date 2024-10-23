@@ -1,6 +1,6 @@
 <?php
 /* ======================================================
- # Login as User for WordPress - v1.5.5 (free version)
+ # Login as User for WordPress - v1.5.6 (free version)
  # -------------------------------------------------------
  # For WordPress
  # Author: Web357
@@ -9,7 +9,7 @@
  # Website: https://www.web357.com/product/login-as-user-wordpress-plugin
  # Demo: https://demo-wordpress.web357.com/try-the-login-as-a-user-wordpress-plugin/
  # Support: https://www.web357.com/support
- # Last modified: Wednesday 02 October 2024, 04:09:17 PM
+ # Last modified: Thursday 17 October 2024, 09:30:22 AM
  ========================================================= */
  class w357LoginAsUser
 {
@@ -310,12 +310,15 @@
 			}
 
 			$current_user = (is_user_logged_in()) ? wp_get_current_user() : null;
-			$current_user_name = sprintf(
-				/* Translators: 1: user display name; 2: username; */
-				__('%1$s (%2$s)', 'login-as-user'),
-				$current_user->display_name,
-				$current_user->user_login
-			);
+			$current_user_name = '';
+			if (is_object($current_user) && !empty($current_user->display_name) && !empty($current_user->user_login)) {
+				$current_user_name = sprintf(
+					/* Translators: 1: user display name; 2: username; */
+					__('%1$s (%2$s)', 'login-as-user'),
+					$current_user->display_name,
+					$current_user->user_login
+				);
+			}
 
 			
 			if (is_admin_bar_showing() && $message_display_position_option == 'top') 
@@ -435,12 +438,15 @@ CSS;
 				}
 
 				$current_user = (is_user_logged_in()) ? wp_get_current_user() : null;
-				$current_user_name = sprintf(
-					/* Translators: 1: user display name; 2: username; */
-					__('%1$s (%2$s)', 'login-as-user'),
-					$current_user->display_name,
-					$current_user->user_login
-				);
+				$current_user_name = '';
+				if (is_object($current_user) && !empty($current_user->display_name) && !empty($current_user->user_login)) {
+					$current_user_name = sprintf(
+						/* Translators: 1: user display name; 2: username; */
+						__('%1$s (%2$s)', 'login-as-user'),
+						$current_user->display_name,
+						$current_user->user_login
+					);
+				}
 
 				// Add a new top-level item with a back arrow icon
 				$args = array(

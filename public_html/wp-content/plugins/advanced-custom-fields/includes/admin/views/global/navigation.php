@@ -144,7 +144,7 @@ function acf_print_menu_section( $menu_items, $section = '' ) {
 	<div class="acf-admin-toolbar-inner">
 		<div class="acf-nav-wrap">
 			<a href="<?php echo esc_url( admin_url( 'edit.php?post_type=acf-field-group' ) ); ?>" class="acf-logo">
-				<img src="<?php echo esc_url( acf_get_url( 'assets/images/acf-logo.svg' ) ); ?>" alt="<?php esc_attr_e( 'Advanced Custom Fields logo', 'acf' ); ?>">
+				<img src="<?php echo esc_url( acf_get_url( 'assets/images/scf-logo.svg' ) ); ?>" alt="<?php esc_attr_e( 'Advanced Custom Fields logo', 'acf' ); ?>">
 			</a>
 
 			<h2><?php echo esc_html( acf_get_setting( 'name' ) ); ?></h2>

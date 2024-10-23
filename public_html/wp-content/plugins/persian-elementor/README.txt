@@ -5,7 +5,7 @@ Tags: elementor,persian,المنتور
 Requires at least: 5.0
 Tested up to: 6.6.1
 Requires PHP: 7.4
-Stable tag: 2.7.6.4
+Stable tag: 2.7.6.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -39,10 +39,6 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 از ویجت فرم المنتور استفاده می کنید؟ در این ویجت یک فیلد تاریخ قرار دارد که تا قبل از این به صورت میلادی قابل استفاده بود. حالا می توانید با نصب افزونه فارسی ساز المنتور، تقویم میلادی را به شمسی تبدیل کنید.
 
-
-- **ویجت آپارات**
-
-با قرار دادن ویجت ویدئو المنتور، گزینه آپارات به سرویس دهنده اضافه شده و می توانید لینک ویدئو آپارات را المنتور قرار دهید.
 
 - **فونت های فارسی**
 
@@ -121,6 +117,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+= 2.7.6.5 =
+حذف آپارت و رفع مشکل
+
 = 2.7.6.4 =
 رفع مشکل
 
