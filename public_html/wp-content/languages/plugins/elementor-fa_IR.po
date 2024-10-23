@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Plugins - Elementor Website Builder &#8211; More than Just a Page Builder - Stable (latest release) package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-09-18 08:28:50+0000\n"
+"PO-Revision-Date: 2024-10-15 22:06:37+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1058,7 +1058,7 @@ msgid "Optimized Markup"
 msgstr "نشانه‌گذاری بهینه شده"
 
 #: core/admin/admin.php:999 includes/controls/gallery.php:120
-#: includes/controls/media.php:270
+#: includes/controls/media.php:269
 msgid "Optimize your images to enhance site performance by using Image Optimizer."
 msgstr "با استفاده از بهینه‌ساز تصویر، تصاویر خود را برای بهبود عملکرد سایت بهینه کنید."
 
@@ -1324,7 +1324,7 @@ msgid "Scrolling Effects"
 msgstr "جلوه های اسکرول"
 
 #: core/admin/admin-notices.php:462 includes/controls/gallery.php:123
-#: includes/controls/media.php:273
+#: includes/controls/media.php:272
 msgid "Install Plugin"
 msgstr "نصب افزونه"
 
@@ -1487,7 +1487,7 @@ msgstr "همه قالب‌ها"
 msgid "Add New Template"
 msgstr "افزودن قالب جدید"
 
-#: includes/controls/groups/image-size.php:296 includes/controls/media.php:313
+#: includes/controls/groups/image-size.php:296 includes/controls/media.php:312
 #: includes/widgets/testimonial.php:323
 #: modules/atomic-widgets/widgets/atomic-image.php:90
 msgid "Image Resolution"
@@ -1900,27 +1900,27 @@ msgstr "متناسب با اندازه"
 msgid "You are currently editing an Accordion Widget in its old version. Any new Accordion widget dragged into the canvas will be the new Accordion widget, with the improved Nested capabilities."
 msgstr "در حال حاضر در حال ویرایش یک ویجت آکاردئونی در نسخه قدیمی آن هستید. هر ویجت جدید آکاردئون که به داخل بوم کشیده شود، ویجت جدید آکاردئون خواهد بود، با قابلیت‌های تو در تو بهبودیافته."
 
-#: includes/frontend.php:1422
+#: includes/frontend.php:1429
 msgid "Go to slide"
 msgstr "رفتن به اسلاید"
 
-#: includes/frontend.php:1421
+#: includes/frontend.php:1428
 msgid "This is the last slide"
 msgstr "این آخرین اسلاید است"
 
-#: includes/frontend.php:1420
+#: includes/frontend.php:1427
 msgid "This is the first slide"
 msgstr "این اولین اسلاید است"
 
-#: includes/frontend.php:1419
+#: includes/frontend.php:1426
 msgid "Next slide"
 msgstr "اسلاید بعدی"
 
-#: includes/frontend.php:1418
+#: includes/frontend.php:1425
 msgid "Previous slide"
 msgstr "اسلاید قبلی"
 
-#: includes/frontend.php:1417
+#: includes/frontend.php:1424
 msgid "Carousel | Horizontal scrolling: Arrow Left & Right"
 msgstr "چرخ فلک | پیمایش افقی: فلش چپ و راست"
 
@@ -2449,8 +2449,8 @@ msgstr "یادداشت‌ها"
 #: assets/js/app-packages.js:5891 assets/js/app.js:3418
 #: assets/js/editor.js:8397 assets/js/editor.js:52814 assets/js/editor.js:52829
 #: assets/js/editor.js:52844 assets/js/editor.js:52859
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:513
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:1461
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:513
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:1462
 msgid "Upgrade Now"
 msgstr "هم اکنون ارتقا دهید"
 
@@ -2472,7 +2472,7 @@ msgstr "هم اکنون ارتقا دهید"
 #: assets/js/ai-media-library.js:5368 assets/js/ai.js:4044 assets/js/ai.js:6020
 #: assets/js/ai.js:6150 assets/js/app-packages.js:5856 assets/js/editor.js:6885
 #: assets/js/notes.js:153
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:767
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:767
 #: assets/js/styleguide.js:196
 msgid "Upgrade"
 msgstr "ارتقا"
@@ -3604,7 +3604,7 @@ msgstr "آیا مطمئن هستید که می خواهید تنظیمات سا�
 msgid "The Global value you are trying to use is not available."
 msgstr "مقدار جهانی که می خواهید استفاده کنید در دسترس نیست."
 
-#: includes/controls/media.php:196
+#: includes/controls/media.php:195
 msgid "Choose SVG"
 msgstr "انتخاب svg"
 
@@ -3652,7 +3652,7 @@ msgstr "پر"
 msgid "Object Fit"
 msgstr "متناسب با Object"
 
-#: includes/frontend.php:1408
+#: includes/frontend.php:1415
 msgid "Download"
 msgstr "دانلود"
 
@@ -3718,7 +3718,7 @@ msgid "Suggested image dimensions: %1$s × %2$s pixels."
 msgstr "ابعاد پیشنهاد تصویر: %1$s × %2$s پیکسل."
 
 #: core/kits/documents/tabs/settings-site-identity.php:93
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:1048
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:1048
 msgid "Site Logo"
 msgstr "لوگو سایت"
 
@@ -3735,7 +3735,7 @@ msgid "Choose name"
 msgstr "یک نام انتخاب کنید"
 
 #: core/kits/documents/tabs/settings-site-identity.php:71
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:1044
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:1044
 msgid "Site Name"
 msgstr "نام سایت"
 
@@ -3768,7 +3768,7 @@ msgstr "تغییرات بعد از بارگیری مجدد صفحه، در پی�
 msgid "Reset Data"
 msgstr "بازگردانی داده ها"
 
-#: includes/controls/media.php:286
+#: includes/controls/media.php:285
 msgid "Click the media icon to upload file"
 msgstr "برای آپلود فایل، روی آیکون کلیک کنید"
 
@@ -3790,19 +3790,19 @@ msgstr "فعال سازی آپلود فایل های فیلتر نشده"
 msgid "If you are experiencing a loading issue, contact your site administrator to troubleshoot the problem using Safe Mode."
 msgstr "اگر کندی سرعت را تجربه می کنید، با مدیر سایت برای فعال کردن حالت ایمن در تماس باشید."
 
-#: includes/frontend.php:1409
+#: includes/frontend.php:1416
 msgid "Download image"
 msgstr "دانلود تصویر"
 
-#: includes/frontend.php:1407
+#: includes/frontend.php:1414
 msgid "Pin it"
 msgstr "پین کنید"
 
-#: includes/frontend.php:1406
+#: includes/frontend.php:1413
 msgid "Share on Twitter"
 msgstr "اشتراک گذاری در Twitter"
 
-#: includes/frontend.php:1405
+#: includes/frontend.php:1412
 msgid "Share on Facebook"
 msgstr "اشتراک گذاری در Facebook"
 
@@ -3829,7 +3829,7 @@ msgstr "محتوا داینامیک المنتور"
 #: includes/editor-templates/panel.php:307
 #: includes/editor-templates/panel.php:309
 msgid "Dynamic Tags"
-msgstr "برچسب های پویا"
+msgstr "برچسب‌های پویا"
 
 #: includes/managers/icons.php:497
 msgid "We highly recommend backing up your database before performing this upgrade."
@@ -3868,11 +3868,11 @@ msgstr "اندازه آیکون‌های نوار ابزار"
 msgid "Alt"
 msgstr "Alt"
 
-#: core/kits/documents/tabs/settings-lightbox.php:86 includes/frontend.php:1412
+#: core/kits/documents/tabs/settings-lightbox.php:86 includes/frontend.php:1419
 msgid "Share"
 msgstr "اشتراک گذاری"
 
-#: core/kits/documents/tabs/settings-lightbox.php:66 includes/frontend.php:1410
+#: core/kits/documents/tabs/settings-lightbox.php:66 includes/frontend.php:1417
 msgid "Fullscreen"
 msgstr "تمام‌صفحه"
 
@@ -4017,16 +4017,16 @@ msgstr "مدت زمان"
 msgid "Clear Log"
 msgstr "پاک کردن لاگ"
 
-#: includes/frontend.php:1415 assets/js/app.js:7834 assets/js/app.js:9516
+#: includes/frontend.php:1422 assets/js/app.js:7834 assets/js/app.js:9516
 #: assets/js/app.js:10432
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:1674
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:1725
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:2004
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:2281
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:1677
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:1728
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:2007
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:2284
 msgid "Next"
 msgstr "بعدی"
 
-#: includes/frontend.php:1414 assets/js/app.js:8708 assets/js/app.js:9503
+#: includes/frontend.php:1421 assets/js/app.js:8708 assets/js/app.js:9503
 #: assets/js/app.js:10425
 msgid "Previous"
 msgstr "قبلی"
@@ -4200,7 +4200,7 @@ msgstr "نمایش یک بار"
 msgid "Upload SVG"
 msgstr "آپلود فایل SVG"
 
-#: includes/controls/media.php:193
+#: includes/controls/media.php:192
 msgid "Choose Video"
 msgstr "انتخاب ویدیو"
 
@@ -4311,7 +4311,7 @@ msgstr "این فایل به دلایل امنیتی مجاز نیست."
 msgid "Sign Up"
 msgstr "ثبت نام"
 
-#: includes/controls/media.php:299 includes/controls/media.php:301
+#: includes/controls/media.php:298 includes/controls/media.php:300
 #: assets/js/editor.js:8226
 msgid "Upload"
 msgstr "بارگذاری"
@@ -4420,7 +4420,7 @@ msgstr "شاید این مشکل توسط یکی از افزونه ها یا ق�
 msgid "Note: The ID link ONLY accepts these chars: %s"
 msgstr "توجه: لینک شناسه فقط این کاراکتراها را قبول میکند: %s"
 
-#: includes/controls/media.php:199
+#: includes/controls/media.php:198
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:378
 msgid "Choose File"
 msgstr "انتخاب فایل"
@@ -4459,11 +4459,11 @@ msgid "Location"
 msgstr "مکان"
 
 #. translators: %s: Current post name.
-#: includes/frontend.php:1549
+#: includes/frontend.php:1558
 msgid "Continue reading %s"
 msgstr "ادامه مطلب %s"
 
-#: includes/frontend.php:1542
+#: includes/frontend.php:1551
 msgid "(more&hellip;)"
 msgstr "(بیشتر&hellip;)"
 
@@ -4761,7 +4761,7 @@ msgstr "صفحه اول خود را ایجاد کنید"
 #: includes/settings/admin-menu-items/getting-started-menu-item.php:23
 #: includes/settings/admin-menu-items/getting-started-menu-item.php:27
 #: includes/settings/admin-menu-items/getting-started-menu-item.php:52
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:792
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:792
 msgid "Getting Started"
 msgstr "شروع به کار"
 
@@ -4793,12 +4793,12 @@ msgstr "ناوبر"
 #: includes/settings/admin-menu-items/getting-started-menu-item.php:56
 #: modules/announcements/module.php:122 assets/js/app-packages.js:2843
 #: assets/js/app.js:3965
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:1269
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:1486
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:1577
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:1820
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:1995
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:2316
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:1269
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:1488
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:1580
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:1823
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:1998
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:2319
 msgid "Skip"
 msgstr "پرش"
 
@@ -4836,7 +4836,7 @@ msgstr "شما بیش از ۱۰ برگه با المنتور ایجاد کردی
 msgid "Congrats!"
 msgstr "تبریک میگم!"
 
-#: core/kits/documents/tabs/settings-lightbox.php:76 includes/frontend.php:1411
+#: core/kits/documents/tabs/settings-lightbox.php:76 includes/frontend.php:1418
 #: includes/widgets/google-maps.php:170 assets/js/ai-admin.js:10249
 #: assets/js/ai-admin.js:10252 assets/js/ai-gutenberg.js:12100
 #: assets/js/ai-gutenberg.js:12103 assets/js/ai-media-library.js:11878
@@ -5053,7 +5053,7 @@ msgstr "طرح پیش فرض صفحه از قالب شما"
 msgid "Page Layout"
 msgstr "طرح بندی صفحه"
 
-#: includes/frontend.php:1413 includes/widgets/video.php:994
+#: includes/frontend.php:1420 includes/widgets/video.php:994
 msgid "Play Video"
 msgstr "پخش ویدیو"
 
@@ -5070,7 +5070,7 @@ msgstr "جداکننده"
 #: includes/template-library/sources/admin-menu-items/add-new-template-menu-item.php:23
 #: modules/landing-pages/module.php:271 assets/js/app-packages.js:4610
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:2
-#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:5
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:8
 msgid "Add New"
 msgstr "افزودن جدید"
 
@@ -5139,7 +5139,7 @@ msgstr "جستجوی قالب ها:"
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.js:2
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:1
 #: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:3
-#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:4
+#: assets/js/packages/editor-site-navigation/editor-site-navigation.strings.js:7
 msgid "Pages"
 msgstr "برگه‌ها"
 
@@ -5297,8 +5297,8 @@ msgid "Select File"
 msgstr "انتخاب فایل"
 
 #: includes/editor-templates/templates.php:264
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:2167
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:2511
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:2170
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:2514
 msgid "or"
 msgstr "یا"
 
@@ -5315,7 +5315,7 @@ msgstr "درون ریزی قالب به کتابخانه شما"
 #: includes/editor-templates/templates.php:282
 #: includes/widgets/traits/button-trait.php:56 assets/js/app.js:7575
 #: assets/js/app.js:8581
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:2523
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:2526
 msgid "Click here"
 msgstr "اینجا کلیک کنید"
 
@@ -5365,9 +5365,9 @@ msgid "Import Template"
 msgstr "درون‌ریزی قالب"
 
 #: core/kits/views/panel.php:44 includes/controls/icons.php:83
-#: includes/controls/icons.php:85 includes/controls/media.php:216
-#: includes/controls/media.php:218 includes/controls/media.php:295
-#: includes/controls/media.php:297 includes/editor-templates/repeater.php:27
+#: includes/controls/icons.php:85 includes/controls/media.php:215
+#: includes/controls/media.php:217 includes/controls/media.php:294
+#: includes/controls/media.php:296 includes/editor-templates/repeater.php:27
 #: modules/promotions/widgets/pro-widget-promotion.php:74
 #: assets/js/ai-admin.js:2940 assets/js/ai-admin.js:7620
 #: assets/js/ai-gutenberg.js:4709 assets/js/ai-gutenberg.js:9471
@@ -6251,7 +6251,7 @@ msgstr "بسیار کوچک"
 msgid "Improve Elementor"
 msgstr "بهبود المنتور"
 
-#: includes/frontend.php:1256
+#: includes/frontend.php:1263
 msgid "Invalid Data: The Template ID cannot be the same as the currently edited template. Please choose a different one."
 msgstr "داده نامعتبر: شناسه قالب نمی تواند مشابه شناسه قالبی باشد که در حال ویرایش است. لطفا شناسه دیگری انتخاب کنید."
 
@@ -6404,7 +6404,7 @@ msgstr "کتابخانه"
 
 #: core/base/document.php:170 includes/editor-templates/global.php:23
 #: includes/editor-templates/responsive-bar.php:68
-#: includes/editor-templates/responsive-bar.php:69 includes/frontend.php:1416
+#: includes/editor-templates/responsive-bar.php:69 includes/frontend.php:1423
 #: assets/js/ai-admin.js:1190 assets/js/ai-gutenberg.js:2959
 #: assets/js/ai-layout.js:1118 assets/js/ai-media-library.js:2819
 #: assets/js/ai.js:3601 assets/js/app-packages.js:2029
@@ -6820,7 +6820,7 @@ msgstr "محو"
 msgid "Effect"
 msgstr "افکت"
 
-#: includes/controls/media.php:344
+#: includes/controls/media.php:343
 msgctxt "Image Size Control"
 msgid "Full"
 msgstr "اندازه‌ کامل"
@@ -7426,7 +7426,7 @@ msgstr "اسلایدها جهت پیمایش"
 msgid "Slides to Show"
 msgstr "اسلایدها جهت نمایش"
 
-#: includes/controls/media.php:190 includes/widgets/image-box.php:113
+#: includes/controls/media.php:189 includes/widgets/image-box.php:113
 #: includes/widgets/image.php:129 includes/widgets/testimonial.php:147
 #: includes/widgets/video.php:648
 #: modules/link-in-bio/base/widget-link-in-bio-base.php:242
@@ -7935,7 +7935,7 @@ msgid "Yes"
 msgstr "بله"
 
 #: core/admin/admin-notices.php:459 includes/controls/gallery.php:123
-#: includes/controls/media.php:273
+#: includes/controls/media.php:272
 msgid "Activate Plugin"
 msgstr "فعال‌کردن افزونه"
 
@@ -8263,7 +8263,7 @@ msgstr "رنگ متن"
 msgid "Typography"
 msgstr "تایپوگرافی"
 
-#: includes/controls/icons.php:80 includes/controls/media.php:239
+#: includes/controls/icons.php:80 includes/controls/media.php:238
 msgid "Add"
 msgstr "اضافه کردن"
 
@@ -8305,7 +8305,7 @@ msgstr "واکنش‌گرا"
 #: modules/floating-buttons/module.php:91
 #: modules/floating-buttons/module.php:96 assets/js/editor.js:9687
 #: assets/js/editor.js:37124
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:1444
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:1442
 msgid "Advanced"
 msgstr "پیشرفته"
 
@@ -8459,7 +8459,7 @@ msgstr "افزودن بخش جدید"
 #: assets/js/ai-gutenberg.js:4125 assets/js/ai-media-library.js:3985
 #: assets/js/ai.js:4767 assets/js/app-packages.js:5312
 #: assets/js/kit-library.ac1a4cd5deae5526ce49.bundle.js:236
-#: assets/js/onboarding.63276cc105f0e633544f.bundle.js:46
+#: assets/js/onboarding.5ceee1b219b66e943cb0.bundle.js:46
 msgid "Loading"
 msgstr "در حال بارگذاری"
 
